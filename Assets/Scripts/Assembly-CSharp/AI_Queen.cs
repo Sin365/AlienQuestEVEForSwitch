@@ -1,0 +1,53 @@
+using UnityEngine;
+
+public class AI_Queen : MonoBehaviour
+{
+	public GameObject Explo;
+	public Transform[] explo_Pos;
+	public GameObject Tr_Pos;
+	public Transform Tr_Front_Start;
+	public Transform Tr_Front_End;
+	public Transform Tr_Back_Start;
+	public Transform Tr_Back_End;
+	public Transform Tr_Tongue_Start;
+	public Transform Tr_Tongue_End;
+	public Transform Tr_Wave_Start;
+	public Transform Tr_Wave_End;
+	public Transform Tr_Bottom_Start;
+	public Transform Tr_Bottom_End;
+	public Transform pos_Fire;
+	public Transform pos_Glow;
+	public Transform pos_Laser;
+	public Transform pos_Wave;
+	public Transform pos_Sound;
+	public GameObject _Fire;
+	public GameObject _Fire_2;
+	public GameObject _Wave;
+	public GameObject _Laser;
+	public GameObject _Shock;
+	public GameObject _Dot;
+	public GameObject[] sound_List;
+	public GameObject sound_Atk_1;
+	public GameObject sound_Atk_2;
+	public GameObject sound_Dmg_1;
+	public GameObject sound_Dmg_2;
+	public GameObject sound_Death;
+	public GameObject sound_Laser_1;
+	public GameObject sound_Laser_2;
+	public GameObject sound_Shield;
+	public SpriteRenderer SR_Glow;
+	public SpriteRenderer SR_Border;
+	public SpriteRenderer SR_Border_LT;
+	public SpriteRenderer SR_Border_RT;
+	public SpriteRenderer SR_Border_LB;
+	public SpriteRenderer SR_Border_RB;
+	public Transform pos_Center;
+	public Transform pos_Border;
+	public Transform pos_Orbit;
+	public Transform pos_Dot;
+	public Transform pos_Pelvis;
+	public Transform pos_Tit_L;
+	public Transform pos_Tit_R;
+	public Transform pos_Dash;
+	public PolygonCollider2D COL_Shield;
+}

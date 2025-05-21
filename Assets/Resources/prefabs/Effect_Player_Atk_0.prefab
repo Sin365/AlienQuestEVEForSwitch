@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1086086019255226}
+  m_IsPrefabParent: 1
+--- !u!1 &1086086019255226
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4627711049562447}
+  - component: {fileID: 60879200878796824}
+  m_Layer: 0
+  m_Name: Effect_Player_Atk_0
+  m_TagString: Col_PC_Atk
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4627711049562447
+Transform:
+  m_GameObject: {fileID: 1086086019255226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.57, y: 7.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4338743318876741}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60879200878796824
+PolygonCollider2D:
+  m_GameObject: {fileID: 1086086019255226}
+  m_Enabled: 1
+  m_Density: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.775741, y: 3.877687}
+      - {x: 4.208012, y: 4.235253}
+      - {x: 2.309863, y: 4.386907}
+      - {x: 0.7059636, y: 4.465168}
+      - {x: 0.5042796, y: 3.921719}
+      - {x: -0.001513481, y: 3.429634}
+      - {x: 1.320726, y: 3.605375}
+--- !u!1 &1899754761334493
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4338743318876741}
+  - component: {fileID: 212593184991050741}
+  - component: {fileID: 114308828994663672}
+  m_Layer: 0
+  m_Name: Spr_JumpAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4338743318876741
+Transform:
+  m_GameObject: {fileID: 1899754761334493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4627711049562447}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &212593184991050741
+SpriteRenderer:
+  m_GameObject: {fileID: 1899754761334493}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: fe7364a31710ca346a8700202ca0875d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 522040413
+  m_SortingLayer: 0
+  m_SortingOrder: 500
+  m_Sprite: {fileID: 21300060, guid: 1ae52f7189948124d84a47e00a83d701, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+--- !u!114 &114308828994663672
+MonoBehaviour:
+  m_GameObject: {fileID: 1899754761334493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283c328cd14ee2946a1ca9afaef8de1b, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Spr_Effect_1:
+  - {fileID: 21300068, guid: 1ae52f7189948124d84a47e00a83d701, type: 3}
+  - {fileID: 21300060, guid: 1ae52f7189948124d84a47e00a83d701, type: 3}
+  - {fileID: 21300064, guid: 1ae52f7189948124d84a47e00a83d701, type: 3}
+  - {fileID: 21300062, guid: 1ae52f7189948124d84a47e00a83d701, type: 3}
+  - {fileID: 21300066, guid: 1ae52f7189948124d84a47e00a83d701, type: 3}
+  Col_Weapon: {fileID: 60879200878796824}

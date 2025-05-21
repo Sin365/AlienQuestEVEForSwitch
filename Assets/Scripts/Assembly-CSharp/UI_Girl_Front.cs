@@ -1,0 +1,56 @@
+using UnityEngine;
+
+public class UI_Girl_Front : MonoBehaviour
+{
+	public SpriteRenderer SR_Cursor;
+	public Transform pos_Top;
+	public Transform pos_Bot;
+	public Sprite spr_Eye_1_L;
+	public Sprite spr_Eye_1_R;
+	public Sprite spr_Eye_2_L;
+	public Sprite spr_Eye_2_R;
+	public Sprite spr_EyeBrow;
+	public Sprite spr_EyeBrow_0;
+	public Sprite spr_Close_1;
+	public Sprite spr_Close_2;
+	public Sprite spr_Close_3;
+	public Sprite spr_Mouth_1;
+	public Sprite spr_Mouth_2;
+	public SpriteRenderer SR_Pink;
+	public SpriteRenderer SR_EyeClose;
+	public SpriteRenderer SR_EyeHL_L;
+	public SpriteRenderer SR_EyeHL_R;
+	public SpriteRenderer SR_Eye_L;
+	public SpriteRenderer SR_Eye_R;
+	public SpriteRenderer SR_Mouth;
+	public SpriteRenderer SR_Mouth_AAH;
+	public SpriteRenderer SR_Face;
+	public SpriteRenderer SR_EyeBack;
+	public SpriteRenderer SR_HairBack_2;
+	public SpriteRenderer SR_Neck;
+	public SpriteRenderer SR_Leg;
+	public SpriteRenderer SR_Hand_R;
+	public SpriteRenderer SR_Hand_L;
+	public SpriteRenderer SR_Wand;
+	public SpriteRenderer UI_Hand_R;
+	public SpriteRenderer UI_Hand_L;
+	public SkinnedMeshRenderer Smr_Body;
+	public SkinnedMeshRenderer Smr_Arm_L;
+	public SkinnedMeshRenderer Smr_Arm_R;
+	public SkinnedMeshRenderer Smr_Breast_L;
+	public SkinnedMeshRenderer Smr_Breast_R;
+	public SkinnedMeshRenderer Smr_Hair;
+	public SkinnedMeshRenderer Smr_Hair_Front;
+	public SkinnedMeshRenderer Smr_Hair_Back;
+	public Material Mtl_Cloth;
+	public Material Mtl_Naked;
+	public SpriteRenderer BlueGlow;
+	public Transform pos_MosaicTarget;
+	public Transform pos_Mosaic;
+	public SpriteRenderer TopCover_Text;
+	public SpriteRenderer TopCover_Box;
+	public SpriteRenderer BotCover_Text;
+	public SpriteRenderer BotCover_Box;
+	public SpriteRenderer BotMosaic_1;
+	public SpriteRenderer BotMosaic_2;
+}

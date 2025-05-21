@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1966035995007578}
+  m_IsPrefabParent: 1
+--- !u!1 &1966035995007578
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224414006077372075}
+  - component: {fileID: 222755901682770123}
+  - component: {fileID: 114472987890194400}
+  - component: {fileID: 114029931327028271}
+  m_Layer: 5
+  m_Name: Info_Item_Card_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &224414006077372075
+RectTransform:
+  m_GameObject: {fileID: 1966035995007578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 183, y: 476, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224525775978604921}
+  - {fileID: 224191062207632415}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 183, y: 476}
+  m_SizeDelta: {x: 270, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &222755901682770123
+CanvasRenderer:
+  m_GameObject: {fileID: 1966035995007578}
+--- !u!114 &114472987890194400
+MonoBehaviour:
+  m_GameObject: {fileID: 1966035995007578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8088235, g: 0.8088235, b: 0.8088235, a: 0.4941176}
+  m_Sprite: {fileID: 21300010, guid: e64e3c6c207b2104397f377196dcfbab, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114029931327028271
+MonoBehaviour:
+  m_GameObject: {fileID: 1966035995007578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf714ce20a63b574abbb9416f8d82686, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Fonts:
+  - {fileID: 1550728645724758}
+  Item_Num: 20
+--- !u!1 &1733698404316064
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224525775978604921}
+  - component: {fileID: 222565755209716569}
+  - component: {fileID: 114360080003216324}
+  m_Layer: 5
+  m_Name: Img_Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &224525775978604921
+RectTransform:
+  m_GameObject: {fileID: 1733698404316064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -94, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224414006077372075}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -94, y: 0}
+  m_SizeDelta: {x: 62, y: 62}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &222565755209716569
+CanvasRenderer:
+  m_GameObject: {fileID: 1733698404316064}
+--- !u!114 &114360080003216324
+MonoBehaviour:
+  m_GameObject: {fileID: 1733698404316064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Material: {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300174, guid: e64e3c6c207b2104397f377196dcfbab, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!1 &1550728645724758
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224191062207632415}
+  - component: {fileID: 222725560743027223}
+  - component: {fileID: 114269071978421866}
+  m_Layer: 5
+  m_Name: Text_Item
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &224191062207632415
+RectTransform:
+  m_GameObject: {fileID: 1550728645724758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 29, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224414006077372075}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 29, y: 0}
+  m_SizeDelta: {x: 420, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &222725560743027223
+CanvasRenderer:
+  m_GameObject: {fileID: 1550728645724758}
+--- !u!114 &114269071978421866
+MonoBehaviour:
+  m_GameObject: {fileID: 1550728645724758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.9878296, b: 0.8897059, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2f36d0a4fe951c24c943b2af0241076a, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: バイオレットカード

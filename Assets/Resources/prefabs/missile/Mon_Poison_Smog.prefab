@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1817257155034820}
+  m_IsPrefabParent: 1
+--- !u!1 &1817257155034820
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4205841984657983}
+  - component: {fileID: 114073621230009658}
+  m_Layer: 0
+  m_Name: Mon_Poison_Smog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4205841984657983
+Transform:
+  m_GameObject: {fileID: 1817257155034820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 655.8475, y: 4.255481, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114073621230009658
+MonoBehaviour:
+  m_GameObject: {fileID: 1817257155034820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d829d4feeedd5ba40b39d1cae4a6dcb8, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  bar_Obj: {fileID: 1776770261001958, guid: d1256b0d8d5f64b42b3962f8844b4241, type: 2}

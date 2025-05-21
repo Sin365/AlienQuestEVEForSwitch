@@ -1,0 +1,211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1833417983676310}
+  m_IsPrefabParent: 1
+--- !u!1 &1833417983676310
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224403419284581475}
+  - component: {fileID: 222307878951911421}
+  - component: {fileID: 114556878140188818}
+  m_Layer: 5
+  m_Name: Info_MonIcon_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &224403419284581475
+RectTransform:
+  m_GameObject: {fileID: 1833417983676310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 66.9, y: -483.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224357092572398795}
+  - {fileID: 224487587751498879}
+  - {fileID: 224092587230834918}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 66.9, y: -483.6}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &222307878951911421
+CanvasRenderer:
+  m_GameObject: {fileID: 1833417983676310}
+--- !u!114 &114556878140188818
+MonoBehaviour:
+  m_GameObject: {fileID: 1833417983676310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8874975964e4f544c9d57b7af5b6abd7, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Type: 1
+  Mon_Num: 0
+  Dir: {fileID: 114219401755814984}
+  BG: {fileID: 114712303304567172}
+  MonIcon: {fileID: 114480703362367586}
+  MonCenter: {fileID: 0}
+--- !u!1 &1081489507438591
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224357092572398795}
+  - component: {fileID: 222100353372319450}
+  - component: {fileID: 114219401755814984}
+  m_Layer: 5
+  m_Name: Dir
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &224357092572398795
+RectTransform:
+  m_GameObject: {fileID: 1081489507438591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -24.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224403419284581475}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -24.5}
+  m_SizeDelta: {x: 24, y: 21}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &222100353372319450
+CanvasRenderer:
+  m_GameObject: {fileID: 1081489507438591}
+--- !u!114 &114219401755814984
+MonoBehaviour:
+  m_GameObject: {fileID: 1081489507438591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300042, guid: f82f9631cf8199f46b961cc1c1661b18, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!1 &1560845673528635
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224487587751498879}
+  - component: {fileID: 222458590679329330}
+  - component: {fileID: 114712303304567172}
+  m_Layer: 5
+  m_Name: BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &224487587751498879
+RectTransform:
+  m_GameObject: {fileID: 1560845673528635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224403419284581475}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 54, y: 54}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &222458590679329330
+CanvasRenderer:
+  m_GameObject: {fileID: 1560845673528635}
+--- !u!114 &114712303304567172
+MonoBehaviour:
+  m_GameObject: {fileID: 1560845673528635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f82f9631cf8199f46b961cc1c1661b18, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!1 &1469981799490145
+GameObject:
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224092587230834918}
+  - component: {fileID: 222694118534844332}
+  - component: {fileID: 114480703362367586}
+  m_Layer: 5
+  m_Name: MonIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &224092587230834918
+RectTransform:
+  m_GameObject: {fileID: 1469981799490145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224403419284581475}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 42, y: 42}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &222694118534844332
+CanvasRenderer:
+  m_GameObject: {fileID: 1469981799490145}
+--- !u!114 &114480703362367586
+MonoBehaviour:
+  m_GameObject: {fileID: 1469981799490145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300076, guid: 9440e210249922f408199f95efa03ad1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
