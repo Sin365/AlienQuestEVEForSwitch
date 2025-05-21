@@ -1,5 +1,10 @@
-using UnityEngine;
-
-public class Data_List : MonoBehaviour
+public class Data_List : global::UnityEngine.MonoBehaviour
 {
+	private void Start()
+	{
+	}
+
+	private void Update()
+	{
+	}
 }

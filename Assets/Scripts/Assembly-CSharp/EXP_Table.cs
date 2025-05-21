@@ -1,8 +1,20 @@
-using UnityEngine;
-
-public class EXP_Table : MonoBehaviour
+public class EXP_Table : global::UnityEngine.MonoBehaviour
 {
-	public int[] Need_Exp;
+	public int[] Need_Exp = new int[55]
+	{
+		0, 250, 500, 1000, 2500, 4100, 5800, 7600, 9540, 11540,
+		13580, 15840, 18330, 21070, 24110, 27460, 31150, 35230, 39730, 44700,
+		50180, 56240, 62910, 70280, 78420, 87400, 97300, 108240, 120310, 133630,
+		148330, 164560, 182470, 202240, 224060, 241850, 274730, 304080, 336480, 372240,
+		411710, 455290, 503390, 556490, 615120, 679830, 751270, 830140, 917210, 1013330,
+		1119450, 1236600, 1365940, 1508720, 1666360
+	};
+
 	public int[] Mon_Lvl;
+
 	public int[] Mon_Exp;
+
+	private void Start()
+	{
+	}
 }

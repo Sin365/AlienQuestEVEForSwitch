@@ -1,5 +1,10 @@
-using UnityEngine;
-
-public class Title_Alien : MonoBehaviour
+public class Title_Alien : global::UnityEngine.MonoBehaviour
 {
+	private void Start()
+	{
+	}
+
+	private void Update()
+	{
+	}
 }

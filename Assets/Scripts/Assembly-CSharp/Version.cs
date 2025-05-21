@@ -1,6 +1,8 @@
-using UnityEngine;
-
-public class Version : MonoBehaviour
+public class Version : global::UnityEngine.MonoBehaviour
 {
 	public float VerNum;
+
+	private void Start()
+	{
+	}
 }

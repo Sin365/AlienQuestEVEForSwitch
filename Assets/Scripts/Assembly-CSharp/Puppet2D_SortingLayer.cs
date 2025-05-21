@@ -1,8 +1,11 @@
-using UnityEngine;
-
-public class Puppet2D_SortingLayer : MonoBehaviour
+public class Puppet2D_SortingLayer : global::UnityEngine.MonoBehaviour
 {
-	public Vector2 offsetAmount;
-	public Vector2[] uvsDefault;
+	[global::UnityEngine.HideInInspector]
+	public global::UnityEngine.Vector2 offsetAmount;
+
+	[global::UnityEngine.HideInInspector]
+	public global::UnityEngine.Vector2[] uvsDefault;
+
+	[global::UnityEngine.HideInInspector]
 	public bool initialized;
 }

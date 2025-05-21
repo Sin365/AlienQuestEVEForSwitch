@@ -4,6 +4,6 @@ namespace Poly2Tri
 	{
 		Unconstrained = 0,
 		Constrained = 1,
-		Polygon = 2,
+		Polygon = 2
 	}
 }

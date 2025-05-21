@@ -1,5 +1,10 @@
-using UnityEngine;
-
-public class H_FaceHugger : MonoBehaviour
+public class H_FaceHugger : global::UnityEngine.MonoBehaviour
 {
+	private void Start()
+	{
+	}
+
+	private void Update()
+	{
+	}
 }

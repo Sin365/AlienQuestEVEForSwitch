@@ -1,13 +1,62 @@
-using UnityEngine;
-
-public class LV_5_146_Gen : MonoBehaviour
+public class LV_5_146_Gen : global::UnityEngine.MonoBehaviour
 {
-	public GameObject _Mon_30;
-	public GameObject _Mon_38;
-	public GameObject _Mon_40;
-	public GameObject _Mon_41;
-	public Transform[] Pos_30_List;
-	public Transform[] Pos_38_List;
-	public Transform[] Pos_40_List;
-	public Transform Pos_41;
+	public global::UnityEngine.GameObject _Mon_30;
+
+	public global::UnityEngine.GameObject _Mon_38;
+
+	public global::UnityEngine.GameObject _Mon_40;
+
+	public global::UnityEngine.GameObject _Mon_41;
+
+	public global::UnityEngine.Transform[] Pos_30_List;
+
+	public global::UnityEngine.Transform[] Pos_38_List;
+
+	public global::UnityEngine.Transform[] Pos_40_List;
+
+	public global::UnityEngine.Transform Pos_41;
+
+	private GameManager GM;
+
+	private void Start()
+	{
+		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		if (GM.Get_Event(3) && GM.Check_EventMonster(9))
+		{
+			if (Pos_40_List.Length > 0)
+			{
+				for (int i = 0; i < Pos_40_List.Length; i++)
+				{
+					global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Mon_40, Pos_40_List[i].position, base.transform.rotation) as global::UnityEngine.GameObject;
+					gameObject.transform.parent = base.transform;
+					gameObject.GetComponent<Mon_Index>().Index = 10 + i;
+					gameObject.GetComponent<AI_Mon_40>().event_Type = AI_Mon_40.Event_Type.Bottom;
+				}
+			}
+			if (Pos_41 != null)
+			{
+				global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Mon_41, Pos_41.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				gameObject2.transform.parent = base.transform;
+				gameObject2.GetComponent<Mon_Index>().Index = 0;
+			}
+		}
+		if (Pos_30_List.Length > 0)
+		{
+			for (int j = 0; j < Pos_30_List.Length; j++)
+			{
+				global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Mon_30, Pos_30_List[j].position, base.transform.rotation) as global::UnityEngine.GameObject;
+				gameObject3.transform.parent = base.transform;
+				gameObject3.GetComponent<Mon_Index>().Index = 4 + j;
+			}
+		}
+		if (Pos_38_List.Length > 0)
+		{
+			for (int k = 0; k < Pos_38_List.Length; k++)
+			{
+				global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Mon_38, Pos_38_List[k].position, base.transform.rotation) as global::UnityEngine.GameObject;
+				gameObject4.transform.parent = base.transform;
+				gameObject4.GetComponent<Mon_Index>().Index = k;
+			}
+		}
+	}
 }

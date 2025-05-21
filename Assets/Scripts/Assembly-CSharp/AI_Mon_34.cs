@@ -1,5 +1,10 @@
-using UnityEngine;
-
-public class AI_Mon_34 : MonoBehaviour
+public class AI_Mon_34 : global::UnityEngine.MonoBehaviour
 {
+	private void Start()
+	{
+	}
+
+	private void Update()
+	{
+	}
 }

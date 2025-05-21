@@ -1,8 +1,54 @@
-using UnityEngine;
-
-public class LV_4_Cam_102 : MonoBehaviour
+public class LV_4_Cam_102 : global::UnityEngine.MonoBehaviour
 {
-	public Transform Bottom_Orig;
-	public Transform Bottom_Left;
-	public Transform Bottom_Right;
+	public global::UnityEngine.Transform Bottom_Orig;
+
+	public global::UnityEngine.Transform Bottom_Left;
+
+	public global::UnityEngine.Transform Bottom_Right;
+
+	private float Speed = 5f;
+
+	private Camera_Control CamCon;
+
+	private global::UnityEngine.GameObject Player;
+
+	private GameManager GM;
+
+	private void Start()
+	{
+		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		Player = global::UnityEngine.GameObject.Find("Player");
+		CamCon = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>();
+		if (Player.transform.position.x < 1077f)
+		{
+			CamCon.Cam_Bot = Bottom_Left.position.y;
+		}
+		else if (Player.transform.position.x > 1129f)
+		{
+			CamCon.Cam_Bot = Bottom_Right.position.y;
+		}
+		else
+		{
+			CamCon.Cam_Bot = Bottom_Orig.position.y;
+		}
+	}
+
+	private void Update()
+	{
+		if (!GM.Paused)
+		{
+			if (Player.transform.position.x < 1077f)
+			{
+				CamCon.Cam_Bot = global::UnityEngine.Mathf.Lerp(CamCon.Cam_Bot, Bottom_Left.position.y, global::UnityEngine.Time.deltaTime * Speed);
+			}
+			else if (Player.transform.position.x > 1129f)
+			{
+				CamCon.Cam_Bot = global::UnityEngine.Mathf.Lerp(CamCon.Cam_Bot, Bottom_Right.position.y, global::UnityEngine.Time.deltaTime * Speed);
+			}
+			else
+			{
+				CamCon.Cam_Bot = global::UnityEngine.Mathf.Lerp(CamCon.Cam_Bot, Bottom_Orig.position.y, global::UnityEngine.Time.deltaTime * Speed);
+			}
+		}
+	}
 }

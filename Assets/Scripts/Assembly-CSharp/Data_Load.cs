@@ -1,5 +1,10 @@
-using UnityEngine;
-
-public class Data_Load : MonoBehaviour
+public class Data_Load : global::UnityEngine.MonoBehaviour
 {
+	private void Start()
+	{
+	}
+
+	private void Update()
+	{
+	}
 }

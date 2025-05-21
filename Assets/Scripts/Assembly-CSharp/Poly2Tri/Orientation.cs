@@ -4,6 +4,6 @@ namespace Poly2Tri
 	{
 		CW = 0,
 		CCW = 1,
-		Collinear = 2,
+		Collinear = 2
 	}
 }
