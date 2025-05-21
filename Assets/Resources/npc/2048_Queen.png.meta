@@ -1,28 +1,60 @@
 fileFormatVersion: 2
 guid: 14c5bda06397c9944960e5576205abdd
-timeCreated: 1747839222
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Queen_Body
-    21300002: Queen_Tooth_Top
-    21300004: Queen_Jaw
-    21300006: Queen_Tongue
-    21300008: Queen_Tooth_Bot
-    21300010: Queen_Breast_L
-    21300012: Queen_Breast_R
-    21300014: Queen_Back
-    21300016: Queen_L_Arm_1
-    21300018: Queen_R_Arm_1
-    21300020: Queen_R_Arm_2
-    21300022: Queen_L_Leg
-    21300024: Queen_R_Leg
-    21300026: Queen_L_Arm_2
-    21300028: Wave_Bar
-    21300030: Pillar_Moss_R
-    21300032: Pillar_Moss_L
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Queen_Body
+  - first:
+      213: 21300002
+    second: Queen_Tooth_Top
+  - first:
+      213: 21300004
+    second: Queen_Jaw
+  - first:
+      213: 21300006
+    second: Queen_Tongue
+  - first:
+      213: 21300008
+    second: Queen_Tooth_Bot
+  - first:
+      213: 21300010
+    second: Queen_Breast_L
+  - first:
+      213: 21300012
+    second: Queen_Breast_R
+  - first:
+      213: 21300014
+    second: Queen_Back
+  - first:
+      213: 21300016
+    second: Queen_L_Arm_1
+  - first:
+      213: 21300018
+    second: Queen_R_Arm_1
+  - first:
+      213: 21300020
+    second: Queen_R_Arm_2
+  - first:
+      213: 21300022
+    second: Queen_L_Leg
+  - first:
+      213: 21300024
+    second: Queen_R_Leg
+  - first:
+      213: 21300026
+    second: Queen_L_Arm_2
+  - first:
+      213: 21300028
+    second: Wave_Bar
+  - first:
+      213: 21300030
+    second: Pillar_Moss_R
+  - first:
+      213: 21300032
+    second: Pillar_Moss_L
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -40,6 +72,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -62,18 +96,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -83,6 +120,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -230,6 +268,13 @@ TextureImporter:
         - {x: -100.5, y: -395.5381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_Tooth_Top
       rect:
@@ -251,6 +296,13 @@ TextureImporter:
         - {x: -6.461941, y: -45}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_Jaw
       rect:
@@ -280,6 +332,13 @@ TextureImporter:
         - {x: 54, y: 6.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_Tongue
       rect:
@@ -308,6 +367,13 @@ TextureImporter:
         - {x: 364.4619, y: -26}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_Tooth_Bot
       rect:
@@ -335,6 +401,13 @@ TextureImporter:
         - {x: 9, y: -36}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_Breast_L
       rect:
@@ -359,6 +432,13 @@ TextureImporter:
         - {x: 54.01238, y: -70}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_Breast_R
       rect:
@@ -397,6 +477,13 @@ TextureImporter:
         - {x: 42.47292, y: -105.533}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_Back
       rect:
@@ -449,6 +536,13 @@ TextureImporter:
         - {x: 153, y: -428.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_L_Arm_1
       rect:
@@ -478,6 +572,13 @@ TextureImporter:
         - {x: -108, y: 171}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_R_Arm_1
       rect:
@@ -507,6 +608,13 @@ TextureImporter:
         - {x: -108, y: 171}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_R_Arm_2
       rect:
@@ -540,6 +648,13 @@ TextureImporter:
         - {x: 113.4684, y: -142.9933}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_L_Leg
       rect:
@@ -628,6 +743,13 @@ TextureImporter:
         - {x: -20.47528, y: -529.538}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_R_Leg
       rect:
@@ -716,6 +838,13 @@ TextureImporter:
         - {x: -20.4753, y: -530.0381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Queen_L_Arm_2
       rect:
@@ -754,6 +883,13 @@ TextureImporter:
         - {x: -112.0316, y: 33.00674}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Wave_Bar
       rect:
@@ -772,6 +908,13 @@ TextureImporter:
         - {x: 20, y: 512}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Pillar_Moss_R
       rect:
@@ -829,6 +972,13 @@ TextureImporter:
         - {x: 122.5, y: -139.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Pillar_Moss_L
       rect:
@@ -884,9 +1034,26 @@ TextureImporter:
         - {x: 124.9684, y: -125.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

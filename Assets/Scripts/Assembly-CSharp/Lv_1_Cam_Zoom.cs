@@ -50,7 +50,7 @@ public class Lv_1_Cam_Zoom : global::UnityEngine.MonoBehaviour
 			SR_List[i].color = new global::UnityEngine.Color(SR_List[i].color.r, SR_List[i].color.g, SR_List[i].color.b, 0f);
 		}
 		Original_CamMax = CamCon.MaxSize;
-		Current_CamSize = CamCon.camera.orthographicSize;
+		Current_CamSize = CamCon.GetComponent<UnityEngine.Camera>().orthographicSize;
 	}
 
 	private void Update()
@@ -64,7 +64,7 @@ public class Lv_1_Cam_Zoom : global::UnityEngine.MonoBehaviour
 			if (!onEnabled)
 			{
 				onEnabled = true;
-				Current_CamSize = CamCon.camera.orthographicSize;
+				Current_CamSize = CamCon.GetComponent<UnityEngine.Camera>().orthographicSize;
 			}
 			CamCon.MaxSize = Target_CamMax;
 			if (Col_Timer > 0.8f)

@@ -1,39 +1,93 @@
 fileFormatVersion: 2
 guid: 46b116e7732b5ac45b9c90f4b5e7b8be
-timeCreated: 1747839219
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Sit_0
-    21300002: Sit_1
-    21300004: Sit_2
-    21300006: Sit_3
-    21300008: Sit_4
-    21300010: Sit_6
-    21300012: Sit_5
-    21300014: Sit_7
-    21300016: Sit_8
-    21300018: Sit_E0
-    21300020: Sit_E1
-    21300022: Sit_E2
-    21300024: Sit_E3
-    21300026: Sit_E4
-    21300028: Sit_E6
-    21300030: Sit_E5
-    21300032: Sit_E7
-    21300034: Sit_E8
-    21300036: Sit_JumpEnd_1
-    21300038: Sit_JumpEnd_3
-    21300040: Sit_JumpEnd_E1
-    21300042: Sit_JumpEnd_2
-    21300044: Sit_JumpEnd_E2
-    21300046: Sit_JumpEnd_E3
-    21300048: X_Damage_3
-    21300050: X_Damage_4
-    21300052: X_Damage_5E
-    21300054: X_DoubleJump
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Sit_0
+  - first:
+      213: 21300002
+    second: Sit_1
+  - first:
+      213: 21300004
+    second: Sit_2
+  - first:
+      213: 21300006
+    second: Sit_3
+  - first:
+      213: 21300008
+    second: Sit_4
+  - first:
+      213: 21300010
+    second: Sit_6
+  - first:
+      213: 21300012
+    second: Sit_5
+  - first:
+      213: 21300014
+    second: Sit_7
+  - first:
+      213: 21300016
+    second: Sit_8
+  - first:
+      213: 21300018
+    second: Sit_E0
+  - first:
+      213: 21300020
+    second: Sit_E1
+  - first:
+      213: 21300022
+    second: Sit_E2
+  - first:
+      213: 21300024
+    second: Sit_E3
+  - first:
+      213: 21300026
+    second: Sit_E4
+  - first:
+      213: 21300028
+    second: Sit_E6
+  - first:
+      213: 21300030
+    second: Sit_E5
+  - first:
+      213: 21300032
+    second: Sit_E7
+  - first:
+      213: 21300034
+    second: Sit_E8
+  - first:
+      213: 21300036
+    second: Sit_JumpEnd_1
+  - first:
+      213: 21300038
+    second: Sit_JumpEnd_3
+  - first:
+      213: 21300040
+    second: Sit_JumpEnd_E1
+  - first:
+      213: 21300042
+    second: Sit_JumpEnd_2
+  - first:
+      213: 21300044
+    second: Sit_JumpEnd_E2
+  - first:
+      213: 21300046
+    second: Sit_JumpEnd_E3
+  - first:
+      213: 21300048
+    second: X_Damage_3
+  - first:
+      213: 21300050
+    second: X_Damage_4
+  - first:
+      213: 21300052
+    second: X_Damage_5E
+  - first:
+      213: 21300054
+    second: X_DoubleJump
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -51,6 +105,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -73,18 +129,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -94,6 +153,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -106,7 +166,7 @@ TextureImporter:
         width: 344.994
         height: 478.8971
       alignment: 9
-      pivot: {x: 0.6027932, y: -5.582284E-05}
+      pivot: {x: 0.6027932, y: -0.00005582284}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -156.503, y: 5.524704}
@@ -130,6 +190,13 @@ TextureImporter:
         - {x: -50.50298, y: 27.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_1
       rect:
@@ -159,6 +226,13 @@ TextureImporter:
         - {x: -134.9919, y: -58.97433}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_2
       rect:
@@ -168,7 +242,7 @@ TextureImporter:
         width: 323.8971
         height: 268.8971
       alignment: 9
-      pivot: {x: 0.5925933, y: -9.941868E-05}
+      pivot: {x: 0.5925933, y: -0.00009941868}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -145.9753, y: -97.4753}
@@ -189,6 +263,13 @@ TextureImporter:
         - {x: -103.9753, y: -78.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_3
       rect:
@@ -233,6 +314,13 @@ TextureImporter:
         - {x: 98.0247, y: -122.9843}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_4
       rect:
@@ -260,6 +348,13 @@ TextureImporter:
         - {x: 61.51231, y: -121.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_6
       rect:
@@ -292,6 +387,13 @@ TextureImporter:
         - {x: 106.0213, y: -123.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_5
       rect:
@@ -324,6 +426,13 @@ TextureImporter:
         - {x: 58.0247, y: -98.46194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_7
       rect:
@@ -358,6 +467,13 @@ TextureImporter:
         - {x: -51.49191, y: -245.5001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_8
       rect:
@@ -392,6 +508,13 @@ TextureImporter:
         - {x: 22.9852, y: -19.52473}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_E0
       rect:
@@ -422,6 +545,13 @@ TextureImporter:
         - {x: 89.51337, y: -51.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_E1
       rect:
@@ -453,6 +583,13 @@ TextureImporter:
         - {x: 66.51369, y: -166.9877}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_E2
       rect:
@@ -477,6 +614,13 @@ TextureImporter:
         - {x: -28.49997, y: -45.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_E3
       rect:
@@ -501,6 +645,13 @@ TextureImporter:
         - {x: -72.48769, y: -128.0089}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_E4
       rect:
@@ -526,6 +677,13 @@ TextureImporter:
         - {x: -6.510361, y: -124.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_E6
       rect:
@@ -549,6 +707,13 @@ TextureImporter:
         - {x: -92.99524, y: -122.538}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_E5
       rect:
@@ -574,6 +739,13 @@ TextureImporter:
         - {x: -54.4919, y: -123.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_E7
       rect:
@@ -606,6 +778,13 @@ TextureImporter:
         - {x: -108.4944, y: 31.98338}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_E8
       rect:
@@ -636,6 +815,13 @@ TextureImporter:
         - {x: 161.9931, y: 92.99998}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_JumpEnd_1
       rect:
@@ -669,6 +855,13 @@ TextureImporter:
         - {x: 53.0069, y: -133.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_JumpEnd_3
       rect:
@@ -699,6 +892,13 @@ TextureImporter:
         - {x: -38.49997, y: -168.4619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_JumpEnd_E1
       rect:
@@ -729,6 +929,13 @@ TextureImporter:
         - {x: 89.0069, y: -82.02469}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_JumpEnd_2
       rect:
@@ -762,6 +969,13 @@ TextureImporter:
         - {x: 155.9867, y: -217.4619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_JumpEnd_E2
       rect:
@@ -793,6 +1007,13 @@ TextureImporter:
         - {x: 54.98666, y: -235}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Sit_JumpEnd_E3
       rect:
@@ -822,6 +1043,13 @@ TextureImporter:
         - {x: -37.48628, y: -31.47531}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: X_Damage_3
       rect:
@@ -859,6 +1087,13 @@ TextureImporter:
         - {x: -12, y: -30.51099}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: X_Damage_4
       rect:
@@ -868,7 +1103,7 @@ TextureImporter:
         width: 280
         height: 504.8971
       alignment: 9
-      pivot: {x: 0.5356999, y: -5.300865E-05}
+      pivot: {x: 0.5356999, y: -0.00005300865}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -138, y: -54.47533}
@@ -907,6 +1142,13 @@ TextureImporter:
         - {x: -129, y: -67.47533}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: X_Damage_5E
       rect:
@@ -951,6 +1193,13 @@ TextureImporter:
         - {x: -110, y: -44.48662}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: X_DoubleJump
       rect:
@@ -986,9 +1235,26 @@ TextureImporter:
         - {x: -18.00005, y: 146.0381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,28 +1,60 @@
 fileFormatVersion: 2
 guid: 4743677060ffc444aa97c0fdfe31eeab
-timeCreated: 1747839227
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Event_GeneralHead
-    21300002: Event_GeneralMouth
-    21300004: Event_GeneralArm_1
-    21300006: Event_GeneralArm_2
-    21300008: Event_Scientist_1
-    21300010: Event_DeadScientist_2
-    21300012: Event_DeadScientist_1
-    21300014: Event_GeneralBody
-    21300016: Event_GeneralArm_2B
-    21300018: Event_Scientist_1_Head
-    21300020: Event_GeneralLeg
-    21300022: Event_Scientist_3_Head
-    21300024: Event_Scientist_2
-    21300026: Event_Scientist_3
-    21300028: Event_Scientist_2_Head
-    21300030: Event_Finger_1
-    21300032: Event_Finger_2
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Event_GeneralHead
+  - first:
+      213: 21300002
+    second: Event_GeneralMouth
+  - first:
+      213: 21300004
+    second: Event_GeneralArm_1
+  - first:
+      213: 21300006
+    second: Event_GeneralArm_2
+  - first:
+      213: 21300008
+    second: Event_Scientist_1
+  - first:
+      213: 21300010
+    second: Event_DeadScientist_2
+  - first:
+      213: 21300012
+    second: Event_DeadScientist_1
+  - first:
+      213: 21300014
+    second: Event_GeneralBody
+  - first:
+      213: 21300016
+    second: Event_GeneralArm_2B
+  - first:
+      213: 21300018
+    second: Event_Scientist_1_Head
+  - first:
+      213: 21300020
+    second: Event_GeneralLeg
+  - first:
+      213: 21300022
+    second: Event_Scientist_3_Head
+  - first:
+      213: 21300024
+    second: Event_Scientist_2
+  - first:
+      213: 21300026
+    second: Event_Scientist_3
+  - first:
+      213: 21300028
+    second: Event_Scientist_2_Head
+  - first:
+      213: 21300030
+    second: Event_Finger_1
+  - first:
+      213: 21300032
+    second: Event_Finger_2
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -40,6 +72,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -62,18 +96,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -83,6 +120,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -110,6 +148,13 @@ TextureImporter:
         - {x: -36, y: -56.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_GeneralMouth
       rect:
@@ -128,6 +173,13 @@ TextureImporter:
         - {x: 10.5, y: -9}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_GeneralArm_1
       rect:
@@ -150,6 +202,13 @@ TextureImporter:
         - {x: 52, y: -71.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_GeneralArm_2
       rect:
@@ -172,6 +231,13 @@ TextureImporter:
         - {x: -56, y: 24}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_Scientist_1
       rect:
@@ -215,6 +281,13 @@ TextureImporter:
         - {x: 126.5, y: -218.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_DeadScientist_2
       rect:
@@ -263,6 +336,13 @@ TextureImporter:
         - {x: -55.5, y: -128.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_DeadScientist_1
       rect:
@@ -298,6 +378,13 @@ TextureImporter:
         - {x: -48, y: -137.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_GeneralBody
       rect:
@@ -334,6 +421,13 @@ TextureImporter:
         - {x: -46.5, y: 257.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_GeneralArm_2B
       rect:
@@ -355,6 +449,13 @@ TextureImporter:
         - {x: 26.5, y: -82.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_Scientist_1_Head
       rect:
@@ -378,6 +479,13 @@ TextureImporter:
         - {x: 26, y: -48.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_GeneralLeg
       rect:
@@ -399,6 +507,13 @@ TextureImporter:
         - {x: 49, y: -159.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_Scientist_3_Head
       rect:
@@ -421,6 +536,13 @@ TextureImporter:
         - {x: -14.5, y: -39}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_Scientist_2
       rect:
@@ -466,6 +588,13 @@ TextureImporter:
         - {x: -19.5, y: -166}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_Scientist_3
       rect:
@@ -499,6 +628,13 @@ TextureImporter:
         - {x: -1.5, y: 235.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_Scientist_2_Head
       rect:
@@ -522,6 +658,13 @@ TextureImporter:
         - {x: 32, y: -46.53805}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_Finger_1
       rect:
@@ -544,6 +687,13 @@ TextureImporter:
         - {x: 50.46194, y: -118.466}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Event_Finger_2
       rect:
@@ -566,9 +716,26 @@ TextureImporter:
         - {x: 82.98189, y: -150.4907}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

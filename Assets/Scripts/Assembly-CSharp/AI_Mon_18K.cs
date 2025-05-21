@@ -396,7 +396,7 @@ public class AI_Mon_18K : global::UnityEngine.MonoBehaviour
 		Flip_Delay = 0.5f + (float)global::UnityEngine.Random.Range(0, 80) * 0.01f;
 		Tr_Pos.transform.localScale = new global::UnityEngine.Vector3(-facingRight, 1f, 1f);
 		CensoredText.transform.localScale = new global::UnityEngine.Vector3(1.3f * (float)(-facingRight), 1.5f, 1f);
-		GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0.12f * (float)(-facingRight), -0.01f);
+		GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0.12f * (float)(-facingRight), -0.01f);
 	}
 
 	private void Check_Idle()

@@ -45,9 +45,9 @@ public class Trap_Fang_Col : global::UnityEngine.MonoBehaviour
 			}
 			Damage_Delay = 1f;
 			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Player_Damage(14, false, PC.transform.position);
-			if (PC.rigidbody2D.velocity.y < 1f)
+			if (PC.GetComponent<UnityEngine.Rigidbody2D>().velocity.y < 1f)
 			{
-				PC.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 10f, global::UnityEngine.ForceMode2D.Impulse);
+				PC.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 10f, global::UnityEngine.ForceMode2D.Impulse);
 			}
 		}
 	}

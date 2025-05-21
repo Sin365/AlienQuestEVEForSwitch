@@ -1,37 +1,87 @@
 fileFormatVersion: 2
 guid: 982de7558de39934d9a7865ba4a5b978
-timeCreated: 1747839217
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: atk_Jump_5
-    21300002: atk_Idle_1_0
-    21300004: atk_Idle_1_1
-    21300006: atk_Idle_1_2
-    21300008: atk_Idle_1_3
-    21300010: atk_Idle_1_4
-    21300012: atk_Idle_1_5
-    21300014: atk_Idle_1_6
-    21300016: atk_Idle_1_7
-    21300018: atk_Idle_1_8
-    21300020: atk_Idle_1_9
-    21300022: atk_Idle_E1_0
-    21300024: atk_Idle_E1_1
-    21300026: atk_Idle_E1_8
-    21300028: atk_Idle_E1_2
-    21300030: atk_Idle_E1_3
-    21300032: atk_Idle_E1_4
-    21300034: atk_Idle_E1_5
-    21300036: atk_Idle_E1_7
-    21300038: atk_Idle_E1_9
-    21300040: atk_Jump_9
-    21300042: atk_Jump_0
-    21300044: atk_Jump_8
-    21300046: atk_Jump_6
-    21300048: atk_Jump_7
-    21300050: atk_Idle_E1_6
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: atk_Jump_5
+  - first:
+      213: 21300002
+    second: atk_Idle_1_0
+  - first:
+      213: 21300004
+    second: atk_Idle_1_1
+  - first:
+      213: 21300006
+    second: atk_Idle_1_2
+  - first:
+      213: 21300008
+    second: atk_Idle_1_3
+  - first:
+      213: 21300010
+    second: atk_Idle_1_4
+  - first:
+      213: 21300012
+    second: atk_Idle_1_5
+  - first:
+      213: 21300014
+    second: atk_Idle_1_6
+  - first:
+      213: 21300016
+    second: atk_Idle_1_7
+  - first:
+      213: 21300018
+    second: atk_Idle_1_8
+  - first:
+      213: 21300020
+    second: atk_Idle_1_9
+  - first:
+      213: 21300022
+    second: atk_Idle_E1_0
+  - first:
+      213: 21300024
+    second: atk_Idle_E1_1
+  - first:
+      213: 21300026
+    second: atk_Idle_E1_8
+  - first:
+      213: 21300028
+    second: atk_Idle_E1_2
+  - first:
+      213: 21300030
+    second: atk_Idle_E1_3
+  - first:
+      213: 21300032
+    second: atk_Idle_E1_4
+  - first:
+      213: 21300034
+    second: atk_Idle_E1_5
+  - first:
+      213: 21300036
+    second: atk_Idle_E1_7
+  - first:
+      213: 21300038
+    second: atk_Idle_E1_9
+  - first:
+      213: 21300040
+    second: atk_Jump_9
+  - first:
+      213: 21300042
+    second: atk_Jump_0
+  - first:
+      213: 21300044
+    second: atk_Jump_8
+  - first:
+      213: 21300046
+    second: atk_Jump_6
+  - first:
+      213: 21300048
+    second: atk_Jump_7
+  - first:
+      213: 21300050
+    second: atk_Idle_E1_6
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -49,6 +99,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -71,18 +123,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -92,6 +147,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -135,6 +191,13 @@ TextureImporter:
         - {x: -99.5, y: -247.4832}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_1_0
       rect:
@@ -166,6 +229,13 @@ TextureImporter:
         - {x: 184.5, y: -249.9866}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_1_1
       rect:
@@ -199,6 +269,13 @@ TextureImporter:
         - {x: -145.9743, y: -212.9935}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_1_2
       rect:
@@ -236,6 +313,13 @@ TextureImporter:
         - {x: 134.0747, y: 144.0134}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_1_3
       rect:
@@ -270,6 +354,13 @@ TextureImporter:
         - {x: -21.99355, y: 245.5134}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_1_4
       rect:
@@ -308,6 +399,13 @@ TextureImporter:
         - {x: 79.00645, y: 245.0381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_1_5
       rect:
@@ -353,6 +451,13 @@ TextureImporter:
         - {x: 133.0381, y: 133.5168}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_1_6
       rect:
@@ -385,6 +490,13 @@ TextureImporter:
         - {x: 107.0257, y: -247.4866}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_1_7
       rect:
@@ -419,6 +531,13 @@ TextureImporter:
         - {x: -134.5, y: -248.9819}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_1_8
       rect:
@@ -452,6 +571,13 @@ TextureImporter:
         - {x: -125.9866, y: -193.52}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_1_9
       rect:
@@ -486,6 +612,13 @@ TextureImporter:
         - {x: -3.019897, y: -98.01997}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E1_0
       rect:
@@ -514,6 +647,13 @@ TextureImporter:
         - {x: -134, y: 137.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E1_1
       rect:
@@ -542,6 +682,13 @@ TextureImporter:
         - {x: -104.5134, y: -244.0317}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E1_8
       rect:
@@ -573,6 +720,13 @@ TextureImporter:
         - {x: -22.01336, y: -249.5199}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E1_2
       rect:
@@ -602,6 +756,13 @@ TextureImporter:
         - {x: -27.02562, y: -246.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E1_3
       rect:
@@ -632,6 +793,13 @@ TextureImporter:
         - {x: 73.98663, y: 96.47533}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E1_4
       rect:
@@ -662,6 +830,13 @@ TextureImporter:
         - {x: -26, y: -244}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E1_5
       rect:
@@ -690,6 +865,13 @@ TextureImporter:
         - {x: -28.96194, y: -245.5213}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E1_7
       rect:
@@ -718,6 +900,13 @@ TextureImporter:
         - {x: -36, y: -71.01991}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E1_9
       rect:
@@ -748,6 +937,13 @@ TextureImporter:
         - {x: 55.46188, y: -252.5381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Jump_9
       rect:
@@ -792,6 +988,13 @@ TextureImporter:
         - {x: -44, y: -239.5134}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Jump_0
       rect:
@@ -824,6 +1027,13 @@ TextureImporter:
         - {x: 37, y: -249.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Jump_8
       rect:
@@ -856,6 +1066,13 @@ TextureImporter:
         - {x: 46.5, y: -221.0215}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Jump_6
       rect:
@@ -893,6 +1110,13 @@ TextureImporter:
         - {x: 93, y: -247.4743}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Jump_7
       rect:
@@ -927,6 +1151,13 @@ TextureImporter:
         - {x: 11, y: -248.5033}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E1_6
       rect:
@@ -956,9 +1187,26 @@ TextureImporter:
         - {x: -101, y: -246.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

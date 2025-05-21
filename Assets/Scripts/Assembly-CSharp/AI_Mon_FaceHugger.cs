@@ -232,7 +232,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 				onPauseGravity = false;
 				GetComponent<global::UnityEngine.Animator>().speed = 1f;
 				GetComponent<global::UnityEngine.Rigidbody2D>().WakeUp();
-				base.rigidbody2D.velocity = Mon_Velocity;
+				base.GetComponent<UnityEngine.Rigidbody2D>().velocity = Mon_Velocity;
 			}
 			Life_Timer += global::UnityEngine.Time.deltaTime;
 			Grounded_Timer += global::UnityEngine.Time.deltaTime;
@@ -474,7 +474,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		{
 			onPauseGravity = true;
 			GetComponent<global::UnityEngine.Animator>().speed = 0f;
-			Mon_Velocity = base.rigidbody2D.velocity;
+			Mon_Velocity = base.GetComponent<UnityEngine.Rigidbody2D>().velocity;
 			GetComponent<global::UnityEngine.Rigidbody2D>().Sleep();
 		}
 	}
@@ -489,7 +489,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		{
 			Ctrl_1.GetComponent<Puppet2D_GlobalControl>().flip = flip;
 		}
-		GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0.12f * (float)facingRight, 0.69f);
+		GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0.12f * (float)facingRight, 0.69f);
 	}
 
 	private bool Check_PC_State()
@@ -530,13 +530,13 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_1(base.transform.position);
 		if (PC.State == Player_Control.AniState.Sit)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * (20f + global::UnityEngine.Random.Range(0f, 1f)), global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * (20f + global::UnityEngine.Random.Range(0f, 1f)), global::UnityEngine.ForceMode2D.Impulse);
 		}
 		else
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * (30f + global::UnityEngine.Random.Range(0f, 1f)), global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * (30f + global::UnityEngine.Random.Range(0f, 1f)), global::UnityEngine.ForceMode2D.Impulse);
 		}
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 13f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 13f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 	}
 
 	private void Set_JumpBack()
@@ -545,8 +545,8 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Animator>().SetTrigger("onAttack");
 		OnOff_Attack(true);
 		Attack_Delay = 1f;
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 10f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 10f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
 	}
 
 	private void Set_JumpGrab()
@@ -556,8 +556,8 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		OnOff_Attack(true);
 		Attack_Delay = 0.8f;
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_1(base.transform.position);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 15f, global::UnityEngine.ForceMode2D.Impulse);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 15f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 15f, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 15f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 	}
 
 	private void Check_Poison()

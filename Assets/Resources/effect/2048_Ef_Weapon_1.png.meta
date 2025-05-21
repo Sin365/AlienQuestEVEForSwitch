@@ -1,46 +1,114 @@
 fileFormatVersion: 2
 guid: 28d81c9223aa2124d8deba45b06d5f11
-timeCreated: 1747839222
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Ef_Atk_1_3_2
-    21300002: Ef_Atk_1_3_3
-    21300004: Ef_Atk_1_3_4
-    21300006: Ef_Atk_1_3_5
-    21300008: Ef_Atk_1_4_0
-    21300010: Ef_Atk_1_3_0
-    21300012: Ef_Atk_1_3_1
-    21300014: Ef_Atk_1_3_6
-    21300016: Ef_Atk_1_4_2
-    21300018: Ef_Atk_1_4_3
-    21300020: Ef_Atk_1_4_1
-    21300022: Ef_Atk_1_4_5
-    21300024: Ef_Atk_1_4_4
-    21300026: Ef_Atk_1_2_4
-    21300028: Ef_Atk_1_2_3
-    21300030: Ef_Atk_1_2_2
-    21300032: Ef_Atk_1_2_1
-    21300034: Ef_Atk_1_2_5
-    21300036: Ef_Atk_1_3_0A
-    21300038: Ef_Atk_1_3_0B
-    21300040: Ef_SpinEnd_1_2
-    21300042: Ef_SpinEnd_1_1
-    21300044: Ef_Spin_1_1
-    21300046: Ef_Spin_1_2
-    21300048: Ef_Spin_1_3
-    21300050: Ef_Spin_1_4
-    21300052: Ef_SpinGlow_1
-    21300054: Ef_Atk_1_1_4
-    21300056: Ef_Atk_1_1_3
-    21300058: Ef_Atk_1_1_2
-    21300060: Ef_Atk_1_1_1
-    21300062: Ef_Atk_0_0
-    21300064: Ef_Screw_1
-    21300066: Ef_X_GlowBlue
-    21300068: Ef_X_Border_1
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Ef_Atk_1_3_2
+  - first:
+      213: 21300002
+    second: Ef_Atk_1_3_3
+  - first:
+      213: 21300004
+    second: Ef_Atk_1_3_4
+  - first:
+      213: 21300006
+    second: Ef_Atk_1_3_5
+  - first:
+      213: 21300008
+    second: Ef_Atk_1_4_0
+  - first:
+      213: 21300010
+    second: Ef_Atk_1_3_0
+  - first:
+      213: 21300012
+    second: Ef_Atk_1_3_1
+  - first:
+      213: 21300014
+    second: Ef_Atk_1_3_6
+  - first:
+      213: 21300016
+    second: Ef_Atk_1_4_2
+  - first:
+      213: 21300018
+    second: Ef_Atk_1_4_3
+  - first:
+      213: 21300020
+    second: Ef_Atk_1_4_1
+  - first:
+      213: 21300022
+    second: Ef_Atk_1_4_5
+  - first:
+      213: 21300024
+    second: Ef_Atk_1_4_4
+  - first:
+      213: 21300026
+    second: Ef_Atk_1_2_4
+  - first:
+      213: 21300028
+    second: Ef_Atk_1_2_3
+  - first:
+      213: 21300030
+    second: Ef_Atk_1_2_2
+  - first:
+      213: 21300032
+    second: Ef_Atk_1_2_1
+  - first:
+      213: 21300034
+    second: Ef_Atk_1_2_5
+  - first:
+      213: 21300036
+    second: Ef_Atk_1_3_0A
+  - first:
+      213: 21300038
+    second: Ef_Atk_1_3_0B
+  - first:
+      213: 21300040
+    second: Ef_SpinEnd_1_2
+  - first:
+      213: 21300042
+    second: Ef_SpinEnd_1_1
+  - first:
+      213: 21300044
+    second: Ef_Spin_1_1
+  - first:
+      213: 21300046
+    second: Ef_Spin_1_2
+  - first:
+      213: 21300048
+    second: Ef_Spin_1_3
+  - first:
+      213: 21300050
+    second: Ef_Spin_1_4
+  - first:
+      213: 21300052
+    second: Ef_SpinGlow_1
+  - first:
+      213: 21300054
+    second: Ef_Atk_1_1_4
+  - first:
+      213: 21300056
+    second: Ef_Atk_1_1_3
+  - first:
+      213: 21300058
+    second: Ef_Atk_1_1_2
+  - first:
+      213: 21300060
+    second: Ef_Atk_1_1_1
+  - first:
+      213: 21300062
+    second: Ef_Atk_0_0
+  - first:
+      213: 21300064
+    second: Ef_Screw_1
+  - first:
+      213: 21300066
+    second: Ef_X_GlowBlue
+  - first:
+      213: 21300068
+    second: Ef_X_Border_1
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -58,6 +126,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -80,18 +150,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -101,6 +174,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -188,6 +262,13 @@ TextureImporter:
         - {x: -67, y: 135.0381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_3_3
       rect:
@@ -346,6 +427,13 @@ TextureImporter:
         - {x: -206, y: -242}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_3_4
       rect:
@@ -465,6 +553,13 @@ TextureImporter:
         - {x: -195, y: -236}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_3_5
       rect:
@@ -550,6 +645,13 @@ TextureImporter:
         - {x: 132, y: 227.4619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_4_0
       rect:
@@ -575,6 +677,13 @@ TextureImporter:
         - {x: 54.5, y: -29.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_3_0
       rect:
@@ -593,6 +702,13 @@ TextureImporter:
         - {x: 13, y: -13}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_3_1
       rect:
@@ -629,6 +745,13 @@ TextureImporter:
         - {x: -119.5, y: 61.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_3_6
       rect:
@@ -659,6 +782,13 @@ TextureImporter:
         - {x: -20, y: 106.9619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_4_2
       rect:
@@ -761,6 +891,13 @@ TextureImporter:
         - {x: -73, y: 80}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_4_3
       rect:
@@ -878,6 +1015,13 @@ TextureImporter:
         - {x: 280, y: -110.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_4_1
       rect:
@@ -912,6 +1056,13 @@ TextureImporter:
         - {x: 196, y: -65.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_4_5
       rect:
@@ -933,6 +1084,13 @@ TextureImporter:
         - {x: 112.5, y: -130.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_4_4
       rect:
@@ -991,6 +1149,13 @@ TextureImporter:
         - {x: 180.9999, y: 77.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_2_4
       rect:
@@ -1022,6 +1187,13 @@ TextureImporter:
         - {x: 231.5, y: 16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_2_3
       rect:
@@ -1052,6 +1224,13 @@ TextureImporter:
         - {x: -177, y: -63.00001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_2_2
       rect:
@@ -1076,6 +1255,13 @@ TextureImporter:
         - {x: 178, y: -8}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_2_1
       rect:
@@ -1099,6 +1285,13 @@ TextureImporter:
         - {x: 94, y: -38}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_2_5
       rect:
@@ -1120,6 +1313,13 @@ TextureImporter:
         - {x: 154.5, y: -11.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_3_0A
       rect:
@@ -1138,6 +1338,13 @@ TextureImporter:
         - {x: 13, y: -13}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_3_0B
       rect:
@@ -1156,6 +1363,13 @@ TextureImporter:
         - {x: 13, y: -13}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_SpinEnd_1_2
       rect:
@@ -1181,6 +1395,13 @@ TextureImporter:
         - {x: -263.989, y: -27}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_SpinEnd_1_1
       rect:
@@ -1209,6 +1430,13 @@ TextureImporter:
         - {x: -338, y: -27}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Spin_1_1
       rect:
@@ -1232,6 +1460,13 @@ TextureImporter:
         - {x: -235.5001, y: -17.03806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Spin_1_2
       rect:
@@ -1267,6 +1502,13 @@ TextureImporter:
         - {x: -349.0247, y: -12.03806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Spin_1_3
       rect:
@@ -1290,6 +1532,13 @@ TextureImporter:
         - {x: 207.5, y: -17.03806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Spin_1_4
       rect:
@@ -1315,6 +1564,13 @@ TextureImporter:
         - {x: -246.5247, y: -17.03806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_SpinGlow_1
       rect:
@@ -1364,6 +1620,13 @@ TextureImporter:
         - {x: 389, y: -60}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_1_4
       rect:
@@ -1385,6 +1648,13 @@ TextureImporter:
         - {x: 139, y: -20}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_1_3
       rect:
@@ -1405,6 +1675,13 @@ TextureImporter:
         - {x: 164.5, y: -32.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_1_2
       rect:
@@ -1428,6 +1705,13 @@ TextureImporter:
         - {x: -52, y: -45}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_1_1_1
       rect:
@@ -1454,6 +1738,13 @@ TextureImporter:
         - {x: -190.5381, y: -50}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Atk_0_0
       rect:
@@ -1472,6 +1763,13 @@ TextureImporter:
         - {x: 15, y: -15}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_Screw_1
       rect:
@@ -1534,6 +1832,13 @@ TextureImporter:
         - {x: -61.00648, y: 57}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_X_GlowBlue
       rect:
@@ -1613,6 +1918,13 @@ TextureImporter:
         - {x: -167, y: 128}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Ef_X_Border_1
       rect:
@@ -1637,9 +1949,26 @@ TextureImporter:
         - {x: 100, y: -23}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

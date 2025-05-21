@@ -1,52 +1,132 @@
 fileFormatVersion: 2
 guid: 52aa2461a083e9e48827e4bf1ab63117
-timeCreated: 1747839220
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: H_39_Calf_L
-    21300002: H_39_Calf_R
-    21300004: H_39_Leg_R
-    21300006: H_40_Hair
-    21300008: H_40_Body
-    21300010: H_40_Leg_L
-    21300012: H_40_Leg_R
-    21300014: H_39_Leg_L
-    21300016: H_40_Head
-    21300018: H_40_Arm_L
-    21300020: H_40_Arm_R
-    21300022: H_39_MonFinger_1
-    21300024: H_39_Neck
-    21300026: H_39_Breast_R
-    21300028: H_40_Calf_R
-    21300030: H_39_MonFinger_2
-    21300032: H_39_Breast_L
-    21300034: H_39_MonFinger_3
-    21300036: H_39_MonFinger_4
-    21300038: H_39_Body
-    21300040: H_39_Head
-    21300042: H_41_Breast_L
-    21300044: H_41_Breast_R
-    21300046: H_40_Breast_L
-    21300048: H_40_Breast_R
-    21300050: H_40_Calf_L
-    21300052: H_39_Arm_R
-    21300054: H_41_Leg_R
-    21300056: H_41_Calf_R
-    21300058: H_41_Head
-    21300060: H_39_MonArm_R
-    21300062: H_39_MonArm_L
-    21300064: H_41_Arm_L
-    21300066: H_41_Arm_R
-    21300068: H_40_MonArm_L
-    21300070: H_40_MonArm_R
-    21300072: H_41_MonArm
-    21300074: H_40_Hair_Back
-    21300076: H_40_Mouth
-    21300078: H_39_Mouth
-    21300080: H_41_Mouth
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: H_39_Calf_L
+  - first:
+      213: 21300002
+    second: H_39_Calf_R
+  - first:
+      213: 21300004
+    second: H_39_Leg_R
+  - first:
+      213: 21300006
+    second: H_40_Hair
+  - first:
+      213: 21300008
+    second: H_40_Body
+  - first:
+      213: 21300010
+    second: H_40_Leg_L
+  - first:
+      213: 21300012
+    second: H_40_Leg_R
+  - first:
+      213: 21300014
+    second: H_39_Leg_L
+  - first:
+      213: 21300016
+    second: H_40_Head
+  - first:
+      213: 21300018
+    second: H_40_Arm_L
+  - first:
+      213: 21300020
+    second: H_40_Arm_R
+  - first:
+      213: 21300022
+    second: H_39_MonFinger_1
+  - first:
+      213: 21300024
+    second: H_39_Neck
+  - first:
+      213: 21300026
+    second: H_39_Breast_R
+  - first:
+      213: 21300028
+    second: H_40_Calf_R
+  - first:
+      213: 21300030
+    second: H_39_MonFinger_2
+  - first:
+      213: 21300032
+    second: H_39_Breast_L
+  - first:
+      213: 21300034
+    second: H_39_MonFinger_3
+  - first:
+      213: 21300036
+    second: H_39_MonFinger_4
+  - first:
+      213: 21300038
+    second: H_39_Body
+  - first:
+      213: 21300040
+    second: H_39_Head
+  - first:
+      213: 21300042
+    second: H_41_Breast_L
+  - first:
+      213: 21300044
+    second: H_41_Breast_R
+  - first:
+      213: 21300046
+    second: H_40_Breast_L
+  - first:
+      213: 21300048
+    second: H_40_Breast_R
+  - first:
+      213: 21300050
+    second: H_40_Calf_L
+  - first:
+      213: 21300052
+    second: H_39_Arm_R
+  - first:
+      213: 21300054
+    second: H_41_Leg_R
+  - first:
+      213: 21300056
+    second: H_41_Calf_R
+  - first:
+      213: 21300058
+    second: H_41_Head
+  - first:
+      213: 21300060
+    second: H_39_MonArm_R
+  - first:
+      213: 21300062
+    second: H_39_MonArm_L
+  - first:
+      213: 21300064
+    second: H_41_Arm_L
+  - first:
+      213: 21300066
+    second: H_41_Arm_R
+  - first:
+      213: 21300068
+    second: H_40_MonArm_L
+  - first:
+      213: 21300070
+    second: H_40_MonArm_R
+  - first:
+      213: 21300072
+    second: H_41_MonArm
+  - first:
+      213: 21300074
+    second: H_40_Hair_Back
+  - first:
+      213: 21300076
+    second: H_40_Mouth
+  - first:
+      213: 21300078
+    second: H_39_Mouth
+  - first:
+      213: 21300080
+    second: H_41_Mouth
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -64,6 +144,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -86,18 +168,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,6 +192,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -134,6 +220,13 @@ TextureImporter:
         - {x: 45.02468, y: -113.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_Calf_R
       rect:
@@ -160,6 +253,13 @@ TextureImporter:
         - {x: 7.999992, y: -125.9877}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_Leg_R
       rect:
@@ -188,6 +288,13 @@ TextureImporter:
         - {x: 85.49998, y: -103}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Hair
       rect:
@@ -213,6 +320,13 @@ TextureImporter:
         - {x: -17.52468, y: -63.99015}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Body
       rect:
@@ -235,6 +349,13 @@ TextureImporter:
         - {x: 48.5247, y: -84.9753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Leg_L
       rect:
@@ -257,6 +378,13 @@ TextureImporter:
         - {x: 31.5, y: -123.4863}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Leg_R
       rect:
@@ -282,6 +410,13 @@ TextureImporter:
         - {x: -54.46843, y: 100.4911}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_Leg_L
       rect:
@@ -306,6 +441,13 @@ TextureImporter:
         - {x: 86.00987, y: -61.9753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Head
       rect:
@@ -329,6 +471,13 @@ TextureImporter:
         - {x: -8.997486, y: -45.49015}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Arm_L
       rect:
@@ -350,6 +499,13 @@ TextureImporter:
         - {x: 22.50001, y: -125.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Arm_R
       rect:
@@ -373,6 +529,13 @@ TextureImporter:
         - {x: -17.99999, y: -138.5065}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_MonFinger_1
       rect:
@@ -397,6 +560,13 @@ TextureImporter:
         - {x: -1.524683, y: -17.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_Neck
       rect:
@@ -418,6 +588,13 @@ TextureImporter:
         - {x: 23.98772, y: -4.524673}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_Breast_R
       rect:
@@ -440,6 +617,13 @@ TextureImporter:
         - {x: 21.49999, y: -50.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Calf_R
       rect:
@@ -462,6 +646,13 @@ TextureImporter:
         - {x: 87.00002, y: -80.9753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_MonFinger_2
       rect:
@@ -480,6 +671,13 @@ TextureImporter:
         - {x: 37.5, y: -13}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_Breast_L
       rect:
@@ -501,6 +699,13 @@ TextureImporter:
         - {x: 44.01992, y: -41.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_MonFinger_3
       rect:
@@ -524,6 +729,13 @@ TextureImporter:
         - {x: 0.9851875, y: -16.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_MonFinger_4
       rect:
@@ -549,6 +761,13 @@ TextureImporter:
         - {x: -11.01545, y: -17.9919}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_Body
       rect:
@@ -572,6 +791,13 @@ TextureImporter:
         - {x: 77.99245, y: 10.47533}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_Head
       rect:
@@ -595,6 +821,13 @@ TextureImporter:
         - {x: 34.99327, y: -78.9808}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_41_Breast_L
       rect:
@@ -618,6 +851,13 @@ TextureImporter:
         - {x: 29.02467, y: -45.46637}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_41_Breast_R
       rect:
@@ -646,6 +886,13 @@ TextureImporter:
         - {x: 34.49355, y: -47.47794}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Breast_L
       rect:
@@ -666,6 +913,13 @@ TextureImporter:
         - {x: 37.50001, y: -62.00002}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Breast_R
       rect:
@@ -689,6 +943,13 @@ TextureImporter:
         - {x: -16.99999, y: -65.015}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Calf_L
       rect:
@@ -714,6 +975,13 @@ TextureImporter:
         - {x: 52.00002, y: -84.52467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_Arm_R
       rect:
@@ -734,6 +1002,13 @@ TextureImporter:
         - {x: 117, y: 7.99192}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_41_Leg_R
       rect:
@@ -756,6 +1031,13 @@ TextureImporter:
         - {x: 85.5, y: -101.9753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_41_Calf_R
       rect:
@@ -778,6 +1060,13 @@ TextureImporter:
         - {x: -70.52467, y: -130}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_41_Head
       rect:
@@ -800,6 +1089,13 @@ TextureImporter:
         - {x: 28.4963, y: -87.00002}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_MonArm_R
       rect:
@@ -823,6 +1119,13 @@ TextureImporter:
         - {x: -11.48339, y: -126.9762}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_MonArm_L
       rect:
@@ -845,6 +1148,13 @@ TextureImporter:
         - {x: -26.47531, y: -126.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_41_Arm_L
       rect:
@@ -867,6 +1177,13 @@ TextureImporter:
         - {x: 43.49998, y: -127.4619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_41_Arm_R
       rect:
@@ -889,6 +1206,13 @@ TextureImporter:
         - {x: -2.506935, y: -129.5124}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_MonArm_L
       rect:
@@ -910,6 +1234,13 @@ TextureImporter:
         - {x: 113.5, y: -20.52469}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_MonArm_R
       rect:
@@ -932,6 +1263,13 @@ TextureImporter:
         - {x: 110.0247, y: 32.47531}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 66305410000000000800000000000000
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_41_MonArm
       rect:
@@ -954,6 +1292,13 @@ TextureImporter:
         - {x: 30.01662, y: -43}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 86305410000000000800000000000000
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Hair_Back
       rect:
@@ -975,6 +1320,13 @@ TextureImporter:
         - {x: 9.5, y: -30.51336}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a6305410000000000800000000000000
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_40_Mouth
       rect:
@@ -993,6 +1345,13 @@ TextureImporter:
         - {x: 15, y: -11.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c6305410000000000800000000000000
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_39_Mouth
       rect:
@@ -1011,6 +1370,13 @@ TextureImporter:
         - {x: 11, y: -12.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e6305410000000000800000000000000
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_41_Mouth
       rect:
@@ -1029,9 +1395,26 @@ TextureImporter:
         - {x: 12, y: -15}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 07305410000000000800000000000000
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

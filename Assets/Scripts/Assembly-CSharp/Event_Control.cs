@@ -234,7 +234,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 					}
 					global::UnityEngine.GameObject.Find("Main Camera").transform.position = CamPos;
 					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = CamSize_Target;
-					global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize = CamSize;
+					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = CamSize;
 					if (FadeInfo_Num > 0)
 					{
 						Make_Info(FadeInfo_Num);
@@ -703,7 +703,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-200f, -98f, -10f), 0.1f);
 		global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(-200f, -101f, -10f);
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = CamSize_Target;
-		global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize = CamSize;
+		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = CamSize;
 		Opening_Ship = global::UnityEngine.Object.Instantiate(_openingShip, new global::UnityEngine.Vector3(-200f, -100f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		Opening_Ship.transform.localScale = new global::UnityEngine.Vector3(1.2f, 1.2f, 1f);
 		Room_MotherBrain = global::UnityEngine.Object.Instantiate(_room_MotherBrain, new global::UnityEngine.Vector3(-100f, -100f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
@@ -762,7 +762,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(Room_0_Pos_X, 0.36f, -10f), 0.1f);
 		global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(Room_0_Pos_X, 3f, -10f);
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 8f;
-		global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize = 9f;
+		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 9f;
 		if (global::UnityEngine.PlayerPrefs.GetInt("onClockFps") == 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_TimePlay").GetComponent<global::UnityEngine.UI.Text>().enabled = true;

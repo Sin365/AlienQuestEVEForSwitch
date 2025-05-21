@@ -36,7 +36,7 @@ public class Room_Control : global::UnityEngine.MonoBehaviour
 			{
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().MaxSize = MaxCam_Size;
 			}
-			if (global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize > MaxCam_Size || Start_MaxCam)
+			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize > MaxCam_Size || Start_MaxCam)
 			{
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = MaxCam_Size;
 			}

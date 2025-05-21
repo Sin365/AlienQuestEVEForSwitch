@@ -204,7 +204,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				{
 					GetComponent<global::UnityEngine.Animator>().speed = 1f;
 					GetComponent<global::UnityEngine.Rigidbody2D>().WakeUp();
-					base.rigidbody2D.velocity = Mon_Velocity;
+					base.GetComponent<UnityEngine.Rigidbody2D>().velocity = Mon_Velocity;
 				}
 			}
 			if (onEvent)
@@ -270,7 +270,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 			if (onKnockback && knockback_Timer <= 0f)
 			{
 				onKnockback = false;
-				base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
+				base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
 				knockback_Timer = 0f;
 			}
 			if (MagicFire_1_Num_Timer > 0f)
@@ -456,7 +456,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 		{
 			onPauseGravity = true;
 			GetComponent<global::UnityEngine.Animator>().speed = 0f;
-			Mon_Velocity = base.rigidbody2D.velocity;
+			Mon_Velocity = base.GetComponent<UnityEngine.Rigidbody2D>().velocity;
 			GetComponent<global::UnityEngine.Rigidbody2D>().Sleep();
 		}
 	}
@@ -1001,7 +1001,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 		{
 			return;
 		}
-		if (Mon_Num == 55 && base.rigidbody2D.gravityScale == 0f && col.name == "Ani" && QueenShield_Delay <= 0f)
+		if (Mon_Num == 55 && base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale == 0f && col.name == "Ani" && QueenShield_Delay <= 0f)
 		{
 			QueenShield_Delay = 0.5f;
 			PC_Col_Delay = 0.2f;
@@ -1015,7 +1015,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 			{
 				flag2 = true;
 			}
-			Player.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, Player.rigidbody2D.velocity.y);
+			Player.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, Player.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
 			if (Player.transform.position.x < base.transform.position.x + 1.44f * (float)(-facingRight))
 			{
 				if (flag || flag2)
@@ -1024,7 +1024,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				}
 				if (GM.onShield)
 				{
-					Player.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * -40f, global::UnityEngine.ForceMode2D.Impulse);
+					Player.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * -40f, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				else if (QueenDash_Delay > 0f)
 				{
@@ -1043,7 +1043,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				}
 				if (GM.onShield)
 				{
-					Player.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 40f, global::UnityEngine.ForceMode2D.Impulse);
+					Player.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 40f, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				else if (QueenDash_Delay > 0f)
 				{
@@ -1105,8 +1105,8 @@ public class Monster : global::UnityEngine.MonoBehaviour
 			PC_Col_Delay = 0.3f;
 			PC_Body_Delay = 0.3f;
 			Invincible_Delay = 0.3f;
-			Player.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, Player.rigidbody2D.velocity.y);
-			Player.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 40f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			Player.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, Player.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+			Player.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 40f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 			if (isInvincible)
 			{
 				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Player_Damage(Mon_Num, true, Player.transform.position);
@@ -1159,14 +1159,14 @@ public class Monster : global::UnityEngine.MonoBehaviour
 			else if (Mon_Num <= 36 && Mon_Num != 12 && Mon_Num != 15 && Mon_Num != 19 && Mon_Num != 20 && Mon_Num != 24)
 			{
 				int num = ((col.transform.position.x < base.transform.position.x) ? 1 : (-1));
-				base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-				if (base.rigidbody2D.gravityScale > 0f)
+				base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+				if (base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale > 0f)
 				{
-					base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 20f * num, global::UnityEngine.ForceMode2D.Impulse);
+					base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 20f * num, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				else
 				{
-					base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 10f * num, global::UnityEngine.ForceMode2D.Impulse);
+					base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 10f * num, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				onKnockback = true;
 				knockback_Timer = 0.2f;
@@ -1245,8 +1245,8 @@ public class Monster : global::UnityEngine.MonoBehaviour
 					{
 						MagicFire_1_Timer = 0.1f;
 					}
-					base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-					base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * num2, global::UnityEngine.ForceMode2D.Impulse);
+					base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+					base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * num2, global::UnityEngine.ForceMode2D.Impulse);
 					onKnockback = true;
 					knockback_Timer = 0.2f;
 				}
@@ -1391,18 +1391,18 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				PC_Body_Delay = 0f;
 			}
 		}
-		else if (col.tag == "Col_PC_Atk" && isInvincible && Mon_Num == 55 && base.rigidbody2D.gravityScale == 0f)
+		else if (col.tag == "Col_PC_Atk" && isInvincible && Mon_Num == 55 && base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale == 0f)
 		{
 			if (PC_Col_Delay <= 0f)
 			{
 				PC_Col_Delay = 0.5f;
 				if (base.transform.position.x < Player.transform.position.x)
 				{
-					Player.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 20f, global::UnityEngine.ForceMode2D.Impulse);
+					Player.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 20f, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				else
 				{
-					Player.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * -20f, global::UnityEngine.ForceMode2D.Impulse);
+					Player.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * -20f, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Electric_Dmg(Player.transform.position);
 			}
@@ -1476,21 +1476,21 @@ public class Monster : global::UnityEngine.MonoBehaviour
 			return;
 		}
 		int num = ((base.transform.position.x > Player.transform.position.x) ? 1 : (-1));
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		if (base.rigidbody2D.gravityScale > 0f)
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		if (base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale > 0f)
 		{
 			if (Mon_Num != 55)
 			{
-				base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 8f * force * num, global::UnityEngine.ForceMode2D.Impulse);
+				base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 8f * force * num, global::UnityEngine.ForceMode2D.Impulse);
 			}
 			else
 			{
-				base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 800f * force * num, global::UnityEngine.ForceMode2D.Impulse);
+				base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 800f * force * num, global::UnityEngine.ForceMode2D.Impulse);
 			}
 		}
 		else
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 3f * force * num, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 3f * force * num, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		onKnockback = true;
 		knockback_Timer = 0.35f;

@@ -21,8 +21,8 @@ public class Sound : global::UnityEngine.MonoBehaviour
 	private void Start()
 	{
 		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Volume_Orig = base.audio.volume;
-		Dist_Orig = base.audio.volume * GM.Option_Volume[0];
+		Volume_Orig = base.GetComponent<UnityEngine.AudioSource>().volume;
+		Dist_Orig = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
 		if (!OnEvent)
 		{
 			Check_Distance();
@@ -34,19 +34,19 @@ public class Sound : global::UnityEngine.MonoBehaviour
 		if (!GM.Paused)
 		{
 			life_Timer += global::UnityEngine.Time.deltaTime;
-			if (!isPlayStarted && !base.audio.isPlaying)
+			if (!isPlayStarted && !base.GetComponent<UnityEngine.AudioSource>().isPlaying)
 			{
-				base.audio.Play();
+				base.GetComponent<UnityEngine.AudioSource>().Play();
 				isPlayStarted = true;
 			}
 			if (isPaused)
 			{
 				Dist_Orig = Volume_Orig * GM.Option_Volume[0];
-				base.audio.volume = Dist_Orig * Dist_Var;
+				base.GetComponent<UnityEngine.AudioSource>().volume = Dist_Orig * Dist_Var;
 				isPaused = false;
-				base.audio.Play();
+				base.GetComponent<UnityEngine.AudioSource>().Play();
 			}
-			else if (isPlayStarted && life_Timer > 0.4f && !base.audio.isPlaying)
+			else if (isPlayStarted && life_Timer > 0.4f && !base.GetComponent<UnityEngine.AudioSource>().isPlaying)
 			{
 				Destroy_Self();
 			}
@@ -55,9 +55,9 @@ public class Sound : global::UnityEngine.MonoBehaviour
 				Check_Distance();
 			}
 		}
-		else if (base.audio.isPlaying)
+		else if (base.GetComponent<UnityEngine.AudioSource>().isPlaying)
 		{
-			base.audio.Pause();
+			base.GetComponent<UnityEngine.AudioSource>().Pause();
 			isPaused = true;
 		}
 	}
@@ -86,7 +86,7 @@ public class Sound : global::UnityEngine.MonoBehaviour
 		{
 			Dist_Var = 0f;
 		}
-		base.audio.volume = Dist_Orig * Dist_Var;
+		base.GetComponent<UnityEngine.AudioSource>().volume = Dist_Orig * Dist_Var;
 	}
 
 	private void Destroy_Self()

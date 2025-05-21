@@ -133,8 +133,8 @@ public class AI_Mon_9 : global::UnityEngine.MonoBehaviour
 		Jump_Timer = 0.3f;
 		Attack_Delay = 2f;
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_1(base.transform.position);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 42f * GetComponent<Monster>().Move_Speed, global::UnityEngine.ForceMode2D.Impulse);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 15f * facingRight * GetComponent<Monster>().Move_Speed, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 42f * GetComponent<Monster>().Move_Speed, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 15f * facingRight * GetComponent<Monster>().Move_Speed, global::UnityEngine.ForceMode2D.Impulse);
 		GetComponent<global::UnityEngine.Animator>().SetInteger("JumpState", 2);
 	}
 
@@ -153,7 +153,7 @@ public class AI_Mon_9 : global::UnityEngine.MonoBehaviour
 	private void Hit_Force()
 	{
 		GetComponent<global::UnityEngine.Animator>().SetInteger("JumpState", 0);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 12f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 12f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
 	}
 
 	private void FreezeJump()

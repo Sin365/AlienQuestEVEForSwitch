@@ -1,42 +1,102 @@
 fileFormatVersion: 2
 guid: 294c8552526f58443869d008484c2f62
-timeCreated: 1747839223
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Mon_40_Arm_R
-    21300002: Mon_40_Arm_L
-    21300004: Mon_40_Teeth_Top
-    21300006: Mon_40_Body
-    21300008: Mon_40_Tail_Top
-    21300010: Mon_40_Teeth_Bot
-    21300012: Mon_40_Jaw_Back
-    21300014: Mon_40_Tail_Bot
-    21300016: Mon_40_Hand_R
-    21300018: Mon_40_Hand_L
-    21300020: Mon_42_Head
-    21300022: Mon_42_hand_R
-    21300024: Mon_42_hand_L
-    21300026: Mon_42_Arm_R
-    21300028: Mon_42_Arm_L
-    21300030: Mon_42_Leg_R
-    21300032: Mon_42_Leg_L
-    21300034: Mon_42_Tongue
-    21300036: Mon_42_Teeth_Top
-    21300038: Mon_42_Finger_R
-    21300040: Mon_42_Neck
-    21300042: Mon_42_Back_R1
-    21300044: Mon_42_Teeth_Bot
-    21300046: Mon_42_Body
-    21300048: Mon_42_Tail_Blade
-    21300050: Mon_42_Tail
-    21300052: Mon_42_Finger_L
-    21300054: Mon_42_Tail_Tip
-    21300056: Mon_42_Back_L1
-    21300058: Mon_42_Back_L2
-    21300060: Mon_42_Back_R2
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Mon_40_Arm_R
+  - first:
+      213: 21300002
+    second: Mon_40_Arm_L
+  - first:
+      213: 21300004
+    second: Mon_40_Teeth_Top
+  - first:
+      213: 21300006
+    second: Mon_40_Body
+  - first:
+      213: 21300008
+    second: Mon_40_Tail_Top
+  - first:
+      213: 21300010
+    second: Mon_40_Teeth_Bot
+  - first:
+      213: 21300012
+    second: Mon_40_Jaw_Back
+  - first:
+      213: 21300014
+    second: Mon_40_Tail_Bot
+  - first:
+      213: 21300016
+    second: Mon_40_Hand_R
+  - first:
+      213: 21300018
+    second: Mon_40_Hand_L
+  - first:
+      213: 21300020
+    second: Mon_42_Head
+  - first:
+      213: 21300022
+    second: Mon_42_hand_R
+  - first:
+      213: 21300024
+    second: Mon_42_hand_L
+  - first:
+      213: 21300026
+    second: Mon_42_Arm_R
+  - first:
+      213: 21300028
+    second: Mon_42_Arm_L
+  - first:
+      213: 21300030
+    second: Mon_42_Leg_R
+  - first:
+      213: 21300032
+    second: Mon_42_Leg_L
+  - first:
+      213: 21300034
+    second: Mon_42_Tongue
+  - first:
+      213: 21300036
+    second: Mon_42_Teeth_Top
+  - first:
+      213: 21300038
+    second: Mon_42_Finger_R
+  - first:
+      213: 21300040
+    second: Mon_42_Neck
+  - first:
+      213: 21300042
+    second: Mon_42_Back_R1
+  - first:
+      213: 21300044
+    second: Mon_42_Teeth_Bot
+  - first:
+      213: 21300046
+    second: Mon_42_Body
+  - first:
+      213: 21300048
+    second: Mon_42_Tail_Blade
+  - first:
+      213: 21300050
+    second: Mon_42_Tail
+  - first:
+      213: 21300052
+    second: Mon_42_Finger_L
+  - first:
+      213: 21300054
+    second: Mon_42_Tail_Tip
+  - first:
+      213: 21300056
+    second: Mon_42_Back_L1
+  - first:
+      213: 21300058
+    second: Mon_42_Back_L2
+  - first:
+      213: 21300060
+    second: Mon_42_Back_R2
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -54,6 +114,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -76,18 +138,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -97,6 +162,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -129,6 +195,13 @@ TextureImporter:
         - {x: -4.5, y: -129.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_40_Arm_L
       rect:
@@ -158,6 +231,13 @@ TextureImporter:
         - {x: -4.5, y: -129.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_40_Teeth_Top
       rect:
@@ -180,6 +260,13 @@ TextureImporter:
         - {x: -0.5380669, y: -39.00645}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_40_Body
       rect:
@@ -283,6 +370,13 @@ TextureImporter:
         - {x: -244.0142, y: -139.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_40_Tail_Top
       rect:
@@ -367,6 +461,13 @@ TextureImporter:
         - {x: -158.9753, y: 121}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_40_Teeth_Bot
       rect:
@@ -387,6 +488,13 @@ TextureImporter:
         - {x: 7.483387, y: -22.49354}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_40_Jaw_Back
       rect:
@@ -412,6 +520,13 @@ TextureImporter:
         - {x: -5.000004, y: -44.96194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_40_Tail_Bot
       rect:
@@ -474,6 +589,13 @@ TextureImporter:
         - {x: 118.9883, y: -145.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_40_Hand_R
       rect:
@@ -495,6 +617,13 @@ TextureImporter:
         - {x: 120.5, y: -59.50543}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_40_Hand_L
       rect:
@@ -516,6 +645,13 @@ TextureImporter:
         - {x: 120.5, y: -59.50542}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Head
       rect:
@@ -605,6 +741,13 @@ TextureImporter:
         - {x: -167.5247, y: -341.4835}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_hand_R
       rect:
@@ -632,6 +775,13 @@ TextureImporter:
         - {x: 17.97668, y: -149.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_hand_L
       rect:
@@ -660,6 +810,13 @@ TextureImporter:
         - {x: -112.0233, y: 26.52469}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Arm_R
       rect:
@@ -692,6 +849,13 @@ TextureImporter:
         - {x: -25.01666, y: -193.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Arm_L
       rect:
@@ -724,6 +888,13 @@ TextureImporter:
         - {x: -25.01666, y: -193.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Leg_R
       rect:
@@ -780,6 +951,13 @@ TextureImporter:
         - {x: -125.5247, y: -382.9835}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Leg_L
       rect:
@@ -835,6 +1013,13 @@ TextureImporter:
         - {x: -87.52473, y: -377.9835}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Tongue
       rect:
@@ -860,6 +1045,13 @@ TextureImporter:
         - {x: -62.96842, y: -51.00005}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Teeth_Top
       rect:
@@ -887,6 +1079,13 @@ TextureImporter:
         - {x: 17.97532, y: -16.46194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Finger_R
       rect:
@@ -911,6 +1110,13 @@ TextureImporter:
         - {x: 19.00465, y: -93.9877}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Neck
       rect:
@@ -940,6 +1146,13 @@ TextureImporter:
         - {x: 21.5, y: -75.00005}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Back_R1
       rect:
@@ -962,6 +1175,13 @@ TextureImporter:
         - {x: -83.51997, y: -92.98502}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Teeth_Bot
       rect:
@@ -984,6 +1204,13 @@ TextureImporter:
         - {x: 33.50002, y: -40.03166}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Body
       rect:
@@ -1063,6 +1290,13 @@ TextureImporter:
         - {x: -184.0247, y: 151.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Tail_Blade
       rect:
@@ -1092,6 +1326,13 @@ TextureImporter:
         - {x: -102, y: -238}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Tail
       rect:
@@ -1169,6 +1410,13 @@ TextureImporter:
         - {x: -448.5247, y: -196.5123}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Finger_L
       rect:
@@ -1192,6 +1440,13 @@ TextureImporter:
         - {x: -28.01189, y: -132}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Tail_Tip
       rect:
@@ -1216,6 +1471,13 @@ TextureImporter:
         - {x: 50.49712, y: -102.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Back_L1
       rect:
@@ -1236,6 +1498,13 @@ TextureImporter:
         - {x: 122.5, y: 54.97533}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Back_L2
       rect:
@@ -1256,6 +1525,13 @@ TextureImporter:
         - {x: 76.50806, y: 28.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_42_Back_R2
       rect:
@@ -1277,9 +1553,26 @@ TextureImporter:
         - {x: -63.99998, y: -38.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

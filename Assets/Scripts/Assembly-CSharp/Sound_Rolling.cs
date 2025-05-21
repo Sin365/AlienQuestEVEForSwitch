@@ -17,39 +17,39 @@ public class Sound_Rolling : global::UnityEngine.MonoBehaviour
 		{
 			if (Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0f)
 			{
-				if (!base.audio.isPlaying)
+				if (!base.GetComponent<UnityEngine.AudioSource>().isPlaying)
 				{
-					base.audio.Play();
+					base.GetComponent<UnityEngine.AudioSource>().Play();
 				}
-				base.audio.volume = Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().color.a * GM.Option_Volume[0];
+				base.GetComponent<UnityEngine.AudioSource>().volume = Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().color.a * GM.Option_Volume[0];
 			}
 			else if (Effect_Spin.GetComponent<global::UnityEngine.SpriteRenderer>().sprite != null)
 			{
-				if (!base.audio.isPlaying)
+				if (!base.GetComponent<UnityEngine.AudioSource>().isPlaying)
 				{
-					base.audio.Play();
+					base.GetComponent<UnityEngine.AudioSource>().Play();
 				}
-				base.audio.volume = global::UnityEngine.Mathf.Lerp(base.audio.volume, 0.6f * GM.Option_Volume[0], global::UnityEngine.Time.deltaTime * 2f);
+				base.GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.AudioSource>().volume, 0.6f * GM.Option_Volume[0], global::UnityEngine.Time.deltaTime * 2f);
 			}
-			else if (base.audio.isPlaying)
+			else if (base.GetComponent<UnityEngine.AudioSource>().isPlaying)
 			{
-				if (base.audio.volume > 0f)
+				if (base.GetComponent<UnityEngine.AudioSource>().volume > 0f)
 				{
-					base.audio.volume -= global::UnityEngine.Time.deltaTime * 2f;
+					base.GetComponent<UnityEngine.AudioSource>().volume -= global::UnityEngine.Time.deltaTime * 2f;
 				}
 				else
 				{
-					base.audio.Pause();
+					base.GetComponent<UnityEngine.AudioSource>().Pause();
 				}
 			}
 			else
 			{
-				base.audio.volume = 0f;
+				base.GetComponent<UnityEngine.AudioSource>().volume = 0f;
 			}
 		}
 		else
 		{
-			base.audio.Pause();
+			base.GetComponent<UnityEngine.AudioSource>().Pause();
 		}
 	}
 }

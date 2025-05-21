@@ -188,7 +188,7 @@ public class H_GameOver_2 : global::UnityEngine.MonoBehaviour
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().Cam_Bot = -10f;
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().Cam_Right = 20f;
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().Cam_Left = -20f;
-				global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize = 4.5f;
+				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 4.5f;
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().targetSize = 7f;
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().MaxSize = 8.4f;
 				global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(0f, 0.8f, -10f);
@@ -204,7 +204,7 @@ public class H_GameOver_2 : global::UnityEngine.MonoBehaviour
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Bot = -10f;
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Right = 20f;
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Left = -20f;
-				global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize = 4.5f;
+				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 4.5f;
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().targetSize = 7f;
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().MaxSize = 8.4f;
 				global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(0f, 0.8f, -10f);

@@ -1,33 +1,75 @@
 fileFormatVersion: 2
 guid: caf90110990400e4ebd22bbe3ae2eb44
-timeCreated: 1747839221
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: mon_18_Arm_L
-    21300002: mon_18_Body
-    21300004: mon_18_Arm_R
-    21300006: mon_18_Leg_R
-    21300008: H_21_Head
-    21300010: H_21_Mon_Hand
-    21300012: H_21_Breast_L
-    21300014: H_21_Breast_R
-    21300016: mon_18_Center
-    21300018: mon_18_Penis
-    21300020: H_21_Hair
-    21300022: H_21_Body
-    21300024: mon_18_Penis_Wet
-    21300026: mon_18_Penis_Mosaic
-    21300028: mon_18_Leg_L
-    21300030: H_21_Leg_L
-    21300032: H_21_Leg_R
-    21300034: H_21_MonArm_L
-    21300036: H_21_MonArm_R
-    21300038: H_21_Arm
-    21300040: H_21_Mouth
-    21300042: H_21_Hair_Back
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: mon_18_Arm_L
+  - first:
+      213: 21300002
+    second: mon_18_Body
+  - first:
+      213: 21300004
+    second: mon_18_Arm_R
+  - first:
+      213: 21300006
+    second: mon_18_Leg_R
+  - first:
+      213: 21300008
+    second: H_21_Head
+  - first:
+      213: 21300010
+    second: H_21_Mon_Hand
+  - first:
+      213: 21300012
+    second: H_21_Breast_L
+  - first:
+      213: 21300014
+    second: H_21_Breast_R
+  - first:
+      213: 21300016
+    second: mon_18_Center
+  - first:
+      213: 21300018
+    second: mon_18_Penis
+  - first:
+      213: 21300020
+    second: H_21_Hair
+  - first:
+      213: 21300022
+    second: H_21_Body
+  - first:
+      213: 21300024
+    second: mon_18_Penis_Wet
+  - first:
+      213: 21300026
+    second: mon_18_Penis_Mosaic
+  - first:
+      213: 21300028
+    second: mon_18_Leg_L
+  - first:
+      213: 21300030
+    second: H_21_Leg_L
+  - first:
+      213: 21300032
+    second: H_21_Leg_R
+  - first:
+      213: 21300034
+    second: H_21_MonArm_L
+  - first:
+      213: 21300036
+    second: H_21_MonArm_R
+  - first:
+      213: 21300038
+    second: H_21_Arm
+  - first:
+      213: 21300040
+    second: H_21_Mouth
+  - first:
+      213: 21300042
+    second: H_21_Hair_Back
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -45,6 +87,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -67,18 +111,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -88,6 +135,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -125,6 +173,13 @@ TextureImporter:
         - {x: -132.5, y: -211.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_18_Body
       rect:
@@ -233,6 +288,13 @@ TextureImporter:
         - {x: -42, y: -332.4619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_18_Arm_R
       rect:
@@ -267,6 +329,13 @@ TextureImporter:
         - {x: -63.5, y: 70.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_18_Leg_R
       rect:
@@ -303,6 +372,13 @@ TextureImporter:
         - {x: 106.5, y: -188.0127}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Head
       rect:
@@ -328,6 +404,13 @@ TextureImporter:
         - {x: -8, y: -31.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Mon_Hand
       rect:
@@ -351,6 +434,13 @@ TextureImporter:
         - {x: 16, y: -29}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Breast_L
       rect:
@@ -373,6 +463,13 @@ TextureImporter:
         - {x: 13.98663, y: -42.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Breast_R
       rect:
@@ -396,6 +493,13 @@ TextureImporter:
         - {x: 14.99999, y: -42.53805}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_18_Center
       rect:
@@ -416,6 +520,13 @@ TextureImporter:
         - {x: 28.5, y: -35.01339}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_18_Penis
       rect:
@@ -436,6 +547,13 @@ TextureImporter:
         - {x: 67.47533, y: -46.00002}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Hair
       rect:
@@ -448,7 +566,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.499765}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -3.814697E-06, y: -27.02207}
+      - - {x: -0.000003814697, y: -27.02207}
         - {x: 4.999996, y: -34.02206}
         - {x: -11, y: -47.02206}
         - {x: -41, y: -47.02206}
@@ -463,6 +581,13 @@ TextureImporter:
         - {x: 30, y: -32.02206}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Body
       rect:
@@ -486,6 +611,13 @@ TextureImporter:
         - {x: 86, y: -49.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_18_Penis_Wet
       rect:
@@ -508,6 +640,13 @@ TextureImporter:
         - {x: 9.475327, y: -46.00002}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_18_Penis_Mosaic
       rect:
@@ -530,6 +669,13 @@ TextureImporter:
         - {x: 69.50002, y: -49.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_18_Leg_L
       rect:
@@ -562,6 +708,13 @@ TextureImporter:
         - {x: -0.02468109, y: -176.4619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Leg_L
       rect:
@@ -583,6 +736,13 @@ TextureImporter:
         - {x: 42.98661, y: -147.5123}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Leg_R
       rect:
@@ -605,6 +765,13 @@ TextureImporter:
         - {x: 12.52467, y: -170.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_MonArm_L
       rect:
@@ -632,6 +799,13 @@ TextureImporter:
         - {x: -77.5, y: -165.5381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_MonArm_R
       rect:
@@ -676,6 +850,13 @@ TextureImporter:
         - {x: -173.5381, y: -158.5192}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Arm
       rect:
@@ -700,6 +881,13 @@ TextureImporter:
         - {x: -15.5, y: -33.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Mouth
       rect:
@@ -718,6 +906,13 @@ TextureImporter:
         - {x: 10, y: -8.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_21_Hair_Back
       rect:
@@ -736,9 +931,26 @@ TextureImporter:
         - {x: 15, y: -20.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -254,8 +254,8 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 		pos_Font[4] = Title_Font_V_a.GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		pos_Font[5] = Title_Font_E_a.GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		SR_Glow_2.color = new global::UnityEngine.Color(SR_Glow_2.color.r, SR_Glow_2.color.g, SR_Glow_2.color.b, 0.05f);
-		global::UnityEngine.GameObject.Find("BGM_Title").audio.volume = global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume");
-		global::UnityEngine.GameObject.Find("BGM_Title").audio.Play();
+		global::UnityEngine.GameObject.Find("BGM_Title").GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume");
+		global::UnityEngine.GameObject.Find("BGM_Title").GetComponent<UnityEngine.AudioSource>().Play();
 	}
 
 	private void Title_Font()
@@ -682,7 +682,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 				}
 			}
 			BlackFade.color = new global::UnityEngine.Color(0f, 0f, 0f, FadeOpacity);
-			global::UnityEngine.GameObject.Find("BGM_Title").audio.volume = global::UnityEngine.Mathf.Lerp(global::UnityEngine.GameObject.Find("BGM_Title").audio.volume, 0f, global::UnityEngine.Time.deltaTime * 1.6f);
+			global::UnityEngine.GameObject.Find("BGM_Title").GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(global::UnityEngine.GameObject.Find("BGM_Title").GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 1.6f);
 		}
 	}
 
@@ -921,7 +921,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 	{
 		if (global::UnityEngine.Input.GetMouseButtonDown(0))
 		{
-			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
 			if (rayIntersection.collider != null)
 			{
@@ -972,7 +972,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 					}
 				}
 			}
-			global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("Main Camera").camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection2 = global::UnityEngine.Physics2D.GetRayIntersection(ray2, float.PositiveInfinity);
 			if (rayIntersection2.collider != null && rayIntersection2.collider.name == "Col_ClothOnOff")
 			{
@@ -980,7 +980,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 			}
 			return;
 		}
-		global::UnityEngine.Ray ray3 = global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+		global::UnityEngine.Ray ray3 = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
 		global::UnityEngine.RaycastHit2D rayIntersection3 = global::UnityEngine.Physics2D.GetRayIntersection(ray3, float.PositiveInfinity);
 		if (!(rayIntersection3.collider != null))
 		{

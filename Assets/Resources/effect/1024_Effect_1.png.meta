@@ -1,35 +1,81 @@
 fileFormatVersion: 2
 guid: 1b3f1ced1a355f145b5a8964cbc6576d
-timeCreated: 1747839216
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Magic_VerticalBar
-    21300002: Magic_1_Tail
-    21300004: Magic_2_Glow
-    21300006: Magic_1_Head
-    21300008: Magic_1_Explo
-    21300010: Magic_2_Bomb
-    21300012: Magic_2_HL
-    21300014: Magic_3_Poison
-    21300016: Magic_3_Poison_Glow
-    21300018: Magic_3_Poison_HL
-    21300020: Magic_3_Poison_Bar
-    21300022: Magic_3_Smog
-    21300024: Magic_5_Bar_Purple
-    21300026: Magic_5_InnerBlack
-    21300028: Magic_5_OuterBlack
-    21300030: Magic_5_PurpleGlow
-    21300032: Magic_5_BlackBar
-    21300034: UI_Hand_L
-    21300036: UI_Hand_R
-    21300038: Magic_CornerGlow
-    21300040: Magic_HorizontalBar
-    21300042: Magic_Dot_1
-    21300044: Magic_Dot_Long
-    21300046: Magic_Dot_Short
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Magic_VerticalBar
+  - first:
+      213: 21300002
+    second: Magic_1_Tail
+  - first:
+      213: 21300004
+    second: Magic_2_Glow
+  - first:
+      213: 21300006
+    second: Magic_1_Head
+  - first:
+      213: 21300008
+    second: Magic_1_Explo
+  - first:
+      213: 21300010
+    second: Magic_2_Bomb
+  - first:
+      213: 21300012
+    second: Magic_2_HL
+  - first:
+      213: 21300014
+    second: Magic_3_Poison
+  - first:
+      213: 21300016
+    second: Magic_3_Poison_Glow
+  - first:
+      213: 21300018
+    second: Magic_3_Poison_HL
+  - first:
+      213: 21300020
+    second: Magic_3_Poison_Bar
+  - first:
+      213: 21300022
+    second: Magic_3_Smog
+  - first:
+      213: 21300024
+    second: Magic_5_Bar_Purple
+  - first:
+      213: 21300026
+    second: Magic_5_InnerBlack
+  - first:
+      213: 21300028
+    second: Magic_5_OuterBlack
+  - first:
+      213: 21300030
+    second: Magic_5_PurpleGlow
+  - first:
+      213: 21300032
+    second: Magic_5_BlackBar
+  - first:
+      213: 21300034
+    second: UI_Hand_L
+  - first:
+      213: 21300036
+    second: UI_Hand_R
+  - first:
+      213: 21300038
+    second: Magic_CornerGlow
+  - first:
+      213: 21300040
+    second: Magic_HorizontalBar
+  - first:
+      213: 21300042
+    second: Magic_Dot_1
+  - first:
+      213: 21300044
+    second: Magic_Dot_Long
+  - first:
+      213: 21300046
+    second: Magic_Dot_Short
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -47,6 +93,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -69,18 +117,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -90,6 +141,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -111,6 +163,13 @@ TextureImporter:
         - {x: 20, y: 122}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_1_Tail
       rect:
@@ -129,6 +188,13 @@ TextureImporter:
         - {x: 309.5, y: -6}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_2_Glow
       rect:
@@ -153,6 +219,13 @@ TextureImporter:
         - {x: 35, y: -30.96194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_1_Head
       rect:
@@ -171,6 +244,13 @@ TextureImporter:
         - {x: 52.5, y: -13}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_1_Explo
       rect:
@@ -194,6 +274,13 @@ TextureImporter:
         - {x: 28, y: -41}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_2_Bomb
       rect:
@@ -214,6 +301,13 @@ TextureImporter:
         - {x: 64, y: -34.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_2_HL
       rect:
@@ -232,6 +326,13 @@ TextureImporter:
         - {x: 6, y: -9}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_3_Poison
       rect:
@@ -255,6 +356,13 @@ TextureImporter:
         - {x: 34, y: -62.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_3_Poison_Glow
       rect:
@@ -279,6 +387,13 @@ TextureImporter:
         - {x: 31, y: -42}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_3_Poison_HL
       rect:
@@ -297,6 +412,13 @@ TextureImporter:
         - {x: 4.5, y: -5.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_3_Poison_Bar
       rect:
@@ -315,6 +437,13 @@ TextureImporter:
         - {x: 16, y: 512}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_3_Smog
       rect:
@@ -404,6 +533,13 @@ TextureImporter:
         - {x: -271, y: 81}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_5_Bar_Purple
       rect:
@@ -422,6 +558,13 @@ TextureImporter:
         - {x: 16, y: 414}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_5_InnerBlack
       rect:
@@ -460,6 +603,13 @@ TextureImporter:
         - {x: -114, y: -98}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_5_OuterBlack
       rect:
@@ -493,6 +643,13 @@ TextureImporter:
         - {x: -89, y: -92}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_5_PurpleGlow
       rect:
@@ -572,6 +729,13 @@ TextureImporter:
         - {x: -167, y: 128}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_5_BlackBar
       rect:
@@ -590,6 +754,13 @@ TextureImporter:
         - {x: 322, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Hand_L
       rect:
@@ -613,6 +784,13 @@ TextureImporter:
         - {x: 71.47532, y: -72.52467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Hand_R
       rect:
@@ -637,6 +815,13 @@ TextureImporter:
         - {x: -65.5, y: -67.99998}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_CornerGlow
       rect:
@@ -675,6 +860,13 @@ TextureImporter:
         - {x: 284, y: 55}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_HorizontalBar
       rect:
@@ -694,6 +886,13 @@ TextureImporter:
         - {x: 284, y: -16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_Dot_1
       rect:
@@ -715,6 +914,13 @@ TextureImporter:
         - {x: 18, y: -16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_Dot_Long
       rect:
@@ -735,6 +941,13 @@ TextureImporter:
         - {x: 189.5, y: -16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Magic_Dot_Short
       rect:
@@ -755,9 +968,26 @@ TextureImporter:
         - {x: 34.5, y: -13}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

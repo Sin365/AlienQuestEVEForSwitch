@@ -1,30 +1,66 @@
 fileFormatVersion: 2
 guid: fd42a49e7e131484fb5472b11989e374
-timeCreated: 1747839222
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: GO_3_Body
-    21300002: GO_3_Calf_R
-    21300004: GO_3_Center_Cover
-    21300006: GO_3_Center
-    21300008: GO_3_Breast_L
-    21300010: GO_3_Breast_R
-    21300012: GO_3_Calf_L
-    21300014: GO_3_Arm_R
-    21300016: GO_3_Eye_Back
-    21300018: GO_3_Eye
-    21300020: GO_3_Hand_R
-    21300022: GO_3_Leg_L
-    21300024: GO_3_Hand_L
-    21300026: GO_3_Leg_R
-    21300028: GO_3_Hair
-    21300030: GO_3_Hair_F
-    21300032: GO_3_Mouth
-    21300034: GO_3_Face
-    21300036: GO_3_Hair_Back
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: GO_3_Body
+  - first:
+      213: 21300002
+    second: GO_3_Calf_R
+  - first:
+      213: 21300004
+    second: GO_3_Center_Cover
+  - first:
+      213: 21300006
+    second: GO_3_Center
+  - first:
+      213: 21300008
+    second: GO_3_Breast_L
+  - first:
+      213: 21300010
+    second: GO_3_Breast_R
+  - first:
+      213: 21300012
+    second: GO_3_Calf_L
+  - first:
+      213: 21300014
+    second: GO_3_Arm_R
+  - first:
+      213: 21300016
+    second: GO_3_Eye_Back
+  - first:
+      213: 21300018
+    second: GO_3_Eye
+  - first:
+      213: 21300020
+    second: GO_3_Hand_R
+  - first:
+      213: 21300022
+    second: GO_3_Leg_L
+  - first:
+      213: 21300024
+    second: GO_3_Hand_L
+  - first:
+      213: 21300026
+    second: GO_3_Leg_R
+  - first:
+      213: 21300028
+    second: GO_3_Hair
+  - first:
+      213: 21300030
+    second: GO_3_Hair_F
+  - first:
+      213: 21300032
+    second: GO_3_Mouth
+  - first:
+      213: 21300034
+    second: GO_3_Face
+  - first:
+      213: 21300036
+    second: GO_3_Hair_Back
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -42,6 +78,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -64,18 +102,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -85,6 +126,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -184,7 +226,7 @@ TextureImporter:
         - {x: 459.4958, y: 43.99994}
         - {x: 454.4958, y: 35.99994}
         - {x: 441.4958, y: 19.99994}
-        - {x: 421.4958, y: -6.103516E-05}
+        - {x: 421.4958, y: -0.00006103516}
         - {x: 400.4958, y: -16.00006}
         - {x: 354.4958, y: -48.00006}
         - {x: 309.4958, y: -77.00006}
@@ -233,6 +275,13 @@ TextureImporter:
         - {x: -487.5042, y: -131.0001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Calf_R
       rect:
@@ -314,6 +363,13 @@ TextureImporter:
         - {x: -506.4833, y: -77.99995}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Center_Cover
       rect:
@@ -353,6 +409,13 @@ TextureImporter:
         - {x: 71.00098, y: 12.47527}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Center
       rect:
@@ -384,6 +447,13 @@ TextureImporter:
         - {x: -15, y: 88.49995}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Breast_L
       rect:
@@ -447,6 +517,13 @@ TextureImporter:
         - {x: -178.4684, y: 149.9744}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Breast_R
       rect:
@@ -497,6 +574,13 @@ TextureImporter:
         - {x: -122.5001, y: -75.9753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Calf_L
       rect:
@@ -609,6 +693,13 @@ TextureImporter:
         - {x: -412.9999, y: 87.51654}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Arm_R
       rect:
@@ -645,6 +736,13 @@ TextureImporter:
         - {x: -60.50005, y: -84.03806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Eye_Back
       rect:
@@ -666,6 +764,13 @@ TextureImporter:
         - {x: 2.5247, y: -44.00006}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Eye
       rect:
@@ -688,6 +793,13 @@ TextureImporter:
         - {x: 14.0123, y: -52.53165}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Hand_R
       rect:
@@ -726,6 +838,13 @@ TextureImporter:
         - {x: -85.00473, y: -46.9753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Leg_L
       rect:
@@ -894,6 +1013,13 @@ TextureImporter:
         - {x: -6.999969, y: -360.4999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Hand_L
       rect:
@@ -932,6 +1058,13 @@ TextureImporter:
         - {x: -266.9753, y: -25.49998}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Leg_R
       rect:
@@ -1084,6 +1217,13 @@ TextureImporter:
         - {x: -289.5, y: -387}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Hair
       rect:
@@ -1198,6 +1338,13 @@ TextureImporter:
         - {x: -100.5001, y: -88.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Hair_F
       rect:
@@ -1231,6 +1378,13 @@ TextureImporter:
         - {x: 38.99995, y: -195.485}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Mouth
       rect:
@@ -1259,6 +1413,13 @@ TextureImporter:
         - {x: 23.99995, y: -83.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Face
       rect:
@@ -1309,6 +1470,13 @@ TextureImporter:
         - {x: -40.00006, y: -165.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_3_Hair_Back
       rect:
@@ -1368,9 +1536,26 @@ TextureImporter:
         - {x: -92.50006, y: -185.9753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

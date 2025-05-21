@@ -218,8 +218,8 @@ public class AI_Mon_32 : global::UnityEngine.MonoBehaviour
 			Attack_Delay -= global::UnityEngine.Time.deltaTime;
 			if (Dash_Delay < 0.5f)
 			{
-				base.rigidbody2D.velocity = new global::UnityEngine.Vector2(global::UnityEngine.Mathf.Lerp(base.rigidbody2D.velocity.x, 0f, global::UnityEngine.Time.deltaTime * 5f), base.rigidbody2D.velocity.y);
-				if (global::UnityEngine.Mathf.Abs(base.rigidbody2D.velocity.x) < 5f)
+				base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x, 0f, global::UnityEngine.Time.deltaTime * 5f), base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+				if (global::UnityEngine.Mathf.Abs(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x) < 5f)
 				{
 					Dash_Delay = 0f;
 					Flip_Delay = 0f;
@@ -411,8 +411,8 @@ public class AI_Mon_32 : global::UnityEngine.MonoBehaviour
 
 	private void Attack_Force()
 	{
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 10f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 10f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 	}
 
 	private void Dash()
@@ -424,8 +424,8 @@ public class AI_Mon_32 : global::UnityEngine.MonoBehaviour
 		}
 		Dash_Delay = 1f;
 		Dash_Timer = 0f;
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 45f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 45f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Growling(base.transform.position);
 	}

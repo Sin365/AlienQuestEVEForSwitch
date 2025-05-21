@@ -190,7 +190,7 @@ public class AI_Mon_27 : global::UnityEngine.MonoBehaviour
 		{
 			if (GM.GameOver)
 			{
-				if (Player.rigidbody2D.velocity.y != 0f)
+				if (Player.GetComponent<UnityEngine.Rigidbody2D>().velocity.y != 0f)
 				{
 					return;
 				}

@@ -1,42 +1,102 @@
 fileFormatVersion: 2
 guid: 57e3e3adcdb51364db268bf7c218daa9
-timeCreated: 1747839220
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: GO_2_Arm_L
-    21300002: GO_2_Arm_R
-    21300004: GO_2_Breast_R_T2
-    21300006: GO_2_Breast_R_T
-    21300008: GO_2_Breast_R_H
-    21300010: GO_2_Breast_L_H
-    21300012: GO_2_Breast_L
-    21300014: GO_2_Breast_R
-    21300016: GO_2_Breast_L_T
-    21300018: GO_2_Calf_L
-    21300020: GO_2_Calf_R
-    21300022: GO2_Cum_1_1
-    21300024: GO2_Cum_1_3
-    21300026: GO2_Cum_1_2
-    21300028: GO2_Cum_1_4
-    21300030: GO2_Cum_1_5
-    21300032: GO2_Cum_1_6
-    21300034: GO2_Cum_1_7
-    21300036: GO2_Cum_1_8
-    21300038: GO2_Cum_1_9
-    21300040: GO2_Cum_2_1
-    21300042: GO2_Cum_2_2
-    21300044: GO2_Cum_2_3
-    21300046: GO2_Cum_2_4
-    21300048: GO2_Cum_2_5
-    21300050: GO2_Cum_2_6
-    21300052: GO2_Cum_2_7
-    21300054: GO2_Cum_2_8
-    21300056: GO2_Cum_2_9
-    21300058: GO2_Cum_2_10
-    21300060: GO2_Cum_1_1Mouth
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: GO_2_Arm_L
+  - first:
+      213: 21300002
+    second: GO_2_Arm_R
+  - first:
+      213: 21300004
+    second: GO_2_Breast_R_T2
+  - first:
+      213: 21300006
+    second: GO_2_Breast_R_T
+  - first:
+      213: 21300008
+    second: GO_2_Breast_R_H
+  - first:
+      213: 21300010
+    second: GO_2_Breast_L_H
+  - first:
+      213: 21300012
+    second: GO_2_Breast_L
+  - first:
+      213: 21300014
+    second: GO_2_Breast_R
+  - first:
+      213: 21300016
+    second: GO_2_Breast_L_T
+  - first:
+      213: 21300018
+    second: GO_2_Calf_L
+  - first:
+      213: 21300020
+    second: GO_2_Calf_R
+  - first:
+      213: 21300022
+    second: GO2_Cum_1_1
+  - first:
+      213: 21300024
+    second: GO2_Cum_1_3
+  - first:
+      213: 21300026
+    second: GO2_Cum_1_2
+  - first:
+      213: 21300028
+    second: GO2_Cum_1_4
+  - first:
+      213: 21300030
+    second: GO2_Cum_1_5
+  - first:
+      213: 21300032
+    second: GO2_Cum_1_6
+  - first:
+      213: 21300034
+    second: GO2_Cum_1_7
+  - first:
+      213: 21300036
+    second: GO2_Cum_1_8
+  - first:
+      213: 21300038
+    second: GO2_Cum_1_9
+  - first:
+      213: 21300040
+    second: GO2_Cum_2_1
+  - first:
+      213: 21300042
+    second: GO2_Cum_2_2
+  - first:
+      213: 21300044
+    second: GO2_Cum_2_3
+  - first:
+      213: 21300046
+    second: GO2_Cum_2_4
+  - first:
+      213: 21300048
+    second: GO2_Cum_2_5
+  - first:
+      213: 21300050
+    second: GO2_Cum_2_6
+  - first:
+      213: 21300052
+    second: GO2_Cum_2_7
+  - first:
+      213: 21300054
+    second: GO2_Cum_2_8
+  - first:
+      213: 21300056
+    second: GO2_Cum_2_9
+  - first:
+      213: 21300058
+    second: GO2_Cum_2_10
+  - first:
+      213: 21300060
+    second: GO2_Cum_1_1Mouth
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -54,6 +114,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -76,18 +138,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -97,6 +162,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -168,6 +234,13 @@ TextureImporter:
         - {x: -160.462, y: -95.48663}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_2_Arm_R
       rect:
@@ -233,6 +306,13 @@ TextureImporter:
         - {x: -60, y: -149.4952}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_2_Breast_R_T2
       rect:
@@ -256,6 +336,13 @@ TextureImporter:
         - {x: -30.50005, y: -61.49354}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_2_Breast_R_T
       rect:
@@ -293,6 +380,13 @@ TextureImporter:
         - {x: -117.9991, y: 62.98494}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_2_Breast_R_H
       rect:
@@ -313,6 +407,13 @@ TextureImporter:
         - {x: 15.00002, y: -9.98962}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_2_Breast_L_H
       rect:
@@ -336,6 +437,13 @@ TextureImporter:
         - {x: 12.46834, y: -18.49191}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_2_Breast_L
       rect:
@@ -409,6 +517,13 @@ TextureImporter:
         - {x: -182.52, y: -143.5381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_2_Breast_R
       rect:
@@ -499,6 +614,13 @@ TextureImporter:
         - {x: 144.4999, y: -175.5001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_2_Breast_L_T
       rect:
@@ -525,6 +647,13 @@ TextureImporter:
         - {x: 4.024704, y: -132.5097}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_2_Calf_L
       rect:
@@ -613,6 +742,13 @@ TextureImporter:
         - {x: -354, y: 233.0081}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_2_Calf_R
       rect:
@@ -705,6 +841,13 @@ TextureImporter:
         - {x: -234.9619, y: 443.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_1_1
       rect:
@@ -728,6 +871,13 @@ TextureImporter:
         - {x: 46.97533, y: -45.48346}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_1_3
       rect:
@@ -755,6 +905,13 @@ TextureImporter:
         - {x: 37.50002, y: -74.99191}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_1_2
       rect:
@@ -781,6 +938,13 @@ TextureImporter:
         - {x: 78.99995, y: 50.47849}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_1_4
       rect:
@@ -805,6 +969,13 @@ TextureImporter:
         - {x: 62.51514, y: 31.48664}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_1_5
       rect:
@@ -829,6 +1000,13 @@ TextureImporter:
         - {x: 36.50001, y: -112.0068}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_1_6
       rect:
@@ -869,6 +1047,13 @@ TextureImporter:
         - {x: 90.46189, y: 95.03806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_1_7
       rect:
@@ -901,6 +1086,13 @@ TextureImporter:
         - {x: 41.50689, y: -120.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_1_8
       rect:
@@ -959,6 +1151,13 @@ TextureImporter:
         - {x: -18.4753, y: -191.0143}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_1_9
       rect:
@@ -1013,6 +1212,13 @@ TextureImporter:
         - {x: -79.49178, y: 77.01338}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_2_1
       rect:
@@ -1063,6 +1269,13 @@ TextureImporter:
         - {x: 89.97527, y: 39.48901}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_2_2
       rect:
@@ -1118,6 +1331,13 @@ TextureImporter:
         - {x: 81.49995, y: -33.99521}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_2_3
       rect:
@@ -1161,6 +1381,13 @@ TextureImporter:
         - {x: -88.52913, y: -49.99236}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_2_4
       rect:
@@ -1183,6 +1410,13 @@ TextureImporter:
         - {x: 71.97527, y: -110.9649}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_2_5
       rect:
@@ -1217,6 +1451,13 @@ TextureImporter:
         - {x: -23.00005, y: 89.99192}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_2_6
       rect:
@@ -1239,6 +1480,13 @@ TextureImporter:
         - {x: 34.99995, y: -77.02467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_2_7
       rect:
@@ -1266,6 +1514,13 @@ TextureImporter:
         - {x: 24.0247, y: -123.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_2_8
       rect:
@@ -1287,6 +1542,13 @@ TextureImporter:
         - {x: 112.5069, y: 88.02469}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_2_9
       rect:
@@ -1308,6 +1570,13 @@ TextureImporter:
         - {x: 44.50002, y: 74.01421}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_2_10
       rect:
@@ -1336,6 +1605,13 @@ TextureImporter:
         - {x: -0.5124512, y: 34.01337}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO2_Cum_1_1Mouth
       rect:
@@ -1363,9 +1639,26 @@ TextureImporter:
         - {x: 34.97532, y: -45.48346}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

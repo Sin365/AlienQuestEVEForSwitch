@@ -1,35 +1,81 @@
 fileFormatVersion: 2
 guid: 0e5884ab7a1ba1e4d8c782e3e468dc01
-timeCreated: 1747839217
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: atk_Idle_2_0
-    21300002: atk_Idle_2_1
-    21300004: atk_Idle_2_2
-    21300006: atk_Idle_2_3
-    21300008: atk_Idle_2_4
-    21300010: atk_Idle_2_5
-    21300012: atk_Idle_2_6
-    21300014: atk_Idle_E2_2
-    21300016: atk_Idle_E2_0
-    21300018: atk_Idle_E2_1
-    21300020: atk_Idle_E2_3
-    21300022: atk_Idle_E2_4
-    21300024: atk_Idle_E2_5
-    21300026: atk_Idle_E2_6
-    21300028: atk_Jump_2_7
-    21300030: atk_JumpDown_0
-    21300032: atk_JumpDown_1
-    21300034: atk_JumpDown_2
-    21300036: atk_JumpDown_3
-    21300038: atk_Jump_2_5
-    21300040: atk_Jump_2_6
-    21300042: Jump_15
-    21300044: Jump_16
-    21300046: Jump_17
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: atk_Idle_2_0
+  - first:
+      213: 21300002
+    second: atk_Idle_2_1
+  - first:
+      213: 21300004
+    second: atk_Idle_2_2
+  - first:
+      213: 21300006
+    second: atk_Idle_2_3
+  - first:
+      213: 21300008
+    second: atk_Idle_2_4
+  - first:
+      213: 21300010
+    second: atk_Idle_2_5
+  - first:
+      213: 21300012
+    second: atk_Idle_2_6
+  - first:
+      213: 21300014
+    second: atk_Idle_E2_2
+  - first:
+      213: 21300016
+    second: atk_Idle_E2_0
+  - first:
+      213: 21300018
+    second: atk_Idle_E2_1
+  - first:
+      213: 21300020
+    second: atk_Idle_E2_3
+  - first:
+      213: 21300022
+    second: atk_Idle_E2_4
+  - first:
+      213: 21300024
+    second: atk_Idle_E2_5
+  - first:
+      213: 21300026
+    second: atk_Idle_E2_6
+  - first:
+      213: 21300028
+    second: atk_Jump_2_7
+  - first:
+      213: 21300030
+    second: atk_JumpDown_0
+  - first:
+      213: 21300032
+    second: atk_JumpDown_1
+  - first:
+      213: 21300034
+    second: atk_JumpDown_2
+  - first:
+      213: 21300036
+    second: atk_JumpDown_3
+  - first:
+      213: 21300038
+    second: atk_Jump_2_5
+  - first:
+      213: 21300040
+    second: atk_Jump_2_6
+  - first:
+      213: 21300042
+    second: Jump_15
+  - first:
+      213: 21300044
+    second: Jump_16
+  - first:
+      213: 21300046
+    second: Jump_17
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -47,6 +93,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -69,18 +117,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -90,6 +141,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -102,7 +154,7 @@ TextureImporter:
         width: 282
         height: 490.9732
       alignment: 9
-      pivot: {x: 0.4257269, y: -5.444981E-05}
+      pivot: {x: 0.4257269, y: -0.00005444981}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -117, y: -245.5134}
@@ -126,6 +178,13 @@ TextureImporter:
         - {x: -101, y: -237.5134}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_2_1
       rect:
@@ -135,7 +194,7 @@ TextureImporter:
         width: 430
         height: 484.9303
       alignment: 9
-      pivot: {x: 0.2792197, y: -5.512833E-05}
+      pivot: {x: 0.2792197, y: -0.00005512833}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -205, y: 158.5081}
@@ -164,6 +223,13 @@ TextureImporter:
         - {x: -74.00001, y: -45.4919}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_2_2
       rect:
@@ -197,6 +263,13 @@ TextureImporter:
         - {x: 90.01338, y: -241.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_2_3
       rect:
@@ -232,6 +305,13 @@ TextureImporter:
         - {x: -59.49998, y: -240.5001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_2_4
       rect:
@@ -267,6 +347,13 @@ TextureImporter:
         - {x: 145.5, y: -241.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_2_5
       rect:
@@ -300,6 +387,13 @@ TextureImporter:
         - {x: -78, y: -241.0381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_2_6
       rect:
@@ -309,7 +403,7 @@ TextureImporter:
         width: 349.9239
         height: 494.9732
       alignment: 9
-      pivot: {x: 0.6228971, y: -5.400979E-05}
+      pivot: {x: 0.6228971, y: -0.00005400979}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 131.9619, y: -247.5134}
@@ -333,6 +427,13 @@ TextureImporter:
         - {x: 174.9619, y: -247.5134}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E2_2
       rect:
@@ -362,6 +463,13 @@ TextureImporter:
         - {x: -24.98663, y: 59.47527}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E2_0
       rect:
@@ -391,6 +499,13 @@ TextureImporter:
         - {x: -105, y: -188.5167}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E2_1
       rect:
@@ -426,6 +541,13 @@ TextureImporter:
         - {x: 181.5, y: 132.9619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E2_3
       rect:
@@ -457,6 +579,13 @@ TextureImporter:
         - {x: 185.5, y: 92.49994}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E2_4
       rect:
@@ -487,6 +616,13 @@ TextureImporter:
         - {x: 56.50002, y: -239.5381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E2_5
       rect:
@@ -518,6 +654,13 @@ TextureImporter:
         - {x: -34.5, y: 20.98665}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Idle_E2_6
       rect:
@@ -550,6 +693,13 @@ TextureImporter:
         - {x: 168.5, y: 155.4866}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Jump_2_7
       rect:
@@ -586,6 +736,13 @@ TextureImporter:
         - {x: -48.49999, y: -235.5381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_JumpDown_0
       rect:
@@ -619,6 +776,13 @@ TextureImporter:
         - {x: 66, y: -241}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_JumpDown_1
       rect:
@@ -659,6 +823,13 @@ TextureImporter:
         - {x: 144.5, y: 87}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_JumpDown_2
       rect:
@@ -690,6 +861,13 @@ TextureImporter:
         - {x: -124.4753, y: -240.5215}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_JumpDown_3
       rect:
@@ -722,6 +900,13 @@ TextureImporter:
         - {x: 46.48664, y: -221.5215}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Jump_2_5
       rect:
@@ -756,6 +941,13 @@ TextureImporter:
         - {x: -109.9936, y: 69}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: atk_Jump_2_6
       rect:
@@ -790,6 +982,13 @@ TextureImporter:
         - {x: -77.5, y: -226}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_15
       rect:
@@ -824,6 +1023,13 @@ TextureImporter:
         - {x: -23.99998, y: 248.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_16
       rect:
@@ -858,6 +1064,13 @@ TextureImporter:
         - {x: -5.013321, y: -264.5326}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_17
       rect:
@@ -892,9 +1105,26 @@ TextureImporter:
         - {x: 115.9867, y: 40}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

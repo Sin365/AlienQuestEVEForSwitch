@@ -1,39 +1,93 @@
 fileFormatVersion: 2
 guid: c5a248aa95abc2c43811b94708896394
-timeCreated: 1747839223
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Tile_3_BG_Cover
-    21300002: Tile_3_BG_Dark_Cover
-    21300004: Egg_Box_Red
-    21300006: Tile_3_Cap
-    21300008: Tile_3_Tall
-    21300010: Adam_Pipe
-    21300012: Adam_Red
-    21300014: Adam_Body
-    21300016: Tile_3
-    21300018: Tile_3_Deco_1
-    21300020: Tile_3_Deco_2
-    21300022: Tile_3_Deco_3
-    21300024: Tile_3_Tall_Deco_2
-    21300026: Tile_3_Deco_4
-    21300028: Tile_3_Tall_Deco_1
-    21300030: Tile_3_Deco_5
-    21300032: Adam_Deco_L
-    21300034: Adam_Deco_R
-    21300036: Tile_3_27_Stairs
-    21300038: Tile_3_BG
-    21300040: Tile_3_27_L
-    21300042: Tile_3_27_R
-    21300044: Tile_3_BG_Adam
-    21300046: Tile_3_BG_Dark
-    21300048: Adam_Green
-    21300050: Egg_Box_Top
-    21300052: Egg_Box_Bot
-    21300054: Egg_Box_Rail
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Tile_3_BG_Cover
+  - first:
+      213: 21300002
+    second: Tile_3_BG_Dark_Cover
+  - first:
+      213: 21300004
+    second: Egg_Box_Red
+  - first:
+      213: 21300006
+    second: Tile_3_Cap
+  - first:
+      213: 21300008
+    second: Tile_3_Tall
+  - first:
+      213: 21300010
+    second: Adam_Pipe
+  - first:
+      213: 21300012
+    second: Adam_Red
+  - first:
+      213: 21300014
+    second: Adam_Body
+  - first:
+      213: 21300016
+    second: Tile_3
+  - first:
+      213: 21300018
+    second: Tile_3_Deco_1
+  - first:
+      213: 21300020
+    second: Tile_3_Deco_2
+  - first:
+      213: 21300022
+    second: Tile_3_Deco_3
+  - first:
+      213: 21300024
+    second: Tile_3_Tall_Deco_2
+  - first:
+      213: 21300026
+    second: Tile_3_Deco_4
+  - first:
+      213: 21300028
+    second: Tile_3_Tall_Deco_1
+  - first:
+      213: 21300030
+    second: Tile_3_Deco_5
+  - first:
+      213: 21300032
+    second: Adam_Deco_L
+  - first:
+      213: 21300034
+    second: Adam_Deco_R
+  - first:
+      213: 21300036
+    second: Tile_3_27_Stairs
+  - first:
+      213: 21300038
+    second: Tile_3_BG
+  - first:
+      213: 21300040
+    second: Tile_3_27_L
+  - first:
+      213: 21300042
+    second: Tile_3_27_R
+  - first:
+      213: 21300044
+    second: Tile_3_BG_Adam
+  - first:
+      213: 21300046
+    second: Tile_3_BG_Dark
+  - first:
+      213: 21300048
+    second: Adam_Green
+  - first:
+      213: 21300050
+    second: Egg_Box_Top
+  - first:
+      213: 21300052
+    second: Egg_Box_Bot
+  - first:
+      213: 21300054
+    second: Egg_Box_Rail
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -51,6 +105,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -73,18 +129,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -94,6 +153,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -115,6 +175,13 @@ TextureImporter:
         - {x: 102, y: 102}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_BG_Dark_Cover
       rect:
@@ -133,6 +200,13 @@ TextureImporter:
         - {x: 102, y: 102}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Egg_Box_Red
       rect:
@@ -151,6 +225,13 @@ TextureImporter:
         - {x: 95.5, y: -12}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_Cap
       rect:
@@ -169,6 +250,13 @@ TextureImporter:
         - {x: 95, y: -9.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_Tall
       rect:
@@ -187,6 +275,13 @@ TextureImporter:
         - {x: 95, y: 137.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Adam_Pipe
       rect:
@@ -205,6 +300,13 @@ TextureImporter:
         - {x: 6, y: -165.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Adam_Red
       rect:
@@ -223,6 +325,13 @@ TextureImporter:
         - {x: 6.5, y: -287.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Adam_Body
       rect:
@@ -245,6 +354,13 @@ TextureImporter:
         - {x: 1.961945, y: -284.0381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3
       rect:
@@ -263,6 +379,13 @@ TextureImporter:
         - {x: 95, y: 95}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_Deco_1
       rect:
@@ -281,6 +404,13 @@ TextureImporter:
         - {x: 19, y: 52.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_Deco_2
       rect:
@@ -299,6 +429,13 @@ TextureImporter:
         - {x: 19, y: 32.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_Deco_3
       rect:
@@ -321,6 +458,13 @@ TextureImporter:
         - {x: -16, y: -52.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_Tall_Deco_2
       rect:
@@ -340,6 +484,13 @@ TextureImporter:
         - {x: 71, y: -12}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_Deco_4
       rect:
@@ -358,6 +509,13 @@ TextureImporter:
         - {x: 9.5, y: -6.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_Tall_Deco_1
       rect:
@@ -376,6 +534,13 @@ TextureImporter:
         - {x: 7.5, y: -10}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_Deco_5
       rect:
@@ -394,6 +559,13 @@ TextureImporter:
         - {x: 45, y: -7}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Adam_Deco_L
       rect:
@@ -414,6 +586,13 @@ TextureImporter:
         - {x: 61.5, y: -55.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Adam_Deco_R
       rect:
@@ -439,6 +618,13 @@ TextureImporter:
         - {x: 49, y: -85.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_27_Stairs
       rect:
@@ -459,6 +645,13 @@ TextureImporter:
         - {x: 59, y: -8}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_BG
       rect:
@@ -477,6 +670,13 @@ TextureImporter:
         - {x: 102, y: 102}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_27_L
       rect:
@@ -503,6 +703,13 @@ TextureImporter:
         - {x: -30.5, y: -83.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_27_R
       rect:
@@ -529,6 +736,13 @@ TextureImporter:
         - {x: -63.5, y: -131.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_BG_Adam
       rect:
@@ -547,6 +761,13 @@ TextureImporter:
         - {x: 102, y: 102}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_3_BG_Dark
       rect:
@@ -565,6 +786,13 @@ TextureImporter:
         - {x: 102, y: 102}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Adam_Green
       rect:
@@ -583,6 +811,13 @@ TextureImporter:
         - {x: 6.5, y: -289.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Egg_Box_Top
       rect:
@@ -602,6 +837,13 @@ TextureImporter:
         - {x: 93.50819, y: -37.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Egg_Box_Bot
       rect:
@@ -621,6 +863,13 @@ TextureImporter:
         - {x: -93.50422, y: -51.03161}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Egg_Box_Rail
       rect:
@@ -642,9 +891,26 @@ TextureImporter:
         - {x: 23.50001, y: -98}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

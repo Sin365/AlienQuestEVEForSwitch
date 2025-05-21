@@ -1,48 +1,120 @@
 fileFormatVersion: 2
 guid: 981077bd90eadb14b9b50b1fdcb0ba0c
-timeCreated: 1747839220
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: MonB_1
-    21300002: MonB_2
-    21300004: MonB_3
-    21300006: Mon_3_Tntc_L
-    21300008: Mon_3_Tntc_R
-    21300010: MonB_2_Leg
-    21300012: Mon_1
-    21300014: Mon_1_Wing_L
-    21300016: Mon_1_Wing_R
-    21300018: Mon_1_Tc_L_1
-    21300020: Mon_1_Tc_R_1
-    21300022: Mon_1_Tc_L_2
-    21300024: Mon_1_Tc_R_2
-    21300026: MonB_3_Center
-    21300028: Mon_2
-    21300030: Mon_4_Head
-    21300032: Mon_3
-    21300034: Mon_2_Top
-    21300036: Mon_2_Head
-    21300038: Mon_2_Back_2
-    21300040: Mon_3_Glow
-    21300042: MonB_3_LegL_3
-    21300044: MonB_3_LegL_2
-    21300046: MonB_3_LegL_1
-    21300048: MonB_3_LegR_1
-    21300050: MonB_3_LegR_2
-    21300052: MonB_3_LegR_3
-    21300054: MonB_1_Leg_1
-    21300056: MonB_1_Leg_2
-    21300058: MonB_1_Leg_3
-    21300060: MonB_1_Leg_4
-    21300062: MonB_1_Leg_5
-    21300064: Mon_4
-    21300066: Mon_4_Calf
-    21300068: Mon_4_Thigh
-    21300070: Mon_4_Foot
-    21300072: Mon_2_Back_1
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: MonB_1
+  - first:
+      213: 21300002
+    second: MonB_2
+  - first:
+      213: 21300004
+    second: MonB_3
+  - first:
+      213: 21300006
+    second: Mon_3_Tntc_L
+  - first:
+      213: 21300008
+    second: Mon_3_Tntc_R
+  - first:
+      213: 21300010
+    second: MonB_2_Leg
+  - first:
+      213: 21300012
+    second: Mon_1
+  - first:
+      213: 21300014
+    second: Mon_1_Wing_L
+  - first:
+      213: 21300016
+    second: Mon_1_Wing_R
+  - first:
+      213: 21300018
+    second: Mon_1_Tc_L_1
+  - first:
+      213: 21300020
+    second: Mon_1_Tc_R_1
+  - first:
+      213: 21300022
+    second: Mon_1_Tc_L_2
+  - first:
+      213: 21300024
+    second: Mon_1_Tc_R_2
+  - first:
+      213: 21300026
+    second: MonB_3_Center
+  - first:
+      213: 21300028
+    second: Mon_2
+  - first:
+      213: 21300030
+    second: Mon_4_Head
+  - first:
+      213: 21300032
+    second: Mon_3
+  - first:
+      213: 21300034
+    second: Mon_2_Top
+  - first:
+      213: 21300036
+    second: Mon_2_Head
+  - first:
+      213: 21300038
+    second: Mon_2_Back_2
+  - first:
+      213: 21300040
+    second: Mon_3_Glow
+  - first:
+      213: 21300042
+    second: MonB_3_LegL_3
+  - first:
+      213: 21300044
+    second: MonB_3_LegL_2
+  - first:
+      213: 21300046
+    second: MonB_3_LegL_1
+  - first:
+      213: 21300048
+    second: MonB_3_LegR_1
+  - first:
+      213: 21300050
+    second: MonB_3_LegR_2
+  - first:
+      213: 21300052
+    second: MonB_3_LegR_3
+  - first:
+      213: 21300054
+    second: MonB_1_Leg_1
+  - first:
+      213: 21300056
+    second: MonB_1_Leg_2
+  - first:
+      213: 21300058
+    second: MonB_1_Leg_3
+  - first:
+      213: 21300060
+    second: MonB_1_Leg_4
+  - first:
+      213: 21300062
+    second: MonB_1_Leg_5
+  - first:
+      213: 21300064
+    second: Mon_4
+  - first:
+      213: 21300066
+    second: Mon_4_Calf
+  - first:
+      213: 21300068
+    second: Mon_4_Thigh
+  - first:
+      213: 21300070
+    second: Mon_4_Foot
+  - first:
+      213: 21300072
+    second: Mon_2_Back_1
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -60,6 +132,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -82,18 +156,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -103,6 +180,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -136,6 +214,13 @@ TextureImporter:
         - {x: -82.99998, y: -104.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_2
       rect:
@@ -158,6 +243,13 @@ TextureImporter:
         - {x: 101.5, y: -42}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_3
       rect:
@@ -185,6 +277,13 @@ TextureImporter:
         - {x: -56.99998, y: -88.00541}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_3_Tntc_L
       rect:
@@ -207,6 +306,13 @@ TextureImporter:
         - {x: 60, y: -27.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_3_Tntc_R
       rect:
@@ -229,6 +335,13 @@ TextureImporter:
         - {x: 16.5, y: -137.5381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_2_Leg
       rect:
@@ -247,6 +360,13 @@ TextureImporter:
         - {x: 133.5, y: -9}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_1
       rect:
@@ -270,6 +390,13 @@ TextureImporter:
         - {x: -56.5, y: -94}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_1_Wing_L
       rect:
@@ -291,6 +418,13 @@ TextureImporter:
         - {x: 24, y: -47}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_1_Wing_R
       rect:
@@ -312,6 +446,13 @@ TextureImporter:
         - {x: 25, y: -40.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_1_Tc_L_1
       rect:
@@ -330,6 +471,13 @@ TextureImporter:
         - {x: 22, y: -11}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_1_Tc_R_1
       rect:
@@ -348,6 +496,13 @@ TextureImporter:
         - {x: 30.5, y: -5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_1_Tc_L_2
       rect:
@@ -369,6 +524,13 @@ TextureImporter:
         - {x: 24, y: 11}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_1_Tc_R_2
       rect:
@@ -391,6 +553,13 @@ TextureImporter:
         - {x: 20, y: -30.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_3_Center
       rect:
@@ -415,6 +584,13 @@ TextureImporter:
         - {x: -140, y: 18.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_2
       rect:
@@ -458,6 +634,13 @@ TextureImporter:
         - {x: 95.5, y: -96.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_4_Head
       rect:
@@ -483,6 +666,13 @@ TextureImporter:
         - {x: 80, y: -79.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_3
       rect:
@@ -525,6 +715,13 @@ TextureImporter:
         - {x: -26, y: -361}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_2_Top
       rect:
@@ -554,6 +751,13 @@ TextureImporter:
         - {x: -39, y: -2.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_2_Head
       rect:
@@ -577,6 +781,13 @@ TextureImporter:
         - {x: 9, y: -92.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_2_Back_2
       rect:
@@ -609,6 +820,13 @@ TextureImporter:
         - {x: 38.5, y: -41}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_3_Glow
       rect:
@@ -623,6 +841,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_3_LegL_3
       rect:
@@ -641,6 +866,13 @@ TextureImporter:
         - {x: 14, y: -36.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_3_LegL_2
       rect:
@@ -659,6 +891,13 @@ TextureImporter:
         - {x: 15, y: -36.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_3_LegL_1
       rect:
@@ -677,6 +916,13 @@ TextureImporter:
         - {x: 14.5, y: -36.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_3_LegR_1
       rect:
@@ -695,6 +941,13 @@ TextureImporter:
         - {x: 14.5, y: -36.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_3_LegR_2
       rect:
@@ -713,6 +966,13 @@ TextureImporter:
         - {x: 15.5, y: -36.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_3_LegR_3
       rect:
@@ -731,6 +991,13 @@ TextureImporter:
         - {x: 14, y: -36.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_1_Leg_1
       rect:
@@ -753,6 +1020,13 @@ TextureImporter:
         - {x: 13.5, y: -39.53806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_1_Leg_2
       rect:
@@ -771,6 +1045,13 @@ TextureImporter:
         - {x: 13, y: -39.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_1_Leg_3
       rect:
@@ -791,6 +1072,13 @@ TextureImporter:
         - {x: 17.5, y: -19.03806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_1_Leg_4
       rect:
@@ -814,6 +1102,13 @@ TextureImporter:
         - {x: -2, y: -39.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MonB_1_Leg_5
       rect:
@@ -838,6 +1133,13 @@ TextureImporter:
         - {x: 0.5, y: -36.4684}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_4
       rect:
@@ -862,6 +1164,13 @@ TextureImporter:
         - {x: 40, y: -76.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_4_Calf
       rect:
@@ -883,6 +1192,13 @@ TextureImporter:
         - {x: 32.5, y: -60.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_4_Thigh
       rect:
@@ -905,6 +1221,13 @@ TextureImporter:
         - {x: 36, y: -34}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_4_Foot
       rect:
@@ -934,6 +1257,13 @@ TextureImporter:
         - {x: -102, y: 86}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 66305410000000000800000000000000
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_2_Back_1
       rect:
@@ -955,9 +1285,26 @@ TextureImporter:
         - {x: 47, y: 60}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 86305410000000000800000000000000
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

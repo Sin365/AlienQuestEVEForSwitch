@@ -1,45 +1,111 @@
 fileFormatVersion: 2
 guid: 271555bac184a4c42b573b3a4784af66
-timeCreated: 1747839222
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: mon_11_Body
-    21300002: mon_11_Arm_L
-    21300004: mon_11_Arm_R
-    21300006: mon_11_Back
-    21300008: mon_11_Hand_L
-    21300010: mon_11_Penis
-    21300012: mon_11_Penis_Comus
-    21300014: mon_11_Penis_Censorship
-    21300016: H14_Hair
-    21300018: mon_11_Leg_L
-    21300020: mon_11_Leg_R
-    21300022: mon_11_Hand_R
-    21300024: H14_Tentacled
-    21300026: H14_Boobs_L
-    21300028: H14_Boobs_R
-    21300030: H14_Body
-    21300032: H14_Head
-    21300034: H14_Leg_R
-    21300036: H14_MonHand_L
-    21300038: H14_MonArm_L
-    21300040: H14_Leg_L
-    21300042: mon_11_Whip
-    21300044: H13_Down_Body
-    21300046: H13_Down_Hair
-    21300048: H13_Down_Head
-    21300050: H13_Down_Ball
-    21300052: H13_Down_Breast
-    21300054: H13_Down_Hand
-    21300056: H13_Down_Arm
-    21300058: H13_Down_Leg_L
-    21300060: H13_Down_Leg_R
-    21300062: mon_11_Whip_Short
-    21300064: H14_Mouth
-    21300066: H13_Mosaic
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: mon_11_Body
+  - first:
+      213: 21300002
+    second: mon_11_Arm_L
+  - first:
+      213: 21300004
+    second: mon_11_Arm_R
+  - first:
+      213: 21300006
+    second: mon_11_Back
+  - first:
+      213: 21300008
+    second: mon_11_Hand_L
+  - first:
+      213: 21300010
+    second: mon_11_Penis
+  - first:
+      213: 21300012
+    second: mon_11_Penis_Comus
+  - first:
+      213: 21300014
+    second: mon_11_Penis_Censorship
+  - first:
+      213: 21300016
+    second: H14_Hair
+  - first:
+      213: 21300018
+    second: mon_11_Leg_L
+  - first:
+      213: 21300020
+    second: mon_11_Leg_R
+  - first:
+      213: 21300022
+    second: mon_11_Hand_R
+  - first:
+      213: 21300024
+    second: H14_Tentacled
+  - first:
+      213: 21300026
+    second: H14_Boobs_L
+  - first:
+      213: 21300028
+    second: H14_Boobs_R
+  - first:
+      213: 21300030
+    second: H14_Body
+  - first:
+      213: 21300032
+    second: H14_Head
+  - first:
+      213: 21300034
+    second: H14_Leg_R
+  - first:
+      213: 21300036
+    second: H14_MonHand_L
+  - first:
+      213: 21300038
+    second: H14_MonArm_L
+  - first:
+      213: 21300040
+    second: H14_Leg_L
+  - first:
+      213: 21300042
+    second: mon_11_Whip
+  - first:
+      213: 21300044
+    second: H13_Down_Body
+  - first:
+      213: 21300046
+    second: H13_Down_Hair
+  - first:
+      213: 21300048
+    second: H13_Down_Head
+  - first:
+      213: 21300050
+    second: H13_Down_Ball
+  - first:
+      213: 21300052
+    second: H13_Down_Breast
+  - first:
+      213: 21300054
+    second: H13_Down_Hand
+  - first:
+      213: 21300056
+    second: H13_Down_Arm
+  - first:
+      213: 21300058
+    second: H13_Down_Leg_L
+  - first:
+      213: 21300060
+    second: H13_Down_Leg_R
+  - first:
+      213: 21300062
+    second: mon_11_Whip_Short
+  - first:
+      213: 21300064
+    second: H14_Mouth
+  - first:
+      213: 21300066
+    second: H13_Mosaic
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -57,6 +123,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -79,18 +147,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -100,6 +171,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -158,6 +230,13 @@ TextureImporter:
         - {x: -95, y: -71.007}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Arm_L
       rect:
@@ -182,6 +261,13 @@ TextureImporter:
         - {x: -2, y: -113.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Arm_R
       rect:
@@ -203,6 +289,13 @@ TextureImporter:
         - {x: 65.5, y: -108}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Back
       rect:
@@ -236,6 +329,13 @@ TextureImporter:
         - {x: 21, y: -129.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Hand_L
       rect:
@@ -258,6 +358,13 @@ TextureImporter:
         - {x: -28.02469, y: -97.02467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Penis
       rect:
@@ -279,6 +386,13 @@ TextureImporter:
         - {x: 58.50002, y: -53.49998}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Penis_Comus
       rect:
@@ -304,6 +418,13 @@ TextureImporter:
         - {x: -22.49998, y: -11.50002}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Penis_Censorship
       rect:
@@ -325,6 +446,13 @@ TextureImporter:
         - {x: 67.00002, y: -56.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_Hair
       rect:
@@ -347,6 +475,13 @@ TextureImporter:
         - {x: 35.97532, y: -41.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Leg_L
       rect:
@@ -374,6 +509,13 @@ TextureImporter:
         - {x: 70.03807, y: -71.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Leg_R
       rect:
@@ -400,6 +542,13 @@ TextureImporter:
         - {x: 75.47868, y: -214.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Hand_R
       rect:
@@ -432,6 +581,13 @@ TextureImporter:
         - {x: -13.99999, y: -120.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_Tentacled
       rect:
@@ -458,6 +614,13 @@ TextureImporter:
         - {x: -36.52468, y: -121.9753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_Boobs_L
       rect:
@@ -480,6 +643,13 @@ TextureImporter:
         - {x: 15.03806, y: -41.00331}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_Boobs_R
       rect:
@@ -502,6 +672,13 @@ TextureImporter:
         - {x: 31.00303, y: -41.53806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_Body
       rect:
@@ -524,6 +701,13 @@ TextureImporter:
         - {x: 44.53806, y: -47.50808}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_Head
       rect:
@@ -547,6 +731,13 @@ TextureImporter:
         - {x: 11, y: -36.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_Leg_R
       rect:
@@ -570,6 +761,13 @@ TextureImporter:
         - {x: -93.49998, y: 183}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_MonHand_L
       rect:
@@ -591,6 +789,13 @@ TextureImporter:
         - {x: 90.5, y: -113.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_MonArm_L
       rect:
@@ -614,6 +819,13 @@ TextureImporter:
         - {x: -9.5, y: -108.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_Leg_L
       rect:
@@ -639,6 +851,13 @@ TextureImporter:
         - {x: -4.9753, y: -162.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Whip
       rect:
@@ -662,6 +881,13 @@ TextureImporter:
         - {x: -462.0381, y: -11.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H13_Down_Body
       rect:
@@ -691,6 +917,13 @@ TextureImporter:
         - {x: 64, y: -7.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H13_Down_Hair
       rect:
@@ -712,6 +945,13 @@ TextureImporter:
         - {x: 43.5, y: -52.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H13_Down_Head
       rect:
@@ -734,6 +974,13 @@ TextureImporter:
         - {x: 27.5, y: -33.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H13_Down_Ball
       rect:
@@ -752,6 +999,13 @@ TextureImporter:
         - {x: 14, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H13_Down_Breast
       rect:
@@ -774,6 +1028,13 @@ TextureImporter:
         - {x: 27, y: -36}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H13_Down_Hand
       rect:
@@ -801,6 +1062,13 @@ TextureImporter:
         - {x: 27.5, y: 30.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H13_Down_Arm
       rect:
@@ -822,6 +1090,13 @@ TextureImporter:
         - {x: 56, y: -23}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H13_Down_Leg_L
       rect:
@@ -843,6 +1118,13 @@ TextureImporter:
         - {x: 41, y: -25}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H13_Down_Leg_R
       rect:
@@ -862,6 +1144,13 @@ TextureImporter:
         - {x: 53, y: 11.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: mon_11_Whip_Short
       rect:
@@ -882,6 +1171,13 @@ TextureImporter:
         - {x: 73.96194, y: -14.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H14_Mouth
       rect:
@@ -900,6 +1196,13 @@ TextureImporter:
         - {x: 11, y: -12.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H13_Mosaic
       rect:
@@ -918,9 +1221,26 @@ TextureImporter:
         - {x: 18, y: 30}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

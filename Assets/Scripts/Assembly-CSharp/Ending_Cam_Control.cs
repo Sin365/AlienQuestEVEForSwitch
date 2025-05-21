@@ -22,7 +22,7 @@ public class Ending_Cam_Control : global::UnityEngine.MonoBehaviour
 
 	private void Start()
 	{
-		base.camera.orthographicSize = 5f;
+		base.GetComponent<UnityEngine.Camera>().orthographicSize = 5f;
 		target_Pos = base.transform.position;
 	}
 
@@ -35,7 +35,7 @@ public class Ending_Cam_Control : global::UnityEngine.MonoBehaviour
 
 	private void Update()
 	{
-		base.camera.orthographicSize = global::UnityEngine.Mathf.Lerp(base.camera.orthographicSize, target_Size, global::UnityEngine.Time.deltaTime * Size_Speed);
+		base.GetComponent<UnityEngine.Camera>().orthographicSize = global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.Camera>().orthographicSize, target_Size, global::UnityEngine.Time.deltaTime * Size_Speed);
 		if (onShake)
 		{
 			shakeTimer -= global::UnityEngine.Time.deltaTime;

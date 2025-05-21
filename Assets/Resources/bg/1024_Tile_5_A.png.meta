@@ -1,19 +1,33 @@
 fileFormatVersion: 2
 guid: fe4f7fc8c8692234d93f5388dd966bf0
-timeCreated: 1747839227
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Reactor
-    21300002: Com_4
-    21300004: Reactor_Pillar
-    21300006: Reactor_Glow
-    21300008: Reactor_GlowCircle
-    21300010: Reactor_Pillar_H
-    21300012: Reactor_Platform
-    21300014: Reactor_Pipe
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Reactor
+  - first:
+      213: 21300002
+    second: Com_4
+  - first:
+      213: 21300004
+    second: Reactor_Pillar
+  - first:
+      213: 21300006
+    second: Reactor_Glow
+  - first:
+      213: 21300008
+    second: Reactor_GlowCircle
+  - first:
+      213: 21300010
+    second: Reactor_Pillar_H
+  - first:
+      213: 21300012
+    second: Reactor_Platform
+  - first:
+      213: 21300014
+    second: Reactor_Pipe
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -31,6 +45,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -53,18 +69,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -74,6 +93,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -186,6 +206,13 @@ TextureImporter:
         - {x: -156, y: -265.4253}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Com_4
       rect:
@@ -207,6 +234,13 @@ TextureImporter:
         - {x: 43, y: -40.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Reactor_Pillar
       rect:
@@ -256,6 +290,13 @@ TextureImporter:
         - {x: -79, y: 39}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Reactor_Glow
       rect:
@@ -280,6 +321,13 @@ TextureImporter:
         - {x: -71, y: 73}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Reactor_GlowCircle
       rect:
@@ -302,6 +350,13 @@ TextureImporter:
         - {x: 15, y: -28}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Reactor_Pillar_H
       rect:
@@ -352,6 +407,13 @@ TextureImporter:
         - {x: -277, y: -79.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Reactor_Platform
       rect:
@@ -372,6 +434,13 @@ TextureImporter:
         - {x: 197, y: -7}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Reactor_Pipe
       rect:
@@ -390,9 +459,26 @@ TextureImporter:
         - {x: 50, y: -73.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

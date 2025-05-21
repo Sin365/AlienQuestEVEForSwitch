@@ -40,8 +40,8 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 		{
 			BGM_Num = global::UnityEngine.PlayerPrefs.GetInt("SelBGM") - 1;
 			Sleep_Timer = 0f;
-			BGM_List[BGM_Num].audio.Play();
-			BGM_List[BGM_Num].audio.loop = true;
+			BGM_List[BGM_Num].GetComponent<UnityEngine.AudioSource>().Play();
+			BGM_List[BGM_Num].GetComponent<UnityEngine.AudioSource>().loop = true;
 		}
 		Sleep_Timer = 7f;
 	}
@@ -50,7 +50,7 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 	{
 		BGM_Num = 1;
 		Sleep_Timer = 0f;
-		BGM_List[BGM_Num].audio.Play();
+		BGM_List[BGM_Num].GetComponent<UnityEngine.AudioSource>().Play();
 	}
 
 	public void Play(int num)
@@ -62,7 +62,7 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 		}
 		if (num == 0)
 		{
-			BGM_List[BGM_Num].audio.loop = false;
+			BGM_List[BGM_Num].GetComponent<UnityEngine.AudioSource>().loop = false;
 			return;
 		}
 		BGM_Num = num - 1;
@@ -71,12 +71,12 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 		{
 			if (i == BGM_Num)
 			{
-				BGM_List[i].audio.Play();
-				BGM_List[i].audio.loop = true;
+				BGM_List[i].GetComponent<UnityEngine.AudioSource>().Play();
+				BGM_List[i].GetComponent<UnityEngine.AudioSource>().loop = true;
 			}
 			else
 			{
-				BGM_List[i].audio.loop = false;
+				BGM_List[i].GetComponent<UnityEngine.AudioSource>().loop = false;
 			}
 		}
 	}
@@ -92,12 +92,12 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 		{
 			if (i == BGM_Num)
 			{
-				BGM_List[i].audio.Play();
-				BGM_List[i].audio.loop = true;
+				BGM_List[i].GetComponent<UnityEngine.AudioSource>().Play();
+				BGM_List[i].GetComponent<UnityEngine.AudioSource>().loop = true;
 			}
 			else
 			{
-				BGM_List[i].audio.loop = false;
+				BGM_List[i].GetComponent<UnityEngine.AudioSource>().loop = false;
 			}
 		}
 	}
@@ -113,12 +113,12 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 		{
 			if (GM.Get_Event(10 + Boss_Num))
 			{
-				BGM_List[4].audio.loop = false;
+				BGM_List[4].GetComponent<UnityEngine.AudioSource>().loop = false;
 				for (int i = 0; i < BGM_Max; i++)
 				{
-					BGM_List[i].audio.volume = global::UnityEngine.Mathf.Lerp(BGM_List[i].audio.volume, 0f, global::UnityEngine.Time.deltaTime * 3f);
+					BGM_List[i].GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(BGM_List[i].GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 3f);
 				}
-				if (BGM_List[4].audio.volume < 0.01f)
+				if (BGM_List[4].GetComponent<UnityEngine.AudioSource>().volume < 0.01f)
 				{
 					onBoss_Play = false;
 					Boss_Num = 0;
@@ -130,7 +130,7 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 					{
 						BGM_Num = Prev_Num;
 					}
-					BGM_List[BGM_Num].audio.Play();
+					BGM_List[BGM_Num].GetComponent<UnityEngine.AudioSource>().Play();
 				}
 				return;
 			}
@@ -138,11 +138,11 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 			{
 				if (j == BGM_Num)
 				{
-					BGM_List[j].audio.volume = global::UnityEngine.Mathf.Lerp(BGM_List[j].audio.volume, GM.Option_Volume[1] * 2f, global::UnityEngine.Time.deltaTime * 10f);
+					BGM_List[j].GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(BGM_List[j].GetComponent<UnityEngine.AudioSource>().volume, GM.Option_Volume[1] * 2f, global::UnityEngine.Time.deltaTime * 10f);
 				}
 				else
 				{
-					BGM_List[j].audio.volume = global::UnityEngine.Mathf.Lerp(BGM_List[j].audio.volume, 0f, global::UnityEngine.Time.deltaTime * 2f);
+					BGM_List[j].GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(BGM_List[j].GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 2f);
 				}
 			}
 		}
@@ -152,11 +152,11 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 			{
 				for (int k = 0; k < BGM_Max; k++)
 				{
-					BGM_List[k].audio.volume = global::UnityEngine.Mathf.Lerp(BGM_List[k].audio.volume, 0f, global::UnityEngine.Time.deltaTime * 1f);
+					BGM_List[k].GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(BGM_List[k].GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 1f);
 				}
 				return;
 			}
-			if (!BGM_List[BGM_Num].audio.isPlaying)
+			if (!BGM_List[BGM_Num].GetComponent<UnityEngine.AudioSource>().isPlaying)
 			{
 				Sleep_Timer += global::UnityEngine.Time.deltaTime;
 				if (Sleep_Timer > 10f)
@@ -169,7 +169,7 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 					{
 						BGM_Num = 0;
 					}
-					BGM_List[BGM_Num].audio.Play();
+					BGM_List[BGM_Num].GetComponent<UnityEngine.AudioSource>().Play();
 					Sleep_Timer = 0f;
 				}
 			}
@@ -177,11 +177,11 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 			{
 				if (l == BGM_Num)
 				{
-					BGM_List[l].audio.volume = global::UnityEngine.Mathf.Lerp(BGM_List[l].audio.volume, GM.Option_Volume[1], global::UnityEngine.Time.deltaTime * 3f);
+					BGM_List[l].GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(BGM_List[l].GetComponent<UnityEngine.AudioSource>().volume, GM.Option_Volume[1], global::UnityEngine.Time.deltaTime * 3f);
 				}
 				else
 				{
-					BGM_List[l].audio.volume = global::UnityEngine.Mathf.Lerp(BGM_List[l].audio.volume, 0f, global::UnityEngine.Time.deltaTime * 1f);
+					BGM_List[l].GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(BGM_List[l].GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 1f);
 				}
 			}
 		}
@@ -189,7 +189,7 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 		{
 			for (int m = 0; m < BGM_Max; m++)
 			{
-				BGM_List[m].audio.volume = global::UnityEngine.Mathf.Lerp(BGM_List[m].audio.volume, 0f, global::UnityEngine.Time.deltaTime * 2f);
+				BGM_List[m].GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(BGM_List[m].GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 2f);
 			}
 		}
 	}

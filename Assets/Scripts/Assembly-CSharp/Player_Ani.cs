@@ -576,7 +576,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			End_Attack(0);
 		}
 		BoxCol_SizeY = 2.2f;
-		BoxCol.center = new global::UnityEngine.Vector2(-0.1f, 1.22f);
+		BoxCol.offset = new global::UnityEngine.Vector2(-0.1f, 1.22f);
 		BoxCol.size = new global::UnityEngine.Vector2(1.2f, 2.2f);
 	}
 
@@ -771,14 +771,14 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			global::UnityEngine.GameObject.Find("Effect_Spin").transform.localScale = new global::UnityEngine.Vector3(1.3f, 2f, 1f);
 			global::UnityEngine.GameObject.Find("Effect_SpinGlow").transform.localScale = new global::UnityEngine.Vector3(1.3f, 2f, 1f);
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(9.56f, 0.66f);
-			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0f, 4.2f);
+			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4.2f);
 		}
 		else
 		{
 			global::UnityEngine.GameObject.Find("Effect_Spin").transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
 			global::UnityEngine.GameObject.Find("Effect_SpinGlow").transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(14.8f, 0.66f);
-			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0f, 4.2f);
+			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4.2f);
 		}
 		if (GM.Weapon_Num == 0)
 		{
@@ -797,25 +797,25 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 		{
 			Spr_Effect_1 = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_2");
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(15.6f, 0.66f);
-			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0f, 4.2f);
+			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4.2f);
 		}
 		else if (GM.Weapon_Num == 3)
 		{
 			Spr_Effect_1 = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_3");
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(15.6f, 0.7f);
-			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0f, 4.15f);
+			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4.15f);
 		}
 		else if (GM.Weapon_Num == 4)
 		{
 			Spr_Effect_1 = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_4");
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(18.8f, 1f);
-			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0f, 4f);
+			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4f);
 		}
 		else if (GM.Weapon_Num == 5)
 		{
 			Spr_Effect_1 = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_5");
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(18.8f, 1.2f);
-			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0f, 4f);
+			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4f);
 		}
 		if (GM.Weapon_Num < 5)
 		{
@@ -939,7 +939,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			if (BoxCol_SizeY != 4.8f || BoxCol.size.x != 1.2f)
 			{
 				BoxCol_SizeY = 4.8f;
-				BoxCol.center = new global::UnityEngine.Vector2(-0.1f, 2.54f);
+				BoxCol.offset = new global::UnityEngine.Vector2(-0.1f, 2.54f);
 				BoxCol.size = new global::UnityEngine.Vector2(1.2f, 4.8f);
 			}
 			Ani_Damage();
@@ -948,7 +948,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			if (BoxCol_SizeY != 2.2f)
 			{
 				BoxCol_SizeY = 2.2f;
-				BoxCol.center = new global::UnityEngine.Vector2(-0.1f, 1.22f);
+				BoxCol.offset = new global::UnityEngine.Vector2(-0.1f, 1.22f);
 				BoxCol.size = new global::UnityEngine.Vector2(1.2f, 2.2f);
 			}
 			Ani_Slide();
@@ -957,7 +957,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			if (BoxCol_SizeY != 4.8f || BoxCol.size.x != 1.2f)
 			{
 				BoxCol_SizeY = 4.8f;
-				BoxCol.center = new global::UnityEngine.Vector2(-0.1f, 2.54f);
+				BoxCol.offset = new global::UnityEngine.Vector2(-0.1f, 2.54f);
 				BoxCol.size = new global::UnityEngine.Vector2(1.2f, 4.8f);
 			}
 			Ani_Attack_Spin();
@@ -970,14 +970,14 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 					if (Num_SitUp < 7 && BoxCol_SizeY != 4.8f)
 					{
 						BoxCol_SizeY = 4.8f;
-						BoxCol.center = new global::UnityEngine.Vector2(-0.1f, 2.54f);
+						BoxCol.offset = new global::UnityEngine.Vector2(-0.1f, 2.54f);
 						BoxCol.size = new global::UnityEngine.Vector2(1.2f, 4.8f);
 					}
 				}
 				else if (BoxCol_SizeY != 4.8f || BoxCol.size.x != 1.2f)
 				{
 					BoxCol_SizeY = 4.8f;
-					BoxCol.center = new global::UnityEngine.Vector2(-0.1f, 2.54f);
+					BoxCol.offset = new global::UnityEngine.Vector2(-0.1f, 2.54f);
 					BoxCol.size = new global::UnityEngine.Vector2(1.2f, 4.8f);
 				}
 			}
@@ -1042,7 +1042,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			if (BoxCol_SizeY != 4.6f || BoxCol.size.x != 1.6f)
 			{
 				BoxCol_SizeY = 4.6f;
-				BoxCol.center = new global::UnityEngine.Vector2(-0.1f, 2.44f);
+				BoxCol.offset = new global::UnityEngine.Vector2(-0.1f, 2.44f);
 				BoxCol.size = new global::UnityEngine.Vector2(1.6f, 4.6f);
 			}
 			if (onAttack_4 && !onAttack_3)
@@ -1094,7 +1094,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			if (BoxCol_SizeY != 2.2f)
 			{
 				BoxCol_SizeY = 2.2f;
-				BoxCol.center = new global::UnityEngine.Vector2(-0.1f, 1.22f);
+				BoxCol.offset = new global::UnityEngine.Vector2(-0.1f, 1.22f);
 				BoxCol.size = new global::UnityEngine.Vector2(1.2f, 2.2f);
 			}
 			if (onAttack)
@@ -1116,14 +1116,14 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 				if (BoxCol_SizeY != 2.2f)
 				{
 					BoxCol_SizeY = 2.2f;
-					BoxCol.center = new global::UnityEngine.Vector2(-0.1f, 2.7f);
+					BoxCol.offset = new global::UnityEngine.Vector2(-0.1f, 2.7f);
 					BoxCol.size = new global::UnityEngine.Vector2(2.2f, 2.2f);
 				}
 			}
 			else if (BoxCol_SizeY != 4.8f || BoxCol.size.x != 1.2f)
 			{
 				BoxCol_SizeY = 4.8f;
-				BoxCol.center = new global::UnityEngine.Vector2(-0.1f, 2.54f);
+				BoxCol.offset = new global::UnityEngine.Vector2(-0.1f, 2.54f);
 				BoxCol.size = new global::UnityEngine.Vector2(1.2f, 4.8f);
 			}
 			if (onAttack_4 && !onAttack_3)

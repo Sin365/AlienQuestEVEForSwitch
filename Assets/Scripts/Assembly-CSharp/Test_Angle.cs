@@ -61,8 +61,8 @@ public class Test_Angle : global::UnityEngine.MonoBehaviour
 		{
 			float num = base.transform.position.x - Player.transform.position.x;
 			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire_1, thisPos, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
-			gameObject.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * (0f - num), global::UnityEngine.ForceMode2D.Impulse);
-			gameObject.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
+			gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * (0f - num), global::UnityEngine.ForceMode2D.Impulse);
+			gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		else if (on_Laser)
 		{

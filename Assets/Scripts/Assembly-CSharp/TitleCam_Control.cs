@@ -43,7 +43,7 @@ public class TitleCam_Control : global::UnityEngine.MonoBehaviour
 
 	private void Set_Default()
 	{
-		base.camera.orthographicSize = 5f;
+		base.GetComponent<UnityEngine.Camera>().orthographicSize = 5f;
 		base.transform.position = new global::UnityEngine.Vector3(2f, -6.5f, -100f);
 	}
 
@@ -102,7 +102,7 @@ public class TitleCam_Control : global::UnityEngine.MonoBehaviour
 				Random_Target();
 			}
 		}
-		base.camera.orthographicSize = global::UnityEngine.Mathf.Lerp(base.camera.orthographicSize, size_Target, global::UnityEngine.Time.deltaTime * 0.1f);
+		base.GetComponent<UnityEngine.Camera>().orthographicSize = global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.Camera>().orthographicSize, size_Target, global::UnityEngine.Time.deltaTime * 0.1f);
 		base.transform.position = global::UnityEngine.Vector3.Lerp(base.transform.position, pos_Target, global::UnityEngine.Time.deltaTime * 0.12f);
 	}
 }

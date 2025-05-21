@@ -198,7 +198,7 @@ public class GameOver_Control : global::UnityEngine.MonoBehaviour
 		bool flag = false;
 		if (global::UnityEngine.Input.GetMouseButtonDown(0))
 		{
-			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
 			if (rayIntersection.collider != null)
 			{

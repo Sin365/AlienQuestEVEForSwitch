@@ -1,19 +1,33 @@
 fileFormatVersion: 2
 guid: 0fa2262557ec41b498116d3dd14064a3
-timeCreated: 1747839221
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: H_24_Leg_L
-    21300002: H_24_Leg_R
-    21300004: H_24_Calf_R
-    21300006: Mon_33_Head
-    21300008: Mon_33_Jaw
-    21300010: Mon_33_Teeth_Top
-    21300012: Mon_33_Teeth_Bot
-    21300014: H24_Mosaic_Red
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: H_24_Leg_L
+  - first:
+      213: 21300002
+    second: H_24_Leg_R
+  - first:
+      213: 21300004
+    second: H_24_Calf_R
+  - first:
+      213: 21300006
+    second: Mon_33_Head
+  - first:
+      213: 21300008
+    second: Mon_33_Jaw
+  - first:
+      213: 21300010
+    second: Mon_33_Teeth_Top
+  - first:
+      213: 21300012
+    second: Mon_33_Teeth_Bot
+  - first:
+      213: 21300014
+    second: H24_Mosaic_Red
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -31,6 +45,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -53,18 +69,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -74,6 +93,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -102,6 +122,13 @@ TextureImporter:
         - {x: -38.49999, y: 37.9834}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_24_Leg_R
       rect:
@@ -131,6 +158,13 @@ TextureImporter:
         - {x: 65.51337, y: 89.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_24_Calf_R
       rect:
@@ -154,6 +188,13 @@ TextureImporter:
         - {x: 51.98761, y: -99.00618}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Head
       rect:
@@ -182,6 +223,13 @@ TextureImporter:
         - {x: -150, y: -95.49998}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Jaw
       rect:
@@ -203,6 +251,13 @@ TextureImporter:
         - {x: 51.99192, y: 7.500004}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Teeth_Top
       rect:
@@ -227,6 +282,13 @@ TextureImporter:
         - {x: -8.007549, y: -18.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Teeth_Bot
       rect:
@@ -245,6 +307,13 @@ TextureImporter:
         - {x: 21.5, y: -14.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H24_Mosaic_Red
       rect:
@@ -263,9 +332,26 @@ TextureImporter:
         - {x: 18, y: 18}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

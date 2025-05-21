@@ -1,21 +1,39 @@
 fileFormatVersion: 2
 guid: fdb0f0b97430a7d4bb6db1abe367b611
-timeCreated: 1747839227
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Teleport_Color
-    21300002: Teleport_Cable_L_1
-    21300004: Teleport_Cable_R_1
-    21300006: Teleport_Cable_R_2
-    21300008: Teleport_Cable_L_2
-    21300010: Teleport_Body
-    21300012: Tile_5_Out_27_TL
-    21300014: Tile_5_Out_27_TR
-    21300016: Tile_5_Out_27_BL
-    21300018: Tile_5_Out_27_BR
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Teleport_Color
+  - first:
+      213: 21300002
+    second: Teleport_Cable_L_1
+  - first:
+      213: 21300004
+    second: Teleport_Cable_R_1
+  - first:
+      213: 21300006
+    second: Teleport_Cable_R_2
+  - first:
+      213: 21300008
+    second: Teleport_Cable_L_2
+  - first:
+      213: 21300010
+    second: Teleport_Body
+  - first:
+      213: 21300012
+    second: Tile_5_Out_27_TL
+  - first:
+      213: 21300014
+    second: Tile_5_Out_27_TR
+  - first:
+      213: 21300016
+    second: Tile_5_Out_27_BL
+  - first:
+      213: 21300018
+    second: Tile_5_Out_27_BR
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -33,6 +51,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -55,18 +75,21 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -76,6 +99,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -97,6 +121,13 @@ TextureImporter:
         - {x: 97, y: -6}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Teleport_Cable_L_1
       rect:
@@ -119,6 +150,13 @@ TextureImporter:
         - {x: 13.97533, y: -67.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Teleport_Cable_R_1
       rect:
@@ -141,6 +179,13 @@ TextureImporter:
         - {x: 20.02467, y: -74.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Teleport_Cable_R_2
       rect:
@@ -162,6 +207,13 @@ TextureImporter:
         - {x: -0.4999886, y: -67.98663}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Teleport_Cable_L_2
       rect:
@@ -185,6 +237,13 @@ TextureImporter:
         - {x: 24.47855, y: -67.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Teleport_Body
       rect:
@@ -242,6 +301,13 @@ TextureImporter:
         - {x: -141.0381, y: -121.9619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Out_27_TL
       rect:
@@ -262,6 +328,13 @@ TextureImporter:
         - {x: 49.5, y: -6}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Out_27_TR
       rect:
@@ -282,6 +355,13 @@ TextureImporter:
         - {x: 44.5, y: -52}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Out_27_BL
       rect:
@@ -308,6 +388,13 @@ TextureImporter:
         - {x: 51.5, y: 18}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Out_27_BR
       rect:
@@ -327,9 +414,26 @@ TextureImporter:
         - {x: 51.5, y: 52}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

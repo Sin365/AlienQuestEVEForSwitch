@@ -67,7 +67,7 @@ public class CumShot_1 : global::UnityEngine.MonoBehaviour
 
 	public void Set_SortingOrder(int num, global::UnityEngine.Transform pos, float holdTimer)
 	{
-		CumShot_Geo.GetComponent<Puppet2D_SortingLayer>().renderer.sortingOrder = num;
+		CumShot_Geo.GetComponent<Puppet2D_SortingLayer>().GetComponent<UnityEngine.Renderer>().sortingOrder = num;
 		if (pos != null)
 		{
 			pos_Target = pos;
@@ -90,14 +90,14 @@ public class CumShot_1 : global::UnityEngine.MonoBehaviour
 
 	private void Start_Long()
 	{
-		CumShot_Geo.GetComponent<Puppet2D_SortingLayer>().renderer.sortingOrder = 200;
-		Ctrl_1.rigidbody2D.AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(500, 1000), 0f));
-		Ctrl_2.rigidbody2D.AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(500, 1000), 0f));
-		Ctrl_3.rigidbody2D.AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(500, 1000), 0f));
-		Ctrl_4.rigidbody2D.AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(500, 1000), 0f));
-		Ctrl_5.rigidbody2D.AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(400, 900), 0f));
-		Ctrl_6.rigidbody2D.AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(300, 700), 0f));
-		Ctrl_7.rigidbody2D.AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(200, 500), 0f));
+		CumShot_Geo.GetComponent<Puppet2D_SortingLayer>().GetComponent<UnityEngine.Renderer>().sortingOrder = 200;
+		Ctrl_1.GetComponent<UnityEngine.Rigidbody2D>().AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(500, 1000), 0f));
+		Ctrl_2.GetComponent<UnityEngine.Rigidbody2D>().AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(500, 1000), 0f));
+		Ctrl_3.GetComponent<UnityEngine.Rigidbody2D>().AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(500, 1000), 0f));
+		Ctrl_4.GetComponent<UnityEngine.Rigidbody2D>().AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(500, 1000), 0f));
+		Ctrl_5.GetComponent<UnityEngine.Rigidbody2D>().AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(400, 900), 0f));
+		Ctrl_6.GetComponent<UnityEngine.Rigidbody2D>().AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(300, 700), 0f));
+		Ctrl_7.GetComponent<UnityEngine.Rigidbody2D>().AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(200, 500), 0f));
 	}
 
 	private void Set_GravityScale()

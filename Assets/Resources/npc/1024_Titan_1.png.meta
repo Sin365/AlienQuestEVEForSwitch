@@ -1,26 +1,54 @@
 fileFormatVersion: 2
 guid: 426fc3ae7cab2c644ac9ca3c52c443e3
-timeCreated: 1747839217
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Titan_Arm_L
-    21300002: Titan_Body
-    21300004: Titan_Eye_Highlight
-    21300006: Titan_Gun
-    21300008: Titan_Gun_Head
-    21300010: Titan_Eye_Glow_3
-    21300012: Titan_Eye_Glow_2
-    21300014: Titan_Name
-    21300016: Titan_Eye_Glow_1
-    21300018: Titan_Hand_L
-    21300020: Titan_Arm_R
-    21300022: Titan_Calf_L
-    21300024: Titan_Leg_L
-    21300026: Titan_Leg_R
-    21300028: Titan_Calf_R
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Titan_Arm_L
+  - first:
+      213: 21300002
+    second: Titan_Body
+  - first:
+      213: 21300004
+    second: Titan_Eye_Highlight
+  - first:
+      213: 21300006
+    second: Titan_Gun
+  - first:
+      213: 21300008
+    second: Titan_Gun_Head
+  - first:
+      213: 21300010
+    second: Titan_Eye_Glow_3
+  - first:
+      213: 21300012
+    second: Titan_Eye_Glow_2
+  - first:
+      213: 21300014
+    second: Titan_Name
+  - first:
+      213: 21300016
+    second: Titan_Eye_Glow_1
+  - first:
+      213: 21300018
+    second: Titan_Hand_L
+  - first:
+      213: 21300020
+    second: Titan_Arm_R
+  - first:
+      213: 21300022
+    second: Titan_Calf_L
+  - first:
+      213: 21300024
+    second: Titan_Leg_L
+  - first:
+      213: 21300026
+    second: Titan_Leg_R
+  - first:
+      213: 21300028
+    second: Titan_Calf_R
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -38,6 +66,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -60,18 +90,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -81,6 +114,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -113,6 +147,13 @@ TextureImporter:
         - {x: -53.5, y: -161.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Body
       rect:
@@ -170,6 +211,13 @@ TextureImporter:
         - {x: -17.50002, y: -251.462}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Eye_Highlight
       rect:
@@ -201,6 +249,13 @@ TextureImporter:
         - {x: -16.47533, y: -8.499983}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Gun
       rect:
@@ -224,6 +279,13 @@ TextureImporter:
         - {x: -84, y: -55.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Gun_Head
       rect:
@@ -246,6 +308,13 @@ TextureImporter:
         - {x: 15.98009, y: -45.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Eye_Glow_3
       rect:
@@ -275,6 +344,13 @@ TextureImporter:
         - {x: 30.49998, y: -10.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Eye_Glow_2
       rect:
@@ -308,6 +384,13 @@ TextureImporter:
         - {x: -12.99525, y: -19.98503}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Name
       rect:
@@ -326,6 +409,13 @@ TextureImporter:
         - {x: 61.5, y: 18}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Eye_Glow_1
       rect:
@@ -356,6 +446,13 @@ TextureImporter:
         - {x: 33.9858, y: -9.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Hand_L
       rect:
@@ -380,6 +477,13 @@ TextureImporter:
         - {x: 54.0082, y: 136.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Arm_R
       rect:
@@ -408,6 +512,13 @@ TextureImporter:
         - {x: -14.99999, y: -143}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Calf_L
       rect:
@@ -431,6 +542,13 @@ TextureImporter:
         - {x: -65.97531, y: 124.9619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Leg_L
       rect:
@@ -461,6 +579,13 @@ TextureImporter:
         - {x: -5.468391, y: -177.9753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Leg_R
       rect:
@@ -491,6 +616,13 @@ TextureImporter:
         - {x: -5.468391, y: -177.9753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Titan_Calf_R
       rect:
@@ -513,9 +645,26 @@ TextureImporter:
         - {x: 66.02467, y: 138.9619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

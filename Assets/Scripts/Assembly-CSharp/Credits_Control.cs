@@ -95,13 +95,13 @@ public class Credits_Control : global::UnityEngine.MonoBehaviour
 		SR_Glow_RB_2.color = new global::UnityEngine.Color(SR_Glow_RB_2.color.r, SR_Glow_RB_2.color.g, SR_Glow_RB_2.color.b, 0f);
 		if (global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume") < 0.6f)
 		{
-			global::UnityEngine.GameObject.Find("BGM_Credits").audio.volume = 0.6f;
+			global::UnityEngine.GameObject.Find("BGM_Credits").GetComponent<UnityEngine.AudioSource>().volume = 0.6f;
 		}
 		else
 		{
-			global::UnityEngine.GameObject.Find("BGM_Credits").audio.volume = global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume");
+			global::UnityEngine.GameObject.Find("BGM_Credits").GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume");
 		}
-		global::UnityEngine.GameObject.Find("BGM_Credits").audio.Play();
+		global::UnityEngine.GameObject.Find("BGM_Credits").GetComponent<UnityEngine.AudioSource>().Play();
 	}
 
 	private void Update()
@@ -209,7 +209,7 @@ public class Credits_Control : global::UnityEngine.MonoBehaviour
 				global::UnityEngine.Application.LoadLevel("Title");
 			}
 			BlackFade.color = new global::UnityEngine.Color(0f, 0f, 0f, FadeOpacity);
-			global::UnityEngine.GameObject.Find("BGM_Credits").audio.volume = global::UnityEngine.Mathf.Lerp(global::UnityEngine.GameObject.Find("BGM_Credits").audio.volume, 0f, global::UnityEngine.Time.deltaTime * 1.6f);
+			global::UnityEngine.GameObject.Find("BGM_Credits").GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(global::UnityEngine.GameObject.Find("BGM_Credits").GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 1.6f);
 		}
 	}
 

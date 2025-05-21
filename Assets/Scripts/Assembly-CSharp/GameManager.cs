@@ -778,7 +778,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject.Find("BlackPause").GetComponent<global::UnityEngine.SpriteRenderer>().color = new global::UnityEngine.Color(1f, 1f, 1f, 0.4f);
 		if (global::UnityEngine.GameObject.Find("Player") != null)
 		{
-			player_Velocity = global::UnityEngine.GameObject.Find("Player").rigidbody2D.velocity;
+			player_Velocity = global::UnityEngine.GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>().velocity;
 			global::UnityEngine.GameObject.Find("Player").GetComponent<global::UnityEngine.Rigidbody2D>().Sleep();
 		}
 		UC.HideInst_Status();
@@ -799,7 +799,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 		if (global::UnityEngine.GameObject.Find("Player") != null)
 		{
 			global::UnityEngine.GameObject.Find("Player").GetComponent<global::UnityEngine.Rigidbody2D>().WakeUp();
-			global::UnityEngine.GameObject.Find("Player").rigidbody2D.velocity = player_Velocity;
+			global::UnityEngine.GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>().velocity = player_Velocity;
 		}
 	}
 

@@ -58,7 +58,7 @@ public class GameOver_Camera : global::UnityEngine.MonoBehaviour
 		targetPos = base.transform.position;
 		MouseMove = new global::UnityEngine.Vector3(0f, 0f, 0f);
 		MousePos = global::UnityEngine.Input.mousePosition;
-		MouseDownPos = base.camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
+		MouseDownPos = base.GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
 		if (global::UnityEngine.PlayerPrefs.GetInt("onClockFps") != 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = false;
@@ -142,7 +142,7 @@ public class GameOver_Camera : global::UnityEngine.MonoBehaviour
 			MouseZoom_Timer -= global::UnityEngine.Time.deltaTime;
 			targetSize += (0f - global::UnityEngine.Input.mouseScrollDelta.y) * global::UnityEngine.Time.deltaTime * 50f;
 		}
-		MousePos = base.camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
+		MousePos = base.GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
 		MouseMove = new global::UnityEngine.Vector3(MousePos.x - MousePos_Prev.x, MousePos.y - MousePos_Prev.y, 0f);
 		MousePos_Prev = MousePos;
 		if (GOM.onMouseDrag && global::UnityEngine.Input.GetMouseButton(0))
@@ -224,22 +224,22 @@ public class GameOver_Camera : global::UnityEngine.MonoBehaviour
 		{
 			targetSize = MaxSize;
 		}
-		base.camera.orthographicSize = global::UnityEngine.Mathf.Lerp(base.camera.orthographicSize, targetSize, global::UnityEngine.Time.deltaTime * 2f);
-		if (targetPos.x - base.camera.orthographicSize * base.camera.aspect <= Cam_Left)
+		base.GetComponent<UnityEngine.Camera>().orthographicSize = global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.Camera>().orthographicSize, targetSize, global::UnityEngine.Time.deltaTime * 2f);
+		if (targetPos.x - base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect <= Cam_Left)
 		{
-			targetPos.x = Cam_Left + base.camera.orthographicSize * base.camera.aspect;
+			targetPos.x = Cam_Left + base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect;
 		}
-		else if (targetPos.x + base.camera.orthographicSize * base.camera.aspect >= Cam_Right)
+		else if (targetPos.x + base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect >= Cam_Right)
 		{
-			targetPos.x = Cam_Right - base.camera.orthographicSize * base.camera.aspect;
+			targetPos.x = Cam_Right - base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect;
 		}
-		if (targetPos.y - base.camera.orthographicSize <= Cam_Bot)
+		if (targetPos.y - base.GetComponent<UnityEngine.Camera>().orthographicSize <= Cam_Bot)
 		{
-			targetPos.y = Cam_Bot + base.camera.orthographicSize;
+			targetPos.y = Cam_Bot + base.GetComponent<UnityEngine.Camera>().orthographicSize;
 		}
-		else if (targetPos.y + base.camera.orthographicSize >= Cam_Top)
+		else if (targetPos.y + base.GetComponent<UnityEngine.Camera>().orthographicSize >= Cam_Top)
 		{
-			targetPos.y = Cam_Top - base.camera.orthographicSize;
+			targetPos.y = Cam_Top - base.GetComponent<UnityEngine.Camera>().orthographicSize;
 		}
 		base.transform.position = global::UnityEngine.Vector3.Lerp(base.transform.position, targetPos, global::UnityEngine.Time.deltaTime * 4f);
 	}

@@ -123,7 +123,7 @@ public class AI_Mon_3 : global::UnityEngine.MonoBehaviour
 			}
 			else if (GM.GameOver)
 			{
-				if (Player.rigidbody2D.velocity.y == 0f)
+				if (Player.GetComponent<UnityEngine.Rigidbody2D>().velocity.y == 0f)
 				{
 					if (!isGameOver)
 					{

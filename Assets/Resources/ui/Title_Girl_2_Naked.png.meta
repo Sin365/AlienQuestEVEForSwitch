@@ -1,19 +1,33 @@
 fileFormatVersion: 2
 guid: 776588fcbb11c2641a29ce28fa73b35a
-timeCreated: 1747839216
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Title_Girl_Wand
-    21300002: Title_Girl_Star
-    21300004: Title_Girl_Arm_1_Naked
-    21300006: Title_Girl_Arm_2_Naked
-    21300008: Title_Girl_Hand_Naked
-    21300010: Title_Girl_Arm_L
-    21300012: Title_Girl_Thumb
-    21300014: Title_Girl_Hand_L
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Title_Girl_Wand
+  - first:
+      213: 21300002
+    second: Title_Girl_Star
+  - first:
+      213: 21300004
+    second: Title_Girl_Arm_1_Naked
+  - first:
+      213: 21300006
+    second: Title_Girl_Arm_2_Naked
+  - first:
+      213: 21300008
+    second: Title_Girl_Hand_Naked
+  - first:
+      213: 21300010
+    second: Title_Girl_Arm_L
+  - first:
+      213: 21300012
+    second: Title_Girl_Thumb
+  - first:
+      213: 21300014
+    second: Title_Girl_Hand_L
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -31,6 +45,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -53,18 +69,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -74,6 +93,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -105,6 +125,13 @@ TextureImporter:
         - {x: -10.9754, y: -205.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Title_Girl_Star
       rect:
@@ -142,6 +169,13 @@ TextureImporter:
         - {x: 138.5, y: -70.50002}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Title_Girl_Arm_1_Naked
       rect:
@@ -191,6 +225,13 @@ TextureImporter:
         - {x: -41.99999, y: -199.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Title_Girl_Arm_2_Naked
       rect:
@@ -255,6 +296,13 @@ TextureImporter:
         - {x: 117.5, y: 138}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Title_Girl_Hand_Naked
       rect:
@@ -277,6 +325,13 @@ TextureImporter:
         - {x: 49.00002, y: -77.49998}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Title_Girl_Arm_L
       rect:
@@ -329,6 +384,13 @@ TextureImporter:
         - {x: -134.4876, y: -466.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Title_Girl_Thumb
       rect:
@@ -350,6 +412,13 @@ TextureImporter:
         - {x: 58.50001, y: -5.524677}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Title_Girl_Hand_L
       rect:
@@ -390,9 +459,26 @@ TextureImporter:
         - {x: 73.50208, y: 13.52469}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

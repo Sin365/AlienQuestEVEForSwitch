@@ -273,9 +273,9 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 			}
 			if (GetComponent<global::UnityEngine.Animator>().GetBool("onHit"))
 			{
-				if (base.rigidbody2D.velocity.x != 0f)
+				if (base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x != 0f)
 				{
-					base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
+					base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
 				}
 			}
 			else if (Flip_Delay > 0f)
@@ -423,11 +423,11 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 		if (isRunForce)
 		{
 			isRunForce = false;
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 35f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 35f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		else
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 20f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 20f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 	}
 

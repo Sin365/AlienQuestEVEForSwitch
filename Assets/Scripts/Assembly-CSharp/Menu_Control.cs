@@ -1176,7 +1176,7 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 		bool flag = false;
 		if (global::UnityEngine.Input.GetMouseButtonDown(0))
 		{
-			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
 			if (rayIntersection.collider != null)
 			{
@@ -1272,12 +1272,12 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 				{
 					if (rayIntersection.collider.name == "pos_Opt1")
 					{
-						float posMouse = (global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_SoundBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
+						float posMouse = (global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_SoundBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
 						Set_Sound(0, posMouse);
 					}
 					else if (rayIntersection.collider.name == "pos_Opt2")
 					{
-						float posMouse2 = (global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_MusicBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
+						float posMouse2 = (global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_MusicBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
 						Set_Music(0, posMouse2);
 					}
 					else if (rayIntersection.collider.name == "pos_Opt3")
@@ -1414,7 +1414,7 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 		}
 		else
 		{
-			global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection2 = global::UnityEngine.Physics2D.GetRayIntersection(ray2, float.PositiveInfinity);
 			if (rayIntersection2.collider != null)
 			{
@@ -1470,7 +1470,7 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 						{
 							Sel_Index = 1;
 						}
-						float posMouse3 = (global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_SoundBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
+						float posMouse3 = (global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_SoundBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
 						Set_Sound(0, posMouse3);
 					}
 					else if (global::UnityEngine.Input.GetMouseButton(0) && rayIntersection2.collider.name == "pos_Opt2")
@@ -1479,7 +1479,7 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 						{
 							Sel_Index = 1;
 						}
-						float posMouse4 = (global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_MusicBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
+						float posMouse4 = (global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_MusicBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
 						Set_Music(0, posMouse4);
 					}
 					else if (rayIntersection2.collider.name.Substring(0, 7) == "pos_Opt")

@@ -171,7 +171,7 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 			return;
 		}
 		Life_Timer += global::UnityEngine.Time.deltaTime;
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
 		distance = global::UnityEngine.Vector3.Distance(new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y + 2.8f, 0f), base.transform.position);
 		dist_X = global::UnityEngine.Mathf.Abs(base.transform.position.x - Player.transform.position.x);
 		dist_Y = global::UnityEngine.Mathf.Abs(base.transform.position.y - (Player.transform.position.y + 2.8f));

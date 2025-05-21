@@ -586,11 +586,11 @@ public class AI_Mon_35 : global::UnityEngine.MonoBehaviour
 		animator.SetBool("onHit", false);
 		Attack_Delay = 0.7f;
 		animator.SetTrigger("On_BackDash");
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 32f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 32f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		if (isStuck_BackLow)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 		Fire_Charge_Timer -= 5f;
@@ -614,8 +614,8 @@ public class AI_Mon_35 : global::UnityEngine.MonoBehaviour
 		Dash_Timer = 0f;
 		Attack_Delay = 1f;
 		animator.SetTrigger("On_Dash");
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 35f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 35f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 	}
 

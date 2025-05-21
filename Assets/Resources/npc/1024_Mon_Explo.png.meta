@@ -1,47 +1,117 @@
 fileFormatVersion: 2
 guid: f72487044476c2b419340d6b14e730a5
-timeCreated: 1747839216
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: CensoredText
-    21300002: CensoredBox
-    21300004: Mon_Explo_0
-    21300006: Mon_Explo_1
-    21300008: Mon_Explo_2
-    21300010: Mon_Explo_3
-    21300012: Mon_Explo_4
-    21300014: Mon_Explo_5
-    21300016: Mon_Explo_6
-    21300018: Mon_Explo_7
-    21300020: Mon_Explo_8
-    21300022: Mon_Explo_9
-    21300024: Mon_Explo_10
-    21300026: Mon_Explo_11
-    21300028: Mon_Explo_12
-    21300030: Mon_Explo_13
-    21300032: Mon_Explo_14
-    21300034: Mon_Explo_15
-    21300036: Mon_Explo_Dummy
-    21300038: Mon_Explo_G_0
-    21300040: Mon_Explo_G_1
-    21300042: Mon_Explo_G_2
-    21300044: Mon_Explo_G_3
-    21300046: Mon_Explo_G_4
-    21300048: Mon_Explo_G_5
-    21300050: Mon_Explo_G_6
-    21300052: Mon_Explo_G_7
-    21300054: Mon_Explo_G_8
-    21300056: Mon_Explo_G_9
-    21300058: Mon_Explo_G_10
-    21300060: Mon_Explo_G_11
-    21300062: Mon_Explo_G_12
-    21300064: Mon_Explo_G_13
-    21300066: Mon_Explo_G_14
-    21300068: Mon_Explo_G_15
-    21300070: Mon_Explo_11_Fire
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: CensoredText
+  - first:
+      213: 21300002
+    second: CensoredBox
+  - first:
+      213: 21300004
+    second: Mon_Explo_0
+  - first:
+      213: 21300006
+    second: Mon_Explo_1
+  - first:
+      213: 21300008
+    second: Mon_Explo_2
+  - first:
+      213: 21300010
+    second: Mon_Explo_3
+  - first:
+      213: 21300012
+    second: Mon_Explo_4
+  - first:
+      213: 21300014
+    second: Mon_Explo_5
+  - first:
+      213: 21300016
+    second: Mon_Explo_6
+  - first:
+      213: 21300018
+    second: Mon_Explo_7
+  - first:
+      213: 21300020
+    second: Mon_Explo_8
+  - first:
+      213: 21300022
+    second: Mon_Explo_9
+  - first:
+      213: 21300024
+    second: Mon_Explo_10
+  - first:
+      213: 21300026
+    second: Mon_Explo_11
+  - first:
+      213: 21300028
+    second: Mon_Explo_12
+  - first:
+      213: 21300030
+    second: Mon_Explo_13
+  - first:
+      213: 21300032
+    second: Mon_Explo_14
+  - first:
+      213: 21300034
+    second: Mon_Explo_15
+  - first:
+      213: 21300036
+    second: Mon_Explo_Dummy
+  - first:
+      213: 21300038
+    second: Mon_Explo_G_0
+  - first:
+      213: 21300040
+    second: Mon_Explo_G_1
+  - first:
+      213: 21300042
+    second: Mon_Explo_G_2
+  - first:
+      213: 21300044
+    second: Mon_Explo_G_3
+  - first:
+      213: 21300046
+    second: Mon_Explo_G_4
+  - first:
+      213: 21300048
+    second: Mon_Explo_G_5
+  - first:
+      213: 21300050
+    second: Mon_Explo_G_6
+  - first:
+      213: 21300052
+    second: Mon_Explo_G_7
+  - first:
+      213: 21300054
+    second: Mon_Explo_G_8
+  - first:
+      213: 21300056
+    second: Mon_Explo_G_9
+  - first:
+      213: 21300058
+    second: Mon_Explo_G_10
+  - first:
+      213: 21300060
+    second: Mon_Explo_G_11
+  - first:
+      213: 21300062
+    second: Mon_Explo_G_12
+  - first:
+      213: 21300064
+    second: Mon_Explo_G_13
+  - first:
+      213: 21300066
+    second: Mon_Explo_G_14
+  - first:
+      213: 21300068
+    second: Mon_Explo_G_15
+  - first:
+      213: 21300070
+    second: Mon_Explo_11_Fire
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -59,6 +129,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -81,18 +153,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -102,6 +177,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -168,6 +244,13 @@ TextureImporter:
         - {x: -88.50002, y: 25.00808}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: CensoredBox
       rect:
@@ -188,6 +271,13 @@ TextureImporter:
         - {x: 193.5, y: -59}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_0
       rect:
@@ -207,6 +297,13 @@ TextureImporter:
         - {x: 80, y: -65}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_1
       rect:
@@ -229,6 +326,13 @@ TextureImporter:
         - {x: 74, y: -63}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_2
       rect:
@@ -253,6 +357,13 @@ TextureImporter:
         - {x: 79, y: -65}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_3
       rect:
@@ -272,6 +383,13 @@ TextureImporter:
         - {x: 80, y: 60}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_4
       rect:
@@ -291,6 +409,13 @@ TextureImporter:
         - {x: 80, y: -65}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_5
       rect:
@@ -314,6 +439,13 @@ TextureImporter:
         - {x: -69.5, y: -65}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_6
       rect:
@@ -379,6 +511,13 @@ TextureImporter:
         - {x: 68.49354, y: 9.474327}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_7
       rect:
@@ -427,6 +566,13 @@ TextureImporter:
         - {x: 71.50001, y: -30.52567}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_8
       rect:
@@ -523,6 +669,13 @@ TextureImporter:
         - {x: -3.499992, y: -63.50648}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_9
       rect:
@@ -648,6 +801,13 @@ TextureImporter:
         - {x: 62.5, y: 35.48324}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_10
       rect:
@@ -684,6 +844,13 @@ TextureImporter:
         - {x: 16.5, y: -55.50648}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_11
       rect:
@@ -796,8 +963,8 @@ TextureImporter:
         - {x: -70.99999, y: -9.487614}
         - {x: -70.99999, y: 28.51239}
         - {x: -45.99999, y: 38.51239}
-        - {x: 9.536743E-06, y: 38.51239}
-        - {x: 9.536743E-06, y: 30.51239}
+        - {x: 0.000009536743, y: 38.51239}
+        - {x: 0.000009536743, y: 30.51239}
         - {x: 1.000008, y: 24.51239}
         - {x: 4.000008, y: 24.51239}
         - {x: 1.000008, y: 27.51239}
@@ -828,6 +995,13 @@ TextureImporter:
         - {x: 56.00001, y: -33.48761}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_12
       rect:
@@ -955,6 +1129,13 @@ TextureImporter:
         - {x: 39.50001, y: -44.48761}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_13
       rect:
@@ -1073,7 +1254,7 @@ TextureImporter:
         - {x: 49.04482, y: 10.00001}
         - {x: 49.04482, y: 7.000011}
         - {x: 48.04482, y: 7.000011}
-        - {x: 54.04482, y: 1.144409E-05}
+        - {x: 54.04482, y: 0.00001144409}
         - {x: 54.04482, y: -30.99999}
         - {x: 44.04482, y: -35.99999}
         - {x: 46.04482, y: -36.99999}
@@ -1098,6 +1279,13 @@ TextureImporter:
         - {x: 38.04482, y: -51.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_14
       rect:
@@ -1237,6 +1425,13 @@ TextureImporter:
         - {x: 61.53158, y: 18.4684}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_15
       rect:
@@ -1321,7 +1516,7 @@ TextureImporter:
         - {x: -42.47767, y: 3.000008}
         - {x: -44.47767, y: 1.000008}
         - {x: -43.47767, y: 1.000008}
-        - {x: -42.47767, y: 7.629395E-06}
+        - {x: -42.47767, y: 0.000007629395}
         - {x: -42.47767, y: -2.999992}
         - {x: -35.47767, y: -2.999992}
         - {x: -35.47767, y: 14.00001}
@@ -1339,6 +1534,13 @@ TextureImporter:
         - {x: 32.52233, y: 12.00001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_Dummy
       rect:
@@ -1406,6 +1608,13 @@ TextureImporter:
         - {x: 1.000015, y: -56}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_0
       rect:
@@ -1425,6 +1634,13 @@ TextureImporter:
         - {x: 80, y: -65}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_1
       rect:
@@ -1443,6 +1659,13 @@ TextureImporter:
         - {x: 80, y: 65}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_2
       rect:
@@ -1465,6 +1688,13 @@ TextureImporter:
         - {x: 80, y: -63}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_3
       rect:
@@ -1484,6 +1714,13 @@ TextureImporter:
         - {x: 80, y: 60}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_4
       rect:
@@ -1503,6 +1740,13 @@ TextureImporter:
         - {x: 80, y: -65}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_5
       rect:
@@ -1526,6 +1770,13 @@ TextureImporter:
         - {x: -69.5, y: -65}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_6
       rect:
@@ -1591,6 +1842,13 @@ TextureImporter:
         - {x: 68.49354, y: 9.474327}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_7
       rect:
@@ -1635,6 +1893,13 @@ TextureImporter:
         - {x: 71.50001, y: -30.52567}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_8
       rect:
@@ -1731,6 +1996,13 @@ TextureImporter:
         - {x: -3.499992, y: -63.50645}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_9
       rect:
@@ -1856,6 +2128,13 @@ TextureImporter:
         - {x: 62.5, y: 35.48324}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_10
       rect:
@@ -1892,6 +2171,13 @@ TextureImporter:
         - {x: 16.5, y: -55.50645}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_11
       rect:
@@ -2004,8 +2290,8 @@ TextureImporter:
         - {x: -70.99999, y: -9.487598}
         - {x: -70.99999, y: 28.5124}
         - {x: -45.99999, y: 38.5124}
-        - {x: 9.536743E-06, y: 38.5124}
-        - {x: 9.536743E-06, y: 30.5124}
+        - {x: 0.000009536743, y: 38.5124}
+        - {x: 0.000009536743, y: 30.5124}
         - {x: 1.000008, y: 24.5124}
         - {x: 4.000008, y: 24.5124}
         - {x: 1.000008, y: 27.5124}
@@ -2036,6 +2322,13 @@ TextureImporter:
         - {x: 56.00001, y: -33.4876}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_12
       rect:
@@ -2163,6 +2456,13 @@ TextureImporter:
         - {x: 39.50001, y: -44.4876}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_13
       rect:
@@ -2281,7 +2581,7 @@ TextureImporter:
         - {x: 49.04482, y: 9.999996}
         - {x: 49.04482, y: 6.999996}
         - {x: 48.04482, y: 6.999996}
-        - {x: 54.04482, y: -3.814697E-06}
+        - {x: 54.04482, y: -0.000003814697}
         - {x: 54.04482, y: -31}
         - {x: 44.04482, y: -36}
         - {x: 46.04482, y: -37}
@@ -2306,6 +2606,13 @@ TextureImporter:
         - {x: 38.04482, y: -52}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_14
       rect:
@@ -2445,6 +2752,13 @@ TextureImporter:
         - {x: 61.53158, y: 18.46839}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_G_15
       rect:
@@ -2529,7 +2843,7 @@ TextureImporter:
         - {x: -42.47767, y: 2.999992}
         - {x: -44.47767, y: 0.9999924}
         - {x: -43.47767, y: 0.9999924}
-        - {x: -42.47767, y: -7.629395E-06}
+        - {x: -42.47767, y: -0.000007629395}
         - {x: -42.47767, y: -3.000008}
         - {x: -35.47767, y: -3.000008}
         - {x: -35.47767, y: 13.99999}
@@ -2547,6 +2861,13 @@ TextureImporter:
         - {x: 32.52233, y: 11.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_Explo_11_Fire
       rect:
@@ -2691,9 +3012,26 @@ TextureImporter:
         - {x: 56, y: -33.4876}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 66305410000000000800000000000000
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,23 +1,45 @@
 fileFormatVersion: 2
 guid: 10776497217d98941bf5f401fc22f1b8
-timeCreated: 1747839220
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Mon_33_Face
-    21300002: Mon_33_Brain
-    21300004: Mon_33_Scar
-    21300006: Mon_33_Jaw
-    21300008: Mon_33_ChestBuster
-    21300010: Mon_33_Glow_Green
-    21300012: Mon_33_Glow_Red
-    21300014: Mon_33_Finger
-    21300016: Mon_33_UpperArm
-    21300018: Mon_33_Hand
-    21300020: Mon_33_Head
-    21300022: Mon_33_ForeArm
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Mon_33_Face
+  - first:
+      213: 21300002
+    second: Mon_33_Brain
+  - first:
+      213: 21300004
+    second: Mon_33_Scar
+  - first:
+      213: 21300006
+    second: Mon_33_Jaw
+  - first:
+      213: 21300008
+    second: Mon_33_ChestBuster
+  - first:
+      213: 21300010
+    second: Mon_33_Glow_Green
+  - first:
+      213: 21300012
+    second: Mon_33_Glow_Red
+  - first:
+      213: 21300014
+    second: Mon_33_Finger
+  - first:
+      213: 21300016
+    second: Mon_33_UpperArm
+  - first:
+      213: 21300018
+    second: Mon_33_Hand
+  - first:
+      213: 21300020
+    second: Mon_33_Head
+  - first:
+      213: 21300022
+    second: Mon_33_ForeArm
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -35,6 +57,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -57,18 +81,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -78,6 +105,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -314,6 +342,13 @@ TextureImporter:
         - {x: 318, y: -30.49994}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Brain
       rect:
@@ -529,6 +564,13 @@ TextureImporter:
         - {x: -104.0081, y: -321.5316}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Scar
       rect:
@@ -550,6 +592,13 @@ TextureImporter:
         - {x: 6.524696, y: -67.02473}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Jaw
       rect:
@@ -614,6 +663,13 @@ TextureImporter:
         - {x: -29, y: -318.0134}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_ChestBuster
       rect:
@@ -793,6 +849,13 @@ TextureImporter:
         - {x: 10.00893, y: -157}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Glow_Green
       rect:
@@ -811,6 +874,13 @@ TextureImporter:
         - {x: 6.5, y: -289.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Glow_Red
       rect:
@@ -829,6 +899,13 @@ TextureImporter:
         - {x: 6.5, y: -287.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Finger
       rect:
@@ -866,6 +943,13 @@ TextureImporter:
         - {x: -77.03805, y: 313.5381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_UpperArm
       rect:
@@ -923,6 +1007,13 @@ TextureImporter:
         - {x: -93.5, y: -242.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Hand
       rect:
@@ -955,6 +1046,13 @@ TextureImporter:
         - {x: -6.499992, y: -262.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_Head
       rect:
@@ -1214,6 +1312,13 @@ TextureImporter:
         - {x: -113.9935, y: -474.5065}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_33_ForeArm
       rect:
@@ -1280,9 +1385,26 @@ TextureImporter:
         - {x: -262, y: 165}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

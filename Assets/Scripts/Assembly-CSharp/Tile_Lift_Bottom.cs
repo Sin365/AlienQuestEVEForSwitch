@@ -49,11 +49,11 @@ public class Tile_Lift_Bottom : global::UnityEngine.MonoBehaviour
 			{
 				if (PC.transform.position.x > base.transform.position.x)
 				{
-					PC.rigidbody2D.AddForce(new global::UnityEngine.Vector2(8000f * global::UnityEngine.Time.deltaTime, 0f));
+					PC.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(8000f * global::UnityEngine.Time.deltaTime, 0f));
 				}
 				else
 				{
-					PC.rigidbody2D.AddForce(new global::UnityEngine.Vector2(-8000f * global::UnityEngine.Time.deltaTime, 0f));
+					PC.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(-8000f * global::UnityEngine.Time.deltaTime, 0f));
 				}
 			}
 		}
@@ -61,11 +61,11 @@ public class Tile_Lift_Bottom : global::UnityEngine.MonoBehaviour
 		{
 			if (col.transform.position.x > base.transform.position.x)
 			{
-				col.rigidbody2D.AddForce(new global::UnityEngine.Vector2(8000f * global::UnityEngine.Time.deltaTime, 0f));
+				col.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(8000f * global::UnityEngine.Time.deltaTime, 0f));
 			}
 			else
 			{
-				col.rigidbody2D.AddForce(new global::UnityEngine.Vector2(-8000f * global::UnityEngine.Time.deltaTime, 0f));
+				col.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(-8000f * global::UnityEngine.Time.deltaTime, 0f));
 			}
 		}
 	}

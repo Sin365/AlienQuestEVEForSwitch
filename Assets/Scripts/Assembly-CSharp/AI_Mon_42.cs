@@ -281,8 +281,8 @@ public class AI_Mon_42 : global::UnityEngine.MonoBehaviour
 			Attack_Delay -= global::UnityEngine.Time.deltaTime;
 			if (Dash_Delay < 0.5f)
 			{
-				base.rigidbody2D.velocity = new global::UnityEngine.Vector2(global::UnityEngine.Mathf.Lerp(base.rigidbody2D.velocity.x, 0f, global::UnityEngine.Time.deltaTime * 5f), base.rigidbody2D.velocity.y);
-				if (global::UnityEngine.Mathf.Abs(base.rigidbody2D.velocity.x) < 5f)
+				base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x, 0f, global::UnityEngine.Time.deltaTime * 5f), base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+				if (global::UnityEngine.Mathf.Abs(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x) < 5f)
 				{
 					Dash_Delay = 0f;
 					Flip_Delay = 0f;
@@ -379,7 +379,7 @@ public class AI_Mon_42 : global::UnityEngine.MonoBehaviour
 		Mon.Flip();
 		Flip_Delay = 0.5f + (float)global::UnityEngine.Random.Range(0, 30) * 0.01f;
 		Tr_Pos.transform.localScale = new global::UnityEngine.Vector3(-facingRight, 1f, 1f);
-		GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0.5f * (float)(-facingRight), -3.567f);
+		GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0.5f * (float)(-facingRight), -3.567f);
 	}
 
 	private void Check_Flip()
@@ -551,8 +551,8 @@ public class AI_Mon_42 : global::UnityEngine.MonoBehaviour
 		animator.SetBool("onAttack_Tail", false);
 		animator.SetBool("onAttack_Shock", false);
 		animator.SetTrigger("BackDash");
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 40f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 40f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Growling(base.transform.position);
 	}
@@ -561,8 +561,8 @@ public class AI_Mon_42 : global::UnityEngine.MonoBehaviour
 	{
 		Mon.isInvincible = true;
 		Invincible_Timer = 0.25f;
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 15f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 15f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 	}
 
 	private void Dash()
@@ -570,8 +570,8 @@ public class AI_Mon_42 : global::UnityEngine.MonoBehaviour
 		Mon.isInvincible = true;
 		Invincible_Timer = 0.25f;
 		Dash_Delay = 1f;
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 45f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 45f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Growling(base.transform.position);
 	}

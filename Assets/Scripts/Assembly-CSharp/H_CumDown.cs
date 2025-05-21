@@ -44,7 +44,7 @@ public class H_CumDown : global::UnityEngine.MonoBehaviour
 
 	public void Set_SortingOrder(int num)
 	{
-		CumShot_Geo.GetComponent<Puppet2D_SortingLayer>().renderer.sortingOrder = num;
+		CumShot_Geo.GetComponent<Puppet2D_SortingLayer>().GetComponent<UnityEngine.Renderer>().sortingOrder = num;
 	}
 
 	public void Set_DownDirect(float size)
@@ -110,8 +110,8 @@ public class H_CumDown : global::UnityEngine.MonoBehaviour
 			{
 				onHold = false;
 			}
-			Cum_Ctrl[6].rigidbody2D.mass = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].rigidbody2D.mass, 0.9f, global::UnityEngine.Time.deltaTime * 10f);
-			Cum_Ctrl[6].rigidbody2D.gravityScale = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].rigidbody2D.gravityScale, 1f, global::UnityEngine.Time.deltaTime * 0.1f);
+			Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().mass = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().mass, 0.9f, global::UnityEngine.Time.deltaTime * 10f);
+			Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().gravityScale = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().gravityScale, 1f, global::UnityEngine.Time.deltaTime * 0.1f);
 		}
 		else if (State == H_CumDown.AniState.DownDrool)
 		{
@@ -121,8 +121,8 @@ public class H_CumDown : global::UnityEngine.MonoBehaviour
 			}
 			if (!onHold)
 			{
-				Cum_Ctrl[6].rigidbody2D.mass = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].rigidbody2D.mass, 0.9f, global::UnityEngine.Time.deltaTime * 50f);
-				Cum_Ctrl[6].rigidbody2D.gravityScale = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].rigidbody2D.gravityScale, 1f, global::UnityEngine.Time.deltaTime * 2f);
+				Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().mass = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().mass, 0.9f, global::UnityEngine.Time.deltaTime * 50f);
+				Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().gravityScale = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().gravityScale, 1f, global::UnityEngine.Time.deltaTime * 2f);
 			}
 		}
 		else if (State == H_CumDown.AniState.Pee)
@@ -131,8 +131,8 @@ public class H_CumDown : global::UnityEngine.MonoBehaviour
 			{
 				onHold = false;
 			}
-			Cum_Ctrl[6].rigidbody2D.mass = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].rigidbody2D.mass, 0.9f, global::UnityEngine.Time.deltaTime * 10f);
-			Cum_Ctrl[6].rigidbody2D.gravityScale = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].rigidbody2D.gravityScale, 1f, global::UnityEngine.Time.deltaTime * 0.1f);
+			Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().mass = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().mass, 0.9f, global::UnityEngine.Time.deltaTime * 10f);
+			Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().gravityScale = global::UnityEngine.Mathf.Lerp(Cum_Ctrl[6].GetComponent<UnityEngine.Rigidbody2D>().gravityScale, 1f, global::UnityEngine.Time.deltaTime * 0.1f);
 		}
 		else
 		{
@@ -163,7 +163,7 @@ public class H_CumDown : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.Vector2 relativeForce = new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(100, 400), global::UnityEngine.Random.Range(-100, 100));
 		for (int i = 0; i < 6; i++)
 		{
-			Cum_Ctrl[i].rigidbody2D.AddRelativeForce(relativeForce);
+			Cum_Ctrl[i].GetComponent<UnityEngine.Rigidbody2D>().AddRelativeForce(relativeForce);
 		}
 	}
 }

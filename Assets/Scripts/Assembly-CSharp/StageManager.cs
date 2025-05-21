@@ -1783,13 +1783,13 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 			if (GM.Room_Num == 149)
 			{
 				global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(gameObject.transform.position.x, -228.1147f, -10f);
-				global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize = 8f;
+				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 8f;
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Start_Cam_Size(8f);
 			}
 		}
 		else if (GM.Room_Num == 10 || GM.Room_Num == 16 || GM.Room_Num == 35 || GM.Room_Num == 46 || GM.Room_Num == 75 || GM.Room_Num == 86 || GM.Room_Num == 95 || GM.Room_Num == 110 || GM.Room_Num == 119 || GM.Room_Num == 140)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize = 8f;
+			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 8f;
 			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Start_Cam_Size(8f);
 		}
 		else if (GM.Room_Num == 60)

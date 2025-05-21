@@ -47,7 +47,7 @@ public class Mon_Fire_Gravity : global::UnityEngine.MonoBehaviour
 		PC = Player.GetComponent<Player_Control>();
 		Glow_Opacity_Max = SR_Glow.color.a;
 		posOrig = base.transform.position;
-		Velocity = base.rigidbody2D.velocity;
+		Velocity = base.GetComponent<UnityEngine.Rigidbody2D>().velocity;
 	}
 
 	private void Update()
@@ -57,7 +57,7 @@ public class Mon_Fire_Gravity : global::UnityEngine.MonoBehaviour
 			if (GetComponent<global::UnityEngine.Rigidbody2D>().IsSleeping())
 			{
 				GetComponent<global::UnityEngine.Rigidbody2D>().WakeUp();
-				base.rigidbody2D.velocity = Velocity;
+				base.GetComponent<UnityEngine.Rigidbody2D>().velocity = Velocity;
 				global::UnityEngine.Debug.Log("WakeUp");
 			}
 			Life_Timer += global::UnityEngine.Time.deltaTime;
@@ -100,7 +100,7 @@ public class Mon_Fire_Gravity : global::UnityEngine.MonoBehaviour
 		}
 		else if (GetComponent<global::UnityEngine.Rigidbody2D>().IsAwake())
 		{
-			Velocity = base.rigidbody2D.velocity;
+			Velocity = base.GetComponent<UnityEngine.Rigidbody2D>().velocity;
 			GetComponent<global::UnityEngine.Rigidbody2D>().Sleep();
 		}
 	}

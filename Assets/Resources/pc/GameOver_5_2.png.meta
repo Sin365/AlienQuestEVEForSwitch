@@ -1,23 +1,45 @@
 fileFormatVersion: 2
 guid: 9956de7bc9ad9ab449604cf93120837d
-timeCreated: 1747839221
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: GO_5_Body
-    21300002: GO_5_Cum1_L_3
-    21300004: GO_5_Cum1_L_4
-    21300006: GO_5_Cum1_L_5
-    21300008: GO_5_Cum1_R_4
-    21300010: GO_5_Cum1_R_5
-    21300012: GO_5_Cum1_L_2
-    21300014: GO_5_Cum1_R_3
-    21300016: GO_5_Cum1_L_1
-    21300018: GO_5_Cum1_R_1
-    21300020: GO_5_Cum1_R_2
-    21300022: GO_5_Cum2_R_2a
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: GO_5_Body
+  - first:
+      213: 21300002
+    second: GO_5_Cum1_L_3
+  - first:
+      213: 21300004
+    second: GO_5_Cum1_L_4
+  - first:
+      213: 21300006
+    second: GO_5_Cum1_L_5
+  - first:
+      213: 21300008
+    second: GO_5_Cum1_R_4
+  - first:
+      213: 21300010
+    second: GO_5_Cum1_R_5
+  - first:
+      213: 21300012
+    second: GO_5_Cum1_L_2
+  - first:
+      213: 21300014
+    second: GO_5_Cum1_R_3
+  - first:
+      213: 21300016
+    second: GO_5_Cum1_L_1
+  - first:
+      213: 21300018
+    second: GO_5_Cum1_R_1
+  - first:
+      213: 21300020
+    second: GO_5_Cum1_R_2
+  - first:
+      213: 21300022
+    second: GO_5_Cum2_R_2a
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -35,6 +57,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -57,18 +81,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -78,6 +105,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -260,6 +288,13 @@ TextureImporter:
         - {x: -203, y: -376.4619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum1_L_3
       rect:
@@ -283,6 +318,13 @@ TextureImporter:
         - {x: 56, y: 80.99997}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum1_L_4
       rect:
@@ -330,6 +372,13 @@ TextureImporter:
         - {x: 110.4684, y: 19.99352}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum1_L_5
       rect:
@@ -352,6 +401,13 @@ TextureImporter:
         - {x: 43.50001, y: -83.48761}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum1_R_4
       rect:
@@ -375,6 +431,13 @@ TextureImporter:
         - {x: -10.48773, y: -117.4876}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum1_R_5
       rect:
@@ -400,6 +463,13 @@ TextureImporter:
         - {x: -66.48339, y: 80.50002}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum1_L_2
       rect:
@@ -427,6 +497,13 @@ TextureImporter:
         - {x: 5.007545, y: -152.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum1_R_3
       rect:
@@ -454,6 +531,13 @@ TextureImporter:
         - {x: 15, y: -184.0069}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum1_L_1
       rect:
@@ -477,6 +561,13 @@ TextureImporter:
         - {x: -27.99999, y: -91.01239}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum1_R_1
       rect:
@@ -518,6 +609,13 @@ TextureImporter:
         - {x: 122.4684, y: -61.49192}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum1_R_2
       rect:
@@ -541,6 +639,13 @@ TextureImporter:
         - {x: 66.52047, y: -119.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: GO_5_Cum2_R_2a
       rect:
@@ -566,9 +671,26 @@ TextureImporter:
         - {x: 50.5, y: -127.9919}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

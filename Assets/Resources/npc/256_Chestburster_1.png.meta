@@ -1,20 +1,36 @@
 fileFormatVersion: 2
 guid: b7a6875d996aecf4fa0c9426f9871c10
-timeCreated: 1747839222
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Z_Burst_Breast_B
-    21300002: Z_Burst_Hair
-    21300004: Z_Burst_Hand_B
-    21300006: Z_Burst_Breast
-    21300008: Z_Burst_Arm
-    21300010: Z_Burst_Arm_B
-    21300012: Z_Burst_Hand
-    21300014: Z_Burst_Body
-    21300016: Z_Burst_Mouth
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Z_Burst_Breast_B
+  - first:
+      213: 21300002
+    second: Z_Burst_Hair
+  - first:
+      213: 21300004
+    second: Z_Burst_Hand_B
+  - first:
+      213: 21300006
+    second: Z_Burst_Breast
+  - first:
+      213: 21300008
+    second: Z_Burst_Arm
+  - first:
+      213: 21300010
+    second: Z_Burst_Arm_B
+  - first:
+      213: 21300012
+    second: Z_Burst_Hand
+  - first:
+      213: 21300014
+    second: Z_Burst_Body
+  - first:
+      213: 21300016
+    second: Z_Burst_Mouth
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -32,6 +48,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -54,18 +72,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -75,6 +96,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -100,6 +122,13 @@ TextureImporter:
         - {x: 24.51649, y: -31.47181}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_Burst_Hair
       rect:
@@ -122,6 +151,13 @@ TextureImporter:
         - {x: 51.96194, y: 39.51992}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_Burst_Hand_B
       rect:
@@ -134,7 +170,7 @@ TextureImporter:
       pivot: {x: 0.5000001, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 1.907349E-06, y: -51.5}
+      - - {x: 0.000001907349, y: -51.5}
         - {x: -24, y: -51.5}
         - {x: -24, y: 46.5}
         - {x: -13, y: 51.5}
@@ -144,6 +180,13 @@ TextureImporter:
         - {x: 3.000002, y: -48.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_Burst_Breast
       rect:
@@ -168,6 +211,13 @@ TextureImporter:
         - {x: 5.538059, y: -34.96194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_Burst_Arm
       rect:
@@ -186,6 +236,13 @@ TextureImporter:
         - {x: 51.5, y: -15}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_Burst_Arm_B
       rect:
@@ -204,6 +261,13 @@ TextureImporter:
         - {x: 41.5, y: -12.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_Burst_Hand
       rect:
@@ -224,6 +288,13 @@ TextureImporter:
         - {x: 17.50755, y: -55.97532}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_Burst_Body
       rect:
@@ -244,6 +315,13 @@ TextureImporter:
         - {x: 106.5134, y: -39.46194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_Burst_Mouth
       rect:
@@ -262,9 +340,26 @@ TextureImporter:
         - {x: 9.5, y: -9.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

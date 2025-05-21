@@ -1,23 +1,45 @@
 fileFormatVersion: 2
 guid: 4c186329701158a43933236957098e54
-timeCreated: 1747839220
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Boss_2N_Body
-    21300002: Boss_2N_Arm_TL
-    21300004: Boss_2N_Arm_TR
-    21300006: Boss_2N_Arm_BL
-    21300008: Boss_2N_Arm_BR
-    21300010: Boss_2N_Back
-    21300012: Boss_2N_Ball
-    21300014: Boss_2N_Ball_Purple
-    21300016: Boss_2N_Ball_Yellow
-    21300018: Boss_2N_Ball_Socket
-    21300020: Boss_2N_Glow_Purple
-    21300022: Boss_2N_Glow
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Boss_2N_Body
+  - first:
+      213: 21300002
+    second: Boss_2N_Arm_TL
+  - first:
+      213: 21300004
+    second: Boss_2N_Arm_TR
+  - first:
+      213: 21300006
+    second: Boss_2N_Arm_BL
+  - first:
+      213: 21300008
+    second: Boss_2N_Arm_BR
+  - first:
+      213: 21300010
+    second: Boss_2N_Back
+  - first:
+      213: 21300012
+    second: Boss_2N_Ball
+  - first:
+      213: 21300014
+    second: Boss_2N_Ball_Purple
+  - first:
+      213: 21300016
+    second: Boss_2N_Ball_Yellow
+  - first:
+      213: 21300018
+    second: Boss_2N_Ball_Socket
+  - first:
+      213: 21300020
+    second: Boss_2N_Glow_Purple
+  - first:
+      213: 21300022
+    second: Boss_2N_Glow
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -35,6 +57,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -57,18 +81,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -78,6 +105,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -199,6 +227,13 @@ TextureImporter:
         - {x: -218.5, y: -139.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Arm_TL
       rect:
@@ -220,6 +255,13 @@ TextureImporter:
         - {x: 86.48664, y: -111.9877}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Arm_TR
       rect:
@@ -242,6 +284,13 @@ TextureImporter:
         - {x: -49.48663, y: -97.01336}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Arm_BL
       rect:
@@ -263,6 +312,13 @@ TextureImporter:
         - {x: 42.5, y: -16.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Arm_BR
       rect:
@@ -283,6 +339,13 @@ TextureImporter:
         - {x: 112.0381, y: -102.038}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Back
       rect:
@@ -315,6 +378,13 @@ TextureImporter:
         - {x: 104, y: -145.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Ball
       rect:
@@ -337,6 +407,13 @@ TextureImporter:
         - {x: 11.00002, y: -19.99998}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Ball_Purple
       rect:
@@ -359,6 +436,13 @@ TextureImporter:
         - {x: 11.00002, y: -19.99998}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Ball_Yellow
       rect:
@@ -381,6 +465,13 @@ TextureImporter:
         - {x: 11.00002, y: -19.99998}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Ball_Socket
       rect:
@@ -409,6 +500,13 @@ TextureImporter:
         - {x: 4.020624, y: 6.004786}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Glow_Purple
       rect:
@@ -432,6 +530,13 @@ TextureImporter:
         - {x: -6.500027, y: -76.03159}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_2N_Glow
       rect:
@@ -455,9 +560,26 @@ TextureImporter:
         - {x: -6.500027, y: -76.03159}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

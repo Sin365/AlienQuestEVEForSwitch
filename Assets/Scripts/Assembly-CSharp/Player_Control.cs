@@ -253,9 +253,9 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 	{
 		if (GM.Paused || GM.onGatePass || GM.onSave || GM.onTeleport || GM.onEvent || GM.onConsole || GM.GameOver || State == Player_Control.AniState.Down)
 		{
-			if (GM.Paused && !base.rigidbody2D.IsSleeping())
+			if (GM.Paused && !base.GetComponent<UnityEngine.Rigidbody2D>().IsSleeping())
 			{
-				base.rigidbody2D.Sleep();
+				base.GetComponent<UnityEngine.Rigidbody2D>().Sleep();
 			}
 			return;
 		}
@@ -287,20 +287,20 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 					{
 						if (onJumpDrop)
 						{
-							if (base.rigidbody2D.velocity.y < 0f)
+							if (base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y < 0f)
 							{
-								base.rigidbody2D.velocity = new global::UnityEngine.Vector2(base.rigidbody2D.velocity.x, 0f);
+								base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x, 0f);
 							}
-							base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 70f * global::UnityEngine.Time.deltaTime, global::UnityEngine.ForceMode2D.Impulse);
+							base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 70f * global::UnityEngine.Time.deltaTime, global::UnityEngine.ForceMode2D.Impulse);
 						}
 						else
 						{
-							base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 30f * global::UnityEngine.Time.deltaTime, global::UnityEngine.ForceMode2D.Impulse);
+							base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 30f * global::UnityEngine.Time.deltaTime, global::UnityEngine.ForceMode2D.Impulse);
 						}
 					}
 					else if (onJumpDrop)
 					{
-						base.rigidbody2D.velocity = new global::UnityEngine.Vector2(base.rigidbody2D.velocity.x, 2f);
+						base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x, 2f);
 					}
 				}
 			}
@@ -327,11 +327,11 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 		{
 			GM.Velcocity.x = global::UnityEngine.Mathf.Lerp(GM.Velcocity.x, 0f, global::UnityEngine.Time.deltaTime * 2f);
 		}
-		GM.Velcocity.y = base.rigidbody2D.velocity.y;
+		GM.Velcocity.y = base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y;
 		prePosition = base.transform.position;
-		if (base.rigidbody2D.velocity.x != 0f)
+		if (base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x != 0f)
 		{
-			base.rigidbody2D.velocity = new global::UnityEngine.Vector2(global::UnityEngine.Mathf.Lerp(base.rigidbody2D.velocity.x, 0f, global::UnityEngine.Time.deltaTime * 3f), base.rigidbody2D.velocity.y);
+			base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x, 0f, global::UnityEngine.Time.deltaTime * 3f), base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
 		}
 		if (grounded_Now)
 		{
@@ -344,7 +344,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 					{
 						if (raycastHit2D.collider.GetComponent<Tile_Lift>().Type != 1)
 						{
-							base.rigidbody2D.velocity = new global::UnityEngine.Vector2(base.rigidbody2D.velocity.x, 0f);
+							base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x, 0f);
 							base.transform.position = new global::UnityEngine.Vector3(base.transform.position.x, raycastHit2D.collider.transform.position.y + 0.35f, 0f);
 							Lock_Lift[1] = true;
 							Pos_Lift[1] = raycastHit2D.collider.transform.position.y;
@@ -444,14 +444,14 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 			else if (!GM.onHscene && Down_Timer > 0.5f)
 			{
 				grounded_Now = global::UnityEngine.Physics2D.Linecast(groundedStart.position, groundedEnd.position, 1 << global::UnityEngine.LayerMask.NameToLayer("Ground"));
-				if (Num_Down_Impact > 0 && grounded_Now && (base.rigidbody2D.velocity.y == 0f || global::UnityEngine.Mathf.Abs(base.rigidbody2D.velocity.y) < 0.05f))
+				if (Num_Down_Impact > 0 && grounded_Now && (base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y == 0f || global::UnityEngine.Mathf.Abs(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y) < 0.05f))
 				{
-					base.rigidbody2D.velocity = new global::UnityEngine.Vector2(base.rigidbody2D.velocity.x, 0f);
-					base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 7f * Num_Down_Impact, global::UnityEngine.ForceMode2D.Impulse);
+					base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x, 0f);
+					base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 7f * Num_Down_Impact, global::UnityEngine.ForceMode2D.Impulse);
 					Num_Down_Impact--;
 					Ani.Set_Down_Bounce();
 				}
-				else if (grounded_Now && base.rigidbody2D.velocity.y == 0f)
+				else if (grounded_Now && base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y == 0f)
 				{
 					Ani.Set_Down_Down();
 					DownUp_Timer += global::UnityEngine.Time.deltaTime;
@@ -696,21 +696,21 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 				{
 					onSitLock = true;
 					State = Player_Control.AniState.Sit;
-					base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
+					base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
 					Ani.Set_Sit();
 				}
 				else
 				{
 					onSitLock = false;
 					State = Player_Control.AniState.Idle;
-					base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
+					base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
 					Ani.Set_Idle();
 				}
 			}
 			else
 			{
 				State = Player_Control.AniState.Jump;
-				base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
+				base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
 				Ani.Set_Jump();
 			}
 			break;
@@ -974,14 +974,14 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 			{
 				Ani.Set_Edge(false);
 			}
-			if (onJumpDrop && (State == Player_Control.AniState.Jump || State == Player_Control.AniState.Spin || State == Player_Control.AniState.Damage) && !grounded_Last && base.rigidbody2D.velocity.y <= 0f)
+			if (onJumpDrop && (State == Player_Control.AniState.Jump || State == Player_Control.AniState.Spin || State == Player_Control.AniState.Damage) && !grounded_Last && base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y <= 0f)
 			{
 				Jump_To_Ground();
 				ErrorJump_Timer = 0f;
 			}
 			else if (State == Player_Control.AniState.Jump)
 			{
-				if (base.rigidbody2D.velocity.y == 0f || global::UnityEngine.Mathf.Abs(base.rigidbody2D.velocity.y) < 0.1f)
+				if (base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y == 0f || global::UnityEngine.Mathf.Abs(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y) < 0.1f)
 				{
 					ErrorJump_Timer += global::UnityEngine.Time.deltaTime;
 					if (ErrorJump_Timer > 0.05f)
@@ -1020,7 +1020,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 			}
 			else if (State == Player_Control.AniState.Jump)
 			{
-				if (base.rigidbody2D.velocity.y == 0f && Screw_Opacity <= 0f)
+				if (base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y == 0f && Screw_Opacity <= 0f)
 				{
 					ErrorJump_Timer += global::UnityEngine.Time.deltaTime;
 					if (ErrorJump_Timer > 0.05f)
@@ -1033,7 +1033,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 					ErrorJump_Timer = 0f;
 				}
 			}
-			else if (State != Player_Control.AniState.Spin && Jump_Num == 0 && base.rigidbody2D.velocity.y < 0f)
+			else if (State != Player_Control.AniState.Spin && Jump_Num == 0 && base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y < 0f)
 			{
 				Check_Drop();
 			}
@@ -1242,8 +1242,8 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 		{
 			Jump_Num = 0;
 		}
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 50f, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 50f, global::UnityEngine.ForceMode2D.Impulse);
 		onJumpDrop = false;
 		Jump_Pos_Y = base.transform.position.y;
 		State = Player_Control.AniState.Jump;
@@ -1257,14 +1257,14 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 		{
 			Jump_Num = 0;
 		}
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
 		if (Jump_Num < 1)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 25.4f, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 25.4f, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		else
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 30f, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 30f, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		onJumpDrop = false;
 		Jump_Pos_Y = base.transform.position.y;
@@ -1456,20 +1456,20 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 			gameObject3.transform.localScale = new global::UnityEngine.Vector3(facingRight, 1f, 1f);
 			if (Jump_Num > 0)
 			{
-				if (base.rigidbody2D.velocity.y > 0f)
+				if (base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y > 0f)
 				{
-					gameObject3.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 12f, global::UnityEngine.ForceMode2D.Impulse);
+					gameObject3.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 12f, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				else
 				{
-					gameObject3.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 2f, global::UnityEngine.ForceMode2D.Impulse);
+					gameObject3.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 2f, global::UnityEngine.ForceMode2D.Impulse);
 				}
 			}
 			else
 			{
-				gameObject3.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 2f, global::UnityEngine.ForceMode2D.Impulse);
+				gameObject3.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 2f, global::UnityEngine.ForceMode2D.Impulse);
 			}
-			gameObject3.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 12f * facingRight * (1f + GM.Velcocity.x), global::UnityEngine.ForceMode2D.Impulse);
+			gameObject3.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 12f * facingRight * (1f + GM.Velcocity.x), global::UnityEngine.ForceMode2D.Impulse);
 			return;
 		}
 		if (Jump_Num == 2)
@@ -1491,7 +1491,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 		}
 		else if (Jump_Num > 0)
 		{
-			num4 += base.rigidbody2D.velocity.y * 0.02f;
+			num4 += base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y * 0.02f;
 		}
 		global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4 + 0.2f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 7 * facingRight)) as global::UnityEngine.GameObject;
 		global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4 + 0.1f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 3 * facingRight)) as global::UnityEngine.GameObject;
@@ -1514,9 +1514,9 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 
 	public void Set_Damage(float force)
 	{
-		if (Jump_Num > 0 && base.rigidbody2D.velocity.y < 0f)
+		if (Jump_Num > 0 && base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y < 0f)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		if (Damage_Timer < 0.2f)
 		{
@@ -1533,7 +1533,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 		Flicker_Delay = 1f;
 		State = Player_Control.AniState.Damage;
 		Ani.Set_Damage();
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * force, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * force, global::UnityEngine.ForceMode2D.Impulse);
 	}
 
 	private void Damage_Flicker()
@@ -1602,9 +1602,9 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 			Screw_Opacity = 0f;
 			Off_ScrewAttack();
 		}
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * force * 0.35f, global::UnityEngine.ForceMode2D.Impulse);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * force * 0.35f, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 	}
 
 	private void H_Down()
@@ -1655,33 +1655,33 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 
 	public void UpperPunch()
 	{
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 25f, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 25f, global::UnityEngine.ForceMode2D.Impulse);
 	}
 
 	public void Atk3_Jump()
 	{
 		if (State == Player_Control.AniState.Jump && !grounded_Now)
 		{
-			base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 15f, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 15f, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		if (grounded_Front)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 6f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 6f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 	}
 
 	public void Atk4_Force()
 	{
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
 		if (State == Player_Control.AniState.Jump && !grounded_Now && inputX == 0f)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 6f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 6f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		else
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 10f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 10f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 	}
 
@@ -1709,16 +1709,16 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 
 	public void Lock_GameLoad()
 	{
-		velocity = base.rigidbody2D.velocity;
-		base.rigidbody2D.Sleep();
-		base.rigidbody2D.gravityScale = 0f;
+		velocity = base.GetComponent<UnityEngine.Rigidbody2D>().velocity;
+		base.GetComponent<UnityEngine.Rigidbody2D>().Sleep();
+		base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale = 0f;
 	}
 
 	public void Lock_GatePass()
 	{
-		velocity = base.rigidbody2D.velocity;
-		base.rigidbody2D.Sleep();
-		base.rigidbody2D.gravityScale = 0f;
+		velocity = base.GetComponent<UnityEngine.Rigidbody2D>().velocity;
+		base.GetComponent<UnityEngine.Rigidbody2D>().Sleep();
+		base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale = 0f;
 		Col_Top.enabled = false;
 		Col_Bot.enabled = false;
 		Col_Jump2.enabled = false;
@@ -1753,9 +1753,9 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 		{
 			Col_Jump2.enabled = true;
 		}
-		base.rigidbody2D.gravityScale = 5f;
-		base.rigidbody2D.WakeUp();
-		base.rigidbody2D.velocity = velocity;
+		base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale = 5f;
+		base.GetComponent<UnityEngine.Rigidbody2D>().WakeUp();
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = velocity;
 		player_ani.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 10;
 		player_ani.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 200;
 		Ani_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 10;

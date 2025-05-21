@@ -142,7 +142,7 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 	{
 		if (!GM.GameOver)
 		{
-			playingSize = base.camera.orthographicSize;
+			playingSize = base.GetComponent<UnityEngine.Camera>().orthographicSize;
 		}
 		targetSize = 5f;
 	}
@@ -209,7 +209,7 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 	public void Set_Shake_Timer(float timer, global::UnityEngine.Vector3 pos)
 	{
 		float num = global::UnityEngine.Vector3.Distance(base.transform.position, new global::UnityEngine.Vector3(pos.x, pos.y, -10f));
-		if (num < base.camera.orthographicSize * 3f)
+		if (num < base.GetComponent<UnityEngine.Camera>().orthographicSize * 3f)
 		{
 			if (!onShake)
 			{
@@ -247,7 +247,7 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 
 	private void Set_Camera_Col()
 	{
-		Col_Cam.size = new global::UnityEngine.Vector2(base.camera.orthographicSize * 3.55f + 0.5f, base.camera.orthographicSize * 2f + 0.5f);
+		Col_Cam.size = new global::UnityEngine.Vector2(base.GetComponent<UnityEngine.Camera>().orthographicSize * 3.55f + 0.5f, base.GetComponent<UnityEngine.Camera>().orthographicSize * 2f + 0.5f);
 	}
 
 	public void Event_Cam_Pos(global::UnityEngine.Vector3 pos, float speed)
@@ -297,19 +297,19 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 				targetSize = 8f;
 			}
 			currentSize = global::UnityEngine.Mathf.Lerp(currentSize, targetSize, global::UnityEngine.Time.deltaTime * 1f);
-			base.camera.orthographicSize = currentSize;
+			base.GetComponent<UnityEngine.Camera>().orthographicSize = currentSize;
 			global::UnityEngine.Vector3 position = global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position;
-			if (position.x - base.camera.orthographicSize * base.camera.aspect <= Cam_Left)
+			if (position.x - base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect <= Cam_Left)
 			{
-				position.x = Cam_Left + base.camera.orthographicSize * base.camera.aspect;
+				position.x = Cam_Left + base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect;
 			}
-			else if (position.x + base.camera.orthographicSize * base.camera.aspect >= Cam_Right)
+			else if (position.x + base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect >= Cam_Right)
 			{
-				position.x = Cam_Right - base.camera.orthographicSize * base.camera.aspect;
+				position.x = Cam_Right - base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect;
 			}
 			float num = 3f;
 			float num2 = ((!PC.Lock_Lift[1]) ? Player.transform.position.y : PC.Pos_Lift[1]);
-			num = ((Player.transform.position.y + 3f - base.camera.orthographicSize <= Cam_Bot) ? (Cam_Bot + base.camera.orthographicSize) : ((!(Player.transform.position.y + 3f + base.camera.orthographicSize >= Cam_Top)) ? (Player.transform.position.y + 3f) : (Cam_Top - base.camera.orthographicSize)));
+			num = ((Player.transform.position.y + 3f - base.GetComponent<UnityEngine.Camera>().orthographicSize <= Cam_Bot) ? (Cam_Bot + base.GetComponent<UnityEngine.Camera>().orthographicSize) : ((!(Player.transform.position.y + 3f + base.GetComponent<UnityEngine.Camera>().orthographicSize >= Cam_Top)) ? (Player.transform.position.y + 3f) : (Cam_Top - base.GetComponent<UnityEngine.Camera>().orthographicSize)));
 			if (GM.onHscene)
 			{
 				num = ((GM.Hscene_Num != 3 && GM.Hscene_Num != 11 && GM.Hscene_Num != 17 && GM.Hscene_Num != 18 && GM.Hscene_Num != 19 && GM.Hscene_Num != 20 && GM.Hscene_Num != 27 && GM.Hscene_Num != 28) ? (num + 0.5f) : num);
@@ -324,8 +324,8 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 		}
 		else if (GM.onEvent && !GM.Paused && !GM.onHscene && !GM.onGameClear)
 		{
-			base.camera.orthographicSize = global::UnityEngine.Mathf.Lerp(base.camera.orthographicSize, targetSize, global::UnityEngine.Time.deltaTime * EventCam_Speed);
-			currentSize = base.camera.orthographicSize;
+			base.GetComponent<UnityEngine.Camera>().orthographicSize = global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.Camera>().orthographicSize, targetSize, global::UnityEngine.Time.deltaTime * EventCam_Speed);
+			currentSize = base.GetComponent<UnityEngine.Camera>().orthographicSize;
 			base.transform.position = global::UnityEngine.Vector3.Lerp(base.transform.position, targetPos, global::UnityEngine.Time.deltaTime * EventCam_Speed);
 		}
 		else
@@ -354,7 +354,7 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 					currentSize = global::UnityEngine.Mathf.Lerp(currentSize, targetSize, global::UnityEngine.Time.deltaTime * 2f);
 				}
 			}
-			base.camera.orthographicSize = currentSize;
+			base.GetComponent<UnityEngine.Camera>().orthographicSize = currentSize;
 			if (!GM.onHscene && (PC.Speed_X >= 1f || PC.Speed_X <= -1f))
 			{
 				if (GM.Velcocity.x > 1f)
@@ -380,10 +380,10 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 			}
 			float num3 = 0f;
 			float num4 = ((!PC.Lock_Lift[0]) ? Player.transform.position.x : PC.Pos_Lift[0]);
-			num3 = ((num4 + Move_Distance_X - base.camera.orthographicSize * base.camera.aspect <= Cam_Left) ? (Cam_Left + base.camera.orthographicSize * base.camera.aspect) : ((!(num4 + Move_Distance_X + base.camera.orthographicSize * base.camera.aspect >= Cam_Right)) ? (num4 + Move_Distance_X) : (Cam_Right - base.camera.orthographicSize * base.camera.aspect)));
+			num3 = ((num4 + Move_Distance_X - base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect <= Cam_Left) ? (Cam_Left + base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect) : ((!(num4 + Move_Distance_X + base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect >= Cam_Right)) ? (num4 + Move_Distance_X) : (Cam_Right - base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect)));
 			float num5 = 4.5f;
 			float num6 = ((!PC.Lock_Lift[1]) ? Player.transform.position.y : PC.Pos_Lift[1]);
-			num5 = ((num6 + 4.5f + Move_Distance_Y - base.camera.orthographicSize <= Cam_Bot) ? (Cam_Bot + base.camera.orthographicSize) : ((!(num6 + 4.5f + Move_Distance_Y + base.camera.orthographicSize >= Cam_Top)) ? (num6 + 4.5f + Move_Distance_Y) : (Cam_Top - base.camera.orthographicSize)));
+			num5 = ((num6 + 4.5f + Move_Distance_Y - base.GetComponent<UnityEngine.Camera>().orthographicSize <= Cam_Bot) ? (Cam_Bot + base.GetComponent<UnityEngine.Camera>().orthographicSize) : ((!(num6 + 4.5f + Move_Distance_Y + base.GetComponent<UnityEngine.Camera>().orthographicSize >= Cam_Top)) ? (num6 + 4.5f + Move_Distance_Y) : (Cam_Top - base.GetComponent<UnityEngine.Camera>().orthographicSize)));
 			if (GM.onHscene)
 			{
 				num5 = ((GM.Hscene_Num != 3 && GM.Hscene_Num != 11 && GM.Hscene_Num != 17 && GM.Hscene_Num != 18 && GM.Hscene_Num != 19 && GM.Hscene_Num != 20 && GM.Hscene_Num != 27 && GM.Hscene_Num != 28) ? (num5 - 0.5f) : (num5 - 1.2f));

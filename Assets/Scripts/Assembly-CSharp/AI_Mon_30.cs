@@ -197,7 +197,7 @@ public class AI_Mon_30 : global::UnityEngine.MonoBehaviour
 		Attack_Delay = 3f;
 		if (global::UnityEngine.Mathf.Abs(base.transform.position.x - Player.transform.position.x) > 4f)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 23f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 23f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack_1", false);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack_2", true);

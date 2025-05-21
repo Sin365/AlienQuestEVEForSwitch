@@ -164,12 +164,12 @@ public class Console_Input : global::UnityEngine.MonoBehaviour
 			text2 = text;
 			text = text2 + "\n MP:  " + GM.MP + " / " + GM.MP_Max;
 			text = text + "\n\n Vel:  " + GM.Velcocity;
-			text = text + "\nrgVel:  " + global::UnityEngine.GameObject.Find("Player").rigidbody2D.velocity;
+			text = text + "\nrgVel:  " + global::UnityEngine.GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>().velocity;
 			text = text + "\n\n Jump:  " + PC.Jump_Num;
 			text = text + "\n HJump:  " + PC.onHighJump;
 			text = text + "\n Ground: " + PC.grounded_Now;
 			text = text + "\n onDrop: " + PC.onJumpDrop;
-			text = text + "\n\n Cam:  " + global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize.ToString("f2");
+			text = text + "\n\n Cam:  " + global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize.ToString("f2");
 			global::UnityEngine.GameObject.Find("Text_Info").GetComponent<global::UnityEngine.UI.Text>().text = text;
 		}
 	}

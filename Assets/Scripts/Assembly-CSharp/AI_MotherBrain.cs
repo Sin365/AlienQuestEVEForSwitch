@@ -242,19 +242,19 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 				if (base.transform.position.y < pos_Orig.y)
 				{
 					base.transform.position = new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + global::UnityEngine.Time.deltaTime * 2.5f, 0f);
-					base.audio.volume = global::UnityEngine.Mathf.Lerp(base.audio.volume, 0.5f, global::UnityEngine.Time.deltaTime);
-					if (!base.audio.isPlaying)
+					base.GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.AudioSource>().volume, 0.5f, global::UnityEngine.Time.deltaTime);
+					if (!base.GetComponent<UnityEngine.AudioSource>().isPlaying)
 					{
-						base.audio.Play();
+						base.GetComponent<UnityEngine.AudioSource>().Play();
 					}
 				}
 				else
 				{
 					Life_Timer += global::UnityEngine.Time.deltaTime;
-					if (base.audio.volume > 0f)
+					if (base.GetComponent<UnityEngine.AudioSource>().volume > 0f)
 					{
-						base.audio.volume = 0f;
-						base.audio.Stop();
+						base.GetComponent<UnityEngine.AudioSource>().volume = 0f;
+						base.GetComponent<UnityEngine.AudioSource>().Stop();
 						global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_SoundElvStop, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					}
 					if (Life_Timer > 1f && Ani_Num != 1)

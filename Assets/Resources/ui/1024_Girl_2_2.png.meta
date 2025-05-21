@@ -1,32 +1,72 @@
 fileFormatVersion: 2
 guid: e2a9f5e69e07aff43ae8d99c618319b5
-timeCreated: 1747839217
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: UI_Girl_2_Body_Naked
-    21300002: UI_Girl_2_Hair_Front
-    21300004: UI_Girl_2_Hair
-    21300006: UI_Girl_2_Face
-    21300008: UI_Girl_2_Hair_Back
-    21300010: UI_Girl_2_Eye_L
-    21300012: UI_Girl_2_Eye_R
-    21300014: UI_Girl_2_Mouth
-    21300016: UI_Girl_2_EyeBack
-    21300018: UI_Girl_2_EyeBrow
-    21300020: UI_Girl_2_EyeClose_1
-    21300022: UI_Girl_2_EyeClose_2
-    21300024: UI_Girl_2_Arm_R1_Naked
-    21300026: UI_Girl_2_Arm_R2_Naked
-    21300028: UI_Girl_2_Breast_Naked
-    21300030: UI_Girl_2_EyeClose_3
-    21300032: UI_Girl_2_EyeHL_L
-    21300034: UI_Girl_2_EyeHL_R
-    21300036: UI_Girl_2_Leg
-    21300038: UI_Girl_2_Neck_Naked
-    21300040: UI_Girl_2_Neck_Cloth
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: UI_Girl_2_Body_Naked
+  - first:
+      213: 21300002
+    second: UI_Girl_2_Hair_Front
+  - first:
+      213: 21300004
+    second: UI_Girl_2_Hair
+  - first:
+      213: 21300006
+    second: UI_Girl_2_Face
+  - first:
+      213: 21300008
+    second: UI_Girl_2_Hair_Back
+  - first:
+      213: 21300010
+    second: UI_Girl_2_Eye_L
+  - first:
+      213: 21300012
+    second: UI_Girl_2_Eye_R
+  - first:
+      213: 21300014
+    second: UI_Girl_2_Mouth
+  - first:
+      213: 21300016
+    second: UI_Girl_2_EyeBack
+  - first:
+      213: 21300018
+    second: UI_Girl_2_EyeBrow
+  - first:
+      213: 21300020
+    second: UI_Girl_2_EyeClose_1
+  - first:
+      213: 21300022
+    second: UI_Girl_2_EyeClose_2
+  - first:
+      213: 21300024
+    second: UI_Girl_2_Arm_R1_Naked
+  - first:
+      213: 21300026
+    second: UI_Girl_2_Arm_R2_Naked
+  - first:
+      213: 21300028
+    second: UI_Girl_2_Breast_Naked
+  - first:
+      213: 21300030
+    second: UI_Girl_2_EyeClose_3
+  - first:
+      213: 21300032
+    second: UI_Girl_2_EyeHL_L
+  - first:
+      213: 21300034
+    second: UI_Girl_2_EyeHL_R
+  - first:
+      213: 21300036
+    second: UI_Girl_2_Leg
+  - first:
+      213: 21300038
+    second: UI_Girl_2_Neck_Naked
+  - first:
+      213: 21300040
+    second: UI_Girl_2_Neck_Cloth
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -44,6 +84,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -66,18 +108,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -87,6 +132,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -229,6 +275,13 @@ TextureImporter:
         - {x: -214.5, y: -194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Hair_Front
       rect:
@@ -253,6 +306,13 @@ TextureImporter:
         - {x: 93, y: -86.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Hair
       rect:
@@ -288,6 +348,13 @@ TextureImporter:
         - {x: -173, y: -18}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Face
       rect:
@@ -315,6 +382,13 @@ TextureImporter:
         - {x: -7.5, y: -103.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Hair_Back
       rect:
@@ -344,6 +418,13 @@ TextureImporter:
         - {x: 22, y: -62.48663}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Eye_L
       rect:
@@ -362,6 +443,13 @@ TextureImporter:
         - {x: 17.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Eye_R
       rect:
@@ -380,6 +468,13 @@ TextureImporter:
         - {x: 12, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Mouth
       rect:
@@ -402,6 +497,13 @@ TextureImporter:
         - {x: 12.5213, y: -22.46292}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_EyeBack
       rect:
@@ -453,6 +555,13 @@ TextureImporter:
         - {x: 22.0247, y: -23.48186}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_EyeBrow
       rect:
@@ -486,6 +595,13 @@ TextureImporter:
         - {x: -30, y: -19.00808}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_EyeClose_1
       rect:
@@ -520,6 +636,13 @@ TextureImporter:
         - {x: -3, y: -26.4753}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_EyeClose_2
       rect:
@@ -552,6 +675,13 @@ TextureImporter:
         - {x: 9.016605, y: -26.97151}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Arm_R1_Naked
       rect:
@@ -586,6 +716,13 @@ TextureImporter:
         - {x: -53.99308, y: 187.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Arm_R2_Naked
       rect:
@@ -618,6 +755,13 @@ TextureImporter:
         - {x: -19.9753, y: 168.0134}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Breast_Naked
       rect:
@@ -651,6 +795,13 @@ TextureImporter:
         - {x: -73.52467, y: -79.98079}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_EyeClose_3
       rect:
@@ -686,6 +837,13 @@ TextureImporter:
         - {x: 17.46195, y: -15.02567}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_EyeHL_L
       rect:
@@ -704,6 +862,13 @@ TextureImporter:
         - {x: 18.5, y: -14.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_EyeHL_R
       rect:
@@ -722,6 +887,13 @@ TextureImporter:
         - {x: 12, y: -10}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Leg
       rect:
@@ -751,6 +923,13 @@ TextureImporter:
         - {x: 108.5, y: -8.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Neck_Naked
       rect:
@@ -773,6 +952,13 @@ TextureImporter:
         - {x: 28, y: -38}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Neck_Cloth
       rect:
@@ -795,9 +981,26 @@ TextureImporter:
         - {x: 43, y: -38}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -128,7 +128,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			for (int i = 0; i < 5; i++)
 			{
 				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1f, 1f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
-				gameObject.rigidbody2D.AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-70, 70) * PC.facingRight, global::UnityEngine.Random.Range(150, 220)));
+				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-70, 70) * PC.facingRight, global::UnityEngine.Random.Range(150, 220)));
 			}
 		}
 	}
@@ -142,7 +142,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			for (int i = 0; i < 10; i++)
 			{
 				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1f, 1f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
-				gameObject.rigidbody2D.AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-50, 200) * PC.facingRight, global::UnityEngine.Random.Range(150, 300)));
+				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-50, 200) * PC.facingRight, global::UnityEngine.Random.Range(150, 300)));
 			}
 		}
 	}
@@ -156,7 +156,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			for (int i = 0; i < 50; i++)
 			{
 				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-0.5f, 0.5f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.8f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
-				gameObject.rigidbody2D.AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-80, 80), global::UnityEngine.Random.Range(150, 500)));
+				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-80, 80), global::UnityEngine.Random.Range(150, 500)));
 			}
 		}
 	}
@@ -170,7 +170,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			for (int i = 0; i < 80; i++)
 			{
 				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1f, 1f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
-				gameObject.rigidbody2D.AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-200, 200), global::UnityEngine.Random.Range(150, 500)));
+				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-200, 200), global::UnityEngine.Random.Range(150, 500)));
 			}
 		}
 	}
@@ -183,7 +183,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			for (int i = 0; i < 4; i++)
 			{
 				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust_2, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1.5f, 1.5f), base.transform.position.y - global::UnityEngine.Random.Range(0.5f, 0.6f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
-				gameObject.rigidbody2D.AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-20, 20) * PC.facingRight, global::UnityEngine.Random.Range(0, 50)));
+				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-20, 20) * PC.facingRight, global::UnityEngine.Random.Range(0, 50)));
 			}
 		}
 	}
@@ -196,7 +196,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			for (int i = 0; i < 7; i++)
 			{
 				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust_2, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1.5f, 1.5f), base.transform.position.y - global::UnityEngine.Random.Range(0.5f, 0.6f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
-				gameObject.rigidbody2D.AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-20, 20) * PC.facingRight, global::UnityEngine.Random.Range(0, 50)));
+				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-20, 20) * PC.facingRight, global::UnityEngine.Random.Range(0, 50)));
 			}
 		}
 	}

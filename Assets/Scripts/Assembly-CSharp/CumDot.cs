@@ -4,7 +4,7 @@ public class CumDot : global::UnityEngine.MonoBehaviour
 
 	private void Start()
 	{
-		base.rigidbody2D.AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(500, 1000), 0f));
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddRelativeForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(500, 1000), 0f));
 	}
 
 	private void Update()

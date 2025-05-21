@@ -542,8 +542,8 @@ public class AI_Boss_2 : global::UnityEngine.MonoBehaviour
 			Dash_Delay -= global::UnityEngine.Time.deltaTime;
 			if (Dash_Delay < 0.3f)
 			{
-				base.rigidbody2D.velocity = new global::UnityEngine.Vector2(global::UnityEngine.Mathf.Lerp(base.rigidbody2D.velocity.x, 0f, global::UnityEngine.Time.deltaTime * 5f), base.rigidbody2D.velocity.y);
-				if (global::UnityEngine.Mathf.Abs(base.rigidbody2D.velocity.x) < 5f)
+				base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x, 0f, global::UnityEngine.Time.deltaTime * 5f), base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+				if (global::UnityEngine.Mathf.Abs(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x) < 5f)
 				{
 					Dash_Delay = 0f;
 					Flip_Delay = 0f;
@@ -652,7 +652,7 @@ public class AI_Boss_2 : global::UnityEngine.MonoBehaviour
 		Flip_Delay = 0.5f + (float)global::UnityEngine.Random.Range(0, 80) * 0.01f;
 		Tr_Pos.transform.localScale = new global::UnityEngine.Vector3(-facingRight, 1f, 1f);
 		CensoredText.transform.localScale = new global::UnityEngine.Vector3(1.3f * (float)(-facingRight), 1.5f, 1f);
-		GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0.8f * (float)(-facingRight), -2.617f);
+		GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0.8f * (float)(-facingRight), -2.617f);
 	}
 
 	private void Check_Flip()
@@ -817,32 +817,32 @@ public class AI_Boss_2 : global::UnityEngine.MonoBehaviour
 		animator.SetTrigger("BackDash");
 		animator.SetBool("onMove", false);
 		animator.SetBool("onHit", false);
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 40f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 40f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Growling(base.transform.position);
 	}
 
 	private void JumpDash()
 	{
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 28f, global::UnityEngine.ForceMode2D.Impulse);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 55f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 28f, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 55f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Growling(base.transform.position);
 	}
 
 	private void JumpBack()
 	{
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 25f, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 25f, global::UnityEngine.ForceMode2D.Impulse);
 		if (JumpBack_Front_1sec > 0f)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 45f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 45f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		else
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 45f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 45f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Growling(base.transform.position);
@@ -871,8 +871,8 @@ public class AI_Boss_2 : global::UnityEngine.MonoBehaviour
 		else
 		{
 			global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(_Fire_G, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
-			gameObject6.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * -10f, global::UnityEngine.ForceMode2D.Impulse);
-			gameObject6.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 30f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			gameObject6.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * -10f, global::UnityEngine.ForceMode2D.Impulse);
+			gameObject6.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 30f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
 	}

@@ -281,7 +281,7 @@ public class AI_Mon_5 : global::UnityEngine.MonoBehaviour
 		GetComponent<Monster>().Flip();
 		Flip_Delay = 0.3f + (float)global::UnityEngine.Random.Range(0, 50) * 0.01f;
 		Tr_Pos.transform.localScale = new global::UnityEngine.Vector3(-facingRight, 1f, 1f);
-		GetComponent<global::UnityEngine.CircleCollider2D>().center = new global::UnityEngine.Vector2(0.15f * (float)facingRight, 0.04f);
+		GetComponent<global::UnityEngine.CircleCollider2D>().offset = new global::UnityEngine.Vector2(0.15f * (float)facingRight, 0.04f);
 	}
 
 	private void Check_Idle()

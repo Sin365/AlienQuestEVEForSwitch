@@ -174,7 +174,7 @@ public class AI_Mon_21 : global::UnityEngine.MonoBehaviour
 	{
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 		Attack_Delay = 1f;
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 20f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 20f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack", true);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onMove", false);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onHit", false);

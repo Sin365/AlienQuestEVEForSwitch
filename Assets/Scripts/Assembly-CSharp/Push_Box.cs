@@ -24,7 +24,7 @@ public class Push_Box : global::UnityEngine.MonoBehaviour
 			{
 				if (raycastHit2D.collider.gameObject.GetComponent<Tile_Lift>().Type == 0)
 				{
-					base.rigidbody2D.velocity = new global::UnityEngine.Vector2(base.rigidbody2D.velocity.x, 0f);
+					base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x, 0f);
 					base.transform.position = new global::UnityEngine.Vector3(base.transform.position.x, raycastHit2D.collider.transform.position.y + 2.16f, 0f);
 					onLift_V = true;
 					onLift_H = false;
@@ -40,7 +40,7 @@ public class Push_Box : global::UnityEngine.MonoBehaviour
 			{
 				if (raycastHit2D.collider.gameObject.GetComponent<Push_Box>().onLift_V)
 				{
-					base.rigidbody2D.velocity = new global::UnityEngine.Vector2(base.rigidbody2D.velocity.x, 0f);
+					base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(base.GetComponent<UnityEngine.Rigidbody2D>().velocity.x, 0f);
 					base.transform.position = new global::UnityEngine.Vector3(base.transform.position.x, raycastHit2D.collider.transform.position.y + 3.5f, 0f);
 				}
 				else

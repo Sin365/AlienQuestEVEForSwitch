@@ -675,7 +675,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 			}
 			else
 			{
-				base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
+				base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
 			}
 			base.transform.position = global::UnityEngine.Vector3.Lerp(base.transform.position, new global::UnityEngine.Vector3(base.transform.position.x, Flying_Y, 0f), global::UnityEngine.Time.deltaTime * speed_Y);
 			if (Mon.HP_Ratio > 0.5f)
@@ -932,7 +932,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		Mon.Flip();
 		Flip_Delay = 0.3f + (float)global::UnityEngine.Random.Range(0, 20) * 0.01f;
 		Tr_Pos.transform.localScale = new global::UnityEngine.Vector3(-facingRight, 1f, 1f);
-		GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(1.6f * (float)(-facingRight), -5f);
+		GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(1.6f * (float)(-facingRight), -5f);
 		if (on_Flying)
 		{
 			base.transform.position = new global::UnityEngine.Vector3(base.transform.position.x + 2.5f * (float)facingRight, base.transform.position.y, 0f);
@@ -1137,14 +1137,14 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		animator.SetBool("onAttack_Laser", false);
 		animator.SetBool("onAttack_Shock", false);
 		animator.SetTrigger("BackDash");
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
 		if (PC.onScrewAttack)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 4000f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 4000f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		else
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 3500f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 3500f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(pos_Sound.position);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Growling(pos_Sound.position);
@@ -1224,8 +1224,8 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		speed_Y = 3f;
 		Mon.isInvincible = true;
 		Invincible_Timer = 1f;
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-		base.rigidbody2D.gravityScale = 0f;
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+		base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale = 0f;
 		Shield_Opcity = 0.4f;
 		Shield_Opcity_Timer = 0f;
 		if (SndObj_Shield != null)
@@ -1242,7 +1242,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		on_Flying = false;
 		on_Drop = true;
 		Move_Speed = 0f;
-		base.rigidbody2D.gravityScale = 10f;
+		base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale = 10f;
 		Set_Idle();
 		Fire_Timer = 0f;
 		Wave_Timer = 0f;
@@ -1287,8 +1287,8 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		speed_Y = 3f;
 		Mon.isInvincible = true;
 		Invincible_Timer = 1f;
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-		base.rigidbody2D.gravityScale = 0f;
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+		base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale = 0f;
 		Shield_Opcity = 0.4f;
 		Shield_Opcity_Timer = 0f;
 		base.transform.position = new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y - 100f, 0f);
@@ -1741,8 +1741,8 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 			animator.SetBool("onAttack_Fire", false);
 			animator.SetBool("onAttack_Laser", false);
 			animator.SetBool("onAttack_Shock", false);
-			base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-			base.rigidbody2D.gravityScale = 0f;
+			base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+			base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale = 0f;
 			Shield_Opcity = 0.4f;
 			Shield_Opcity_Timer = 0f;
 			if (SndObj_Shield != null)
@@ -1789,7 +1789,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 				facingRight = -facingRight;
 				Mon.Flip();
 				Tr_Pos.transform.localScale = new global::UnityEngine.Vector3(-facingRight, 1f, 1f);
-				GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(1.6f * (float)(-facingRight), -5f);
+				GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(1.6f * (float)(-facingRight), -5f);
 			}
 		}
 		else
@@ -1798,8 +1798,8 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		}
 		base.transform.position = Target_Death;
 		animator.SetBool("onDeath", true);
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-		base.rigidbody2D.gravityScale = 0f;
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+		base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale = 0f;
 		Shield_Opcity = 0.4f;
 		Shield_Opcity_Timer = 0f;
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().MaxSize = 11.2f;

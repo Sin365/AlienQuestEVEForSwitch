@@ -445,8 +445,8 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 	{
 		float num = base.transform.position.x - Player.transform.position.x;
 		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire_Poison, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
-		gameObject.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
-		gameObject.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * (0f - num), global::UnityEngine.ForceMode2D.Impulse);
+		gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
+		gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * (0f - num), global::UnityEngine.ForceMode2D.Impulse);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
 		SR_Ball_Yeollow.color = color_OFF;
 		SR_Ball_Purple.color = color_OFF;

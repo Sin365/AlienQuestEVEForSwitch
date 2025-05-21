@@ -67,6 +67,6 @@ public class AI_Mon_16 : global::UnityEngine.MonoBehaviour
 	{
 		facingRight = -facingRight;
 		GetComponent<Monster>().Flip();
-		GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0.1f * (float)(-facingRight), 0f);
+		GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0.1f * (float)(-facingRight), 0f);
 	}
 }

@@ -1,35 +1,81 @@
 fileFormatVersion: 2
 guid: fb462d775a945054fa43d68635cecdcd
-timeCreated: 1747839221
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: H_38_Tentacle_Calf_R
-    21300002: H_38_Leg
-    21300004: H_38_Tentacle_C
-    21300006: H_38_Tentacle_Calf_L
-    21300008: Mon_39_Tongue
-    21300010: H_38_Calf_L
-    21300012: H_38_Calf_R
-    21300014: H_38_Tentacle_L1
-    21300016: H_38_Tentacle_R1
-    21300018: H_38_Breast_L
-    21300020: H_38_Breast_R
-    21300022: H_38_Body
-    21300024: H_38_Tentacle_R2
-    21300026: H_38_Hair
-    21300028: H_38_Tentacle_L2
-    21300030: H_38_Tentacle_L2_Head
-    21300032: H_38_Penis
-    21300034: H_38_Tentacle_Breast_R
-    21300036: H_38_Pelvis
-    21300038: H_38_Tentacle_Breast_L
-    21300040: H_38_Leg_L
-    21300042: H_38_Center
-    21300044: H_38_Leg_R
-    21300046: H38_Mosaic
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: H_38_Tentacle_Calf_R
+  - first:
+      213: 21300002
+    second: H_38_Leg
+  - first:
+      213: 21300004
+    second: H_38_Tentacle_C
+  - first:
+      213: 21300006
+    second: H_38_Tentacle_Calf_L
+  - first:
+      213: 21300008
+    second: Mon_39_Tongue
+  - first:
+      213: 21300010
+    second: H_38_Calf_L
+  - first:
+      213: 21300012
+    second: H_38_Calf_R
+  - first:
+      213: 21300014
+    second: H_38_Tentacle_L1
+  - first:
+      213: 21300016
+    second: H_38_Tentacle_R1
+  - first:
+      213: 21300018
+    second: H_38_Breast_L
+  - first:
+      213: 21300020
+    second: H_38_Breast_R
+  - first:
+      213: 21300022
+    second: H_38_Body
+  - first:
+      213: 21300024
+    second: H_38_Tentacle_R2
+  - first:
+      213: 21300026
+    second: H_38_Hair
+  - first:
+      213: 21300028
+    second: H_38_Tentacle_L2
+  - first:
+      213: 21300030
+    second: H_38_Tentacle_L2_Head
+  - first:
+      213: 21300032
+    second: H_38_Penis
+  - first:
+      213: 21300034
+    second: H_38_Tentacle_Breast_R
+  - first:
+      213: 21300036
+    second: H_38_Pelvis
+  - first:
+      213: 21300038
+    second: H_38_Tentacle_Breast_L
+  - first:
+      213: 21300040
+    second: H_38_Leg_L
+  - first:
+      213: 21300042
+    second: H_38_Center
+  - first:
+      213: 21300044
+    second: H_38_Leg_R
+  - first:
+      213: 21300046
+    second: H38_Mosaic
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -47,6 +93,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -69,18 +117,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -90,6 +141,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -116,6 +168,13 @@ TextureImporter:
         - {x: 0.9999886, y: -23.0166}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Leg
       rect:
@@ -130,6 +189,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Tentacle_C
       rect:
@@ -153,6 +219,13 @@ TextureImporter:
         - {x: 93.9931, y: -62.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Tentacle_Calf_L
       rect:
@@ -175,6 +248,13 @@ TextureImporter:
         - {x: -4.499989, y: -24.98761}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Mon_39_Tongue
       rect:
@@ -194,6 +274,13 @@ TextureImporter:
         - {x: 190.9619, y: -20.53159}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Calf_L
       rect:
@@ -222,6 +309,13 @@ TextureImporter:
         - {x: 26.50475, y: -129.9925}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Calf_R
       rect:
@@ -249,6 +343,13 @@ TextureImporter:
         - {x: -8.475296, y: 58.00003}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Tentacle_L1
       rect:
@@ -275,6 +376,13 @@ TextureImporter:
         - {x: 55.46195, y: -120.4619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Tentacle_R1
       rect:
@@ -295,6 +403,13 @@ TextureImporter:
         - {x: 107.4918, y: -122}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Breast_L
       rect:
@@ -319,6 +434,13 @@ TextureImporter:
         - {x: 9.000008, y: -33.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Breast_R
       rect:
@@ -341,6 +463,13 @@ TextureImporter:
         - {x: 27.99348, y: -35.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Body
       rect:
@@ -364,6 +493,13 @@ TextureImporter:
         - {x: 9.5, y: -70.96193}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Tentacle_R2
       rect:
@@ -384,6 +520,13 @@ TextureImporter:
         - {x: 90.49299, y: -141.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Hair
       rect:
@@ -406,6 +549,13 @@ TextureImporter:
         - {x: 35.00002, y: -38.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Tentacle_L2
       rect:
@@ -428,6 +578,13 @@ TextureImporter:
         - {x: 28.49352, y: -115.4863}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Tentacle_L2_Head
       rect:
@@ -449,6 +606,13 @@ TextureImporter:
         - {x: 12.50001, y: -40.02468}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Penis
       rect:
@@ -472,6 +636,13 @@ TextureImporter:
         - {x: 3.987606, y: -44}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Tentacle_Breast_R
       rect:
@@ -495,6 +666,13 @@ TextureImporter:
         - {x: 23.51546, y: -31.00825}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Pelvis
       rect:
@@ -518,6 +696,13 @@ TextureImporter:
         - {x: 17.50479, y: -24.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Tentacle_Breast_L
       rect:
@@ -542,6 +727,13 @@ TextureImporter:
         - {x: -30.50808, y: -24.98008}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Leg_L
       rect:
@@ -564,6 +756,13 @@ TextureImporter:
         - {x: 14.02469, y: -77.52467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Center
       rect:
@@ -586,6 +785,13 @@ TextureImporter:
         - {x: 38.01228, y: -40.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H_38_Leg_R
       rect:
@@ -609,6 +815,13 @@ TextureImporter:
         - {x: 90.97533, y: 19.97533}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: H38_Mosaic
       rect:
@@ -627,9 +840,26 @@ TextureImporter:
         - {x: 24, y: 24}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

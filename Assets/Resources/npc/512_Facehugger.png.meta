@@ -1,48 +1,120 @@
 fileFormatVersion: 2
 guid: d7c58f687bb105547a4e92a1486e9555
-timeCreated: 1747839220
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: FaceHug_Body
-    21300002: FaceHug_Ball_R
-    21300004: FaceHug_Ball_L
-    21300006: FaceHug_Leg_L_4
-    21300008: FaceHugFly_Leg_R
-    21300010: FaceHugFly_Tail
-    21300012: FaceHug_Leg_L_1
-    21300014: FaceHug_Leg_L_2
-    21300016: FaceHug_Leg_L_3
-    21300018: FaceHug_Leg_R_4_2
-    21300020: FaceHugFly_Leg_2
-    21300022: FaceHugFly_Body
-    21300024: FaceHug_Leg_R_1
-    21300026: FaceHug_Leg_R_2
-    21300028: FaceHug_Leg_R_3
-    21300030: FaceHug_Leg_R_4
-    21300032: FaceHug_Leg_R_2_2
-    21300034: FaceHug_Leg_R_3_2
-    21300036: FaceHugFly_Leg_L
-    21300038: FaceHugFly_Leg_3
-    21300040: Z_GrabDown_FH_L
-    21300042: FaceHug_Tail
-    21300044: FaceHugFly_Leg_1
-    21300046: FaceHug_Tail_Up
-    21300048: Tile_Creep_Tentacle
-    21300050: Z_GrabDown_FH
-    21300052: Z_GrabDown_FH_R
-    21300054: FaceHugFly_Leg_2_L
-    21300056: FaceHugFly_Leg_2_R
-    21300058: FaceHugFly_Leg_3_L
-    21300060: FaceHugFly_Leg_3_R
-    21300062: FaceHugFly_Leg_1_L
-    21300064: FaceHugFly_Leg_1_R
-    21300066: Tile_Creep_R
-    21300068: Tile_Creep_L
-    21300070: Tile_Creep
-    21300072: AlienEgg_Opened
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: FaceHug_Body
+  - first:
+      213: 21300002
+    second: FaceHug_Ball_R
+  - first:
+      213: 21300004
+    second: FaceHug_Ball_L
+  - first:
+      213: 21300006
+    second: FaceHug_Leg_L_4
+  - first:
+      213: 21300008
+    second: FaceHugFly_Leg_R
+  - first:
+      213: 21300010
+    second: FaceHugFly_Tail
+  - first:
+      213: 21300012
+    second: FaceHug_Leg_L_1
+  - first:
+      213: 21300014
+    second: FaceHug_Leg_L_2
+  - first:
+      213: 21300016
+    second: FaceHug_Leg_L_3
+  - first:
+      213: 21300018
+    second: FaceHug_Leg_R_4_2
+  - first:
+      213: 21300020
+    second: FaceHugFly_Leg_2
+  - first:
+      213: 21300022
+    second: FaceHugFly_Body
+  - first:
+      213: 21300024
+    second: FaceHug_Leg_R_1
+  - first:
+      213: 21300026
+    second: FaceHug_Leg_R_2
+  - first:
+      213: 21300028
+    second: FaceHug_Leg_R_3
+  - first:
+      213: 21300030
+    second: FaceHug_Leg_R_4
+  - first:
+      213: 21300032
+    second: FaceHug_Leg_R_2_2
+  - first:
+      213: 21300034
+    second: FaceHug_Leg_R_3_2
+  - first:
+      213: 21300036
+    second: FaceHugFly_Leg_L
+  - first:
+      213: 21300038
+    second: FaceHugFly_Leg_3
+  - first:
+      213: 21300040
+    second: Z_GrabDown_FH_L
+  - first:
+      213: 21300042
+    second: FaceHug_Tail
+  - first:
+      213: 21300044
+    second: FaceHugFly_Leg_1
+  - first:
+      213: 21300046
+    second: FaceHug_Tail_Up
+  - first:
+      213: 21300048
+    second: Tile_Creep_Tentacle
+  - first:
+      213: 21300050
+    second: Z_GrabDown_FH
+  - first:
+      213: 21300052
+    second: Z_GrabDown_FH_R
+  - first:
+      213: 21300054
+    second: FaceHugFly_Leg_2_L
+  - first:
+      213: 21300056
+    second: FaceHugFly_Leg_2_R
+  - first:
+      213: 21300058
+    second: FaceHugFly_Leg_3_L
+  - first:
+      213: 21300060
+    second: FaceHugFly_Leg_3_R
+  - first:
+      213: 21300062
+    second: FaceHugFly_Leg_1_L
+  - first:
+      213: 21300064
+    second: FaceHugFly_Leg_1_R
+  - first:
+      213: 21300066
+    second: Tile_Creep_R
+  - first:
+      213: 21300068
+    second: Tile_Creep_L
+  - first:
+      213: 21300070
+    second: Tile_Creep
+  - first:
+      213: 21300072
+    second: AlienEgg_Opened
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -60,6 +132,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -82,18 +156,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -103,6 +180,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -131,6 +209,13 @@ TextureImporter:
         - {x: -42.47848, y: 4.01992}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Ball_R
       rect:
@@ -154,6 +239,13 @@ TextureImporter:
         - {x: 11.00001, y: -22.00808}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Ball_L
       rect:
@@ -176,6 +268,13 @@ TextureImporter:
         - {x: 12.48772, y: -16.00001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_L_4
       rect:
@@ -199,6 +298,13 @@ TextureImporter:
         - {x: -4.500004, y: -29.53805}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_R
       rect:
@@ -220,6 +326,13 @@ TextureImporter:
         - {x: 20, y: -21.52467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Tail
       rect:
@@ -250,6 +363,13 @@ TextureImporter:
         - {x: -15.01339, y: 35.47091}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_L_1
       rect:
@@ -273,6 +393,13 @@ TextureImporter:
         - {x: 17.96194, y: -23.52467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_L_2
       rect:
@@ -296,6 +423,13 @@ TextureImporter:
         - {x: 26.97855, y: -16.03805}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_L_3
       rect:
@@ -319,6 +453,13 @@ TextureImporter:
         - {x: 26.50841, y: -15.02467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_R_4_2
       rect:
@@ -341,6 +482,13 @@ TextureImporter:
         - {x: 12.98772, y: -32.5166}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_2
       rect:
@@ -376,6 +524,13 @@ TextureImporter:
         - {x: -10.5, y: 4.975327}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Body
       rect:
@@ -396,6 +551,13 @@ TextureImporter:
         - {x: 39.97532, y: -2.491035}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_R_1
       rect:
@@ -421,6 +583,13 @@ TextureImporter:
         - {x: -15.5, y: 1.475327}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_R_2
       rect:
@@ -439,6 +608,13 @@ TextureImporter:
         - {x: 7.5, y: -22}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_R_3
       rect:
@@ -457,6 +633,13 @@ TextureImporter:
         - {x: 6.5, y: -23}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_R_4
       rect:
@@ -475,6 +658,13 @@ TextureImporter:
         - {x: 6.5, y: -23.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_R_2_2
       rect:
@@ -493,6 +683,13 @@ TextureImporter:
         - {x: 11.5, y: -28}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Leg_R_3_2
       rect:
@@ -511,6 +708,13 @@ TextureImporter:
         - {x: 15.5, y: -30.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_L
       rect:
@@ -533,6 +737,13 @@ TextureImporter:
         - {x: -33.53161, y: 16.03161}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_3
       rect:
@@ -566,6 +777,13 @@ TextureImporter:
         - {x: 80, y: -18.98662}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_GrabDown_FH_L
       rect:
@@ -587,6 +805,13 @@ TextureImporter:
         - {x: -11.00086, y: -17.02467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Tail
       rect:
@@ -609,6 +834,13 @@ TextureImporter:
         - {x: 26.98663, y: -34.51339}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_1
       rect:
@@ -640,6 +872,13 @@ TextureImporter:
         - {x: 68.5, y: 8}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHug_Tail_Up
       rect:
@@ -671,6 +910,13 @@ TextureImporter:
         - {x: 51.03806, y: 49.48663}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_Creep_Tentacle
       rect:
@@ -689,6 +935,13 @@ TextureImporter:
         - {x: 14, y: -159}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_GrabDown_FH
       rect:
@@ -712,6 +965,13 @@ TextureImporter:
         - {x: -124.0134, y: -33.00001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Z_GrabDown_FH_R
       rect:
@@ -740,6 +1000,13 @@ TextureImporter:
         - {x: 25.57467, y: -13.96194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_2_L
       rect:
@@ -760,6 +1027,13 @@ TextureImporter:
         - {x: 38.46193, y: 10.00001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_2_R
       rect:
@@ -785,6 +1059,13 @@ TextureImporter:
         - {x: 18.53806, y: -13.49308}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_3_L
       rect:
@@ -806,6 +1087,13 @@ TextureImporter:
         - {x: 34.53806, y: -4.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_3_R
       rect:
@@ -834,6 +1122,13 @@ TextureImporter:
         - {x: 38.5, y: -18.98662}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_1_L
       rect:
@@ -853,6 +1148,13 @@ TextureImporter:
         - {x: -37.92532, y: -17.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: FaceHugFly_Leg_1_R
       rect:
@@ -877,6 +1179,13 @@ TextureImporter:
         - {x: 28.49355, y: -10.03805}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_Creep_R
       rect:
@@ -898,6 +1207,13 @@ TextureImporter:
         - {x: 27.48339, y: -39.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_Creep_L
       rect:
@@ -921,6 +1237,13 @@ TextureImporter:
         - {x: -29.5, y: -40.02468}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_Creep
       rect:
@@ -948,6 +1271,13 @@ TextureImporter:
         - {x: 190, y: 34.88342}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 66305410000000000800000000000000
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: AlienEgg_Opened
       rect:
@@ -967,9 +1297,26 @@ TextureImporter:
         - {x: 77.99306, y: -53.51991}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 86305410000000000800000000000000
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

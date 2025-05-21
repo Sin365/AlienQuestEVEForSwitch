@@ -1,31 +1,69 @@
 fileFormatVersion: 2
 guid: 036a6092b9d8fa84496bf5254a3bac15
-timeCreated: 1747839227
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Tile_5_Sticky_1
-    21300002: Tile_5_Sticky_4
-    21300004: Tile_5
-    21300006: Tile_5_Out_TL
-    21300008: Tile_5_Out_TR
-    21300010: Tile_5_In_TL
-    21300012: Tile_5_In_TR
-    21300014: Tile_5_27
-    21300016: Tile_5_Out_BL
-    21300018: Tile_5_Out_BR
-    21300020: Tile_5_In_BL
-    21300022: Tile_5_In_BR
-    21300024: Tile_5_Deco_1
-    21300026: Tile_5_Deco_2
-    21300028: Tile_5_Deco_3
-    21300030: Tile_5_Deco_4
-    21300032: Tile_5_Sticky_2
-    21300034: Tile_5_Sticky_3
-    21300036: Tile_5_BG
-    21300038: Tile_5_Trap
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Tile_5_Sticky_1
+  - first:
+      213: 21300002
+    second: Tile_5_Sticky_4
+  - first:
+      213: 21300004
+    second: Tile_5
+  - first:
+      213: 21300006
+    second: Tile_5_Out_TL
+  - first:
+      213: 21300008
+    second: Tile_5_Out_TR
+  - first:
+      213: 21300010
+    second: Tile_5_In_TL
+  - first:
+      213: 21300012
+    second: Tile_5_In_TR
+  - first:
+      213: 21300014
+    second: Tile_5_27
+  - first:
+      213: 21300016
+    second: Tile_5_Out_BL
+  - first:
+      213: 21300018
+    second: Tile_5_Out_BR
+  - first:
+      213: 21300020
+    second: Tile_5_In_BL
+  - first:
+      213: 21300022
+    second: Tile_5_In_BR
+  - first:
+      213: 21300024
+    second: Tile_5_Deco_1
+  - first:
+      213: 21300026
+    second: Tile_5_Deco_2
+  - first:
+      213: 21300028
+    second: Tile_5_Deco_3
+  - first:
+      213: 21300030
+    second: Tile_5_Deco_4
+  - first:
+      213: 21300032
+    second: Tile_5_Sticky_2
+  - first:
+      213: 21300034
+    second: Tile_5_Sticky_3
+  - first:
+      213: 21300036
+    second: Tile_5_BG
+  - first:
+      213: 21300038
+    second: Tile_5_Trap
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -43,6 +81,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -65,18 +105,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -86,6 +129,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -117,6 +161,13 @@ TextureImporter:
         - {x: -63.5, y: -224.9834}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Sticky_4
       rect:
@@ -135,6 +186,13 @@ TextureImporter:
         - {x: 14.5, y: -251}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5
       rect:
@@ -153,6 +211,13 @@ TextureImporter:
         - {x: 95, y: 51.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Out_TL
       rect:
@@ -171,6 +236,13 @@ TextureImporter:
         - {x: 51.5, y: 51.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Out_TR
       rect:
@@ -189,6 +261,13 @@ TextureImporter:
         - {x: 51.5, y: 51.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_In_TL
       rect:
@@ -207,6 +286,13 @@ TextureImporter:
         - {x: 51.5, y: 51.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_In_TR
       rect:
@@ -225,6 +311,13 @@ TextureImporter:
         - {x: 51.5, y: 51.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_27
       rect:
@@ -247,6 +340,13 @@ TextureImporter:
         - {x: 31.5, y: -45}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Out_BL
       rect:
@@ -266,6 +366,13 @@ TextureImporter:
         - {x: 51.5, y: -52}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Out_BR
       rect:
@@ -285,6 +392,13 @@ TextureImporter:
         - {x: 51.5, y: -51}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_In_BL
       rect:
@@ -303,6 +417,13 @@ TextureImporter:
         - {x: 51.5, y: 51.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_In_BR
       rect:
@@ -321,6 +442,13 @@ TextureImporter:
         - {x: 51.5, y: 51.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Deco_1
       rect:
@@ -339,6 +467,13 @@ TextureImporter:
         - {x: 24, y: -6.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Deco_2
       rect:
@@ -357,6 +492,13 @@ TextureImporter:
         - {x: 18.5, y: -6.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Deco_3
       rect:
@@ -375,6 +517,13 @@ TextureImporter:
         - {x: 14.5, y: -6.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Deco_4
       rect:
@@ -393,6 +542,13 @@ TextureImporter:
         - {x: 16.5, y: -6.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Sticky_2
       rect:
@@ -412,6 +568,13 @@ TextureImporter:
         - {x: 32, y: 251}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Sticky_3
       rect:
@@ -457,6 +620,13 @@ TextureImporter:
         - {x: 30.5, y: -250}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_BG
       rect:
@@ -676,6 +846,13 @@ TextureImporter:
         - {x: -414.5, y: 228}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Tile_5_Trap
       rect:
@@ -701,9 +878,26 @@ TextureImporter:
         - {x: 60.5, y: -60.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

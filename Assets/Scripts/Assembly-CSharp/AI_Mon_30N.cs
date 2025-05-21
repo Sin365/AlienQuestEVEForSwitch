@@ -344,7 +344,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 	{
 		float num = ((facingRight >= 0) ? 180 : 0);
 		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + 15f)) as global::UnityEngine.GameObject;
-		gameObject.rigidbody2D.AddForce(new global::UnityEngine.Vector2(dist_X * 40f * (float)facingRight, dist_X * 10f));
+		gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(dist_X * 40f * (float)facingRight, dist_X * 10f));
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
 		Fire_Num--;
 	}

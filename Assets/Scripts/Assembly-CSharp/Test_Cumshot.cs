@@ -15,7 +15,7 @@ public class Test_Cumshot : global::UnityEngine.MonoBehaviour
 	private void Start()
 	{
 		Pos_Orig = base.transform.position;
-		base.rigidbody2D.Sleep();
+		base.GetComponent<UnityEngine.Rigidbody2D>().Sleep();
 		Tail.transform.localScale = new global::UnityEngine.Vector3(0f, 1f, 1f);
 	}
 
@@ -41,16 +41,16 @@ public class Test_Cumshot : global::UnityEngine.MonoBehaviour
 
 	private void Shot()
 	{
-		base.rigidbody2D.WakeUp();
-		base.rigidbody2D.AddForce(new global::UnityEngine.Vector2(-600f, 0f));
+		base.GetComponent<UnityEngine.Rigidbody2D>().WakeUp();
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(-600f, 0f));
 		isFired = true;
 	}
 
 	private void Reset()
 	{
 		isFired = false;
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, 0f);
-		base.rigidbody2D.Sleep();
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+		base.GetComponent<UnityEngine.Rigidbody2D>().Sleep();
 		Tail.transform.localScale = new global::UnityEngine.Vector3(0f, 1f, 1f);
 		base.transform.rotation = global::UnityEngine.Quaternion.Euler(0f, 0f, 0f);
 		base.transform.position = Pos_Orig;

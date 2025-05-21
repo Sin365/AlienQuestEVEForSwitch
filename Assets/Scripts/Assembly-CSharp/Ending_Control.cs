@@ -178,9 +178,9 @@ public class Ending_Control : global::UnityEngine.MonoBehaviour
 	private void Update()
 	{
 		Life_Timer += global::UnityEngine.Time.deltaTime;
-		if (base.audio.isPlaying && Life_Timer > 10f)
+		if (base.GetComponent<UnityEngine.AudioSource>().isPlaying && Life_Timer > 10f)
 		{
-			base.audio.volume = global::UnityEngine.Mathf.Lerp(base.audio.volume, 0f, global::UnityEngine.Time.deltaTime * 0.5f);
+			base.GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 0.5f);
 		}
 		if (Slot_Num > -1 && !DataLoaded)
 		{
@@ -201,7 +201,7 @@ public class Ending_Control : global::UnityEngine.MonoBehaviour
 			if (Life_Timer > 3f)
 			{
 				Ending_Cam.Set_Shake();
-				base.audio.Play();
+				base.GetComponent<UnityEngine.AudioSource>().Play();
 				State++;
 			}
 		}
@@ -454,7 +454,7 @@ public class Ending_Control : global::UnityEngine.MonoBehaviour
 				}
 			}
 			BlackFade.color = new global::UnityEngine.Color(0f, 0f, 0f, FadeOpacity);
-			base.audio.volume = global::UnityEngine.Mathf.Lerp(base.audio.volume, 0f, global::UnityEngine.Time.deltaTime * 0.5f);
+			base.GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 0.5f);
 			BGM_Ending.volume = global::UnityEngine.Mathf.Lerp(BGM_Ending.volume, 0f, global::UnityEngine.Time.deltaTime * 5f);
 		}
 	}

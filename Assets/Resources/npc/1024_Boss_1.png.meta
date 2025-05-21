@@ -1,18 +1,30 @@
 fileFormatVersion: 2
 guid: 0ec6e9a100ec5124ba11e99919a42afd
-timeCreated: 1747839223
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Boss_1_Arm_L
-    21300002: Boss_1_Arm_R
-    21300004: Boss_1_Body
-    21300006: Boss_1_Teath
-    21300008: Boss_1_Inner
-    21300010: Boss_1_Head
-    21300012: Boss_1_Tonuge
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Boss_1_Arm_L
+  - first:
+      213: 21300002
+    second: Boss_1_Arm_R
+  - first:
+      213: 21300004
+    second: Boss_1_Body
+  - first:
+      213: 21300006
+    second: Boss_1_Teath
+  - first:
+      213: 21300008
+    second: Boss_1_Inner
+  - first:
+      213: 21300010
+    second: Boss_1_Head
+  - first:
+      213: 21300012
+    second: Boss_1_Tonuge
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -30,6 +42,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -52,18 +66,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -73,6 +90,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -101,6 +119,13 @@ TextureImporter:
         - {x: -15.48762, y: -91.52467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_1_Arm_R
       rect:
@@ -124,6 +149,13 @@ TextureImporter:
         - {x: 1.512383, y: -91.52467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_1_Body
       rect:
@@ -278,6 +310,13 @@ TextureImporter:
         - {x: -72, y: 182.5134}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_1_Teath
       rect:
@@ -299,6 +338,13 @@ TextureImporter:
         - {x: 83.01337, y: -2.038048}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_1_Inner
       rect:
@@ -333,6 +379,13 @@ TextureImporter:
         - {x: -107.9919, y: -158.0082}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_1_Head
       rect:
@@ -421,6 +474,13 @@ TextureImporter:
         - {x: -75.96193, y: -76}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Boss_1_Tonuge
       rect:
@@ -444,9 +504,26 @@ TextureImporter:
         - {x: 52.96194, y: -83.03805}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

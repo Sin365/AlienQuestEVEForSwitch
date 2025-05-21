@@ -15,8 +15,8 @@ public class Sound_Gravity : global::UnityEngine.MonoBehaviour
 	private void Start()
 	{
 		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Volume_Orig = base.audio.volume;
-		Dist_Orig = base.audio.volume * GM.Option_Volume[0];
+		Volume_Orig = base.GetComponent<UnityEngine.AudioSource>().volume;
+		Dist_Orig = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
 		Check_Distance();
 	}
 
@@ -25,24 +25,24 @@ public class Sound_Gravity : global::UnityEngine.MonoBehaviour
 		if (!GM.Paused)
 		{
 			Life_Timer += global::UnityEngine.Time.deltaTime;
-			if (!base.audio.isPlaying)
+			if (!base.GetComponent<UnityEngine.AudioSource>().isPlaying)
 			{
 				Dist_Orig = Volume_Orig * GM.Option_Volume[0];
-				base.audio.volume = Dist_Orig * Dist_Var;
-				base.audio.Play();
+				base.GetComponent<UnityEngine.AudioSource>().volume = Dist_Orig * Dist_Var;
+				base.GetComponent<UnityEngine.AudioSource>().Play();
 			}
 			if (Life_Timer > 3.5f)
 			{
-				base.audio.volume = global::UnityEngine.Mathf.Lerp(base.audio.volume, 0f, global::UnityEngine.Time.deltaTime * 20f);
+				base.GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 20f);
 			}
 			else
 			{
 				Check_Distance();
 			}
 		}
-		else if (base.audio.isPlaying)
+		else if (base.GetComponent<UnityEngine.AudioSource>().isPlaying)
 		{
-			base.audio.Pause();
+			base.GetComponent<UnityEngine.AudioSource>().Pause();
 		}
 	}
 
@@ -69,6 +69,6 @@ public class Sound_Gravity : global::UnityEngine.MonoBehaviour
 		{
 			Dist_Var = 0f;
 		}
-		base.audio.volume = Dist_Orig * Dist_Var;
+		base.GetComponent<UnityEngine.AudioSource>().volume = Dist_Orig * Dist_Var;
 	}
 }

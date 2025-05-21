@@ -1,18 +1,30 @@
 fileFormatVersion: 2
 guid: 03591bc12f7728346b23505702602b33
-timeCreated: 1747839217
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: UI_Girl_2_Body_Cloth
-    21300002: UI_Girl_2_Finger
-    21300004: UI_Girl_2_Wand
-    21300006: UI_Girl_2_Arm_L
-    21300008: UI_Girl_2_Arm_R1_Cloth
-    21300010: UI_Girl_2_Arm_R2_Cloth
-    21300012: UI_Girl_2_Breast_Cloth
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: UI_Girl_2_Body_Cloth
+  - first:
+      213: 21300002
+    second: UI_Girl_2_Finger
+  - first:
+      213: 21300004
+    second: UI_Girl_2_Wand
+  - first:
+      213: 21300006
+    second: UI_Girl_2_Arm_L
+  - first:
+      213: 21300008
+    second: UI_Girl_2_Arm_R1_Cloth
+  - first:
+      213: 21300010
+    second: UI_Girl_2_Arm_R2_Cloth
+  - first:
+      213: 21300012
+    second: UI_Girl_2_Breast_Cloth
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -30,6 +42,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -52,18 +66,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -73,6 +90,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -215,6 +233,13 @@ TextureImporter:
         - {x: -214.5, y: -194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Finger
       rect:
@@ -238,6 +263,13 @@ TextureImporter:
         - {x: -42, y: -17.0166}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Wand
       rect:
@@ -278,6 +310,13 @@ TextureImporter:
         - {x: -12, y: 41.0134}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Arm_L
       rect:
@@ -311,6 +350,13 @@ TextureImporter:
         - {x: -83.5, y: -321.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Arm_R1_Cloth
       rect:
@@ -345,6 +391,13 @@ TextureImporter:
         - {x: -59.50808, y: 176.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Arm_R2_Cloth
       rect:
@@ -384,6 +437,13 @@ TextureImporter:
         - {x: -54.9753, y: -21.98662}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_2_Breast_Cloth
       rect:
@@ -415,9 +475,26 @@ TextureImporter:
         - {x: -69.0213, y: -80.98079}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

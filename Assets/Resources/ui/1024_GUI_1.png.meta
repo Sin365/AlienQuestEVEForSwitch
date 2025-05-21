@@ -1,153 +1,435 @@
 fileFormatVersion: 2
 guid: e64e3c6c207b2104397f377196dcfbab
-timeCreated: 1747839216
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: UI_Arrow
-    21300002: UI_SelBox
-    21300004: UI_Box
-    21300006: UI_Icon_360
-    21300008: UI_Icon_Keyboard
-    21300010: UI_Box_Black
-    21300012: UI_Icon_Pad_bA
-    21300014: UI_Icon_Pad_bX
-    21300016: UI_Icon_Pad_bY
-    21300018: UI_Icon_Pad_bB
-    21300020: UI_SelCursor
-    21300022: UI_Box_Slide
-    21300024: UI_TitleMenuPipe
-    21300026: Guide_Cross
-    21300028: UI_SelBox_Glow
-    21300030: UI_Font_I_Blue
-    21300032: UI_Font_E_Blue
-    21300034: UI_Font_V_Blue
-    21300036: UI_AQText_A
-    21300038: UI_AQText_L
-    21300040: UI_AQText_I
-    21300042: UI_AQText_E
-    21300044: UI_AQText_N
-    21300046: UI_AQText_Q
-    21300048: UI_AQText_U
-    21300050: UI_AQText_S
-    21300052: UI_AQText_T
-    21300054: UI_Box_Black_Alpha
-    21300056: UI_White_Bar
-    21300058: UI_Skull_White
-    21300060: UI_Item_Heal
-    21300062: UI_Item_HealBox
-    21300064: UI_ToonDialog_Tail
-    21300066: MapBlock_Pink
-    21300068: MapBlock_G3_O1
-    21300070: UI_AQText_E2
-    21300072: UI_HP_Bar_Box
-    21300074: MapBlock_White_Bar
-    21300076: UI_MonBar_Small
-    21300078: UI_Girl_1
-    21300080: UI_Circle_3
-    21300082: UI_Circle_1
-    21300084: UI_Circle_2
-    21300086: UI_HPMP_BG
-    21300088: UI_HPMP_Top
-    21300090: UI_Name_BG
-    21300092: UI_HP_Bar
-    21300094: UI_HP_Bar_R
-    21300096: UI_HP_Bar_L
-    21300098: UI_MP_Bar_L
-    21300100: UI_MP_Bar
-    21300102: UI_MP_Bar_R
-    21300104: UI_HP_Glow
-    21300106: UI_MP_Glow
-    21300108: UI_StatAdd
-    21300110: UI_SelBorder
-    21300112: UI_SelBorderLong
-    21300114: UI_LVBG
-    21300116: UI_Icon_Pad_L
-    21300118: UI_Icon_Pad_R
-    21300120: UI_Icon_Pad_D
-    21300122: UI_Box_Red
-    21300124: UI_Weapon_1
-    21300126: UI_Weapon_2
-    21300128: UI_Weapon_3
-    21300130: UI_Weapon_4
-    21300132: UI_Weapon_5
-    21300134: UI_Bonus_Blood
-    21300136: UI_Bonus_Mana
-    21300138: UI_Bonus_ATK
-    21300140: UI_Bonus_MP
-    21300142: UI_Bonus_HP
-    21300144: UI_Skill_1
-    21300146: UI_Skill_2
-    21300148: UI_Skill_3
-    21300150: UI_Skill_4
-    21300152: UI_Skill_5
-    21300154: UI_Ability_1
-    21300156: UI_Ability_2
-    21300158: UI_Ability_3
-    21300160: UI_Ability_4
-    21300162: UI_Ability_5
-    21300164: UI_Sound_Bar
-    21300166: UI_Card_1
-    21300168: UI_Card_2
-    21300170: UI_Card_3
-    21300172: UI_Card_4
-    21300174: UI_Card_5
-    21300176: UI_LVSec
-    21300178: UI_Potion_MP
-    21300180: UI_HP_Bar_Edge
-    21300182: UI_MP_Bar_Edge
-    21300184: UI_ToonDialog
-    21300186: UI_Weapon_2_Glow
-    21300188: UI_Blood_Inner
-    21300190: UI_Blood_Outer
-    21300192: UI_Clock
-    21300194: Guide_Yellow
-    21300196: Guide_Item
-    21300198: Guide_Heal
-    21300200: UI_MiniMap_Grid
-    21300202: MapBlock_G4
-    21300204: MapBlock_G3
-    21300206: MapBlock_G2
-    21300208: MapBlock_G1
-    21300210: MapBlock_O2
-    21300212: MapBlock_G2_O2
-    21300214: MapBlock_G1_O1
-    21300216: MapBlock_O1
-    21300218: MapBlock_White
-    21300220: MapBlock_G2_O2_Corner
-    21300222: MapBlock_G1_O2_Corner
-    21300224: MapBlock_O2_Corner
-    21300226: MapBlock_G1_O1_Corner
-    21300228: MapBlock_G2_Corner
-    21300230: MapBlock_G2_O1_Corner
-    21300232: MapBlock_G2_O1
-    21300234: MapBlock_G1_O3
-    21300236: MapBlock_O3
-    21300238: UI_Map_GunShip
-    21300240: MapBlock_Mission
-    21300242: UI_Check_Blue
-    21300244: UI_UpArrow
-    21300246: Guide_Heal_Red
-    21300248: Guide_Cross_Blue
-    21300250: UI_Icon_Stop
-    21300252: Dust_1
-    21300254: MapBlock_G1_O2
-    21300256: MapBlock_N
-    21300258: Guide_200Box
-    21300260: UI_White_Bar_G
-    21300262: UI_MonBar_BG
-    21300264: UI_MonBar
-    21300266: UI_MonBar_Center
-    21300268: UI_Shield_Bar
-    21300270: UI_Potion_HP
-    21300272: UI_Icon_Mouse
-    21300274: UI_Icon_MouseBtn
-    21300276: UI_Icon_MouseWheel
-    21300278: UI_SelBorderSlide
-    21300280: UI_Icon_Play
-    21300282: UI_Icon_Circle
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: UI_Arrow
+  - first:
+      213: 21300002
+    second: UI_SelBox
+  - first:
+      213: 21300004
+    second: UI_Box
+  - first:
+      213: 21300006
+    second: UI_Icon_360
+  - first:
+      213: 21300008
+    second: UI_Icon_Keyboard
+  - first:
+      213: 21300010
+    second: UI_Box_Black
+  - first:
+      213: 21300012
+    second: UI_Icon_Pad_bA
+  - first:
+      213: 21300014
+    second: UI_Icon_Pad_bX
+  - first:
+      213: 21300016
+    second: UI_Icon_Pad_bY
+  - first:
+      213: 21300018
+    second: UI_Icon_Pad_bB
+  - first:
+      213: 21300020
+    second: UI_SelCursor
+  - first:
+      213: 21300022
+    second: UI_Box_Slide
+  - first:
+      213: 21300024
+    second: UI_TitleMenuPipe
+  - first:
+      213: 21300026
+    second: Guide_Cross
+  - first:
+      213: 21300028
+    second: UI_SelBox_Glow
+  - first:
+      213: 21300030
+    second: UI_Font_I_Blue
+  - first:
+      213: 21300032
+    second: UI_Font_E_Blue
+  - first:
+      213: 21300034
+    second: UI_Font_V_Blue
+  - first:
+      213: 21300036
+    second: UI_AQText_A
+  - first:
+      213: 21300038
+    second: UI_AQText_L
+  - first:
+      213: 21300040
+    second: UI_AQText_I
+  - first:
+      213: 21300042
+    second: UI_AQText_E
+  - first:
+      213: 21300044
+    second: UI_AQText_N
+  - first:
+      213: 21300046
+    second: UI_AQText_Q
+  - first:
+      213: 21300048
+    second: UI_AQText_U
+  - first:
+      213: 21300050
+    second: UI_AQText_S
+  - first:
+      213: 21300052
+    second: UI_AQText_T
+  - first:
+      213: 21300054
+    second: UI_Box_Black_Alpha
+  - first:
+      213: 21300056
+    second: UI_White_Bar
+  - first:
+      213: 21300058
+    second: UI_Skull_White
+  - first:
+      213: 21300060
+    second: UI_Item_Heal
+  - first:
+      213: 21300062
+    second: UI_Item_HealBox
+  - first:
+      213: 21300064
+    second: UI_ToonDialog_Tail
+  - first:
+      213: 21300066
+    second: MapBlock_Pink
+  - first:
+      213: 21300068
+    second: MapBlock_G3_O1
+  - first:
+      213: 21300070
+    second: UI_AQText_E2
+  - first:
+      213: 21300072
+    second: UI_HP_Bar_Box
+  - first:
+      213: 21300074
+    second: MapBlock_White_Bar
+  - first:
+      213: 21300076
+    second: UI_MonBar_Small
+  - first:
+      213: 21300078
+    second: UI_Girl_1
+  - first:
+      213: 21300080
+    second: UI_Circle_3
+  - first:
+      213: 21300082
+    second: UI_Circle_1
+  - first:
+      213: 21300084
+    second: UI_Circle_2
+  - first:
+      213: 21300086
+    second: UI_HPMP_BG
+  - first:
+      213: 21300088
+    second: UI_HPMP_Top
+  - first:
+      213: 21300090
+    second: UI_Name_BG
+  - first:
+      213: 21300092
+    second: UI_HP_Bar
+  - first:
+      213: 21300094
+    second: UI_HP_Bar_R
+  - first:
+      213: 21300096
+    second: UI_HP_Bar_L
+  - first:
+      213: 21300098
+    second: UI_MP_Bar_L
+  - first:
+      213: 21300100
+    second: UI_MP_Bar
+  - first:
+      213: 21300102
+    second: UI_MP_Bar_R
+  - first:
+      213: 21300104
+    second: UI_HP_Glow
+  - first:
+      213: 21300106
+    second: UI_MP_Glow
+  - first:
+      213: 21300108
+    second: UI_StatAdd
+  - first:
+      213: 21300110
+    second: UI_SelBorder
+  - first:
+      213: 21300112
+    second: UI_SelBorderLong
+  - first:
+      213: 21300114
+    second: UI_LVBG
+  - first:
+      213: 21300116
+    second: UI_Icon_Pad_L
+  - first:
+      213: 21300118
+    second: UI_Icon_Pad_R
+  - first:
+      213: 21300120
+    second: UI_Icon_Pad_D
+  - first:
+      213: 21300122
+    second: UI_Box_Red
+  - first:
+      213: 21300124
+    second: UI_Weapon_1
+  - first:
+      213: 21300126
+    second: UI_Weapon_2
+  - first:
+      213: 21300128
+    second: UI_Weapon_3
+  - first:
+      213: 21300130
+    second: UI_Weapon_4
+  - first:
+      213: 21300132
+    second: UI_Weapon_5
+  - first:
+      213: 21300134
+    second: UI_Bonus_Blood
+  - first:
+      213: 21300136
+    second: UI_Bonus_Mana
+  - first:
+      213: 21300138
+    second: UI_Bonus_ATK
+  - first:
+      213: 21300140
+    second: UI_Bonus_MP
+  - first:
+      213: 21300142
+    second: UI_Bonus_HP
+  - first:
+      213: 21300144
+    second: UI_Skill_1
+  - first:
+      213: 21300146
+    second: UI_Skill_2
+  - first:
+      213: 21300148
+    second: UI_Skill_3
+  - first:
+      213: 21300150
+    second: UI_Skill_4
+  - first:
+      213: 21300152
+    second: UI_Skill_5
+  - first:
+      213: 21300154
+    second: UI_Ability_1
+  - first:
+      213: 21300156
+    second: UI_Ability_2
+  - first:
+      213: 21300158
+    second: UI_Ability_3
+  - first:
+      213: 21300160
+    second: UI_Ability_4
+  - first:
+      213: 21300162
+    second: UI_Ability_5
+  - first:
+      213: 21300164
+    second: UI_Sound_Bar
+  - first:
+      213: 21300166
+    second: UI_Card_1
+  - first:
+      213: 21300168
+    second: UI_Card_2
+  - first:
+      213: 21300170
+    second: UI_Card_3
+  - first:
+      213: 21300172
+    second: UI_Card_4
+  - first:
+      213: 21300174
+    second: UI_Card_5
+  - first:
+      213: 21300176
+    second: UI_LVSec
+  - first:
+      213: 21300178
+    second: UI_Potion_MP
+  - first:
+      213: 21300180
+    second: UI_HP_Bar_Edge
+  - first:
+      213: 21300182
+    second: UI_MP_Bar_Edge
+  - first:
+      213: 21300184
+    second: UI_ToonDialog
+  - first:
+      213: 21300186
+    second: UI_Weapon_2_Glow
+  - first:
+      213: 21300188
+    second: UI_Blood_Inner
+  - first:
+      213: 21300190
+    second: UI_Blood_Outer
+  - first:
+      213: 21300192
+    second: UI_Clock
+  - first:
+      213: 21300194
+    second: Guide_Yellow
+  - first:
+      213: 21300196
+    second: Guide_Item
+  - first:
+      213: 21300198
+    second: Guide_Heal
+  - first:
+      213: 21300200
+    second: UI_MiniMap_Grid
+  - first:
+      213: 21300202
+    second: MapBlock_G4
+  - first:
+      213: 21300204
+    second: MapBlock_G3
+  - first:
+      213: 21300206
+    second: MapBlock_G2
+  - first:
+      213: 21300208
+    second: MapBlock_G1
+  - first:
+      213: 21300210
+    second: MapBlock_O2
+  - first:
+      213: 21300212
+    second: MapBlock_G2_O2
+  - first:
+      213: 21300214
+    second: MapBlock_G1_O1
+  - first:
+      213: 21300216
+    second: MapBlock_O1
+  - first:
+      213: 21300218
+    second: MapBlock_White
+  - first:
+      213: 21300220
+    second: MapBlock_G2_O2_Corner
+  - first:
+      213: 21300222
+    second: MapBlock_G1_O2_Corner
+  - first:
+      213: 21300224
+    second: MapBlock_O2_Corner
+  - first:
+      213: 21300226
+    second: MapBlock_G1_O1_Corner
+  - first:
+      213: 21300228
+    second: MapBlock_G2_Corner
+  - first:
+      213: 21300230
+    second: MapBlock_G2_O1_Corner
+  - first:
+      213: 21300232
+    second: MapBlock_G2_O1
+  - first:
+      213: 21300234
+    second: MapBlock_G1_O3
+  - first:
+      213: 21300236
+    second: MapBlock_O3
+  - first:
+      213: 21300238
+    second: UI_Map_GunShip
+  - first:
+      213: 21300240
+    second: MapBlock_Mission
+  - first:
+      213: 21300242
+    second: UI_Check_Blue
+  - first:
+      213: 21300244
+    second: UI_UpArrow
+  - first:
+      213: 21300246
+    second: Guide_Heal_Red
+  - first:
+      213: 21300248
+    second: Guide_Cross_Blue
+  - first:
+      213: 21300250
+    second: UI_Icon_Stop
+  - first:
+      213: 21300252
+    second: Dust_1
+  - first:
+      213: 21300254
+    second: MapBlock_G1_O2
+  - first:
+      213: 21300256
+    second: MapBlock_N
+  - first:
+      213: 21300258
+    second: Guide_200Box
+  - first:
+      213: 21300260
+    second: UI_White_Bar_G
+  - first:
+      213: 21300262
+    second: UI_MonBar_BG
+  - first:
+      213: 21300264
+    second: UI_MonBar
+  - first:
+      213: 21300266
+    second: UI_MonBar_Center
+  - first:
+      213: 21300268
+    second: UI_Shield_Bar
+  - first:
+      213: 21300270
+    second: UI_Potion_HP
+  - first:
+      213: 21300272
+    second: UI_Icon_Mouse
+  - first:
+      213: 21300274
+    second: UI_Icon_MouseBtn
+  - first:
+      213: 21300276
+    second: UI_Icon_MouseWheel
+  - first:
+      213: 21300278
+    second: UI_SelBorderSlide
+  - first:
+      213: 21300280
+    second: UI_Icon_Play
+  - first:
+      213: 21300282
+    second: UI_Icon_Circle
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -165,6 +447,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -187,18 +471,21 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -208,6 +495,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -229,6 +517,13 @@ TextureImporter:
         - {x: 7, y: -13}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_SelBox
       rect:
@@ -249,6 +544,13 @@ TextureImporter:
         - {x: 38.00001, y: -34.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Box
       rect:
@@ -267,6 +569,13 @@ TextureImporter:
         - {x: 35, y: 35}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_360
       rect:
@@ -289,6 +598,13 @@ TextureImporter:
         - {x: 28.51227, y: -19.02467}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Keyboard
       rect:
@@ -308,6 +624,13 @@ TextureImporter:
         - {x: 33.50001, y: 17.00001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Box_Black
       rect:
@@ -330,6 +653,13 @@ TextureImporter:
         - {x: 110, y: -25}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Pad_bA
       rect:
@@ -351,6 +681,13 @@ TextureImporter:
         - {x: 16, y: -16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Pad_bX
       rect:
@@ -372,6 +709,13 @@ TextureImporter:
         - {x: 16, y: -16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Pad_bY
       rect:
@@ -393,6 +737,13 @@ TextureImporter:
         - {x: 16, y: -16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Pad_bB
       rect:
@@ -414,6 +765,13 @@ TextureImporter:
         - {x: 16, y: -16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_SelCursor
       rect:
@@ -454,6 +812,13 @@ TextureImporter:
         - {x: -3.999989, y: -14.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Box_Slide
       rect:
@@ -472,6 +837,13 @@ TextureImporter:
         - {x: 35, y: 35}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_TitleMenuPipe
       rect:
@@ -494,6 +866,13 @@ TextureImporter:
         - {x: 91.46195, y: -58.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Guide_Cross
       rect:
@@ -512,6 +891,13 @@ TextureImporter:
         - {x: 14, y: -14}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_SelBox_Glow
       rect:
@@ -532,6 +918,13 @@ TextureImporter:
         - {x: 46, y: -40}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Font_I_Blue
       rect:
@@ -554,6 +947,13 @@ TextureImporter:
         - {x: 16.5, y: -68.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Font_E_Blue
       rect:
@@ -586,6 +986,13 @@ TextureImporter:
         - {x: 54, y: -36.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Font_V_Blue
       rect:
@@ -607,6 +1014,13 @@ TextureImporter:
         - {x: 41.0166, y: -69.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_AQText_A
       rect:
@@ -627,6 +1041,13 @@ TextureImporter:
         - {x: 29, y: -28.03805}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_AQText_L
       rect:
@@ -648,6 +1069,13 @@ TextureImporter:
         - {x: 26, y: -29.03805}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_AQText_I
       rect:
@@ -666,6 +1094,13 @@ TextureImporter:
         - {x: 29.03806, y: 28.96195}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_AQText_E
       rect:
@@ -684,6 +1119,13 @@ TextureImporter:
         - {x: 29, y: 28.96195}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_AQText_N
       rect:
@@ -703,6 +1145,13 @@ TextureImporter:
         - {x: 29, y: 24.96193}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_AQText_Q
       rect:
@@ -723,6 +1172,13 @@ TextureImporter:
         - {x: 29, y: -21.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_AQText_U
       rect:
@@ -742,6 +1198,13 @@ TextureImporter:
         - {x: 29, y: -26.01337}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_AQText_S
       rect:
@@ -765,6 +1228,13 @@ TextureImporter:
         - {x: 20, y: -29.01337}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_AQText_T
       rect:
@@ -785,6 +1255,13 @@ TextureImporter:
         - {x: 12.03806, y: -29.03806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Box_Black_Alpha
       rect:
@@ -803,6 +1280,13 @@ TextureImporter:
         - {x: 25, y: 25}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_White_Bar
       rect:
@@ -821,6 +1305,13 @@ TextureImporter:
         - {x: 177, y: -8}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Skull_White
       rect:
@@ -839,6 +1330,13 @@ TextureImporter:
         - {x: 24.5, y: 23.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Item_Heal
       rect:
@@ -858,6 +1356,13 @@ TextureImporter:
         - {x: 19, y: 27}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Item_HealBox
       rect:
@@ -878,6 +1383,13 @@ TextureImporter:
         - {x: 42.5, y: 35}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_ToonDialog_Tail
       rect:
@@ -896,6 +1408,13 @@ TextureImporter:
         - {x: 7.5, y: -8}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_Pink
       rect:
@@ -914,6 +1433,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G3_O1
       rect:
@@ -932,6 +1458,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_AQText_E2
       rect:
@@ -950,6 +1483,13 @@ TextureImporter:
         - {x: 29.03806, y: 28.96193}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 66305410000000000800000000000000
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_HP_Bar_Box
       rect:
@@ -968,6 +1508,13 @@ TextureImporter:
         - {x: 197, y: -9.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 86305410000000000800000000000000
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_White_Bar
       rect:
@@ -986,6 +1533,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a6305410000000000800000000000000
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_MonBar_Small
       rect:
@@ -1004,6 +1558,13 @@ TextureImporter:
         - {x: 90.5, y: -7}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c6305410000000000800000000000000
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Girl_1
       rect:
@@ -1044,6 +1605,13 @@ TextureImporter:
         - {x: -20.5, y: -173.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e6305410000000000800000000000000
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Circle_3
       rect:
@@ -1064,6 +1632,13 @@ TextureImporter:
         - {x: 54, y: 32}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 07305410000000000800000000000000
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Circle_1
       rect:
@@ -1091,6 +1666,13 @@ TextureImporter:
         - {x: -35.99998, y: -104}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 27305410000000000800000000000000
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Circle_2
       rect:
@@ -1126,6 +1708,13 @@ TextureImporter:
         - {x: -80.00002, y: -115}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 47305410000000000800000000000000
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_HPMP_BG
       rect:
@@ -1149,6 +1738,13 @@ TextureImporter:
         - {x: 17.96194, y: -48.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 67305410000000000800000000000000
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_HPMP_Top
       rect:
@@ -1179,6 +1775,13 @@ TextureImporter:
         - {x: -21.5, y: -30.46651}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 87305410000000000800000000000000
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Name_BG
       rect:
@@ -1199,6 +1802,13 @@ TextureImporter:
         - {x: 113.0134, y: -24}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a7305410000000000800000000000000
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_HP_Bar
       rect:
@@ -1217,6 +1827,13 @@ TextureImporter:
         - {x: 195, y: 17.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c7305410000000000800000000000000
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_HP_Bar_R
       rect:
@@ -1235,6 +1852,13 @@ TextureImporter:
         - {x: 8, y: -17.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e7305410000000000800000000000000
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_HP_Bar_L
       rect:
@@ -1253,6 +1877,13 @@ TextureImporter:
         - {x: 8, y: -17.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 08305410000000000800000000000000
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_MP_Bar_L
       rect:
@@ -1271,6 +1902,13 @@ TextureImporter:
         - {x: 8, y: -16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 28305410000000000800000000000000
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_MP_Bar
       rect:
@@ -1289,6 +1927,13 @@ TextureImporter:
         - {x: 195, y: 16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 48305410000000000800000000000000
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_MP_Bar_R
       rect:
@@ -1307,6 +1952,13 @@ TextureImporter:
         - {x: 8, y: -16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 68305410000000000800000000000000
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_HP_Glow
       rect:
@@ -1328,6 +1980,13 @@ TextureImporter:
         - {x: 195, y: -17.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 88305410000000000800000000000000
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_MP_Glow
       rect:
@@ -1346,6 +2005,13 @@ TextureImporter:
         - {x: 195, y: 24}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a8305410000000000800000000000000
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_StatAdd
       rect:
@@ -1365,6 +2031,13 @@ TextureImporter:
         - {x: 24, y: 20}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c8305410000000000800000000000000
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_SelBorder
       rect:
@@ -1387,6 +2060,13 @@ TextureImporter:
         - {x: 41.00001, y: -41.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e8305410000000000800000000000000
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_SelBorderLong
       rect:
@@ -1405,6 +2085,13 @@ TextureImporter:
         - {x: 141, y: -41.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 09305410000000000800000000000000
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_LVBG
       rect:
@@ -1427,6 +2114,13 @@ TextureImporter:
         - {x: 27, y: -20.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 29305410000000000800000000000000
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Pad_L
       rect:
@@ -1450,6 +2144,13 @@ TextureImporter:
         - {x: -17.99999, y: -59.49194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 49305410000000000800000000000000
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Pad_R
       rect:
@@ -1472,6 +2173,13 @@ TextureImporter:
         - {x: 11.5, y: -32.49999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 69305410000000000800000000000000
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Pad_D
       rect:
@@ -1495,6 +2203,13 @@ TextureImporter:
         - {x: 18.00001, y: -23.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 89305410000000000800000000000000
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Box_Red
       rect:
@@ -1513,6 +2228,13 @@ TextureImporter:
         - {x: 70, y: 20}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a9305410000000000800000000000000
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Weapon_1
       rect:
@@ -1535,6 +2257,13 @@ TextureImporter:
         - {x: 45, y: -38}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c9305410000000000800000000000000
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Weapon_2
       rect:
@@ -1560,6 +2289,13 @@ TextureImporter:
         - {x: -44.46194, y: -46}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e9305410000000000800000000000000
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Weapon_3
       rect:
@@ -1582,6 +2318,13 @@ TextureImporter:
         - {x: 29.50001, y: -44.53805}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0a305410000000000800000000000000
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Weapon_4
       rect:
@@ -1606,6 +2349,13 @@ TextureImporter:
         - {x: -59, y: -54.96194}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2a305410000000000800000000000000
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Weapon_5
       rect:
@@ -1629,6 +2379,13 @@ TextureImporter:
         - {x: 11, y: -72.03805}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4a305410000000000800000000000000
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Bonus_Blood
       rect:
@@ -1648,6 +2405,13 @@ TextureImporter:
         - {x: 53.00645, y: -67.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6a305410000000000800000000000000
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Bonus_Mana
       rect:
@@ -1671,6 +2435,13 @@ TextureImporter:
         - {x: 29.00001, y: -40.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8a305410000000000800000000000000
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Bonus_ATK
       rect:
@@ -1692,6 +2463,13 @@ TextureImporter:
         - {x: 37.00001, y: -30.00002}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: aa305410000000000800000000000000
+      internalID: 21300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Bonus_MP
       rect:
@@ -1711,6 +2489,13 @@ TextureImporter:
         - {x: 31.00002, y: -37.97533}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ca305410000000000800000000000000
+      internalID: 21300140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Bonus_HP
       rect:
@@ -1730,6 +2515,13 @@ TextureImporter:
         - {x: 31.00002, y: -37.97533}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ea305410000000000800000000000000
+      internalID: 21300142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Skill_1
       rect:
@@ -1752,6 +2544,13 @@ TextureImporter:
         - {x: 37, y: -48}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0b305410000000000800000000000000
+      internalID: 21300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Skill_2
       rect:
@@ -1774,6 +2573,13 @@ TextureImporter:
         - {x: 37, y: -48}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2b305410000000000800000000000000
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Skill_3
       rect:
@@ -1796,6 +2602,13 @@ TextureImporter:
         - {x: 37, y: -48}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4b305410000000000800000000000000
+      internalID: 21300148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Skill_4
       rect:
@@ -1818,6 +2631,13 @@ TextureImporter:
         - {x: 37, y: -48}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6b305410000000000800000000000000
+      internalID: 21300150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Skill_5
       rect:
@@ -1843,6 +2663,13 @@ TextureImporter:
         - {x: -34.99999, y: -46.99487}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8b305410000000000800000000000000
+      internalID: 21300152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Ability_1
       rect:
@@ -1863,6 +2690,13 @@ TextureImporter:
         - {x: 35, y: -33}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ab305410000000000800000000000000
+      internalID: 21300154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Ability_2
       rect:
@@ -1883,6 +2717,13 @@ TextureImporter:
         - {x: 35, y: -33}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cb305410000000000800000000000000
+      internalID: 21300156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Ability_3
       rect:
@@ -1903,6 +2744,13 @@ TextureImporter:
         - {x: 35, y: -33}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: eb305410000000000800000000000000
+      internalID: 21300158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Ability_4
       rect:
@@ -1923,6 +2771,13 @@ TextureImporter:
         - {x: 35, y: -33}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0c305410000000000800000000000000
+      internalID: 21300160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Ability_5
       rect:
@@ -1943,6 +2798,13 @@ TextureImporter:
         - {x: 34.5, y: -34}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2c305410000000000800000000000000
+      internalID: 21300162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Sound_Bar
       rect:
@@ -1961,6 +2823,13 @@ TextureImporter:
         - {x: 177, y: -8}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4c305410000000000800000000000000
+      internalID: 21300164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Card_1
       rect:
@@ -1980,6 +2849,13 @@ TextureImporter:
         - {x: 29.0081, y: 20.97532}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6c305410000000000800000000000000
+      internalID: 21300166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Card_2
       rect:
@@ -1999,6 +2875,13 @@ TextureImporter:
         - {x: 29.00001, y: 21.9876}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8c305410000000000800000000000000
+      internalID: 21300168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Card_3
       rect:
@@ -2021,6 +2904,13 @@ TextureImporter:
         - {x: 20.00001, y: -24}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ac305410000000000800000000000000
+      internalID: 21300170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Card_4
       rect:
@@ -2044,6 +2934,13 @@ TextureImporter:
         - {x: -24.98761, y: -25.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cc305410000000000800000000000000
+      internalID: 21300172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Card_5
       rect:
@@ -2063,6 +2960,13 @@ TextureImporter:
         - {x: 29.00001, y: -29}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ec305410000000000800000000000000
+      internalID: 21300174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_LVSec
       rect:
@@ -2083,6 +2987,13 @@ TextureImporter:
         - {x: 8.999985, y: -17.51339}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0d305410000000000800000000000000
+      internalID: 21300176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Potion_MP
       rect:
@@ -2105,6 +3016,13 @@ TextureImporter:
         - {x: 8.5, y: -35.01339}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2d305410000000000800000000000000
+      internalID: 21300178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_HP_Bar_Edge
       rect:
@@ -2123,6 +3041,13 @@ TextureImporter:
         - {x: 9, y: -17.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4d305410000000000800000000000000
+      internalID: 21300180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_MP_Bar_Edge
       rect:
@@ -2141,6 +3066,13 @@ TextureImporter:
         - {x: 9, y: -16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6d305410000000000800000000000000
+      internalID: 21300182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_ToonDialog
       rect:
@@ -2159,6 +3091,13 @@ TextureImporter:
         - {x: 36, y: 36}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8d305410000000000800000000000000
+      internalID: 21300184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Weapon_2_Glow
       rect:
@@ -2178,6 +3117,13 @@ TextureImporter:
         - {x: 36.5247, y: 16}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ad305410000000000800000000000000
+      internalID: 21300186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Blood_Inner
       rect:
@@ -2199,6 +3145,13 @@ TextureImporter:
         - {x: 15.5, y: -19.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cd305410000000000800000000000000
+      internalID: 21300188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Blood_Outer
       rect:
@@ -2219,6 +3172,13 @@ TextureImporter:
         - {x: 25.5, y: -27.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ed305410000000000800000000000000
+      internalID: 21300190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Clock
       rect:
@@ -2242,6 +3202,13 @@ TextureImporter:
         - {x: -11.99998, y: -23.00001}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0e305410000000000800000000000000
+      internalID: 21300192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Guide_Yellow
       rect:
@@ -2260,6 +3227,13 @@ TextureImporter:
         - {x: 12, y: -12}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2e305410000000000800000000000000
+      internalID: 21300194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Guide_Item
       rect:
@@ -2284,6 +3258,13 @@ TextureImporter:
         - {x: -27, y: -50}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4e305410000000000800000000000000
+      internalID: 21300196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Guide_Heal
       rect:
@@ -2308,6 +3289,13 @@ TextureImporter:
         - {x: 9.000011, y: -16.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6e305410000000000800000000000000
+      internalID: 21300198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_MiniMap_Grid
       rect:
@@ -2328,6 +3316,13 @@ TextureImporter:
         - {x: 84.5, y: -52.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8e305410000000000800000000000000
+      internalID: 21300200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G4
       rect:
@@ -2346,6 +3341,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ae305410000000000800000000000000
+      internalID: 21300202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G3
       rect:
@@ -2364,6 +3366,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ce305410000000000800000000000000
+      internalID: 21300204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G2
       rect:
@@ -2382,6 +3391,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ee305410000000000800000000000000
+      internalID: 21300206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G1
       rect:
@@ -2400,6 +3416,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0f305410000000000800000000000000
+      internalID: 21300208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_O2
       rect:
@@ -2418,6 +3441,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2f305410000000000800000000000000
+      internalID: 21300210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G2_O2
       rect:
@@ -2436,6 +3466,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4f305410000000000800000000000000
+      internalID: 21300212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G1_O1
       rect:
@@ -2454,6 +3491,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6f305410000000000800000000000000
+      internalID: 21300214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_O1
       rect:
@@ -2472,6 +3516,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8f305410000000000800000000000000
+      internalID: 21300216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_White
       rect:
@@ -2490,6 +3541,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: af305410000000000800000000000000
+      internalID: 21300218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G2_O2_Corner
       rect:
@@ -2508,6 +3566,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cf305410000000000800000000000000
+      internalID: 21300220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G1_O2_Corner
       rect:
@@ -2526,6 +3591,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ef305410000000000800000000000000
+      internalID: 21300222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_O2_Corner
       rect:
@@ -2544,6 +3616,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 00405410000000000800000000000000
+      internalID: 21300224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G1_O1_Corner
       rect:
@@ -2562,6 +3641,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 20405410000000000800000000000000
+      internalID: 21300226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G2_Corner
       rect:
@@ -2580,6 +3666,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 40405410000000000800000000000000
+      internalID: 21300228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G2_O1_Corner
       rect:
@@ -2598,6 +3691,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 60405410000000000800000000000000
+      internalID: 21300230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G2_O1
       rect:
@@ -2616,6 +3716,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 80405410000000000800000000000000
+      internalID: 21300232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G1_O3
       rect:
@@ -2634,6 +3741,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a0405410000000000800000000000000
+      internalID: 21300234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_O3
       rect:
@@ -2652,6 +3766,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c0405410000000000800000000000000
+      internalID: 21300236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Map_GunShip
       rect:
@@ -2674,6 +3795,13 @@ TextureImporter:
         - {x: 75, y: -39.01336}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e0405410000000000800000000000000
+      internalID: 21300238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_Mission
       rect:
@@ -2692,6 +3820,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 01405410000000000800000000000000
+      internalID: 21300240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Check_Blue
       rect:
@@ -2710,6 +3845,13 @@ TextureImporter:
         - {x: 14.5, y: -14.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 21405410000000000800000000000000
+      internalID: 21300242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_UpArrow
       rect:
@@ -2732,6 +3874,13 @@ TextureImporter:
         - {x: 5, y: -19.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 41405410000000000800000000000000
+      internalID: 21300244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Guide_Heal_Red
       rect:
@@ -2753,6 +3902,13 @@ TextureImporter:
         - {x: 18, y: -18}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 61405410000000000800000000000000
+      internalID: 21300246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Guide_Cross_Blue
       rect:
@@ -2774,6 +3930,13 @@ TextureImporter:
         - {x: 18, y: -18}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 81405410000000000800000000000000
+      internalID: 21300248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Stop
       rect:
@@ -2792,6 +3955,13 @@ TextureImporter:
         - {x: 12, y: -15}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a1405410000000000800000000000000
+      internalID: 21300250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Dust_1
       rect:
@@ -2810,6 +3980,13 @@ TextureImporter:
         - {x: 14, y: -14}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c1405410000000000800000000000000
+      internalID: 21300252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_G1_O2
       rect:
@@ -2828,6 +4005,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e1405410000000000800000000000000
+      internalID: 21300254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: MapBlock_N
       rect:
@@ -2846,6 +4030,13 @@ TextureImporter:
         - {x: 15.5, y: -15.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02405410000000000800000000000000
+      internalID: 21300256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Guide_200Box
       rect:
@@ -2864,6 +4055,13 @@ TextureImporter:
         - {x: 100, y: -6}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22405410000000000800000000000000
+      internalID: 21300258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_White_Bar_G
       rect:
@@ -2882,6 +4080,13 @@ TextureImporter:
         - {x: 177, y: -8}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42405410000000000800000000000000
+      internalID: 21300260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_MonBar_BG
       rect:
@@ -2900,6 +4105,13 @@ TextureImporter:
         - {x: 143, y: 22}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62405410000000000800000000000000
+      internalID: 21300262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_MonBar
       rect:
@@ -2918,6 +4130,13 @@ TextureImporter:
         - {x: 130, y: -9}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82405410000000000800000000000000
+      internalID: 21300264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_MonBar_Center
       rect:
@@ -2936,6 +4155,13 @@ TextureImporter:
         - {x: 130, y: -9}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2405410000000000800000000000000
+      internalID: 21300266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Shield_Bar
       rect:
@@ -2954,6 +4180,13 @@ TextureImporter:
         - {x: 75, y: -8}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2405410000000000800000000000000
+      internalID: 21300268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Potion_HP
       rect:
@@ -2976,6 +4209,13 @@ TextureImporter:
         - {x: 8.5, y: -35.01337}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2405410000000000800000000000000
+      internalID: 21300270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Mouse
       rect:
@@ -2994,6 +4234,13 @@ TextureImporter:
         - {x: 11, y: -17.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03405410000000000800000000000000
+      internalID: 21300272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_MouseBtn
       rect:
@@ -3012,6 +4259,13 @@ TextureImporter:
         - {x: 8, y: -9}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23405410000000000800000000000000
+      internalID: 21300274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_MouseWheel
       rect:
@@ -3030,6 +4284,13 @@ TextureImporter:
         - {x: 5, y: -7.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43405410000000000800000000000000
+      internalID: 21300276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_SelBorderSlide
       rect:
@@ -3052,6 +4313,13 @@ TextureImporter:
         - {x: 41.00001, y: -41.99999}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63405410000000000800000000000000
+      internalID: 21300278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Play
       rect:
@@ -3070,6 +4338,13 @@ TextureImporter:
         - {x: 12, y: -15}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83405410000000000800000000000000
+      internalID: 21300280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: UI_Icon_Circle
       rect:
@@ -3092,9 +4367,26 @@ TextureImporter:
         - {x: 19, y: -29}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3405410000000000800000000000000
+      internalID: 21300282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

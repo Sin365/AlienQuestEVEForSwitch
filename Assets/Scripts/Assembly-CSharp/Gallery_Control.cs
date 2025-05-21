@@ -104,7 +104,7 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 		LoadData();
 		if (Slot_isOpen[0] > 0 || Slot_isOpen[4] > 0)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize = 5f;
+			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 5f;
 			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().targetSize = 7.6f;
 		}
 		global::UnityEngine.PlayerPrefs.SetInt("Gallery_Grayscale", 0);
@@ -492,14 +492,14 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Left = -20f;
 		if (Slot_isOpen[0] > 0 || Slot_isOpen[4] > 0)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize = 5f;
+			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 5f;
 			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().targetSize = 7.6f;
 			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(0f, 2f, -10f));
 			global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(0f, 2f, -10f);
 		}
 		else
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").camera.orthographicSize = 7f;
+			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 7f;
 			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().targetSize = 5f;
 			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(0f, 0f, -10f));
 			global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(0f, 0f, -10f);
@@ -841,7 +841,7 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 		bool flag = false;
 		if (global::UnityEngine.Input.GetMouseButtonDown(0))
 		{
-			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
 			if (rayIntersection.collider != null)
 			{
@@ -859,7 +859,7 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 				}
 				else if (rayIntersection.collider.name == "Bar_Sound")
 				{
-					float posMouse = (global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_SoundBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
+					float posMouse = (global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_SoundBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
 					Set_Sound(0, posMouse);
 				}
 				else if (rayIntersection.collider.name == "Btn_Option_1")
@@ -951,7 +951,7 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 		}
 		else
 		{
-			global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection2 = global::UnityEngine.Physics2D.GetRayIntersection(ray2, float.PositiveInfinity);
 			if (rayIntersection2.collider != null)
 			{
@@ -972,7 +972,7 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 					Sel_Index = 3;
 					if (global::UnityEngine.Input.GetMouseButton(0))
 					{
-						float posMouse2 = (global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_SoundBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
+						float posMouse2 = (global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_SoundBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
 						Set_Sound(0, posMouse2);
 					}
 				}
@@ -1005,7 +1005,7 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 						bool flag2 = true;
 						if (num5 == 9 && global::UnityEngine.Input.GetMouseButton(0))
 						{
-							float speed = (global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("Slot_" + Sel_Slot + "_SpeedBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("Slot_" + Sel_Slot + "_SpeedBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("Slot_" + Sel_Slot + "_SpeedBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
+							float speed = (global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("Slot_" + Sel_Slot + "_SpeedBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("Slot_" + Sel_Slot + "_SpeedBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("Slot_" + Sel_Slot + "_SpeedBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
 							Slot[Sel_Slot - 1].Set_Speed(speed);
 							onSpeedMouseDown = true;
 						}
@@ -1172,7 +1172,7 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 		int num = 2;
 		float num2 = 1000f;
 		float num3 = 0f;
-		global::UnityEngine.Vector3 b = global::UnityEngine.GameObject.Find("UI Camera").camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
+		global::UnityEngine.Vector3 b = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
 		for (int i = 0; i < 5; i++)
 		{
 			num3 = ((Slot_isOpen[i] <= 0) ? global::UnityEngine.Vector3.Distance(global::UnityEngine.GameObject.Find("Slot_Empty_" + (i + 1)).GetComponent<global::UnityEngine.RectTransform>().position, b) : global::UnityEngine.Vector3.Distance(global::UnityEngine.GameObject.Find("Slot_" + (i + 1)).GetComponent<global::UnityEngine.RectTransform>().position, b));

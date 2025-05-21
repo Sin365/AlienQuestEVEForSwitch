@@ -1,36 +1,84 @@
 fileFormatVersion: 2
 guid: bcf6736806269414e9712b10839bcdc2
-timeCreated: 1747839217
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Jump_N_0
-    21300002: Jump_N_1
-    21300004: Jump_N_2
-    21300006: Jump_N_3
-    21300008: Jump_N_4
-    21300010: Jump_N_15
-    21300012: Jump_N_5
-    21300014: Jump_N_6
-    21300016: Jump_N_7
-    21300018: Jump_N_8
-    21300020: Jump_N_9
-    21300022: Jump_N_16
-    21300024: Jump_N_10
-    21300026: Jump_N_11
-    21300028: Jump_N_12
-    21300030: Jump_N_14
-    21300032: Jump_N_17
-    21300034: X_Damage_N_1
-    21300036: X_Damage_N_2
-    21300038: X_Damage_N_3
-    21300040: JumpRun_N_1
-    21300042: JumpRun_N_2
-    21300044: Jump_N_13
-    21300046: X_Damage_N_4
-    21300048: X_Damage_N_5
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Jump_N_0
+  - first:
+      213: 21300002
+    second: Jump_N_1
+  - first:
+      213: 21300004
+    second: Jump_N_2
+  - first:
+      213: 21300006
+    second: Jump_N_3
+  - first:
+      213: 21300008
+    second: Jump_N_4
+  - first:
+      213: 21300010
+    second: Jump_N_15
+  - first:
+      213: 21300012
+    second: Jump_N_5
+  - first:
+      213: 21300014
+    second: Jump_N_6
+  - first:
+      213: 21300016
+    second: Jump_N_7
+  - first:
+      213: 21300018
+    second: Jump_N_8
+  - first:
+      213: 21300020
+    second: Jump_N_9
+  - first:
+      213: 21300022
+    second: Jump_N_16
+  - first:
+      213: 21300024
+    second: Jump_N_10
+  - first:
+      213: 21300026
+    second: Jump_N_11
+  - first:
+      213: 21300028
+    second: Jump_N_12
+  - first:
+      213: 21300030
+    second: Jump_N_14
+  - first:
+      213: 21300032
+    second: Jump_N_17
+  - first:
+      213: 21300034
+    second: X_Damage_N_1
+  - first:
+      213: 21300036
+    second: X_Damage_N_2
+  - first:
+      213: 21300038
+    second: X_Damage_N_3
+  - first:
+      213: 21300040
+    second: JumpRun_N_1
+  - first:
+      213: 21300042
+    second: JumpRun_N_2
+  - first:
+      213: 21300044
+    second: Jump_N_13
+  - first:
+      213: 21300046
+    second: X_Damage_N_4
+  - first:
+      213: 21300048
+    second: X_Damage_N_5
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -48,6 +96,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -70,18 +120,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -91,6 +144,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -121,6 +175,13 @@ TextureImporter:
         - {x: 133.9834, y: 230.9815}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_1
       rect:
@@ -154,6 +215,13 @@ TextureImporter:
         - {x: 6.012375, y: -252.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_2
       rect:
@@ -185,6 +253,13 @@ TextureImporter:
         - {x: -7.975296, y: -225.9952}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_3
       rect:
@@ -218,6 +293,13 @@ TextureImporter:
         - {x: -6.487045, y: -252.5034}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_4
       rect:
@@ -249,6 +331,13 @@ TextureImporter:
         - {x: -4.487686, y: -235.5034}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_15
       rect:
@@ -279,6 +368,13 @@ TextureImporter:
         - {x: -12.4753, y: -244}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_5
       rect:
@@ -312,6 +408,13 @@ TextureImporter:
         - {x: 164.4866, y: -12.50336}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_6
       rect:
@@ -345,6 +448,13 @@ TextureImporter:
         - {x: -8.513382, y: -243.0081}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_7
       rect:
@@ -379,6 +489,13 @@ TextureImporter:
         - {x: 19.48886, y: -253.0048}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_8
       rect:
@@ -414,6 +531,13 @@ TextureImporter:
         - {x: 27.48761, y: -252.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_9
       rect:
@@ -448,6 +572,13 @@ TextureImporter:
         - {x: 163.4753, y: 0.9833374}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_16
       rect:
@@ -486,6 +617,13 @@ TextureImporter:
         - {x: 137.0247, y: 214.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_10
       rect:
@@ -519,6 +657,13 @@ TextureImporter:
         - {x: -156.9684, y: 127.0247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_11
       rect:
@@ -553,6 +698,13 @@ TextureImporter:
         - {x: 23.52467, y: -253.0381}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_12
       rect:
@@ -588,6 +740,13 @@ TextureImporter:
         - {x: 20, y: 254.462}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_14
       rect:
@@ -619,6 +778,13 @@ TextureImporter:
         - {x: 147.0082, y: 245}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_17
       rect:
@@ -653,6 +819,13 @@ TextureImporter:
         - {x: 28.52469, y: -83}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: X_Damage_N_1
       rect:
@@ -686,6 +859,13 @@ TextureImporter:
         - {x: -77, y: -14.53806}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: X_Damage_N_2
       rect:
@@ -703,6 +883,13 @@ TextureImporter:
         - {x: -91.5, y: 164.4619}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: X_Damage_N_3
       rect:
@@ -739,6 +926,13 @@ TextureImporter:
         - {x: -91.5, y: -253.511}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: JumpRun_N_1
       rect:
@@ -748,7 +942,7 @@ TextureImporter:
         width: 280
         height: 481.9523
       alignment: 9
-      pivot: {x: 0.6643834, y: -9.898182E-05}
+      pivot: {x: 0.6643834, y: -0.00009898182}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -62.99999, y: -77.02385}
@@ -772,6 +966,13 @@ TextureImporter:
         - {x: -29, y: -234.0238}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: JumpRun_N_2
       rect:
@@ -803,6 +1004,13 @@ TextureImporter:
         - {x: 80.5, y: -230.0238}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jump_N_13
       rect:
@@ -837,6 +1045,13 @@ TextureImporter:
         - {x: 30.5247, y: -256.5}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: X_Damage_N_4
       rect:
@@ -846,7 +1061,7 @@ TextureImporter:
         width: 276
         height: 504.8971
       alignment: 9
-      pivot: {x: 0.5291812, y: -5.298304E-05}
+      pivot: {x: 0.5291812, y: -0.00005298304}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -104, y: 160.5247}
@@ -871,6 +1086,13 @@ TextureImporter:
         - {x: -117, y: 154.5247}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: X_Damage_N_5
       rect:
@@ -912,9 +1134,26 @@ TextureImporter:
         - {x: -99.50001, y: -53.48662}
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

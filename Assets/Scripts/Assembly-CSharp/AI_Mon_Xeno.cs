@@ -421,7 +421,7 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 				Set_Idle();
 			}
 		}
-		else if (!onGround && base.rigidbody2D.velocity.y < -1f && (animator.GetBool("onMove") || animator.GetBool("onWalk")))
+		else if (!onGround && base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y < -1f && (animator.GetBool("onMove") || animator.GetBool("onWalk")))
 		{
 			onJump = true;
 			Jump_Delay = 0.5f;
@@ -849,7 +849,7 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 		Flip_Delay = 0.5f + (float)global::UnityEngine.Random.Range(0, 80) * 0.01f;
 		Tr_Pos.transform.localScale = new global::UnityEngine.Vector3(-facingRight, 1f, 1f);
 		CensoredText.transform.localScale = new global::UnityEngine.Vector3(1.3f * (float)(-facingRight), 1.5f, 1f);
-		GetComponent<global::UnityEngine.BoxCollider2D>().center = new global::UnityEngine.Vector2(0.4f * (float)(-facingRight), -3.5f);
+		GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0.4f * (float)(-facingRight), -3.5f);
 	}
 
 	private void Check_Flip()
@@ -886,8 +886,8 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 		}
 		onJump = true;
 		Jump_Delay = 0f;
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * _X, global::UnityEngine.ForceMode2D.Impulse);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * _Y, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * _X, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * _Y, global::UnityEngine.ForceMode2D.Impulse);
 		ColBox_Timer = 0.6f;
 		GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Dash(base.transform.position);
@@ -1052,11 +1052,11 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 		animator.SetBool("onCrouch", false);
 		on_Crouch = false;
 		Mon.onCrouch = false;
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 25f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 25f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		if (isStuck_BackLow)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 		Fire_Timer = 10f;
@@ -1078,11 +1078,11 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 		animator.SetBool("onCrouch", true);
 		on_Crouch = true;
 		Mon.onCrouch = true;
-		base.rigidbody2D.velocity = new global::UnityEngine.Vector2(0f, base.rigidbody2D.velocity.y);
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 23f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 23f * -facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		if (isStuck_BackLow)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 		Fire_Timer = 10f;
@@ -1109,13 +1109,13 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 	{
 		if (Move_Delay > 0f)
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 40f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 40f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		else
 		{
-			base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 30f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 30f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
-		base.rigidbody2D.AddForce(global::UnityEngine.Vector3.up * 30f, global::UnityEngine.ForceMode2D.Impulse);
+		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 30f, global::UnityEngine.ForceMode2D.Impulse);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Dash(base.transform.position);
 		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
 	}
@@ -1208,11 +1208,11 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 		{
 			if (Move_Delay > 0f)
 			{
-				base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 25f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+				base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 25f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 			}
 			else
 			{
-				base.rigidbody2D.AddForce(global::UnityEngine.Vector3.right * 15f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+				base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 15f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 			}
 		}
 	}
