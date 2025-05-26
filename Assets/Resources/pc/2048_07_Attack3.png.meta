@@ -135,7 +135,7 @@ TextureImporter:
       213: 21300086
     second: X_ClothOff_2
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -152,9 +152,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -186,12 +189,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1877,9 +1922,53 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      atk_Sit_E1_2: 21300024
+      atk_Sit_1_0: 21300000
+      atk_Sit_1_2: 21300004
+      atk_Sit_E1_3: 21300026
+      atk_Sit_E1_1: 21300022
+      atk_Sit_E1_5: 21300030
+      atk_Sit_1_9: 21300018
+      atk_Sit_E1_4: 21300028
+      atk_Sit_1_8: 21300012
+      atk_Sit_1_3: 21300006
+      atk_Sit_1_6: 21300014
+      X_ClothOff_1: 21300084
+      X_Down_4: 21300064
+      atk_Sit_1_1: 21300002
+      X_Down_5: 21300066
+      Sit_Turn_E_2: 21300054
+      atk_Spin_1: 21300040
+      X_BackDash_0: 21300074
+      X_Down_2: 21300060
+      atk_Sit_1_5: 21300010
+      X_ClothOff_0: 21300082
+      Sit_Turn_2: 21300050
+      atk_Sit_E1_9: 21300038
+      X_BackDash_3: 21300080
+      Sit_Turn_E_1: 21300052
+      X_BackDash_2: 21300076
+      X_ClothOff_2: 21300086
+      atk_Sit_E1_6: 21300032
+      atk_Sit_E1_0: 21300020
+      X_Down_3: 21300062
+      X_Down_6: 21300068
+      X_BackDash_1: 21300078
+      atk_Spin_4: 21300046
+      atk_Spin_3: 21300044
+      atk_Sit_E1_7: 21300034
+      atk_Sit_E1_8: 21300036
+      atk_Sit_1_7: 21300016
+      X_Down_0: 21300056
+      Sit_Turn_1: 21300048
+      X_Down_7: 21300070
+      atk_Sit_1_4: 21300008
+      X_Down_1: 21300058
+      atk_Spin_2: 21300042
+      X_ClothOff_3: 21300072
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

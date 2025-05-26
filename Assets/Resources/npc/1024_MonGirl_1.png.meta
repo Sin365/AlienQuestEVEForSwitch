@@ -189,7 +189,7 @@ TextureImporter:
       213: 21300122
     second: H_53_Mosaic
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -206,9 +206,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -240,12 +243,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2050,9 +2095,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      HG_3_Calf_L: 21300058
+      HG_2_Leg_R: 21300022
+      HG_3_Face: 21300068
+      HGirl_Tntcl_4S: 21300102
+      HG_2_Breast_R: 21300036
+      HGirl_Tntcl_6: 21300044
+      HGirl_Tntcl_4SS: 21300110
+      HG_3_Mouth: 21300116
+      HG_3_Tntcl_B: 21300062
+      HG_4_Breast_L: 21300090
+      HG_1_Leg_L: 21300000
+      HG_2_Body: 21300010
+      HG_1_Center_2: 21300006
+      HGirl_Tntcl_5: 21300080
+      HG_3_Leg_R: 21300040
+      HG_4_Hair: 21300088
+      HG_3_Hair: 21300014
+      HG_4_Breast_R: 21300092
+      HG_1_Breast_L_Tntcl: 21300048
+      HGirl_Tntcl_7: 21300084
+      HG_1_Breast_L: 21300052
+      HG_1_Breast_R_Tntcl: 21300042
+      HGirl_Tntcl_3: 21300078
+      HG_4_Hair_Back: 21300094
+      HG_2_Face: 21300064
+      HG_4_Arm_R: 21300098
+      HG_3_Body: 21300024
+      HG_2_Leg_L: 21300012
+      H_52_Mosaic: 21300120
+      HG_1_Arm_1: 21300032
+      HG_3_Center: 21300018
+      HG_1_Center_1: 21300020
+      HGirl_Tntcl_4: 21300066
+      HG_4_Arm_L: 21300096
+      HG_1_Body: 21300004
+      HG_2_Hair: 21300008
+      HG_1_Calf_R: 21300028
+      HG_1_Arm_2: 21300046
+      HG_3_Breast_R: 21300070
+      HG_4_Body: 21300086
+      HGirl_Tntcl_1S: 21300108
+      HGirl_Tntcl_1: 21300074
+      HG_3_Arm: 21300016
+      HG_1_Calf_L: 21300026
+      HGirl_Tntcl_2: 21300076
+      HGirl_Tntcl_5B: 21300082
+      HGirl_Tntcl_3S: 21300104
+      H_53_Mosaic: 21300122
+      HG_2_Calf_R: 21300056
+      HG_2_Breast_L: 21300034
+      HG_1_Leg_R: 21300002
+      HG_3_Calf_R: 21300060
+      HG_2_Mouth: 21300114
+      HG_3_Leg_L: 21300038
+      HG_3_Breast_L: 21300072
+      HG_4_Wet: 21300100
+      HG_1_Face: 21300030
+      HGirl_Tntcl_2S: 21300106
+      H_51_Mosaic: 21300118
+      HG_1_Mouth: 21300112
+      HG_1_Tntcl_B: 21300050
+      HG_1_Breast_R: 21300054
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

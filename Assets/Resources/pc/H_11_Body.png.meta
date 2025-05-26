@@ -105,7 +105,7 @@ TextureImporter:
       213: 21300066
     second: GO_1_Cum_Pelvis_R2
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -122,9 +122,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -156,12 +159,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1995,9 +2040,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      GO_1_Cum_Arm_R2: 21300056
+      GO_1_Cum_Arm_2: 21300026
+      GO_1_Cum_Face_2: 21300040
+      GO_1_Cum_Arm_3: 21300028
+      GO_1_Cum_Breast_RR: 21300046
+      GO_1_Cum_Leg_R1: 21300048
+      GO_1_Cum_Breast_2: 21300012
+      H_11_N_Body: 21300004
+      H_11_N_Leg_L: 21300006
+      GO_1_Cum_Arm_R1: 21300054
+      GO_1_Cum_Leg_2: 21300034
+      GO_1_Cum_Spine_B: 21300020
+      GO_1_Cum_Spine_1: 21300016
+      GO_1_Cum_Spine_2: 21300018
+      GO_1_Cum_Pelvis: 21300022
+      GO_1_Cum_Leg_5: 21300036
+      H_11_N_Breast_R: 21300002
+      GO_1_Cum_Face_1: 21300042
+      H_11_N_Breast_L: 21300000
+      GO_1_Cum_Spine_3: 21300014
+      GO_1_Cum_Arm_R4: 21300052
+      GO_1_Cum_Arm_R3: 21300058
+      GO_1_Cum_Spine_R1: 21300062
+      GO_1_Cum_Spine_R2: 21300064
+      GO_1_Cum_Arm_1: 21300024
+      GO_1_Cum_Breast_R: 21300044
+      GO_1_Cum_Leg_R2: 21300050
+      GO_1_Cum_Breast_1: 21300010
+      GO_1_Cum_Pelvis_R2: 21300066
+      GO_1_Cum_Arm_4: 21300008
+      GO_1_Cum_Leg_1: 21300030
+      GO_1_Cum_Leg_4: 21300032
+      GO_1_Cum_Leg_3: 21300038
+      GO_1_Cum_Pelvis_R1: 21300060
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

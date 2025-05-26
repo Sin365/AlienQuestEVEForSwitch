@@ -93,7 +93,7 @@ TextureImporter:
       213: 21300058
     second: atk_N_4_7
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -110,9 +110,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -144,12 +147,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1345,9 +1390,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      X_BackDash_N_0: 21300050
+      Slide_N_2: 21300012
+      atk_N_4_5: 21300010
+      Slide_N_3: 21300044
+      atk_N_Jump_4_9: 21300042
+      atk_N_3_8: 21300000
+      atk_N_4_7: 21300058
+      atk_N_4_3: 21300004
+      atk_N_3_10: 21300008
+      atk_N_4_2: 21300014
+      atk_N_4_1: 21300002
+      Slide_N_5_JE: 21300048
+      atk_N_3_4: 21300028
+      Slide_N_1: 21300056
+      atk_N_3_2: 21300024
+      atk_N_3_9: 21300006
+      atk_N_Jump_3_9: 21300036
+      atk_N_Jump_4_8: 21300038
+      atk_N_Jump_3_10: 21300040
+      atk_N_3_7: 21300034
+      atk_N_3_3: 21300026
+      Slide_N_4: 21300046
+      atk_N_4_4: 21300016
+      atk_N_3_6: 21300032
+      X_BackDash_N_1: 21300052
+      X_BackDash_N_2: 21300054
+      Slide_N_6_JE: 21300018
+      atk_N_3_5: 21300030
+      atk_N_4_6: 21300020
+      atk_N_3_1: 21300022
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

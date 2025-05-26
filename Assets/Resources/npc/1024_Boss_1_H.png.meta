@@ -132,7 +132,7 @@ TextureImporter:
       213: 21300084
     second: H8a_Mosaic
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -149,9 +149,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -183,12 +186,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1453,9 +1498,52 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      H8a_Mosaic: 21300084
+      H_8_Breast_R_T: 21300032
+      H_9_Breast_L: 21300052
+      H_8_Cover_1: 21300008
+      H_8_Leg: 21300040
+      H_8_Cover_2: 21300010
+      H_8_Tntcl_Leg_R: 21300002
+      H_8_Body: 21300018
+      H_9_Tntcl_Arm: 21300058
+      H_9_Center_Top: 21300064
+      H_8_Breast_L_T2: 21300030
+      H_8_Tntcl_Arm_L_S: 21300076
+      H_8_Arm_R: 21300020
+      H_9_Breast_R: 21300054
+      H_9_Tntcl_Anal: 21300056
+      H_8_Calf_R: 21300014
+      H_9_Tntcl_B: 21300072
+      H_8_Tntcl_Front: 21300024
+      H_8_Tntcl_Arm_L: 21300026
+      H_9_Arm_L: 21300060
+      H_8_Mouth: 21300078
+      H_9_Arm_R: 21300062
+      H_8_Breast_L_T: 21300034
+      H_9_Leg_R: 21300050
+      H_8_Head: 21300006
+      H_9_Tntcl_Leg_R: 21300044
+      H_8_Breast_L: 21300038
+      H_8_Tntcl_Arm_R: 21300028
+      H_9_Tntcl_Front: 21300074
+      H9_Mosaic: 21300082
+      H_9_Tntcl_Leg_L: 21300042
+      H_8_Tntcl_Anal: 21300022
+      H_8_Tntcl_Leg_L: 21300000
+      H_8_Hair: 21300004
+      H_9_BreastTntcl_R: 21300070
+      H_8_Breast_R: 21300036
+      H_9_Leg_L: 21300046
+      H_9_Body: 21300048
+      H_9_Center_Bot: 21300066
+      H_9_BreastTntcl_L: 21300068
+      H_8_Calf_L: 21300012
+      H_8_Arm_L: 21300016
+      H_9_Mouth: 21300080
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

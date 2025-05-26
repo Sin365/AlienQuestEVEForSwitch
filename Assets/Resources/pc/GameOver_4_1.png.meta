@@ -168,7 +168,7 @@ TextureImporter:
       213: 21300108
     second: GO_4_BrHL_R
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -185,9 +185,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -219,12 +222,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2587,9 +2632,64 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      GO_4_Cum2_Hair_4: 21300036
+      GO_4_Eye_2: 21300096
+      GO_4_Nose: 21300012
+      GO_4_Hair_Back: 21300092
+      GO_4_Cum1_Arm_2: 21300074
+      GO_4_Cum1_Hair_2: 21300028
+      GO_4_Cum1_Breast_R: 21300030
+      GO_4_Cum1_Breast_L_1: 21300066
+      GO_4_Cum2_Breast_R_1: 21300072
+      GO_4_Cum2_Face_3: 21300052
+      GO_4_EyeBall_L: 21300086
+      GO_4_Cum1_Face_2: 21300042
+      GO_4_Cum2_Face_5: 21300062
+      GO_4_BrHL_R: 21300108
+      GO_4_Cum2_Breast_L_3: 21300076
+      GO_4_Cum2_Face_2: 21300050
+      GO_4_Mouth_In: 21300010
+      GO_4_EyeHighlight_R: 21300084
+      GO_4_Cum1_Face_4: 21300046
+      GO_4_Eye_1: 21300094
+      GO_4_Arm_L: 21300000
+      GO_4_Eye_3: 21300098
+      GO_4_EyeBall_R: 21300088
+      GO_4_Hair: 21300018
+      GO_4_Breast_R: 21300024
+      GO_4_EyeHighlight_L: 21300082
+      GO_4_Mouth: 21300006
+      GO_4_Eye_4: 21300100
+      GO_4_Cum2_Face_6: 21300064
+      GO_4_Cum2_Hair_1: 21300078
+      GO_4_Cum2_Breast_R_2: 21300080
+      GO_4_Cum2_Face_4: 21300054
+      GO_4_Arm_R: 21300002
+      GO_4_Body: 21300016
+      GO_4_Breast_L: 21300022
+      GO_4_Cum2_Hair_2: 21300034
+      GO_4_Eye_5: 21300102
+      GO_4_Cum1_Face_1: 21300040
+      GO_4_Cum2_Face_1: 21300048
+      GO_4_Pink: 21300090
+      GO_4_BrHL_L1: 21300104
+      GO_4_Hand_R: 21300004
+      GO_4_Face: 21300020
+      GO_4_Cum2_Breast_L_2: 21300070
+      GO_4_Cum2_Arm_2: 21300056
+      GO_4_Mouth_Small: 21300014
+      GO_4_Tooth: 21300008
+      GO_4_Cum2_Breast_L_1: 21300068
+      GO_4_Cum1_Face_3: 21300044
+      GO_4_Cum2_Arm_1: 21300038
+      GO_4_BrHL_L2: 21300106
+      GO_4_Cum1_Arm_1: 21300058
+      GO_4_Cum2_Hair_3: 21300032
+      GO_4_Cum1_Hair_1: 21300026
+      GO_4_Cum1_Breast_L_2: 21300060
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

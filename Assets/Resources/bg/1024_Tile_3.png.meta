@@ -87,7 +87,7 @@ TextureImporter:
       213: 21300054
     second: Egg_Box_Rail
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -104,9 +104,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -138,12 +141,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -908,9 +953,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Tile_3_Deco_1: 21300018
+      Tile_3_BG: 21300038
+      Adam_Deco_L: 21300032
+      Adam_Red: 21300012
+      Tile_3_Tall: 21300008
+      Tile_3_BG_Adam: 21300044
+      Adam_Pipe: 21300010
+      Tile_3_Deco_5: 21300030
+      Tile_3_Cap: 21300006
+      Adam_Deco_R: 21300034
+      Tile_3_Deco_4: 21300026
+      Tile_3_BG_Dark_Cover: 21300002
+      Egg_Box_Red: 21300004
+      Adam_Body: 21300014
+      Egg_Box_Bot: 21300052
+      Egg_Box_Rail: 21300054
+      Tile_3_27_Stairs: 21300036
+      Adam_Green: 21300048
+      Tile_3_Deco_3: 21300022
+      Tile_3_BG_Dark: 21300046
+      Tile_3_Deco_2: 21300020
+      Tile_3: 21300016
+      Tile_3_27_L: 21300040
+      Egg_Box_Top: 21300050
+      Tile_3_Tall_Deco_1: 21300028
+      Tile_3_BG_Cover: 21300000
+      Tile_3_27_R: 21300042
+      Tile_3_Tall_Deco_2: 21300024
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

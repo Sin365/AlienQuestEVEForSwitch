@@ -150,7 +150,7 @@ TextureImporter:
       213: 21300096
     second: Magic_Bar
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -167,9 +167,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -201,12 +204,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1616,9 +1661,58 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Icon_Mon_30: 21300004
+      Icon_Mon_16: 21300006
+      Icon_Mon_9: 21300074
+      Icon_Mon_53: 21300030
+      Icon_Mon_51: 21300000
+      Icon_Mon_6: 21300068
+      Icon_Mon_15: 21300084
+      Icon_Mon_17: 21300086
+      Icon_Mon_21: 21300088
+      Icon_Mon_41: 21300024
+      Icon_Mon_38: 21300018
+      Icon_Mon_1: 21300036
+      Magic_2_Border: 21300016
+      Icon_Mon_32: 21300048
+      Icon_Mon_12: 21300064
+      Icon_Mon_7: 21300070
+      Icon_Mon_39: 21300022
+      Icon_Mon_4: 21300058
+      Icon_Mon_22: 21300090
+      Icon_Mon_13: 21300078
+      Icon_Mon_35: 21300056
+      Magic_2_Glow: 21300014
+      Magic_Bar: 21300096
+      Icon_Mon_40: 21300020
+      Icon_Mon_37: 21300062
+      Icon_Mon_31: 21300046
+      Icon_Mon_11: 21300038
+      Icon_Mon_10: 21300076
+      Icon_Mon_42: 21300026
+      Icon_Mon_52: 21300002
+      Icon_Mon_30M: 21300092
+      Icon_Mon_14: 21300082
+      Icon_Mon_5: 21300066
+      Magic_4_Border: 21300008
+      Icon_Mon_36: 21300060
+      Magic_4_Shield: 21300010
+      Magic_2_ExBar: 21300012
+      Icon_Mon_43: 21300028
+      Icon_Mon_18: 21300040
+      Magic_Bar_Glow: 21300094
+      Icon_Mon_19: 21300080
+      Icon_Mon_24: 21300042
+      Icon_Mon_3: 21300050
+      Icon_Mon_2: 21300044
+      Icon_Mon_54: 21300032
+      Icon_Mon_33: 21300052
+      Icon_Mon_55: 21300034
+      Icon_Mon_34: 21300054
+      Icon_Mon_8: 21300072
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

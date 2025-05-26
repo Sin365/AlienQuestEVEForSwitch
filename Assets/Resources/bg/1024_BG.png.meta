@@ -210,7 +210,7 @@ TextureImporter:
       213: 21300136
     second: Save_Glow_3
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -227,9 +227,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -261,12 +264,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2166,9 +2211,78 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Tile_Step_7: 21300122
+      Gate_Bottom: 21300070
+      Save_Top_2: 21300074
+      Tile_Air_Dir_R: 21300084
+      Gate_Open_1_Up--M: 21300008
+      Gate_Open_0_Up--M: 21300054
+      Tile_Air: 21300078
+      Save_Bot_Glow_2: 21300092
+      Gate_Open_4_Down: 21300066
+      Tile_Step_6: 21300030
+      Com_0: 21300126
+      Gate_Open_2_Up: 21300044
+      Tile_Pipe_Long: 21300110
+      Trap_Fang_Head: 21300100
+      Save_Top: 21300034
+      Trap_Laser_Glow: 21300016
+      Gate_Open_5_Down: 21300068
+      Gate_Open_5_Up: 21300052
+      Breakable_Block: 21300104
+      Tile_Pipe_Short: 21300112
+      Save_Bot: 21300036
+      Tile_Step_4: 21300120
+      Gate_Open_5_Up--M: 21300014
+      Tile_Air_Bot: 21300080
+      Trap_Laser: 21300020
+      Gate_Open_2_Down: 21300062
+      Tile_Step_3: 21300118
+      Tile_Step_2: 21300026
+      Com_2: 21300128
+      Save_Glow_3: 21300136
+      Gate_Open_4_Down--M: 21300004
+      Gate_Open_1_Down--M: 21300000
+      Trap_Laser_Alert: 21300022
+      Trap_Laser_Yellow: 21300018
+      Gate_Open_0_Down--M: 21300040
+      Save_Glow_2: 21300108
+      Tile_Step_1: 21300116
+      Tile_Step_8: 21300124
+      Save_Bot_Side: 21300094
+      Gate_Open_3_Up: 21300048
+      Com_Arm: 21300134
+      Save_Bot_Glow_1: 21300090
+      Push_Box: 21300072
+      Gate_Open_0_Down: 21300056
+      Com_1: 21300130
+      Gate_Open_4_Up--M: 21300012
+      Gate_Open_5_Down--M: 21300006
+      Save_Top_3: 21300076
+      Gate_Open_0_Up: 21300038
+      Gate_Open_2_Down--M: 21300046
+      Save_Bot_Cover: 21300098
+      Gate_Open_1_Down: 21300058
+      Tile_Pipe_27: 21300114
+      Gate_Open_3_Down--M: 21300002
+      Gate_Open_2_Up--M: 21300060
+      Gate_Open_3_Down: 21300064
+      Gate_Open_3_Up--M: 21300010
+      Save_Bot_Cover_L: 21300096
+      Trap_Fang: 21300102
+      Gate_Body: 21300032
+      Save_Glow_1: 21300106
+      Breakable_Block_Explo: 21300024
+      Gate_Open_4_Up: 21300050
+      Tile_Step_5: 21300028
+      Save_Bot_Inner: 21300088
+      Gate_Open_1_Up: 21300042
+      Tile_Air_Dir_L: 21300082
+      Com_3: 21300132
+      Save_Bot_Head: 21300086
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

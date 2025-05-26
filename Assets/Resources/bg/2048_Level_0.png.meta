@@ -126,7 +126,7 @@ TextureImporter:
       213: 21300080
     second: LV_0_GunShipBack_Glow_2
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -143,9 +143,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -177,12 +180,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2045,9 +2090,50 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      LV_0_Stand_Block_Top: 21300018
+      LV_0_ShipSide: 21300050
+      LV_0_GunShipBack_Glow_1: 21300078
+      LV_0_Stand_Side_Top: 21300004
+      LV_0_ShipSide_Glow: 21300048
+      LV_0_Bay_BG: 21300068
+      LV_0_Ship_Gate_Glow: 21300072
+      LV_0_Ship_Gate: 21300070
+      LV_0_Gate_Bot: 21300014
+      LV_0_Stand_Top_Inner: 21300006
+      LV_0_Stand_Bot: 21300016
+      LV_0_Gate_Top_Inner: 21300034
+      LV_0_Ship_Wing: 21300056
+      LV_0_Ship_Engine_G1_A: 21300022
+      LV_0_Ship_Engine_Glow2: 21300038
+      LV_0_Stand_Block_Side: 21300058
+      LV_0_Ship_Body: 21300066
+      LV_0_Ship_Engine_G2_B: 21300028
+      LV_0_Gate_Top: 21300000
+      LV_0_Ship_Joint_Back: 21300042
+      LV_0_ShipSide_Glow_2: 21300062
+      LV_0_GunShipBack_Glow_2: 21300080
+      LV_0_Ship_Joint_Front: 21300008
+      LV_0_Bay_Glow: 21300064
+      LV_0_Stand_Circle2: 21300074
+      LV_0_Ship_Engine_G3_A: 21300030
+      LV_0_Stand_Block: 21300020
+      LV_0_GunShipBack: 21300076
+      LV_0_Gate_Bot_Inner: 21300040
+      LV_0_Stand_Top: 21300002
+      LV_0_Stand_Side_Bot: 21300012
+      LV_0_Ship_Engine_G1_B: 21300024
+      LV_0_Ship_Engine_G3_B: 21300032
+      LV_0_Ship_Highlight: 21300052
+      LV_0_Stand_Circle: 21300010
+      LV_0_Ship_Joint: 21300046
+      LV_0_Ship_Engine: 21300060
+      LV_0_Gate_SideBack: 21300044
+      LV_0_Glow_AirLock: 21300054
+      LV_0_Ship_Engine_G2_A: 21300026
+      LV_0_Ship_Engine_Glow: 21300036
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

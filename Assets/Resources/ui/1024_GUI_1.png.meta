@@ -429,7 +429,7 @@ TextureImporter:
       213: 21300282
     second: UI_Icon_Circle
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -446,9 +446,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -480,12 +483,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -4384,9 +4429,151 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      MapBlock_G2_O2: 21300212
+      UI_MonBar_Small: 21300076
+      UI_Card_3: 21300170
+      UI_MiniMap_Grid: 21300200
+      UI_MonBar_Center: 21300266
+      UI_Box: 21300004
+      UI_AQText_Q: 21300046
+      UI_Weapon_4: 21300130
+      UI_Weapon_2_Glow: 21300186
+      UI_AQText_L: 21300038
+      UI_Weapon_2: 21300126
+      UI_Skull_White: 21300058
+      UI_Bonus_ATK: 21300138
+      UI_Weapon_5: 21300132
+      UI_Shield_Bar: 21300268
+      UI_Item_HealBox: 21300062
+      UI_HP_Bar_R: 21300094
+      UI_StatAdd: 21300108
+      UI_Ability_2: 21300156
+      UI_Weapon_3: 21300128
+      UI_White_Bar: 21300056
+      UI_Item_Heal: 21300060
+      UI_Icon_Stop: 21300250
+      UI_Box_Black_Alpha: 21300054
+      UI_Bonus_Mana: 21300136
+      UI_SelBorderLong: 21300112
+      UI_Font_V_Blue: 21300034
+      MapBlock_G1: 21300208
+      UI_Icon_Pad_bA: 21300012
+      UI_Card_2: 21300168
+      UI_Arrow: 21300000
+      UI_AQText_N: 21300044
+      MapBlock_G3_O1: 21300068
+      UI_Clock: 21300192
+      UI_Skill_5: 21300152
+      UI_AQText_U: 21300048
+      UI_ToonDialog: 21300184
+      UI_AQText_A: 21300036
+      UI_SelCursor: 21300020
+      UI_Box_Slide: 21300022
+      Guide_Cross: 21300026
+      MapBlock_O2_Corner: 21300224
+      UI_MP_Bar: 21300100
+      UI_HPMP_BG: 21300086
+      UI_LVBG: 21300114
+      UI_Bonus_MP: 21300140
+      UI_Skill_2: 21300146
+      MapBlock_O1: 21300216
+      UI_AQText_E: 21300042
+      UI_HP_Bar_L: 21300096
+      UI_Bonus_HP: 21300142
+      UI_Circle_3: 21300080
+      UI_Potion_MP: 21300178
+      UI_ToonDialog_Tail: 21300064
+      UI_AQText_E2: 21300070
+      UI_Icon_Pad_R: 21300118
+      UI_MonBar: 21300264
+      UI_HP_Glow: 21300104
+      Guide_Cross_Blue: 21300248
+      UI_Ability_3: 21300158
+      UI_Weapon_1: 21300124
+      UI_AQText_S: 21300050
+      UI_Name_BG: 21300090
+      UI_Card_4: 21300172
+      Guide_Yellow: 21300194
+      MapBlock_Mission: 21300240
+      UI_Icon_Play: 21300280
+      UI_AQText_I: 21300040
+      UI_Circle_2: 21300084
+      UI_HP_Bar: 21300092
+      UI_MP_Bar_R: 21300102
+      MapBlock_G1_O1: 21300214
+      UI_Icon_360: 21300006
+      Guide_200Box: 21300258
+      MapBlock_G2_Corner: 21300228
+      MapBlock_G2_O1: 21300232
+      UI_Icon_Pad_bY: 21300016
+      UI_Sound_Bar: 21300164
+      UI_LVSec: 21300176
+      UI_Icon_MouseBtn: 21300274
+      UI_HP_Bar_Edge: 21300180
+      UI_Font_E_Blue: 21300032
+      UI_Skill_3: 21300148
+      UI_Card_1: 21300166
+      MapBlock_G2_O1_Corner: 21300230
+      UI_Ability_4: 21300160
+      UI_Icon_Pad_L: 21300116
+      Dust_1: 21300252
+      MapBlock_G1_O2_Corner: 21300222
+      UI_MP_Bar_L: 21300098
+      UI_Icon_Pad_bB: 21300018
+      MapBlock_G1_O1_Corner: 21300226
+      UI_Check_Blue: 21300242
+      UI_Skill_4: 21300150
+      UI_Skill_1: 21300144
+      MapBlock_Pink: 21300066
+      UI_Potion_HP: 21300270
+      MapBlock_G4: 21300202
+      UI_Ability_1: 21300154
+      UI_Card_5: 21300174
+      MapBlock_O2: 21300210
+      MapBlock_G1_O2: 21300254
+      Guide_Item: 21300196
+      UI_Icon_Pad_D: 21300120
+      UI_TitleMenuPipe: 21300024
+      UI_Bonus_Blood: 21300134
+      UI_Icon_Keyboard: 21300008
+      UI_Blood_Inner: 21300188
+      UI_Blood_Outer: 21300190
+      UI_Font_I_Blue: 21300030
+      MapBlock_G2_O2_Corner: 21300220
+      UI_Icon_Circle: 21300282
+      UI_MonBar_BG: 21300262
+      Guide_Heal: 21300198
+      MapBlock_White_Bar: 21300074
+      UI_Ability_5: 21300162
+      UI_White_Bar_G: 21300260
+      UI_HP_Bar_Box: 21300072
+      MapBlock_O3: 21300236
+      UI_SelBorderSlide: 21300278
+      UI_Box_Black: 21300010
+      UI_UpArrow: 21300244
+      Guide_Heal_Red: 21300246
+      UI_SelBorder: 21300110
+      UI_Icon_MouseWheel: 21300276
+      UI_Icon_Pad_bX: 21300014
+      MapBlock_G1_O3: 21300234
+      UI_SelBox: 21300002
+      UI_Map_GunShip: 21300238
+      UI_Circle_1: 21300082
+      UI_AQText_T: 21300052
+      UI_MP_Bar_Edge: 21300182
+      UI_Icon_Mouse: 21300272
+      UI_MP_Glow: 21300106
+      MapBlock_G2: 21300206
+      UI_HPMP_Top: 21300088
+      UI_Box_Red: 21300122
+      MapBlock_N: 21300256
+      UI_SelBox_Glow: 21300028
+      MapBlock_White: 21300218
+      UI_Girl_1: 21300078
+      MapBlock_G3: 21300204
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

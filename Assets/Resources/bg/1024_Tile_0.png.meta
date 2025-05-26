@@ -114,7 +114,7 @@ TextureImporter:
       213: 21300072
     second: Tile_0_Bridge
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -131,9 +131,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -165,12 +168,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1191,9 +1236,46 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Tile_0_In_LT: 21300024
+      Tile_0_BG_Block_Big: 21300050
+      Tile_0_BG_Cross_Box: 21300058
+      Tile_0_Half: 21300014
+      Tile_0_BG_Cross_Box_C: 21300060
+      Tile_0_Deco_Light: 21300054
+      Tile_0_Deco_Light_3: 21300066
+      Tile_0_Grill: 21300036
+      Tile_0_In_LBRT: 21300026
+      Tile_0_Hidden_Out: 21300004
+      Tile_0_Deco_Light_1: 21300056
+      Tile_0_Hidden: 21300002
+      Tile_0_BG_Block_Cross: 21300048
+      Tile_0: 21300010
+      Tile_0_Out_RB: 21300034
+      Tile_0_BG_Cross_Top: 21300038
+      Tile_0_27_R: 21300018
+      Tile_0_In_RB: 21300028
+      Tile_0_Out_LBRT: 21300022
+      Tile_0_BG_Block: 21300046
+      Tile_0_Deco_Spk: 21300052
+      Tile_0_Slim: 21300070
+      Tile_0_27_L_Vrt: 21300030
+      Tile_0_A: 21300012
+      Tile_0_Out_LT: 21300020
+      Tile_0_27_L: 21300016
+      Tile_0_BG_Cross_Bot: 21300040
+      Tile_0_BG_Cross_L: 21300042
+      Tile_0_Bridge: 21300072
+      Tile_0_BG_Cross_R: 21300044
+      Tile_0_Tiny: 21300000
+      Tile_0_27_R_Vrt: 21300032
+      Tile_0_Deco_Box: 21300062
+      Tile_0_Deco_Light_2: 21300064
+      Tile_0_Side: 21300068
+      Tile_0_Hidden_In: 21300006
+      Tile_0_27EdgeCover: 21300008
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

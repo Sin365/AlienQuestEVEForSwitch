@@ -195,7 +195,7 @@ TextureImporter:
       213: 21300126
     second: mon_35_Highlight
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -212,9 +212,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -246,12 +249,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2201,9 +2246,73 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      H_2_MonArm_R_Hand: 21300028
+      H_2_MonArm_L: 21300042
+      mon_7Down_Arm_L: 21300058
+      mon_7Down_Arm_R: 21300064
+      mon_7_Breast_L: 21300002
+      H_2_MonLeg_L: 21300044
+      mon_7Down_Head: 21300054
+      mon_7Down_Leg_R: 21300068
+      mon_35_Nerv_L: 21300078
+      H_2_Body: 21300006
+      mon_7_Breast_R: 21300004
+      mon_7_Leg_R: 21300032
+      mon_7Down_Body: 21300056
+      mon_7Down_Leg_L: 21300066
+      mon_35_Nerv_R: 21300076
+      H4N_Breast_R: 21300082
+      H4N_Breast_L: 21300080
+      H_2_Head: 21300026
+      H4N_MonHead: 21300098
+      H_2_Calf_L: 21300114
+      mon_35_Highlight: 21300126
+      mon_35_EyeBall: 21300124
+      mon_35_Cover_Top: 21300072
+      H4N_MonArmB_1: 21300106
+      mon_7_Arm_R: 21300014
+      H_2_MonBody: 21300036
+      H_2_MonBreast_L: 21300038
+      H4N_MonArmB_2: 21300104
+      H_2_MonHair: 21300034
+      mon_7Down_Breast_L: 21300062
+      H_2_MonCalf_L: 21300116
+      H_2_MonBreast_R: 21300040
+      H_2_MonLeg_R: 21300046
+      H_2_MonArm_R_Thumb: 21300050
+      H_2_Leg_L: 21300110
+      H4N_Hair_L: 21300100
+      H2_Mosaic: 21300120
+      H_2_Leg_R: 21300112
+      mon_7_Leg_L: 21300030
+      mon_7Down_Hair: 21300052
+      H_2_Arm: 21300016
+      H4N_Leg_L: 21300084
+      H4N_MonArm_1: 21300094
+      H4N_MonArm_2: 21300096
+      mon_7_Head: 21300108
+      H_2_Breast_L: 21300018
+      H4N_Leg_R: 21300086
+      H_2_Breast_R: 21300020
+      H4N_Arm: 21300090
+      H_2_MonHairBack: 21300118
+      H_2_Calf_R: 21300022
+      mon_7_Arm_L: 21300010
+      H_2_MonArm_R_1: 21300008
+      mon_35_Cover_Bot: 21300074
+      H4N_Body: 21300088
+      H_2_MonCalf_R: 21300048
+      mon_35_Body: 21300122
+      mon_7_Hair: 21300000
+      H_2_MonArm_R_2: 21300024
+      mon_35_Tentacle: 21300070
+      H4N_Hair_R: 21300102
+      mon_7_Body: 21300012
+      mon_7Down_Breast_R: 21300060
+      H4N_MonHair: 21300092
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

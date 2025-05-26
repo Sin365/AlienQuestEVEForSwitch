@@ -87,7 +87,7 @@ TextureImporter:
       213: 21300054
     second: UI_InfoBox_Dir_1
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -104,9 +104,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -138,12 +141,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1030,9 +1075,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      UI_Menu_R_Btn: 21300036
+      UI_LRB_Arrow: 21300004
+      UI_LRB_Img: 21300000
+      UI_InfoBox_Dir_1: 21300054
+      UI_Btn_Status: 21300014
+      UI_KeyboardBtn: 21300002
+      UI_BtnOn_Long: 21300024
+      UI_TextBox: 21300026
+      UI_Btn_Exit: 21300020
+      UI_Btn_GameOver: 21300006
+      UI_MapMission_2: 21300048
+      UI_InfoBox_Item: 21300038
+      UI_PipeTop: 21300028
+      UI_Sample: 21300052
+      UI_LRB_Img_Dir: 21300042
+      UI_Btn_Key: 21300018
+      UI_EllenBox: 21300044
+      UI_MapMission_3: 21300050
+      UI_Btn_Gallery: 21300008
+      UI_Btn_Option: 21300016
+      UI_BtnOn: 21300022
+      UI_ScreenBG: 21300010
+      UI_Btn_Map: 21300012
+      UI_BtnOff: 21300030
+      UI_BtnOff_Long: 21300032
+      UI_InfoBox_Dir_2: 21300040
+      UI_MapMission_1: 21300046
+      UI_Menu_L_Btn: 21300034
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

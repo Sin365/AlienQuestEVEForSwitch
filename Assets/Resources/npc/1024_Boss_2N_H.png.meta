@@ -204,7 +204,7 @@ TextureImporter:
       213: 21300132
     second: H26_Mosaic
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -221,9 +221,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -255,12 +258,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2194,9 +2239,76 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      H_18_Tentacle_L: 21300092
+      H_18_Tentacle_RB: 21300094
+      H_18_Tentacle_R: 21300104
+      H_17_Tentacle_L: 21300006
+      H_26_Arm_B1: 21300060
+      H_17_Tentacle_BR_2: 21300040
+      H_17_Tentacle_C: 21300004
+      H_26_Leg_B1: 21300014
+      H_26_Breast: 21300022
+      H_18_Hair: 21300070
+      H_18_Body: 21300068
+      H_18_Mouth: 21300124
+      H_17_Tentacle_Back: 21300008
+      H_26_Calf: 21300028
+      H_26_Tentacle_Ass: 21300062
+      H_17_Breast: 21300056
+      H_18_Calf_L: 21300096
+      H_17_Leg_L: 21300000
+      H_26_Body: 21300046
+      H_26_Arm_B2: 21300050
+      H_26_Tentacle_B_1: 21300108
+      H26_Mosaic: 21300132
+      H_26_Tentacle_V: 21300106
+      H_18_Tentacle_BR_R1: 21300090
+      H_17_Tentacle_BR_1: 21300042
+      H_17_Leg_R: 21300002
+      H_18_Tentacle_BR_L: 21300072
+      H_18_Center: 21300102
+      H_18_Breast_R: 21300086
+      H_26_Leg_B2: 21300116
+      H_26_Tentacle_Calf_B1: 21300034
+      H_26_Tentacle_Head: 21300082
+      H_26_Tentacle_B_4: 21300114
+      H_26_Hair: 21300076
+      H_26_Breast_B: 21300024
+      H_26_Tentacle_B_3: 21300112
+      H_26_Tentacle_Calf_B2: 21300118
+      H18_Mosaic: 21300130
+      H_17_Body: 21300064
+      H_17_Arm_2: 21300066
+      H_26_Center: 21300018
+      H_18_Leg: 21300078
+      H_26_Tentacle_Calf: 21300026
+      H_17_Tentacle_R: 21300038
+      H_17_Arm_1: 21300058
+      H_26_Hair_Back: 21300016
+      H_17_Head: 21300052
+      H_18_Tentacle_Center: 21300100
+      H_18_Tentacle_BR_C: 21300080
+      H_26_Calf_B1: 21300036
+      H_26_Calf_B2: 21300120
+      H_26_Arm: 21300032
+      H_17_Breast_B: 21300054
+      H_26_Tentacle_Hand: 21300030
+      H_26_Face: 21300010
+      H_18_Breast_L: 21300084
+      H_17_Tentacle_BR_3: 21300044
+      H_18_Calf_R: 21300098
+      H17_Mosaic: 21300128
+      H_17_Calf_R: 21300020
+      H_26_HighlightDot: 21300126
+      H_26_Leg: 21300012
+      H_18_Tentacle_LB: 21300088
+      H_26_Tentacle_B_2: 21300110
+      H_17_Mouth: 21300122
+      H_26_Tentacle_Neck: 21300048
+      H_18_Tentacle_BR_R2: 21300074
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

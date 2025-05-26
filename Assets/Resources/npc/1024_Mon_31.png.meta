@@ -132,7 +132,7 @@ TextureImporter:
       213: 21300084
     second: H24_Mosaic
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -149,9 +149,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -183,12 +186,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1504,9 +1549,52 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      H_24_Finger_L1: 21300064
+      Mon_31_Teeth_Top: 21300080
+      Mon_31_Calf_L: 21300046
+      H_24_Cover: 21300040
+      H_24_Finger_R2: 21300060
+      Mon_31_Body: 21300038
+      Mon_31_Hand_L1: 21300010
+      Mon_31_Arm_L2: 21300006
+      Mon_31_Arm_R2: 21300004
+      H_24_Arm_R: 21300026
+      H_24_Finger_L4: 21300070
+      H_24_Hair_Back: 21300036
+      H_24_Breast_R: 21300034
+      H_29_Breast_Up: 21300042
+      Mon_31_Back_R1: 21300020
+      Mon_31_Hand_R2: 21300016
+      Mon_31_Hip_R: 21300056
+      H24_Mosaic: 21300084
+      Mon_31_Hand_R1: 21300008
+      Mon_31_Arm_L1: 21300002
+      Mon_31_Leg_R: 21300048
+      Mon_31_Tail: 21300072
+      H_24_Body: 21300012
+      H_24_Finger_L3: 21300068
+      Mon_31_Back_R2: 21300030
+      Mon_31_Tail_Blade: 21300074
+      H_24_Finger_R1: 21300054
+      Mon_31_Jaw: 21300078
+      Mon_31_Head: 21300076
+      H_24_Breast_L: 21300024
+      Mon_31_Back_L2: 21300032
+      H_24_Finger_L2: 21300066
+      Mon_31_Tongue: 21300062
+      H_24_Tongue: 21300052
+      Mon_31_Calf_R: 21300044
+      Mon_31_Hand_L2: 21300018
+      Mon_31_Breast: 21300028
+      H_24_Hair: 21300014
+      Mon_31_Teeth_Bot: 21300082
+      Mon_31_Arm_R1: 21300000
+      Mon_31_Back_L1: 21300022
+      Mon_31_Hip_L: 21300058
+      Mon_31_Leg_L: 21300050
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -171,7 +171,7 @@ TextureImporter:
       213: 21300110
     second: X_Down_4
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -188,9 +188,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -222,12 +225,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2070,9 +2115,65 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Z_GrabDown_FH_R: 21300100
+      ZZZ_Zombie_3: 21300108
+      atk_N_Sit_3: 21300022
+      Z_GrabStand_Hair: 21300056
+      Z_GrabStand_FH: 21300070
+      Z_GrabStand_FH_L: 21300074
+      Z_GrabDown_FH: 21300096
+      Z_GrabDown_Hair: 21300080
+      X_Down_4: 21300110
+      atk_N_Sit_7: 21300030
+      Z_GrabDown_Breast_L: 21300086
+      atk_N_Sit_1: 21300018
+      Z_GrabStand_Hand_L: 21300062
+      Z_GrabDown_Breast_R: 21300088
+      Z_GrabStand_Breast_L: 21300058
+      X_Down_5: 21300036
+      Z_GrabDown_FH_L: 21300098
+      XX_FaceHugger_6: 21300044
+      X_Down_2: 21300008
+      ZZZ_Zombie_2: 21300104
+      Z_GrabStand_Arm_L: 21300066
+      Z_GrabStand_Arm_R: 21300068
+      Z_GrabDown_Body: 21300078
+      atk_N_Sit_0: 21300016
+      atk_N_Sit_2: 21300020
+      Z_Burst_Calf: 21300048
+      XX_FaceHugger_4: 21300040
+      Z_GrabStand_Leg_L: 21300052
+      Z_GrabDown_Arm_R: 21300082
+      Z_GrabStand_Leg_R: 21300054
+      XX_FaceHugger_0: 21300102
+      Z_Burst_Leg: 21300046
+      Z_GrabDown_Arm_L: 21300084
+      Z_GrabDown_Leg: 21300090
+      Z_GrabStand_Hand_R: 21300064
+      X_Down_3: 21300014
+      atk_N_Sit_5: 21300026
+      atk_N_Sit_8: 21300032
+      X_Down_6: 21300038
+      XX_FaceHugger_3: 21300000
+      XX_FaceHugger_1: 21300002
+      Z_GrabStand_FH_R: 21300076
+      Z_GrabDown_Hand_R: 21300092
+      XX_FaceHugger_2: 21300004
+      X_Down_0: 21300012
+      ZZZ_Zombie_1: 21300106
+      atk_N_Sit_6: 21300028
+      atk_N_Sit_9: 21300034
+      X_Down_1: 21300006
+      X_Down_7: 21300010
+      XX_FaceHugger_5: 21300042
+      atk_N_Sit_4: 21300024
+      Z_GrabDown_Hand_L: 21300094
+      Z_GrabStand_Breast_R: 21300060
+      Z_GrabStand_FH_Tail: 21300072
+      Z_GrabStand_Body: 21300050
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

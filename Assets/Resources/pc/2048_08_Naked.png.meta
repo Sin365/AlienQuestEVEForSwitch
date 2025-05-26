@@ -123,7 +123,7 @@ TextureImporter:
       213: 21300078
     second: XX_Eye_N_7Null
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -140,9 +140,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -174,12 +177,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1670,9 +1715,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Run_Stop_N_2: 21300044
+      Idle_N_6: 21300012
+      XX_Eye_N_7Null: 21300078
+      Run_Stop_N_1: 21300042
+      Idle_N_3: 21300006
+      Idle_N_10: 21300020
+      Run_Stop_N_3: 21300046
+      XX_Eye_N_5: 21300074
+      XX_Eye_N_6: 21300076
+      Idle_N_7: 21300014
+      Run_Stop_N_5: 21300050
+      Idle_N_15: 21300030
+      Idle_N_5: 21300010
+      Idle_N_1: 21300002
+      XX_Eye_N_2: 21300068
+      Sit_Start_1: 21300066
+      Idle_N_0: 21300000
+      Run_Start_N_2: 21300038
+      XX_Eye_N_3: 21300070
+      Idle_N_14: 21300028
+      Idle_N_4: 21300008
+      Idle_N_11: 21300022
+      Sit_Start_2: 21300064
+      XX_Eye_N_4: 21300072
+      Sit_Stop_1: 21300060
+      Idle_N_13: 21300026
+      X_N_DoubleJump: 21300056
+      Idle_N_12: 21300024
+      Run_Start_N_3: 21300040
+      Sit_Turn_N_1: 21300052
+      Idle_N_9: 21300018
+      Sit_Start_3: 21300062
+      Idle_N_16: 21300032
+      Idle_N_2: 21300004
+      Run_Stop_N_4: 21300048
+      Idle_N_8: 21300016
+      Sit_Stop_2: 21300058
+      Idle_N_17: 21300034
+      Run_Start_N_1: 21300036
+      Sit_Turn_N_2: 21300054
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

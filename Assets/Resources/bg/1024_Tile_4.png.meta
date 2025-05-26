@@ -204,7 +204,7 @@ TextureImporter:
       213: 21300132
     second: Tile_4_BB_LB
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -221,9 +221,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -255,12 +258,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2010,9 +2055,76 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Tile_4_BottomBack_1: 21300028
+      Tile_4_Out_LT: 21300052
+      Tile_4_BB_V_L: 21300066
+      Tile_4_Deco_1: 21300030
+      Tile_4_BottomBack_4: 21300050
+      Tile_4_BB_H_RT: 21300058
+      Tile_4_Deco_ThickPipe: 21300044
+      Tile_4_Pipe_1: 21300110
+      Tile_4_27_R: 21300022
+      Tile_4_BB_H_RB: 21300072
+      Tile_4_27BottomBack_3: 21300048
+      Tile_4_Cover_27: 21300120
+      Tile_4_Deco_1_R: 21300002
+      Tile_4_Deco_3: 21300036
+      Tile_4_Out_RT_Bot: 21300102
+      Tile_4_BottomBack_L: 21300082
+      Tile_4_BB_H_R: 21300006
+      Tile_4_Top_L: 21300118
+      Tile_4_BottomBack_C: 21300080
+      Tile_4_Out_LB_Bot: 21300104
+      Tile_4_BB_H_emboss: 21300008
+      Tile_4: 21300016
+      Tile_4_BottomBack_R: 21300078
+      Tile_4_BB_V_LT: 21300060
+      Tile_4_BB_H_LT: 21300054
+      Tile_4_BB_H_T: 21300056
+      Tile_4_BB_V_RB: 21300076
+      Tile_4_Grill: 21300108
+      Tile_4_Side: 21300000
+      Tile_4_BB_V_RT: 21300062
+      Tile_4_BB_H_B: 21300064
+      Tile_4_BB_RB: 21300014
+      Tile_4_In_RB: 21300098
+      Tile_4_BB_V_R: 21300068
+      Tile_4_Out_RB_Bot: 21300106
+      Tile_4_UpCorner27: 21300122
+      Tile_4_Tiny: 21300038
+      Tile_4_B: 21300128
+      Tile_4_27_L: 21300020
+      Tile_4_BG_R: 21300126
+      Tile_4_In_RT: 21300090
+      Tile_4_Out_LB: 21300092
+      Tile_4_Deco_1_L: 21300032
+      Tile_4_BB_V_LB: 21300074
+      Tile_4_BG_PipeHorz_2: 21300012
+      Tile_4_Pipe_2: 21300112
+      Tile_4_BottomBack_2: 21300040
+      Tile_4_BG: 21300026
+      Tile_4_Out_RT: 21300086
+      Tile_4_Cover: 21300130
+      Tile_4_BottomBack_Pipe: 21300024
+      Tile_4_BottomBack_3: 21300046
+      Tile_4_BB_H_LB: 21300070
+      Tile_4_BottomBack_Edge: 21300084
+      Tile_4_27BottomBack_2: 21300042
+      Tile_4_Out_RB: 21300094
+      Tile_4_BG_PipeHorz_1: 21300010
+      Tile_4_BG_PipeHorz_0: 21300114
+      Tile_4_27BottomBack_1: 21300018
+      Tile_4_In_LT: 21300088
+      Tile_4_BG_L: 21300124
+      Tile_4_Deco_2: 21300034
+      Tile_4_BB_H_L: 21300004
+      Tile_4_Top_R: 21300116
+      Tile_4_BB_LB: 21300132
+      Tile_4_In_LB: 21300096
+      Tile_4_Out_LT_Bot: 21300100
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

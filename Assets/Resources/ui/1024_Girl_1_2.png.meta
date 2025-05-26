@@ -78,7 +78,7 @@ TextureImporter:
       213: 21300048
     second: UI_Girl_1_FacePink
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -95,9 +95,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -129,12 +132,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1189,9 +1234,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      UI_Girl_1_Eye_R: 21300016
+      UI_Girl_1_EyeClose_3: 21300034
+      UI_Girl_1_EyeBrow: 21300020
+      UI_Girl_1_EyeBrow_0: 21300038
+      UI_Girl_1_EyeClose_1: 21300022
+      UI_Girl_1_Mouth_Open: 21300040
+      UI_Girl_1_Hair: 21300006
+      UI_Girl_1_Hair_Front: 21300008
+      UI_Girl_1_EyeBack: 21300018
+      UI_Girl_1_Leg: 21300036
+      UI_Girl_1_EyeHL_L: 21300030
+      UI_Girl_1_Face: 21300024
+      UI_Girl_1_EyeHL_R: 21300032
+      UI_Girl_1_Hair_Back: 21300010
+      UI_Girl_1_Eye_L_2: 21300042
+      UI_Girl_1_Breast_L_Naked: 21300000
+      UI_Girl_1_Mouth_AAH: 21300046
+      UI_Girl_1_Eye_L: 21300014
+      UI_Girl_1_EyeClose_2: 21300028
+      UI_Girl_1_FacePink: 21300048
+      UI_Girl_1_Wand: 21300026
+      UI_Girl_1_Breast_R_Naked: 21300002
+      UI_Girl_1_Eye_R_2: 21300044
+      UI_Girl_1_Body_Naked: 21300004
+      UI_Girl_1_Mouth: 21300012
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -114,7 +114,7 @@ TextureImporter:
       213: 21300072
     second: AlienEgg_Opened
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -131,9 +131,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -165,12 +168,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1314,9 +1359,46 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Z_GrabDown_FH_R: 21300052
+      FaceHugFly_Leg_2_R: 21300056
+      FaceHugFly_Body: 21300022
+      FaceHug_Ball_L: 21300004
+      FaceHugFly_Leg_3_R: 21300060
+      FaceHug_Leg_L_3: 21300016
+      AlienEgg_Opened: 21300072
+      FaceHugFly_Tail: 21300010
+      FaceHugFly_Leg_L: 21300036
+      FaceHugFly_Leg_R: 21300008
+      FaceHug_Tail_Up: 21300046
+      FaceHug_Leg_L_4: 21300006
+      FaceHugFly_Leg_1_L: 21300062
+      Tile_Creep_R: 21300066
+      FaceHug_Leg_R_2: 21300026
+      FaceHug_Body: 21300000
+      Z_GrabDown_FH: 21300050
+      Tile_Creep_L: 21300068
+      FaceHugFly_Leg_1: 21300044
+      FaceHugFly_Leg_3_L: 21300058
+      FaceHug_Leg_L_1: 21300012
+      FaceHug_Leg_R_2_2: 21300032
+      Tile_Creep_Tentacle: 21300048
+      Tile_Creep: 21300070
+      FaceHug_Leg_R_3_2: 21300034
+      FaceHug_Tail: 21300042
+      FaceHug_Leg_R_4: 21300030
+      FaceHug_Ball_R: 21300002
+      FaceHugFly_Leg_3: 21300038
+      Z_GrabDown_FH_L: 21300040
+      FaceHug_Leg_R_4_2: 21300018
+      FaceHugFly_Leg_2_L: 21300054
+      FaceHug_Leg_R_3: 21300028
+      FaceHugFly_Leg_2: 21300020
+      FaceHug_Leg_L_2: 21300014
+      FaceHug_Leg_R_1: 21300024
+      FaceHugFly_Leg_1_R: 21300064
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

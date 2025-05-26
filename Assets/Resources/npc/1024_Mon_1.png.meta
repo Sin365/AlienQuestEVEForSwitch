@@ -114,7 +114,7 @@ TextureImporter:
       213: 21300072
     second: Mon_2_Back_1
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -131,9 +131,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -165,12 +168,54 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Nintendo Switch
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1302,9 +1347,46 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Mon_1_Wing_L: 21300014
+      MonB_3_LegR_2: 21300050
+      MonB_1: 21300000
+      Mon_2_Back_1: 21300072
+      MonB_3_LegR_3: 21300052
+      Mon_1_Wing_R: 21300016
+      Mon_3: 21300032
+      Mon_2_Top: 21300034
+      Mon_3_Tntc_L: 21300006
+      Mon_1_Tc_R_1: 21300020
+      MonB_3_Center: 21300026
+      MonB_3_LegL_3: 21300042
+      MonB_1_Leg_2: 21300056
+      MonB_1_Leg_3: 21300058
+      MonB_1_Leg_4: 21300060
+      Mon_1: 21300012
+      MonB_3_LegL_1: 21300046
+      Mon_2_Head: 21300036
+      MonB_2_Leg: 21300010
+      Mon_4_Calf: 21300066
+      Mon_4_Thigh: 21300068
+      Mon_4_Head: 21300030
+      MonB_1_Leg_1: 21300054
+      Mon_2: 21300028
+      MonB_1_Leg_5: 21300062
+      Mon_4: 21300064
+      Mon_4_Foot: 21300070
+      Mon_2_Back_2: 21300038
+      Mon_3_Glow: 21300040
+      Mon_1_Tc_L_1: 21300018
+      Mon_1_Tc_L_2: 21300022
+      MonB_3_LegL_2: 21300044
+      MonB_2: 21300002
+      MonB_3_LegR_1: 21300048
+      MonB_3: 21300004
+      Mon_3_Tntc_R: 21300008
+      Mon_1_Tc_R_2: 21300024
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
