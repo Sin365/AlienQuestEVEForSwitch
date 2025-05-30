@@ -321,6 +321,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 		BlackFade = global::UnityEngine.GameObject.Find("BlackFade");
 		BlackFade.GetComponent<global::UnityEngine.SpriteRenderer>().enabled = true;
 		Reset_Inventory();
+		//这里批量设置了碰撞忽略关系
 		global::UnityEngine.Physics2D.IgnoreLayerCollision(25, 25);
 		global::UnityEngine.Physics2D.IgnoreLayerCollision(25, 30);
 		global::UnityEngine.Physics2D.IgnoreLayerCollision(25, 20);
