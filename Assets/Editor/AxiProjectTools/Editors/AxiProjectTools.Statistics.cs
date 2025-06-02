@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
 
@@ -20,7 +21,7 @@ public class AxiProjectToolsStatistics : EditorWindow
         return type + "_" + rootName;
     }
 
-    static void AddComponentData(int _type, string _rootPath, AxiStatistics_Node_Component _com, string _nodepath)
+    static void AddComponentData(int _type, string _rootPath, AxiStatistics_Node_Component _comdata, string _nodepath, Component lastcom)
     {
         string rootKey = GetRootTempKey(_type, _rootPath);
 
@@ -28,24 +29,57 @@ public class AxiProjectToolsStatistics : EditorWindow
         {
             dictTempData[rootKey] = new AxiStatisticsDatas() { type = _type, FullPath = _rootPath, nodes = new List<AxiStatistics_Node>() };
         }
-
         AxiStatisticsDatas rootData = dictTempData[rootKey];
 
-        AxiStatistics_Node nodeData = rootData.nodes.Where(w => w.NodeFullPath == _nodepath).FirstOrDefault();
+        GameObject lastgobj = lastcom.gameObject;
+        string lastcomName = lastgobj.name;
+        int allNodeNameCount = 0;
+        int thisNodeIdx = -1;
+        bool bNodeIdxOnlyOne;
+
+
+        if (lastcom.transform.parent != null)
+        {
+#if UNITY_2017_1_OR_NEWER
+            int count = lastcom.transform.parent.childCount;
+#else
+            int count = lastcom.transform.parent.GetChildCount();
+#endif
+            for (int i = 0; i < count; i++)
+            {
+                GameObject checkGobj = lastcom.transform.parent.GetChild(i).gameObject;
+                if (checkGobj.name == lastcomName)
+                {
+                    allNodeNameCount++;
+                    if (checkGobj == lastgobj)
+                        thisNodeIdx = allNodeNameCount - 1;
+                }
+            }
+            bNodeIdxOnlyOne = allNodeNameCount <= 1;
+        }
+        else
+        {
+            thisNodeIdx = 0;
+            bNodeIdxOnlyOne = true;
+        }
+
+        AxiStatistics_Node nodeData = rootData.nodes.Where(w => w.NodeFullPath == _nodepath && w.NodeIdx == thisNodeIdx).FirstOrDefault();
         if (nodeData == null)
         {
             nodeData = new AxiStatistics_Node();
             nodeData.Name = Path.GetFileName(_nodepath);
             nodeData.NodeFullPath = _nodepath;
             nodeData.components = new List<AxiStatistics_Node_Component>();
+            nodeData.NodeIdx = thisNodeIdx;
+            nodeData.NodeIdxOnlyOne = bNodeIdxOnlyOne;
             rootData.nodes.Add(nodeData);
         }
 
-        nodeData.components.Add(_com);
+        nodeData.components.Add(_comdata);
     }
 
 
-    static bool CheckCom(int _type, string _rootPath, Component com, string nodepath)
+    static bool CheckCom(Component[] allcoms, int comRealIdx, int _type, string _rootPath, Component com, string nodepath)
     {
         if (com is BoxCollider2D)
         {
@@ -57,16 +91,14 @@ public class AxiProjectToolsStatistics : EditorWindow
 #endif
             AxiStatistics_Node_Component _com = new AxiStatistics_Node_Component();
             _com.type = typeof(BoxCollider2D).ToString();
-
-
 #if UNITY_2017_1_OR_NEWER
             _com.center = bc.offset;
 #else
-            _com.center = bc.center;
+			_com.center = bc.center;
 #endif
-
             _com.size = bc.size;
-            AddComponentData(_type, _rootPath, _com, nodepath);
+            SetCompnentIdxNum<BoxCollider2D>(_com, allcoms, comRealIdx, bc);
+            AddComponentData(_type, _rootPath, _com, nodepath, com);
         }
         if (com is Rigidbody2D)
         {
@@ -78,9 +110,51 @@ public class AxiProjectToolsStatistics : EditorWindow
             _com.type = typeof(Rigidbody2D).ToString();
             _com.isKinematic = rig2d.isKinematic;
             _com.simulated = rig2d.simulated;
-            AddComponentData(_type, _rootPath, _com, nodepath);
+            SetCompnentIdxNum<Rigidbody2D>(_com, allcoms, comRealIdx, rig2d);
+            AddComponentData(_type, _rootPath, _com, nodepath, com);
         }
         return true;
+    }
+
+    /// <summary>
+    /// 找出同类Idx
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="allcoms"></param>
+    /// <param name="comRealIdx"></param>
+    /// <param name="com"></param>
+    /// <returns></returns>
+    static void SetCompnentIdxNum<T>(AxiStatistics_Node_Component _comData, Component[] allcoms, int comRealIdx, T com) where T : Component
+    {
+        int ComIdxNum;
+        bool ComTypeIsOnlyOne = false;
+        int TCount = com.transform.GetComponents<T>().Length;
+        if (TCount == 1)
+        {
+            ComIdxNum = 0;
+            ComTypeIsOnlyOne = true;
+        }
+        else if (TCount < 1)
+        {
+            Debug.LogError("找不到，不应该");
+            ComIdxNum = -1;
+        }
+
+        ComIdxNum = -1;
+        for (int i = 0; i < allcoms.Length; i++)
+        {
+            //他自己自然是了
+            if (i == comRealIdx)
+            {
+                ComIdxNum++;
+                break;
+            }
+            if (allcoms[i] is T)
+                ComIdxNum++;
+        }
+
+        _comData.ComIdxNum = ComIdxNum;
+        _comData.ComTypeOnlyOne = ComTypeIsOnlyOne;
     }
 
     [MenuItem("Axibug移植工具/Statistics/[1]统计所有预制体和场景下的Collider和RigBody")]
@@ -88,8 +162,8 @@ public class AxiProjectToolsStatistics : EditorWindow
     public static void StatisticsCollider()
     {
         ClearTempData();
-        StatisticsCollider<BoxCollider2D>(CheckCom);
-        StatisticsCollider<Rigidbody2D>(CheckCom);
+        StatisticsCollider<BoxCollider2D>();
+        StatisticsCollider<Rigidbody2D>();
 
         AxiStatisticsCache cache = ScriptableObject.CreateInstance<AxiStatisticsCache>();
         foreach (var data in dictTempData)
@@ -100,7 +174,7 @@ public class AxiProjectToolsStatistics : EditorWindow
     }
 
 
-    public static void StatisticsCollider<T>(Func<int, string, T, string, bool> motion) where T : Component
+    public static void StatisticsCollider<T>() where T : Component
     {
         AxiProjectTools.GoTAxiProjectToolsSence();
         //ComType2GUID.Clear();
@@ -133,7 +207,7 @@ public class AxiProjectToolsStatistics : EditorWindow
             }
 
             foreach (var node in rootNodes)
-                LoopPrefabNode<T>(0, path, path, node, 0, motion);
+                LoopPrefabNode<T>(0, path, path, node, 0);
         }
 
 
@@ -141,7 +215,7 @@ public class AxiProjectToolsStatistics : EditorWindow
         foreach (string guid in prefabGuids)
         {
             string path = AssetDatabase.GUIDToAssetPath(guid);
-            GetPrefab<T>(path, motion);
+            GetPrefab<T>(path);
         }
 
         AxiProjectTools.GoTAxiProjectToolsSence();
@@ -149,7 +223,7 @@ public class AxiProjectToolsStatistics : EditorWindow
     }
 
 
-    static void GetPrefab<T>(string path, Func<int, string, T, string, bool> motion) where T : Component
+    static void GetPrefab<T>(string path) where T : Component
     {
 #if UNITY_4_6
 		GameObject prefab = AssetDatabase.LoadAssetAtPath(path,typeof(GameObject)) as GameObject;
@@ -157,10 +231,10 @@ public class AxiProjectToolsStatistics : EditorWindow
         GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
 #endif
 
-        LoopPrefabNode<T>(1, path, path, prefab.gameObject, 0, motion);
+        LoopPrefabNode<T>(1, path, path, prefab.gameObject, 0);
     }
 
-    static void LoopPrefabNode<T>(int _type, string _rootPath, string noderootPath, GameObject trans, int depth, Func<int, string, T, string, bool> motion) where T : Component
+    static void LoopPrefabNode<T>(int _type, string _rootPath, string noderootPath, GameObject trans, int depth) where T : Component
     {
         //		#if UNITY_2018_4_OR_NEWER
         string nodename = noderootPath + "/" + trans.name;
@@ -177,13 +251,14 @@ public class AxiProjectToolsStatistics : EditorWindow
             T comobj = com as T;
             if (comobj == null)
                 continue;
-            if (!motion.Invoke(_type, _rootPath, comobj, nodename))
+
+            if (CheckCom(components, i, _type, _rootPath, comobj, nodename))
                 continue;
         }
 
         //遍历
         foreach (Transform child in trans.transform)
-            LoopPrefabNode<T>(_type, _rootPath, nodename, child.gameObject, depth + 1, motion);
+            LoopPrefabNode<T>(_type, _rootPath, nodename, child.gameObject, depth + 1);
         //#else
         //		Debug.Log("低版本不要执行本函数");
         //#endif
@@ -191,10 +266,13 @@ public class AxiProjectToolsStatistics : EditorWindow
 
 
 
+#if UNITY_2017_1_OR_NEWER
     [MenuItem("Axibug移植工具/Statistics/[2]通过记录，对Rigbody进行修补")]
 
     public static void RepairRigBodyByStatistics()
     {
+        List<ValueTuple<string, string>> NeedRepair = new List<(string, string)>();
+        List<ValueTuple<string, string>> FinishRepair = new List<(string, string)>();
         string CurrScenePath = string.Empty;
         AxiProjectTools.GoTAxiProjectToolsSence();
 #if UNITY_4_6
@@ -256,7 +334,9 @@ public class AxiProjectToolsStatistics : EditorWindow
                 {
                     string targetNodePath = node.NodeFullPath.Substring(cache.FullPath.Length, node.NodeFullPath.Length - cache.FullPath.Length);
 
-                    GameObject targetNodePathObj = GameObject.Find(targetNodePath);
+                    //GameObject targetNodePathObj = GameObject.Find(targetNodePath);
+                    GameObject targetNodePathObj = GetNodeByIdx(node, targetNodePath);
+
                     if (targetNodePathObj == null)
                     {
                         Debug.LogError("[Repair]" + targetNodePath + "找不到对应节点");
@@ -267,30 +347,23 @@ public class AxiProjectToolsStatistics : EditorWindow
                     {
                         if (RepairComponent(node.NodeFullPath, targetNodePathObj, com))
                         {
+                            NeedRepair.Add(new ValueTuple<string, string>($"{node.NodeFullPath}[{node.NodeIdx}]", $"{com.type}[{com.ComIdxNum}]"));
                             DirtyCount++;
                         }
                     }
                 }
-                Debug.Log($"[Repair][场景处理]{cache.FullPath}共{DirtyCount}个需要处理");
                 if (DirtyCount > 0)
                 {
-
+                    Debug.Log($"[Repair][场景处理]{cache.FullPath}共{DirtyCount}个需要处理");
                 }
             }
             else if (cache.type == 1)
             {
-                //string targetName = Path.GetFileName(cache.FullPath);
-                //int Idx = SceneName.IndexOf(targetName);
-                //if (Idx < 0)
-                //{
-                //    Debug.LogError(targetName + "[Repair]找不到对应资源");
-                //    continue;
-                //}
                 string targetpath = cache.FullPath;
 
                 //来到空场景
                 if (!string.IsNullOrEmpty(CurrScenePath))
-                { 
+                {
                     AxiProjectTools.GoTAxiProjectToolsSence();
                     CurrScenePath = string.Empty;
                 }
@@ -305,7 +378,6 @@ public class AxiProjectToolsStatistics : EditorWindow
 
                 var obj = GameObject.Instantiate(prefabInstance, null);
 
-
                 int DirtyCount = 0;
                 foreach (var node in cache.nodes)
                 {
@@ -318,7 +390,8 @@ public class AxiProjectToolsStatistics : EditorWindow
                     else
                     {
                         string targetNodePath = node.NodeFullPath.Substring(cache.FullPath.Length + prefabInstance.name.Length + 2, node.NodeFullPath.Length - cache.FullPath.Length - prefabInstance.name.Length - 2);
-                        targetNodePathObj = obj.transform.Find(targetNodePath)?.gameObject;
+                        //targetNodePathObj = obj.transform.Find(targetNodePath)?.gameObject;
+                        targetNodePathObj = GetNodeByIdx(node, targetNodePath, obj);
 
                         if (targetNodePathObj == null)
                         {
@@ -332,14 +405,15 @@ public class AxiProjectToolsStatistics : EditorWindow
                     {
                         if (RepairComponent(node.NodeFullPath, targetNodePathObj, com))
                         {
+                            NeedRepair.Add(new ValueTuple<string, string>($"{node.NodeFullPath}[{node.NodeIdx}]", $"{com.type}[{com.ComIdxNum}]"));
                             DirtyCount++;
                         }
                     }
                 }
 
-                Debug.Log($"[Repair][预制体处理]{targetpath}共{DirtyCount}个需要处理");
                 if (DirtyCount > 0)
                 {
+                    Debug.Log($"[Repair][预制体处理]{targetpath}共{DirtyCount}个需要处理");
                     //PrefabUtility.SaveAsPrefabAsset(obj, targetpath);
                 }
 
@@ -350,6 +424,61 @@ public class AxiProjectToolsStatistics : EditorWindow
         }
 
         AxiProjectTools.GoTAxiProjectToolsSence();
+
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine("[Repair][统计]:");
+        sb.AppendLine("----需要处理----");
+        foreach (var val in NeedRepair.OrderBy(w => w.Item1))
+        {
+            sb.AppendLine($"{val.Item1}=>{val.Item2}");
+        }
+        Debug.Log($"{sb}");
+
+
+        File.WriteAllText("Assets/AxiNeedRepair.txt", sb.ToString());
+    }
+
+
+    static GameObject GetNodeByIdx(AxiStatistics_Node nodedata, string targetNodePath,GameObject root = null)
+    {
+        GameObject targetNodePathObj;
+        
+        if(root == null)
+            targetNodePathObj = GameObject.Find(targetNodePath);
+        else
+            targetNodePathObj = root.transform.Find(targetNodePath)?.gameObject;
+
+        if (targetNodePathObj == null)
+            return null;
+
+        string targetName = targetNodePathObj.name;
+        int currIdx = -1;
+        if (!nodedata.NodeIdxOnlyOne)
+        {
+            if (targetNodePathObj.transform.parent != null)
+            {
+#if UNITY_2017_1_OR_NEWER
+                int count = targetNodePathObj.transform.parent.childCount;
+#else
+            int count = targetNodePathObj.transform.parent.GetChildCount();
+#endif
+                for (int i = 0; i < count; i++)
+                {
+                    GameObject checkGobj = targetNodePathObj.transform.parent.GetChild(i).gameObject;
+                    if (checkGobj.name == targetName)
+                    {
+                        currIdx++;
+                        if (nodedata.NodeIdx == currIdx)
+                        {
+                            targetNodePathObj = checkGobj;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return targetNodePathObj;
     }
 
     static bool RepairComponent(string NodePath, GameObject targetNodePathObj, AxiStatistics_Node_Component comdata)
@@ -357,30 +486,66 @@ public class AxiProjectToolsStatistics : EditorWindow
         bool Dirty = false;
         if (comdata.type == typeof(Rigidbody2D).ToString())
         {
-            Rigidbody2D rg2d = targetNodePathObj.GetComponent<Rigidbody2D>();
+            Rigidbody2D rg2d = GetCompnentById<Rigidbody2D>(targetNodePathObj, comdata);
+            if (rg2d == null)
+            {
+                Debug.LogError($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] == null");
+                Dirty = false;
+            }
             if (rg2d.simulated != comdata.simulated)
             {
-                Debug.Log($"[Repair]{NodePath}=> Rigidbody2D simulated:{rg2d.simulated} != :{comdata.simulated}  rg2d.bodyType => {rg2d.bodyType} ");
+                Debug.Log($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] simulated:{rg2d.simulated} != :{comdata.simulated}  rg2d.bodyType => {rg2d.bodyType} ");
+                Dirty = true;
+            }
+            else if (rg2d.bodyType == RigidbodyType2D.Static)
+            {
+                Debug.Log($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] simulated:{rg2d.simulated} but  rg2d.bodyType => {rg2d.bodyType} ");
                 Dirty = true;
             }
         }
         else if (comdata.type == typeof(BoxCollider2D).ToString())
         {
-            BoxCollider2D bc = targetNodePathObj.GetComponent<BoxCollider2D>();
-            if (bc.size != comdata.size)
+            BoxCollider2D bc = GetCompnentById<BoxCollider2D>(targetNodePathObj, comdata);
+            if (bc == null)
             {
-                Debug.Log($"[Repair]{NodePath} BoxCollider2D => size:{bc.size} != {comdata.size} ");
-                Dirty = true;
+                Debug.LogError($"[Repair]{NodePath}=> BoxCollider2D[{comdata.ComIdxNum}] == null");
+                Dirty = false;
             }
-            if (bc.offset != comdata.center)
+            else
             {
-                Debug.Log($"[Repair]{NodePath} BoxCollider2D => offset:{bc.offset} != center{comdata.center} ");
-                Dirty = true;
+                if (bc.size != comdata.size)
+                {
+                    Debug.Log($"[Repair]{NodePath} BoxCollider2D[{comdata.ComIdxNum}] => size:{bc.size} != {comdata.size} ");
+                    //bc.size = comdata.size;
+                    Dirty = true;
+                }
+                if (bc.offset != comdata.center)
+                {
+                    Debug.Log($"[Repair]{NodePath} BoxCollider2D[{comdata.ComIdxNum}] => offset:{bc.offset} != center{comdata.center} ");
+                    //bc.offset = comdata.center;
+                    Dirty = true;
+                }
             }
         }
 
 
         return Dirty;
     }
+
+    static T GetCompnentById<T>(GameObject gobj, AxiStatistics_Node_Component node) where T : Component
+    {
+        if (node.ComIdxNum == 0)
+            return gobj.GetComponent<T>();
+        else if (node.ComIdxNum > 0)
+        {
+            T[] coms = gobj.GetComponents<T>();
+            if (node.ComIdxNum < coms.Length)
+                return coms[node.ComIdxNum];
+        }
+
+        return null;
+    }
+
+#endif
 }
 #endif

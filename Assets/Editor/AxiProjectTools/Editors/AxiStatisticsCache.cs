@@ -18,7 +18,7 @@ public class AxiStatisticsDatas
 	/// </summary>
 	public int type;
 	public string FullPath;
-	public List<AxiStatistics_Node> nodes = new List<AxiStatistics_Node>();
+    public List<AxiStatistics_Node> nodes = new List<AxiStatistics_Node>();
 }
 
 [Serializable]
@@ -26,15 +26,31 @@ public class AxiStatistics_Node
 {
 	public string Name;
 	public string NodeFullPath;
-	public List<AxiStatistics_Node_Component> components = new List<AxiStatistics_Node_Component>();
+    /// <summary>
+    /// 表示相同路径只有一个
+    /// </summary>
+    public bool NodeIdxOnlyOne;
+    /// <summary>
+    /// 表示相同路径是第几个下标
+    /// </summary>
+    public int NodeIdx;
+    public List<AxiStatistics_Node_Component> components = new List<AxiStatistics_Node_Component>();
 }
 
 [Serializable]
 public class AxiStatistics_Node_Component
 {
     public string type;
-	//Rigboody
-	public bool simulated;
+    /// <summary>
+    /// 表示相同组件只有一个
+    /// </summary>
+    public bool ComTypeOnlyOne;
+    /// <summary>
+    /// 表示相同组件是第几个下标
+    /// </summary>
+    public int ComIdxNum;
+    //Rigboody
+    public bool simulated;
 	public bool isKinematic;
 	//BoxCollider2D
 	public Vector2 center;
