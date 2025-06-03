@@ -51,7 +51,8 @@ public class AxiStatistics_Node_Component
     public int ComIdxNum;
     //Rigboody
     public bool simulated;
-	public bool isKinematic;
+    public float gravityScale;
+    public bool isKinematic;
 	//BoxCollider2D
 	public Vector2 center;
 	public Vector2 size;

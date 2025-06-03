@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using UnityEditor;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class AxiProjectToolsStatistics : EditorWindow
@@ -79,7 +78,6 @@ public class AxiProjectToolsStatistics : EditorWindow
         nodeData.components.Add(_comdata);
     }
 
-
     static bool CheckCom(Component[] allcoms, int comRealIdx, int _type, string _rootPath, Component com, string nodepath)
     {
         if (com is BoxCollider2D)
@@ -111,6 +109,7 @@ public class AxiProjectToolsStatistics : EditorWindow
             _com.type = typeof(Rigidbody2D).ToString();
             _com.isKinematic = rig2d.isKinematic;
             _com.simulated = rig2d.simulated;
+            _com.gravityScale = rig2d.gravityScale;
             SetCompnentIdxNum<Rigidbody2D>(_com, allcoms, comRealIdx, rig2d);
             AddComponentData(_type, _rootPath, _com, nodepath, com);
         }
@@ -174,7 +173,6 @@ public class AxiProjectToolsStatistics : EditorWindow
         AssetDatabase.Refresh();
     }
 
-
     public static void StatisticsCollider<T>() where T : Component
     {
         AxiProjectTools.GoTAxiProjectToolsSence();
@@ -223,7 +221,6 @@ public class AxiProjectToolsStatistics : EditorWindow
         Debug.Log("<Color=#FFF333>处理完毕  统计所有预制体和场景下的" + typeof(T).FullName + "</color>");
     }
 
-
     static void GetPrefab<T>(string path) where T : Component
     {
 #if UNITY_4_6
@@ -265,10 +262,8 @@ public class AxiProjectToolsStatistics : EditorWindow
         //#endif
     }
 
-
-
 #if UNITY_2017_1_OR_NEWER
-    [MenuItem("Axibug移植工具/Statistics/[2]通过记录，对Rigbody进行修补")]
+    [MenuItem("Axibug移植工具/Statistics/[2]通过记录，对组件进行修补")]
 
     public static void RepairRigBodyByStatistics()
     {
@@ -350,7 +345,7 @@ public class AxiProjectToolsStatistics : EditorWindow
 
                     foreach (var com in node.components)
                     {
-                        if (RepairComponent(node.NodeFullPath, targetNodePathObj, com, out var errlog))
+                        if (RepairComponent(node.NodeFullPath, node.NodeIdx, targetNodePathObj, com, out var errlog))
                         {
                             NeedRepair.Add(new ValueTuple<string, string>($"{node.NodeFullPath}[{node.NodeIdx}]", $"{com.type}[{com.ComIdxNum}]"));
                             DirtyCount++;
@@ -409,7 +404,7 @@ public class AxiProjectToolsStatistics : EditorWindow
 
                     foreach (var com in node.components)
                     {
-                        if (RepairComponent(node.NodeFullPath, targetNodePathObj, com, out var errlog))
+                        if (RepairComponent(node.NodeFullPath, node.NodeIdx, targetNodePathObj, com, out var errlog))
                         {
                             NeedRepair.Add(new ValueTuple<string, string>($"{node.NodeFullPath}[{node.NodeIdx}]", $"{com.type}[{com.ComIdxNum}]"));
                             DirtyCount++;
@@ -453,7 +448,6 @@ public class AxiProjectToolsStatistics : EditorWindow
             sb.AppendLine($"{val.Item1}=>{val.Item2}");
         }
         Debug.Log($"{sb}");
-
 
         File.WriteAllText("Assets/AxiNeedRepair.txt", sb.ToString());
     }
@@ -501,7 +495,7 @@ public class AxiProjectToolsStatistics : EditorWindow
         return targetNodePathObj;
     }
 
-    static bool RepairComponent(string NodePath, GameObject targetNodePathObj, AxiStatistics_Node_Component comdata, out List<string> Errlog)
+    static bool RepairComponent(string NodePath,int NodeIdx, GameObject targetNodePathObj, AxiStatistics_Node_Component comdata, out List<string> Errlog)
     {
         Errlog = new List<string>();
         string err;
@@ -511,21 +505,49 @@ public class AxiProjectToolsStatistics : EditorWindow
             Rigidbody2D rg2d = GetCompnentById<Rigidbody2D>(targetNodePathObj, comdata);
             if (rg2d == null)
             {
-                err = $"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] == null";
+                err = $"[Repair]{NodePath}[{NodeIdx}]=> Rigidbody2D[{comdata.ComIdxNum}] == null";
                 Debug.LogError(err);
                 Errlog.Add(err);
                 Dirty = false;
             }
-            if (rg2d.simulated != comdata.simulated)
+
+            /*
+与新版Unity的差异​
+​无BodyType选项​：Unity 4.6.7中所有Rigidbody2D默认等效于新版的Dynamic类型（受重力影响），但无法设置为Static或Kinematic。
+​无Simulated选项​：只要物体启用了Rigidbody2D组件且Gravity Scale > 0，就会受重力作用。
+
+            所以，一旦老版本gravityScale > 0,就受重力作用，直接设置新版本这边：simulated = true;bodyType = RigidbodyType2D.Dynamic;
+             */
+
+
+            if (rg2d.gravityScale != comdata.gravityScale)
+            {
+                Debug.Log($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] simulated:{rg2d.gravityScale} != :{comdata.gravityScale}  rg2d.bodyType => {rg2d.bodyType} ");
+
+                rg2d.gravityScale = comdata.gravityScale;
+                Dirty = true;
+            }
+
+            if (rg2d.gravityScale > 0 && (!rg2d.simulated || rg2d.bodyType != RigidbodyType2D.Dynamic))
             {
                 Debug.Log($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] simulated:{rg2d.simulated} != :{comdata.simulated}  rg2d.bodyType => {rg2d.bodyType} ");
+
+                rg2d.simulated = true;
+                rg2d.bodyType = RigidbodyType2D.Dynamic;
                 Dirty = true;
             }
-            else if (rg2d.bodyType == RigidbodyType2D.Static)
-            {
-                Debug.Log($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] simulated:{rg2d.simulated} but  rg2d.bodyType => {rg2d.bodyType} ");
-                Dirty = true;
-            }
+
+            //if (rg2d.simulated != comdata.simulated)
+            //{
+            //    Debug.Log($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] simulated:{rg2d.simulated} != :{comdata.simulated}  rg2d.bodyType => {rg2d.bodyType} ");
+            //    Dirty = true;
+            //}
+
+            //else if (rg2d.bodyType == RigidbodyType2D.Static)
+            //{
+            //    Debug.Log($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] simulated:{rg2d.simulated} but  rg2d.bodyType => {rg2d.bodyType} ");
+            //    Dirty = true;
+            //}
         }
         else if (comdata.type == typeof(BoxCollider2D).ToString())
         {
