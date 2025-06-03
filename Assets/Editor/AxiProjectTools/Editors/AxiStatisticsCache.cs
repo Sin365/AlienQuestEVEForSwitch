@@ -25,16 +25,28 @@ public class AxiStatisticsDatas
 public class AxiStatistics_Node
 {
 	public string Name;
-	public string NodeFullPath;
-    /// <summary>
-    /// 表示相同路径只有一个
-    /// </summary>
-    public bool NodeIdxOnlyOne;
+    public List<AxiStatistics_Node_Link> link = new List<AxiStatistics_Node_Link>();
+    public int LinkHash;
+    public string LinkFullStr;
+    //public string NodeFullPath;
+    //   /// <summary>
+    //   /// 表示相同路径只有一个
+    //   /// </summary>
+    //   public bool NodeIdxOnlyOne;
     /// <summary>
     /// 表示相同路径是第几个下标
     /// </summary>
-    public int NodeIdx;
+    //public int NodeIdx;
     public List<AxiStatistics_Node_Component> components = new List<AxiStatistics_Node_Component>();
+}
+
+[Serializable]
+public class AxiStatistics_Node_Link
+{
+    public string Name;
+    public bool OnlyOne;
+    public int Idx;
+    public int NodeHash;
 }
 
 [Serializable]
