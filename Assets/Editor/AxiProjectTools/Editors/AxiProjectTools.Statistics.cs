@@ -273,6 +273,7 @@ public class AxiProjectToolsStatistics : EditorWindow
     public static void RepairRigBodyByStatistics()
     {
         List<string> errLog = new List<string>();
+        List<string> doneLog = new List<string>();
         List<ValueTuple<string, string>> NeedRepair = new List<(string, string)>();
         List<ValueTuple<string, string>> FinishRepair = new List<(string, string)>();
         string CurrScenePath = string.Empty;
@@ -421,7 +422,9 @@ public class AxiProjectToolsStatistics : EditorWindow
                 if (DirtyCount > 0)
                 {
                     Debug.Log($"[Repair][预制体处理]{targetpath}共{DirtyCount}个需要处理");
-                    //PrefabUtility.SaveAsPrefabAsset(obj, targetpath);
+                    PrefabUtility.SaveAsPrefabAsset(obj, targetpath);
+                    string donestr = $"[Repair][预制体处理成功]{targetpath},共{DirtyCount}个";
+                    doneLog.Add(donestr);
                 }
 
                 GameObject.DestroyImmediate(obj);
@@ -434,6 +437,11 @@ public class AxiProjectToolsStatistics : EditorWindow
 
         StringBuilder sb = new StringBuilder();
         sb.AppendLine("[Repair][统计]:");
+        sb.AppendLine("----处理成功----");
+        foreach (var val in doneLog.OrderBy(w => w))
+        {
+            sb.AppendLine(val);
+        }
         sb.AppendLine("----异常统计----");
         foreach (var val in errLog.OrderBy(w => w))
         {
@@ -542,6 +550,12 @@ public class AxiProjectToolsStatistics : EditorWindow
                     Debug.Log($"[Repair]{NodePath} BoxCollider2D[{comdata.ComIdxNum}] => offset:{bc.offset} != center{comdata.center} ");
                     //bc.offset = comdata.center;
                     Dirty = true;
+                }
+
+                if (Dirty)
+                {
+                    bc.size = comdata.size;
+                    bc.offset = comdata.center;
                 }
             }
         }
