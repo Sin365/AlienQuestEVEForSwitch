@@ -22,22 +22,45 @@ public class AxiProjectToolsStatistics : EditorWindow
     }
 
 
-    static int GetNodeDataHash(Transform trans)
+    // 添加Hierarchy右键菜单项
+    [MenuItem("GameObject/AxiStatistics/GetAxiNodeHash", false, 10)]
+    public static void GetAxiNodeHash()
+    {
+        // 获取当前右键选中的Transform
+        Transform selectedTransform = Selection.activeTransform;
+        if (selectedTransform != null)
+        {
+            Debug.Log("选中的对象"+selectedTransform.name+",Hash=>"+ GetNodeDataHash(selectedTransform,true));
+        }
+    }
+
+    static int GetNodeDataHash(Transform trans,bool bLog = false)
     {
         long hashplus = 0;
-
         hashplus += trans.position.GetHashCode();
-        hashplus += trans.rotation.GetHashCode();
         hashplus += trans.localPosition.GetHashCode();
-        hashplus += trans.localRotation.GetHashCode();
+
 
 #if UNITY_2017_1_OR_NEWER
         int count = trans.childCount;
 #else
         int count = trans.GetChildCount();
 #endif
-
         hashplus += count;
+        for  (int i = 0; i < count; i++)
+        {
+            hashplus += trans.GetChild(i).name.GetHashCode();
+        }
+
+
+        if (bLog)
+        {
+            //Debug.Log("trans.position.GetHashCode()=>" + trans.position.GetHashCode());
+            //Debug.Log("trans.localPosition.GetHashCode()=>" + trans.localPosition.GetHashCode());
+            //Debug.Log("childCount =>" + count);
+            //Debug.Log("hashplus =>" + hashplus);
+            //Debug.Log("hashplus.GetHashCode() =>" + hashplus.GetHashCode());
+        }
 
         return hashplus.GetHashCode();
     }
@@ -62,7 +85,7 @@ public class AxiProjectToolsStatistics : EditorWindow
         {
             linkstr += "/";
             linkstr += node.Name;
-            linkstr += "["+node.Idx+"]";
+            linkstr += "[" + node.Idx + "]";
         }
         return linkstr;
     }
@@ -77,33 +100,9 @@ public class AxiProjectToolsStatistics : EditorWindow
         }
         AxiStatisticsDatas rootData = dictTempData[rootKey];
 
-        //GameObject lastgobj = lastcom.gameObject;
-        //string lastcomName = lastgobj.name;
-        //int allNodeNameCount = 0;
-        //int thisNodeIdx = -1;
-        //bool bNodeIdxOnlyOne;
-
         List<AxiStatistics_Node_Link> link = new List<AxiStatistics_Node_Link>();
         if (lastcom.transform.parent != null)
         {
-            //#if UNITY_2017_1_OR_NEWER
-            //            int count = lastcom.transform.parent.childCount;
-            //#else
-            //            int count = lastcom.transform.parent.GetChildCount();
-            //#endif
-            //            for (int i = 0; i < count; i++)
-            //            {
-            //                GameObject checkGobj = lastcom.transform.parent.GetChild(i).gameObject;
-            //                if (checkGobj.name == lastcomName)
-            //                {
-            //                    allNodeNameCount++;
-            //                    if (checkGobj == lastgobj)
-            //                        thisNodeIdx = allNodeNameCount - 1;
-            //                }
-            //            }
-            //            bNodeIdxOnlyOne = allNodeNameCount <= 1;
-
-
             Transform currNode = lastcom.transform;
             while (currNode != null)
             {
@@ -135,7 +134,7 @@ public class AxiProjectToolsStatistics : EditorWindow
                     {
                         thisNameAllCount++;
                         if (checkGobj == currNode.gameObject)
-                        { 
+                        {
                             thisNodeIdx = thisNameAllCount - 1;
                             bFind = true;
                         }
@@ -287,7 +286,7 @@ public class AxiProjectToolsStatistics : EditorWindow
     public static void StatisticsCollider<T>() where T : Component
     {
         AxiProjectTools.GoTAxiProjectToolsSence();
-        //ComType2GUID.Clear();
+
         string[] sceneGuids = AssetDatabase.FindAssets("t:scene");
         foreach (string guid in sceneGuids)
         {
@@ -320,7 +319,6 @@ public class AxiProjectToolsStatistics : EditorWindow
                 LoopPrefabNode<T>(0, path, path, node, 0);
 
         }
-
         string[] prefabGuids = AssetDatabase.FindAssets("t:Prefab");
         foreach (string guid in prefabGuids)
         {
@@ -375,7 +373,6 @@ public class AxiProjectToolsStatistics : EditorWindow
 
 #if UNITY_2017_1_OR_NEWER
     [MenuItem("Axibug移植工具/Statistics/[2]通过记录，对组件进行修补")]
-
     public static void RepairRigBodyByStatistics()
     {
         List<string> errLog = new List<string>();
@@ -441,7 +438,12 @@ public class AxiProjectToolsStatistics : EditorWindow
                 int DirtyCount = 0;
                 foreach (var node in cache.nodes)
                 {
-                    GameObject targetNodePathObj = GetNodeByLink(node.link);
+                    GameObject targetNodePathObj = GetNodeByLink(cache.FullPath, node.link, out string errStr);
+                    if (targetNodePathObj == null)
+                    {
+                        errLog.Add(errStr);
+                        continue;
+                    }
 
                     /*
                     string targetNodePath = node.NodeFullPath.Substring(cache.FullPath.Length, node.NodeFullPath.Length - cache.FullPath.Length);
@@ -461,7 +463,7 @@ public class AxiProjectToolsStatistics : EditorWindow
                     {
                         if (RepairComponent(node.LinkFullStr, targetNodePathObj, com, out var errlog))
                         {
-                            NeedRepair.Add(new ValueTuple<string, string>($"{node.LinkFullStr}", $"{com.type}[{com.ComIdxNum}]"));
+                            NeedRepair.Add(new ValueTuple<string, string>($"{cache.FullPath}:{node.LinkFullStr}", $"{com.type}[{com.ComIdxNum}]"));
                             DirtyCount++;
                         }
                         errLog.AddRange(errlog);
@@ -508,8 +510,13 @@ public class AxiProjectToolsStatistics : EditorWindow
                 int DirtyCount = 0;
                 foreach (var node in cache.nodes)
                 {
-                    GameObject targetNodePathObj = GetNodeByLink(node.link, obj);
+                    GameObject targetNodePathObj = GetNodeByLink(cache.FullPath, node.link, out string errStr, obj);
 
+                    if (targetNodePathObj == null)
+                    {
+                        errLog.Add(errStr);
+                        continue;
+                    }
                     //if (node.NodeFullPath == targetpath + "/" + Path.GetFileNameWithoutExtension(targetpath))
                     //{
                     //    //预制体自己就是目标
@@ -531,9 +538,9 @@ public class AxiProjectToolsStatistics : EditorWindow
 
                     foreach (var com in node.components)
                     {
-                        if (RepairComponent(node.LinkFullStr,targetNodePathObj, com, out var errlog))
+                        if (RepairComponent(node.LinkFullStr, targetNodePathObj, com, out var errlog))
                         {
-                            NeedRepair.Add(new ValueTuple<string, string>($"{node.LinkFullStr}", $"{com.type}[{com.ComIdxNum}]"));
+                            NeedRepair.Add(new ValueTuple<string, string>($"{cache.FullPath}:{node.LinkFullStr}", $"{com.type}[{com.ComIdxNum}]"));
                             DirtyCount++;
                         }
 
@@ -576,139 +583,165 @@ public class AxiProjectToolsStatistics : EditorWindow
     }
 
 
-//    static GameObject GetNodeByIdx(AxiStatistics_Node nodedata, string targetNodePath, GameObject root = null)
-//    {
-//        GameObject targetNodePathObj;
+    //    static GameObject GetNodeByIdx(AxiStatistics_Node nodedata, string targetNodePath, GameObject root = null)
+    //    {
+    //        GameObject targetNodePathObj;
 
-//        if (root == null)
-//            targetNodePathObj = GameObject.Find(targetNodePath);
-//        else
-//            targetNodePathObj = root.transform.Find(targetNodePath)?.gameObject;
+    //        if (root == null)
+    //            targetNodePathObj = GameObject.Find(targetNodePath);
+    //        else
+    //            targetNodePathObj = root.transform.Find(targetNodePath)?.gameObject;
 
-//        if (targetNodePathObj == null)
-//            return null;
+    //        if (targetNodePathObj == null)
+    //            return null;
 
-//        string targetName = targetNodePathObj.name;
-//        int currIdx = -1;
-//        if (!nodedata.NodeIdxOnlyOne)
-//        {
-//            if (targetNodePathObj.transform.parent != null)
-//            {
-//#if UNITY_2017_1_OR_NEWER
-//                int count = targetNodePathObj.transform.parent.childCount;
-//#else
-//            int count = targetNodePathObj.transform.parent.GetChildCount();
-//#endif
-//                for (int i = 0; i < count; i++)
-//                {
-//                    GameObject checkGobj = targetNodePathObj.transform.parent.GetChild(i).gameObject;
-//                    if (checkGobj.name == targetName)
-//                    {
-//                        currIdx++;
-//                        if (nodedata.NodeIdx == currIdx)
-//                        {
-//                            targetNodePathObj = checkGobj;
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//        }
+    //        string targetName = targetNodePathObj.name;
+    //        int currIdx = -1;
+    //        if (!nodedata.NodeIdxOnlyOne)
+    //        {
+    //            if (targetNodePathObj.transform.parent != null)
+    //            {
+    //#if UNITY_2017_1_OR_NEWER
+    //                int count = targetNodePathObj.transform.parent.childCount;
+    //#else
+    //            int count = targetNodePathObj.transform.parent.GetChildCount();
+    //#endif
+    //                for (int i = 0; i < count; i++)
+    //                {
+    //                    GameObject checkGobj = targetNodePathObj.transform.parent.GetChild(i).gameObject;
+    //                    if (checkGobj.name == targetName)
+    //                    {
+    //                        currIdx++;
+    //                        if (nodedata.NodeIdx == currIdx)
+    //                        {
+    //                            targetNodePathObj = checkGobj;
+    //                            break;
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //        }
 
-//        return targetNodePathObj;
-//    }
+    //        return targetNodePathObj;
+    //    }
 
 
-    static GameObject GetNodeByLink(List<AxiStatistics_Node_Link> link, GameObject root = null)
+    static GameObject GetNodeByLink(string rootPath, List<AxiStatistics_Node_Link> linklist, out string errStr, GameObject PrefabRoot = null)
     {
         List<AxiStatistics_Node_Link> temp_useddlink = new List<AxiStatistics_Node_Link>();
-        if (link.Count < 1)
+        if (linklist.Count < 1)
         {
-            Debug.LogError($"[Repair]{GetNodeLinkListStr(link)} =>  null");
+            errStr = $"[Repair] Link 为空";
+            Debug.LogError(errStr);
             return null;
         }
-        GameObject currNode;
 
-        if (root == null)
-            currNode = GameObject.Find(link[0].Name);
+        temp_useddlink.Add(linklist[0]);
+        GameObject currRoot;
+
+        if (PrefabRoot == null)
+            currRoot = GameObject.Find(linklist[0].Name);
         else
-            currNode = root.transform.Find(link[0].Name)?.gameObject;
-
-        if (currNode == null)
-            return null;
-
-        temp_useddlink.Add(link[0]);
-
-        for (int link_i = 1; link_i < link.Count; link_i++)
         {
+            currRoot = PrefabRoot;
+            //currRoot = PrefabRoot.transform.Find(linklist[0].Name)?.gameObject;
+        }
+
+        if (currRoot == null)
+        {
+            errStr = $"[Repair] 根节点找不到{rootPath}:{GetNodeLinkListStr(linklist)} =>  null";
+            Debug.LogError(errStr);
+            return null;
+        }
+
+        for (int link_i = 1; link_i < linklist.Count; link_i++)
+        {
+            AxiStatistics_Node_Link targetLink = linklist[link_i];
+            temp_useddlink.Add(targetLink);
             GameObject findNode = null;
 #if UNITY_2017_1_OR_NEWER
-            int count = currNode.transform.childCount;
+            int count = currRoot.transform.childCount;
 #else
             int count = currNode.transform.GetChildCount();
 #endif
 
-            if (link[link_i].OnlyOne)
+            if (targetLink.OnlyOne)
             {
                 for (int i = 0; i < count; i++)
                 {
-                    GameObject checkGobj = currNode.transform.GetChild(i).gameObject;
-                    if (checkGobj.name == currNode.name)
+                    GameObject checkGobj = currRoot.transform.GetChild(i).gameObject;
+                    if (checkGobj.name == targetLink.Name)
                     {
                         findNode = checkGobj;
                         break;
                     }
                 }
             }
-
-            Dictionary<int, GameObject> tempHash2Node = new Dictionary<int, GameObject>();
-            List<GameObject> tempGobjList = new List<GameObject>();
-            bool HashDrity = false;
-            for (int i = 0; i < count; i++)
+            else
             {
-                GameObject checkGobj = currNode.transform.GetChild(i).gameObject;
-                if (checkGobj.name == currNode.name)
+
+                Dictionary<int, GameObject> tempHash2Node = new Dictionary<int, GameObject>();
+                List<GameObject> tempGobjList = new List<GameObject>();
+                bool HashDrity = false;
+                for (int i = 0; i < count; i++)
                 {
-                    int temphash = GetNodeDataHash(checkGobj.transform);
-                    if (!tempHash2Node.ContainsKey(temphash))
+                    GameObject checkGobj = currRoot.transform.GetChild(i).gameObject;
+                    if (checkGobj.name == targetLink.Name)
                     {
-                        tempHash2Node.Add(GetNodeDataHash(checkGobj.transform), checkGobj);
+                        int temphash = GetNodeDataHash(checkGobj.transform);
+                        if (!tempHash2Node.ContainsKey(temphash))
+                        {
+                            tempHash2Node.Add(GetNodeDataHash(checkGobj.transform), checkGobj);
+                        }
+                        else
+                        {
+                            HashDrity = true;
+                        }
+                        tempGobjList.Add(checkGobj);
+                    }
+                }
+
+                //Hash严格模式
+                if (!HashDrity && tempHash2Node.TryGetValue(targetLink.NodeHash, out var val))
+                {
+                    findNode = val;
+                }
+                //下标模式
+                else
+                {
+                    if (targetLink.Idx < 0 || tempGobjList.Count == 0 || (tempGobjList.Count != 0 && targetLink.Idx >= tempGobjList.Count))
+                    {
+                        errStr = $"[Repair]link 下标模式 找不到=>{rootPath}:{GetNodeLinkListStr(temp_useddlink)}[{targetLink.Idx}] => 完整链路{rootPath}:{GetNodeLinkListStr(linklist)}";
+                        Debug.LogError(errStr);
+                        return null;
                     }
                     else
                     {
-                        HashDrity = true;
+                        findNode = tempGobjList[targetLink.Idx];
                     }
-                    tempGobjList.Add(checkGobj);
                 }
             }
 
-            //Hash严格模式
-            if (!HashDrity && tempHash2Node.TryGetValue(link[link_i].NodeHash, out var val))
-            {
-                findNode = val;
-            }
-            //下标模式
-            else
-            {
-                findNode = tempGobjList[link[link_i].Idx];
-            }
 
-            temp_useddlink.Add(link[link_i]);
-            currNode = findNode;
-            if (currNode == null)
+            currRoot = findNode;
+            if (currRoot == null)
                 break;
         }
 
-        if (currNode == null)
-        { 
-            Debug.LogError($"[Repair]link 找不到[{GetNodeLinkListStr(temp_useddlink)}] => 完整链路{GetNodeLinkListStr(link)}");
+        if (currRoot == null)
+        {
+            errStr = $"[Repair]link 找不到[{rootPath}:{GetNodeLinkListStr(temp_useddlink)}] => 完整链路{rootPath}:{GetNodeLinkListStr(linklist)}";
+            Debug.LogError(errStr);
             return null;
         }
         else
-            return currNode;
+        {
+            errStr = string.Empty;
+            return currRoot;
+        }
     }
 
-    static bool RepairComponent(string NodePath,GameObject targetNodePathObj, AxiStatistics_Node_Component comdata, out List<string> Errlog)
+    static bool RepairComponent(string NodePath, GameObject targetNodePathObj, AxiStatistics_Node_Component comdata, out List<string> Errlog)
     {
         Errlog = new List<string>();
         string err;
