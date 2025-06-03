@@ -564,13 +564,13 @@ public class AxiProjectToolsStatistics : EditorWindow
                 if (bc.size != comdata.size)
                 {
                     Debug.Log($"[Repair]{NodePath} BoxCollider2D[{comdata.ComIdxNum}] => size:{bc.size} != {comdata.size} ");
-                    //bc.size = comdata.size;
+                    bc.size = comdata.size;
                     Dirty = true;
                 }
                 if (bc.offset != comdata.center)
                 {
                     Debug.Log($"[Repair]{NodePath} BoxCollider2D[{comdata.ComIdxNum}] => offset:{bc.offset} != center{comdata.center} ");
-                    //bc.offset = comdata.center;
+                    bc.offset = comdata.center;
                     Dirty = true;
                 }
 
