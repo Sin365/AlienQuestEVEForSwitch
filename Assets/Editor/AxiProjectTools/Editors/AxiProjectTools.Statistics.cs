@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class AxiProjectToolsStatistics : EditorWindow
@@ -356,6 +357,18 @@ public class AxiProjectToolsStatistics : EditorWindow
                 if (DirtyCount > 0)
                 {
                     Debug.Log($"[Repair][场景处理]{cache.FullPath}共{DirtyCount}个需要处理");
+
+
+                    // 获取当前打开的场景
+                    var activeScene = EditorSceneManager.GetActiveScene();
+
+                    // 保存场景
+                    EditorSceneManager.SaveScene(activeScene);
+
+                    Debug.Log("场景已保存: " + activeScene.path);
+                    string donestr = $"[Repair][场景处理成功]{targetpath},共{DirtyCount}个";
+                    doneLog.Add(donestr);
+
                 }
             }
             else if (cache.type == 1)
