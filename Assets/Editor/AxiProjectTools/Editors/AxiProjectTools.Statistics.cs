@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using UnityEditor;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class AxiProjectToolsStatistics : EditorWindow
@@ -271,6 +272,7 @@ public class AxiProjectToolsStatistics : EditorWindow
 
     public static void RepairRigBodyByStatistics()
     {
+        List<string> errLog = new List<string>();
         List<ValueTuple<string, string>> NeedRepair = new List<(string, string)>();
         List<ValueTuple<string, string>> FinishRepair = new List<(string, string)>();
         string CurrScenePath = string.Empty;
@@ -339,17 +341,20 @@ public class AxiProjectToolsStatistics : EditorWindow
 
                     if (targetNodePathObj == null)
                     {
-                        Debug.LogError("[Repair]" + targetNodePath + "找不到对应节点");
+                        string err = "[Repair]" + node.NodeFullPath + "找不到对应节点";
+                        errLog.Add(err);
+                        Debug.LogError(err);
                         continue;
                     }
 
                     foreach (var com in node.components)
                     {
-                        if (RepairComponent(node.NodeFullPath, targetNodePathObj, com))
+                        if (RepairComponent(node.NodeFullPath, targetNodePathObj, com, out var errlog))
                         {
                             NeedRepair.Add(new ValueTuple<string, string>($"{node.NodeFullPath}[{node.NodeIdx}]", $"{com.type}[{com.ComIdxNum}]"));
                             DirtyCount++;
                         }
+                        errLog.AddRange(errlog);
                     }
                 }
                 if (DirtyCount > 0)
@@ -403,11 +408,13 @@ public class AxiProjectToolsStatistics : EditorWindow
 
                     foreach (var com in node.components)
                     {
-                        if (RepairComponent(node.NodeFullPath, targetNodePathObj, com))
+                        if (RepairComponent(node.NodeFullPath, targetNodePathObj, com, out var errlog))
                         {
                             NeedRepair.Add(new ValueTuple<string, string>($"{node.NodeFullPath}[{node.NodeIdx}]", $"{com.type}[{com.ComIdxNum}]"));
                             DirtyCount++;
                         }
+
+                        errLog.AddRange(errlog);
                     }
                 }
 
@@ -427,6 +434,11 @@ public class AxiProjectToolsStatistics : EditorWindow
 
         StringBuilder sb = new StringBuilder();
         sb.AppendLine("[Repair][统计]:");
+        sb.AppendLine("----异常统计----");
+        foreach (var val in errLog.OrderBy(w => w))
+        {
+            sb.AppendLine(val);
+        }
         sb.AppendLine("----需要处理----");
         foreach (var val in NeedRepair.OrderBy(w => w.Item1))
         {
@@ -439,11 +451,11 @@ public class AxiProjectToolsStatistics : EditorWindow
     }
 
 
-    static GameObject GetNodeByIdx(AxiStatistics_Node nodedata, string targetNodePath,GameObject root = null)
+    static GameObject GetNodeByIdx(AxiStatistics_Node nodedata, string targetNodePath, GameObject root = null)
     {
         GameObject targetNodePathObj;
-        
-        if(root == null)
+
+        if (root == null)
             targetNodePathObj = GameObject.Find(targetNodePath);
         else
             targetNodePathObj = root.transform.Find(targetNodePath)?.gameObject;
@@ -481,15 +493,19 @@ public class AxiProjectToolsStatistics : EditorWindow
         return targetNodePathObj;
     }
 
-    static bool RepairComponent(string NodePath, GameObject targetNodePathObj, AxiStatistics_Node_Component comdata)
+    static bool RepairComponent(string NodePath, GameObject targetNodePathObj, AxiStatistics_Node_Component comdata, out List<string> Errlog)
     {
+        Errlog = new List<string>();
+        string err;
         bool Dirty = false;
         if (comdata.type == typeof(Rigidbody2D).ToString())
         {
             Rigidbody2D rg2d = GetCompnentById<Rigidbody2D>(targetNodePathObj, comdata);
             if (rg2d == null)
             {
-                Debug.LogError($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] == null");
+                err = $"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] == null";
+                Debug.LogError(err);
+                Errlog.Add(err);
                 Dirty = false;
             }
             if (rg2d.simulated != comdata.simulated)
@@ -508,7 +524,9 @@ public class AxiProjectToolsStatistics : EditorWindow
             BoxCollider2D bc = GetCompnentById<BoxCollider2D>(targetNodePathObj, comdata);
             if (bc == null)
             {
-                Debug.LogError($"[Repair]{NodePath}=> BoxCollider2D[{comdata.ComIdxNum}] == null");
+                err = $"[Repair]{NodePath}=> BoxCollider2D[{comdata.ComIdxNum}] == null";
+                Debug.LogError(err);
+                Errlog.Add(err);
                 Dirty = false;
             }
             else
