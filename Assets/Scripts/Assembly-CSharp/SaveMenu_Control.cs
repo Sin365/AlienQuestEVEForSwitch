@@ -73,7 +73,7 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 		text_Yes.color = color;
 		text.color = color;
 		pos_Target = pos_Yes.position;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Language_Num") == 1)
+		if (AxiPlayerPrefs.GetInt("Language_Num") == 1)
 		{
 			text_Question.text = Lang_MI.TitleMenu(7, 1);
 			text_Yes.text = Lang_MI.QuitText(1, 1);
@@ -269,7 +269,7 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 	private void SaveGame()
 	{
 		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(info_SaveComplete) as global::UnityEngine.GameObject;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Language_Num") == 1)
+		if (AxiPlayerPrefs.GetInt("Language_Num") == 1)
 		{
 			string start = Lang_MI.TitleMenu(8, 1);
 			gameObject.GetComponent<Info_Save_Completed>().Set_Start(start);

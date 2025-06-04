@@ -148,13 +148,13 @@ public class GunShip : global::UnityEngine.MonoBehaviour
 
 	public void Set_Engine_Volume(float vol)
 	{
-		if (global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume") < 0.4f)
+		if (AxiPlayerPrefs.GetFloat("SoundVolume") < 0.4f)
 		{
 			Sound_Engine_Volume = 0.4f * vol;
 		}
 		else
 		{
-			Sound_Engine_Volume = global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume") * vol;
+			Sound_Engine_Volume = AxiPlayerPrefs.GetFloat("SoundVolume") * vol;
 		}
 	}
 

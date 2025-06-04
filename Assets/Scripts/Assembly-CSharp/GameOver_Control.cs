@@ -33,9 +33,9 @@ public class GameOver_Control : global::UnityEngine.MonoBehaviour
 		BlackFade = global::UnityEngine.GameObject.Find("BlackFade");
 		BlackFade.GetComponent<global::UnityEngine.SpriteRenderer>().enabled = true;
 		global::UnityEngine.Physics2D.IgnoreLayerCollision(25, 25);
-		if (global::UnityEngine.PlayerPrefs.GetInt("H_GameOver_Now") > 0)
+		if (AxiPlayerPrefs.GetInt("H_GameOver_Now") > 0)
 		{
-			H_GameOver_Num = global::UnityEngine.PlayerPrefs.GetInt("H_GameOver_Now");
+			H_GameOver_Num = AxiPlayerPrefs.GetInt("H_GameOver_Now");
 		}
 		if (H_GameOver_Num < 1)
 		{
@@ -45,14 +45,14 @@ public class GameOver_Control : global::UnityEngine.MonoBehaviour
 		{
 			H_GameOver_Num = 5;
 		}
-		global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_" + H_GameOver_Num, 1);
+		AxiPlayerPrefs.SetInt("H_GameOver_" + H_GameOver_Num, 1);
 		if (global::UnityEngine.GameObject.Find("H_GameOver_1") == null && global::UnityEngine.GameObject.Find("H_GameOver_2") == null && global::UnityEngine.GameObject.Find("H_GameOver_3") == null && global::UnityEngine.GameObject.Find("H_GameOver_4") == null && global::UnityEngine.GameObject.Find("H_GameOver_5") == null)
 		{
 			Load_GameOver();
 		}
 		posTarget_1 = new global::UnityEngine.Vector3(global::UnityEngine.Random.Range(-4f, 4f), global::UnityEngine.Random.Range(-4f, 4f), 0f);
 		posTarget_2 = new global::UnityEngine.Vector3(global::UnityEngine.Random.Range(-4f, 4f), global::UnityEngine.Random.Range(-4f, 4f), 0f);
-		if (global::UnityEngine.PlayerPrefs.GetInt("Input_Mode") == 1)
+		if (AxiPlayerPrefs.GetInt("Input_Mode") == 1)
 		{
 			global::UnityEngine.GameObject.Find("Exit_Text").GetComponent<global::UnityEngine.UI.Text>().text = "Press  START Button  to Exit";
 		}

@@ -182,7 +182,7 @@ public class AI_Boss_2 : global::UnityEngine.MonoBehaviour
 		rnd_X = (float)global::UnityEngine.Random.Range(0, 50) * 0.01f;
 		Orig_Speed = (Move_Speed = 20f + rnd_X * 2f);
 		Patrol_Range = 15f + global::UnityEngine.Random.Range(0f, 3f);
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") != 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") != 1)
 		{
 			Penis.enabled = false;
 			Penis_Wet.enabled = false;
@@ -207,7 +207,7 @@ public class AI_Boss_2 : global::UnityEngine.MonoBehaviour
 			return;
 		}
 		Life_Timer += global::UnityEngine.Time.deltaTime;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+		if (AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			CensoredText.enabled = true;
 			CensoredBox.enabled = true;
@@ -1020,7 +1020,7 @@ public class AI_Boss_2 : global::UnityEngine.MonoBehaviour
 		Mon.isInvincible = false;
 		GM.Down_H_After();
 		global::UnityEngine.GameObject.Find("Ani").SendMessage("End_H_Scene");
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") != 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") != 1)
 		{
 			Penis.enabled = false;
 			Penis_Wet.enabled = false;

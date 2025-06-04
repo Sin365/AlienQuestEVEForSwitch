@@ -107,7 +107,7 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 
 	private void Awake()
 	{
-		if (global::UnityEngine.PlayerPrefs.GetFloat("Avg_Fps") > 65f)
+		if (AxiPlayerPrefs.GetFloat("Avg_Fps") > 65f)
 		{
 			global::UnityEngine.QualitySettings.vSyncCount = 0;
 			global::UnityEngine.Application.targetFrameRate = 60;

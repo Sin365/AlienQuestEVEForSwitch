@@ -125,7 +125,7 @@ public class Mon_Index : global::UnityEngine.MonoBehaviour
 			{
 				if (Object_List[i].tag == "CensoredTag")
 				{
-					if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1 && isOnOff)
+					if (AxiPlayerPrefs.GetInt("Censorship") == 1 && isOnOff)
 					{
 						Object_List[i].GetComponent<global::UnityEngine.SpriteRenderer>().enabled = true;
 					}

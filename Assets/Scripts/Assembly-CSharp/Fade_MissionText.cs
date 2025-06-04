@@ -37,7 +37,7 @@ public class Fade_MissionText : global::UnityEngine.MonoBehaviour
 		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		brown_On = txt_1.color;
 		Language_MenuItem component = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>();
-		if (global::UnityEngine.PlayerPrefs.GetInt("Language_Num") > 0)
+		if (AxiPlayerPrefs.GetInt("Language_Num") > 0)
 		{
 			txtTitle.text = component.MissionBriefing(0, 1);
 			txt_1.text = component.MissionBriefing(1, 1);

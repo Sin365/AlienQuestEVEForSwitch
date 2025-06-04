@@ -116,7 +116,7 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 		pos_StatBtn[1] = global::UnityEngine.GameObject.Find("Stat_Add2").GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		pos_StatBtn[2] = global::UnityEngine.GameObject.Find("Stat_Add3").GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		pos_StatBtn[3] = global::UnityEngine.GameObject.Find("Stat_Add4").GetComponent<global::UnityEngine.RectTransform>().localPosition;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Language_Num") == 1)
+		if (AxiPlayerPrefs.GetInt("Language_Num") == 1)
 		{
 			global::UnityEngine.GameObject.Find("Stat_Name").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.CharName(1);
 			global::UnityEngine.GameObject.Find("Exit_text_Quit").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(0, 1);
@@ -893,8 +893,8 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 
 	private void Off_Menu()
 	{
-		global::UnityEngine.PlayerPrefs.SetFloat("SoundVolume", GM.Option_Volume[0]);
-		global::UnityEngine.PlayerPrefs.SetFloat("MusicVolume", GM.Option_Volume[1]);
+		AxiPlayerPrefs.SetFloat("SoundVolume", GM.Option_Volume[0]);
+		AxiPlayerPrefs.SetFloat("MusicVolume", GM.Option_Volume[1]);
 		GM.Game_Resume();
 		Enabled = false;
 		Sound_List.SendMessage("Sound_MenuOff");
@@ -1840,7 +1840,7 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 		GM.Option_Int[0] = num;
 		Sound_List.SendMessage("Sound_Tab");
 		global::UnityEngine.GameObject.Find("SelBorder_BGM").GetComponent<global::UnityEngine.RectTransform>().localPosition = global::UnityEngine.GameObject.Find("pos_Opt" + (3 + GM.Option_Int[0])).GetComponent<global::UnityEngine.RectTransform>().localPosition;
-		global::UnityEngine.PlayerPrefs.SetInt("SelBGM", num);
+		AxiPlayerPrefs.SetInt("SelBGM", num);
 		global::UnityEngine.GameObject.Find("BGM_List").GetComponent<BGM_Control>().Play(num);
 	}
 
@@ -1849,14 +1849,14 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 		GM.Option_Int[1] = num;
 		Sound_List.SendMessage("Sound_Tab");
 		global::UnityEngine.GameObject.Find("SelBorder_Window").GetComponent<global::UnityEngine.RectTransform>().localPosition = global::UnityEngine.GameObject.Find("pos_Opt" + (9 + GM.Option_Int[1])).GetComponent<global::UnityEngine.RectTransform>().localPosition;
-		if (num == 2 && global::UnityEngine.PlayerPrefs.GetInt("WindowSize") != 1920)
+		if (num == 2 && AxiPlayerPrefs.GetInt("WindowSize") != 1920)
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("WindowSize", 1920);
+			AxiPlayerPrefs.SetInt("WindowSize", 1920);
 			global::UnityEngine.Screen.SetResolution(1920, 1080, true);
 		}
-		else if (num == 1 && global::UnityEngine.PlayerPrefs.GetInt("WindowSize") != 1280)
+		else if (num == 1 && AxiPlayerPrefs.GetInt("WindowSize") != 1280)
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("WindowSize", 1280);
+			AxiPlayerPrefs.SetInt("WindowSize", 1280);
 			global::UnityEngine.Screen.SetResolution(1280, 720, false);
 		}
 	}
@@ -1866,7 +1866,7 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 		GM.Option_Int[2] = num;
 		Sound_List.SendMessage("Sound_Tab");
 		global::UnityEngine.GameObject.Find("SelBorder_Censorship").GetComponent<global::UnityEngine.RectTransform>().localPosition = global::UnityEngine.GameObject.Find("pos_Opt" + (11 + GM.Option_Int[2])).GetComponent<global::UnityEngine.RectTransform>().localPosition;
-		global::UnityEngine.PlayerPrefs.SetInt("Censorship", num);
+		AxiPlayerPrefs.SetInt("Censorship", num);
 	}
 
 	private void Select_Hscene(int num)
@@ -1874,7 +1874,7 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 		GM.Option_Int[3] = num;
 		Sound_List.SendMessage("Sound_Tab");
 		global::UnityEngine.GameObject.Find("SelBorder_Hscene").GetComponent<global::UnityEngine.RectTransform>().localPosition = global::UnityEngine.GameObject.Find("pos_Opt" + (13 + num)).GetComponent<global::UnityEngine.RectTransform>().localPosition;
-		global::UnityEngine.PlayerPrefs.SetInt("On_Hscene", num);
+		AxiPlayerPrefs.SetInt("On_Hscene", num);
 		global::UnityEngine.Debug.Log("Select_Hscene : " + num);
 	}
 
@@ -1883,7 +1883,7 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 		GM.Option_Int[4] = num;
 		Sound_List.SendMessage("Sound_Tab");
 		global::UnityEngine.GameObject.Find("SelBorder_HealthBar").GetComponent<global::UnityEngine.RectTransform>().localPosition = global::UnityEngine.GameObject.Find("pos_Opt" + (15 + num)).GetComponent<global::UnityEngine.RectTransform>().localPosition;
-		global::UnityEngine.PlayerPrefs.SetInt("On_HealthBar", num);
+		AxiPlayerPrefs.SetInt("On_HealthBar", num);
 		global::UnityEngine.Debug.Log("Select_HealthBar : " + num);
 	}
 

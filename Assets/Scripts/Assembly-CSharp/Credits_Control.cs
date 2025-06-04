@@ -93,13 +93,13 @@ public class Credits_Control : global::UnityEngine.MonoBehaviour
 		SR_Glow_LT.color = new global::UnityEngine.Color(SR_Glow_LT.color.r, SR_Glow_LT.color.g, SR_Glow_LT.color.b, 0f);
 		SR_Glow_RB.color = new global::UnityEngine.Color(SR_Glow_RB.color.r, SR_Glow_RB.color.g, SR_Glow_RB.color.b, 0f);
 		SR_Glow_RB_2.color = new global::UnityEngine.Color(SR_Glow_RB_2.color.r, SR_Glow_RB_2.color.g, SR_Glow_RB_2.color.b, 0f);
-		if (global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume") < 0.6f)
+		if (AxiPlayerPrefs.GetFloat("MusicVolume") < 0.6f)
 		{
 			global::UnityEngine.GameObject.Find("BGM_Credits").GetComponent<UnityEngine.AudioSource>().volume = 0.6f;
 		}
 		else
 		{
-			global::UnityEngine.GameObject.Find("BGM_Credits").GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume");
+			global::UnityEngine.GameObject.Find("BGM_Credits").GetComponent<UnityEngine.AudioSource>().volume = AxiPlayerPrefs.GetFloat("MusicVolume");
 		}
 		global::UnityEngine.GameObject.Find("BGM_Credits").GetComponent<UnityEngine.AudioSource>().Play();
 	}

@@ -285,36 +285,36 @@ public class Custom_Key : global::UnityEngine.MonoBehaviour
 
 	private void Save_UserSetting()
 	{
-		global::UnityEngine.PlayerPrefs.SetInt("KeyConfig_Saved", 1);
+		AxiPlayerPrefs.SetInt("KeyConfig_Saved", 1);
 		for (int i = 0; i < 11; i++)
 		{
 			if (User_Key[i] != global::UnityEngine.KeyCode.None)
 			{
-				global::UnityEngine.PlayerPrefs.SetInt("KeyConfig_" + i, User_Key_Num[i]);
+				AxiPlayerPrefs.SetInt("KeyConfig_" + i, User_Key_Num[i]);
 			}
 			else
 			{
-				global::UnityEngine.PlayerPrefs.SetInt("KeyConfig_" + i, -1);
+				AxiPlayerPrefs.SetInt("KeyConfig_" + i, -1);
 			}
 		}
 	}
 
 	private void Load_UserSetting()
 	{
-		if (global::UnityEngine.PlayerPrefs.GetInt("KeyConfig_Saved") <= 0)
+		if (AxiPlayerPrefs.GetInt("KeyConfig_Saved") <= 0)
 		{
 			return;
 		}
 		for (int i = 0; i < 11; i++)
 		{
-			if (global::UnityEngine.PlayerPrefs.GetInt("KeyConfig_" + i) < 0)
+			if (AxiPlayerPrefs.GetInt("KeyConfig_" + i) < 0)
 			{
 				User_Key[i] = global::UnityEngine.KeyCode.None;
 				User_Key_Num[i] = 0;
 			}
 			else
 			{
-				User_Key_Num[i] = global::UnityEngine.PlayerPrefs.GetInt("KeyConfig_" + i);
+				User_Key_Num[i] = AxiPlayerPrefs.GetInt("KeyConfig_" + i);
 				User_Key[i] = Key[User_Key_Num[i]];
 			}
 		}
@@ -333,7 +333,7 @@ public class Custom_Key : global::UnityEngine.MonoBehaviour
 		bool flag = false;
 		if (User_Key[0] == global::UnityEngine.KeyCode.UpArrow && User_Key[1] == global::UnityEngine.KeyCode.DownArrow && User_Key[2] == global::UnityEngine.KeyCode.LeftArrow && User_Key[3] == global::UnityEngine.KeyCode.RightArrow && User_Key[4] == global::UnityEngine.KeyCode.Z && User_Key[5] == global::UnityEngine.KeyCode.X && User_Key[6] == global::UnityEngine.KeyCode.C && User_Key[7] == global::UnityEngine.KeyCode.Space && User_Key[8] == global::UnityEngine.KeyCode.A && User_Key[9] == global::UnityEngine.KeyCode.S && (User_Key[10] == global::UnityEngine.KeyCode.V || 1 == 0))
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("KeyConfig_Saved", 0);
+			AxiPlayerPrefs.SetInt("KeyConfig_Saved", 0);
 			global::UnityEngine.Debug.Log("Default_Same");
 		}
 	}
@@ -414,7 +414,7 @@ public class Custom_Key : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.GameObject.Find("KeyAssigned_" + (i + 1)).GetComponent<global::UnityEngine.UI.Text>().text = User_Key[i].ToString();
 		}
-		global::UnityEngine.PlayerPrefs.SetInt("KeyConfig_Saved", 0);
+		AxiPlayerPrefs.SetInt("KeyConfig_Saved", 0);
 		global::UnityEngine.GameObject.Find("UI_Name_LBKey").GetComponent<global::UnityEngine.UI.Text>().text = "A";
 		global::UnityEngine.GameObject.Find("UI_Name_RBKey").GetComponent<global::UnityEngine.UI.Text>().text = "S";
 		global::UnityEngine.GameObject.Find("UI_Guide_LB").GetComponent<global::UnityEngine.RectTransform>().sizeDelta = new global::UnityEngine.Vector2(36f, 36f);

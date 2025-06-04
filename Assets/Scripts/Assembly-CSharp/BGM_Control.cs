@@ -36,9 +36,9 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 				Volume[i] = 0f;
 			}
 		}
-		if (global::UnityEngine.PlayerPrefs.GetInt("SelBGM") > 0)
+		if (AxiPlayerPrefs.GetInt("SelBGM") > 0)
 		{
-			BGM_Num = global::UnityEngine.PlayerPrefs.GetInt("SelBGM") - 1;
+			BGM_Num = AxiPlayerPrefs.GetInt("SelBGM") - 1;
 			Sleep_Timer = 0f;
 			BGM_List[BGM_Num].GetComponent<UnityEngine.AudioSource>().Play();
 			BGM_List[BGM_Num].GetComponent<UnityEngine.AudioSource>().loop = true;

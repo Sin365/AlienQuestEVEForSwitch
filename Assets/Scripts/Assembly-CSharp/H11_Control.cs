@@ -125,13 +125,13 @@ public class H11_Control : global::UnityEngine.MonoBehaviour
 		Reset_Cum();
 		Speed = 2f;
 		GetComponent<global::UnityEngine.Animator>().speed = Speed;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") != 1)
+		if (AxiPlayerPrefs.GetInt("Censorship") != 1)
 		{
 			global::UnityEngine.Object.Destroy(CensoredBox.gameObject);
 		}
 		if (global::UnityEngine.GameObject.Find("GameOver_Manager") != null)
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("Gallery_Grayscale_GameOver", 0);
+			AxiPlayerPrefs.SetInt("Gallery_Grayscale_GameOver", 0);
 			BG_Num = global::UnityEngine.Random.Range(1, 5);
 			Set_Option(BG_Num);
 			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>() != null)
@@ -149,7 +149,7 @@ public class H11_Control : global::UnityEngine.MonoBehaviour
 		}
 		else
 		{
-			Set_Option(global::UnityEngine.PlayerPrefs.GetInt("Gallery_Option_GameOver"));
+			Set_Option(AxiPlayerPrefs.GetInt("Gallery_Option_GameOver"));
 			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>() != null)
 			{
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Top = 10f;
@@ -456,7 +456,7 @@ public class H11_Control : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Vignetting_13");
 		}
-		if (global::UnityEngine.PlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
+		if (AxiPlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
 		{
 			if (!global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().enabled)
 			{
@@ -483,7 +483,7 @@ public class H11_Control : global::UnityEngine.MonoBehaviour
 		case 1:
 			Set_BG(0);
 			Set_Tentacle(Mat_Tentacle_1);
-			if (global::UnityEngine.PlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
+			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
 			{
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = -0.05f;
 				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_50");
@@ -496,7 +496,7 @@ public class H11_Control : global::UnityEngine.MonoBehaviour
 		case 2:
 			Set_BG(1);
 			Set_Tentacle(Mat_Tentacle_2);
-			if (global::UnityEngine.PlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
+			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
 			{
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = -0.1f;
 				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_40");
@@ -509,7 +509,7 @@ public class H11_Control : global::UnityEngine.MonoBehaviour
 		case 3:
 			Set_BG(2);
 			Set_Tentacle(Mat_Tentacle_3);
-			if (global::UnityEngine.PlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
+			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
 			{
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = -0.1f;
 				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_30");
@@ -522,7 +522,7 @@ public class H11_Control : global::UnityEngine.MonoBehaviour
 		case 4:
 			Set_BG(3);
 			Set_Tentacle(Mat_Tentacle_4);
-			if (global::UnityEngine.PlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
+			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
 			{
 				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = -0.1f;
 				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_40");

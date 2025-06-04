@@ -175,7 +175,7 @@ public class LV_0_Ship : global::UnityEngine.MonoBehaviour
 				}
 				else
 				{
-					Sound_Engine.volume = global::UnityEngine.Mathf.Lerp(Sound_Engine.volume, global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume"), global::UnityEngine.Time.deltaTime * 0.8f);
+					Sound_Engine.volume = global::UnityEngine.Mathf.Lerp(Sound_Engine.volume, AxiPlayerPrefs.GetFloat("SoundVolume"), global::UnityEngine.Time.deltaTime * 0.8f);
 				}
 				if (!Sound_Engine.isPlaying)
 				{
@@ -184,7 +184,7 @@ public class LV_0_Ship : global::UnityEngine.MonoBehaviour
 			}
 			else if (GM.onGameClear)
 			{
-				Sound_Engine.volume = (1f - global::UnityEngine.GameObject.Find("BlackFade").GetComponent<global::UnityEngine.SpriteRenderer>().color.a) * global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume") * 0.5f;
+				Sound_Engine.volume = (1f - global::UnityEngine.GameObject.Find("BlackFade").GetComponent<global::UnityEngine.SpriteRenderer>().color.a) * AxiPlayerPrefs.GetFloat("SoundVolume") * 0.5f;
 			}
 			return;
 		}
@@ -303,19 +303,19 @@ public class LV_0_Ship : global::UnityEngine.MonoBehaviour
 
 	private void Play_Sound_LandingGear()
 	{
-		Sound_LandingGear.volume = global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume");
+		Sound_LandingGear.volume = AxiPlayerPrefs.GetFloat("SoundVolume");
 		Sound_LandingGear.Play();
 	}
 
 	private void Play_Sound_EngineStop()
 	{
-		Sound_EngineStop.volume = global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume") * 0.7f;
+		Sound_EngineStop.volume = AxiPlayerPrefs.GetFloat("SoundVolume") * 0.7f;
 		Sound_EngineStop.Play();
 	}
 
 	private void Play_Sound_DoorOpen()
 	{
-		Sound_DoorOpen.volume = global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume") * 0.85f;
+		Sound_DoorOpen.volume = AxiPlayerPrefs.GetFloat("SoundVolume") * 0.85f;
 		Sound_DoorOpen.Play();
 	}
 

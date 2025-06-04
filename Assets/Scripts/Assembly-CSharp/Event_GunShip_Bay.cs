@@ -117,7 +117,7 @@ public class Event_GunShip_Bay : global::UnityEngine.MonoBehaviour
 				onFadeOut = true;
 				GunShip.Sound_On = false;
 				GM.Set_FadeOut("GameEnding");
-				global::UnityEngine.PlayerPrefs.SetInt("Escaped", 1);
+				AxiPlayerPrefs.SetInt("Escaped", 1);
 			}
 		}
 		else

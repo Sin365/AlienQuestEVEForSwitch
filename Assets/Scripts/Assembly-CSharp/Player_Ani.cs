@@ -853,7 +853,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			CensoredBreast.enabled = false;
 			return;
 		}
-		if (GM.GameOver && global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+		if (GM.GameOver && AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			if (Censored_Timer > 1.8f)
 			{

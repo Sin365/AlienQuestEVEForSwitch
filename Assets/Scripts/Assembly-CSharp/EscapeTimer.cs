@@ -70,7 +70,7 @@ public class EscapeTimer : global::UnityEngine.MonoBehaviour
 			GM.onEvent = true;
 			GM.onGameClear = true;
 			GM.Set_FadeOut("GameEnding");
-			global::UnityEngine.PlayerPrefs.SetInt("Escaped", 0);
+			AxiPlayerPrefs.SetInt("Escaped", 0);
 		}
 		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.KeypadPlus))
 		{

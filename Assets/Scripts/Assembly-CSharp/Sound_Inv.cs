@@ -15,7 +15,7 @@ public class Sound_Inv : global::UnityEngine.MonoBehaviour
 		}
 		else
 		{
-			base.GetComponent<UnityEngine.AudioSource>().volume = base.GetComponent<UnityEngine.AudioSource>().volume * global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume");
+			base.GetComponent<UnityEngine.AudioSource>().volume = base.GetComponent<UnityEngine.AudioSource>().volume * AxiPlayerPrefs.GetFloat("SoundVolume");
 		}
 	}
 

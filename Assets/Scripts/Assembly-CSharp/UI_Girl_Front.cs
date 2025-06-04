@@ -220,7 +220,7 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
 		color = color_OFF;
 		BotMosaic_2.color = color;
 		botMosaic_.color = color;
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") == 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") == 1)
 		{
 			onMosaic = false;
 			BotMosaic_1.enabled = false;
@@ -253,7 +253,7 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
 		Smr_Hair.material.color = color;
 		Smr_Hair_Front.material.color = color;
 		Smr_Hair_Back.material.color = color;
-		if (!onCloth && global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+		if (!onCloth && AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			global::UnityEngine.SpriteRenderer topCover_Text = TopCover_Text;
 			global::UnityEngine.Color color2 = color;

@@ -225,7 +225,7 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 			}
 			if (global::UnityEngine.Input.GetKeyDown(CK.Jump))
 			{
-				global::UnityEngine.PlayerPrefs.SetInt("Input_Mode", 0);
+				AxiPlayerPrefs.SetInt("Input_Mode", 0);
 				if (Sel_Index == 0)
 				{
 					GM.Resurrect();
@@ -241,7 +241,7 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 			}
 			else if (global::UnityEngine.Input.GetButtonDown("Jump"))
 			{
-				global::UnityEngine.PlayerPrefs.SetInt("Input_Mode", 1);
+				AxiPlayerPrefs.SetInt("Input_Mode", 1);
 				if (Sel_Index == 0)
 				{
 					GM.Resurrect();
@@ -311,23 +311,23 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 		}
 		if (GM.Get_Event(14))
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_Now", 5);
+			AxiPlayerPrefs.SetInt("H_GameOver_Now", 5);
 		}
 		else if (GM.Get_Event(13))
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_Now", 4);
+			AxiPlayerPrefs.SetInt("H_GameOver_Now", 4);
 		}
 		else if (GM.Get_Event(12))
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_Now", 3);
+			AxiPlayerPrefs.SetInt("H_GameOver_Now", 3);
 		}
 		else if (GM.Get_Event(11))
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_Now", 2);
+			AxiPlayerPrefs.SetInt("H_GameOver_Now", 2);
 		}
 		else
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_Now", 1);
+			AxiPlayerPrefs.SetInt("H_GameOver_Now", 1);
 		}
 	}
 
@@ -342,19 +342,19 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 				if (rayIntersection.collider.name == "Pos_GameOver_0")
 				{
 					Sel_Index = 0;
-					global::UnityEngine.PlayerPrefs.SetInt("Input_Mode", 0);
+					AxiPlayerPrefs.SetInt("Input_Mode", 0);
 					GM.Resurrect();
 				}
 				else if (rayIntersection.collider.name == "Pos_GameOver_1")
 				{
 					Sel_Index = 1;
-					global::UnityEngine.PlayerPrefs.SetInt("Input_Mode", 0);
+					AxiPlayerPrefs.SetInt("Input_Mode", 0);
 					Restart();
 				}
 				else if (rayIntersection.collider.name == "Pos_GameOver_2")
 				{
 					Sel_Index = 2;
-					global::UnityEngine.PlayerPrefs.SetInt("Input_Mode", 0);
+					AxiPlayerPrefs.SetInt("Input_Mode", 0);
 					Exit();
 				}
 				else if (rayIntersection.collider.name == "Cum_Icon" && H_Timer > 1.5f && Cum_Timer <= 0f)

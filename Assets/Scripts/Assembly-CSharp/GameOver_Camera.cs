@@ -59,7 +59,7 @@ public class GameOver_Camera : global::UnityEngine.MonoBehaviour
 		MouseMove = new global::UnityEngine.Vector3(0f, 0f, 0f);
 		MousePos = global::UnityEngine.Input.mousePosition;
 		MouseDownPos = base.GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
-		if (global::UnityEngine.PlayerPrefs.GetInt("onClockFps") != 1)
+		if (AxiPlayerPrefs.GetInt("onClockFps") != 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = false;
 		}
@@ -121,14 +121,14 @@ public class GameOver_Camera : global::UnityEngine.MonoBehaviour
 		}
 		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.RightShift))
 		{
-			if (global::UnityEngine.PlayerPrefs.GetInt("onClockFps") == 1)
+			if (AxiPlayerPrefs.GetInt("onClockFps") == 1)
 			{
-				global::UnityEngine.PlayerPrefs.SetInt("onClockFps", 0);
+				AxiPlayerPrefs.SetInt("onClockFps", 0);
 				global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = false;
 			}
 			else
 			{
-				global::UnityEngine.PlayerPrefs.SetInt("onClockFps", 1);
+				AxiPlayerPrefs.SetInt("onClockFps", 1);
 				global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = true;
 			}
 		}

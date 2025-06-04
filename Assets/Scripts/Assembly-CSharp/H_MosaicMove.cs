@@ -10,7 +10,7 @@ public class H_MosaicMove : global::UnityEngine.MonoBehaviour
 
 	private void Start()
 	{
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") != 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") != 1)
 		{
 			onEnabled = true;
 			GetComponent<global::UnityEngine.SpriteRenderer>().enabled = true;

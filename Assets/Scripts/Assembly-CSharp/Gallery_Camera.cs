@@ -61,7 +61,7 @@ public class Gallery_Camera : global::UnityEngine.MonoBehaviour
 		MouseMove = new global::UnityEngine.Vector3(0f, 0f, 0f);
 		MousePos = global::UnityEngine.Input.mousePosition;
 		MouseDownPos = base.GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
-		if (global::UnityEngine.PlayerPrefs.GetInt("onClockFps") != 1)
+		if (AxiPlayerPrefs.GetInt("onClockFps") != 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = false;
 		}
@@ -69,7 +69,7 @@ public class Gallery_Camera : global::UnityEngine.MonoBehaviour
 
 	private void Awake()
 	{
-		if (global::UnityEngine.PlayerPrefs.GetInt("onFrameLimit") == 1)
+		if (AxiPlayerPrefs.GetInt("onFrameLimit") == 1)
 		{
 			global::UnityEngine.QualitySettings.vSyncCount = 0;
 			global::UnityEngine.Application.targetFrameRate = 60;
@@ -98,7 +98,7 @@ public class Gallery_Camera : global::UnityEngine.MonoBehaviour
 				FrameCheck_Timer = 0f;
 			}
 		}
-		if (global::UnityEngine.PlayerPrefs.GetInt("onFrameLimit") != 1 && FrameCheck_Timer > 10f)
+		if (AxiPlayerPrefs.GetInt("onFrameLimit") != 1 && FrameCheck_Timer > 10f)
 		{
 			global::UnityEngine.Debug.Log("OnFrameLimit!!!!!!!");
 		}
@@ -147,14 +147,14 @@ public class Gallery_Camera : global::UnityEngine.MonoBehaviour
 		}
 		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.RightShift))
 		{
-			if (global::UnityEngine.PlayerPrefs.GetInt("onClockFps") == 1)
+			if (AxiPlayerPrefs.GetInt("onClockFps") == 1)
 			{
-				global::UnityEngine.PlayerPrefs.SetInt("onClockFps", 0);
+				AxiPlayerPrefs.SetInt("onClockFps", 0);
 				global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = false;
 			}
 			else
 			{
-				global::UnityEngine.PlayerPrefs.SetInt("onClockFps", 1);
+				AxiPlayerPrefs.SetInt("onClockFps", 1);
 				global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = true;
 			}
 		}

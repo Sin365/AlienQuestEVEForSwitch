@@ -96,7 +96,7 @@ public class Title_Girl : global::UnityEngine.MonoBehaviour
 		pos_EyeHL_R_1 = SR_EyeHL_R_1.transform.localPosition;
 		pos_EyeHL_R_2 = SR_EyeHL_R_2.transform.localPosition;
 		pos_EyeHL_R_3 = SR_EyeHL_R_3.transform.localPosition;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Game_Saved") > 0)
+		if (AxiPlayerPrefs.GetInt("Game_Saved") > 0)
 		{
 			if (global::UnityEngine.Random.Range(0, 10) > 1)
 			{
@@ -108,7 +108,7 @@ public class Title_Girl : global::UnityEngine.MonoBehaviour
 				SR_Mouth_1.enabled = false;
 				SR_Mouth_2.enabled = true;
 			}
-			if (global::UnityEngine.PlayerPrefs.GetInt("TitleCloth_Off") == 1)
+			if (AxiPlayerPrefs.GetInt("TitleCloth_Off") == 1)
 			{
 				onCloth = false;
 			}
@@ -121,7 +121,7 @@ public class Title_Girl : global::UnityEngine.MonoBehaviour
 			Smr_Arm_R1.material = Mtl_Arm_Naked;
 			Smr_Arm_R2.material = Mtl_Arm_Naked;
 			Smr_Hand.material = Mtl_Arm_Naked;
-			if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+			if (AxiPlayerPrefs.GetInt("Censorship") == 1)
 			{
 				CensoredText_1.enabled = true;
 				CensoredText_2.enabled = true;
@@ -136,7 +136,7 @@ public class Title_Girl : global::UnityEngine.MonoBehaviour
 		if (!onCloth)
 		{
 			onCloth = true;
-			global::UnityEngine.PlayerPrefs.SetInt("TitleCloth_Off", 0);
+			AxiPlayerPrefs.SetInt("TitleCloth_Off", 0);
 			global::UnityEngine.GameObject.Find("UI_SoundList").SendMessage("Sound_MenuOff");
 			Smr_Body.material = Mtl_Body_Cloth;
 			Smr_Leg.material = Mtl_Body_Cloth;
@@ -151,7 +151,7 @@ public class Title_Girl : global::UnityEngine.MonoBehaviour
 			return;
 		}
 		onCloth = false;
-		global::UnityEngine.PlayerPrefs.SetInt("TitleCloth_Off", 1);
+		AxiPlayerPrefs.SetInt("TitleCloth_Off", 1);
 		global::UnityEngine.GameObject.Find("UI_SoundList").SendMessage("Sound_MenuOn");
 		Smr_Body.material = Mtl_Body_Naked;
 		Smr_Leg.material = Mtl_Body_Naked;
@@ -159,7 +159,7 @@ public class Title_Girl : global::UnityEngine.MonoBehaviour
 		Smr_Arm_R1.material = Mtl_Arm_Naked;
 		Smr_Arm_R2.material = Mtl_Arm_Naked;
 		Smr_Hand.material = Mtl_Arm_Naked;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+		if (AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			CensoredText_1.enabled = true;
 			CensoredText_2.enabled = true;

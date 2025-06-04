@@ -160,11 +160,11 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				{
 					if (Event_Num > 0)
 					{
-						GetComponent<global::UnityEngine.AudioSource>().volume = global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume") * 0.5f;
+						GetComponent<global::UnityEngine.AudioSource>().volume = AxiPlayerPrefs.GetFloat("SoundVolume") * 0.5f;
 					}
 					else
 					{
-						GetComponent<global::UnityEngine.AudioSource>().volume = global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume");
+						GetComponent<global::UnityEngine.AudioSource>().volume = AxiPlayerPrefs.GetFloat("SoundVolume");
 					}
 					GetComponent<global::UnityEngine.AudioSource>().Play();
 				}
@@ -176,15 +176,15 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				}
 				if (GM.onGameClear)
 				{
-					GetComponent<global::UnityEngine.AudioSource>().volume = (1f - global::UnityEngine.GameObject.Find("BlackFade").GetComponent<global::UnityEngine.SpriteRenderer>().color.a) * global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume") * 0.5f;
+					GetComponent<global::UnityEngine.AudioSource>().volume = (1f - global::UnityEngine.GameObject.Find("BlackFade").GetComponent<global::UnityEngine.SpriteRenderer>().color.a) * AxiPlayerPrefs.GetFloat("SoundVolume") * 0.5f;
 				}
 				else if (GM.GameOver)
 				{
-					GetComponent<global::UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(GetComponent<global::UnityEngine.AudioSource>().volume, global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume") * 0.2f, global::UnityEngine.Time.deltaTime);
+					GetComponent<global::UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(GetComponent<global::UnityEngine.AudioSource>().volume, AxiPlayerPrefs.GetFloat("SoundVolume") * 0.2f, global::UnityEngine.Time.deltaTime);
 				}
 				else
 				{
-					GetComponent<global::UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(GetComponent<global::UnityEngine.AudioSource>().volume, global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume") * 0.5f, global::UnityEngine.Time.deltaTime);
+					GetComponent<global::UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(GetComponent<global::UnityEngine.AudioSource>().volume, AxiPlayerPrefs.GetFloat("SoundVolume") * 0.5f, global::UnityEngine.Time.deltaTime);
 				}
 			}
 		}
@@ -317,8 +317,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 							else
 							{
 								Reset_Text();
-								contents = Event_Dialogue[text_Num + 1, global::UnityEngine.PlayerPrefs.GetInt("Language_Num")];
-								text_Name_L.text = Event_Dialogue[event_nameNum[text_Num + 1], global::UnityEngine.PlayerPrefs.GetInt("Language_Num")];
+								contents = Event_Dialogue[text_Num + 1, AxiPlayerPrefs.GetInt("Language_Num")];
+								text_Name_L.text = Event_Dialogue[event_nameNum[text_Num + 1], AxiPlayerPrefs.GetInt("Language_Num")];
 							}
 						}
 					}
@@ -404,8 +404,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				{
 					Text_Dlg_On = true;
 					text_Num = 1;
-					contents = Event_Dialogue[text_Num + 1, global::UnityEngine.PlayerPrefs.GetInt("Language_Num")];
-					text_Name_L.text = Event_Dialogue[0, global::UnityEngine.PlayerPrefs.GetInt("Language_Num")];
+					contents = Event_Dialogue[text_Num + 1, AxiPlayerPrefs.GetInt("Language_Num")];
+					text_Name_L.text = Event_Dialogue[0, AxiPlayerPrefs.GetInt("Language_Num")];
 				}
 				else if (!Text_Dlg_On && text_Num > 0)
 				{
@@ -495,8 +495,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 					Event_Timer = 2f;
 					Reset_Text();
 					Text_Dlg_On = true;
-					contents = Event_Dialogue[text_Num + 1, global::UnityEngine.PlayerPrefs.GetInt("Language_Num")];
-					text_Name_L.text = Event_Dialogue[event_nameNum[text_Num + 1], global::UnityEngine.PlayerPrefs.GetInt("Language_Num")];
+					contents = Event_Dialogue[text_Num + 1, AxiPlayerPrefs.GetInt("Language_Num")];
+					text_Name_L.text = Event_Dialogue[event_nameNum[text_Num + 1], AxiPlayerPrefs.GetInt("Language_Num")];
 				}
 			}
 		}
@@ -523,8 +523,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 			{
 				Reset_Text();
 				Text_Dlg_On = true;
-				contents = Event_Dialogue[text_Num + 1, global::UnityEngine.PlayerPrefs.GetInt("Language_Num")];
-				text_Name_L.text = Event_Dialogue[event_nameNum[text_Num + 1], global::UnityEngine.PlayerPrefs.GetInt("Language_Num")];
+				contents = Event_Dialogue[text_Num + 1, AxiPlayerPrefs.GetInt("Language_Num")];
+				text_Name_L.text = Event_Dialogue[event_nameNum[text_Num + 1], AxiPlayerPrefs.GetInt("Language_Num")];
 			}
 			if (text_Num == 9 || text_Num == 11)
 			{
@@ -556,8 +556,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				{
 					Reset_Text();
 					Text_Dlg_On = true;
-					contents = Event_Dialogue[text_Num + 1, global::UnityEngine.PlayerPrefs.GetInt("Language_Num")];
-					text_Name_L.text = Event_Dialogue[event_nameNum[text_Num + 1], global::UnityEngine.PlayerPrefs.GetInt("Language_Num")];
+					contents = Event_Dialogue[text_Num + 1, AxiPlayerPrefs.GetInt("Language_Num")];
+					text_Name_L.text = Event_Dialogue[event_nameNum[text_Num + 1], AxiPlayerPrefs.GetInt("Language_Num")];
 					if (global::UnityEngine.GameObject.Find("Event_Scientist_2") != null)
 					{
 						global::UnityEngine.GameObject.Find("Event_Scientist_2").GetComponent<Event_Scientist>().Set_Front(1);
@@ -763,7 +763,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(Room_0_Pos_X, 3f, -10f);
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 8f;
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 9f;
-		if (global::UnityEngine.PlayerPrefs.GetInt("onClockFps") == 1)
+		if (AxiPlayerPrefs.GetInt("onClockFps") == 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_TimePlay").GetComponent<global::UnityEngine.UI.Text>().enabled = true;
 			global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = true;
@@ -816,7 +816,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 			isFadeOut = false;
 		}
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 8f;
-		if (global::UnityEngine.PlayerPrefs.GetInt("onClockFps") == 1)
+		if (AxiPlayerPrefs.GetInt("onClockFps") == 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_TimePlay").GetComponent<global::UnityEngine.UI.Text>().enabled = true;
 			global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = true;
@@ -844,11 +844,11 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 		RedAlertGlow_Timer = 0f;
 		if (Event_Num > 0)
 		{
-			GetComponent<global::UnityEngine.AudioSource>().volume = global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume") * 0.5f;
+			GetComponent<global::UnityEngine.AudioSource>().volume = AxiPlayerPrefs.GetFloat("SoundVolume") * 0.5f;
 		}
 		else
 		{
-			GetComponent<global::UnityEngine.AudioSource>().volume = global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume");
+			GetComponent<global::UnityEngine.AudioSource>().volume = AxiPlayerPrefs.GetFloat("SoundVolume");
 		}
 		GetComponent<global::UnityEngine.AudioSource>().Play();
 		RedAlert.color = new global::UnityEngine.Color(1f, 0f, 0f, 0f);

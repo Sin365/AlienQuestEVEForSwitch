@@ -89,7 +89,7 @@ public class AI_Mon_7 : global::UnityEngine.MonoBehaviour
 		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		PC = Player.GetComponent<Player_Control>();
-		if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+		if (AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			CensoredText.enabled = true;
 			CensoredBox.enabled = true;
@@ -115,7 +115,7 @@ public class AI_Mon_7 : global::UnityEngine.MonoBehaviour
 			return;
 		}
 		Life_Timer += global::UnityEngine.Time.deltaTime;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+		if (AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			CensoredText.enabled = true;
 			CensoredBox.enabled = true;

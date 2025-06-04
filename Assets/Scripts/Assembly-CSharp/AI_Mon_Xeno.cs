@@ -195,7 +195,7 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 		Move_Speed = 20f + rnd_X;
 		Walk_Speed = 16f + rnd_X;
 		Patrol_Range = 14f + global::UnityEngine.Random.Range(0f, 4f);
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") != 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") != 1)
 		{
 			Penis.enabled = false;
 			Penis_Censored.enabled = true;
@@ -296,7 +296,7 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 			return;
 		}
 		Life_Timer += global::UnityEngine.Time.deltaTime;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+		if (AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			CensoredText.enabled = true;
 			CensoredBox.enabled = true;
@@ -1492,7 +1492,7 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 		{
 			animator.Play("Idle", 0, 0f);
 		}
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") != 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") != 1)
 		{
 			Penis.enabled = false;
 			Penis_Censored.enabled = true;

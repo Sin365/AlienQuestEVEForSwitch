@@ -350,9 +350,9 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.Physics2D.IgnoreLayerCollision(18, 15);
 		global::UnityEngine.Physics2D.IgnoreLayerCollision(10, 29);
 		global::UnityEngine.Physics2D.IgnoreLayerCollision(10, 5);
-		Language_Num = global::UnityEngine.PlayerPrefs.GetInt("Language_Num");
-		global::UnityEngine.PlayerPrefs.SetInt("Input_Mode", 0);
-		if (global::UnityEngine.PlayerPrefs.GetInt("onClockFps") != 1)
+		Language_Num = AxiPlayerPrefs.GetInt("Language_Num");
+		AxiPlayerPrefs.SetInt("Input_Mode", 0);
+		if (AxiPlayerPrefs.GetInt("onClockFps") != 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_TimePlay").GetComponent<global::UnityEngine.UI.Text>().enabled = false;
 			global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = false;
@@ -681,21 +681,21 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 			}
 			if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.RightShift))
 			{
-				if (global::UnityEngine.PlayerPrefs.GetInt("onClockFps") == 1)
+				if (AxiPlayerPrefs.GetInt("onClockFps") == 1)
 				{
-					global::UnityEngine.PlayerPrefs.SetInt("onClockFps", 0);
+					AxiPlayerPrefs.SetInt("onClockFps", 0);
 					global::UnityEngine.GameObject.Find("Text_TimePlay").GetComponent<global::UnityEngine.UI.Text>().enabled = false;
 					global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = false;
 					global::UnityEngine.GameObject.Find("Clock_TimePlay").GetComponent<global::UnityEngine.SpriteRenderer>().enabled = false;
-					global::UnityEngine.PlayerPrefs.SetInt("On_HealthBar", 2);
+					AxiPlayerPrefs.SetInt("On_HealthBar", 2);
 				}
 				else
 				{
-					global::UnityEngine.PlayerPrefs.SetInt("onClockFps", 1);
+					AxiPlayerPrefs.SetInt("onClockFps", 1);
 					global::UnityEngine.GameObject.Find("Text_TimePlay").GetComponent<global::UnityEngine.UI.Text>().enabled = true;
 					global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = true;
 					global::UnityEngine.GameObject.Find("Clock_TimePlay").GetComponent<global::UnityEngine.SpriteRenderer>().enabled = true;
-					global::UnityEngine.PlayerPrefs.SetInt("On_HealthBar", 1);
+					AxiPlayerPrefs.SetInt("On_HealthBar", 1);
 				}
 			}
 			else if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.F12))
@@ -1864,12 +1864,12 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 		Option_Int[2] = 2;
 		Option_Int[3] = 2;
 		Option_Int[4] = 2;
-		global::UnityEngine.PlayerPrefs.SetFloat("SoundVolume", 0.7f);
-		global::UnityEngine.PlayerPrefs.SetFloat("MusicVolume", 0.7f);
-		global::UnityEngine.PlayerPrefs.SetInt("SelBGM", 0);
-		global::UnityEngine.PlayerPrefs.SetInt("Censorship", 2);
-		global::UnityEngine.PlayerPrefs.SetInt("On_Hscene", 2);
-		global::UnityEngine.PlayerPrefs.SetInt("On_HealthBar", 2);
+		AxiPlayerPrefs.SetFloat("SoundVolume", 0.7f);
+		AxiPlayerPrefs.SetFloat("MusicVolume", 0.7f);
+		AxiPlayerPrefs.SetInt("SelBGM", 0);
+		AxiPlayerPrefs.SetInt("Censorship", 2);
+		AxiPlayerPrefs.SetInt("On_Hscene", 2);
+		AxiPlayerPrefs.SetInt("On_HealthBar", 2);
 	}
 
 	public bool Check_Bonus(int num)
@@ -1886,7 +1886,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 		if (H_scene[num] == 0)
 		{
 			H_scene[num] = 1;
-			global::UnityEngine.PlayerPrefs.SetInt("H_" + (num + 1), 1);
+			AxiPlayerPrefs.SetInt("H_" + (num + 1), 1);
 		}
 	}
 
@@ -1995,7 +1995,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 	private void Info_Mission_Complete(int num)
 	{
 		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(info_Mission) as global::UnityEngine.GameObject;
-		int lang_num = global::UnityEngine.PlayerPrefs.GetInt("Language_Num");
+		int lang_num = AxiPlayerPrefs.GetInt("Language_Num");
 		Language_MenuItem component = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>();
 		if (num < 3)
 		{
@@ -2051,7 +2051,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
 	private void Load_Data()
 	{
-		Slot_Num = global::UnityEngine.PlayerPrefs.GetInt("Slot_Num");
+		Slot_Num = AxiPlayerPrefs.GetInt("Slot_Num");
 		global::UnityEngine.Debug.Log("Slot " + (Slot_Num + 1) + " : Loaded!!");
 		GetComponent<Save_Control>().Load_Game();
 		Room_Num = GetComponent<Save_Control>().SaveData.Room_Num[Slot_Num];
@@ -2284,10 +2284,10 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 			global::UnityEngine.GameObject.Find("Mission_4").GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(0f, 0f, 0f);
 		}
 		global::UnityEngine.GameObject.Find("Potion_Inventory").SendMessage("Set_Text_HPMP");
-		Option_Volume[0] = global::UnityEngine.PlayerPrefs.GetFloat("SoundVolume");
-		Option_Volume[1] = global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume");
-		Option_Int[0] = global::UnityEngine.PlayerPrefs.GetInt("SelBGM");
-		if (global::UnityEngine.PlayerPrefs.GetInt("WindowSize") == 1280)
+		Option_Volume[0] = AxiPlayerPrefs.GetFloat("SoundVolume");
+		Option_Volume[1] = AxiPlayerPrefs.GetFloat("MusicVolume");
+		Option_Int[0] = AxiPlayerPrefs.GetInt("SelBGM");
+		if (AxiPlayerPrefs.GetInt("WindowSize") == 1280)
 		{
 			Option_Int[1] = 1;
 		}
@@ -2295,7 +2295,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 		{
 			Option_Int[1] = 2;
 		}
-		if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+		if (AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			Option_Int[2] = 1;
 		}
@@ -2303,7 +2303,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 		{
 			Option_Int[2] = 2;
 		}
-		if (global::UnityEngine.PlayerPrefs.GetInt("On_Hscene") == 1)
+		if (AxiPlayerPrefs.GetInt("On_Hscene") == 1)
 		{
 			Option_Int[3] = 1;
 		}
@@ -2311,7 +2311,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 		{
 			Option_Int[3] = 2;
 		}
-		if (global::UnityEngine.PlayerPrefs.GetInt("On_HealthBar") == 1)
+		if (AxiPlayerPrefs.GetInt("On_HealthBar") == 1)
 		{
 			Option_Int[4] = 1;
 		}

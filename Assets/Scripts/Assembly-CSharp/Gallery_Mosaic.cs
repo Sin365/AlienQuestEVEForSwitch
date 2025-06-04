@@ -25,7 +25,7 @@ public class Gallery_Mosaic : global::UnityEngine.MonoBehaviour
 		mainCamera = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<global::UnityEngine.Camera>();
 		camera = GetComponent<global::UnityEngine.Camera>();
 		camera.rect = new global::UnityEngine.Rect(0.5f, 1.5f, 0.1f, 0.3f);
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") == 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") == 1)
 		{
 			global::UnityEngine.Object.Destroy(base.gameObject);
 		}

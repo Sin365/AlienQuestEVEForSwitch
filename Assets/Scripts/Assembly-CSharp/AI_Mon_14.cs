@@ -119,7 +119,7 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 		Tr_3_End.position = new global::UnityEngine.Vector3(Tr_3_End.position.x + num, Tr_3_End.position.y, 0f);
 		Move_Speed = 10f + global::UnityEngine.Random.Range(0f, 1.5f);
 		Patrol_Range = 15f + global::UnityEngine.Random.Range(0f, 6f);
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") == 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") == 1)
 		{
 			Penis.sprite = spr_Penis;
 		}
@@ -137,7 +137,7 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 			return;
 		}
 		Life_Timer += global::UnityEngine.Time.deltaTime;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+		if (AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			CensoredText.enabled = true;
 			CensoredBox.enabled = true;
@@ -500,7 +500,7 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 		}
 		global::UnityEngine.GameObject.Find("Ani").SendMessage("Start_H_Scene");
 		Check_Idle();
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") == 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") == 1)
 		{
 			Penis.sprite = spr_PenisWet;
 		}

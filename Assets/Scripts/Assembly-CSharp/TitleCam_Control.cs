@@ -64,7 +64,7 @@ public class TitleCam_Control : global::UnityEngine.MonoBehaviour
 				text = text + Fps_List[i].ToString("f2") + ", ";
 				num += Fps_List[i];
 			}
-			global::UnityEngine.PlayerPrefs.SetFloat("Avg_Fps", num / (float)Fps_Num);
+			AxiPlayerPrefs.SetFloat("Avg_Fps", num / (float)Fps_Num);
 		}
 	}
 

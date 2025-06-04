@@ -106,23 +106,23 @@ public class Ending_Control : global::UnityEngine.MonoBehaviour
 		Ellen_2.color = color;
 		ellen_.color = color;
 		Ellen_BG.color = new global::UnityEngine.Color(0f, 0f, 0f, 0f);
-		if (global::UnityEngine.PlayerPrefs.GetInt("Escaped") > 0)
+		if (AxiPlayerPrefs.GetInt("Escaped") > 0)
 		{
 			for (int i = 1; i < 44; i++)
 			{
-				global::UnityEngine.PlayerPrefs.SetInt("H_" + i, 1);
+				AxiPlayerPrefs.SetInt("H_" + i, 1);
 			}
-			global::UnityEngine.PlayerPrefs.SetInt("H_51", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("H_52", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("H_53", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("H_54", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("H_55", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_1", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_2", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_3", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_4", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_5", 1);
-			Slot_Num = global::UnityEngine.PlayerPrefs.GetInt("Slot_Num");
+			AxiPlayerPrefs.SetInt("H_51", 1);
+			AxiPlayerPrefs.SetInt("H_52", 1);
+			AxiPlayerPrefs.SetInt("H_53", 1);
+			AxiPlayerPrefs.SetInt("H_54", 1);
+			AxiPlayerPrefs.SetInt("H_55", 1);
+			AxiPlayerPrefs.SetInt("H_GameOver_1", 1);
+			AxiPlayerPrefs.SetInt("H_GameOver_2", 1);
+			AxiPlayerPrefs.SetInt("H_GameOver_3", 1);
+			AxiPlayerPrefs.SetInt("H_GameOver_4", 1);
+			AxiPlayerPrefs.SetInt("H_GameOver_5", 1);
+			Slot_Num = AxiPlayerPrefs.GetInt("Slot_Num");
 		}
 		Title_Font_I.color = color_OFF;
 		Title_Font_V.color = color_OFF;
@@ -138,13 +138,13 @@ public class Ending_Control : global::UnityEngine.MonoBehaviour
 		pos_Font[3] = Title_Font_I_a.GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		pos_Font[4] = Title_Font_V_a.GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		pos_Font[5] = Title_Font_E_a.GetComponent<global::UnityEngine.RectTransform>().localPosition;
-		if (global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume") < 0.6f)
+		if (AxiPlayerPrefs.GetFloat("MusicVolume") < 0.6f)
 		{
 			BGM_Ending.volume = 0.6f;
 		}
 		else
 		{
-			BGM_Ending.volume = global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume");
+			BGM_Ending.volume = AxiPlayerPrefs.GetFloat("MusicVolume");
 		}
 	}
 
@@ -193,7 +193,7 @@ public class Ending_Control : global::UnityEngine.MonoBehaviour
 		}
 		if (State == 0)
 		{
-			if (global::UnityEngine.PlayerPrefs.GetInt("Escaped") > 0 && !Escaped && Life_Timer > 2.8f)
+			if (AxiPlayerPrefs.GetInt("Escaped") > 0 && !Escaped && Life_Timer > 2.8f)
 			{
 				Gun_Ship.GetComponent<global::UnityEngine.Animator>().SetTrigger("onEscape");
 				Escaped = true;

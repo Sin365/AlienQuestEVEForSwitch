@@ -88,20 +88,20 @@ public class H_Slot : global::UnityEngine.MonoBehaviour
 
 	public void Start_Gallery()
 	{
-		if (global::UnityEngine.PlayerPrefs.GetInt("G_Slot_isOpen_" + Slot_Num) == 1 && global::UnityEngine.PlayerPrefs.GetInt("G_Slot_H_Num_" + Slot_Num) > 0)
+		if (AxiPlayerPrefs.GetInt("G_Slot_isOpen_" + Slot_Num) == 1 && AxiPlayerPrefs.GetInt("G_Slot_H_Num_" + Slot_Num) > 0)
 		{
 			isOpen = 1;
 			GC.Slot_isOpen[Slot_Num - 1] = 1;
-			H_Num = global::UnityEngine.PlayerPrefs.GetInt("G_Slot_H_Num_" + Slot_Num);
+			H_Num = AxiPlayerPrefs.GetInt("G_Slot_H_Num_" + Slot_Num);
 			isPlaying = 1;
-			isLoop = global::UnityEngine.PlayerPrefs.GetInt("G_Slot_isLoop_" + Slot_Num);
-			State = global::UnityEngine.PlayerPrefs.GetInt("G_Slot_State_" + Slot_Num);
-			StateMax = global::UnityEngine.PlayerPrefs.GetInt("G_Slot_StateMax_" + Slot_Num);
-			Speed[0] = global::UnityEngine.PlayerPrefs.GetFloat("G_Slot_Speed_" + Slot_Num + "_0");
-			Speed[1] = global::UnityEngine.PlayerPrefs.GetFloat("G_Slot_Speed_" + Slot_Num + "_1");
-			Speed[2] = global::UnityEngine.PlayerPrefs.GetFloat("G_Slot_Speed_" + Slot_Num + "_2");
-			Speed[3] = global::UnityEngine.PlayerPrefs.GetFloat("G_Slot_Speed_" + Slot_Num + "_3");
-			isFlip = global::UnityEngine.PlayerPrefs.GetInt("G_Slot_isFlip_" + Slot_Num);
+			isLoop = AxiPlayerPrefs.GetInt("G_Slot_isLoop_" + Slot_Num);
+			State = AxiPlayerPrefs.GetInt("G_Slot_State_" + Slot_Num);
+			StateMax = AxiPlayerPrefs.GetInt("G_Slot_StateMax_" + Slot_Num);
+			Speed[0] = AxiPlayerPrefs.GetFloat("G_Slot_Speed_" + Slot_Num + "_0");
+			Speed[1] = AxiPlayerPrefs.GetFloat("G_Slot_Speed_" + Slot_Num + "_1");
+			Speed[2] = AxiPlayerPrefs.GetFloat("G_Slot_Speed_" + Slot_Num + "_2");
+			Speed[3] = AxiPlayerPrefs.GetFloat("G_Slot_Speed_" + Slot_Num + "_3");
+			isFlip = AxiPlayerPrefs.GetInt("G_Slot_isFlip_" + Slot_Num);
 			Icon_Play.enabled = false;
 			Icon_Stop.enabled = true;
 			if (isLoop > 0)
@@ -335,15 +335,15 @@ public class H_Slot : global::UnityEngine.MonoBehaviour
 			StateMax = 1;
 			break;
 		}
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_isOpen_" + Slot_Num, 1);
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_H_Num_" + Slot_Num, num);
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_isLoop_" + Slot_Num, 0);
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_State_" + Slot_Num, 0);
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_StateMax_" + Slot_Num, StateMax);
-		global::UnityEngine.PlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_0", 0.5f);
-		global::UnityEngine.PlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_1", 0.5f);
-		global::UnityEngine.PlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_2", 0.5f);
-		global::UnityEngine.PlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_3", 0.5f);
+		AxiPlayerPrefs.SetInt("G_Slot_isOpen_" + Slot_Num, 1);
+		AxiPlayerPrefs.SetInt("G_Slot_H_Num_" + Slot_Num, num);
+		AxiPlayerPrefs.SetInt("G_Slot_isLoop_" + Slot_Num, 0);
+		AxiPlayerPrefs.SetInt("G_Slot_State_" + Slot_Num, 0);
+		AxiPlayerPrefs.SetInt("G_Slot_StateMax_" + Slot_Num, StateMax);
+		AxiPlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_0", 0.5f);
+		AxiPlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_1", 0.5f);
+		AxiPlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_2", 0.5f);
+		AxiPlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_3", 0.5f);
 		if (h_Num > 0 && h_Num == H_Num)
 		{
 			if (num2 == 0)
@@ -380,7 +380,7 @@ public class H_Slot : global::UnityEngine.MonoBehaviour
 				isFlip = 1;
 			}
 		}
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_isFlip_" + Slot_Num, isFlip);
+		AxiPlayerPrefs.SetInt("G_Slot_isFlip_" + Slot_Num, isFlip);
 		Icon_Play.enabled = false;
 		Icon_Stop.enabled = true;
 		Icon_Loop.enabled = false;
@@ -457,16 +457,16 @@ public class H_Slot : global::UnityEngine.MonoBehaviour
 		StateMax = 3;
 		Speed = new float[4] { 0.5f, 0.5f, 0.5f, 0.5f };
 		isFlip = 0;
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_isOpen_" + Slot_Num, 0);
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_H_Num_" + Slot_Num, 0);
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_isLoop_" + Slot_Num, 0);
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_State_" + Slot_Num, 0);
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_StateMax_" + Slot_Num, 0);
-		global::UnityEngine.PlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_0", 0.5f);
-		global::UnityEngine.PlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_1", 0.5f);
-		global::UnityEngine.PlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_2", 0.5f);
-		global::UnityEngine.PlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_3", 0.5f);
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_isFlip_" + Slot_Num, 0);
+		AxiPlayerPrefs.SetInt("G_Slot_isOpen_" + Slot_Num, 0);
+		AxiPlayerPrefs.SetInt("G_Slot_H_Num_" + Slot_Num, 0);
+		AxiPlayerPrefs.SetInt("G_Slot_isLoop_" + Slot_Num, 0);
+		AxiPlayerPrefs.SetInt("G_Slot_State_" + Slot_Num, 0);
+		AxiPlayerPrefs.SetInt("G_Slot_StateMax_" + Slot_Num, 0);
+		AxiPlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_0", 0.5f);
+		AxiPlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_1", 0.5f);
+		AxiPlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_2", 0.5f);
+		AxiPlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_3", 0.5f);
+		AxiPlayerPrefs.SetInt("G_Slot_isFlip_" + Slot_Num, 0);
 		if (H_Object != null)
 		{
 			H_Object.SendMessage("Delete_ToDual");
@@ -579,7 +579,7 @@ public class H_Slot : global::UnityEngine.MonoBehaviour
 			{
 				H_Object.GetComponent<H_Ani>().isLoop = true;
 			}
-			global::UnityEngine.PlayerPrefs.SetInt("G_Slot_isLoop_" + Slot_Num, 1);
+			AxiPlayerPrefs.SetInt("G_Slot_isLoop_" + Slot_Num, 1);
 		}
 		else
 		{
@@ -590,7 +590,7 @@ public class H_Slot : global::UnityEngine.MonoBehaviour
 			{
 				H_Object.GetComponent<H_Ani>().isLoop = false;
 			}
-			global::UnityEngine.PlayerPrefs.SetInt("G_Slot_isLoop_" + Slot_Num, 0);
+			AxiPlayerPrefs.SetInt("G_Slot_isLoop_" + Slot_Num, 0);
 		}
 	}
 
@@ -678,7 +678,7 @@ public class H_Slot : global::UnityEngine.MonoBehaviour
 			}
 		}
 		global::UnityEngine.GameObject.Find("UI_SoundList").SendMessage("Sound_Tab");
-		global::UnityEngine.PlayerPrefs.SetInt("G_Slot_State_" + Slot_Num, num);
+		AxiPlayerPrefs.SetInt("G_Slot_State_" + Slot_Num, num);
 		if (H_Object != null)
 		{
 			H_Object.GetComponent<H_Ani>().Play(State, Speed[State] * 2f);
@@ -707,7 +707,7 @@ public class H_Slot : global::UnityEngine.MonoBehaviour
 
 	public void Save_Speed()
 	{
-		global::UnityEngine.PlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_" + State, Speed[State]);
+		AxiPlayerPrefs.SetFloat("G_Slot_Speed_" + Slot_Num + "_" + State, Speed[State]);
 	}
 
 	public int Get_H_Num()

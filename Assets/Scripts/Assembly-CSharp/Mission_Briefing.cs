@@ -4,7 +4,7 @@ public class Mission_Briefing : global::UnityEngine.MonoBehaviour
 	{
 		Hide_BriefingPos();
 		Language_MenuItem component = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>();
-		if (global::UnityEngine.PlayerPrefs.GetInt("Language_Num") == 1)
+		if (AxiPlayerPrefs.GetInt("Language_Num") == 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_MissionBr_Title").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(0, 1);
 			global::UnityEngine.GameObject.Find("Text_MissionBr_1").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(1, 1);

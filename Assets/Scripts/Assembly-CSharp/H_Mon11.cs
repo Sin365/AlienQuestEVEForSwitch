@@ -162,7 +162,7 @@ public class H_Mon11 : global::UnityEngine.MonoBehaviour
 		if (!onCumShot)
 		{
 			onCumShot = true;
-			if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") == 1)
+			if (AxiPlayerPrefs.GetInt("UncensoredPatch") == 1)
 			{
 				Penis.enabled = false;
 				Penis_Wet.enabled = true;

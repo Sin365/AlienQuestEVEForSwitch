@@ -147,11 +147,11 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 	{
 		if (global::System.IO.File.Exists("Uncensored.dat"))
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("UncensoredPatch", 1);
+			AxiPlayerPrefs.SetInt("UncensoredPatch", 1);
 		}
 		else
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("UncensoredPatch", 0);
+			AxiPlayerPrefs.SetInt("UncensoredPatch", 0);
 		}
 	}
 
@@ -178,13 +178,13 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 				if (SaveData.version < 0.12f)
 				{
 					flag = true;
-					global::UnityEngine.PlayerPrefs.SetInt("H_1", 0);
-					global::UnityEngine.PlayerPrefs.SetInt("H_2", 0);
-					global::UnityEngine.PlayerPrefs.SetInt("H_3", 0);
-					global::UnityEngine.PlayerPrefs.SetInt("H_4", 0);
-					global::UnityEngine.PlayerPrefs.SetInt("H_8", 0);
-					global::UnityEngine.PlayerPrefs.SetInt("H_9", 0);
-					global::UnityEngine.PlayerPrefs.SetInt("H_13", 0);
+					AxiPlayerPrefs.SetInt("H_1", 0);
+					AxiPlayerPrefs.SetInt("H_2", 0);
+					AxiPlayerPrefs.SetInt("H_3", 0);
+					AxiPlayerPrefs.SetInt("H_4", 0);
+					AxiPlayerPrefs.SetInt("H_8", 0);
+					AxiPlayerPrefs.SetInt("H_9", 0);
+					AxiPlayerPrefs.SetInt("H_13", 0);
 					SaveData.H_scene = new int[70];
 				}
 				if (SaveData.version <= 0.12f)
@@ -212,7 +212,7 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 
 	public void Save_Game()
 	{
-		global::UnityEngine.PlayerPrefs.SetInt("Game_Saved", 1);
+		AxiPlayerPrefs.SetInt("Game_Saved", 1);
 		SaveData.version = Version;
 		global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter binaryFormatter = new global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 		global::System.IO.FileStream fileStream = global::System.IO.File.Create("SaveData.dat");

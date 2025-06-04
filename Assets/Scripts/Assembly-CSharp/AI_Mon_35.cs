@@ -127,7 +127,7 @@ public class AI_Mon_35 : global::UnityEngine.MonoBehaviour
 		Orig_Speed = (Move_Speed = 7.5f + rnd_X);
 		Walk_Speed = 5f + rnd_X;
 		Patrol_Range = 12f + global::UnityEngine.Random.Range(0f, 4f);
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") != 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") != 1)
 		{
 			Penis.enabled = false;
 			Penis_Censored.enabled = true;
@@ -150,7 +150,7 @@ public class AI_Mon_35 : global::UnityEngine.MonoBehaviour
 			return;
 		}
 		Life_Timer += global::UnityEngine.Time.deltaTime;
-		if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") == 1)
+		if (AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			CensoredText.enabled = true;
 			CensoredBox.enabled = true;
@@ -765,7 +765,7 @@ public class AI_Mon_35 : global::UnityEngine.MonoBehaviour
 		Mon.isInvincible = false;
 		GM.Down_H_After();
 		global::UnityEngine.GameObject.Find("Ani").SendMessage("End_H_Scene");
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") != 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") != 1)
 		{
 			Penis.enabled = false;
 			Penis_Censored.enabled = true;

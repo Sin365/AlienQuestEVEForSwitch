@@ -106,11 +106,11 @@ public class H_Ani : global::UnityEngine.MonoBehaviour
 		{
 			H_Sound = global::UnityEngine.GameObject.Find("Sound_List_H").GetComponent<H_SoundControl>();
 		}
-		if (global::UnityEngine.PlayerPrefs.GetInt("Censorship") != 1)
+		if (AxiPlayerPrefs.GetInt("Censorship") != 1)
 		{
 			global::UnityEngine.Object.Destroy(CensoredBox.gameObject);
 		}
-		if (global::UnityEngine.PlayerPrefs.GetInt("UncensoredPatch") != 1)
+		if (AxiPlayerPrefs.GetInt("UncensoredPatch") != 1)
 		{
 			if (Penis_1 != null)
 			{

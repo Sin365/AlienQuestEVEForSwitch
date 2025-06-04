@@ -197,29 +197,29 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 			global::UnityEngine.GameObject.Find("Pos_Slot_" + j).GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;
 		}
 		Ani_Opacity();
-		if (global::UnityEngine.PlayerPrefs.GetInt("Game_Setting") > 0)
+		if (AxiPlayerPrefs.GetInt("Game_Setting") > 0)
 		{
-			Window_Size = global::UnityEngine.PlayerPrefs.GetInt("WindowSize");
-			Language_Num = global::UnityEngine.PlayerPrefs.GetInt("Language_Num");
+			Window_Size = AxiPlayerPrefs.GetInt("WindowSize");
+			Language_Num = AxiPlayerPrefs.GetInt("Language_Num");
 		}
 		else
 		{
-			global::UnityEngine.PlayerPrefs.SetInt("WindowSize", Window_Size);
-			global::UnityEngine.PlayerPrefs.SetInt("Language_Num", Language_Num);
-			global::UnityEngine.PlayerPrefs.SetFloat("SoundVolume", 0.7f);
-			global::UnityEngine.PlayerPrefs.SetFloat("MusicVolume", 0.7f);
-			global::UnityEngine.PlayerPrefs.SetInt("SelBGM", 0);
-			global::UnityEngine.PlayerPrefs.SetInt("Censorship", 0);
-			global::UnityEngine.PlayerPrefs.SetInt("On_Hscene", 0);
-			global::UnityEngine.PlayerPrefs.SetInt("On_HealthBar", 0);
-			global::UnityEngine.PlayerPrefs.SetInt("UncensoredPatch", 0);
-			global::UnityEngine.PlayerPrefs.SetInt("onClockFps", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("Gallery_Option", 1);
-			global::UnityEngine.PlayerPrefs.SetInt("Gallery_Option_GameOver", 1);
+			AxiPlayerPrefs.SetInt("WindowSize", Window_Size);
+			AxiPlayerPrefs.SetInt("Language_Num", Language_Num);
+			AxiPlayerPrefs.SetFloat("SoundVolume", 0.7f);
+			AxiPlayerPrefs.SetFloat("MusicVolume", 0.7f);
+			AxiPlayerPrefs.SetInt("SelBGM", 0);
+			AxiPlayerPrefs.SetInt("Censorship", 0);
+			AxiPlayerPrefs.SetInt("On_Hscene", 0);
+			AxiPlayerPrefs.SetInt("On_HealthBar", 0);
+			AxiPlayerPrefs.SetInt("UncensoredPatch", 0);
+			AxiPlayerPrefs.SetInt("onClockFps", 1);
+			AxiPlayerPrefs.SetInt("Gallery_Option", 1);
+			AxiPlayerPrefs.SetInt("Gallery_Option_GameOver", 1);
 		}
-		global::UnityEngine.PlayerPrefs.SetInt("Game_Setting", 1);
-		global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_Now", 0);
-		global::UnityEngine.PlayerPrefs.SetInt("Escaped", 0);
+		AxiPlayerPrefs.SetInt("Game_Setting", 1);
+		AxiPlayerPrefs.SetInt("H_GameOver_Now", 0);
+		AxiPlayerPrefs.SetInt("Escaped", 0);
 		if (Window_Size != global::UnityEngine.Screen.width)
 		{
 			if (Window_Size == 1280)
@@ -254,7 +254,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 		pos_Font[4] = Title_Font_V_a.GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		pos_Font[5] = Title_Font_E_a.GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		SR_Glow_2.color = new global::UnityEngine.Color(SR_Glow_2.color.r, SR_Glow_2.color.g, SR_Glow_2.color.b, 0.05f);
-		global::UnityEngine.GameObject.Find("BGM_Title").GetComponent<UnityEngine.AudioSource>().volume = global::UnityEngine.PlayerPrefs.GetFloat("MusicVolume");
+		global::UnityEngine.GameObject.Find("BGM_Title").GetComponent<UnityEngine.AudioSource>().volume = AxiPlayerPrefs.GetFloat("MusicVolume");
 		global::UnityEngine.GameObject.Find("BGM_Title").GetComponent<UnityEngine.AudioSource>().Play();
 	}
 
@@ -312,14 +312,14 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 			{
 				if (GetComponent<Save_Control>().SaveData.H_scene[i] > 0)
 				{
-					global::UnityEngine.PlayerPrefs.SetInt("H_" + (i + 1), 1);
+					AxiPlayerPrefs.SetInt("H_" + (i + 1), 1);
 				}
 			}
 			for (int j = 50; j < 60; j++)
 			{
 				if (GetComponent<Save_Control>().SaveData.H_scene[j] > 0)
 				{
-					global::UnityEngine.PlayerPrefs.SetInt("H_" + (j + 1), 1);
+					AxiPlayerPrefs.SetInt("H_" + (j + 1), 1);
 				}
 			}
 		}
@@ -327,7 +327,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 		{
 			if (GetComponent<Save_Control>().SaveData.H_Over[k] > 0)
 			{
-				global::UnityEngine.PlayerPrefs.SetInt("H_GameOver_" + (k + 1), 1);
+				AxiPlayerPrefs.SetInt("H_GameOver_" + (k + 1), 1);
 			}
 		}
 	}
@@ -343,7 +343,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 
 	private void Reset_All()
 	{
-		global::UnityEngine.PlayerPrefs.DeleteAll();
+		AxiPlayerPrefs.DeleteAll();
 		global::UnityEngine.Debug.Log("Reset_All");
 	}
 
@@ -1252,15 +1252,15 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 	private void New_Game()
 	{
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<TitleCam_Control>().Save_Avg_Fps();
-		global::UnityEngine.PlayerPrefs.SetInt("SelBGM", 0);
-		global::UnityEngine.PlayerPrefs.SetInt("Slot_Num", Sel_Index - 1);
+		AxiPlayerPrefs.SetInt("SelBGM", 0);
+		AxiPlayerPrefs.SetInt("Slot_Num", Sel_Index - 1);
 		StartCoroutine("Load_Main");
 	}
 
 	private void Continue()
 	{
 		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<TitleCam_Control>().Save_Avg_Fps();
-		global::UnityEngine.PlayerPrefs.SetInt("Slot_Num", Sel_Index - 1);
+		AxiPlayerPrefs.SetInt("Slot_Num", Sel_Index - 1);
 		StartCoroutine("Load_Main");
 	}
 
@@ -1292,7 +1292,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 			global::UnityEngine.Screen.SetResolution(1920, 1080, true);
 		}
 		Text_WindowMode();
-		global::UnityEngine.PlayerPrefs.SetInt("WindowSize", Window_Size);
+		AxiPlayerPrefs.SetInt("WindowSize", Window_Size);
 	}
 
 	private void Set_Language()
@@ -1306,7 +1306,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 			Language_Num = 0;
 		}
 		Text_Language();
-		global::UnityEngine.PlayerPrefs.SetInt("Language_Num", Language_Num);
+		AxiPlayerPrefs.SetInt("Language_Num", Language_Num);
 	}
 
 	private void Exit()
