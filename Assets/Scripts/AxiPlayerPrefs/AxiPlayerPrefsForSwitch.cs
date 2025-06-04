@@ -3,7 +3,8 @@
 public class AxiPlayerPrefsForSwitch : AxiPlayerPrefsFileBase
 {
     public AxiPlayerPrefsForSwitch():base(NSLoadData, NSSaveData)
-    {}
+    {
+	}
 
     public static Dictionary<string, AxiPlayerPrefsKeyValye> NSLoadData()
     {

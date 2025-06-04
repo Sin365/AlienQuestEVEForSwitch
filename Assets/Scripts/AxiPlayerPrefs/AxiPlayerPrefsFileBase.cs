@@ -9,7 +9,7 @@ public abstract class AxiPlayerPrefsFileBase : IAxiPlayerPrefs
     Func<Dictionary<string, AxiPlayerPrefsKeyValye>> m_LoadFunc;
     Action<Dictionary<string, AxiPlayerPrefsKeyValye>> m_SaveFunc;
 
-    [Serializable]
+	[Serializable]
     public class AxiPlayerPrefsAllData
     {
         public int version;

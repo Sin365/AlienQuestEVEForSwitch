@@ -12,9 +12,6 @@ public class AxiLauncher : MonoBehaviour
 	void InitGame()
 	{
 		GameObject.DontDestroyOnLoad(gameObject);
-#if UNITY_SWITCH
-		AxiNS.instance.Init();
-#endif
 		SceneManager.LoadScene("Title");
 		//global::UnityEngine.Application.LoadLevel("Title");
 	}
