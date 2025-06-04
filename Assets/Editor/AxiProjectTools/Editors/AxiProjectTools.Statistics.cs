@@ -774,7 +774,8 @@ public class AxiProjectToolsStatistics : EditorWindow
                 Dirty = true;
             }
 
-            if (rg2d.gravityScale > 0 && (!rg2d.simulated || rg2d.bodyType != RigidbodyType2D.Dynamic))
+            //if (rg2d.gravityScale > 0 && (!rg2d.simulated || rg2d.bodyType != RigidbodyType2D.Dynamic))
+            if (!rg2d.simulated || rg2d.bodyType != RigidbodyType2D.Dynamic)
             {
                 Debug.Log($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] simulated:{rg2d.simulated} != :{comdata.simulated}  rg2d.bodyType => {rg2d.bodyType} ");
 
@@ -782,18 +783,6 @@ public class AxiProjectToolsStatistics : EditorWindow
                 rg2d.bodyType = RigidbodyType2D.Dynamic;
                 Dirty = true;
             }
-
-            //if (rg2d.simulated != comdata.simulated)
-            //{
-            //    Debug.Log($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] simulated:{rg2d.simulated} != :{comdata.simulated}  rg2d.bodyType => {rg2d.bodyType} ");
-            //    Dirty = true;
-            //}
-
-            //else if (rg2d.bodyType == RigidbodyType2D.Static)
-            //{
-            //    Debug.Log($"[Repair]{NodePath}=> Rigidbody2D[{comdata.ComIdxNum}] simulated:{rg2d.simulated} but  rg2d.bodyType => {rg2d.bodyType} ");
-            //    Dirty = true;
-            //}
         }
         else if (comdata.type == typeof(BoxCollider2D).ToString())
         {
