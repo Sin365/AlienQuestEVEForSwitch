@@ -30,7 +30,7 @@ public abstract class AxiPlayerPrefsFileBase : IAxiPlayerPrefs
         m_LoadFunc = load;
         m_SaveFunc = save;
     }
-    protected Dictionary<string, AxiPlayerPrefsKeyValye> JsonStrToData(string dataStr)
+    public static Dictionary<string, AxiPlayerPrefsKeyValye> JsonStrToData(string dataStr)
     {
         AxiPlayerPrefsAllData alldata = UnityEngine.JsonUtility.FromJson<AxiPlayerPrefsAllData>(dataStr);
         Dictionary<string, AxiPlayerPrefsKeyValye> data = new Dictionary<string, AxiPlayerPrefsKeyValye>();
@@ -41,7 +41,7 @@ public abstract class AxiPlayerPrefsFileBase : IAxiPlayerPrefs
         return data;
     }
 
-    protected string DataToJsonStr(Dictionary<string, AxiPlayerPrefsKeyValye> data)
+	public static string DataToJsonStr(Dictionary<string, AxiPlayerPrefsKeyValye> data)
     {
         return UnityEngine.JsonUtility.ToJson(new AxiPlayerPrefsAllData() {version = 1, datalist = data.Values.ToList() });
     }
@@ -97,23 +97,6 @@ public abstract class AxiPlayerPrefsFileBase : IAxiPlayerPrefs
         return kv.strval;
     }
 
-    public void SetInt(string key, int value)
-    {
-        AxiPlayerPrefsKeyValye kv = GetByKey(key, true, out bool _);
-        kv.intval = value;
-    }
-
-    public void SetString(string key, string value)
-    {
-        AxiPlayerPrefsKeyValye kv = GetByKey(key, true, out bool _);
-        kv.strval = value;
-    }
-
-    public void SetFloat(string key, float value)
-    {
-        AxiPlayerPrefsKeyValye kv = GetByKey(key, true, out bool _);
-        kv.floatval = value;
-    }
     public float GetFloat(string key)
     {
         AxiPlayerPrefsKeyValye kv = GetByKey(key, false, out bool _);
@@ -135,8 +118,31 @@ public abstract class AxiPlayerPrefsFileBase : IAxiPlayerPrefs
         return string.Empty;
     }
 
+    
+    public void SetInt(string key, int value)
+    {
+        AxiPlayerPrefsKeyValye kv = GetByKey(key, true, out bool _);
+        kv.intval = value;
+		m_SaveFunc.Invoke(m_keyval);
+	}
+
+    public void SetString(string key, string value)
+    {
+        AxiPlayerPrefsKeyValye kv = GetByKey(key, true, out bool _);
+        kv.strval = value;
+		m_SaveFunc.Invoke(m_keyval);
+	}
+
+    public void SetFloat(string key, float value)
+    {
+        AxiPlayerPrefsKeyValye kv = GetByKey(key, true, out bool _);
+        kv.floatval = value;
+		m_SaveFunc.Invoke(m_keyval);
+	}
     public void DeleteAll()
     {
         m_keyval.Clear();
-    }
+		m_SaveFunc.Invoke(m_keyval);
+	}
+
 }

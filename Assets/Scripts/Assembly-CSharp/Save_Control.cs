@@ -1,5 +1,10 @@
+using UnityEngine;
+using AxiIO;
+using System.Runtime.Serialization.Formatters.Binary;
+
 public class Save_Control : global::UnityEngine.MonoBehaviour
 {
+
 	[global::System.Serializable]
 	public class PlayerData
 	{
@@ -136,6 +141,14 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 
 	private float Version = 1f;
 
+#if UNITY_SWITCH && !UNITY_EDITOR
+	string SaveDataRootDirPath = "save:/";
+#else
+	string SaveDataRootDirPath = Application.persistentDataPath;
+#endif
+	string UncensoredFilePath => SaveDataRootDirPath + "/Uncensored.dat";
+	string SaveDataFilePath => SaveDataRootDirPath + "/SaveData.dat";
+
 	public Save_Control.PlayerData SaveData = new Save_Control.PlayerData();
 
 	private void Start()
@@ -145,7 +158,8 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 
 	private void Check_Uncensored()
 	{
-		if (global::System.IO.File.Exists("Uncensored.dat"))
+		//if (global::System.IO.File.Exists("Uncensored.dat"))
+		if (AxiIO.AxiIO.io.file_Exists(UncensoredFilePath))
 		{
 			AxiPlayerPrefs.SetInt("UncensoredPatch", 1);
 		}
@@ -158,20 +172,29 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 	private void Test_MakeFile_Uncensored()
 	{
 		global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter binaryFormatter = new global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-		global::System.IO.FileStream fileStream = global::System.IO.File.Create("Uncensored.dat");
-		fileStream.Close();
+		//global::System.IO.FileStream fileStream = global::System.IO.File.Create("Uncensored.dat");
+		//fileStream.Close();
+		AxiIO.AxiIO.io.file_WriteAllBytes(UncensoredFilePath, new byte[] { 0 });
 	}
 
 	public void Load_Game()
 	{
 		bool flag = false;
-		if (global::System.IO.File.Exists("SaveData.dat"))
+		//if (global::System.IO.File.Exists("SaveData.dat"))
+		if (AxiIO.AxiIO.io.file_Exists(SaveDataFilePath))
 		{
 			global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter binaryFormatter = new global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-			global::System.IO.FileStream fileStream = global::System.IO.File.Open("SaveData.dat", global::System.IO.FileMode.Open);
-			if (fileStream != null && fileStream.Length > 0)
+			//global::System.IO.FileStream fileStream = global::System.IO.File.Open("SaveData.dat", global::System.IO.FileMode.Open);
+			byte[] saveBytes = AxiIO.AxiIO.io.file_ReadAllBytes(SaveDataFilePath);
+			//if (fileStream != null && fileStream.Length > 0)
+			if (saveBytes != null && saveBytes.Length > 0)
 			{
-				SaveData = (Save_Control.PlayerData)binaryFormatter.Deserialize(fileStream);
+				//SaveData = (Save_Control.PlayerData)binaryFormatter.Deserialize(fileStream);
+
+				using (System.IO.MemoryStream ms = new System.IO.MemoryStream(saveBytes))
+				{
+					SaveData = (Save_Control.PlayerData)binaryFormatter.Deserialize(ms);
+				}
 				if (Version != SaveData.version)
 				{
 				}
@@ -200,7 +223,7 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 			{
 				global::UnityEngine.GameObject.Find("Info_Text").GetComponent<global::UnityEngine.UI.Text>().text = "Save Data Error!!!";
 			}
-			fileStream.Close();
+			//fileStream.Close();
 		}
 		Check_Uncensored();
 		if (flag)
@@ -215,9 +238,15 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 		AxiPlayerPrefs.SetInt("Game_Saved", 1);
 		SaveData.version = Version;
 		global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter binaryFormatter = new global::System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-		global::System.IO.FileStream fileStream = global::System.IO.File.Create("SaveData.dat");
-		binaryFormatter.Serialize(fileStream, SaveData);
-		fileStream.Close();
+		//global::System.IO.FileStream fileStream = global::System.IO.File.Create("SaveData.dat");
+		//binaryFormatter.Serialize(fileStream, SaveData);
+		//fileStream.Close();
+
+		using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+		{
+			binaryFormatter.Serialize(ms, SaveData);
+			AxiIO.AxiIO.io.file_WriteAllBytes(SaveDataFilePath, ms.ToArray());
+		}
 	}
 
 	public void Delete_Data(int num, bool isSaved)
@@ -285,54 +314,54 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 	{
 		switch (num)
 		{
-		case 0:
-		{
-			for (int l = 0; l < 20; l++)
-			{
-				SaveData.E_scene_1[l] = 0;
-			}
-			for (int m = 0; m < 200; m++)
-			{
-				SaveData.Map_1[m] = 0;
-			}
-			for (int n = 0; n < 50; n++)
-			{
-				SaveData.BonusItems_1[n] = 0;
-			}
-			break;
-		}
-		case 1:
-		{
-			for (int num2 = 0; num2 < 20; num2++)
-			{
-				SaveData.E_scene_2[num2] = 0;
-			}
-			for (int num3 = 0; num3 < 200; num3++)
-			{
-				SaveData.Map_2[num3] = 0;
-			}
-			for (int num4 = 0; num4 < 50; num4++)
-			{
-				SaveData.BonusItems_2[num4] = 0;
-			}
-			break;
-		}
-		case 2:
-		{
-			for (int i = 0; i < 20; i++)
-			{
-				SaveData.E_scene_3[i] = 0;
-			}
-			for (int j = 0; j < 200; j++)
-			{
-				SaveData.Map_3[j] = 0;
-			}
-			for (int k = 0; k < 50; k++)
-			{
-				SaveData.BonusItems_3[k] = 0;
-			}
-			break;
-		}
+			case 0:
+				{
+					for (int l = 0; l < 20; l++)
+					{
+						SaveData.E_scene_1[l] = 0;
+					}
+					for (int m = 0; m < 200; m++)
+					{
+						SaveData.Map_1[m] = 0;
+					}
+					for (int n = 0; n < 50; n++)
+					{
+						SaveData.BonusItems_1[n] = 0;
+					}
+					break;
+				}
+			case 1:
+				{
+					for (int num2 = 0; num2 < 20; num2++)
+					{
+						SaveData.E_scene_2[num2] = 0;
+					}
+					for (int num3 = 0; num3 < 200; num3++)
+					{
+						SaveData.Map_2[num3] = 0;
+					}
+					for (int num4 = 0; num4 < 50; num4++)
+					{
+						SaveData.BonusItems_2[num4] = 0;
+					}
+					break;
+				}
+			case 2:
+				{
+					for (int i = 0; i < 20; i++)
+					{
+						SaveData.E_scene_3[i] = 0;
+					}
+					for (int j = 0; j < 200; j++)
+					{
+						SaveData.Map_3[j] = 0;
+					}
+					for (int k = 0; k < 50; k++)
+					{
+						SaveData.BonusItems_3[k] = 0;
+					}
+					break;
+				}
 		}
 	}
 
@@ -396,51 +425,51 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 		SaveData.ExtraFlo_C[paste_num] = SaveData.ExtraFlo_C[copy_num];
 		switch (copy_num)
 		{
-		case 0:
-			switch (paste_num)
-			{
-			case 1:
-				global::System.Array.Copy(SaveData.E_scene_1, SaveData.E_scene_2, SaveData.E_scene_1.Length);
-				global::System.Array.Copy(SaveData.Map_1, SaveData.Map_2, SaveData.Map_1.Length);
-				global::System.Array.Copy(SaveData.BonusItems_1, SaveData.BonusItems_2, SaveData.BonusItems_1.Length);
-				break;
-			case 2:
-				global::System.Array.Copy(SaveData.E_scene_1, SaveData.E_scene_3, SaveData.E_scene_1.Length);
-				global::System.Array.Copy(SaveData.Map_1, SaveData.Map_3, SaveData.Map_1.Length);
-				global::System.Array.Copy(SaveData.BonusItems_1, SaveData.BonusItems_3, SaveData.BonusItems_1.Length);
-				break;
-			}
-			break;
-		case 1:
-			switch (paste_num)
-			{
 			case 0:
-				global::System.Array.Copy(SaveData.E_scene_2, SaveData.E_scene_1, SaveData.E_scene_2.Length);
-				global::System.Array.Copy(SaveData.Map_2, SaveData.Map_1, SaveData.Map_2.Length);
-				global::System.Array.Copy(SaveData.BonusItems_2, SaveData.BonusItems_1, SaveData.BonusItems_2.Length);
-				break;
-			case 2:
-				global::System.Array.Copy(SaveData.E_scene_2, SaveData.E_scene_3, SaveData.E_scene_2.Length);
-				global::System.Array.Copy(SaveData.Map_2, SaveData.Map_3, SaveData.Map_2.Length);
-				global::System.Array.Copy(SaveData.BonusItems_2, SaveData.BonusItems_3, SaveData.BonusItems_2.Length);
-				break;
-			}
-			break;
-		case 2:
-			switch (paste_num)
-			{
-			case 0:
-				global::System.Array.Copy(SaveData.E_scene_3, SaveData.E_scene_1, SaveData.E_scene_3.Length);
-				global::System.Array.Copy(SaveData.Map_3, SaveData.Map_1, SaveData.Map_3.Length);
-				global::System.Array.Copy(SaveData.BonusItems_3, SaveData.BonusItems_1, SaveData.BonusItems_3.Length);
+				switch (paste_num)
+				{
+					case 1:
+						global::System.Array.Copy(SaveData.E_scene_1, SaveData.E_scene_2, SaveData.E_scene_1.Length);
+						global::System.Array.Copy(SaveData.Map_1, SaveData.Map_2, SaveData.Map_1.Length);
+						global::System.Array.Copy(SaveData.BonusItems_1, SaveData.BonusItems_2, SaveData.BonusItems_1.Length);
+						break;
+					case 2:
+						global::System.Array.Copy(SaveData.E_scene_1, SaveData.E_scene_3, SaveData.E_scene_1.Length);
+						global::System.Array.Copy(SaveData.Map_1, SaveData.Map_3, SaveData.Map_1.Length);
+						global::System.Array.Copy(SaveData.BonusItems_1, SaveData.BonusItems_3, SaveData.BonusItems_1.Length);
+						break;
+				}
 				break;
 			case 1:
-				global::System.Array.Copy(SaveData.E_scene_3, SaveData.E_scene_2, SaveData.E_scene_3.Length);
-				global::System.Array.Copy(SaveData.Map_3, SaveData.Map_2, SaveData.Map_3.Length);
-				global::System.Array.Copy(SaveData.BonusItems_3, SaveData.BonusItems_2, SaveData.BonusItems_3.Length);
+				switch (paste_num)
+				{
+					case 0:
+						global::System.Array.Copy(SaveData.E_scene_2, SaveData.E_scene_1, SaveData.E_scene_2.Length);
+						global::System.Array.Copy(SaveData.Map_2, SaveData.Map_1, SaveData.Map_2.Length);
+						global::System.Array.Copy(SaveData.BonusItems_2, SaveData.BonusItems_1, SaveData.BonusItems_2.Length);
+						break;
+					case 2:
+						global::System.Array.Copy(SaveData.E_scene_2, SaveData.E_scene_3, SaveData.E_scene_2.Length);
+						global::System.Array.Copy(SaveData.Map_2, SaveData.Map_3, SaveData.Map_2.Length);
+						global::System.Array.Copy(SaveData.BonusItems_2, SaveData.BonusItems_3, SaveData.BonusItems_2.Length);
+						break;
+				}
 				break;
-			}
-			break;
+			case 2:
+				switch (paste_num)
+				{
+					case 0:
+						global::System.Array.Copy(SaveData.E_scene_3, SaveData.E_scene_1, SaveData.E_scene_3.Length);
+						global::System.Array.Copy(SaveData.Map_3, SaveData.Map_1, SaveData.Map_3.Length);
+						global::System.Array.Copy(SaveData.BonusItems_3, SaveData.BonusItems_1, SaveData.BonusItems_3.Length);
+						break;
+					case 1:
+						global::System.Array.Copy(SaveData.E_scene_3, SaveData.E_scene_2, SaveData.E_scene_3.Length);
+						global::System.Array.Copy(SaveData.Map_3, SaveData.Map_2, SaveData.Map_3.Length);
+						global::System.Array.Copy(SaveData.BonusItems_3, SaveData.BonusItems_2, SaveData.BonusItems_3.Length);
+						break;
+				}
+				break;
 		}
 		Save_Game();
 	}

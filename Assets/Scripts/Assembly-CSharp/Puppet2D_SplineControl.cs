@@ -1,3 +1,4 @@
+
 [global::UnityEngine.ExecuteInEditMode]
 public class Puppet2D_SplineControl : global::UnityEngine.MonoBehaviour
 {
@@ -94,16 +95,17 @@ public class Puppet2D_SplineControl : global::UnityEngine.MonoBehaviour
 
 	private static void RecursivelyFindFolderPath(string dir)
 	{
-		string[] directories = global::System.IO.Directory.GetDirectories(dir);
-		string[] array = directories;
-		foreach (string text in array)
-		{
-			if (text.Contains("Puppet2D"))
-			{
-				_puppet2DPath = text;
-				break;
-			}
-			RecursivelyFindFolderPath(text);
-		}
+		UnityEngine.Debug.LogError("不应该调用这个=》RecursivelyFindFolderPath");
+		//string[] directories = global::System.IO.Directory.GetDirectories(dir);
+		//string[] array = directories;
+		//foreach (string text in array)
+		//{
+		//	if (text.Contains("Puppet2D"))
+		//	{
+		//		_puppet2DPath = text;
+		//		break;
+		//	}
+		//	RecursivelyFindFolderPath(text);
+		//}
 	}
 }
