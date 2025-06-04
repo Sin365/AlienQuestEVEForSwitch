@@ -3,6 +3,7 @@ using nn.fs;
 #endif
 
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 public class AxiNSIO
 {
