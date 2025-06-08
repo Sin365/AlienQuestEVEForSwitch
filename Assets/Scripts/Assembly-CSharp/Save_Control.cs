@@ -141,13 +141,8 @@ public class Save_Control : global::UnityEngine.MonoBehaviour
 
 	private float Version = 1f;
 
-#if UNITY_SWITCH && !UNITY_EDITOR
-	string SaveDataRootDirPath = "save:/";
-#else
-	string SaveDataRootDirPath = Application.persistentDataPath;
-#endif
-	string UncensoredFilePath => SaveDataRootDirPath + "/Uncensored.dat";
-	string SaveDataFilePath => SaveDataRootDirPath + "/SaveData.dat";
+	public static string UncensoredFilePath => AxiPlayerPrefs.SaveDataRootDirPath + "/Uncensored.dat";
+	public static string SaveDataFilePath => AxiPlayerPrefs.SaveDataRootDirPath + "/SaveData.dat";
 
 	public Save_Control.PlayerData SaveData = new Save_Control.PlayerData();
 
