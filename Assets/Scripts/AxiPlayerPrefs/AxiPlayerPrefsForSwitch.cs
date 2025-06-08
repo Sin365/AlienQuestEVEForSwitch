@@ -3,15 +3,11 @@ using UnityEngine;
 
 public class AxiPlayerPrefsForSwitch : AxiPlayerPrefsFileBase
 {
-#if UNITY_SWITCH && !UNITY_EDITOR
-	static string SaveDataRootDirPath = "save:/";
-#else
-	static string SaveDataRootDirPath = Application.persistentDataPath;
-#endif
-	static string AxiPlayerPrefsFilePath => SaveDataRootDirPath + "/AxiPlayerPrefs.dat";
+	static string AxiPlayerPrefsFilePath => AxiPlayerPrefs.SaveDataRootDirPath + "/AxiPlayerPrefs.dat";
 
 	public AxiPlayerPrefsForSwitch():base(NSLoadData, NSSaveData)
     {
+		Debug.Log($"AxiPlayerPrefsForSwitch Init");
 	}
 
     public static Dictionary<string, AxiPlayerPrefsKeyValye> NSLoadData()
@@ -47,16 +43,20 @@ public class AxiPlayerPrefsForSwitch : AxiPlayerPrefsFileBase
     public static void NSSaveData(Dictionary<string, AxiPlayerPrefsKeyValye> data)
 	{
 #if UNITY_SWITCH && !UNITY_EDITOR
+		Debug.Log($"NSSaveData   Start!");
+		Debug.Log($"NSSaveData   data.Keys.Count=> {data.Keys.Count}");
 		string jsonStr = AxiPlayerPrefsFileBase.DataToJsonStr(data);
+		Debug.Log($"NSSaveData   jsonStr=> {jsonStr}");
 		byte[] dataByteArray;
 		using (System.IO.MemoryStream stream = new System.IO.MemoryStream(jsonStr.Length * sizeof(char)))
 		{
 			System.IO.BinaryWriter binaryWriter = new System.IO.BinaryWriter(stream);
 			binaryWriter.Write(jsonStr);
-			stream.Close();
 			dataByteArray = stream.GetBuffer();
+			stream.Close();
 		}
 		AxiIO.AxiIO.io.file_WriteAllBytes(AxiPlayerPrefsFilePath, dataByteArray, false);
+		Debug.Log($"NSSaveData   end!");
 #else
 
 #endif

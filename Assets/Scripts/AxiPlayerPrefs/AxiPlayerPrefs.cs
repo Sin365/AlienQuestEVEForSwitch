@@ -1,8 +1,12 @@
-﻿using System;
-
-public static class AxiPlayerPrefs
+﻿public static class AxiPlayerPrefs
 {
-    static IAxiPlayerPrefs m_axiPlayerPrefs;
+#if UNITY_SWITCH && !UNITY_EDITOR
+	public static string SaveDataRootDirPath = "save:/axibug";
+#else
+	public static string SaveDataRootDirPath = UnityEngine.Application.persistentDataPath;
+#endif
+
+	static IAxiPlayerPrefs m_axiPlayerPrefs;
     static IAxiPlayerPrefs axiPlayerPrefs
     {
         get

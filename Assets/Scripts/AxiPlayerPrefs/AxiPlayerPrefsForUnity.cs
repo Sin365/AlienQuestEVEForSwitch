@@ -5,7 +5,7 @@ public class AxiPlayerPrefsForUnity : IAxiPlayerPrefs
 {
     public string GetString(string key, string defaultValue)
     {
-        return PlayerPrefs.GetString(key, defaultValue);
+		return PlayerPrefs.GetString(key, defaultValue);
     }
 
     public void SetString(string key, string value)
