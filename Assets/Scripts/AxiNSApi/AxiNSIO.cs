@@ -81,7 +81,10 @@ public class AxiNSIO
 		nn.Result result = nn.fs.FileSystem.GetEntryType(ref entryType, filePath);
 		//result.abortUnlessSuccess();
 		//这个异常捕获。真的别扭
-		return nn.fs.FileSystem.ResultPathAlreadyExists.Includes(result);
+
+		//日，FileSystem.ResultPathAlreadyExists 貌似不太行
+		//return nn.fs.FileSystem.ResultPathAlreadyExists.Includes(result);
+		return !nn.fs.FileSystem.ResultPathNotFound.Includes(result);
 #endif
 	}
 	/// <summary>
@@ -218,11 +221,41 @@ public class AxiNSIO
 					UnityEngine.Debug.LogError($"创建文件失败 {filePath} : " + result.GetErrorInfo());
 					return false;
 				}
+				//读取文件Handle
+				result = File.Open(ref fileHandle, filePath, OpenFileMode.Write);
 			}
 			else
-				UnityEngine.Debug.Log($"文件({filePath})存在，不必创建");
+			{
+				//读取文件Handle
+				result = File.Open(ref fileHandle, filePath, OpenFileMode.Write);
+				long currsize = 0;
+				File.GetSize(ref currsize, fileHandle);
+				if (currsize == data.Length)
+				{
+					UnityEngine.Debug.Log($"文件({filePath})存在,长度一致，不用重新创建");
+				}
+				else
+				{
+					UnityEngine.Debug.Log($"文件({filePath})存在,长度不一致，先删除再重建");
+					nn.fs.File.Close(fileHandle);
+					//删除
+					File.Delete(filePath);
+					//重新创建
+					result = nn.fs.File.Create(filePath, data.Length);
+					if (!result.IsSuccess())
+					{
+						UnityEngine.Debug.LogError($"创建文件失败 {filePath} : " + result.GetErrorInfo());
+						return false;
+					}
+					//重新读取文件Handle
+					result = File.Open(ref fileHandle, filePath, OpenFileMode.Write);
+				}
+			}
 
-			result = File.Open(ref fileHandle, filePath, OpenFileMode.Write);
+			//  //OpenFileMode.AllowAppend 好像不可用
+			//  //result = File.Open(ref fileHandle, filePath, OpenFileMode.AllowAppend);
+			//  result = File.Open(ref fileHandle, filePath, OpenFileMode.Write);
+
 			//result.abortUnlessSuccess();
 			if (!result.IsSuccess())
 			{
@@ -532,6 +565,41 @@ public class AxiNSIO
 	public AxiNSWait_DeletePathDir DeletePathDirAsync(string filename)
 	{
 		var wait = new AxiNSWait_DeletePathDir(filename);
+		AxiNS.instance.wait.AddWait(wait);
+		return wait;
+	}
+	public bool DeletePathDirRecursively(string filename)
+	{
+#if !UNITY_SWITCH
+        return false;
+#else
+
+#if UNITY_SWITCH && !UNITY_EDITOR
+        // This next line prevents the user from quitting the game while saving. 
+        // This is required for Nintendo Switch Guideline 0080
+        UnityEngine.Switch.Notification.EnterExitRequestHandlingSection();
+#endif
+
+		if (CheckPathNotFound(filename))
+			return false;
+		nn.Result result;
+		result = nn.fs.Directory.DeleteRecursively(filename);
+		if (result.IsSuccess() == false)
+		{
+			UnityEngine.Debug.LogError($"nn.fs.File.Recursively 失败 {filename} : result=>{result.GetErrorInfo()}");
+			return false;
+		}
+
+#if UNITY_SWITCH && !UNITY_EDITOR
+        // End preventing the user from quitting the game while saving.
+        UnityEngine.Switch.Notification.LeaveExitRequestHandlingSection();
+#endif
+		return CommitSave();
+#endif
+	}
+	public AxiNSWait_DeletePathDirRecursively DeletePathDirRecursivelyAsync(string filename)
+	{
+		var wait = new AxiNSWait_DeletePathDirRecursively(filename);
 		AxiNS.instance.wait.AddWait(wait);
 		return wait;
 	}
