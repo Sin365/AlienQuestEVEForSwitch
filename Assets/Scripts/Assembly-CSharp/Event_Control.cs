@@ -171,7 +171,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				RedAlert.color = new global::UnityEngine.Color(1f, 0f, 0f, 0.5f + (1f + global::UnityEngine.Mathf.Sin(RedAlertGlow_Timer * 7f)) * 0.25f);
 				if (!GM.onGatePass && RedAlert.sortingLayerID != 17)
 				{
-					RedAlert.sortingLayerID = 17;
+					RedAlert.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(17);
 					RedAlert.sortingOrder = -10;
 				}
 				if (GM.onGameClear)

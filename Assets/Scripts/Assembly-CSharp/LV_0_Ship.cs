@@ -289,16 +289,16 @@ public class LV_0_Ship : global::UnityEngine.MonoBehaviour
 
 	public void Set_SortingLayer_On()
 	{
-		Body_L.sortingLayerID = 19;
-		Body_R.sortingLayerID = 19;
-		Highlight.sortingLayerID = 19;
+		Body_L.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(19);
+		Body_R.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(19);
+		Highlight.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(19);
 	}
 
 	public void Set_SortingLayer_Off()
 	{
-		Body_L.sortingLayerID = 0;
-		Body_R.sortingLayerID = 0;
-		Highlight.sortingLayerID = 0;
+		Body_L.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(0);
+		Body_R.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(0);
+		Highlight.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(0);
 	}
 
 	private void Play_Sound_LandingGear()

@@ -51,7 +51,7 @@ public abstract class AxiPlayerPrefsFileBase : IAxiPlayerPrefs
 
 	AxiPlayerPrefsKeyValye GetByKey(string key, bool NonAutoCreate, out bool IsNew)
 	{
-		Debug.Log($"GetByKey=>{key}");
+		//Debug.Log($"GetByKey=>{key}");
 		if (!m_keyval.ContainsKey(key))
 		{
 			IsNew = true;

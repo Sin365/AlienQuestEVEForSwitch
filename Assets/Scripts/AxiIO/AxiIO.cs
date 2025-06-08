@@ -10,7 +10,7 @@ namespace AxiIO
         {
             get
             {
-                Debug.Log("[AxiIO]");
+                //Debug.Log("[AxiIO]");
                 if (m_io == null)
                 {
 #if UNITY_SWITCH && !UNITY_EDITOR

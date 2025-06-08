@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Gate_Control : global::UnityEngine.MonoBehaviour
 {
 	public int Card_Num;
@@ -183,30 +185,30 @@ public class Gate_Control : global::UnityEngine.MonoBehaviour
 	{
 		global::UnityEngine.SpriteRenderer glow_Top = Glow_Top;
 		int sortingLayerID = 3;
-		Glow_Bot.sortingLayerID = sortingLayerID;
-		glow_Top.sortingLayerID = sortingLayerID;
+		Glow_Bot.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
+		glow_Top.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
 		global::UnityEngine.SpriteRenderer glow_Top2 = Glow_Top;
 		sortingLayerID = 99;
 		Glow_Bot.sortingOrder = sortingLayerID;
 		glow_Top2.sortingOrder = sortingLayerID;
 		global::UnityEngine.SpriteRenderer body_R = Body_R;
 		sortingLayerID = 3;
-		Body_L.sortingLayerID = sortingLayerID;
-		body_R.sortingLayerID = sortingLayerID;
+		Body_L.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
+		body_R.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
 		global::UnityEngine.SpriteRenderer body_R2 = Body_R;
-		sortingLayerID = 100;
+		sortingLayerID = 10;
 		Body_L.sortingOrder = sortingLayerID;
 		body_R2.sortingOrder = sortingLayerID;
 		global::UnityEngine.SpriteRenderer body_Top_R = Body_Top_R;
 		sortingLayerID = 3;
-		Body_Bot_L.sortingLayerID = sortingLayerID;
+		Body_Bot_L.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
 		sortingLayerID = sortingLayerID;
-		Body_Bot_R.sortingLayerID = sortingLayerID;
+		Body_Bot_R.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
 		sortingLayerID = sortingLayerID;
-		Body_Top_L.sortingLayerID = sortingLayerID;
-		body_Top_R.sortingLayerID = sortingLayerID;
+		Body_Top_L.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
+		body_Top_R.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
 		global::UnityEngine.SpriteRenderer body_Top_R2 = Body_Top_R;
-		sortingLayerID = 101;
+		sortingLayerID = 10;
 		Body_Bot_L.sortingOrder = sortingLayerID;
 		sortingLayerID = sortingLayerID;
 		Body_Bot_R.sortingOrder = sortingLayerID;
@@ -219,25 +221,25 @@ public class Gate_Control : global::UnityEngine.MonoBehaviour
 	{
 		if (global::UnityEngine.GameObject.Find("RedAlert") != null)
 		{
-			global::UnityEngine.GameObject.Find("RedAlert").GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 20;
+			global::UnityEngine.GameObject.Find("RedAlert").GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
 			global::UnityEngine.GameObject.Find("RedAlert").GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 2000;
 		}
 		global::UnityEngine.SpriteRenderer body_R = Body_R;
 		int sortingLayerID = 20;
-		Body_L.sortingLayerID = sortingLayerID;
-		body_R.sortingLayerID = sortingLayerID;
+		Body_L.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
+		body_R.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
 		global::UnityEngine.SpriteRenderer body_R2 = Body_R;
 		sortingLayerID = 1600;
 		Body_L.sortingOrder = sortingLayerID;
 		body_R2.sortingOrder = sortingLayerID;
 		global::UnityEngine.SpriteRenderer body_Top_R = Body_Top_R;
 		sortingLayerID = 20;
-		Body_Bot_L.sortingLayerID = sortingLayerID;
+		Body_Bot_L.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
 		sortingLayerID = sortingLayerID;
-		Body_Bot_R.sortingLayerID = sortingLayerID;
+		Body_Bot_R.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
 		sortingLayerID = sortingLayerID;
-		Body_Top_L.sortingLayerID = sortingLayerID;
-		body_Top_R.sortingLayerID = sortingLayerID;
+		Body_Top_L.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
+		body_Top_R.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(sortingLayerID);
 		global::UnityEngine.SpriteRenderer body_Top_R2 = Body_Top_R;
 		sortingLayerID = 1601;
 		Body_Bot_L.sortingOrder = sortingLayerID;

@@ -175,11 +175,11 @@ public class Mon_Index : global::UnityEngine.MonoBehaviour
 		{
 			if (Object_List[i].GetComponent<global::UnityEngine.SkinnedMeshRenderer>() != null)
 			{
-				Object_List[i].GetComponent<global::UnityEngine.SkinnedMeshRenderer>().sortingLayerID = num;
+				Object_List[i].GetComponent<global::UnityEngine.SkinnedMeshRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(num);
 			}
 			else
 			{
-				Object_List[i].GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = num;
+				Object_List[i].GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(num);
 			}
 		}
 	}

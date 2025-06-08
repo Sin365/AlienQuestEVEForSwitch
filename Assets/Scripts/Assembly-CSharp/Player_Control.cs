@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Player_Control : global::UnityEngine.MonoBehaviour
 {
 	public enum AniState
@@ -1722,22 +1724,24 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 		Col_Top.enabled = false;
 		Col_Bot.enabled = false;
 		Col_Jump2.enabled = false;
-		player_ani.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 20;
+		
+		player_ani.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
 		player_ani.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1200;
-		Ani_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 20;
+		Ani_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
 		Ani_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1201;
-		Effect_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 20;
+		Effect_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
 		Effect_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1510;
-		Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 20;
+		Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
 		Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1199;
-		Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 20;
+		Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
 		Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1540;
-		global::UnityEngine.GameObject.Find("Effect_Attack").GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 20;
+		global::UnityEngine.GameObject.Find("Effect_Attack").GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
 		global::UnityEngine.GameObject.Find("Effect_Attack").GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1550;
-		global::UnityEngine.GameObject.Find("Effect_Spin").GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 20;
+		global::UnityEngine.GameObject.Find("Effect_Spin").GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
 		global::UnityEngine.GameObject.Find("Effect_Spin").GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1501;
 		BackDash_Timer = 2f;
 	}
+
 
 	public void UnLock_GatePass()
 	{
@@ -1756,19 +1760,19 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 		base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale = 5f;
 		base.GetComponent<UnityEngine.Rigidbody2D>().WakeUp();
 		base.GetComponent<UnityEngine.Rigidbody2D>().velocity = velocity;
-		player_ani.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 10;
+		player_ani.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(10);
 		player_ani.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 200;
-		Ani_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 10;
+		Ani_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(10);
 		Ani_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 201;
-		Effect_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 17;
+		Effect_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(17);
 		Effect_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 510;
-		Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 10;
+		Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(10);
 		Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 199;
-		Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 17;
+		Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(17);
 		Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 540;
-		global::UnityEngine.GameObject.Find("Effect_Attack").GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 17;
+		global::UnityEngine.GameObject.Find("Effect_Attack").GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(17);
 		global::UnityEngine.GameObject.Find("Effect_Attack").GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 550;
-		global::UnityEngine.GameObject.Find("Effect_Spin").GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = 17;
+		global::UnityEngine.GameObject.Find("Effect_Spin").GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(17);
 		global::UnityEngine.GameObject.Find("Effect_Spin").GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 501;
 	}
 
