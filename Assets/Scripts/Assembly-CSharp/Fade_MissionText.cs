@@ -37,13 +37,20 @@ public class Fade_MissionText : global::UnityEngine.MonoBehaviour
 		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		brown_On = txt_1.color;
 		Language_MenuItem component = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>();
-		if (AxiPlayerPrefs.GetInt("Language_Num") > 0)
-		{
-			txtTitle.text = component.MissionBriefing(0, 1);
-			txt_1.text = component.MissionBriefing(1, 1);
-			txt_2.text = component.MissionBriefing(2, 1);
-			txt_3.text = component.MissionBriefing(3, 1);
-		}
+
+		//if (AxiPlayerPrefs.GetInt("Language_Num") > 0)
+		//{
+		//	txtTitle.text = component.MissionBriefing(0, 1);
+		//	txt_1.text = component.MissionBriefing(1, 1);
+		//	txt_2.text = component.MissionBriefing(2, 1);
+		//	txt_3.text = component.MissionBriefing(3, 1);
+		//}
+		int langIdx = AxiPlayerPrefs.GetInt("Language_Num");
+		txtTitle.text = component.MissionBriefing(0, langIdx);
+		txt_1.text = component.MissionBriefing(1, langIdx);
+		txt_2.text = component.MissionBriefing(2, langIdx);
+		txt_3.text = component.MissionBriefing(3, langIdx);
+
 		GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = PosOrig;
 		GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);

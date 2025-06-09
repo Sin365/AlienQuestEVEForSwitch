@@ -14,24 +14,25 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 		0, 1, 0, 1, 0, 0
 	};
 
-	private string[,] Event_Dialogue = new string[16, 2]
+	private string[,] Event_Dialogue = new string[16, 3]
 	{
-		{ "General", "しょうぐん" },
-		{ "Science Officer", "研究員" },
-		{ "Oh, That's perfect!", "すごい！ それは完璧です！" },
-		{ "MOTHER BRAIN! The clone of ancient alien!", "これがまさにマザーブレイン！ \n古代エイリアンの脳を複製こなすなんてすごい！" },
-		{ "Until now, we made bioweapon from just a genetic \ninformation of alien gene.", "今まで私たちは、エイリアンの遺伝情報だけで生物兵器を作った。" },
-		{ "But from now on, we'll get the knowledge and \ninformation from this gigantic brain.", "しかし、これからはその巨大な脳に込められた古代の知識をすべて吸収することができる！" },
-		{ "It's time to wake up MOTHER BRAIN.", "今、マザーブレインを眠りから目覚めさせる時間である。" },
-		{ "Yes sir!", "かしこまりました。" },
-		{ "What's going on?", "おい、どうした？" },
-		{ "Sir! The MOTHER BRAIN is out of control!! She connect to the Core and try to dominate the system!!", "マザーブレインが暴走しています！ \nコアに接続して、システム全体を掌握していきます！" },
-		{ "W,What??  It's just a dead brain!!", "何？ そんなはずはない... これだけ死んだ脳に過ぎず、！" },
-		{ "Oh no... We must cut the power of this ship immediately!!", "ああダメ！ \nすぐにマザーブレインを停止させなければします！" },
-		{ "Bull shit!! This is a Military resource! We can't lose this \nbrain!!", "黙れ！ これ貴重な軍事資源である！ \nこのように放棄することはできない！" },
-		{ "H, Help!!", "うわあああ！" },
-		{ "W, What the..?", "..な, なに？" },
-		{ "W, What the..?", "..な, なに？" }
+		{ "General", "しょうぐん" ,"将军" },
+		{ "Science Officer", "研究員" ,"研究員" },
+		{ "Oh, That's perfect!", "すごい！ それは完璧です！" ,"完美！如此完美！！！" },
+		{ "MOTHER BRAIN! The clone of ancient alien!", "これがまさにマザーブレイン！ \n古代エイリアンの脳を複製こなすなんてすごい！" ,"这就是主脑！这就是主脑啊！ \n我们终于成功复制古代外星人的大脑了！" },
+		{ "Until now, we made bioweapon from just a genetic \ninformation of alien gene.", "今まで私たちは、エイリアンの遺伝情報だけで生物兵器を作った。" ,"在这之前，我们只是像猴子一样，用外星人的遗传信息制作生物武器。" },
+		{ "But from now on, we'll get the knowledge and \ninformation from this gigantic brain.", "しかし、これからはその巨大な脳に込められた古代の知識をすべて吸収することができる！" ,"但是，现在我们终于可以摆脱那种浅薄的运用！直接吸收这些大脑中蕴含的古代知识了！" },
+		{ "It's time to wake up MOTHER BRAIN.", "今、マザーブレインを眠りから目覚めさせる時間である。" ,"今天！就是我们崛起的时刻。" },
+		{ "Yes sir!", "かしこまりました。" ,"是！将军！" },
+		{ "What's going on?", "おい、どうした？" ,"嗯？怎么了？" },
+		{ "Sir! The MOTHER BRAIN is out of control!! She connect to the Core and try to dominate the system!!", "マザーブレインが暴走しています！ \nコアに接続して、システム全体を掌握していきます！" ,"主脑暴走了！参数异常！参数异常！ \n核心！核心脱离了！不好！整个系统都失去控制了！" },
+		{ "W,What??  It's just a dead brain!!", "何？ そんなはずはない... これだけ死んだ脳に過ぎず、！" ,"什么？！怎、怎么可能！区区一个死去几万年的大脑！！" },
+		{ "Oh no... We must cut the power of this ship immediately!!", "ああダメ！ \nすぐにマザーブレインを停止させなければします！" ,"啊啊、不行了！ \n必须快点关闭它！它要暴走了！" },
+		{ "Bull shit!! This is a Military resource! We can't lose this \nbrain!!", "黙れ！ これ貴重な軍事資源である！ \nこのように放棄することはできない！" ,"开什么玩笑！这是宝贵的军事资源！ \n不能就这么放弃！" },
+		{ "H, Help!!", "うわあああ！" ,"哇！哇啊啊啊！" },
+		{ "W, What the..?", "..な, なに？" ,"..这、这是？" },
+		{ "W, What the..?", "..な, なに？","..什么？" }
+
 	};
 
 	private float Event_Timer;
@@ -260,9 +261,9 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 			{
 				switch (Event_Num)
 				{
-				case 1:
-					Event_1_Index();
-					break;
+					case 1:
+						Event_1_Index();
+						break;
 				}
 				if (Text_Dlg_On)
 				{
@@ -658,38 +659,38 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 	{
 		switch (num)
 		{
-		case 1:
-		{
-			global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_info_Eve, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
-			gameObject4.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
-			gameObject4.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(626f, -105f, 0f);
-			gameObject4.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
-			break;
-		}
-		case 2:
-		{
-			global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_info_EveCore, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
-			gameObject3.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
-			gameObject3.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(626f, -105f, 0f);
-			gameObject3.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
-			break;
-		}
-		case 3:
-		{
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_info_6months, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
-			gameObject2.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
-			gameObject2.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(626f, -200f, 0f);
-			gameObject2.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
-			break;
-		}
-		case 4:
-		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_info_Mission, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
-			gameObject.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
-			gameObject.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(1500f, -360f, 0f);
-			gameObject.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
-			break;
-		}
+			case 1:
+				{
+					global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_info_Eve, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					gameObject4.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
+					gameObject4.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(626f, -105f, 0f);
+					gameObject4.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
+					break;
+				}
+			case 2:
+				{
+					global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_info_EveCore, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					gameObject3.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
+					gameObject3.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(626f, -105f, 0f);
+					gameObject3.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
+					break;
+				}
+			case 3:
+				{
+					global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_info_6months, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					gameObject2.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
+					gameObject2.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(626f, -200f, 0f);
+					gameObject2.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
+					break;
+				}
+			case 4:
+				{
+					global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_info_Mission, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					gameObject.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
+					gameObject.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(1500f, -360f, 0f);
+					gameObject.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
+					break;
+				}
 		}
 		FadeInfo_Num = 0;
 	}

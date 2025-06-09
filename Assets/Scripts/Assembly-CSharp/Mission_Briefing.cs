@@ -4,14 +4,22 @@ public class Mission_Briefing : global::UnityEngine.MonoBehaviour
 	{
 		Hide_BriefingPos();
 		Language_MenuItem component = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>();
-		if (AxiPlayerPrefs.GetInt("Language_Num") == 1)
-		{
-			global::UnityEngine.GameObject.Find("Text_MissionBr_Title").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(0, 1);
-			global::UnityEngine.GameObject.Find("Text_MissionBr_1").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(1, 1);
-			global::UnityEngine.GameObject.Find("Text_MissionBr_2").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(2, 1);
-			global::UnityEngine.GameObject.Find("Text_MissionBr_3").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(3, 1);
-			global::UnityEngine.GameObject.Find("Text_MissionBr_4").GetComponent<global::UnityEngine.UI.Text>().text = component.MapText(3, 1);
-		}
+		//if (AxiPlayerPrefs.GetInt("Language_Num") == 1)
+		//{
+		//	global::UnityEngine.GameObject.Find("Text_MissionBr_Title").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(0, 1);
+		//	global::UnityEngine.GameObject.Find("Text_MissionBr_1").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(1, 1);
+		//	global::UnityEngine.GameObject.Find("Text_MissionBr_2").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(2, 1);
+		//	global::UnityEngine.GameObject.Find("Text_MissionBr_3").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(3, 1);
+		//	global::UnityEngine.GameObject.Find("Text_MissionBr_4").GetComponent<global::UnityEngine.UI.Text>().text = component.MapText(3, 1);
+		//}
+
+
+		int langIdx = AxiPlayerPrefs.GetInt("Language_Num");
+		global::UnityEngine.GameObject.Find("Text_MissionBr_Title").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(0, langIdx);
+		global::UnityEngine.GameObject.Find("Text_MissionBr_1").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(1, langIdx);
+		global::UnityEngine.GameObject.Find("Text_MissionBr_2").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(2, langIdx);
+		global::UnityEngine.GameObject.Find("Text_MissionBr_3").GetComponent<global::UnityEngine.UI.Text>().text = component.MissionBriefing(3, langIdx);
+		global::UnityEngine.GameObject.Find("Text_MissionBr_4").GetComponent<global::UnityEngine.UI.Text>().text = component.MapText(3, langIdx);
 	}
 
 	private void Hide_BriefingPos()

@@ -18,7 +18,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 
 	private int Window_Size = 1920;
 
-	private int Language_Num;
+	private int Language_Num = 2;
 
 	private global::UnityEngine.Vector3 PosOrig;
 
@@ -204,8 +204,9 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 		}
 		else
 		{
+			//默认设置
 			AxiPlayerPrefs.SetInt("WindowSize", Window_Size);
-			AxiPlayerPrefs.SetInt("Language_Num", Language_Num);
+			AxiPlayerPrefs.SetInt("Language_Num", Language_Num);//默认2
 			AxiPlayerPrefs.SetFloat("SoundVolume", 0.7f);
 			AxiPlayerPrefs.SetFloat("MusicVolume", 0.7f);
 			AxiPlayerPrefs.SetInt("SelBGM", 0);
@@ -1297,14 +1298,18 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 
 	private void Set_Language()
 	{
-		if (Language_Num == 0)
-		{
-			Language_Num = 1;
-		}
-		else
-		{
+		//if (Language_Num == 0)
+		//{
+		//	Language_Num = 1;
+		//}
+		//else
+		//{
+		//	Language_Num = 0;
+		//}
+		//支持三种语言
+		Language_Num++;
+		if (Language_Num > 2)
 			Language_Num = 0;
-		}
 		Text_Language();
 		AxiPlayerPrefs.SetInt("Language_Num", Language_Num);
 	}

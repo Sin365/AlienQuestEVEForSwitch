@@ -116,20 +116,34 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 		pos_StatBtn[1] = global::UnityEngine.GameObject.Find("Stat_Add2").GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		pos_StatBtn[2] = global::UnityEngine.GameObject.Find("Stat_Add3").GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		pos_StatBtn[3] = global::UnityEngine.GameObject.Find("Stat_Add4").GetComponent<global::UnityEngine.RectTransform>().localPosition;
-		if (AxiPlayerPrefs.GetInt("Language_Num") == 1)
-		{
-			global::UnityEngine.GameObject.Find("Stat_Name").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.CharName(1);
-			global::UnityEngine.GameObject.Find("Exit_text_Quit").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(0, 1);
-			global::UnityEngine.GameObject.Find("pos_Quit1").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(1, 1);
-			global::UnityEngine.GameObject.Find("pos_Quit2").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(2, 1);
-			global::UnityEngine.GameObject.Find("Exit_text_Info").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(3, 1);
-			global::UnityEngine.GameObject.Find("Text_EllenMap").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.CharName(1);
-			global::UnityEngine.GameObject.Find("Text_EveCore").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(0, 1);
-			global::UnityEngine.GameObject.Find("Text_MotherBrain").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(1, 1);
-			global::UnityEngine.GameObject.Find("Text_Reactor").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(2, 1);
-			global::UnityEngine.GameObject.Find("Text_EscapeNow").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(3, 1);
+		//if (AxiPlayerPrefs.GetInt("Language_Num") == 1)
+		//{
+		//	global::UnityEngine.GameObject.Find("Stat_Name").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.CharName(1);
+		//	global::UnityEngine.GameObject.Find("Exit_text_Quit").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(0, 1);
+		//	global::UnityEngine.GameObject.Find("pos_Quit1").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(1, 1);
+		//	global::UnityEngine.GameObject.Find("pos_Quit2").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(2, 1);
+		//	global::UnityEngine.GameObject.Find("Exit_text_Info").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(3, 1);
+		//	global::UnityEngine.GameObject.Find("Text_EllenMap").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.CharName(1);
+		//	global::UnityEngine.GameObject.Find("Text_EveCore").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(0, 1);
+		//	global::UnityEngine.GameObject.Find("Text_MotherBrain").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(1, 1);
+		//	global::UnityEngine.GameObject.Find("Text_Reactor").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(2, 1);
+		//	global::UnityEngine.GameObject.Find("Text_EscapeNow").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(3, 1);
+		//	global::UnityEngine.GameObject.Find("Mission_4").GetComponent<global::UnityEngine.RectTransform>().sizeDelta = new global::UnityEngine.Vector2(300f, 60f);
+		//}
+
+		int langIdx = AxiPlayerPrefs.GetInt("Language_Num");
+		global::UnityEngine.GameObject.Find("Stat_Name").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.CharName(langIdx);
+		global::UnityEngine.GameObject.Find("Exit_text_Quit").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(0, langIdx);
+		global::UnityEngine.GameObject.Find("pos_Quit1").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(1, langIdx);
+		global::UnityEngine.GameObject.Find("pos_Quit2").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(2, langIdx);
+		global::UnityEngine.GameObject.Find("Exit_text_Info").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.QuitText(3, langIdx);
+		global::UnityEngine.GameObject.Find("Text_EllenMap").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.CharName(langIdx);
+		global::UnityEngine.GameObject.Find("Text_EveCore").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(0, langIdx);
+		global::UnityEngine.GameObject.Find("Text_MotherBrain").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(1, langIdx);
+		global::UnityEngine.GameObject.Find("Text_Reactor").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(2, langIdx);
+		global::UnityEngine.GameObject.Find("Text_EscapeNow").GetComponent<global::UnityEngine.UI.Text>().text = Lang_MI.MapText(3, langIdx);
+		if(langIdx > 0)
 			global::UnityEngine.GameObject.Find("Mission_4").GetComponent<global::UnityEngine.RectTransform>().sizeDelta = new global::UnityEngine.Vector2(300f, 60f);
-		}
 	}
 
 	private void Update()
