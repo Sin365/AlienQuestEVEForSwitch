@@ -434,9 +434,10 @@ public class AxiNSIO
 #endif
 
 
-#if UNITY_SWITCH
 	public bool GetDirectoryEntrysFullRecursion(string path, out string[] entrys)
 	{
+#if UNITY_SWITCH
+
 		nn.fs.DirectoryHandle eHandle = new nn.fs.DirectoryHandle();
 		nn.Result result = nn.fs.Directory.Open(ref eHandle, path, OpenDirectoryMode.All);
 		if (nn.fs.FileSystem.ResultPathNotFound.Includes(result))
@@ -464,8 +465,11 @@ public class AxiNSIO
 		nn.fs.Directory.Close(eHandle);
 		entrys = temp.ToArray();
 		return true;
-	}
+#else
+		entrys = default;
+        return false;
 #endif
+	}
 
 	public IEnumerable<string> EnumerateFiles(string path, string searchPattern)
 	{
