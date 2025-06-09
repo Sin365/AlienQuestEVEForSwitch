@@ -6,7 +6,7 @@ using UnityEngine;
 /// unity2017之后重构，SortingOrder，抛弃userID概念，数值传递为hash，且固定按照Layer1,Layer2,Layer3...升序，不再任意数据
 /// 则保留旧代码按userID的方式设置SortingOrder，
 /// 做一个映射表，userID映射LayerName，在通过SortingLayer.NameToID(layerName)找到Sortting的Hash来设置
-/// 达到不改代码的效果
+/// 达到不改代码的效果,并支持预制体和场景上的SortingLayer批量替换
 /// </summary>
 public static class AxiSortingOrder
 {
