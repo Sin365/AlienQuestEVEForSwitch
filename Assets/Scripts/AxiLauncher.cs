@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class AxiLauncher : MonoBehaviour
 {
+	public Debugger mDebugger;
 	public Button btnStart;
 	public Button btnTest1;
 	public Button btnTest2;
@@ -51,7 +52,8 @@ public class AxiLauncher : MonoBehaviour
 	private void Test1()
 	{
 		Debug.Log("T1");
-		AxiIO.AxiIO.io.file_ReadAllBytes(Save_Control.SaveDataFilePath);
+		mDebugger.enabled = !mDebugger.enabled;
+		//AxiIO.AxiIO.io.file_ReadAllBytes(Save_Control.SaveDataFilePath);
 	}
 	private void Test2()
 	{
