@@ -43,10 +43,7 @@ public class AxiPlayerPrefsForSwitch : AxiPlayerPrefsFileBase
     public static void NSSaveData(Dictionary<string, AxiPlayerPrefsKeyValye> data)
 	{
 #if UNITY_SWITCH && !UNITY_EDITOR
-		Debug.Log($"NSSaveData   Start!");
-		Debug.Log($"NSSaveData   data.Keys.Count=> {data.Keys.Count}");
 		string jsonStr = AxiPlayerPrefsFileBase.DataToJsonStr(data);
-		Debug.Log($"NSSaveData   jsonStr=> {jsonStr}");
 		byte[] dataByteArray;
 		using (System.IO.MemoryStream stream = new System.IO.MemoryStream(jsonStr.Length * sizeof(char)))
 		{
@@ -56,7 +53,6 @@ public class AxiPlayerPrefsForSwitch : AxiPlayerPrefsFileBase
 			stream.Close();
 		}
 		AxiIO.AxiIO.io.file_WriteAllBytes(AxiPlayerPrefsFilePath, dataByteArray, false);
-		Debug.Log($"NSSaveData   end!");
 #else
 
 #endif
