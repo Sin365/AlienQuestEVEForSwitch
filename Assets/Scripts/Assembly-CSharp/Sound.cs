@@ -17,7 +17,27 @@ public class Sound : AxiSoundBase
 	private bool OnEvent;
 	private GameManager GM => GameManager.instance;
 
-	private void Start()
+    public override string resourceName { get; set; }
+
+	public override void Init()
+	{
+		life_Timer = default;
+		isPaused = default;
+		isPlayStarted = default;
+		Volume_Orig = 1f;
+		Dist_Orig = 1f;
+		Dist_Var = 1f;
+		distance = default;
+		OnEvent = default;
+		Start();
+    }
+	
+    public override void ReleaseToPool()
+    {
+		AxiSoundPool.ReleaseSound(this);
+    }
+
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Volume_Orig = base.GetComponent<UnityEngine.AudioSource>().volume;
@@ -90,6 +110,8 @@ public class Sound : AxiSoundBase
 
 	private void Destroy_Self()
 	{
-        global::UnityEngine.Object.Destroy(base.gameObject);
+		ReleaseToPool();
+        //global::UnityEngine.Object.Destroy(base.gameObject);
     }
+
 }

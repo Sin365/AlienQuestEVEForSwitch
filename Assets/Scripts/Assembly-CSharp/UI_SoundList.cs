@@ -95,7 +95,8 @@ public class UI_SoundList : global::UnityEngine.MonoBehaviour
 		if (Item_Timer <= 0f)
 		{
 			Item_Timer = 0.01f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Get_Item) as global::UnityEngine.GameObject;
+			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Get_Item) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForTrans(Get_Item);
 		}
 	}
 
@@ -104,8 +105,9 @@ public class UI_SoundList : global::UnityEngine.MonoBehaviour
 		if (Weapon_Timer <= 0f)
 		{
 			Weapon_Timer = 0.01f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Get_Weapon) as global::UnityEngine.GameObject;
-		}
+			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Get_Weapon) as global::UnityEngine.GameObject;
+            AxiSoundPool.AddSoundForTrans(Get_Weapon);
+        }
 	}
 
 	private void Sound_Get_Ability()
@@ -113,8 +115,9 @@ public class UI_SoundList : global::UnityEngine.MonoBehaviour
 		if (Ability_Timer <= 0f)
 		{
 			Ability_Timer = 0.01f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Get_Ability) as global::UnityEngine.GameObject;
-		}
+			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Get_Ability) as global::UnityEngine.GameObject;
+            AxiSoundPool.AddSoundForTrans(Get_Ability);
+        }
 	}
 
 	private void Sound_Get_Bonus()
@@ -122,8 +125,9 @@ public class UI_SoundList : global::UnityEngine.MonoBehaviour
 		if (Bonus_Timer <= 0f)
 		{
 			Bonus_Timer = 0.01f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Get_Bonus) as global::UnityEngine.GameObject;
-		}
+            //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Get_Bonus) as global::UnityEngine.GameObject;
+            AxiSoundPool.AddSoundForTrans(Get_Bonus);
+        }
 	}
 
 	private void Sound_Get_Potion()
@@ -131,8 +135,9 @@ public class UI_SoundList : global::UnityEngine.MonoBehaviour
 		if (Potion_Timer <= 0f)
 		{
 			Potion_Timer = 0.01f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Get_Potion) as global::UnityEngine.GameObject;
-		}
+			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Get_Potion) as global::UnityEngine.GameObject;
+            AxiSoundPool.AddSoundForTrans(Get_Potion);
+        }
 	}
 
 	private void Sound_Get_FullHP()
@@ -140,8 +145,9 @@ public class UI_SoundList : global::UnityEngine.MonoBehaviour
 		if (FullHP_Timer <= 0f)
 		{
 			FullHP_Timer = 0.01f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Full_HP) as global::UnityEngine.GameObject;
-		}
+			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Full_HP) as global::UnityEngine.GameObject;
+            AxiSoundPool.AddSoundForTrans(Full_HP);
+        }
 	}
 
 	private void Sound_Laser()
@@ -149,82 +155,98 @@ public class UI_SoundList : global::UnityEngine.MonoBehaviour
 		if (Laser_Timer <= 0f)
 		{
 			Laser_Timer = 0.01f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Trap_Laser) as global::UnityEngine.GameObject;
-		}
+            //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Trap_Laser) as global::UnityEngine.GameObject;
+            AxiSoundPool.AddSoundForTrans(Trap_Laser);
+        }
 	}
 
 	private void Sound_LevelUp()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(levelUP) as global::UnityEngine.GameObject;
-	}
+        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(levelUP) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(levelUP);
+    }
 
 	private void Sound_MenuOn()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(MenuOn) as global::UnityEngine.GameObject;
-	}
+        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(MenuOn) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(MenuOn);
+    }
 
 	private void Sound_MenuOff()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(MenuOff) as global::UnityEngine.GameObject;
-	}
+		//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(MenuOff) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(MenuOff);
+    }
 
 	private void Sound_Select()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Select) as global::UnityEngine.GameObject;
-	}
+        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Select) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(Select);
+    }
 
 	private void Sound_Tab()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Tab) as global::UnityEngine.GameObject;
-	}
+        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Tab) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(Tab);
+    }
 
 	private void Sound_Btn()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Btn) as global::UnityEngine.GameObject;
-	}
+		//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Btn) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(Btn);
+    }
 
 	private void Sound_DeviceOn()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(DeviceOn) as global::UnityEngine.GameObject;
-	}
+		//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(DeviceOn) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(DeviceOn);
+    }
 
 	private void Sound_Move_1()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Move_1) as global::UnityEngine.GameObject;
-	}
+        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Move_1) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(Move_1);
+    }
 
 	private void Sound_Move_2()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Move_2) as global::UnityEngine.GameObject;
-	}
+        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Move_2) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(Move_2);
+    }
 
-	private void Sound_Gate_Open()
+	public void Sound_Gate_Open()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Gate_Open) as global::UnityEngine.GameObject;
-	}
+		//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Gate_Open) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(Gate_Open);
+    }
 
 	private void Sound_Gate_Close()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Gate_Close) as global::UnityEngine.GameObject;
-	}
+		//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Gate_Close) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(Gate_Close);
+    }
 
 	private void Sound_Save_On()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Save_On) as global::UnityEngine.GameObject;
-	}
+		//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Save_On) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(Save_On);
+    }
 
 	private void Sound_Save_Off()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Save_Off) as global::UnityEngine.GameObject;
-	}
+		//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Save_Off) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(Save_Off);
+    }
 
 	private void Sound_MissionBriefing()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(MissionBriefing) as global::UnityEngine.GameObject;
-	}
+		//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(MissionBriefing) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(MissionBriefing);
+    }
 
 	private void Sound_MapOn()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(MapOn) as global::UnityEngine.GameObject;
-	}
+        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(MapOn) as global::UnityEngine.GameObject;
+        AxiSoundPool.AddSoundForTrans(MapOn);
+    }
 }

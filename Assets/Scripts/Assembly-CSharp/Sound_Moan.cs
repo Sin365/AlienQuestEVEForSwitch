@@ -1,4 +1,4 @@
-public class Sound_Moan : global::UnityEngine.MonoBehaviour
+public class Sound_Moan : AxiSoundBase
 {
 	private float life_Timer;
 
@@ -8,7 +8,21 @@ public class Sound_Moan : global::UnityEngine.MonoBehaviour
 
 	GameManager GM => GameManager.instance;
 
-	private void Start()
+    public override string resourceName { get; set; }
+
+    public override void Init()
+    {
+        life_Timer = default;
+        isPlayStarted = default;
+		Start();
+    }
+
+    public override void ReleaseToPool()
+    {
+        AxiSoundPool.ReleaseSound(this);
+    }
+
+    private void Start()
 	{
 		if (GM != null)
 		{
@@ -52,6 +66,7 @@ public class Sound_Moan : global::UnityEngine.MonoBehaviour
 
 	private void Destroy_Self()
 	{
-		global::UnityEngine.Object.Destroy(base.gameObject);
+        ReleaseToPool();
+        //global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 }

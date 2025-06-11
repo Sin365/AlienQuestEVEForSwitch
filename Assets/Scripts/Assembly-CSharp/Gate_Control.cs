@@ -400,7 +400,7 @@ public class Gate_Control : global::UnityEngine.MonoBehaviour
 				{
 					Sound_Timer = 0.5f;
 					global::UnityEngine.GameObject.Find("Menu").GetComponent<UI_SoundList>().SendMessage("Sound_Gate_Open");
-				}
+                }
 			}
 			Gate_Up.transform.localPosition = global::UnityEngine.Vector3.Lerp(Gate_Up.transform.localPosition, pos_Up_Close, global::UnityEngine.Time.deltaTime * 3f);
 			Gate_Down.transform.localPosition = global::UnityEngine.Vector3.Lerp(Gate_Down.transform.localPosition, pos_Down_Close, global::UnityEngine.Time.deltaTime * 3f);
