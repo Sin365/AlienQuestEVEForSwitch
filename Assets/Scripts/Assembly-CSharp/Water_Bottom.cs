@@ -101,12 +101,14 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			{
 				sound_walk_index = 0;
 			}
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_WaterWalk[sound_walk_index], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_WaterWalk[sound_walk_index], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(_sound_WaterWalk[sound_walk_index], PC.transform.position, base.transform.rotation);
 		}
 		if (Player_Walk_Timer_2 <= 0f)
 		{
 			Player_Walk_Timer_2 = 1.2f;
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_sound_WaterWalk[3], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			//global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_sound_WaterWalk[3], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(_sound_WaterWalk[3], PC.transform.position, base.transform.rotation);
 		}
 	}
 
@@ -205,7 +207,8 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 	{
 		if (!GM.Paused && col.name == "Ani" && (PC.State.ToString() == "Jump" || PC.State.ToString() == "Down"))
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_WaterImpact[0], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_WaterImpact[0], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(_sound_WaterImpact[0], PC.transform.position, base.transform.rotation);
 			Make_Dust_1_Jump_Begin();
 			Make_Dust_2_Jump();
 		}
@@ -215,7 +218,8 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 	{
 		if (!GM.Paused && col.name == "Ani" && (PC.State.ToString() == "Jump" || PC.State.ToString() == "Down"))
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_WaterImpact[1], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_WaterImpact[1], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(_sound_WaterImpact[1], PC.transform.position, base.transform.rotation);
 			Make_Dust_1_Jump_End();
 			Make_Dust_2_Jump();
 		}

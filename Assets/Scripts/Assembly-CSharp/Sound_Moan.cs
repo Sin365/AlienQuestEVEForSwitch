@@ -1,3 +1,6 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 public class Sound_Moan : AxiSoundBase
 {
 	private float life_Timer;
@@ -5,54 +8,71 @@ public class Sound_Moan : AxiSoundBase
 	private bool isPlayStarted;
 
 	private bool onEnd;
+	private float mSrc_volume;
+	private AudioSource mAS;
 
 	GameManager GM => GameManager.instance;
 
-    public override string resourceName { get; set; }
+	public override string resourceName { get; set; }
 
-    public override void Init()
-    {
-        life_Timer = default;
-        isPlayStarted = default;
-		Start();
-    }
-
-    public override void ReleaseToPool()
-    {
-        AxiSoundPool.ReleaseSound(this);
-    }
-
-    private void Start()
+	public override void Init()
 	{
+		life_Timer = default;
+		isPlayStarted = default;
+		onEnd = default;
+		mSrc_volume = default;
+		Start();
+	}
+
+	public override void ReleaseToPool()
+	{
+		base.GetComponent<UnityEngine.AudioSource>().Stop();
+		base.GetComponent<UnityEngine.AudioSource>().volume = mSrc_volume;
+		AxiSoundPool.ReleaseSound(this);
+	}
+
+	private void Awake()
+	{
+		mAS = base.GetComponent<UnityEngine.AudioSource>();
+		mSrc_volume = mAS.volume;
+	}
+	private void Start()
+	{
+		//¸´Ô­
+		mAS.volume = mSrc_volume;
 		if (GM != null)
 		{
 			//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-			base.GetComponent<UnityEngine.AudioSource>().volume = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
+			mAS.volume = mAS.volume * GM.Option_Volume[0];
 		}
 		else
 		{
-			base.GetComponent<UnityEngine.AudioSource>().volume = base.GetComponent<UnityEngine.AudioSource>().volume * AxiPlayerPrefs.GetFloat("SoundVolume");
+			mAS.volume = mAS.volume * AxiPlayerPrefs.GetFloat("SoundVolume");
 		}
 	}
 
+	private void OnDestroy()
+	{
+		AxiSoundPool.CheckNeedRemoveFormPool(this);
+	}
 	private void Update()
 	{
 		life_Timer += global::UnityEngine.Time.deltaTime;
-		if (!isPlayStarted && !base.GetComponent<UnityEngine.AudioSource>().isPlaying)
+		if (!isPlayStarted && !mAS.isPlaying)
 		{
-			base.GetComponent<UnityEngine.AudioSource>().Play();
+			mAS.Play();
 			isPlayStarted = true;
 		}
 		if (onEnd)
 		{
-			base.GetComponent<UnityEngine.AudioSource>().volume -= global::UnityEngine.Time.deltaTime * 2f;
-			if (base.GetComponent<UnityEngine.AudioSource>().volume <= 0f)
+			mAS.volume -= global::UnityEngine.Time.deltaTime * 2f;
+			if (mAS.volume <= 0f)
 			{
 				global::UnityEngine.Debug.Log("Moan Del");
 				Destroy_Self();
 			}
 		}
-		if (isPlayStarted && life_Timer > 0.4f && !base.GetComponent<UnityEngine.AudioSource>().isPlaying)
+		if (isPlayStarted && life_Timer > 0.4f && !mAS.isPlaying)
 		{
 			Destroy_Self();
 		}
@@ -66,7 +86,7 @@ public class Sound_Moan : AxiSoundBase
 
 	private void Destroy_Self()
 	{
-        ReleaseToPool();
-        //global::UnityEngine.Object.Destroy(base.gameObject);
+		ReleaseToPool();
+		//global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 }

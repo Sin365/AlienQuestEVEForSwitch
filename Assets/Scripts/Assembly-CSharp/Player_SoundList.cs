@@ -1,5 +1,3 @@
-using static UnityEditor.PlayerSettings;
-
 public class Player_SoundList : global::UnityEngine.MonoBehaviour
 {
     public global::UnityEngine.GameObject Attack_1;

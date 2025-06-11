@@ -6,7 +6,8 @@ public class Sound_Shield : AxiSoundBase
     private float Vol_Target = 1f;
 
     GameManager GM => GameManager.instance;
-    public override string resourceName { get; set; }
+	UnityEngine.AudioSource mAS;
+	public override string resourceName { get; set; }
 
     public override void Init()
     {
@@ -18,36 +19,51 @@ public class Sound_Shield : AxiSoundBase
     }
 
     public override void ReleaseToPool()
-    {
-        AxiSoundPool.ReleaseSound(this);
-    }
-    private void Start()
-    {
-        //GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-        Volume_Orig = base.GetComponent<UnityEngine.AudioSource>().volume;
-        base.GetComponent<UnityEngine.AudioSource>().volume = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
+	{
+		base.GetComponent<UnityEngine.AudioSource>().Stop();
+		base.GetComponent<UnityEngine.AudioSource>().volume = Volume_Orig;
+		AxiSoundPool.ReleaseSound(this);
     }
 
-    private void Update()
+	private void Awake()
+	{
+        mAS = base.GetComponent<UnityEngine.AudioSource>();
+		Volume_Orig = mAS.volume;
+	}
+
+	private void Start()
+	{
+        //¸´Ô­
+		mAS.volume = Volume_Orig;
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		mAS.volume = mAS.volume * GM.Option_Volume[0];
+    }
+
+	private void OnDestroy()
+	{
+        AxiSoundPool.CheckNeedRemoveFormPool(this);
+	}
+
+	private void Update()
     {
         if (!GM.Paused)
         {
             Life_Timer += global::UnityEngine.Time.deltaTime;
-            if (!base.GetComponent<UnityEngine.AudioSource>().isPlaying)
+            if (!mAS.isPlaying)
             {
-                base.GetComponent<UnityEngine.AudioSource>().volume = Volume_Orig * GM.Option_Volume[0];
-                base.GetComponent<UnityEngine.AudioSource>().Play();
+                mAS.volume = Volume_Orig * GM.Option_Volume[0];
+				mAS.Play();
             }
             if (!onActive)
             {
-                float num = global::UnityEngine.Mathf.Lerp(base.GetComponent<UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 20f);
-                base.GetComponent<UnityEngine.AudioSource>().volume = num;
+                float num = global::UnityEngine.Mathf.Lerp(mAS.volume, 0f, global::UnityEngine.Time.deltaTime * 20f);
+                mAS.volume = num;
                 Volume_Orig = num;
             }
         }
-        else if (base.GetComponent<UnityEngine.AudioSource>().isPlaying)
+        else if (mAS.isPlaying)
         {
-            base.GetComponent<UnityEngine.AudioSource>().Pause();
+            mAS.Pause();
         }
     }
 

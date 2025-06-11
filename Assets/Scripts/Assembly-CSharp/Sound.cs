@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Sound : AxiSoundBase
 {
 	private float life_Timer;
@@ -5,9 +7,9 @@ public class Sound : AxiSoundBase
 	private bool isPaused;
 
 	private bool isPlayStarted;
-
+	private AudioSource mAS;
 	private float Volume_Orig = 1f;
-
+	private GameObject mMC;
 	private float Dist_Orig = 1f;
 
 	private float Dist_Var = 1f;
@@ -33,14 +35,24 @@ public class Sound : AxiSoundBase
     }
 	
     public override void ReleaseToPool()
-    {
+	{
+		base.GetComponent<UnityEngine.AudioSource>().Stop();
+		base.GetComponent<UnityEngine.AudioSource>().volume = Volume_Orig;
 		AxiSoundPool.ReleaseSound(this);
     }
 
-    private void Start()
+	private void Awake()
 	{
+		mAS = base.GetComponent<UnityEngine.AudioSource>();
+		Volume_Orig = mAS.volume;
+	}
+
+	private void Start()
+	{
+		//¸´Ô­
+		mAS.volume = Volume_Orig;
+		mMC = global::UnityEngine.GameObject.Find("Main Camera");
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Volume_Orig = base.GetComponent<UnityEngine.AudioSource>().volume;
 		Dist_Orig = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
 		if (!OnEvent)
 		{
@@ -48,24 +60,28 @@ public class Sound : AxiSoundBase
 		}
 	}
 
+	private void OnDestroy()
+	{
+		AxiSoundPool.CheckNeedRemoveFormPool(this);
+	}
 	private void Update()
 	{
 		if (!GM.Paused)
 		{
 			life_Timer += global::UnityEngine.Time.deltaTime;
-			if (!isPlayStarted && !base.GetComponent<UnityEngine.AudioSource>().isPlaying)
+			if (!isPlayStarted && !mAS.isPlaying)
 			{
-				base.GetComponent<UnityEngine.AudioSource>().Play();
+				mAS.Play();
 				isPlayStarted = true;
 			}
 			if (isPaused)
 			{
 				Dist_Orig = Volume_Orig * GM.Option_Volume[0];
-				base.GetComponent<UnityEngine.AudioSource>().volume = Dist_Orig * Dist_Var;
+				mAS.volume = Dist_Orig * Dist_Var;
 				isPaused = false;
-				base.GetComponent<UnityEngine.AudioSource>().Play();
+				mAS.Play();
 			}
-			else if (isPlayStarted && life_Timer > 0.4f && !base.GetComponent<UnityEngine.AudioSource>().isPlaying)
+			else if (isPlayStarted && life_Timer > 0.4f && !mAS.isPlaying)
 			{
 				Destroy_Self();
 			}
@@ -74,16 +90,16 @@ public class Sound : AxiSoundBase
 				Check_Distance();
 			}
 		}
-		else if (base.GetComponent<UnityEngine.AudioSource>().isPlaying)
+		else if (mAS.isPlaying)
 		{
-			base.GetComponent<UnityEngine.AudioSource>().Pause();
+			mAS.Pause();
 			isPaused = true;
 		}
 	}
 
 	private void Check_Distance()
 	{
-		global::UnityEngine.Vector3 b = new global::UnityEngine.Vector3(global::UnityEngine.GameObject.Find("Main Camera").transform.position.x, global::UnityEngine.GameObject.Find("Main Camera").transform.position.y, 0f);
+		global::UnityEngine.Vector3 b = new global::UnityEngine.Vector3(mMC.transform.position.x, mMC.transform.position.y, 0f);
 		distance = global::UnityEngine.Vector3.Distance(base.transform.position, b);
 		if (distance < 20f)
 		{
@@ -105,7 +121,7 @@ public class Sound : AxiSoundBase
 		{
 			Dist_Var = 0f;
 		}
-		base.GetComponent<UnityEngine.AudioSource>().volume = Dist_Orig * Dist_Var;
+		mAS.volume = Dist_Orig * Dist_Var;
 	}
 
 	private void Destroy_Self()

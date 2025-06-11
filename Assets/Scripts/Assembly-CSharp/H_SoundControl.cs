@@ -92,7 +92,7 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 		if (piston_Timer_4 <= 0f)
 		{
 			piston_Timer_4 = 0.06f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Piston_4, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(sound_Piston_4, base.transform.position, base.transform.rotation);
 		}
 	}
 
@@ -101,7 +101,7 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 		if (piston_Timer_5 <= 0f)
 		{
 			piston_Timer_5 = 0.06f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Piston_5, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(sound_Piston_5, base.transform.position, base.transform.rotation);
 		}
 	}
 
@@ -110,7 +110,7 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 		if (piston_Timer_9 <= 0f)
 		{
 			piston_Timer_9 = 0.06f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Piston_9, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(sound_Piston_9, base.transform.position, base.transform.rotation);
 		}
 	}
 
@@ -119,7 +119,7 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 		if (piston_Timer_10 <= 0f)
 		{
 			piston_Timer_10 = 0.06f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Piston_10, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(sound_Piston_10, base.transform.position, base.transform.rotation);
 		}
 	}
 
@@ -128,7 +128,7 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 		if (piston_Timer_11 <= 0f)
 		{
 			piston_Timer_11 = 0.06f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Piston_11, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(sound_Piston_11, base.transform.position, base.transform.rotation);
 		}
 	}
 
@@ -137,7 +137,7 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 		if (piston_Timer_12 <= 0f)
 		{
 			piston_Timer_12 = 0.06f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Piston_12, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(sound_Piston_12, base.transform.position, base.transform.rotation);
 		}
 	}
 
@@ -146,13 +146,13 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 		if (piston_Timer_FH <= 0f)
 		{
 			piston_Timer_FH = 0.06f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_FaceHugger, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(sound_FaceHugger, base.transform.position, base.transform.rotation);
 		}
 	}
 
 	public void Cum_DownDirect(global::UnityEngine.Transform Cum_Pos, int Cum_Index, float Cum_Size)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f));
 		gameObject.GetComponent<H_CumDown>().pos_Target = Cum_Pos;
 		gameObject.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 		gameObject.GetComponent<H_CumDown>().Set_DownDirect(Cum_Size);
@@ -160,7 +160,7 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 
 	public void Cum_DownDrool(global::UnityEngine.Transform Cum_Pos, int Cum_Index, float Cum_Size)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f));
 		gameObject.GetComponent<H_CumDown>().pos_Target = Cum_Pos;
 		gameObject.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 		gameObject.GetComponent<H_CumDown>().Set_DownDrool(Cum_Size);
@@ -168,19 +168,19 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 
 	public void Cum_Pee(global::UnityEngine.Transform Cum_Pos, int Cum_Index, float Cum_Size)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f));
 		gameObject.GetComponent<H_CumDown>().pos_Target = Cum_Pos;
 		gameObject.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 		gameObject.GetComponent<H_CumDown>().Set_Pee();
 		for (int i = 0; i < 8; i++)
 		{
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(CumDot[global::UnityEngine.Random.Range(1, 3)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(CumDot[global::UnityEngine.Random.Range(1, 3)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f));
 		}
 	}
 
 	public void Cum_DownDirect_GO(global::UnityEngine.Transform Cum_Pos, int Cum_Index, float Cum_Size)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f));
 		gameObject.GetComponent<H_CumDown>().pos_Target = Cum_Pos;
 		gameObject.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 		gameObject.GetComponent<H_CumDown>().Set_DownDirect(Cum_Size);
@@ -189,7 +189,7 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 
 	public void Cum_DownDrool_GO(global::UnityEngine.Transform Cum_Pos, int Cum_Index, float Cum_Size)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(3, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(3, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f));
 		gameObject.GetComponent<H_CumDown>().pos_Target = Cum_Pos;
 		gameObject.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 		gameObject.GetComponent<H_CumDown>().Set_DownDrool(Cum_Size);
@@ -198,14 +198,14 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 
 	public void Cum_Pee_GO(global::UnityEngine.Transform Cum_Pos, int Cum_Index, float Cum_Size)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f));
 		gameObject.GetComponent<H_CumDown>().pos_Target = Cum_Pos;
 		gameObject.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 		gameObject.GetComponent<H_CumDown>().Set_Pee();
 		gameObject.transform.localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
 		for (int i = 0; i < 8; i++)
 		{
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(CumDot[global::UnityEngine.Random.Range(1, 3)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(CumDot[global::UnityEngine.Random.Range(1, 3)], Cum_Pos.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f));
 		}
 	}
 

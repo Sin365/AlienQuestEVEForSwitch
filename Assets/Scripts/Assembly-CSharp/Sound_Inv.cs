@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Sound_Inv : AxiSoundBase
 {
     private float life_Timer;
     private bool isPlayStarted;
+	private float mSrc_volume;
+	private AudioSource mAS;
 
-    GameManager GM => GameManager.instance;
+	GameManager GM => GameManager.instance;
     public override string resourceName { get; set; }
 
     public override void Init()
@@ -16,37 +19,49 @@ public class Sound_Inv : AxiSoundBase
     }
 
     public override void ReleaseToPool()
-    {
-        base.GetComponent<UnityEngine.AudioSource>().Stop();
-        AxiSoundPool.ReleaseSound(this);
+	{
+		base.GetComponent<UnityEngine.AudioSource>().Stop();
+		base.GetComponent<UnityEngine.AudioSource>().volume = mSrc_volume;
+		AxiSoundPool.ReleaseSound(this);
     }
     void OnEnable()
     {
         Debug.Log($"[AxiSoundPool]Sound_Inv Enable");
-    }
-    private void Start()
-    {
-        if (GM != null)
+	}
+	private void Awake()
+	{
+		mAS = base.GetComponent<UnityEngine.AudioSource>();
+		mSrc_volume = mAS.volume;
+	}
+	private void Start()
+	{
+		//¸´Ô­
+		mAS.volume = mSrc_volume;
+		if (GM != null)
         {
-            //GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-            base.GetComponent<UnityEngine.AudioSource>().volume = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
+			//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+			mAS.volume = mAS.volume * GM.Option_Volume[0];
         }
         else
         {
-            base.GetComponent<UnityEngine.AudioSource>().volume = base.GetComponent<UnityEngine.AudioSource>().volume * AxiPlayerPrefs.GetFloat("SoundVolume");
+			mAS.volume = mAS.volume * AxiPlayerPrefs.GetFloat("SoundVolume");
         }
-    }
+	}
 
+	private void OnDestroy()
+	{
+		AxiSoundPool.CheckNeedRemoveFormPool(this);
+	}
 
-    private void Update()
+	private void Update()
     {
         life_Timer += global::UnityEngine.Time.deltaTime;
-        if (!isPlayStarted && !base.GetComponent<UnityEngine.AudioSource>().isPlaying)
-        {   
-            base.GetComponent<UnityEngine.AudioSource>().Play();
+        if (!isPlayStarted && !mAS.isPlaying)
+        {
+			mAS.Play();
             isPlayStarted = true;
         }
-        if (isPlayStarted && life_Timer > 0.4f && !base.GetComponent<UnityEngine.AudioSource>().isPlaying)
+        if (isPlayStarted && life_Timer > 0.4f && !mAS.isPlaying)
         {
             Destroy_Self();
         }
