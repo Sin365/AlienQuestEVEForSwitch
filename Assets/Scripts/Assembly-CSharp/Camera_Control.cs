@@ -86,9 +86,9 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.BoxCollider2D Col_Cam;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private global::UnityEngine.GameObject Player;
+    private global::UnityEngine.GameObject Player;
 
 	private Player_Control PC;
 
@@ -96,7 +96,7 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 	{
 		lastInterval = global::UnityEngine.Time.realtimeSinceStartup;
 		frames = 0;
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		PC = Player.GetComponent<Player_Control>();
 		Col_Cam = global::UnityEngine.GameObject.Find("COL_Cam").GetComponent<global::UnityEngine.BoxCollider2D>();

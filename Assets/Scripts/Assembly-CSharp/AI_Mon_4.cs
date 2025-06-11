@@ -48,11 +48,11 @@ public class AI_Mon_4 : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject Player;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		Pos_Target = new global::UnityEngine.Vector3(Player.transform.position.x + 3f, Player.transform.position.y + 7.3f, 0f);
 		Rnd_XY = new global::UnityEngine.Vector2((float)global::UnityEngine.Random.Range(0, 30) * 0.01f, (float)global::UnityEngine.Random.Range(0, 30) * 0.01f);

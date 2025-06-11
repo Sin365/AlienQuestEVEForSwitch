@@ -18,11 +18,11 @@ public class LV_1_MonGenerator : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 pos;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (Num_Max <= 0 || _Mon_List.Length <= 0)
 		{
 			return;

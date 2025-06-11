@@ -22,11 +22,11 @@ public class Magic_Fire_2 : global::UnityEngine.MonoBehaviour
 
 	private float rnd_Y;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (base.transform.localScale.x < 0f)
 		{
 			facingRight = -1;

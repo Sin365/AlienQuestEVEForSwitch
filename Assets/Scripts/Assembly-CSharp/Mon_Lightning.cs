@@ -32,11 +32,11 @@ public class Mon_Lightning : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.SpriteRenderer SR;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SR = GetComponent<global::UnityEngine.SpriteRenderer>();
 		GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;
 		if (base.transform.localScale.x < 0f)

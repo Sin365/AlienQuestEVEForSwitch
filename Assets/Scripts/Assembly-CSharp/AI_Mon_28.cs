@@ -54,11 +54,11 @@ public class AI_Mon_28 : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject Player;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		rnd_X = (float)global::UnityEngine.Random.Range(0, 300) * 0.01f;
 		float num = (float)global::UnityEngine.Random.Range(-50, 50) * 0.01f;

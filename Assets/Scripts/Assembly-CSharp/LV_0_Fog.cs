@@ -14,11 +14,11 @@ public class LV_0_Fog : global::UnityEngine.MonoBehaviour
 
 	private Player_Control PC;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		colorFog_OFF = new global::UnityEngine.Color(Fog_List[0].color.r, Fog_List[0].color.g, Fog_List[0].color.b, 0f);
 		if (Fog_Light != null)

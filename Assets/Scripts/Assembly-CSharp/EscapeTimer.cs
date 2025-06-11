@@ -10,11 +10,11 @@ public class EscapeTimer : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 posTarget;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		posOrig = new global::UnityEngine.Vector3(490f, 740f, 0f);
 		posTarget = new global::UnityEngine.Vector3(490f, 420f, 0f);
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = posOrig;

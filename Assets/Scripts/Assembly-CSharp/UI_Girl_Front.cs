@@ -194,11 +194,11 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
 
 	private H_SoundControl H_Sound;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (global::UnityEngine.GameObject.Find("Sound_List_H") != null)
 		{
 			H_Sound = global::UnityEngine.GameObject.Find("Sound_List_H").GetComponent<H_SoundControl>();

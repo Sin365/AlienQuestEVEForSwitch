@@ -12,11 +12,11 @@ public class Atk_Queen_Tail : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.GameObject PosObject;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
 	private void Update()

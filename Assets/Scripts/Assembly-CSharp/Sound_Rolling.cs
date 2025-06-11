@@ -4,11 +4,11 @@ public class Sound_Rolling : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.GameObject Glow_rolling;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
 	private void Update()

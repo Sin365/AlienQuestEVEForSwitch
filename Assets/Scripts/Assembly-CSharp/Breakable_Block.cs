@@ -24,11 +24,11 @@ public class Breakable_Block : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_Off = new global::UnityEngine.Color(0f, 0f, 0f, 0f);
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		block_num = Blocks.Length;
 		brk_Speed = new float[block_num];
 		for (int i = 0; i < block_num; i++)

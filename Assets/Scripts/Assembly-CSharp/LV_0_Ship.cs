@@ -106,11 +106,11 @@ public class LV_0_Ship : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.AudioSource Sound_DoorOpen;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Set_TargetOpacity();
 		Off_Opacity();
 	}

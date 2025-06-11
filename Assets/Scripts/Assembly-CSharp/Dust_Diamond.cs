@@ -16,11 +16,11 @@ public class Dust_Diamond : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.Sprite spr_2;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Speed += (float)global::UnityEngine.Random.Range(-100, 100) * 0.05f;
 		Rnd_Spd = 7f + (float)global::UnityEngine.Random.Range(-100, 100) * 0.01f;
 		Rnd_Opacity += (float)global::UnityEngine.Random.Range(-100, 100) * 0.05f;

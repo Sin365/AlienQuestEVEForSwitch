@@ -16,11 +16,11 @@ public class Mother_Gravity_WU : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.GameObject InnerBlue;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Size = base.transform.localScale.y;
 		Make_Black();
 	}

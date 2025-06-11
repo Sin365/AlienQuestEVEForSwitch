@@ -82,13 +82,13 @@ public class H_Ani : global::UnityEngine.MonoBehaviour
 
 	private Gallery_Control GC;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		if (global::UnityEngine.GameObject.Find("GameManager") != null)
+		if (GM != null)
 		{
-			GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+			//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 			if (H_Num > 0)
 			{
 				GM.Check_Hscene(H_Num - 1);

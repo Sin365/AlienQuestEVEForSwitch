@@ -20,11 +20,11 @@ public class Event_Mon40_Back : global::UnityEngine.MonoBehaviour
 
 	private bool onPause;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (GM.Get_Event(13))
 		{
 			Life_Timer = 12f;

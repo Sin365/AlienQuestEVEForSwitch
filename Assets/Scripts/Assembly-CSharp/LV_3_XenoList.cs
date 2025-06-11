@@ -26,11 +26,11 @@ public class LV_3_XenoList : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject Player;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		Main_Cam = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<global::UnityEngine.Camera>();
 		Mon_Count_Max = 0;

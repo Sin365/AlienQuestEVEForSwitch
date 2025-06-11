@@ -24,11 +24,11 @@ public class LV_1_Breakable_Cam : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject Player;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		if (SR_Glow_1 != null)
 		{

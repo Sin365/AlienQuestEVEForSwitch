@@ -71,9 +71,13 @@ public class Gallery_Camera : global::UnityEngine.MonoBehaviour
 	{
 		if (AxiPlayerPrefs.GetInt("onFrameLimit") == 1)
 		{
-			global::UnityEngine.QualitySettings.vSyncCount = 0;
-			global::UnityEngine.Application.targetFrameRate = 60;
-		}
+
+            //皓月测试，不限制帧数，注释掉
+            global::UnityEngine.QualitySettings.vSyncCount = 0;
+            global::UnityEngine.QualitySettings.vSyncCount = 500;
+            //global::UnityEngine.QualitySettings.vSyncCount = 0;
+            //global::UnityEngine.Application.targetFrameRate = 60;
+        }
 	}
 
 	private void Check_Frame()

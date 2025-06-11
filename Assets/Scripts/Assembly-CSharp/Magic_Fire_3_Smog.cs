@@ -22,11 +22,11 @@ public class Magic_Fire_3_Smog : global::UnityEngine.MonoBehaviour
 
 	private float size_Target = 1.5f;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		for (int i = 0; i < color_Target.Length; i++)
 		{
 			color_Target[i] = new global::UnityEngine.Color(1f, 1f, 1f, 2f);

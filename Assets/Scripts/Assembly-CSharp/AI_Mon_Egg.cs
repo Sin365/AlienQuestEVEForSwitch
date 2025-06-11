@@ -86,11 +86,11 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject Player;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		rnd_X = global::UnityEngine.Random.Range(0.3f, 0.8f);

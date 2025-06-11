@@ -28,11 +28,11 @@ public class Dust_Control : global::UnityEngine.MonoBehaviour
 
 	private int Dust_Num;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Dust_List = new global::UnityEngine.GameObject[Dust_Max];
 		startTimer = new float[Dust_Max];
 		opacity = new float[Dust_Max];

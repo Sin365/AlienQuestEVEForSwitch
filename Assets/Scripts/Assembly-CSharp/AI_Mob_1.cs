@@ -30,11 +30,11 @@ public class AI_Mob_1 : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject Player;
 
-	private GameManager GM;
-
-	private void Start()
+    //private GameManager GM;
+    private GameManager GM => GameManager.instance;
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		rnd_X = (float)global::UnityEngine.Random.Range(0, 200) * 0.01f;
 		Patrol_Range = 8f + global::UnityEngine.Random.Range(0f, 6f);

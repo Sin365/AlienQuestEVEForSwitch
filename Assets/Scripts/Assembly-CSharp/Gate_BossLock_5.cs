@@ -22,11 +22,11 @@ public class Gate_BossLock_5 : global::UnityEngine.MonoBehaviour
 
 	private float End_Timer;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (GM.Get_Event(3) || GM.Get_Event(15))
 		{
 			global::UnityEngine.Object.Destroy(base.gameObject);

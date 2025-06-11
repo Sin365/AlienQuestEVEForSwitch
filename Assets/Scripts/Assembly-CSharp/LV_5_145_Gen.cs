@@ -6,11 +6,11 @@ public class LV_5_145_Gen : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.Transform Pos_R;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (GM.Get_Event(3) && GM.Get_Event(4) && GM.Check_EventMonster(8))
 		{
 			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Mon_40, Pos_L.position, base.transform.rotation) as global::UnityEngine.GameObject;

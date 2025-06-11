@@ -16,11 +16,11 @@ public class LV_5_146_Gen : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.Transform Pos_41;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (GM.Get_Event(3) && GM.Check_EventMonster(9))
 		{
 			if (Pos_40_List.Length > 0)

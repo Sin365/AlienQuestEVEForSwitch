@@ -10,13 +10,13 @@ public class LevelUp : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.SpriteRenderer Glow_Circle;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private global::UnityEngine.GameObject Player;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		Magic_Bar.transform.localScale = new global::UnityEngine.Vector3(0f, 0f, 1f);
 	}

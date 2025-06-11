@@ -32,11 +32,11 @@ public class Magic_Fire_3_Explo : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_Glow = new global::UnityEngine.Color(1f, 1f, 1f, 1f);
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Bar_C = global::UnityEngine.Object.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		Bar_C.transform.localScale = new global::UnityEngine.Vector3(1f, 0.3f, 1f);
 		Bar_C.transform.parent = base.transform;

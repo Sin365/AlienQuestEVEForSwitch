@@ -80,7 +80,7 @@ public class Gate_Control : global::UnityEngine.MonoBehaviour
 
 	private float BossGateSound_Timer;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private StageManager SM;
 
@@ -88,7 +88,7 @@ public class Gate_Control : global::UnityEngine.MonoBehaviour
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		if (Keep_Monster != null)

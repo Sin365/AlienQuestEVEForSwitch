@@ -11,26 +11,26 @@ public class Info_GetItem : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector3 Pos_Target;
 
 	private global::UnityEngine.Vector3 Pos_Orig;
-
-	private void Start()
+    GameManager GM => GameManager.instance;
+    private void Start()
 	{
 		if (Item_Num > 0 && Fonts.Length > 0)
 		{
-			int language_Num = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>().Language_Num;
+			int language_Num = GM.Language_Num;
 			Fonts[0].GetComponent<global::UnityEngine.UI.Text>().text = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>().ItemName(Item_Num, language_Num);
 			if (Fonts.Length > 1)
 			{
 				if (Item_Num <= 5)
 				{
-					Fonts[1].GetComponent<global::UnityEngine.UI.Text>().text = "ATK  +" + global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>().Weapon_DMG[Item_Num];
+					Fonts[1].GetComponent<global::UnityEngine.UI.Text>().text = "ATK  +" + GM.Weapon_DMG[Item_Num];
 				}
 				else if (Item_Num <= 10)
 				{
-					Fonts[1].GetComponent<global::UnityEngine.UI.Text>().text = "MP  -" + global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>().Skill_MP[Item_Num - 6];
+					Fonts[1].GetComponent<global::UnityEngine.UI.Text>().text = "MP  -" + GM.Skill_MP[Item_Num - 6];
 				}
 				else if (Item_Num == 11 || Item_Num == 13 || Item_Num == 14)
 				{
-					Fonts[1].GetComponent<global::UnityEngine.UI.Text>().text = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>().Get_KeyText(Item_Num);
+					Fonts[1].GetComponent<global::UnityEngine.UI.Text>().text = GM.Get_KeyText(Item_Num);
 				}
 				else
 				{

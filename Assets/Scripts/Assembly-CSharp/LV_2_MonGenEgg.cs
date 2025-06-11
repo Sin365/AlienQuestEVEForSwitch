@@ -18,11 +18,11 @@ public class LV_2_MonGenEgg : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 pos;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (GM.Get_Event(12))
 		{
 			if (Num > 0 && _Mon_List.Length > 0)

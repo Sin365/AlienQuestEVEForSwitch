@@ -14,11 +14,11 @@ public class LV_0_LightsBlink : global::UnityEngine.MonoBehaviour
 
 	private float Blink_Timer;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (pos_Start.Length > 0)
 		{
 			int num = global::UnityEngine.Random.Range(0, pos_Start.Length);

@@ -28,11 +28,11 @@ public class Map_Control : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject map_CursorBox;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		map_Cursor = global::UnityEngine.GameObject.Find("MapPos_Cursor");
 		minimap_Cursor = global::UnityEngine.GameObject.Find("MiniMap_Cursor");
 		map_CursorBox = global::UnityEngine.GameObject.Find("MapPos_CursorBox");

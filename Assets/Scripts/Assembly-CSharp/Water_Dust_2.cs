@@ -6,11 +6,11 @@ public class Water_Dust_2 : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.SpriteRenderer SR;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SR = GetComponent<global::UnityEngine.SpriteRenderer>();
 	}
 

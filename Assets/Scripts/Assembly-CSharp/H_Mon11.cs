@@ -57,10 +57,10 @@ public class H_Mon11 : global::UnityEngine.MonoBehaviour
 	private float Speed = 1f;
 
 	private bool isEndMode;
-
-	private void Start()
+    GameManager GM => GameManager.instance;
+    private void Start()
 	{
-		if (!(global::UnityEngine.GameObject.Find("GameManager") != null))
+		if (!(GM != null))
 		{
 			return;
 		}
@@ -83,18 +83,18 @@ public class H_Mon11 : global::UnityEngine.MonoBehaviour
 
 	private void Update()
 	{
-		if (!(global::UnityEngine.GameObject.Find("Player") != null) || !(global::UnityEngine.GameObject.Find("GameManager") != null))
+		if (!(global::UnityEngine.GameObject.Find("Player") != null) || !(GM != null))
 		{
 			return;
 		}
 		if (Enabled)
 		{
-			if (global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>().Paused && !onPause)
+			if (GM.GetComponent<GameManager>().Paused && !onPause)
 			{
 				onPause = true;
 				GetComponent<global::UnityEngine.Animator>().speed = 0f;
 			}
-			else if (!global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>().Paused && onPause)
+			else if (!GM.GetComponent<GameManager>().Paused && onPause)
 			{
 				onPause = false;
 				GetComponent<global::UnityEngine.Animator>().speed = Speed;
@@ -178,7 +178,7 @@ public class H_Mon11 : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (global::UnityEngine.GameObject.Find("GameManager") != null)
+		if (GM != null)
 		{
 			if (col.name == "COL_Cam" && !onPause && !Enabled)
 			{

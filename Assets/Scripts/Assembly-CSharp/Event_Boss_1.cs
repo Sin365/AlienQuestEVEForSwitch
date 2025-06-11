@@ -8,11 +8,11 @@ public class Event_Boss_1 : global::UnityEngine.MonoBehaviour
 
 	private float Release_Timer;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
 	private void Update()

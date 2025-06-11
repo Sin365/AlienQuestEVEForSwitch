@@ -10,11 +10,11 @@ public class Mother_FireDot : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.SpriteRenderer SR;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SR = GetComponent<global::UnityEngine.SpriteRenderer>();
 		Speed += (float)global::UnityEngine.Random.Range(-10, 10) * 0.1f;
 		Size += (float)global::UnityEngine.Random.Range(-20, 20) * 0.01f;

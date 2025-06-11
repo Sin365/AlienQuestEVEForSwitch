@@ -6,11 +6,11 @@ public class Hidden_CheckPos : global::UnityEngine.MonoBehaviour
 
 	private Player_Control PC;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 	}
 

@@ -22,16 +22,16 @@ public class Event_Lift : global::UnityEngine.MonoBehaviour
 
 	public Event_Computer event_Com;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private global::UnityEngine.GameObject Player;
 
-	private Custom_Key CK;
+	private Custom_Key CK => GameManager.instance.CK;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		if (GM.Get_Event(Event_Num))
 		{

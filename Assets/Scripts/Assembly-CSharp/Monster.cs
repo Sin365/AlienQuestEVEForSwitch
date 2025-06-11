@@ -160,11 +160,11 @@ public class Monster : global::UnityEngine.MonoBehaviour
 
 	private Sound_Control SC;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		if (Mon_Num != 33 && Event_Num > 0 && GM.Check_EventMonster(Event_Num))

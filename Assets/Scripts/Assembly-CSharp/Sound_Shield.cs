@@ -8,11 +8,11 @@ public class Sound_Shield : global::UnityEngine.MonoBehaviour
 
 	private float Vol_Target = 1f;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Volume_Orig = base.GetComponent<UnityEngine.AudioSource>().volume;
 		base.GetComponent<UnityEngine.AudioSource>().volume = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
 	}

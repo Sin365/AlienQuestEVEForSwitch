@@ -10,11 +10,11 @@ public class AI_Mon_7_Down : global::UnityEngine.MonoBehaviour
 
 	private float Life_Timer;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Life_Timer += global::UnityEngine.Random.Range(0f, 1.5f);
 	}
 

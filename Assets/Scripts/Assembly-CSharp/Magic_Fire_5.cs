@@ -20,11 +20,11 @@ public class Magic_Fire_5 : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.GameObject InnerBlue;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Size = base.transform.localScale.y;
 		target = new global::UnityEngine.Vector3(base.transform.position.x + 12f * base.transform.localScale.x, base.transform.position.y, 0f);
 		Make_Black();

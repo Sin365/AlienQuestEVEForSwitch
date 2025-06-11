@@ -26,11 +26,11 @@ public class Magic_Fire_2_Explo : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.GameObject Dust;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		float num = 10f + (float)global::UnityEngine.Random.Range(-20, 20) * 0.03f;
 		for (int i = 1; i < 72; i++)
 		{

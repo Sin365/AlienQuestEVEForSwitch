@@ -18,11 +18,11 @@ public class LV_3_XenoAmbush : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 pos;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (Num <= 0 || _XenoList.Length <= 0)
 		{
 			return;

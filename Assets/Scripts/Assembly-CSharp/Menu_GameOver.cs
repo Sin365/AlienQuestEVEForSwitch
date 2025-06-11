@@ -70,16 +70,16 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 
 	private bool onLTrigger;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
-	private Custom_Key CK;
+	private Custom_Key CK => GameManager.instance.CK;
 
 	private UI_SoundList Sound_List;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
 		Sound_List = global::UnityEngine.GameObject.Find("Menu").GetComponent<UI_SoundList>();
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(0f, -1000f, 0f);
 	}

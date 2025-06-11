@@ -36,7 +36,7 @@ public class Lv_0_ShipBoard : global::UnityEngine.MonoBehaviour
 
 	private float Opacity_2;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private SaveMenu_Control SaveMenu;
 
@@ -44,7 +44,7 @@ public class Lv_0_ShipBoard : global::UnityEngine.MonoBehaviour
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SaveMenu = global::UnityEngine.GameObject.Find("Menu_Save").GetComponent<SaveMenu_Control>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		SaveMenu.save_Block = base.gameObject;

@@ -38,11 +38,11 @@ public class Hidden_Passage_2 : global::UnityEngine.MonoBehaviour
 
 	private Player_Control PC;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		color_Orig = new global::UnityEngine.Color[SR_List.Length];
 		for (int i = 0; i < SR_List.Length; i++)

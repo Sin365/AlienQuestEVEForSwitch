@@ -77,7 +77,7 @@ public class UI_Control : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 pos_BarTop_Off;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
     private RectTransform rect_Status;
     private RectTransform rect_MiniMap;
     private RectTransform rect_Bar_Top;
@@ -106,7 +106,7 @@ public class UI_Control : global::UnityEngine.MonoBehaviour
 
     private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 
         #region 集中Find，全局只Find一次
         //

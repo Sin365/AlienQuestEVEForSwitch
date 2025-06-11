@@ -1,4 +1,4 @@
-public class Sound : global::UnityEngine.MonoBehaviour
+public class Sound : AxiSoundBase
 {
 	private float life_Timer;
 
@@ -15,12 +15,11 @@ public class Sound : global::UnityEngine.MonoBehaviour
 	private float distance;
 
 	private bool OnEvent;
-
-	private GameManager GM;
+	private GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Volume_Orig = base.GetComponent<UnityEngine.AudioSource>().volume;
 		Dist_Orig = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
 		if (!OnEvent)
@@ -91,6 +90,6 @@ public class Sound : global::UnityEngine.MonoBehaviour
 
 	private void Destroy_Self()
 	{
-		global::UnityEngine.Object.Destroy(base.gameObject);
-	}
+        global::UnityEngine.Object.Destroy(base.gameObject);
+    }
 }

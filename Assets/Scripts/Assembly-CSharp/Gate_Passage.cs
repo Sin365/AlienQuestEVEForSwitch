@@ -12,15 +12,15 @@ public class Gate_Passage : global::UnityEngine.MonoBehaviour
 
 	private float Life_Timer;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private StageManager SM;
+    private StageManager SM;
 
 	private global::UnityEngine.GameObject Player;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 	}

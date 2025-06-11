@@ -54,11 +54,11 @@ public class AI_Mon_36 : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject Player;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		Mon = GetComponent<Monster>();
 		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)

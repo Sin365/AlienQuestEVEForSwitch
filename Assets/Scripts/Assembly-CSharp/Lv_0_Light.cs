@@ -6,14 +6,14 @@ public class Lv_0_Light : global::UnityEngine.MonoBehaviour
 
 	private float Life_Timer;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		if (global::UnityEngine.GameObject.Find("GameManager") != null)
-		{
-			GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		}
+		//if (global::UnityEngine.GameObject.Find("GameManager") != null)
+		//{
+		//	GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//}
 		Life_Timer = global::UnityEngine.Random.Range(-1.57f, 1.57f);
 	}
 

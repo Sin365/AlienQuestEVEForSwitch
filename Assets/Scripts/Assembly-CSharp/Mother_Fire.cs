@@ -26,11 +26,11 @@ public class Mother_Fire : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 posOrig;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		posOrig = base.transform.position;
 	}
 

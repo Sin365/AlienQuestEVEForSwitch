@@ -35,12 +35,11 @@ public class Queen_Laser : global::UnityEngine.MonoBehaviour
 	private float Damage_Delay;
 
 	private float Rot_Speed;
+    GameManager GM => GameManager.instance;
 
-	private GameManager GM;
-
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		glow_color = Glow_1.color;
 		if (GM.EventState == 200)
 		{

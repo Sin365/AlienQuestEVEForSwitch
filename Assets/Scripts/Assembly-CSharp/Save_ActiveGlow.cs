@@ -4,11 +4,11 @@ public class Save_ActiveGlow : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 pos_Start;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Spr = GetComponent<global::UnityEngine.SpriteRenderer>();
 		pos_Start = base.transform.position;
 	}

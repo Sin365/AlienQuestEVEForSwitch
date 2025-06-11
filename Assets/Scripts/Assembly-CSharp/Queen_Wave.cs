@@ -26,11 +26,11 @@ public class Queen_Wave : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 pos_Orig;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Color_Glow_OFF = new global::UnityEngine.Color(Glow.color.r, Glow.color.g, Glow.color.b, 0f);
 		Color_Bar_OFF = new global::UnityEngine.Color(Bar_List[0].color.r, Bar_List[0].color.g, Bar_List[0].color.b, 0f);
 		pos_Orig = base.transform.position;

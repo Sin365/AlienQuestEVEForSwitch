@@ -8,11 +8,11 @@ public class Dust_HealCross : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.SpriteRenderer SR;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SR = GetComponent<global::UnityEngine.SpriteRenderer>();
 		Speed += (float)global::UnityEngine.Random.Range(-50, 50) * 0.01f;
 		color_Off = new global::UnityEngine.Color(color_Off.r, color_Off.g, color_Off.b, 0f);

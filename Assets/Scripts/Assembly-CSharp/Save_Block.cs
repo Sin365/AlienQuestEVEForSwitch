@@ -82,7 +82,7 @@ public class Save_Block : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_Off = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private SaveMenu_Control SaveMenu;
 
@@ -90,7 +90,7 @@ public class Save_Block : global::UnityEngine.MonoBehaviour
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SaveMenu = global::UnityEngine.GameObject.Find("Menu_Save").GetComponent<SaveMenu_Control>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		SaveMenu.save_Block = base.gameObject;

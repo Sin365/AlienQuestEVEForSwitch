@@ -2,11 +2,11 @@ public class DemoText : global::UnityEngine.MonoBehaviour
 {
 	private bool onEnabled;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		GetComponent<global::UnityEngine.UI.Text>().color = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(0f, -1000f, 0f);
 	}

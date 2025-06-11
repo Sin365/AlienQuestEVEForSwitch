@@ -24,11 +24,11 @@ public class Fade_MissionComplete : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_Off = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		txtTitle.color = color_Off;
 		txt_1.color = color_Off;
 		txt_2.color = color_Off;

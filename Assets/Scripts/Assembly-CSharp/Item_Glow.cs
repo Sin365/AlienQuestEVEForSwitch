@@ -60,11 +60,11 @@ public class Item_Glow : global::UnityEngine.MonoBehaviour
 
 	private float size_Timer;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		sizeBox_Orig = (sizeBox_Target = GlowBox.localScale);
 		sizeCircle_Orig = (sizeCircle_Target = GlowCircle.localScale);
 		colorBox_Orig = (colorBox_Target = SR_Box_1.color);

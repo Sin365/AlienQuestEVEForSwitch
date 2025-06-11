@@ -12,9 +12,9 @@ public class Effect_Opacity : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.SpriteRenderer SR;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
 		Set_Start();
 	}
@@ -37,7 +37,7 @@ public class Effect_Opacity : global::UnityEngine.MonoBehaviour
 
 	private void Set_Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SR = GetComponent<global::UnityEngine.SpriteRenderer>();
 		R = SR.color.r;
 		G = SR.color.g;

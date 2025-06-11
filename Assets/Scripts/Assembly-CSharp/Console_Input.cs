@@ -12,13 +12,13 @@ public class Console_Input : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject inputField;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private Player_Control PC;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		input_list = new string[10];
 		inputField = global::UnityEngine.GameObject.Find("InputField");

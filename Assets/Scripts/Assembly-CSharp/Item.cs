@@ -32,11 +32,11 @@ public class Item : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Shader shaderSpritesDefault;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		shaderGUItext = global::UnityEngine.Shader.Find("GUI/Text Shader");
 		shaderSpritesDefault = global::UnityEngine.Shader.Find("Sprites/Default");
 		if (Item_Num <= 100 || Bonus_Index != 0)

@@ -20,11 +20,11 @@ public class Event_Edge_Glow : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_Bottom;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Glow_L_Timer = global::UnityEngine.Random.Range(0f, 5f);
 		Glow_R_Timer = global::UnityEngine.Random.Range(0f, 5f);
 		color_L = Glow_L_1.color;

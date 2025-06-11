@@ -34,11 +34,11 @@ public class Mother_Laser : global::UnityEngine.MonoBehaviour
 
 	private float angle_Change;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Glow_Bar.transform.localScale = new global::UnityEngine.Vector3(0.4f, 1.5f, 1f);
 		glow_color = Glow_1.color;
 		angle_Orig = 80f;

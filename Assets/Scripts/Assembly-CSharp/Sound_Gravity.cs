@@ -10,11 +10,11 @@ public class Sound_Gravity : global::UnityEngine.MonoBehaviour
 
 	private float Distance;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Volume_Orig = base.GetComponent<UnityEngine.AudioSource>().volume;
 		Dist_Orig = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
 		Check_Distance();

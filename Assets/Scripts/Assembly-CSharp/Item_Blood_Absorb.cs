@@ -4,11 +4,11 @@ public class Item_Blood_Absorb : global::UnityEngine.MonoBehaviour
 
 	private int Blood_Num;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
 	private void Update()

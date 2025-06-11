@@ -28,11 +28,11 @@ public class Event_Core : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_Off = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Dust_List = new global::UnityEngine.GameObject[DustNum];
 		Speed_List = new float[DustNum];
 		for (int i = 0; i < DustNum; i++)

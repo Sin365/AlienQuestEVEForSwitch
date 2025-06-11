@@ -94,9 +94,9 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 
 	public bool H_Cancel;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private Custom_Key CK;
+	private Custom_Key CK => GameManager.instance.CK;
 
 	private Language_MenuItem Lang_MI;
 
@@ -104,8 +104,8 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
 		Lang_MI = GetComponent<Language_MenuItem>();
 		Sound_List = GetComponent<UI_SoundList>();
 		PosOrig = GetComponent<global::UnityEngine.RectTransform>().localPosition;

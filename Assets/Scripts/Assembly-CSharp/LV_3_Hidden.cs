@@ -28,11 +28,11 @@ public class LV_3_Hidden : global::UnityEngine.MonoBehaviour
 
 	private Player_Control PC;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		CamCon = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>();
 		color_Orig = new global::UnityEngine.Color[SR_List.Length];

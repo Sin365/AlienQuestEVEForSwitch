@@ -50,16 +50,16 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 pos_Target;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
-	private Custom_Key CK;
+	private Custom_Key CK => GameManager.instance.CK;
 
 	private Language_MenuItem Lang_MI;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
 		Lang_MI = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>();
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(0f, 2000f, 0f);
 		color_BG = save_BG_1.color;

@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class GameManager : global::UnityEngine.MonoBehaviour
 {
+    public static GameManager instance { get; private set; }
+
     private int Slot_Num;
 
     public int EventState;
@@ -433,6 +435,16 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     public Custom_Key CK;
 
     public EXP_Table Exp_Table;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        instance = null;
+    }
 
     private void Start()
     {

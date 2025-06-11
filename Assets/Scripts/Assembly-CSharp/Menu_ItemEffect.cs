@@ -58,11 +58,11 @@ public class Menu_ItemEffect : global::UnityEngine.MonoBehaviour
 
 	private int DustNum = 20;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		D3_List = new global::UnityEngine.GameObject[DustNum];
 		D3_Pos = new global::UnityEngine.Vector3[DustNum];
 		D3_Speed = new float[DustNum];

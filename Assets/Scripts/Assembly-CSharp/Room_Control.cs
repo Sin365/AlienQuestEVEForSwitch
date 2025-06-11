@@ -18,13 +18,13 @@ public class Room_Control : global::UnityEngine.MonoBehaviour
 
 	public bool Start_MaxCam;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private StageManager SM;
+    private StageManager SM;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
 		if (Room_Num == 0 || !GM.onEvent)
 		{

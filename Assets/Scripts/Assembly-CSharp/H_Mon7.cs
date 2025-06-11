@@ -15,21 +15,21 @@ public class H_Mon7 : global::UnityEngine.MonoBehaviour
 	private int mon_Index;
 
 	private float Life_Timer;
-
-	private void Start()
+    GameManager GM => GameManager.instance;
+    private void Start()
 	{
 	}
 
 	private void Update()
 	{
-		if (global::UnityEngine.GameObject.Find("GameManager") != null)
+		if (GM != null)
 		{
-			if (global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>().Paused && !onPause)
+			if (GM.Paused && !onPause)
 			{
 				onPause = true;
 				GetComponent<global::UnityEngine.Animator>().speed = 0f;
 			}
-			else if (!global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>().Paused && onPause)
+			else if (!GM.Paused && onPause)
 			{
 				onPause = false;
 				GetComponent<global::UnityEngine.Animator>().speed = 1f;

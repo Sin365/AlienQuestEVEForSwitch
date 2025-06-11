@@ -58,16 +58,15 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 pos_Target_Cursor;
 
-	private GameManager GM;
-
-	private Custom_Key CK;
+    GameManager GM => GameManager.instance;
+    private Custom_Key CK => GameManager.instance.CK;
 
 	private StageManager SM;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
 		SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(0f, 2000f, 0f);
 		Img_ON = new bool[6];

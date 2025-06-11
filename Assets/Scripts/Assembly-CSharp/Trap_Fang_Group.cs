@@ -6,11 +6,11 @@ public class Trap_Fang_Group : global::UnityEngine.MonoBehaviour
 
 	private float pos_Y;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		pos_Y = Head[0].transform.position.y;
 		Life_Timer = new float[Head.Length];
 		for (int i = 0; i < Head.Length; i++)

@@ -30,13 +30,13 @@ public class Event_EggBox : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Transform Main_Cam;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private global::UnityEngine.GameObject Player;
+    private global::UnityEngine.GameObject Player;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		Main_Cam = global::UnityEngine.GameObject.Find("Main Camera").transform;
 		pos_Top = EggBox_Top.localPosition;

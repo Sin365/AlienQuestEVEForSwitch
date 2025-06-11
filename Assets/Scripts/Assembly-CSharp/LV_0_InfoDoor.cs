@@ -10,11 +10,11 @@ public class LV_0_InfoDoor : global::UnityEngine.MonoBehaviour
 
 	private string text_Jpn = "ロックされている。\n別の道を見つける必要がして。";
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
 	private void Update()

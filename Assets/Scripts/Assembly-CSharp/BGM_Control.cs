@@ -22,11 +22,11 @@ public class BGM_Control : global::UnityEngine.MonoBehaviour
 
 	private float[] Volume;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		BGM_Max = BGM_List.Length;
 		if (BGM_Max > 0)
 		{

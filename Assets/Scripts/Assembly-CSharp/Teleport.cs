@@ -60,15 +60,15 @@ public class Teleport : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_BG_Glow;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private TeleMenu_Control TeleMenu;
+    private TeleMenu_Control TeleMenu;
 
 	private global::UnityEngine.GameObject Player;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		TeleMenu = global::UnityEngine.GameObject.Find("Menu_Teleport").GetComponent<TeleMenu_Control>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		TeleMenu.Teleport_Num = Teleport_Num;

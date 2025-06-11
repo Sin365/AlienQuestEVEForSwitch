@@ -42,9 +42,9 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector2 player_Velocity;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private global::UnityEngine.GameObject Player;
+    private global::UnityEngine.GameObject Player;
 
 	private Map_Control MC;
 
@@ -1739,7 +1739,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		GateFade = global::UnityEngine.GameObject.Find("GateFade");
 		MC = global::UnityEngine.GameObject.Find("Menu_Map").GetComponent<Map_Control>();

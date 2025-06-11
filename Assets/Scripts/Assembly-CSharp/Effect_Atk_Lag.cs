@@ -8,11 +8,11 @@ public class Effect_Atk_Lag : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.SpriteRenderer SR;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SR = GetComponent<global::UnityEngine.SpriteRenderer>();
 		Room_Num = GM.Room_Num;
 		color_Target = new global::UnityEngine.Color(SR.color.r, SR.color.g, SR.color.b, 0f);

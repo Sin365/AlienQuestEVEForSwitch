@@ -12,13 +12,13 @@ public class LV_0_DistGlow : global::UnityEngine.MonoBehaviour
 
 	private float distance = 50f;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private global::UnityEngine.GameObject Player;
+    private global::UnityEngine.GameObject Player;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		Orig_Opacity = new float[SR_List.Length];
 		for (int i = 0; i < SR_List.Length; i++)

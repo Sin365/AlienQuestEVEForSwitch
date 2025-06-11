@@ -38,11 +38,11 @@ public class Item_Blood : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.BoxCollider2D PlayerColBox;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		PlayerColBox = global::UnityEngine.GameObject.Find("Ani").GetComponent<global::UnityEngine.BoxCollider2D>();
 		rnd_X = (float)global::UnityEngine.Random.Range(0, 20) * 0.01f;
 		rnd_Y = (float)global::UnityEngine.Random.Range(0, 20) * 0.01f;

@@ -8,11 +8,11 @@ public class Magic_Fire_1_Explo : global::UnityEngine.MonoBehaviour
 
 	private float Opacity = 1f;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Size = (float)global::UnityEngine.Random.Range(60, 95) * 0.01f;
 		Target_Size = (float)global::UnityEngine.Random.Range(120, 180) * 0.01f;
 		base.transform.Translate(global::UnityEngine.Vector3.right * global::UnityEngine.Random.Range(-30, 30) * 0.01f);

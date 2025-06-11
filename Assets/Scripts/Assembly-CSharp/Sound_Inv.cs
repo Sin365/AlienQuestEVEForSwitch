@@ -1,16 +1,16 @@
-public class Sound_Inv : global::UnityEngine.MonoBehaviour
+public class Sound_Inv : AxiSoundBase
 {
 	private float life_Timer;
 
 	private bool isPlayStarted;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		if (global::UnityEngine.GameObject.Find("GameManager") != null)
+		if (GM != null)
 		{
-			GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+			//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 			base.GetComponent<UnityEngine.AudioSource>().volume = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
 		}
 		else
@@ -19,7 +19,12 @@ public class Sound_Inv : global::UnityEngine.MonoBehaviour
 		}
 	}
 
-	private void Update()
+    private void OnEnable()
+    {
+        
+    }
+
+    private void Update()
 	{
 		life_Timer += global::UnityEngine.Time.deltaTime;
 		if (!isPlayStarted && !base.GetComponent<UnityEngine.AudioSource>().isPlaying)

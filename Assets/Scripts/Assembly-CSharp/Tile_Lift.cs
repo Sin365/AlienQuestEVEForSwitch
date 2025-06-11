@@ -30,13 +30,13 @@ public class Tile_Lift : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 pos_Target;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private global::UnityEngine.GameObject Player;
+    private global::UnityEngine.GameObject Player;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		if (Type == 0)
 		{

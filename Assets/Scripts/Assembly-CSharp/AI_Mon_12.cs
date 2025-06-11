@@ -68,11 +68,11 @@ public class AI_Mon_12 : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject Player;
 
-	private GameManager GM;
+    private GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Player = global::UnityEngine.GameObject.Find("Player");
 		Shield = global::UnityEngine.Object.Instantiate(MonGate_Shield, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		Shield.GetComponent<Mon_Shield>().MonObject = base.gameObject;

@@ -10,11 +10,11 @@ public class Info_Gate : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_Off = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		GetComponent<global::UnityEngine.SpriteRenderer>().color = color_Off;
 		Spr_Item.color = color_Off;
 		Spr_Dir.color = color_Off;

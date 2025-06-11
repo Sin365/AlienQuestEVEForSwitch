@@ -4,11 +4,11 @@ public class Event_TentacleToMon7 : global::UnityEngine.MonoBehaviour
 
 	private float[] Mon7_Timer;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Mon7_Timer = new float[Mon_7.Length];
 		for (int i = 0; i < Mon_7.Length; i++)
 		{

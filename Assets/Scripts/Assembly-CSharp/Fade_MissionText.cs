@@ -30,11 +30,11 @@ public class Fade_MissionText : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 PosTarget = new global::UnityEngine.Vector3(650f, -360f, 0f);
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		brown_On = txt_1.color;
 		Language_MenuItem component = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>();
 

@@ -6,13 +6,13 @@ public class Sound_Moan : global::UnityEngine.MonoBehaviour
 
 	private bool onEnd;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		if (global::UnityEngine.GameObject.Find("GameManager") != null)
+		if (GM != null)
 		{
-			GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+			//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 			base.GetComponent<UnityEngine.AudioSource>().volume = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
 		}
 		else

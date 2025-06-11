@@ -14,11 +14,11 @@ public class Gate_BossLock : global::UnityEngine.MonoBehaviour
 
 	private float End_Timer = 1.2f;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (GM.Get_Event(Boss_Num + 10))
 		{
 			global::UnityEngine.Object.Destroy(base.gameObject);

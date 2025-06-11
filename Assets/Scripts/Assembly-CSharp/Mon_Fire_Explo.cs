@@ -16,11 +16,11 @@ public class Mon_Fire_Explo : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.SpriteRenderer Spr;
 
-	private GameManager GM;
+	GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Spr = GetComponent<global::UnityEngine.SpriteRenderer>();
 		Size = base.transform.localScale.x;
 		Target_Size = Size * 3f;

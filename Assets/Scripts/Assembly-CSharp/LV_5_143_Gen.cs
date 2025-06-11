@@ -20,11 +20,11 @@ public class LV_5_143_Gen : global::UnityEngine.MonoBehaviour
 
 	private float distance;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		if ((GM.Get_Event(3) || GM.Get_Event(15) || GM.EventState == 200) && Pos_40_List.Length > 0)
 		{
 			for (int i = 0; i < Pos_40_List.Length; i++)

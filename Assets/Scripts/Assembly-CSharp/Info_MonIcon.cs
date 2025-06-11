@@ -50,11 +50,11 @@ public class Info_MonIcon : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Camera CAM;
 
-	private GameManager GM;
+    GameManager GM => GameManager.instance;
 
-	private void Start()
+    private void Start()
 	{
-		GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
+		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		CAM = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<global::UnityEngine.Camera>();
 		ratio = 1920f / (float)global::UnityEngine.Screen.width;
 		if (Type == 3)
