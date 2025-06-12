@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Console_Input : global::UnityEngine.MonoBehaviour
 {
 	public bool Enabled;
@@ -13,13 +15,13 @@ public class Console_Input : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.GameObject inputField;
 
 	GameManager GM => GameManager.instance;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Player_Control PC;
-
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		input_list = new string[10];
 		inputField = global::UnityEngine.GameObject.Find("InputField");
 		PosConsole = global::UnityEngine.GameObject.Find("Console").GetComponent<global::UnityEngine.RectTransform>().localPosition;
@@ -137,14 +139,14 @@ public class Console_Input : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject.Find("InputField").GetComponent<global::UnityEngine.UI.InputField>().ActivateInputField();
 		global::UnityEngine.GameObject.Find("InputField").GetComponent<global::UnityEngine.UI.InputField>().text = string.Empty;
 		Console_Text_List();
-		StageManager component = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
+		StageManager component = GM.sm_StageManager;
 		int result = -1;
 		if (int.TryParse(inputFieldString, out result))
 		{
 			global::UnityEngine.Debug.Log(result);
 			if (result < component.Room.Length)
 			{
-				global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>().Lock_GameLoad();
+				Player.GetComponent<Player_Control>().Lock_GameLoad();
 				component.Go_Room(result, 0, 0f, 0f, true);
 			}
 		}
@@ -156,7 +158,8 @@ public class Console_Input : global::UnityEngine.MonoBehaviour
 
 	private void Info_Text()
 	{
-		if (global::UnityEngine.GameObject.Find("Player") != null)
+        
+        if (Player != null)
 		{
 			string text = " State:  " + PC.State;
 			string text2 = text;
@@ -164,7 +167,7 @@ public class Console_Input : global::UnityEngine.MonoBehaviour
 			text2 = text;
 			text = text2 + "\n MP:  " + GM.MP + " / " + GM.MP_Max;
 			text = text + "\n\n Vel:  " + GM.Velcocity;
-			text = text + "\nrgVel:  " + global::UnityEngine.GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>().velocity;
+			text = text + "\nrgVel:  " + GameManager.instance.eg2d_Player.velocity;
 			text = text + "\n\n Jump:  " + PC.Jump_Num;
 			text = text + "\n HJump:  " + PC.onHighJump;
 			text = text + "\n Ground: " + PC.grounded_Now;

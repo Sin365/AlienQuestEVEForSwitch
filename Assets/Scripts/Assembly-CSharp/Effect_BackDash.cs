@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Effect_BackDash : global::UnityEngine.MonoBehaviour
 {
 	private int Room_Num;
@@ -15,13 +17,14 @@ public class Effect_BackDash : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.SpriteRenderer SR;
 
     GameManager GM => GameManager.instance;
-
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
     private void Start()
 	{
 		Set_Start();
 		if (GM.Weapon_Num == 5 && Opacity < 0.4f)
 		{
-			player_Scale = global::UnityEngine.GameObject.Find("Player").transform.localScale.x;
+			player_Scale = Player.transform.localScale.x;
 		}
 	}
 
@@ -61,7 +64,7 @@ public class Effect_BackDash : global::UnityEngine.MonoBehaviour
 		if (!GM.Paused && !GM.onGatePass)
 		{
 			Opacity -= global::UnityEngine.Time.deltaTime * 2f;
-			if (player_Scale != 0f && player_Scale != global::UnityEngine.GameObject.Find("Player").transform.localScale.x)
+			if (player_Scale != 0f && player_Scale != Player.transform.localScale.x)
 			{
 				global::UnityEngine.Object.Destroy(base.gameObject);
 			}

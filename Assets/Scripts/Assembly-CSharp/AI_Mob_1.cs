@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mob_1 : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -28,17 +30,19 @@ public class AI_Mob_1 : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.Transform Tr_FrontPos;
 
-	private global::UnityEngine.GameObject Player;
+
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     //private GameManager GM;
     private GameManager GM => GameManager.instance;
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		rnd_X = (float)global::UnityEngine.Random.Range(0, 200) * 0.01f;
 		Patrol_Range = 8f + global::UnityEngine.Random.Range(0f, 6f);
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+		if (Player.transform.position.x > base.transform.position.x)
 		{
 			Flip();
 		}

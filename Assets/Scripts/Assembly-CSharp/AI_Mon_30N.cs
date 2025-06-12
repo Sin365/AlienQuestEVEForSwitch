@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 {
 	private bool isCleared;
@@ -89,18 +91,16 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 	private UI_Control UC;
 
 	private Monster Mon;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		UC = global::UnityEngine.GameObject.Find("Status").GetComponent<UI_Control>();
 		pos_Orig = base.transform.localPosition;

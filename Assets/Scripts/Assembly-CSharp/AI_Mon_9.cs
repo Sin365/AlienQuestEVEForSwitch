@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_9 : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -25,16 +27,16 @@ public class AI_Mon_9 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.Transform Tr_2_End;
 
 	private global::UnityEngine.RaycastHit2D whatIHit;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private global::UnityEngine.GameObject Player;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		if (Player.transform.position.x > base.transform.position.x)
 		{
 			Flip();
 		}

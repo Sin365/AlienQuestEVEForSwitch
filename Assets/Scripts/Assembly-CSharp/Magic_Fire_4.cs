@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Magic_Fire_4 : global::UnityEngine.MonoBehaviour
 {
 	public enum Shield_Type
@@ -54,14 +56,15 @@ public class Magic_Fire_4 : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.GameObject soundShield;
 
-	private Player_Control PC;
+	//private Player_Control PC;
 
 	GameManager GM => GameManager.instance;
-
-	private void Start()
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		if (base.transform.localScale.x < 0f)
 		{
 			facingRight = -1;
@@ -154,7 +157,7 @@ public class Magic_Fire_4 : global::UnityEngine.MonoBehaviour
 			}
 			if (Type == Magic_Fire_4.Shield_Type.Player)
 			{
-				if (global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>().Jump_Num > 0)
+				if (PC.Jump_Num > 0)
 				{
 					Rot_Target = -50f;
 				}

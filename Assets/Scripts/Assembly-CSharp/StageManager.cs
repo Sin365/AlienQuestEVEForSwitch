@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class StageManager : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.GameObject[] Room;
@@ -43,10 +45,10 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector2 player_Velocity;
 
     GameManager GM => GameManager.instance;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-    private global::UnityEngine.GameObject Player;
-
-	private Map_Control MC;
+    private Map_Control MC;
 
 	private int[] MapArray_Num = new int[200]
 	{
@@ -1740,7 +1742,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		GateFade = global::UnityEngine.GameObject.Find("GateFade");
 		MC = global::UnityEngine.GameObject.Find("Menu_Map").GetComponent<Map_Control>();
 	}

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -100,17 +102,16 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 
 	private Monster Mon;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		rnd_X = (float)global::UnityEngine.Random.Range(0, 300) * 0.01f;
 		float num = (float)global::UnityEngine.Random.Range(-80, 80) * 0.01f;
@@ -123,7 +124,7 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 		{
 			Penis.sprite = spr_Penis;
 		}
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+		if (Player.transform.position.x > base.transform.position.x)
 		{
 			Flip();
 		}

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_3 : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -45,20 +47,20 @@ public class AI_Mon_3 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.Transform Tr_7;
 
 	private global::UnityEngine.RaycastHit2D whatIHit;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		Pos_Target = new global::UnityEngine.Vector3(Player.transform.position.x + 3f, Player.transform.position.y + 7.3f, 0f);
 		Rnd_XY = new global::UnityEngine.Vector2((float)global::UnityEngine.Random.Range(0, 30) * 0.01f, (float)global::UnityEngine.Random.Range(0, 30) * 0.01f);
 		GameOver_XY = new global::UnityEngine.Vector2((float)global::UnityEngine.Random.Range(50, 80) * 0.1f, (float)global::UnityEngine.Random.Range(60, 82) * 0.1f);
 		Speed_Orig = 4f + global::UnityEngine.Random.Range(0f, 1f);
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+		if (Player.transform.position.x > base.transform.position.x)
 		{
 			Flip();
 		}
@@ -123,7 +125,7 @@ public class AI_Mon_3 : global::UnityEngine.MonoBehaviour
 			}
 			else if (GM.GameOver)
 			{
-				if (Player.GetComponent<UnityEngine.Rigidbody2D>().velocity.y == 0f)
+				if (GameManager.instance.eg2d_Player.velocity.y == 0f)
 				{
 					if (!isGameOver)
 					{

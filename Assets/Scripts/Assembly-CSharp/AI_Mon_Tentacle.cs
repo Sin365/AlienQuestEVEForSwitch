@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_Tentacle : global::UnityEngine.MonoBehaviour
 {
 	private int Idle_Num = 1;
@@ -25,16 +27,16 @@ public class AI_Mon_Tentacle : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.Transform pos_R;
 
 	private Sound_Control SC;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private global::UnityEngine.GameObject Player;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		if (global::UnityEngine.Random.Range(0, 10) > 7)
 		{
 			Idle_Num = 2;

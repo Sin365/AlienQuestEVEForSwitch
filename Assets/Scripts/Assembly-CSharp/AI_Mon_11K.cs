@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_11K : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -90,17 +92,16 @@ public class AI_Mon_11K : global::UnityEngine.MonoBehaviour
 
 	private Monster Mon;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     private GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		rnd_X = global::UnityEngine.Random.Range(0.5f, 1.5f);
 		Move_Speed = 4f + global::UnityEngine.Random.Range(0f, 0.1f);
@@ -118,7 +119,7 @@ public class AI_Mon_11K : global::UnityEngine.MonoBehaviour
 			Penis_Censored.enabled = false;
 		}
 		Attack_Delay = 3f;
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+		if (Player.transform.position.x > base.transform.position.x)
 		{
 			Flip();
 		}

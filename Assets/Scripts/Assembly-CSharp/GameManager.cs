@@ -4,7 +4,12 @@ using UnityEngine.UI;
 public class GameManager : global::UnityEngine.MonoBehaviour
 {
     public static GameManager instance { get; private set; }
-
+    public StageManager sm_StageManager { get; private set; }
+    public Player_Control PC { get; private set; }
+    public Rigidbody2D eg2d_Player { get; private set; }
+    public GameObject gobj_Player { get; private set; }
+    public Sound_Control sc_Sound_List { get; private set; }
+    
     private int Slot_Num;
 
     public int EventState;
@@ -311,12 +316,9 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     public global::UnityEngine.GameObject Shield_Object;
 
-    private Player_Control PC;
 
     private UI_Control UC;
     private Camera_Control cc_Main_Camera;
-    private Rigidbody2D eg2d_Player;
-    private GameObject gobj_Player;
     private GameObject gobj_EscapeTimer;
     private GameObject gobj_Main_Camera;
     private GameObject gobj_Player_DownGrab;
@@ -424,11 +426,9 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     private RectTransform rect_pos_B23;
     private RectTransform rect_pos_B24;
     private RectTransform rect_pos_B25;
-    private StageManager sm_StageManager;
     private Event_Control eventctrl_Dialogue;
     private Text txt_Shield_Text;
     private Image img_Shield_Bar;
-    private Sound_Control sc_Sound_List;
     private GameObject gobj_Player_SoundList;
     private Text txt_KILLS_Num;
     private Text txt_Info_Text;
@@ -439,6 +439,11 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     private void Awake()
     {
         instance = this;
+        sm_StageManager = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
+        PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+        eg2d_Player = global::UnityEngine.GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>();
+        gobj_Player = global::UnityEngine.GameObject.Find("Player");
+        sc_Sound_List = GameObject.Find("Sound_List").GetComponent<Sound_Control>();
     }
 
     private void OnDestroy()
@@ -448,12 +453,9 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     private void Start()
     {
-        PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
         UC = global::UnityEngine.GameObject.Find("Status").GetComponent<UI_Control>();
         #region 改为单次Find
         cc_Main_Camera = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>();
-        eg2d_Player = global::UnityEngine.GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>();
-        gobj_Player = global::UnityEngine.GameObject.Find("Player");
 
         gobj_EscapeTimer = global::UnityEngine.GameObject.Find("EscapeTimer");
         gobj_Main_Camera = global::UnityEngine.GameObject.Find("Main Camera");
@@ -599,13 +601,11 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         rect_pos_B24 = global::UnityEngine.GameObject.Find("pos_B24").GetComponent<global::UnityEngine.RectTransform>();
         rect_pos_B25 = global::UnityEngine.GameObject.Find("pos_B25").GetComponent<global::UnityEngine.RectTransform>();
 
-        sm_StageManager = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
         eventctrl_Dialogue = global::UnityEngine.GameObject.Find("Dialogue").GetComponent<Event_Control>();
 
 
         txt_Shield_Text = global::UnityEngine.GameObject.Find("Shield_Text").GetComponent<global::UnityEngine.UI.Text>();
         img_Shield_Bar = global::UnityEngine.GameObject.Find("Shield_Bar").GetComponent<global::UnityEngine.UI.Image>();
-        sc_Sound_List = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
         gobj_Player_SoundList = global::UnityEngine.GameObject.Find("Player_SoundList");
         txt_KILLS_Num = global::UnityEngine.GameObject.Find("KILLS_Num").GetComponent<global::UnityEngine.UI.Text>();
         txt_Info_Text = global::UnityEngine.GameObject.Find("Info_Text").GetComponent<global::UnityEngine.UI.Text>();
@@ -1828,31 +1828,31 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     public void Get_Card_1()
     {
         onCard_1 = true;
-       img_Inv_Card_1.enabled = true;
+        img_Inv_Card_1.enabled = true;
     }
 
     public void Get_Card_2()
     {
         onCard_2 = true;
-       img_Inv_Card_2.enabled = true;
+        img_Inv_Card_2.enabled = true;
     }
 
     public void Get_Card_3()
     {
         onCard_3 = true;
-       img_Inv_Card_3.enabled = true;
+        img_Inv_Card_3.enabled = true;
     }
 
     public void Get_Card_4()
     {
         onCard_4 = true;
-       img_Inv_Card_4.enabled = true;
+        img_Inv_Card_4.enabled = true;
     }
 
     public void Get_Card_5()
     {
         onCard_5 = true;
-       img_Inv_Card_5.enabled = true;
+        img_Inv_Card_5.enabled = true;
     }
 
     public void Get_Bonus_1(int num)
@@ -2114,11 +2114,11 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     public void Status_OnMenu()
     {
-       txt_HP_Add.text = string.Empty;
+        txt_HP_Add.text = string.Empty;
         txt_MP_Add.text = string.Empty;
         txt_ATK_Add.text = string.Empty;
         txt_DEF_Add.text = string.Empty;
-       txt_HP_Add.color = new global::UnityEngine.Color(0.5f, 1f, 0.9f, 0f);
+        txt_HP_Add.color = new global::UnityEngine.Color(0.5f, 1f, 0.9f, 0f);
         txt_MP_Add.color = new global::UnityEngine.Color(0.5f, 1f, 0.9f, 0f);
         txt_ATK_Add.color = new global::UnityEngine.Color(0.5f, 1f, 0.9f, 0f);
         txt_DEF_Add.color = new global::UnityEngine.Color(0.5f, 1f, 0.9f, 0f);
@@ -2522,23 +2522,23 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         }
         if (onCard_1)
         {
-           img_Inv_Card_1.enabled = true;
+            img_Inv_Card_1.enabled = true;
         }
         if (onCard_2)
         {
-           img_Inv_Card_2.enabled = true;
+            img_Inv_Card_2.enabled = true;
         }
         if (onCard_3)
         {
-           img_Inv_Card_3.enabled = true;
+            img_Inv_Card_3.enabled = true;
         }
         if (onCard_4)
         {
-           img_Inv_Card_4.enabled = true;
+            img_Inv_Card_4.enabled = true;
         }
         if (onCard_5)
         {
-           img_Inv_Card_5.enabled = true;
+            img_Inv_Card_5.enabled = true;
         }
         if (Bonus_HP > 0)
         {

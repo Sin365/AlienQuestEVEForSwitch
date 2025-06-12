@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_7 : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -77,18 +79,16 @@ public class AI_Mon_7 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.SpriteRenderer CensoredText;
 
 	public global::UnityEngine.SpriteRenderer CensoredBox;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		if (AxiPlayerPrefs.GetInt("Censorship") == 1)
 		{
 			CensoredText.enabled = true;
@@ -102,7 +102,7 @@ public class AI_Mon_7 : global::UnityEngine.MonoBehaviour
 		rnd_X = global::UnityEngine.Random.Range(0.5f, 1.5f);
 		Move_Speed = 3f + global::UnityEngine.Random.Range(0f, 1f);
 		Patrol_Range = 11f + global::UnityEngine.Random.Range(0f, 6f);
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+		if (Player.transform.position.x > base.transform.position.x)
 		{
 			Flip();
 		}

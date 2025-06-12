@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 {
 	public bool isDeath;
@@ -151,10 +153,10 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Animator animator;
 
 	private Monster Mon;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Player_Control PC;
-
-	private Sound_Control SC;
+    private Sound_Control SC;
 
     GameManager GM => GameManager.instance;
 
@@ -162,7 +164,7 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		animator = GetComponent<global::UnityEngine.Animator>();
 		UC = global::UnityEngine.GameObject.Find("Status").GetComponent<UI_Control>();

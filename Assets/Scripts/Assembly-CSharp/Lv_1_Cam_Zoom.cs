@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Lv_1_Cam_Zoom : global::UnityEngine.MonoBehaviour
 {
 	private bool onEnabled;
@@ -33,15 +35,15 @@ public class Lv_1_Cam_Zoom : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Color color_OFF = new global::UnityEngine.Color(0f, 0f, 0f, 0f);
 
 	private Camera_Control CamCon;
-
-	private Player_Control PC;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		CamCon = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>();
 		color_Orig = new global::UnityEngine.Color[SR_List.Length];
 		for (int i = 0; i < SR_List.Length; i++)

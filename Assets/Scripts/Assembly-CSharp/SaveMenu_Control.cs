@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 {
 	private float Life_Timer;
@@ -54,9 +56,10 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 
 	private Custom_Key CK => GameManager.instance.CK;
 
-	private Language_MenuItem Lang_MI;
+	private Language_MenuItem Lang_MI; Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
@@ -203,12 +206,12 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 				}
 				if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Escape) || global::UnityEngine.Input.GetButtonDown("Start") || global::UnityEngine.Input.GetButtonDown("_B"))
 				{
-					global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>().Lock_Timer = 0.2f;
+					PC.Lock_Timer = 0.2f;
 					Off_SaveMenu();
 				}
 				else if (global::UnityEngine.Input.GetButtonDown("Jump") || global::UnityEngine.Input.GetKeyDown(CK.Jump))
 				{
-					global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>().Lock_Timer = 0.2f;
+					PC.Lock_Timer = 0.2f;
 					if (Sel_Index == 0)
 					{
 						if (GM.EventState != 200)

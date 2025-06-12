@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Event_Reactor : global::UnityEngine.MonoBehaviour
 {
 	private float Life_Timer;
@@ -51,16 +53,16 @@ public class Event_Reactor : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Color color_Blue = new global::UnityEngine.Color(0f, 0.7f, 1f, 0.6f);
 
     GameManager GM => GameManager.instance;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-    private global::UnityEngine.GameObject Player;
-
-	private Custom_Key CK => GameManager.instance.CK;
+    private Custom_Key CK => GameManager.instance.CK;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		Glow_Timer = new float[Glow.Length];
 		Glow_Small_Timer = new float[Glow_Small.Length];
 		color_Sphere = color_On;

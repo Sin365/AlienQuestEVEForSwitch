@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class LevelUp : global::UnityEngine.MonoBehaviour
 {
 	private bool onEnabled;
@@ -12,12 +14,13 @@ public class LevelUp : global::UnityEngine.MonoBehaviour
 
 	GameManager GM => GameManager.instance;
 
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		Magic_Bar.transform.localScale = new global::UnityEngine.Vector3(0f, 0f, 1f);
 	}
 

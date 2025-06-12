@@ -103,12 +103,12 @@ public class Magic_Fire_2_Explo : global::UnityEngine.MonoBehaviour
 		{
 			onColPlayer = true;
 			GM.Damage((int)((float)GM.HP_Max * 0.5f), 0f, true, 0);
-			global::UnityEngine.GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, 0f);
+			GM.eg2d_Player.velocity = new global::UnityEngine.Vector2(0f, 0f);
 			int num = ((!(base.transform.position.x > col.transform.position.x)) ? 1 : (-1));
-			global::UnityEngine.GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * num * 20f, global::UnityEngine.ForceMode2D.Impulse);
+			GM.eg2d_Player.AddForce(global::UnityEngine.Vector3.right * num * 20f, global::UnityEngine.ForceMode2D.Impulse);
 			if (col.transform.position.y > base.transform.position.y)
 			{
-				global::UnityEngine.GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
+				GM.eg2d_Player.AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 			}
 		}
 		else if (col.tag == "Breakable")

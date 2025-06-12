@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class H_Mon31 : global::UnityEngine.MonoBehaviour
 {
 	public int Index;
@@ -32,6 +34,8 @@ public class H_Mon31 : global::UnityEngine.MonoBehaviour
 
 	private bool onCumShot;
     GameManager GM => GameManager.instance;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
     private void Start()
 	{
 		if (!(GM != null))
@@ -44,7 +48,7 @@ public class H_Mon31 : global::UnityEngine.MonoBehaviour
 		End_Timer = 3.5f + global::UnityEngine.Random.Range(0f, 1f);
 		if (onAutoFlip)
 		{
-			if (global::UnityEngine.GameObject.Find("Player") != null && global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+			if (Player != null && Player.transform.position.x > base.transform.position.x)
 			{
 				onFlip = true;
 				GetComponent<H_Ani>().SendMessage("Flip");
@@ -58,7 +62,7 @@ public class H_Mon31 : global::UnityEngine.MonoBehaviour
 
 	private void Update()
 	{
-		if (!(global::UnityEngine.GameObject.Find("Player") != null) || !(GM != null))
+		if (!(Player != null) || !(GM != null))
 		{
 			return;
 		}

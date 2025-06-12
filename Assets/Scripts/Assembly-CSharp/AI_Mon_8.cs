@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_8 : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -89,18 +91,16 @@ public class AI_Mon_8 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.SkinnedMeshRenderer Penis_Wet_1;
 
 	public global::UnityEngine.SkinnedMeshRenderer Penis_Wet_2;
-
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		rnd_X = global::UnityEngine.Random.Range(0.5f, 1.5f);
 		Move_Speed = 4f + global::UnityEngine.Random.Range(0f, 1.2f);
 		Patrol_Range = 11f + global::UnityEngine.Random.Range(0f, 6f);
@@ -118,7 +118,7 @@ public class AI_Mon_8 : global::UnityEngine.MonoBehaviour
 			Penis_Wet_2.enabled = false;
 			Penis_Censored.enabled = false;
 		}
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+		if (Player.transform.position.x > base.transform.position.x)
 		{
 			Flip();
 		}

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_MotherArm : global::UnityEngine.MonoBehaviour
 {
 	public AI_MotherBrain MotherBrain;
@@ -89,15 +91,15 @@ public class AI_MotherArm : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.GameObject sound_Start;
 
 	public global::UnityEngine.SpriteRenderer[] SR_Event;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Player_Control PC;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		HP = HP_Max;
 	}
 

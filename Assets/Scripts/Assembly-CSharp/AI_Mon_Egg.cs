@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 {
 	public enum AniState
@@ -83,16 +85,16 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Color color_Orig = new global::UnityEngine.Color(1f, 1f, 1f);
 
 	private Sound_Control SC;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private global::UnityEngine.GameObject Player;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		rnd_X = global::UnityEngine.Random.Range(0.3f, 0.8f);
 		rnd_Limit = global::UnityEngine.Random.Range(0.9f, 1.2f);
 		if (HP_Max < HP)

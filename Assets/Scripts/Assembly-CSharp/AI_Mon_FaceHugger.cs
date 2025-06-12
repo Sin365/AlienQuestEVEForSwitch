@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 {
 	public enum AniState
@@ -146,18 +148,16 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Color color_Slow = new global::UnityEngine.Color(0f, 0.92f, 1f);
 
 	private Sound_Control SC;
-
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
 		rnd_X = global::UnityEngine.Random.Range(0.3f, 1f);
 		Move_Speed = 7f + global::UnityEngine.Random.Range(0f, 0.5f);

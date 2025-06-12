@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Mother_Gravity : global::UnityEngine.MonoBehaviour
 {
 	private bool onActive = true;
@@ -36,9 +38,10 @@ public class Mother_Gravity : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.Transform Player_Target;
 
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private global::UnityEngine.BoxCollider2D PlayerColBox;
+    private global::UnityEngine.BoxCollider2D PlayerColBox;
 
 	GameManager GM => GameManager.instance;
 
@@ -46,7 +49,7 @@ public class Mother_Gravity : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		PlayerColBox = global::UnityEngine.GameObject.Find("Ani").GetComponent<global::UnityEngine.BoxCollider2D>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		Size = base.transform.localScale.y;
 		pos_Target = new global::UnityEngine.Vector3(PlayerColBox.transform.position.x, PlayerColBox.transform.position.y + ((!(PlayerColBox.size.y > 3f)) ? 1.8f : 3f), PlayerColBox.transform.position.z);
 		Make_Black();

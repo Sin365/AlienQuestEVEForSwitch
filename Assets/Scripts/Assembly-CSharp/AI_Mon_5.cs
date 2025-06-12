@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_5 : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -61,18 +63,16 @@ public class AI_Mon_5 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.GameObject H_Single;
 
 	public global::UnityEngine.GameObject H_Dual;
-
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Pos_Target = new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y + 4f, 0f);
 		Rnd_XY = new global::UnityEngine.Vector2((float)global::UnityEngine.Random.Range(0, 30) * 0.01f, (float)global::UnityEngine.Random.Range(0, 30) * -0.01f);
 		GameOver_XY = new global::UnityEngine.Vector2((float)global::UnityEngine.Random.Range(50, 80) * 0.1f, (float)global::UnityEngine.Random.Range(60, 82) * 0.1f);

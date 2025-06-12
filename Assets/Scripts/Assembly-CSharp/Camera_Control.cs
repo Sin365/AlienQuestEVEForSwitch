@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Camera_Control : global::UnityEngine.MonoBehaviour
 {
 	public float Cam_Top = 10f;
@@ -86,19 +88,18 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.BoxCollider2D Col_Cam;
 
-    GameManager GM => GameManager.instance;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
+	GameManager GM => GameManager.instance;
 
-    private global::UnityEngine.GameObject Player;
-
-	private Player_Control PC;
 
 	private void Start()
 	{
 		lastInterval = global::UnityEngine.Time.realtimeSinceStartup;
 		frames = 0;
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Col_Cam = global::UnityEngine.GameObject.Find("COL_Cam").GetComponent<global::UnityEngine.BoxCollider2D>();
 		currentSize = orignalSize;
 		targetSize = orignalSize;

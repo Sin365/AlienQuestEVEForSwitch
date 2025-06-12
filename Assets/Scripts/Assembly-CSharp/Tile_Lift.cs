@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Tile_Lift : global::UnityEngine.MonoBehaviour
 {
 	public int Type;
@@ -32,12 +34,13 @@ public class Tile_Lift : global::UnityEngine.MonoBehaviour
 
     GameManager GM => GameManager.instance;
 
-    private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		if (Type == 0)
 		{
 			Dist_Half = global::UnityEngine.Vector3.Distance(pos_1.position, pos_2.position) * 0.5f;

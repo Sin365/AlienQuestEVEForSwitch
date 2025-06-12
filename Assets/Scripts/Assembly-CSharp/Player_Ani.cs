@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Player_Ani : global::UnityEngine.MonoBehaviour
 {
 	private enum AniState
@@ -175,13 +177,13 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.SkinnedMeshRenderer Down_FaceHugger_R;
 
 	GameManager GM => GameManager.instance;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Player_Control PC;
-
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		BoxCol = GetComponent<global::UnityEngine.BoxCollider2D>();
 		Spr_Idle = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("PC/2048_01_Idle");
 		Spr_Idle_E = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("PC/2048_02_Idle_E");

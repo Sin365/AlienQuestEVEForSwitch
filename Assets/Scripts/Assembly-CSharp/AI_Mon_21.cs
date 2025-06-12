@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_21 : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -49,21 +51,21 @@ public class AI_Mon_21 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.Transform Tr_5_Start;
 
 	public global::UnityEngine.Transform Tr_5_End;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		rnd_X = (float)global::UnityEngine.Random.Range(0, 300) * 0.01f;
 		float num = (float)global::UnityEngine.Random.Range(-100, 100) * 0.01f;
 		Tr_1_End.position = new global::UnityEngine.Vector3(Tr_1_End.position.x + num, Tr_1_End.position.y, 0f);
 		Tr_2_End.position = new global::UnityEngine.Vector3(Tr_2_End.position.x + num, Tr_2_End.position.y, 0f);
 		Tr_3_End.position = new global::UnityEngine.Vector3(Tr_3_End.position.x + num, Tr_3_End.position.y, 0f);
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+		if (Player.transform.position.x > base.transform.position.x)
 		{
 			Flip();
 		}

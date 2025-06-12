@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class LV_1_Cam : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.Transform Orig_Top;
@@ -37,15 +39,15 @@ public class LV_1_Cam : global::UnityEngine.MonoBehaviour
 	private bool check_Right;
 
 	private Camera_Control CamCon;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private global::UnityEngine.GameObject Player;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		CamCon = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>();
 		if (condition_Up)
 		{

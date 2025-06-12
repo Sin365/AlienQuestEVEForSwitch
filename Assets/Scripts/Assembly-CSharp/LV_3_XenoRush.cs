@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class LV_3_XenoRush : global::UnityEngine.MonoBehaviour
 {
 	private int Room_Num;
@@ -35,15 +37,15 @@ public class LV_3_XenoRush : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector3 Target_R;
 
 	private global::UnityEngine.Camera Main_Cam;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		Main_Cam = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<global::UnityEngine.Camera>();
 		Room_Num = GM.Room_Num;
 		if (Head_L != null)

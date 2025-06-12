@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class player_ChestBurster : global::UnityEngine.MonoBehaviour
 {
 	private bool onBurst;
@@ -20,17 +22,16 @@ public class player_ChestBurster : global::UnityEngine.MonoBehaviour
 
 	private H_SoundControl H_Sound;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		if (global::UnityEngine.GameObject.Find("Sound_List_H") != null)
 		{
 			H_Sound = global::UnityEngine.GameObject.Find("Sound_List_H").GetComponent<H_SoundControl>();

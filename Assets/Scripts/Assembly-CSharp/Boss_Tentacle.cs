@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Boss_Tentacle : global::UnityEngine.MonoBehaviour
 {
 	public AI_Mon_30N Boss;
@@ -7,15 +9,15 @@ public class Boss_Tentacle : global::UnityEngine.MonoBehaviour
 	private bool onPause;
 
 	private float Attack_Delay;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private global::UnityEngine.GameObject Player;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		Attack_Delay = 1f;
 		if (global::UnityEngine.Random.Range(0, 10) > 5)
 		{

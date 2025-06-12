@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Boss_3_Platform : global::UnityEngine.MonoBehaviour
 {
 	private float Life_Timer;
@@ -45,18 +47,16 @@ public class Boss_3_Platform : global::UnityEngine.MonoBehaviour
 	private bool onPause;
 
 	private global::UnityEngine.Animator animator;
-
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		animator = GetComponent<global::UnityEngine.Animator>();
 	}
 

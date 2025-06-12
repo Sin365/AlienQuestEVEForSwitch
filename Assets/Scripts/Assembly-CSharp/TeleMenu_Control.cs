@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 {
 	private float Life_Timer;
@@ -61,13 +63,14 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
     GameManager GM => GameManager.instance;
     private Custom_Key CK => GameManager.instance.CK;
 
-	private StageManager SM;
-
-	private void Start()
+	StageManager SM => GameManager.instance.sm_StageManager;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
-		SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
+		//SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(0f, 2000f, 0f);
 		Img_ON = new bool[6];
 		Img_ON[0] = true;
@@ -213,12 +216,12 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 				text_Center_Shadow.GetComponent<global::UnityEngine.RectTransform>().localScale = text_Center.GetComponent<global::UnityEngine.RectTransform>().localScale;
 				if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Escape) || global::UnityEngine.Input.GetButtonDown("Start") || global::UnityEngine.Input.GetButtonDown("_B"))
 				{
-					global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>().Lock_Timer = 0.2f;
+					PC.Lock_Timer = 0.2f;
 					Off_Menu();
 				}
 				else if (global::UnityEngine.Input.GetButtonDown("Jump") || global::UnityEngine.Input.GetKeyDown(CK.Jump))
 				{
-					global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>().Lock_Timer = 0.2f;
+					PC.Lock_Timer = 0.2f;
 					if (Sel_Index != Teleport_Num)
 					{
 						if (Sel_Index == 0 || GM.Check_Teleport_On(Sel_Index))
@@ -303,7 +306,7 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 		{
 			num = 142;
 		}
-		global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>().Lock_GameLoad();
+		PC.Lock_GameLoad();
 		if (num == 60)
 		{
 			SM.Go_Room(num, 5, 0f, 0f, true);

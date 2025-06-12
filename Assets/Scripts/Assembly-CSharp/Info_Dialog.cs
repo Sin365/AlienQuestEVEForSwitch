@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Info_Dialog : global::UnityEngine.MonoBehaviour
 {
 	private float Life_Timer;
@@ -31,8 +33,9 @@ public class Info_Dialog : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.SpriteRenderer spr_Tail;
 
 	GameManager GM => GameManager.instance;
-
-	private void Start()
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
@@ -47,7 +50,7 @@ public class Info_Dialog : global::UnityEngine.MonoBehaviour
 		FontColor[0] = new global::UnityEngine.Color(FontColor[1].r, FontColor[1].g, FontColor[1].b, 0f);
 		FontObj.color = FontColor[0];
 		ratio = 1920f / (float)global::UnityEngine.Screen.width;
-		pos_Player = new global::UnityEngine.Vector3(global::UnityEngine.GameObject.Find("Player").transform.position.x, global::UnityEngine.GameObject.Find("Player").transform.position.y + 5.7f, 0f);
+		pos_Player = new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y + 5.7f, 0f);
 		pos_UI = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<global::UnityEngine.Camera>().WorldToScreenPoint(pos_Player);
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(pos_UI.x * ratio - 960f, pos_UI.y * ratio - 540f, 0f);
 	}
@@ -73,7 +76,7 @@ public class Info_Dialog : global::UnityEngine.MonoBehaviour
 		{
 			Life_Timer += global::UnityEngine.Time.deltaTime;
 			ratio = 1920f / (float)global::UnityEngine.Screen.width;
-			pos_Player = new global::UnityEngine.Vector3(global::UnityEngine.GameObject.Find("Player").transform.position.x, global::UnityEngine.GameObject.Find("Player").transform.position.y + 5.7f, 0f);
+			pos_Player = new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y + 5.7f, 0f);
 			pos_UI = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<global::UnityEngine.Camera>().WorldToScreenPoint(pos_Player);
 			GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(pos_UI.x * ratio - 960f, pos_UI.y * ratio - 540f, 0f);
 			if (OnOff > 0)

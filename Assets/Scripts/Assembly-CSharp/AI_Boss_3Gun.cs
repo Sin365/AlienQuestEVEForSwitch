@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 {
 	private bool isDeath;
@@ -124,9 +126,8 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 
 	private Monster Mon;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
 
     private GameManager GM => GameManager.instance;
@@ -134,8 +135,8 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		UC = global::UnityEngine.GameObject.Find("Status").GetComponent<UI_Control>();
 		animator = GetComponent<global::UnityEngine.Animator>();

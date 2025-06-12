@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_17 : global::UnityEngine.MonoBehaviour
 {
 	private float Life_Timer;
@@ -45,18 +47,16 @@ public class AI_Mon_17 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.GameObject Sound_Explo;
 
 	private Monster Mon;
-
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		Pos_Target = new global::UnityEngine.Vector3(Player.transform.position.x + 3f, Player.transform.position.y + 7.3f, 0f);
 		Rnd_XY = new global::UnityEngine.Vector2((float)global::UnityEngine.Random.Range(0, 30) * 0.01f, (float)global::UnityEngine.Random.Range(0, 30) * 0.01f);

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Magic_Fire_1B : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.SpriteRenderer[] SR_List;
@@ -35,18 +37,16 @@ public class Magic_Fire_1B : global::UnityEngine.MonoBehaviour
 	private float Target_Rot;
 
 	private global::UnityEngine.Vector3 posOrig;
-
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		if (base.transform.localScale.x < 0f)
 		{
 			facingRight = -1;

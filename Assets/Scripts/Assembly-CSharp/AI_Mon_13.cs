@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_13 : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -90,17 +92,16 @@ public class AI_Mon_13 : global::UnityEngine.MonoBehaviour
 
 	private Monster Mon;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		rnd_X = global::UnityEngine.Random.Range(0.5f, 1.5f);
 		Move_Speed = 3.5f + global::UnityEngine.Random.Range(0f, 1f);

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 {
 	private bool isCleared;
@@ -66,17 +68,16 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 
 	private Monster Mon;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     private GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		UC = global::UnityEngine.GameObject.Find("Status").GetComponent<UI_Control>();
 		SR_Ball_Yeollow.color = color_OFF;
@@ -85,7 +86,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 		SR_Glow_Yellow.color = color_OFF;
 		SR_Glow_Purple.color = color_OFF;
 		SR_Glow_Light.color = color_OFF;
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+		if (Player.transform.position.x > base.transform.position.x)
 		{
 			Flip();
 		}

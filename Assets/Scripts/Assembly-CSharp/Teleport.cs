@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Teleport : global::UnityEngine.MonoBehaviour
 {
 	public int Teleport_Num;
@@ -64,13 +66,14 @@ public class Teleport : global::UnityEngine.MonoBehaviour
 
     private TeleMenu_Control TeleMenu;
 
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		TeleMenu = global::UnityEngine.GameObject.Find("Menu_Teleport").GetComponent<TeleMenu_Control>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		TeleMenu.Teleport_Num = Teleport_Num;
 		TeleMenu.teleport_Block = base.gameObject;
 		Dust_List = new global::UnityEngine.GameObject[DustNum];

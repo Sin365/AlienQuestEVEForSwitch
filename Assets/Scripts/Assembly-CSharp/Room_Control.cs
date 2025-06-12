@@ -20,12 +20,12 @@ public class Room_Control : global::UnityEngine.MonoBehaviour
 
     GameManager GM => GameManager.instance;
 
-    private StageManager SM;
+    StageManager SM => GameManager.instance.sm_StageManager;
 
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
+		//SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
 		if (Room_Num == 0 || !GM.onEvent)
 		{
 			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Cam_Top = cam_Top.position.y;

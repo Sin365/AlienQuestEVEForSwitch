@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Water_Bottom : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.Transform[] pos_Center;
@@ -34,14 +36,15 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_OFF = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 
-	private Player_Control PC;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		pos_Dust = new global::UnityEngine.Vector3(PC.transform.position.x, PC.transform.position.y + 1.5f, 0f);
 		if (pos_Center.Length > 0)
 		{

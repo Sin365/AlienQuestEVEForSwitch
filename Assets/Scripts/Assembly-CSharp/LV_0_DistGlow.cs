@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class LV_0_DistGlow : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.Transform pos_Y;
@@ -13,13 +15,13 @@ public class LV_0_DistGlow : global::UnityEngine.MonoBehaviour
 	private float distance = 50f;
 
     GameManager GM => GameManager.instance;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-    private global::UnityEngine.GameObject Player;
-
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		Orig_Opacity = new float[SR_List.Length];
 		for (int i = 0; i < SR_List.Length; i++)
 		{

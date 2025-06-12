@@ -82,15 +82,15 @@ public class Gate_Control : global::UnityEngine.MonoBehaviour
 
 	GameManager GM => GameManager.instance;
 
-	private StageManager SM;
+	private StageManager SM => GameManager.instance.sm_StageManager;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private global::UnityEngine.GameObject Player;
-
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		if (Keep_Monster != null)
 		{
 			monLocked = true;

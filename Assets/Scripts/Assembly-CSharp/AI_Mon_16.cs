@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_16 : global::UnityEngine.MonoBehaviour
 {
 	private float Life_Timer;
@@ -15,18 +17,16 @@ public class AI_Mon_16 : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector3 pos_Orig;
 
 	private Monster Mon;
-
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		if (Player.transform.position.x > base.transform.position.x)
 		{

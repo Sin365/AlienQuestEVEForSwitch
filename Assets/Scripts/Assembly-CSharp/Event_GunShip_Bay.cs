@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Event_GunShip_Bay : global::UnityEngine.MonoBehaviour
 {
 	public LV_0_Ship GunShip;
@@ -31,7 +33,8 @@ public class Event_GunShip_Bay : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector3 pos_Player_Down;
 
     GameManager GM => GameManager.instance;
-
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -82,11 +85,11 @@ public class Event_GunShip_Bay : global::UnityEngine.MonoBehaviour
 					GunShip.Set_SortingLayer_On();
 					GunShip.SendMessage("Play_Sound_DoorOpen");
 					Ship_Board.transform.localPosition = pos_ShipBoard_Up;
-					global::UnityEngine.GameObject.Find("Player").transform.position = new global::UnityEngine.Vector3(Room_0_Pos_X, 1.54f, 0f);
+					Player.transform.position = new global::UnityEngine.Vector3(Room_0_Pos_X, 1.54f, 0f);
 					return;
 				}
 				Ship_Board.transform.localPosition = global::UnityEngine.Vector3.Lerp(Ship_Board.transform.localPosition, pos_ShipBoard_Down, global::UnityEngine.Time.deltaTime * 3.2f);
-				global::UnityEngine.GameObject.Find("Player").transform.position = global::UnityEngine.Vector3.Lerp(global::UnityEngine.GameObject.Find("Player").transform.position, pos_Player_Down, global::UnityEngine.Time.deltaTime * 3.2f);
+				Player.transform.position = global::UnityEngine.Vector3.Lerp(Player.transform.position, pos_Player_Down, global::UnityEngine.Time.deltaTime * 3.2f);
 				if (global::UnityEngine.Vector3.Distance(Ship_Board.transform.localPosition, pos_ShipBoard_Down) < 0.05f)
 				{
 					onEvent = false;
@@ -126,11 +129,11 @@ public class Event_GunShip_Bay : global::UnityEngine.MonoBehaviour
 			{
 				return;
 			}
-			if (GunShip.onEngineStart && global::UnityEngine.Vector3.Distance(global::UnityEngine.GameObject.Find("Player").transform.position, Ship_Board.transform.position) >= 1.8f)
+			if (GunShip.onEngineStart && global::UnityEngine.Vector3.Distance(Player.transform.position, Ship_Board.transform.position) >= 1.8f)
 			{
 				GunShip.Engine_Stop(1f);
 			}
-			else if (!GunShip.onEngineStart && global::UnityEngine.Vector3.Distance(global::UnityEngine.GameObject.Find("Player").transform.position, Ship_Board.transform.position) < 1.8f)
+			else if (!GunShip.onEngineStart && global::UnityEngine.Vector3.Distance(Player.transform.position, Ship_Board.transform.position) < 1.8f)
 			{
 				if (GunShip.Sound_On)
 				{

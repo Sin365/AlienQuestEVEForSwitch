@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Event_EggBox : global::UnityEngine.MonoBehaviour
 {
 	private float Life_Timer;
@@ -32,12 +34,13 @@ public class Event_EggBox : global::UnityEngine.MonoBehaviour
 
     GameManager GM => GameManager.instance;
 
-    private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		Main_Cam = global::UnityEngine.GameObject.Find("Main Camera").transform;
 		pos_Top = EggBox_Top.localPosition;
 		pos_Bot = EggBox_Bot.localPosition;

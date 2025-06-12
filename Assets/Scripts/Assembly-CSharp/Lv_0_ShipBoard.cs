@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Lv_0_ShipBoard : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.SpriteRenderer Glow_top;
@@ -39,14 +41,14 @@ public class Lv_0_ShipBoard : global::UnityEngine.MonoBehaviour
 	GameManager GM => GameManager.instance;
 
 	private SaveMenu_Control SaveMenu;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private global::UnityEngine.GameObject Player;
-
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SaveMenu = global::UnityEngine.GameObject.Find("Menu_Save").GetComponent<SaveMenu_Control>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		SaveMenu.save_Block = base.gameObject;
 	}
 

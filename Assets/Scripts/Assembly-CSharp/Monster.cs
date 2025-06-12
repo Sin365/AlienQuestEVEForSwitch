@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Monster : global::UnityEngine.MonoBehaviour
 {
 	public int Mon_Num = 1;
@@ -156,9 +158,10 @@ public class Monster : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.GameObject _Item_Potion_MP;
 
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Sound_Control SC;
+    private Sound_Control SC;
 
 	GameManager GM => GameManager.instance;
 
@@ -166,7 +169,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		if (Mon_Num != 33 && Event_Num > 0 && GM.Check_EventMonster(Event_Num))
 		{
 			global::UnityEngine.Object.Destroy(base.gameObject);
@@ -1015,7 +1018,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 			{
 				flag2 = true;
 			}
-			Player.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, Player.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
+			GameManager.instance.eg2d_Player.velocity = new global::UnityEngine.Vector2(0f, GameManager.instance.eg2d_Player.velocity.y);
 			if (Player.transform.position.x < base.transform.position.x + 1.44f * (float)(-facingRight))
 			{
 				if (flag || flag2)
@@ -1024,7 +1027,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				}
 				if (GM.onShield)
 				{
-					Player.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * -40f, global::UnityEngine.ForceMode2D.Impulse);
+					GameManager.instance.eg2d_Player.AddForce(global::UnityEngine.Vector3.right * -40f, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				else if (QueenDash_Delay > 0f)
 				{
@@ -1043,7 +1046,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				}
 				if (GM.onShield)
 				{
-					Player.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 40f, global::UnityEngine.ForceMode2D.Impulse);
+					GameManager.instance.eg2d_Player.AddForce(global::UnityEngine.Vector3.right * 40f, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				else if (QueenDash_Delay > 0f)
 				{
@@ -1105,8 +1108,8 @@ public class Monster : global::UnityEngine.MonoBehaviour
 			PC_Col_Delay = 0.3f;
 			PC_Body_Delay = 0.3f;
 			Invincible_Delay = 0.3f;
-			Player.GetComponent<UnityEngine.Rigidbody2D>().velocity = new global::UnityEngine.Vector2(0f, Player.GetComponent<UnityEngine.Rigidbody2D>().velocity.y);
-			Player.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 40f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
+			GameManager.instance.eg2d_Player.velocity = new global::UnityEngine.Vector2(0f, GameManager.instance.eg2d_Player.velocity.y);
+			GameManager.instance.eg2d_Player.AddForce(global::UnityEngine.Vector3.right * 40f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 			if (isInvincible)
 			{
 				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Player_Damage(Mon_Num, true, Player.transform.position);
@@ -1398,11 +1401,11 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				PC_Col_Delay = 0.5f;
 				if (base.transform.position.x < Player.transform.position.x)
 				{
-					Player.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 20f, global::UnityEngine.ForceMode2D.Impulse);
+					GameManager.instance.eg2d_Player.AddForce(global::UnityEngine.Vector3.right * 20f, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				else
 				{
-					Player.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * -20f, global::UnityEngine.ForceMode2D.Impulse);
+					GameManager.instance.eg2d_Player.AddForce(global::UnityEngine.Vector3.right * -20f, global::UnityEngine.ForceMode2D.Impulse);
 				}
 				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Electric_Dmg(Player.transform.position);
 			}

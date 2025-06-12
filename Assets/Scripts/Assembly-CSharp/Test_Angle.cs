@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Test_Angle : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.GameObject _Fire_1;
@@ -22,14 +24,15 @@ public class Test_Angle : global::UnityEngine.MonoBehaviour
 
 	private float distance;
 
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		target = Player.transform;
 		Fire_1_Timer = global::UnityEngine.Random.Range(-1.5f, 0.5f);
 	}

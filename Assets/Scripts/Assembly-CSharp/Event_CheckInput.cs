@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Event_CheckInput : global::UnityEngine.MonoBehaviour
 {
 	public int Event_Num;
@@ -11,8 +13,8 @@ public class Event_CheckInput : global::UnityEngine.MonoBehaviour
 	private float prevY;
 
 	public global::UnityEngine.GameObject info_UpArrow;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -22,7 +24,7 @@ public class Event_CheckInput : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 	}
 
 	private void Update()

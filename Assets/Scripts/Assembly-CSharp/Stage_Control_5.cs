@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Stage_Control_5 : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.GameObject guide_T;
@@ -11,14 +13,15 @@ public class Stage_Control_5 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.GameObject Queen;
 
 	private bool inNest;
-
-	private void Start()
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
+    private void Start()
 	{
 	}
 
 	private void Update()
 	{
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > 191f && global::UnityEngine.GameObject.Find("Player").transform.position.y < 26.9f)
+		if (PC.transform.position.x > 191f && PC.transform.position.y < 26.9f)
 		{
 			if (!inNest)
 			{

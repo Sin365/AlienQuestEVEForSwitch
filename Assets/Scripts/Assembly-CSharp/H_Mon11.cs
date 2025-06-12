@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class H_Mon11 : global::UnityEngine.MonoBehaviour
 {
 	public int Index;
@@ -58,6 +60,8 @@ public class H_Mon11 : global::UnityEngine.MonoBehaviour
 
 	private bool isEndMode;
     GameManager GM => GameManager.instance;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
     private void Start()
 	{
 		if (!(GM != null))
@@ -69,7 +73,7 @@ public class H_Mon11 : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Animator>().speed = 0f;
 		if (onAutoFlip)
 		{
-			if (global::UnityEngine.GameObject.Find("Player") != null && global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+			if (Player != null && Player.transform.position.x > base.transform.position.x)
 			{
 				onFlip = true;
 				GetComponent<H_Ani>().SendMessage("Flip");
@@ -83,7 +87,7 @@ public class H_Mon11 : global::UnityEngine.MonoBehaviour
 
 	private void Update()
 	{
-		if (!(global::UnityEngine.GameObject.Find("Player") != null) || !(GM != null))
+		if (!(Player != null) || !(GM != null))
 		{
 			return;
 		}

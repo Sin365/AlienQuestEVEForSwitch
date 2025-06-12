@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_BrainGirl : global::UnityEngine.MonoBehaviour
 {
 	public enum Event_Type
@@ -71,18 +73,16 @@ public class AI_Mon_BrainGirl : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.PolygonCollider2D Col_Body;
 
 	private Monster Mon;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		Pos_Target = base.transform.position;
 		Rnd_XY = new global::UnityEngine.Vector2((float)global::UnityEngine.Random.Range(-15, 15) * 0.01f, (float)global::UnityEngine.Random.Range(-15, 15) * 0.01f);

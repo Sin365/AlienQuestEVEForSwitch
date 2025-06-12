@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Tile_Lift_Bottom : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.Transform pos_Start;
@@ -9,15 +11,14 @@ public class Tile_Lift_Bottom : global::UnityEngine.MonoBehaviour
 	private bool onGroundNear;
 
 	private float pre_Y;
-
-	private Player_Control PC;
-
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 	}
 
 	private void Update()

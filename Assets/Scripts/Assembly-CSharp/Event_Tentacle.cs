@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Event_Tentacle : global::UnityEngine.MonoBehaviour
 {
 	private bool on_Hscene;
@@ -19,18 +21,16 @@ public class Event_Tentacle : global::UnityEngine.MonoBehaviour
 	public AI_Mon_Tentacle[] Tentacle_List;
 
 	public global::UnityEngine.GameObject[] H_Single;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		for (int i = 0; i < Tentacle_List.Length; i++)
 		{
 			Tentacle_List[i].Hide(1f + global::UnityEngine.Random.Range(0f, 1f));

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Trap_Laser : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.SpriteRenderer Alert;
@@ -31,7 +33,8 @@ public class Trap_Laser : global::UnityEngine.MonoBehaviour
 	private float glow_Timer_3;
 
     GameManager GM => GameManager.instance;
-
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -53,7 +56,7 @@ public class Trap_Laser : global::UnityEngine.MonoBehaviour
 		{
 			return;
 		}
-		if (global::UnityEngine.Mathf.Abs(global::UnityEngine.GameObject.Find("Player").transform.position.x - base.transform.position.x) > 15f || global::UnityEngine.Mathf.Abs(global::UnityEngine.GameObject.Find("Player").transform.position.y - base.transform.position.y) > 15f)
+		if (global::UnityEngine.Mathf.Abs(Player.transform.position.x - base.transform.position.x) > 15f || global::UnityEngine.Mathf.Abs(Player.transform.position.y - base.transform.position.y) > 15f)
 		{
 			State = -1;
 			glow_Timer_1 = (glow_Timer_2 = (glow_Timer_3 = 0f));

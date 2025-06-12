@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Trap_Fang_N : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.GameObject[] Head;
@@ -7,15 +9,15 @@ public class Trap_Fang_N : global::UnityEngine.MonoBehaviour
 	private float pos_Y;
 
 	private float Damage_Delay;
-
-	private Player_Control PC;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		pos_Y = Head[0].transform.position.y;
 		Life_Timer = new float[Head.Length];
 		for (int i = 0; i < Head.Length; i++)

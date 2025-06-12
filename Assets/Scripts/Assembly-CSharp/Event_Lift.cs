@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Event_Lift : global::UnityEngine.MonoBehaviour
 {
 	private int Event_Num = 4;
@@ -23,16 +25,16 @@ public class Event_Lift : global::UnityEngine.MonoBehaviour
 	public Event_Computer event_Com;
 
 	GameManager GM => GameManager.instance;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private global::UnityEngine.GameObject Player;
-
-	private Custom_Key CK => GameManager.instance.CK;
+    private Custom_Key CK => GameManager.instance.CK;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		if (GM.Get_Event(Event_Num))
 		{
 			onEnabled = true;

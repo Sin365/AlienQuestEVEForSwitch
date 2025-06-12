@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Gate_Passage : global::UnityEngine.MonoBehaviour
 {
 	public int targetRoom_Num;
@@ -13,16 +15,16 @@ public class Gate_Passage : global::UnityEngine.MonoBehaviour
 	private float Life_Timer;
 
     GameManager GM => GameManager.instance;
+    StageManager SM => GameManager.instance.sm_StageManager;
 
-    private StageManager SM;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private global::UnityEngine.GameObject Player;
-
-	private void Start()
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
 	}
 
 	private void Update()

@@ -1,17 +1,20 @@
+using UnityEngine;
+
 public class Trap_Fang_Col : global::UnityEngine.MonoBehaviour
 {
 	public Trap_Fang_Group TrapBody;
 
 	private float Damage_Delay;
 
-	private Player_Control PC;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 	}
 
 	private void Update()

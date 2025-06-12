@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Mon_Fire_Gravity : global::UnityEngine.MonoBehaviour
 {
 	public int Type;
@@ -33,18 +35,16 @@ public class Mon_Fire_Gravity : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector3 posOrig;
 
 	private global::UnityEngine.Vector2 Velocity;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Glow_Opacity_Max = SR_Glow.color.a;
 		posOrig = base.transform.position;
 		Velocity = base.GetComponent<UnityEngine.Rigidbody2D>().velocity;

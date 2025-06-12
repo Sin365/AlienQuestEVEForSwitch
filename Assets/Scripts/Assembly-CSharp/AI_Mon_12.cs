@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_12 : global::UnityEngine.MonoBehaviour
 {
 	private int EnemyState;
@@ -66,14 +68,15 @@ public class AI_Mon_12 : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.RaycastHit2D whatIHit;
 
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     private GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		Shield = global::UnityEngine.Object.Instantiate(MonGate_Shield, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		Shield.GetComponent<Mon_Shield>().MonObject = base.gameObject;
 		if (Tr_Pos.localScale.x < 0f)

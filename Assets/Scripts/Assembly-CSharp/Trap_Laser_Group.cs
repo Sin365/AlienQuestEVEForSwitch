@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Trap_Laser_Group : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.GameObject Laser_Beam;
@@ -20,14 +22,16 @@ public class Trap_Laser_Group : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_Off = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 
-	private global::UnityEngine.GameObject Player;
+
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		Laser_Num = Alert_Glow.Length;
 		Life_Timer = new float[Laser_Num];
 		LengthSize = LengthObj.localScale.y * 2f;
@@ -53,7 +57,7 @@ public class Trap_Laser_Group : global::UnityEngine.MonoBehaviour
 		{
 			return;
 		}
-		if (global::UnityEngine.Mathf.Abs(global::UnityEngine.GameObject.Find("Player").transform.position.x - base.transform.position.x) > 30f || global::UnityEngine.Mathf.Abs(global::UnityEngine.GameObject.Find("Player").transform.position.y - base.transform.position.y) > 15f)
+		if (global::UnityEngine.Mathf.Abs(Player.transform.position.x - base.transform.position.x) > 30f || global::UnityEngine.Mathf.Abs(Player.transform.position.y - base.transform.position.y) > 15f)
 		{
 			if (State > 0)
 			{

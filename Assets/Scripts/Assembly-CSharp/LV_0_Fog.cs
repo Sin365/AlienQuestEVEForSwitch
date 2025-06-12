@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class LV_0_Fog : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.Transform pos_Y;
@@ -11,15 +13,15 @@ public class LV_0_Fog : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Color colorFog_OFF = new global::UnityEngine.Color(0f, 0f, 0f, 0f);
 
 	private global::UnityEngine.Color colorFogLight_ON = new global::UnityEngine.Color(0f, 0f, 0f, 0f);
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
-	private Player_Control PC;
-
-	GameManager GM => GameManager.instance;
+    GameManager GM => GameManager.instance;
 
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
+		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		colorFog_OFF = new global::UnityEngine.Color(Fog_List[0].color.r, Fog_List[0].color.g, Fog_List[0].color.b, 0f);
 		if (Fog_Light != null)
 		{

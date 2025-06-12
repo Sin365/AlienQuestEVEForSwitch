@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class AI_Mon_27 : global::UnityEngine.MonoBehaviour
 {
 	private float Life_Timer;
@@ -73,18 +75,16 @@ public class AI_Mon_27 : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Animator animator;
 
 	private Monster Mon;
-
-	private Player_Control PC;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
-		PC = Player.GetComponent<Player_Control>();
+		//Player = global::UnityEngine.GameObject.Find("Player");
+		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		animator = GetComponent<global::UnityEngine.Animator>();
 		Pos_Orig = base.transform.position;
@@ -92,7 +92,7 @@ public class AI_Mon_27 : global::UnityEngine.MonoBehaviour
 		Rnd_XY = new global::UnityEngine.Vector2((float)global::UnityEngine.Random.Range(0, 50) * 0.01f, (float)global::UnityEngine.Random.Range(0, 50) * 0.01f);
 		GameOver_XY = new global::UnityEngine.Vector2((float)global::UnityEngine.Random.Range(40, 120) * 0.1f, (float)global::UnityEngine.Random.Range(-10, 120) * 0.1f);
 		Speed_Orig = 18f + global::UnityEngine.Random.Range(0f, 1f);
-		if (global::UnityEngine.GameObject.Find("Player").transform.position.x > base.transform.position.x)
+		if (Player.transform.position.x > base.transform.position.x)
 		{
 			Flip();
 		}
@@ -190,7 +190,7 @@ public class AI_Mon_27 : global::UnityEngine.MonoBehaviour
 		{
 			if (GM.GameOver)
 			{
-				if (Player.GetComponent<UnityEngine.Rigidbody2D>().velocity.y != 0f)
+				if (GameManager.instance.eg2d_Player.velocity.y != 0f)
 				{
 					return;
 				}

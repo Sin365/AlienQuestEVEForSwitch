@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class LV_1_Breakable_Cam : global::UnityEngine.MonoBehaviour
 {
 	public Breakable_Block Block;
@@ -21,15 +23,15 @@ public class LV_1_Breakable_Cam : global::UnityEngine.MonoBehaviour
 	private bool onBreak;
 
 	private int Glow_Dir;
-
-	private global::UnityEngine.GameObject Player;
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Player = global::UnityEngine.GameObject.Find("Player");
+		//Player = global::UnityEngine.GameObject.Find("Player");
 		if (SR_Glow_1 != null)
 		{
 			color_Glow_1 = SR_Glow_1.color;

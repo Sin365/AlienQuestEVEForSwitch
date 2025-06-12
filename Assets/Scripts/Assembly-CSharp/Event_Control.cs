@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Event_Control : global::UnityEngine.MonoBehaviour
 {
 	private int Event_Num = 1;
@@ -128,16 +130,17 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
     GameManager GM => GameManager.instance;
 
 	private Custom_Key CK => GameManager.instance.CK;
-
-	private void Start()
+    Player_Control PC => GameManager.instance.PC;
+    GameObject Player => GameManager.instance.gobj_Player;
+    private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
 		GateFade = global::UnityEngine.GameObject.Find("GateFade").GetComponent<global::UnityEngine.SpriteRenderer>();
 		Arrow_PosY = Arrow.GetComponent<global::UnityEngine.RectTransform>().localPosition.y;
 		Reset_Text();
-		global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>().Lock_Timer = 0.2f;
-		global::UnityEngine.GameObject.Find("Player").transform.position = new global::UnityEngine.Vector3(Room_0_Pos_X, -5.4f, 0f);
+		Player.GetComponent<Player_Control>().Lock_Timer = 0.2f;
+		Player.transform.position = new global::UnityEngine.Vector3(Room_0_Pos_X, -5.4f, 0f);
 		PosTarget = new global::UnityEngine.Vector3(0f, -380f, 0f);
 		PosHide = new global::UnityEngine.Vector3(0f, -900f, 0f);
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = PosHide;
@@ -732,8 +735,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 		Text_Dlg_On = false;
 		Text_Start_Timer = 0f;
 		Reset_Text();
-		global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>().Lock_Timer = 0.2f;
-		global::UnityEngine.GameObject.Find("Player").transform.position = new global::UnityEngine.Vector3(Room_0_Pos_X, -5.4f, 0f);
+		Player.GetComponent<Player_Control>().Lock_Timer = 0.2f;
+		Player.transform.position = new global::UnityEngine.Vector3(Room_0_Pos_X, -5.4f, 0f);
 		if (Opening_Ship != null)
 		{
 			global::UnityEngine.Object.Destroy(Opening_Ship.gameObject);

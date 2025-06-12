@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player_Control : global::UnityEngine.MonoBehaviour
 {
+    public static Player_Control instance { get; set; }
     public enum AniState
     {
         Idle = 0,
@@ -239,6 +240,16 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
     private Custom_Key CK => GameManager.instance.CK;
 
     private Player_Ani Ani;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        instance = null;
+    }
 
     private void Start()
     {
