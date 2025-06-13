@@ -164,7 +164,9 @@ public class Credits_Control : global::UnityEngine.MonoBehaviour
 				SR_Credit_List.transform.Translate(global::UnityEngine.Vector3.up * global::UnityEngine.Time.deltaTime * Scroll_Speed);
 				if (SR_Credit_List.transform.position.y > 48f)
 				{
-					SR_Credit_List.transform.position = new global::UnityEngine.Vector3(1.8f, -18.5f, 0f);
+					//SR_Credit_List.transform.position = new global::UnityEngine.Vector3(1.8f, -18.5f, 0f);
+					//X轴还是不变
+					SR_Credit_List.transform.position = new global::UnityEngine.Vector3(SR_Credit_List.transform.position.x, -18.5f, 0f);
 				}
 			}
 		}
