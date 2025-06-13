@@ -174,7 +174,7 @@ public class AI_Mon_21 : global::UnityEngine.MonoBehaviour
 
 	private void Set_Attack()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_2(base.transform.position);
 		Attack_Delay = 1f;
 		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 20f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack", true);
@@ -196,12 +196,12 @@ public class AI_Mon_21 : global::UnityEngine.MonoBehaviour
 
 	private void Sound_Mon_Atk()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_7_Attack(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_7_Attack(base.transform.position);
 	}
 
 	private void Sound_Mon_Dmg()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_7_Damage(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_7_Damage(base.transform.position);
 	}
 
 	private void Raycasting()

@@ -180,7 +180,7 @@ public class AI_Mon_4 : global::UnityEngine.MonoBehaviour
 	private void Set_Attack()
 	{
 		Attack_Delay = 0.8f;
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_5(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_5(base.transform.position);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack", true);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onMove", false);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onHit", false);

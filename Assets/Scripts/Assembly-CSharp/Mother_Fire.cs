@@ -91,7 +91,7 @@ public class Mother_Fire : global::UnityEngine.MonoBehaviour
 		Glow_Circle_1.enabled = false;
 		base.transform.localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
 		Glow_Border.transform.localScale = new global::UnityEngine.Vector3(0.6f, 0.6f, 1f);
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Hit_2(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Hit_2(base.transform.position);
 	}
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)

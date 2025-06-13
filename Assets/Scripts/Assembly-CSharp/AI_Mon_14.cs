@@ -419,7 +419,7 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 
 	private void Attack_Force()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_3(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_3(base.transform.position);
 		Col_Blade.GetComponent<global::UnityEngine.BoxCollider2D>().enabled = true;
 		if (isRunForce)
 		{
@@ -455,7 +455,7 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 
 	private void Sound_Mon_Dmg()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_5_Damage(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_5_Damage(base.transform.position);
 	}
 
 	private void Make_Lag()

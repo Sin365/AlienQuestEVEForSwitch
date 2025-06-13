@@ -182,7 +182,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 			else if (event_Timer > 0.2f && !onEvent_Sound)
 			{
 				onEvent_Sound = true;
-				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_40_Dash(pos_Orig);
+				GameManager.instance.sc_Sound_List.Mon_40_Dash(pos_Orig);
 			}
 			if (event_Type == AI_Mon_40.Event_Type.Top)
 			{
@@ -662,16 +662,16 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 		if (onCam_Timer <= 0f)
 		{
 			Pos_Target = new global::UnityEngine.Vector3(Player.transform.position.x + 10f * (float)facingRight, Player.transform.position.y + 5f, 0f);
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(Pos_Target);
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Growling(Pos_Target);
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().HiddenPassage(Pos_Target);
+			GameManager.instance.sc_Sound_List.Mon_Atk_2(Pos_Target);
+			GameManager.instance.sc_Sound_List.Mon_9_Growling(Pos_Target);
+			GameManager.instance.sc_Sound_List.HiddenPassage(Pos_Target);
 		}
 		else
 		{
 			Pos_Target = pos_Dash.position;
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_2(base.transform.position);
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Growling(base.transform.position);
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().HiddenPassage(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_Atk_2(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_9_Growling(base.transform.position);
+			GameManager.instance.sc_Sound_List.HiddenPassage(base.transform.position);
 		}
 	}
 
@@ -685,7 +685,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 20f)) as global::UnityEngine.GameObject;
 		global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 40f)) as global::UnityEngine.GameObject;
 		global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 40f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(base.transform.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
 	}
 
 	private float Get_Angle()
@@ -750,7 +750,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 		if (Snd_Damage_Timer <= 0f)
 		{
 			Snd_Damage_Timer = 1f + (float)global::UnityEngine.Random.Range(0, 200) * 0.01f;
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Damage(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_9_Damage(base.transform.position);
 		}
 	}
 

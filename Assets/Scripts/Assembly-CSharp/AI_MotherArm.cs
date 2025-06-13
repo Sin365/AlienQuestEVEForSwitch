@@ -354,7 +354,7 @@ public class AI_MotherArm : global::UnityEngine.MonoBehaviour
 		onHold = true;
 		Hold_Timer = 10f;
 		GetComponent<global::UnityEngine.Animator>().SetTrigger("onHit_Hold");
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Damage(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_9_Damage(base.transform.position);
 		Make_Blood();
 	}
 
@@ -374,7 +374,7 @@ public class AI_MotherArm : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack", true);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack_2", false);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onHit_Hold", false);
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_3(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_3(base.transform.position);
 	}
 
 	private void Set_Attack_Upper()
@@ -384,7 +384,7 @@ public class AI_MotherArm : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack", false);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack_2", true);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onHit_Hold", false);
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_3(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_3(base.transform.position);
 	}
 
 	private void End_Attack()

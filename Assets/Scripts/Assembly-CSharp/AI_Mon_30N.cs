@@ -176,7 +176,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 				DeathExplo();
 				return;
 			}
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Explo(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_Explo(base.transform.position);
 			for (int i = 0; i < explo_Pos.Length; i++)
 			{
 				Make_Explo(explo_Pos[i]);
@@ -337,7 +337,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 
 	private void Sound_Mon_Dmg()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_5_Damage(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_5_Damage(base.transform.position);
 	}
 
 	private void Set_Fire()
@@ -345,7 +345,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		float num = ((facingRight >= 0) ? 180 : 0);
 		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + 15f)) as global::UnityEngine.GameObject;
 		gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(dist_X * 40f * (float)facingRight, dist_X * 10f));
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 		Fire_Num--;
 	}
 
@@ -359,7 +359,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		if (Tentacle_Num == 2 && !on_Hscene && GM.GameOver && !GM.onHscene && GM.Hscene_Num == 0 && GM.Hscene_Timer <= 0f)
 		{
 			Start_Hscene_GameOver();
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Hit_2(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_Hit_2(base.transform.position);
 		}
 	}
 
@@ -404,7 +404,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		if (Snd_Damage_Timer <= 0f)
 		{
 			Snd_Damage_Timer = 1f + (float)global::UnityEngine.Random.Range(0, 200) * 0.01f;
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Damage(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_9_Damage(base.transform.position);
 		}
 	}
 
@@ -414,7 +414,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		Death_Timer = 0f;
 		GetComponent<global::UnityEngine.Animator>().SetTrigger("onDeath");
 		Col_Body.enabled = false;
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Damage(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_9_Damage(base.transform.position);
 		UC.Set_Boss_Death();
 		Mon_7_Death();
 		DeathExplo();
@@ -426,7 +426,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		if (ExploSound_Timer <= 0f)
 		{
 			ExploSound_Timer = global::UnityEngine.Random.Range(0.2f, 0.5f);
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Explo(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_Explo(base.transform.position);
 		}
 		else
 		{

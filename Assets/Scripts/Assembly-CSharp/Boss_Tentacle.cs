@@ -27,7 +27,7 @@ public class Boss_Tentacle : global::UnityEngine.MonoBehaviour
 		{
 			GetComponent<global::UnityEngine.Animator>().SetTrigger("onAttack_2");
 		}
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_3(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_3(base.transform.position);
 	}
 
 	private void Update()
@@ -78,6 +78,6 @@ public class Boss_Tentacle : global::UnityEngine.MonoBehaviour
 			int num2 = ((!(base.transform.position.x > col.transform.position.x)) ? 1 : (-1));
 			GM.Damage(40, 10 * num2, false, 0);
 		}
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Hit_2(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Hit_2(base.transform.position);
 	}
 }

@@ -163,7 +163,7 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
+		SC = GameManager.instance.sc_Sound_List;
 		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		animator = GetComponent<global::UnityEngine.Animator>();
@@ -329,8 +329,8 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 				{
 					Ani_Num = 7;
 					Show_ChestBurster();
-					global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Explo(base.transform.position);
-					global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Damage(base.transform.position);
+					GameManager.instance.sc_Sound_List.Mon_Explo(base.transform.position);
+					GameManager.instance.sc_Sound_List.Mon_9_Damage(base.transform.position);
 					for (int k = 0; k < 3; k++)
 					{
 						Make_Explo(explo_Pos[k]);
@@ -922,7 +922,7 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 		Mother_Arm.GetComponent<Mon_Index>().Set_UserColor(new global::UnityEngine.Color(1f, 0f, 0f, 1f));
 		Mother_Arm.GetComponent<AI_MotherArm>().isDeath = true;
 		Mother_Arm.SendMessage("Hold");
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Damage(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_9_Damage(base.transform.position);
 		DeathExplo();
 		for (int i = 0; i < Mon_30_List.Length; i++)
 		{

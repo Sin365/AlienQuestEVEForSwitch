@@ -194,7 +194,7 @@ public class AI_Mon_28 : global::UnityEngine.MonoBehaviour
 		{
 			gameObject.transform.localScale = new global::UnityEngine.Vector3(0f - gameObject.transform.localScale.x, gameObject.transform.localScale.y, 1f);
 		}
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_1(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_1(base.transform.position);
 	}
 
 	private void End_Attack()
@@ -211,7 +211,7 @@ public class AI_Mon_28 : global::UnityEngine.MonoBehaviour
 
 	private void Sound_Mon_Dmg()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_8_Damage(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_8_Damage(base.transform.position);
 	}
 
 	private void Raycasting()

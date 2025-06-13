@@ -129,7 +129,7 @@ public class Queen_Wave : global::UnityEngine.MonoBehaviour
 		base.transform.position = pos_Orig;
 		Glow.transform.localScale = new global::UnityEngine.Vector3(2f, 1f, 0f);
 		Glow.color = new global::UnityEngine.Color(Color_Glow_OFF.r, Color_Glow_OFF.g, Color_Glow_OFF.b, 1f);
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(base.transform.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
 	}
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)

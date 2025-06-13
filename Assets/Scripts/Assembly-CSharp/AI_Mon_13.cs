@@ -414,7 +414,7 @@ public class AI_Mon_13 : global::UnityEngine.MonoBehaviour
 
 	private void Sound_Mon_Attack()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_1(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_1(base.transform.position);
 	}
 
 	private void Set_Fire()
@@ -427,7 +427,7 @@ public class AI_Mon_13 : global::UnityEngine.MonoBehaviour
 		num = global::UnityEngine.Mathf.Atan2(vector.y, vector.x) * 57.29578f + 180f;
 		num = Check_Fire_Angle(num);
 		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 	}
 
 	private float Check_Fire_Angle(float angle)

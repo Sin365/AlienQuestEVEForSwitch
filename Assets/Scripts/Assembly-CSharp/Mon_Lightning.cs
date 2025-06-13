@@ -45,7 +45,7 @@ public class Mon_Lightning : global::UnityEngine.MonoBehaviour
 		}
 		SR.sprite = spr_1;
 		SR_Glow.color = new global::UnityEngine.Color(SR_Glow.color.r, SR_Glow.color.g, SR_Glow.color.b, 0f);
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Plasma_Atk(base.transform.position);
+		GameManager.instance.sc_Sound_List.Plasma_Atk(base.transform.position);
 	}
 
 	private void Update()
@@ -133,7 +133,7 @@ public class Mon_Lightning : global::UnityEngine.MonoBehaviour
 				Attack_Delay = 0.5f;
 				int num = ((!(base.transform.position.x > col.transform.position.x)) ? 1 : (-1));
 				GM.Damage(80, 10 * num, true, Mon_Num);
-				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Electric_Dmg(base.transform.position);
+				GameManager.instance.sc_Sound_List.Electric_Dmg(base.transform.position);
 			}
 		}
 	}

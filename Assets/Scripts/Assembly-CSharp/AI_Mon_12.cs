@@ -295,7 +295,7 @@ public class AI_Mon_12 : global::UnityEngine.MonoBehaviour
 
 	private void Sound_Mon_Dmg()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_5_Damage(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_5_Damage(base.transform.position);
 	}
 
 	private void Set_Block()

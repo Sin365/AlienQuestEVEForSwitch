@@ -239,7 +239,7 @@ public class Magic_Fire_4 : global::UnityEngine.MonoBehaviour
 			GM.Shield_Object = null;
 			global::UnityEngine.GameObject.Find("Shield_On").GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(-600f, -190f, 0f);
 		}
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Electric_Dmg(base.transform.position);
+		GameManager.instance.sc_Sound_List.Electric_Dmg(base.transform.position);
 		isStarted = true;
 		onActive = false;
 		soundShield.SendMessage("Sound_Off");

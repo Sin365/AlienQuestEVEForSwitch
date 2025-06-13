@@ -9,7 +9,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
+		SC = GameManager.instance.sc_Sound_List;
 	}
 
 	private void Update()

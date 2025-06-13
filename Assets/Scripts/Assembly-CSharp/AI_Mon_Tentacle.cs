@@ -35,7 +35,7 @@ public class AI_Mon_Tentacle : global::UnityEngine.MonoBehaviour
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
+		SC = GameManager.instance.sc_Sound_List;
 		//Player = global::UnityEngine.GameObject.Find("Player");
 		if (global::UnityEngine.Random.Range(0, 10) > 7)
 		{

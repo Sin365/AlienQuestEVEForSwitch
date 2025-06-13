@@ -83,6 +83,6 @@ public class Test_Angle : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire_1, thisPos, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, angle + 180f))) as global::UnityEngine.GameObject;
 		}
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(thisPos);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(thisPos);
 	}
 }

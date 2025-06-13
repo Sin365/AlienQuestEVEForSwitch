@@ -97,7 +97,7 @@ public class AI_Mon_BrainGirl : global::UnityEngine.MonoBehaviour
 		}
 		if (event_Type == AI_Mon_BrainGirl.Event_Type.MotherBrain)
 		{
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(base.transform.position);
+			GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
 			Pos_Target = new global::UnityEngine.Vector3(Pos_Target.x + global::UnityEngine.Random.Range(0f, 2f) * (float)facingRight, Pos_Target.y + global::UnityEngine.Random.Range(5f, 5.5f), 0f);
 			Life_Timer = -0.5f;
 		}
@@ -312,7 +312,7 @@ public class AI_Mon_BrainGirl : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
 		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + (float)global::UnityEngine.Random.Range(75, 85))) as global::UnityEngine.GameObject;
 		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num - (float)global::UnityEngine.Random.Range(75, 85))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(base.transform.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
 	}
 
 	private void Set_AttackDelay()

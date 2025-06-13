@@ -27,7 +27,7 @@ public class Col_Xeno_Rolling : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
-		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
+		SC = GameManager.instance.sc_Sound_List;
 	}
 
 	private void Update()

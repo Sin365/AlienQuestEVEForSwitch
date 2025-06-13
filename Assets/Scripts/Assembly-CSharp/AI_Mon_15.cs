@@ -166,6 +166,6 @@ public class AI_Mon_15 : global::UnityEngine.MonoBehaviour
 			num = global::UnityEngine.Mathf.Atan2(vector2.y, vector2.x) * 57.29578f;
 			gameObject2.transform.rotation = global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f + (float)global::UnityEngine.Random.Range(-10, 10)));
 		}
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 	}
 }

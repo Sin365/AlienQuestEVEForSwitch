@@ -108,7 +108,7 @@ public class Mon_GateLaser : global::UnityEngine.MonoBehaviour
 				Damage_Delay = 0.5f;
 				int num = ((!(base.transform.position.x > col.transform.position.x)) ? 1 : (-1));
 				GM.Damage(Damage, 20 * num, false, 0);
-				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Electric_Dmg(base.transform.position);
+				GameManager.instance.sc_Sound_List.Electric_Dmg(base.transform.position);
 			}
 		}
 	}

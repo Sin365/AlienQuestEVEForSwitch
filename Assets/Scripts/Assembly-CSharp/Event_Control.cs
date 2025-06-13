@@ -413,7 +413,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				}
 				else if (!Text_Dlg_On && text_Num > 0)
 				{
-					global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Magic_2(MotherBrain.transform.position);
+					GameManager.instance.sc_Sound_List.Magic_2(MotherBrain.transform.position);
 					MotherBrain.GetComponent<AI_MotherBrain>().Event_Num = 2;
 					Index++;
 					Event_Timer = 9f;

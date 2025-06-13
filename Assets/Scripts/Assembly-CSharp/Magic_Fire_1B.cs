@@ -128,7 +128,7 @@ public class Magic_Fire_1B : global::UnityEngine.MonoBehaviour
 			SR_List[2].enabled = false;
 			if (onCam_Timer > 0.4f)
 			{
-				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Hit_2(base.transform.position);
+				GameManager.instance.sc_Sound_List.Mon_Hit_2(base.transform.position);
 			}
 		}
 	}
@@ -142,7 +142,7 @@ public class Magic_Fire_1B : global::UnityEngine.MonoBehaviour
 		SR_List[0].transform.localScale = new global::UnityEngine.Vector3(Ring_Size * 1.2f, Ring_Size * 1.2f, 1f);
 		if (onCam_Timer > 0.4f)
 		{
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Hit_2(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_Hit_2(base.transform.position);
 		}
 	}
 

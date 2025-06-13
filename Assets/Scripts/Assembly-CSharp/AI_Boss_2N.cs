@@ -142,7 +142,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 			}
 			isCleared = true;
 			GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Explo(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_Explo(base.transform.position);
 			for (int i = 0; i < explo_Pos.Length; i++)
 			{
 				Make_Explo(explo_Pos[i]);
@@ -355,7 +355,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 		Death_Timer = 0f;
 		GetComponent<global::UnityEngine.Animator>().SetTrigger("onDeath");
 		GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Damage(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_9_Damage(base.transform.position);
 		UC.Set_Boss_Death();
 		Mon_7_Death();
 		DeathExplo();
@@ -367,7 +367,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 		if (ExploSound_Timer <= 0f)
 		{
 			ExploSound_Timer = global::UnityEngine.Random.Range(0.2f, 0.5f);
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Explo(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_Explo(base.transform.position);
 		}
 		else
 		{
@@ -406,7 +406,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 		gameObject.transform.rotation = global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f));
 		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 200f))) as global::UnityEngine.GameObject;
 		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 160f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 		SR_Ball_Yeollow.color = color_OFF;
 		SR_Ball_Purple.color = color_OFF;
 		SR_Ball_Glow.color = new global::UnityEngine.Color(1f, 0.5f, 0f, 0f);
@@ -433,7 +433,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f - 60f))) as global::UnityEngine.GameObject;
 		global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f + 90f))) as global::UnityEngine.GameObject;
 		global::UnityEngine.GameObject gameObject7 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f - 90f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 		SR_Ball_Yeollow.color = color_OFF;
 		SR_Ball_Purple.color = color_OFF;
 		SR_Ball_Glow.color = new global::UnityEngine.Color(1f, 0.5f, 0f, 0f);
@@ -448,7 +448,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire_Poison, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 		gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * (0f - num), global::UnityEngine.ForceMode2D.Impulse);
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 		SR_Ball_Yeollow.color = color_OFF;
 		SR_Ball_Purple.color = color_OFF;
 		SR_Ball_Glow.color = new global::UnityEngine.Color(1f, 0.5f, 0f, 0f);

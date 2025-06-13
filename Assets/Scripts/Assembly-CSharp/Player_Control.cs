@@ -1492,8 +1492,8 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
                 global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(Magic_1, Ani_rolling.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, (float)i * 30f + global::UnityEngine.Random.Range(-5f, 5f))) as global::UnityEngine.GameObject;
                 gameObject4.transform.Translate(global::UnityEngine.Vector3.right * 3f);
             }
-            global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(base.transform.position);
-            global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Magic_1(base.transform.position);
+            GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
+            GameManager.instance.sc_Sound_List.Magic_1(base.transform.position);
             return;
         }
         float x4 = base.transform.position.x + 2.8f * (float)facingRight;
@@ -1521,8 +1521,8 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         gameObject6.transform.localScale = localScale;
         obj.localScale = localScale;
         gameObject7.transform.Translate(global::UnityEngine.Vector3.right * 1f);
-        global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(base.transform.position);
-        global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Magic_1(base.transform.position);
+        GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
+        GameManager.instance.sc_Sound_List.Magic_1(base.transform.position);
     }
 
     public void Set_Damage(float force)

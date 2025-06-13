@@ -243,7 +243,7 @@ public class Boss_3_Platform : global::UnityEngine.MonoBehaviour
 			Player.SendMessage("H_Down");
 		}
 		global::UnityEngine.GameObject.Find("Ani").SendMessage("Start_H_Scene");
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Player_Damage(30, false, base.transform.position);
+		GameManager.instance.sc_Sound_List.Player_Damage(30, false, base.transform.position);
 	}
 
 	private void End_Hscene()

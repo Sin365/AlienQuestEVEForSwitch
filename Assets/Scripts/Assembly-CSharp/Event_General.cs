@@ -50,7 +50,7 @@ public class Event_General : global::UnityEngine.MonoBehaviour
 				global::UnityEngine.GameObject gameObject = (global::UnityEngine.GameObject)global::UnityEngine.Object.Instantiate(Explo, posExplo[i].position, posExplo[i].rotation);
 				gameObject.transform.localScale = posExplo[i].transform.localScale;
 			}
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Explo(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_Explo(base.transform.position);
 			global::UnityEngine.Object.Destroy(base.gameObject);
 		}
 	}

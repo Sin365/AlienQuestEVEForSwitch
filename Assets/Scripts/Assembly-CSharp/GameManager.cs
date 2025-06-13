@@ -439,10 +439,10 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     private void Awake()
     {
         instance = this;
-        sm_StageManager = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
-        PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
-        eg2d_Player = global::UnityEngine.GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>();
-        gobj_Player = global::UnityEngine.GameObject.Find("Player");
+        sm_StageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
+        PC = GameObject.Find("Player").GetComponent<Player_Control>();
+        eg2d_Player = GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>();
+        gobj_Player = GameObject.Find("Player");
         sc_Sound_List = GameObject.Find("Sound_List").GetComponent<Sound_Control>();
     }
 

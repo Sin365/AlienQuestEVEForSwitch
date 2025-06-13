@@ -419,7 +419,7 @@ public class AI_Mon_38 : global::UnityEngine.MonoBehaviour
 		gameObject3.transform.Translate(global::UnityEngine.Vector3.left * 1f);
 		gameObject4.transform.Translate(global::UnityEngine.Vector3.left * 1f);
 		gameObject5.transform.Translate(global::UnityEngine.Vector3.left * 1f);
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(base.transform.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
 		SR_Glow_Eye.color = new global::UnityEngine.Color(color_Eye.r, color_Eye.g, color_Eye.b, 0f);
 		SR_Glow_Eye_2.color = new global::UnityEngine.Color(color_Eye_2.r, color_Eye_2.g, color_Eye_2.b, 0f);
 	}
@@ -459,7 +459,7 @@ public class AI_Mon_38 : global::UnityEngine.MonoBehaviour
 		if (Snd_Damage_Timer <= 0f)
 		{
 			Snd_Damage_Timer = 1f + (float)global::UnityEngine.Random.Range(0, 200) * 0.01f;
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Damage(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_9_Damage(base.transform.position);
 		}
 	}
 

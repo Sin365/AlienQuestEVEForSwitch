@@ -257,7 +257,7 @@ public class AI_Mon_27 : global::UnityEngine.MonoBehaviour
 			if (Snd_Growl_Timer <= 0f)
 			{
 				Snd_Growl_Timer = 1f;
-				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_11_Growling(base.transform.position);
+				GameManager.instance.sc_Sound_List.Mon_11_Growling(base.transform.position);
 			}
 			if (distance < 15f || Laser_Timer > 0f)
 			{
@@ -414,7 +414,7 @@ public class AI_Mon_27 : global::UnityEngine.MonoBehaviour
 		if (Snd_Damage_Timer <= 0f)
 		{
 			Snd_Damage_Timer = 1f + (float)global::UnityEngine.Random.Range(0, 200) * 0.01f;
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Damage(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_9_Damage(base.transform.position);
 		}
 	}
 

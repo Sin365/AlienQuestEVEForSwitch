@@ -215,7 +215,7 @@ public class AI_Mon_36 : global::UnityEngine.MonoBehaviour
 
 	private void Sound_Mon_Dmg()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_5_Damage(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_5_Damage(base.transform.position);
 	}
 
 	private void Set_Fire()
@@ -231,7 +231,7 @@ public class AI_Mon_36 : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
 		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num - 15f)) as global::UnityEngine.GameObject;
 		gameObject2.transform.Translate(global::UnityEngine.Vector3.right * -1f);
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
+		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 	}
 
 	private float Check_Fire_Angle(float angle)

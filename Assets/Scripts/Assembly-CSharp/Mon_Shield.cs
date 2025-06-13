@@ -98,7 +98,7 @@ public class Mon_Shield : global::UnityEngine.MonoBehaviour
 				GM.Damage(45, 10f, false, 0);
 			}
 			Damage_Delay = 0.5f;
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Player_Damage(6, false, base.transform.position);
+			GameManager.instance.sc_Sound_List.Player_Damage(6, false, base.transform.position);
 		}
 		if (col.tag == "Col_PC_Atk")
 		{

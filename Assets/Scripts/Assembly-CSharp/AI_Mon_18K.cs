@@ -444,7 +444,7 @@ public class AI_Mon_18K : global::UnityEngine.MonoBehaviour
 			int num2 = global::UnityEngine.Random.Range(-10, 10);
 			global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(pos_Fire.position.x + global::UnityEngine.Random.Range(-0.2f, 0.2f), pos_Fire.position.y + global::UnityEngine.Random.Range(-0.5f, 0.8f), 0f);
 			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + (float)(num2 * 5))) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Boss_4_Fire(pos_Fire.position);
+			GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 		}
 	}
 
@@ -462,7 +462,7 @@ public class AI_Mon_18K : global::UnityEngine.MonoBehaviour
 		if (Snd_Damage_Timer <= 0f)
 		{
 			Snd_Damage_Timer = 1f + (float)global::UnityEngine.Random.Range(0, 200) * 0.01f;
-			global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_9_Damage(base.transform.position);
+			GameManager.instance.sc_Sound_List.Mon_9_Damage(base.transform.position);
 		}
 	}
 

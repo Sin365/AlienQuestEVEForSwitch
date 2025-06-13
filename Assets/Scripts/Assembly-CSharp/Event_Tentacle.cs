@@ -143,7 +143,7 @@ public class Event_Tentacle : global::UnityEngine.MonoBehaviour
 			Player.SendMessage("H_Down");
 		}
 		global::UnityEngine.GameObject.Find("Ani").SendMessage("Start_H_Scene");
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Hit_2(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Hit_2(base.transform.position);
 	}
 
 	private void End_Hscene()

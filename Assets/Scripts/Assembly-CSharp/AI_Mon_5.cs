@@ -310,7 +310,7 @@ public class AI_Mon_5 : global::UnityEngine.MonoBehaviour
 
 	private void Sound_Attack()
 	{
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_1(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_1(base.transform.position);
 	}
 
 	private void End_Attack()

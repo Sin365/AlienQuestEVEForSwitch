@@ -168,7 +168,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
+		SC = GameManager.instance.sc_Sound_List;
 		//Player = global::UnityEngine.GameObject.Find("Player");
 		if (Mon_Num != 33 && Event_Num > 0 && GM.Check_EventMonster(Event_Num))
 		{
@@ -1112,11 +1112,11 @@ public class Monster : global::UnityEngine.MonoBehaviour
 			GameManager.instance.eg2d_Player.AddForce(global::UnityEngine.Vector3.right * 40f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 			if (isInvincible)
 			{
-				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Player_Damage(Mon_Num, true, Player.transform.position);
+				GameManager.instance.sc_Sound_List.Player_Damage(Mon_Num, true, Player.transform.position);
 			}
 			else
 			{
-				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Player_Damage(42, false, Player.transform.position);
+				GameManager.instance.sc_Sound_List.Player_Damage(42, false, Player.transform.position);
 			}
 		}
 		if (col.tag == "Magic_Explo" && !isInvincible)
@@ -1407,7 +1407,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				{
 					GameManager.instance.eg2d_Player.AddForce(global::UnityEngine.Vector3.right * -20f, global::UnityEngine.ForceMode2D.Impulse);
 				}
-				global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Electric_Dmg(Player.transform.position);
+				GameManager.instance.sc_Sound_List.Electric_Dmg(Player.transform.position);
 			}
 		}
 		else if (col.tag == "Trap_Fang" && !isInvincible && Trap_Fang_Timer <= 0f)

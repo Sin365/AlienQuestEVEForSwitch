@@ -158,7 +158,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//Player = global::UnityEngine.GameObject.Find("Player");
 		//PC = Player.GetComponent<Player_Control>();
-		SC = global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>();
+		SC = GameManager.instance.sc_Sound_List;
 		rnd_X = global::UnityEngine.Random.Range(0.3f, 1f);
 		Move_Speed = 7f + global::UnityEngine.Random.Range(0f, 0.5f);
 		if (HP_Max < HP)
@@ -527,7 +527,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Animator>().SetTrigger("onAttack");
 		OnOff_Attack(true);
 		Attack_Delay = 1.5f;
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_1(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_1(base.transform.position);
 		if (PC.State == Player_Control.AniState.Sit)
 		{
 			base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * (20f + global::UnityEngine.Random.Range(0f, 1f)), global::UnityEngine.ForceMode2D.Impulse);
@@ -555,7 +555,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Animator>().SetTrigger("onAttack");
 		OnOff_Attack(true);
 		Attack_Delay = 0.8f;
-		global::UnityEngine.GameObject.Find("Sound_List").GetComponent<Sound_Control>().Mon_Atk_1(base.transform.position);
+		GameManager.instance.sc_Sound_List.Mon_Atk_1(base.transform.position);
 		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 15f, global::UnityEngine.ForceMode2D.Impulse);
 		base.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 15f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 	}
