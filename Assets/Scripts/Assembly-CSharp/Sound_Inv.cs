@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Sound_Inv : AxiSoundBase
 {
@@ -9,7 +8,6 @@ public class Sound_Inv : AxiSoundBase
 	private AudioSource mAS;
 
 	GameManager GM => GameManager.instance;
-    public override string resourceName { get; set; }
 
     public override void Init()
     {

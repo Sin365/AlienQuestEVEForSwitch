@@ -405,8 +405,8 @@ public class AI_MotherArm : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack_2", false);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onHit_Hold", false);
 		GetComponent<global::UnityEngine.Animator>().SetTrigger("onAwake");
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Start, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(sound_Awake, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_Start, base.transform.position, base.transform.rotation);
+		AxiSoundPool.AddSoundForPosRot(sound_Awake, base.transform.position, base.transform.rotation);
 	}
 
 	private void Hold()

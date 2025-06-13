@@ -27,7 +27,7 @@ public class Event_GunShipBack : global::UnityEngine.MonoBehaviour
 			if (!onSound)
 			{
 				onSound = true;
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Sound_Flyby, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				AxiSoundPool.AddSoundForPosRot(Sound_Flyby, base.transform.position, base.transform.rotation);
 			}
 		}
 	}

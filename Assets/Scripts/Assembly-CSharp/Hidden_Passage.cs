@@ -92,7 +92,7 @@ public class Hidden_Passage : global::UnityEngine.MonoBehaviour
 		{
 			onEnabled = true;
 			Col_Block.enabled = false;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_Force, PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(_sound_Force, PC.transform.position, base.transform.rotation);
 			Hint_Timer = 5f;
 			GM.Info_Dialog("' ↓ + JUMP '   to SLIDE");
 		}

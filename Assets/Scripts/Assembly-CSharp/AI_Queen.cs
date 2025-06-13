@@ -1232,7 +1232,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.Object.Destroy(SndObj_Shield.gameObject);
 		}
-		SndObj_Shield = global::UnityEngine.Object.Instantiate(sound_Shield, pos_Sound.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_Shield, pos_Sound.position, base.transform.rotation);
 		SndObj_Shield.transform.parent = pos_Sound;
 		Snd_Shield_Timer = 0f;
 	}
@@ -1644,47 +1644,47 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 
 	private void Sound_Q_1()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_List[0], Player.transform.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_List[0], Player.transform.position, pos_Sound.rotation);
 	}
 
 	private void Sound_Q_2()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_List[1], Player.transform.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_List[1], Player.transform.position, pos_Sound.rotation);
 	}
 
 	private void Sound_Q_3()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_List[2], pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_List[2], pos_Sound.position, pos_Sound.rotation);
 	}
 
 	private void Sound_Q_4()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_List[3], pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_List[3], pos_Sound.position, pos_Sound.rotation);
 	}
 
 	private void Sound_Q_5()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_List[4], pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_List[4], pos_Sound.position, pos_Sound.rotation);
 	}
 
 	private void Sound_Q_Dmg_1()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Dmg_1, pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_Dmg_1, pos_Sound.position, pos_Sound.rotation);
 	}
 
 	private void Sound_Q_Dmg_2()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Dmg_2, pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_Dmg_2, pos_Sound.position, pos_Sound.rotation);
 	}
 
 	private void Sound_Q_Atk_1()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Atk_1, pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_Atk_1, pos_Sound.position, pos_Sound.rotation);
 	}
 
 	private void Sound_Q_Atk_2()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Atk_2, pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_Atk_2, pos_Sound.position, pos_Sound.rotation);
 	}
 
 	public void Set_Death()
@@ -1756,10 +1756,10 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		Main_Camera.GetComponent<Camera_Control>().Set_Shake_Timer(2.5f, Main_Camera.transform.position);
 		if (Snd_Damage_Timer < 0.1f)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(sound_Dmg_2, pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(sound_Dmg_2, pos_Sound.position, pos_Sound.rotation);
 		}
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(sound_Death, pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(sound_Death, pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(sound_Death, pos_Sound.position, pos_Sound.rotation);
+		AxiSoundPool.AddSoundForPosRot(sound_Death, pos_Sound.position, pos_Sound.rotation);
 	}
 
 	private void Set_Death_Already()

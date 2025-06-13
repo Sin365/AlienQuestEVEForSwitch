@@ -93,7 +93,7 @@ public class AI_Mon_17 : global::UnityEngine.MonoBehaviour
 			{
 				global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y, 0f);
 				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Explo, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
-				global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Sound_Explo, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				AxiSoundPool.AddSoundForPosRot(Sound_Explo, base.transform.position, base.transform.rotation);
 				global::UnityEngine.Object.Destroy(base.gameObject);
 			}
 		}
@@ -191,7 +191,7 @@ public class AI_Mon_17 : global::UnityEngine.MonoBehaviour
 	{
 		onExplo = true;
 		Explo_Timer = 0f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Sound_Bomb, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(Sound_Bomb, base.transform.position, base.transform.rotation);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onAttack", false);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onHit", false);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onExplo", true);

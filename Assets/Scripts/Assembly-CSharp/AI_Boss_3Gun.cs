@@ -216,7 +216,7 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 			}
 			else
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Sound_Explo, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				AxiSoundPool.AddSoundForPosRot(Sound_Explo, base.transform.position, base.transform.rotation);
 				pos_Explo = new global::UnityEngine.Vector3(base.transform.position.x + global::UnityEngine.Random.Range(-2.3f, 2.3f), base.transform.position.y + global::UnityEngine.Random.Range(-2.3f, 2.3f), 0f);
 				Make_Explo(pos_Explo);
 				if (!GM.onSkill_4)
@@ -400,7 +400,7 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 			gameObject6.transform.Rotate(0f, 0f, 40f);
 			gameObject7.transform.Rotate(0f, 0f, -40f);
 		}
-		global::UnityEngine.GameObject gameObject8 = global::UnityEngine.Object.Instantiate(Sound_Gun_Fire, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(Sound_Gun_Fire, base.transform.position, base.transform.rotation);
 	}
 
 	private void Set_Laser()
@@ -523,7 +523,7 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 		if (ExploSound_Timer <= 0f)
 		{
 			ExploSound_Timer = global::UnityEngine.Random.Range(0.2f, 0.5f);
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Sound_Explo, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundPool.AddSoundForPosRot(Sound_Explo, base.transform.position, base.transform.rotation);
 		}
 		else
 		{

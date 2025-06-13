@@ -1227,9 +1227,10 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     private void Mana_Regen()
     {
-        if (PC.State.ToString() == "Idle" || PC.State.ToString() == "Sit" || PC.State.ToString() == "Run" || PC.State.ToString() == "Jump")
-        {
-            MPRegen_Timer += global::UnityEngine.Time.deltaTime * 4.5f * (float)(1 + 2 * Bonus_Regen);
+		//if (PC.State.ToString() == "Idle" || PC.State.ToString() == "Sit" || PC.State.ToString() == "Run" || PC.State.ToString() == "Jump")
+		if (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Run|| PC.State == Player_Control.AniState.Jump)
+		{
+            MPRegen_Timer += Time.deltaTime * 4.5f * (float)(1 + 2 * Bonus_Regen);
             while (MPRegen_Timer > 1f)
             {
                 MPRegen_Timer -= 1f;

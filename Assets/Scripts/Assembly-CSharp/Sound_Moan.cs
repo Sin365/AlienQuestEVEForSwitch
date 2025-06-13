@@ -13,8 +13,6 @@ public class Sound_Moan : AxiSoundBase
 
 	GameManager GM => GameManager.instance;
 
-	public override string resourceName { get; set; }
-
 	public override void Init()
 	{
 		life_Timer = default;

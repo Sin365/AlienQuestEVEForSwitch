@@ -30,9 +30,9 @@ public static class AxiSoundPool
         return dictPool;
     }
 
-    public static void AddSoundForTrans(GameObject src, Transform trans = null)
+    public static AxiSoundBase AddSoundForTrans(GameObject src, Transform trans = null)
     {
-        GameObject go = AddSound(src);
+		AxiSoundBase go = AddSound(src);
 
         Transform target = null;
         if (trans != null)
@@ -49,21 +49,39 @@ public static class AxiSoundPool
             go.transform.localEulerAngles = Vector3.zero;
         }
         //go.transform.parent = null;
-    }
+        return go;
 
-    public static void AddSoundForPosRot(GameObject src, Vector3 targetPos, Quaternion targetRotation)
+	}
+
+    public static AxiSoundBase AddSoundForPosRot(GameObject src, Vector3 targetPos, Quaternion targetRotation)
     {
-        GameObject go = AddSound(src);
+		AxiSoundBase go = AddSound(src);
         go.transform.position = targetPos;
         go.transform.rotation = targetRotation;
-    }
+        return go;
+	}
 
-    static GameObject AddSound(GameObject src)
+    public static void ReleaseBySeed(GameObject src, int Seed)
+	{
+		if (!hashsetInPool.Contains(Seed))
+			return;
+		AxiSoundBase src_axi = src.GetComponent<AxiSoundBase>();
+		Dictionary<string, List<AxiSoundBase>> dictPool = GetPoolByType(src_axi);
+        if (!dictPool.ContainsKey(src.name))
+            return;
+        for (int i = dictPool[src.name].Count - 1; i >= 0; i++)
+        {
+            if (dictPool[src.name][i].Seed == Seed)
+                CheckNeedRemoveFormPool(dictPool[src.name][i]);
+		}
+	}
+
+    static AxiSoundBase AddSound(GameObject src)
     {
         AxiSoundBase src_axi = src.GetComponent<AxiSoundBase>();
         Dictionary<string, List<AxiSoundBase>> dictPool = GetPoolByType(src_axi);
-        GameObject go;
-        if (!dictPool.ContainsKey(src.name))
+        AxiSoundBase go;
+		if (!dictPool.ContainsKey(src.name))
             dictPool[src.name] = new List<AxiSoundBase>();
 
         if (dictPool.ContainsKey(src.name) && dictPool[src.name].Count > 0)
@@ -71,17 +89,21 @@ public static class AxiSoundPool
             AxiSoundBase sound = dictPool[src.name][dictPool[src.name].Count - 1];
 			dictPool[src.name].RemoveAt(dictPool[src.name].Count - 1);
 			sound.Init();
-            go = sound.gameObject;
-            go.SetActive(true);
-            Debug.Log($"[AxiSoundPool]出{go.name}池，当前{src.name}池{dictPool[src.name].Count}个");
+            go = sound;
+            go.gameObject.SetActive(true);
+#if UNITY_EDITOR
+            Debug.Log($"[AxiSoundPool]出{src.name}池，当前{src.name}池{dictPool[src.name].Count}个");
+#endif
             hashsetInPool.Remove(sound.Seed);
         }
         else
         {
-            go = (global::UnityEngine.Object.Instantiate(src) as global::UnityEngine.GameObject);
-            Debug.Log($"[AxiSoundPool]实例化新的[{src.name}]");
-            go.GetComponent<AxiSoundBase>().resourceName = src.name;
-            go.GetComponent<AxiSoundBase>().Seed = GetNextSeed();
+            go = global::UnityEngine.Object.Instantiate(src).GetComponent<AxiSoundBase>();
+#if UNITY_EDITOR
+			Debug.Log($"[AxiSoundPool]实例化新的[{src.name}]");
+#endif
+            go.resourceName = src.name;
+            go.Seed = GetNextSeed();
         }
 
         return go;
@@ -89,6 +111,8 @@ public static class AxiSoundPool
 
 	public static void CheckNeedRemoveFormPool(AxiSoundBase go)
 	{
+        if (go == null)
+            return;
 		if (go.Seed == 0)
 			return;
 		if (string.IsNullOrEmpty(go.resourceName))
@@ -113,26 +137,34 @@ public static class AxiSoundPool
 	{
         if (go.Seed == 0)
 		{
+#if UNITY_EDITOR
 			Debug.LogError($"[AxiSoundPool] 并不来自对象池创建,{go.name}");
-			global::UnityEngine.Object.Destroy(go.gameObject);
+#endif
+            global::UnityEngine.Object.Destroy(go.gameObject);
 			return;
 		}
 		if (string.IsNullOrEmpty(go.resourceName))
 		{
+#if UNITY_EDITOR
 			Debug.LogError($"[AxiSoundPool] go.resourceName 为空,{go.name}");
-			global::UnityEngine.Object.Destroy(go.gameObject);
+#endif
+            global::UnityEngine.Object.Destroy(go.gameObject);
 			return;
 		}
 		go.gameObject.SetActive(false);
 		go.transform.parent = null;
 		if (hashsetInPool.Contains(go.Seed))
         {
+#if UNITY_EDITOR
             Debug.LogError($"[AxiSoundPool] InPool HashSet 已存在,{go.name}");
+#endif
             return;
 		}
 		hashsetInPool.Add(go.Seed);
         Dictionary<string, List<AxiSoundBase>> dictPool = GetPoolByType(go);
         dictPool[go.resourceName].Add(go);
-		Debug.Log($"[AxiSoundPool]入{go.resourceName}池，当前{go.resourceName}池{dictPool[go.resourceName].Count}个");
+#if UNITY_EDITOR
+        Debug.Log($"[AxiSoundPool]入{go.resourceName}池，当前{go.resourceName}池{dictPool[go.resourceName].Count}个");
+#endif
     }
 }

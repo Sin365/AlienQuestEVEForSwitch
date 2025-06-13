@@ -36,7 +36,7 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 
 	private float[] Moan_Timer;
 
-	private global::UnityEngine.GameObject[] Sound_Moan_InGame;
+	AxiSoundBase[] Sound_Moan_InGame;
 
 	private void Start()
 	{
@@ -45,7 +45,7 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 		{
 			Moan_Timer[i] = 0f;
 		}
-		Sound_Moan_InGame = new global::UnityEngine.GameObject[6];
+		Sound_Moan_InGame = new AxiSoundBase[6];
 	}
 
 	private void Update()
@@ -214,10 +214,11 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 		if (Moan_Timer[num] <= 0f)
 		{
 			Moan_Timer[num] = 0.1f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Moan[num], base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			AxiSoundBase gameObject = AxiSoundPool.AddSoundForPosRot(Moan[num], base.transform.position, base.transform.rotation);
 			if (Sound_Moan_InGame[slot_num] != null)
 			{
-				global::UnityEngine.Object.Destroy(Sound_Moan_InGame[slot_num].gameObject);
+				AxiSoundPool.CheckNeedRemoveFormPool(Sound_Moan_InGame[slot_num]);
+				//global::UnityEngine.Object.Destroy(Sound_Moan_InGame[slot_num].gameObject);
 			}
 			Sound_Moan_InGame[slot_num] = gameObject;
 		}

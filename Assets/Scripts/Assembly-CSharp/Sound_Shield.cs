@@ -7,7 +7,6 @@ public class Sound_Shield : AxiSoundBase
 
     GameManager GM => GameManager.instance;
 	UnityEngine.AudioSource mAS;
-	public override string resourceName { get; set; }
 
     public override void Init()
     {

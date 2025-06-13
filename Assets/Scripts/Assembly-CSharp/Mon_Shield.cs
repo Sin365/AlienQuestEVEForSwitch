@@ -78,7 +78,7 @@ public class Mon_Shield : global::UnityEngine.MonoBehaviour
 		{
 			MonObject.SendMessage("Set_Block");
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Sound_Block, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		AxiSoundPool.AddSoundForPosRot(Sound_Block, base.transform.position, base.transform.rotation);
 	}
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)

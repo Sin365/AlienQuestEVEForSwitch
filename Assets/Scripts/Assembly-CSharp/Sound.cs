@@ -19,8 +19,6 @@ public class Sound : AxiSoundBase
 	private bool OnEvent;
 	private GameManager GM => GameManager.instance;
 
-    public override string resourceName { get; set; }
-
 	public override void Init()
 	{
 		life_Timer = default;
