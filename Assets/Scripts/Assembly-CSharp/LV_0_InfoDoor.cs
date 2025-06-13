@@ -10,6 +10,8 @@ public class LV_0_InfoDoor : global::UnityEngine.MonoBehaviour
 
 	private string text_Jpn = "ロックされている。\n別の道を見つける必要がして。";
 
+	private string text_Cn = "锁住了。\n我需要寻找别的道路。";
+
 	GameManager GM => GameManager.instance;
 
 	private void Start()
@@ -32,10 +34,15 @@ public class LV_0_InfoDoor : global::UnityEngine.MonoBehaviour
 			Stay_Timer = 0f;
 			Info_Timer = 6f;
 			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(info_Dialog) as global::UnityEngine.GameObject;
-			if (GM.Language_Num > 0)
+			if (GM.Language_Num == 1)
 			{
 				gameObject.GetComponent<Info_Dialog>().Set_Size(300f);
 				gameObject.GetComponent<Info_Dialog>().Set_Text(text_Jpn);
+			}
+			if (GM.Language_Num == 2)
+			{
+				gameObject.GetComponent<Info_Dialog>().Set_Size(300f);
+				gameObject.GetComponent<Info_Dialog>().Set_Text(text_Cn);
 			}
 			else
 			{
