@@ -9,7 +9,7 @@ public class Sound : AxiSoundBase
 	private bool isPlayStarted;
 	private AudioSource mAS;
 	private float Volume_Orig = 1f;
-	private GameObject mMC;
+	private GameObject mMC => Camera.main.gameObject;
 	private float Dist_Orig = 1f;
 
 	private float Dist_Var = 1f;
@@ -49,7 +49,7 @@ public class Sound : AxiSoundBase
 	{
 		//¸´Ô­
 		mAS.volume = Volume_Orig;
-		mMC = global::UnityEngine.GameObject.Find("Main Camera");
+		//mMC = UnityEngine.Camera.main;
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Dist_Orig = base.GetComponent<UnityEngine.AudioSource>().volume * GM.Option_Volume[0];
 		if (!OnEvent)

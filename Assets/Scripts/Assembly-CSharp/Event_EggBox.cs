@@ -34,14 +34,14 @@ public class Event_EggBox : global::UnityEngine.MonoBehaviour
 
     GameManager GM => GameManager.instance;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//Player = global::UnityEngine.GameObject.Find("Player");
-		Main_Cam = global::UnityEngine.GameObject.Find("Main Camera").transform;
+		Main_Cam = UnityEngine.Camera.main.transform;
 		pos_Top = EggBox_Top.localPosition;
 		pos_Bot = EggBox_Bot.localPosition;
 		EggBox_Top.localPosition = new global::UnityEngine.Vector3(pos_Top.x, pos_Top.y + 0.66f, 0f);

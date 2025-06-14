@@ -17,8 +17,8 @@ public class AI_Mon_16 : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector3 pos_Orig;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

@@ -38,8 +38,8 @@ public class Hidden_Passage_2 : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Color color_OFF = new global::UnityEngine.Color(0f, 0f, 0f, 0f);
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

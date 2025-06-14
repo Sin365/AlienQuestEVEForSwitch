@@ -15,8 +15,8 @@ public class Console_Input : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.GameObject inputField;
 
 	GameManager GM => GameManager.instance;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private void Start()
 	{
@@ -172,7 +172,7 @@ public class Console_Input : global::UnityEngine.MonoBehaviour
 			text = text + "\n HJump:  " + PC.onHighJump;
 			text = text + "\n Ground: " + PC.grounded_Now;
 			text = text + "\n onDrop: " + PC.onJumpDrop;
-			text = text + "\n\n Cam:  " + global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize.ToString("f2");
+			text = text + "\n\n Cam:  " + UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize.ToString("f2");
 			global::UnityEngine.GameObject.Find("Text_Info").GetComponent<global::UnityEngine.UI.Text>().text = text;
 		}
 	}

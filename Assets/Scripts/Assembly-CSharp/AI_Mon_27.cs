@@ -75,8 +75,8 @@ public class AI_Mon_27 : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Animator animator;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

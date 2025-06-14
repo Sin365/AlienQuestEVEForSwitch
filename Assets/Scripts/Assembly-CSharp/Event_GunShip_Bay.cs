@@ -33,8 +33,8 @@ public class Event_GunShip_Bay : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector3 pos_Player_Down;
 
     GameManager GM => GameManager.instance;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();

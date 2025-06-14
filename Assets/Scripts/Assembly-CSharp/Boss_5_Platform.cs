@@ -37,8 +37,8 @@ public class Boss_5_Platform : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.Transform[] Pos_H_Flip;
 
 	public Monster Queen_Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -117,7 +117,7 @@ public class Boss_5_Platform : global::UnityEngine.MonoBehaviour
 		}
 		gameObject.GetComponent<H_Ani>().Mon_Object = base.gameObject;
 		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (flag)
 		{
 			Player.transform.position = new global::UnityEngine.Vector3(Pos_H_Flip[0].position.x, Player.transform.position.y, 0f);

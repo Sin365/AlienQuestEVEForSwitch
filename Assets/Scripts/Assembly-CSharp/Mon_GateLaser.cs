@@ -37,7 +37,7 @@ public class Mon_GateLaser : global::UnityEngine.MonoBehaviour
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		Glow_Bar.transform.localScale = new global::UnityEngine.Vector3(0.4f, 1.5f, 1f);
 		glow_color = Glow_1.color;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Shake_Timer(3f, global::UnityEngine.GameObject.Find("Main Camera").transform.position);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Shake_Timer(3f, UnityEngine.Camera.main.transform.position);
 	}
 
 	private void Update()

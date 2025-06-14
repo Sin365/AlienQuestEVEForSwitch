@@ -9,8 +9,8 @@ public class Boss_Tentacle : global::UnityEngine.MonoBehaviour
 	private bool onPause;
 
 	private float Attack_Delay;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

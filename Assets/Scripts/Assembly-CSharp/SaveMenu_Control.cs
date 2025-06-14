@@ -56,8 +56,8 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 
 	private Custom_Key CK => GameManager.instance.CK;
 
-	private Language_MenuItem Lang_MI; Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+	private Language_MenuItem Lang_MI; Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private void Start()
 	{
@@ -250,7 +250,7 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 						GM.onGameClear = true;
 						global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_DeviceOn");
 						global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_FullHP");
-						global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 11.2f;
+						UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 11.2f;
 						global::UnityEngine.Debug.Log("Game Ending Start!!!!!!!!!!!!!!!!!");
 					}
 				}

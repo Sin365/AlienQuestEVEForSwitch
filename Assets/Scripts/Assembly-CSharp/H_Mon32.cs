@@ -36,8 +36,8 @@ public class H_Mon32 : global::UnityEngine.MonoBehaviour
 
 	private bool onCumShot;
     GameManager GM => GameManager.instance;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
     private void Start()
 	{
 		if (!(GM != null))

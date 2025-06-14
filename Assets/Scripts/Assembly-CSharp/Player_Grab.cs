@@ -31,8 +31,8 @@ public class Player_Grab : global::UnityEngine.MonoBehaviour
 	private float CumShot_Timer;
 
 	private H_SoundControl H_Sound;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

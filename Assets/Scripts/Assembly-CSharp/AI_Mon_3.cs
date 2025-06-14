@@ -47,8 +47,8 @@ public class AI_Mon_3 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.Transform Tr_7;
 
 	private global::UnityEngine.RaycastHit2D whatIHit;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

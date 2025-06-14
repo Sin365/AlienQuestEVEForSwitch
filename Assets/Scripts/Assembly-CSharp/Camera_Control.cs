@@ -88,8 +88,8 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.BoxCollider2D Col_Cam;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 	GameManager GM => GameManager.instance;
 
 

@@ -66,8 +66,8 @@ public class Teleport : global::UnityEngine.MonoBehaviour
 
     private TeleMenu_Control TeleMenu;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private void Start()
 	{

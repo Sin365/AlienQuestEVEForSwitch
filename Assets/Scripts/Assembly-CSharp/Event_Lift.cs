@@ -25,8 +25,8 @@ public class Event_Lift : global::UnityEngine.MonoBehaviour
 	public Event_Computer event_Com;
 
 	GameManager GM => GameManager.instance;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private Custom_Key CK => GameManager.instance.CK;
 

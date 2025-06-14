@@ -64,8 +64,8 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
     private Custom_Key CK => GameManager.instance.CK;
 
 	StageManager SM => GameManager.instance.sm_StageManager;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();

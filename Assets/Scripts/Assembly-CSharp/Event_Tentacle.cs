@@ -21,8 +21,8 @@ public class Event_Tentacle : global::UnityEngine.MonoBehaviour
 	public AI_Mon_Tentacle[] Tentacle_List;
 
 	public global::UnityEngine.GameObject[] H_Single;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -137,7 +137,7 @@ public class Event_Tentacle : global::UnityEngine.MonoBehaviour
 		Tentacle_List[num].Set_Hscene();
 		Tentacle_Num = num;
 		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{
 			Player.SendMessage("H_Down");

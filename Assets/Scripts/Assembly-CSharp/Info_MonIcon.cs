@@ -55,7 +55,7 @@ public class Info_MonIcon : global::UnityEngine.MonoBehaviour
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		CAM = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<global::UnityEngine.Camera>();
+		CAM = UnityEngine.Camera.main.GetComponent<global::UnityEngine.Camera>();
 		ratio = 1920f / (float)global::UnityEngine.Screen.width;
 		if (Type == 3)
 		{
@@ -149,7 +149,7 @@ public class Info_MonIcon : global::UnityEngine.MonoBehaviour
 
 	private void Move_Icon()
 	{
-		pos_UI = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<global::UnityEngine.Camera>().WorldToScreenPoint(MonCenter.position);
+		pos_UI = UnityEngine.Camera.main.GetComponent<global::UnityEngine.Camera>().WorldToScreenPoint(MonCenter.position);
 		if (Range_X != 0)
 		{
 			pos_X = 960 * Range_X + margin * -Range_X;

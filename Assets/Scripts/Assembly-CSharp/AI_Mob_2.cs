@@ -16,8 +16,8 @@ public class AI_Mob_2 : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.GameObject Leg_Pos;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private GameManager GM => GameManager.instance;
 

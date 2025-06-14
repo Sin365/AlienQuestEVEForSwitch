@@ -13,8 +13,8 @@ public class LV_0_LightsLayDown : global::UnityEngine.MonoBehaviour
 	private float distance = 50f;
 
     GameManager GM => GameManager.instance;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private void Start()
 	{
@@ -33,7 +33,7 @@ public class LV_0_LightsLayDown : global::UnityEngine.MonoBehaviour
 		{
 			return;
 		}
-		if (global::UnityEngine.GameObject.Find("Main Camera").transform.position.y < pos_Y.position.y)
+		if (UnityEngine.Camera.main.transform.position.y < pos_Y.position.y)
 		{
 			for (int i = 0; i < SR_List.Length; i++)
 			{

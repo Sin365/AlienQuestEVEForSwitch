@@ -27,8 +27,8 @@ public class LV_3_Hidden : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Color[] color_Orig;
 
 	private Camera_Control CamCon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -36,7 +36,7 @@ public class LV_3_Hidden : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//PC = global::UnityEngine.GameObject.Find("Player").GetComponent<Player_Control>();
-		CamCon = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>();
+		CamCon = UnityEngine.Camera.main.GetComponent<Camera_Control>();
 		color_Orig = new global::UnityEngine.Color[SR_List.Length];
 		for (int i = 0; i < SR_List.Length; i++)
 		{

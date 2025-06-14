@@ -138,33 +138,33 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 			AxiPlayerPrefs.SetInt("Gallery_Grayscale_GameOver", 0);
 			BG_Num = global::UnityEngine.Random.Range(1, 5);
 			Set_Option(BG_Num);
-			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>() != null)
+			if (UnityEngine.Camera.main.GetComponent<GameOver_Camera>() != null)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().Cam_Top = 11f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().Cam_Bot = -9f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().Cam_Right = 20f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().Cam_Left = -20f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 4.5f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().targetSize = 7f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().MaxSize = 8.4f;
-				global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(-0.4f, -0.4f, -10f);
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GameOver_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(-0.4f, -0.4f, -10f));
+				UnityEngine.Camera.main.GetComponent<GameOver_Camera>().Cam_Top = 11f;
+				UnityEngine.Camera.main.GetComponent<GameOver_Camera>().Cam_Bot = -9f;
+				UnityEngine.Camera.main.GetComponent<GameOver_Camera>().Cam_Right = 20f;
+				UnityEngine.Camera.main.GetComponent<GameOver_Camera>().Cam_Left = -20f;
+				UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = 4.5f;
+				UnityEngine.Camera.main.GetComponent<GameOver_Camera>().targetSize = 7f;
+				UnityEngine.Camera.main.GetComponent<GameOver_Camera>().MaxSize = 8.4f;
+				UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(-0.4f, -0.4f, -10f);
+				UnityEngine.Camera.main.GetComponent<GameOver_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(-0.4f, -0.4f, -10f));
 			}
 		}
 		else
 		{
 			Set_Option(AxiPlayerPrefs.GetInt("Gallery_Option_GameOver"));
-			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>() != null)
+			if (UnityEngine.Camera.main.GetComponent<Gallery_Camera>() != null)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Top = 11f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Bot = -9f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Right = 20f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Left = -20f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 4.5f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().targetSize = 7f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().MaxSize = 8.4f;
-				global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(-0.4f, -0.4f, -10f);
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(-0.4f, -0.4f, -10f));
+				UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Cam_Top = 11f;
+				UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Cam_Bot = -9f;
+				UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Cam_Right = 20f;
+				UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Cam_Left = -20f;
+				UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = 4.5f;
+				UnityEngine.Camera.main.GetComponent<Gallery_Camera>().targetSize = 7f;
+				UnityEngine.Camera.main.GetComponent<Gallery_Camera>().MaxSize = 8.4f;
+				UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(-0.4f, -0.4f, -10f);
+				UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(-0.4f, -0.4f, -10f));
 			}
 		}
 		Cum_BG = global::UnityEngine.GameObject.Find("GO_Cum_BG").GetComponent<global::UnityEngine.UI.Image>();
@@ -599,32 +599,32 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 		}
 		if (BG_Num == 2)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Vignetting_10");
+			UnityEngine.Camera.main.SendMessage("Set_Vignetting_10");
 		}
 		else
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Vignetting_13");
+			UnityEngine.Camera.main.SendMessage("Set_Vignetting_13");
 		}
 		if (AxiPlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
 		{
-			if (!global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().enabled)
+			if (!UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().enabled)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().enabled = true;
+				UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().enabled = true;
 			}
-			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<NoiseEffect>().enabled)
+			if (UnityEngine.Camera.main.GetComponent<NoiseEffect>().enabled)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<NoiseEffect>().enabled = false;
+				UnityEngine.Camera.main.GetComponent<NoiseEffect>().enabled = false;
 			}
 		}
 		else
 		{
-			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().enabled)
+			if (UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().enabled)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().enabled = false;
+				UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().enabled = false;
 			}
-			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<NoiseEffect>().enabled)
+			if (UnityEngine.Camera.main.GetComponent<NoiseEffect>().enabled)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<NoiseEffect>().enabled = false;
+				UnityEngine.Camera.main.GetComponent<NoiseEffect>().enabled = false;
 			}
 		}
 		switch (BG_Num)
@@ -634,12 +634,12 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 			Set_Tentacle(0);
 			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = -0.05f;
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_50");
+				UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().rampOffset = -0.05f;
+				UnityEngine.Camera.main.SendMessage("Set_Bloom_ON_50");
 			}
 			else
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_40");
+				UnityEngine.Camera.main.SendMessage("Set_Bloom_ON_40");
 			}
 			break;
 		case 2:
@@ -647,12 +647,12 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 			Set_Tentacle(1);
 			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = -0.1f;
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_40");
+				UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().rampOffset = -0.1f;
+				UnityEngine.Camera.main.SendMessage("Set_Bloom_ON_40");
 			}
 			else
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_50");
+				UnityEngine.Camera.main.SendMessage("Set_Bloom_ON_50");
 			}
 			break;
 		case 3:
@@ -660,12 +660,12 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 			Set_Tentacle(2);
 			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = -0.1f;
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_30");
+				UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().rampOffset = -0.1f;
+				UnityEngine.Camera.main.SendMessage("Set_Bloom_ON_30");
 			}
 			else
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_45");
+				UnityEngine.Camera.main.SendMessage("Set_Bloom_ON_45");
 			}
 			break;
 		case 4:
@@ -673,12 +673,12 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 			Set_Tentacle(3);
 			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale_GameOver") == 1)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = -0.1f;
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_40");
+				UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().rampOffset = -0.1f;
+				UnityEngine.Camera.main.SendMessage("Set_Bloom_ON_40");
 			}
 			else
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_60");
+				UnityEngine.Camera.main.SendMessage("Set_Bloom_ON_60");
 			}
 			break;
 		case 5:

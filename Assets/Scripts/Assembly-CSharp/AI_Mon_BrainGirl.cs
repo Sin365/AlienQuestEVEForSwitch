@@ -73,8 +73,8 @@ public class AI_Mon_BrainGirl : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.PolygonCollider2D Col_Body;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -389,7 +389,7 @@ public class AI_Mon_BrainGirl : global::UnityEngine.MonoBehaviour
 		Mon.isInvincible = true;
 		if (GM.Hscene_Num != 35)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+			UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		}
 		if (!GM.GameOver)
 		{

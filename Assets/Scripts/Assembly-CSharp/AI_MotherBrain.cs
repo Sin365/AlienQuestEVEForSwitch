@@ -153,8 +153,8 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Animator animator;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private Sound_Control SC;
 

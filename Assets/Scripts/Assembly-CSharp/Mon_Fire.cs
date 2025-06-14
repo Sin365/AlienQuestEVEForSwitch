@@ -38,8 +38,8 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector3 posOrig;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

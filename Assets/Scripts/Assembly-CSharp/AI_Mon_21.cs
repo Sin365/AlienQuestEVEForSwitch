@@ -51,8 +51,8 @@ public class AI_Mon_21 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.Transform Tr_5_Start;
 
 	public global::UnityEngine.Transform Tr_5_End;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

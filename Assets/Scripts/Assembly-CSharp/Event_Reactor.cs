@@ -53,8 +53,8 @@ public class Event_Reactor : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Color color_Blue = new global::UnityEngine.Color(0f, 0.7f, 1f, 0.6f);
 
     GameManager GM => GameManager.instance;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private Custom_Key CK => GameManager.instance.CK;
 
@@ -72,7 +72,7 @@ public class Event_Reactor : global::UnityEngine.MonoBehaviour
 			State = 3;
 			info_UpArrow.on_Info = false;
 			color_Sphere = color_Red;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 11.2f;
+			UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 11.2f;
 		}
 	}
 

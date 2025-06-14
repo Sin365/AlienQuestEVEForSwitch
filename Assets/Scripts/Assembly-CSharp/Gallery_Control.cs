@@ -104,8 +104,8 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 		LoadData();
 		if (Slot_isOpen[0] > 0 || Slot_isOpen[4] > 0)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 5f;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().targetSize = 7.6f;
+			UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = 5f;
+			UnityEngine.Camera.main.GetComponent<Gallery_Camera>().targetSize = 7.6f;
 		}
 		AxiPlayerPrefs.SetInt("Gallery_Grayscale", 0);
 		AxiPlayerPrefs.SetInt("Gallery_Grayscale_GameOver", 0);
@@ -293,7 +293,7 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 			if (onMouseDrag)
 			{
 				onMouseDrag = false;
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Release_TargetPos");
+				UnityEngine.Camera.main.SendMessage("Release_TargetPos");
 			}
 		}
 		else
@@ -481,30 +481,30 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject.Find("H_Manager").GetComponent<H_Manager>().Delete_GameOver();
 		global::UnityEngine.GameObject.Find("Help_Gallery").SendMessage("Set_Text_Gallery");
 		Cursor_Object.GetComponent<global::UnityEngine.SpriteRenderer>().enabled = true;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(0f, 0f, -10f));
-		global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(0f, 0f, -10f);
+		UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(0f, 0f, -10f));
+		UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(0f, 0f, -10f);
 		GameOver_Menu.localPosition = new global::UnityEngine.Vector3(0f, -3000f, 0f);
 		SelBorder_Option.localPosition = global::UnityEngine.GameObject.Find("Btn_Option_" + AxiPlayerPrefs.GetInt("Gallery_Option")).GetComponent<global::UnityEngine.RectTransform>().localPosition;
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Vignetting_16");
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Top = 12f;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Bot = -8f;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Right = 20f;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Cam_Left = -20f;
+		UnityEngine.Camera.main.GetComponent<Set_JS>().Set_Vignetting_16();
+		UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Cam_Top = 12f;
+		UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Cam_Bot = -8f;
+		UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Cam_Right = 20f;
+		UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Cam_Left = -20f;
 		if (Slot_isOpen[0] > 0 || Slot_isOpen[4] > 0)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 5f;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().targetSize = 7.6f;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(0f, 2f, -10f));
-			global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(0f, 2f, -10f);
+			UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = 5f;
+			UnityEngine.Camera.main.GetComponent<Gallery_Camera>().targetSize = 7.6f;
+			UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(0f, 2f, -10f));
+			UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(0f, 2f, -10f);
 		}
 		else
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 7f;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().targetSize = 5f;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(0f, 0f, -10f));
-			global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(0f, 0f, -10f);
+			UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = 7f;
+			UnityEngine.Camera.main.GetComponent<Gallery_Camera>().targetSize = 5f;
+			UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Set_TargetPos(new global::UnityEngine.Vector3(0f, 0f, -10f));
+			UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(0f, 0f, -10f);
 		}
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Set_Blur(12);
+		UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Set_Blur(12);
 		Gallery_Option_CamSetting();
 		if (AxiPlayerPrefs.GetInt("Gallery_Option") > 0)
 		{
@@ -523,7 +523,7 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 		SelBorder_GameOver.localPosition = global::UnityEngine.GameObject.Find("Box_GameOver_" + Sel_GameOver).GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		global::UnityEngine.GameObject.Find("Help_Gallery").SendMessage("Set_Text_GameOver");
 		Cursor_Object.GetComponent<global::UnityEngine.SpriteRenderer>().enabled = false;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Gallery_Camera>().Set_Blur(12);
+		UnityEngine.Camera.main.GetComponent<Gallery_Camera>().Set_Blur(12);
 		GameOver_Menu.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
 		SelBorder_Option.localPosition = global::UnityEngine.GameObject.Find("Btn_Option_" + AxiPlayerPrefs.GetInt("Gallery_Option_GameOver")).GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		for (int i = 0; i < 4; i++)
@@ -743,72 +743,72 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 	{
 		if (AxiPlayerPrefs.GetInt("Gallery_Grayscale") == 1)
 		{
-			if (!global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().enabled)
+			if (!UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().enabled)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().enabled = true;
+				UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().enabled = true;
 			}
-			if (!global::UnityEngine.GameObject.Find("Main Camera").GetComponent<NoiseEffect>().enabled)
+			if (!UnityEngine.Camera.main.GetComponent<NoiseEffect>().enabled)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<NoiseEffect>().enabled = true;
+				UnityEngine.Camera.main.GetComponent<NoiseEffect>().enabled = true;
 			}
 		}
 		else
 		{
-			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().enabled)
+			if (UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().enabled)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().enabled = false;
+				UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().enabled = false;
 			}
-			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<NoiseEffect>().enabled)
+			if (UnityEngine.Camera.main.GetComponent<NoiseEffect>().enabled)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<NoiseEffect>().enabled = false;
+				UnityEngine.Camera.main.GetComponent<NoiseEffect>().enabled = false;
 			}
 		}
 		switch (AxiPlayerPrefs.GetInt("Gallery_Option"))
 		{
-		case 1:
-			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale") == 1)
-			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = 0f;
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_10");
-			}
-			else
-			{
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_20");
-			}
-			break;
-		case 2:
-			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale") == 1)
-			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = -0.05f;
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_20");
-			}
-			else
-			{
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_40");
-			}
-			break;
-		case 3:
-			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale") == 1)
-			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = 0f;
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_20");
-			}
-			else
-			{
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_20");
-			}
-			break;
-		case 4:
-			if (AxiPlayerPrefs.GetInt("Gallery_Grayscale") == 1)
-			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<GrayscaleEffect>().rampOffset = 0f;
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_40");
-			}
-			else
-			{
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Set_Bloom_ON_30");
-			}
-			break;
+			case 1:
+				if (AxiPlayerPrefs.GetInt("Gallery_Grayscale") == 1)
+				{
+					UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().rampOffset = 0f;
+					UnityEngine.Camera.main.GetComponent<Set_JS>().Set_Bloom_ON_10();
+				}
+				else
+				{
+					UnityEngine.Camera.main.GetComponent<Set_JS>().Set_Bloom_ON_20();
+				}
+				break;
+			case 2:
+				if (AxiPlayerPrefs.GetInt("Gallery_Grayscale") == 1)
+				{
+					UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().rampOffset = -0.05f;
+					UnityEngine.Camera.main.GetComponent<Set_JS>().Set_Bloom_ON_20();
+				}
+				else
+				{
+					UnityEngine.Camera.main.GetComponent<Set_JS>().Set_Bloom_ON_40();
+				}
+				break;
+			case 3:
+				if (AxiPlayerPrefs.GetInt("Gallery_Grayscale") == 1)
+				{
+					UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().rampOffset = 0f;
+					UnityEngine.Camera.main.GetComponent<Set_JS>().Set_Bloom_ON_20();
+				}
+				else
+				{
+					UnityEngine.Camera.main.GetComponent<Set_JS>().Set_Bloom_ON_20();
+				}
+				break;
+			case 4:
+				if (AxiPlayerPrefs.GetInt("Gallery_Grayscale") == 1)
+				{
+					UnityEngine.Camera.main.GetComponent<GrayscaleEffect>().rampOffset = 0f;
+					UnityEngine.Camera.main.GetComponent<Set_JS>().Set_Bloom_ON_40();
+				}
+				else
+				{
+					UnityEngine.Camera.main.GetComponent<Set_JS>().Set_Bloom_ON_30();
+				}
+				break;
 		}
 	}
 
@@ -1123,15 +1123,15 @@ public class Gallery_Control : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject.Find("UI_SoundList").SendMessage("Sound_Btn");
 		switch (mode)
 		{
-		case 0:
-			onList = false;
-			break;
-		case 1:
-			onList = true;
-			break;
-		default:
-			Get_Closest_Slot();
-			break;
+			case 0:
+				onList = false;
+				break;
+			case 1:
+				onList = true;
+				break;
+			default:
+				Get_Closest_Slot();
+				break;
 		}
 		if (onList)
 		{

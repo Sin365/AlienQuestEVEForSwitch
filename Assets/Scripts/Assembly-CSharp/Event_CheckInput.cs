@@ -13,8 +13,8 @@ public class Event_CheckInput : global::UnityEngine.MonoBehaviour
 	private float prevY;
 
 	public global::UnityEngine.GameObject info_UpArrow;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

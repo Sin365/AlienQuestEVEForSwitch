@@ -14,8 +14,8 @@ public class LevelUp : global::UnityEngine.MonoBehaviour
 
 	GameManager GM => GameManager.instance;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private void Start()
 	{

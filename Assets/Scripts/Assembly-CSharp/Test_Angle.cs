@@ -24,8 +24,8 @@ public class Test_Angle : global::UnityEngine.MonoBehaviour
 
 	private float distance;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

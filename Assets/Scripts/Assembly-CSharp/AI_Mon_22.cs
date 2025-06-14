@@ -55,8 +55,8 @@ public class AI_Mon_22 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.GameObject H_Single;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -314,7 +314,7 @@ public class AI_Mon_22 : global::UnityEngine.MonoBehaviour
 		gameObject.transform.position = base.transform.position;
 		GetComponent<Monster>().isInvincible = true;
 		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{
 			Player.SendMessage("H_Down");

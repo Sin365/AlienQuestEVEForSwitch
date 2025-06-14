@@ -27,8 +27,8 @@ public class Trap_Laser_Beam : global::UnityEngine.MonoBehaviour
 	private float glow_Timer_3;
 
 	private float Damage_Delay;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

@@ -37,8 +37,8 @@ public class Magic_Fire_1B : global::UnityEngine.MonoBehaviour
 	private float Target_Rot;
 
 	private global::UnityEngine.Vector3 posOrig;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

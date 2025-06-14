@@ -85,8 +85,8 @@ public class AI_Mon_32 : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Animator animator;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -489,7 +489,7 @@ public class AI_Mon_32 : global::UnityEngine.MonoBehaviour
 			GameManager.instance.sc_Sound_List.Mon_10_Damage2(base.transform.position);
 		}
 		DeathExplo();
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Shake_Timer(2.5f, global::UnityEngine.GameObject.Find("Main Camera").transform.position);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Shake_Timer(2.5f, UnityEngine.Camera.main.transform.position);
 		GetComponent<global::UnityEngine.Animator>().Play("Death", 0, 0f);
 	}
 

@@ -39,8 +39,8 @@ public class LV_1_Cam : global::UnityEngine.MonoBehaviour
 	private bool check_Right;
 
 	private Camera_Control CamCon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -48,7 +48,7 @@ public class LV_1_Cam : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//Player = global::UnityEngine.GameObject.Find("Player");
-		CamCon = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>();
+		CamCon = UnityEngine.Camera.main.GetComponent<Camera_Control>();
 		if (condition_Up)
 		{
 			if (Player.transform.position.y > base.transform.position.y)

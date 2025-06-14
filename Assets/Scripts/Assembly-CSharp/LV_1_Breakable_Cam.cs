@@ -23,8 +23,8 @@ public class LV_1_Breakable_Cam : global::UnityEngine.MonoBehaviour
 	private bool onBreak;
 
 	private int Glow_Dir;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -43,7 +43,7 @@ public class LV_1_Breakable_Cam : global::UnityEngine.MonoBehaviour
 		if (cam_Bot != null && Player.transform.position.y < base.transform.position.y)
 		{
 			onBreak = true;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Cam_Bot = cam_Bot.position.y;
+			UnityEngine.Camera.main.GetComponent<Camera_Control>().Cam_Bot = cam_Bot.position.y;
 		}
 	}
 
@@ -58,19 +58,19 @@ public class LV_1_Breakable_Cam : global::UnityEngine.MonoBehaviour
 			onBreak = true;
 			if (cam_Top != null)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Cam_Top = cam_Top.position.y;
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().Cam_Top = cam_Top.position.y;
 			}
 			if (cam_Bot != null)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Cam_Bot = cam_Bot.position.y;
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().Cam_Bot = cam_Bot.position.y;
 			}
 			if (cam_Left != null)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Cam_Left = cam_Left.position.x;
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().Cam_Left = cam_Left.position.x;
 			}
 			if (cam_Right != null)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Cam_Right = cam_Right.position.x;
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().Cam_Right = cam_Right.position.x;
 			}
 		}
 		if (!(SR_Glow_1 != null))

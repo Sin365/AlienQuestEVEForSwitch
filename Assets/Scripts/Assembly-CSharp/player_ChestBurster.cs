@@ -22,8 +22,8 @@ public class player_ChestBurster : global::UnityEngine.MonoBehaviour
 
 	private H_SoundControl H_Sound;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -60,7 +60,7 @@ public class player_ChestBurster : global::UnityEngine.MonoBehaviour
 			bool flip = ((facingRight < 0) ? true : false);
 			Ctrl_1.GetComponent<Puppet2D_GlobalControl>().flip = flip;
 		}
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 	}
 
 	private void Stop()

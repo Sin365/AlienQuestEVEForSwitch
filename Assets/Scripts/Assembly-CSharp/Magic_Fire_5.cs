@@ -28,7 +28,7 @@ public class Magic_Fire_5 : global::UnityEngine.MonoBehaviour
 		Size = base.transform.localScale.y;
 		target = new global::UnityEngine.Vector3(base.transform.position.x + 12f * base.transform.localScale.x, base.transform.position.y, 0f);
 		Make_Black();
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Shake();
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Shake();
 	}
 
 	private void Make_Black()

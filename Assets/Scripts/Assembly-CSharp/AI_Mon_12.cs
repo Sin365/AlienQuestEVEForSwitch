@@ -68,8 +68,8 @@ public class AI_Mon_12 : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.RaycastHit2D whatIHit;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private GameManager GM => GameManager.instance;
 

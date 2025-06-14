@@ -87,8 +87,8 @@ public class Save_Block : global::UnityEngine.MonoBehaviour
 	GameManager GM => GameManager.instance;
 
 	private SaveMenu_Control SaveMenu;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private void Start()
 	{

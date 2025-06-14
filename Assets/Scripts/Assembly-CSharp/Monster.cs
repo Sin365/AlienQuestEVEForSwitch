@@ -158,8 +158,8 @@ public class Monster : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.GameObject _Item_Potion_MP;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private Sound_Control SC;
 

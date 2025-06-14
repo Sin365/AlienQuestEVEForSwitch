@@ -178,8 +178,8 @@ public class AI_Mon_33 : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.AudioSource sound_Base;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -1242,7 +1242,7 @@ public class AI_Mon_33 : global::UnityEngine.MonoBehaviour
 		base.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x + 0.2f * (float)(-facingRight), Player.transform.position.y + 4.02f, 0f);
 		GetComponent<Monster>().isInvincible = true;
 		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{
 			Player.SendMessage("H_Down");

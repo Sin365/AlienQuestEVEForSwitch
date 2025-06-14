@@ -39,24 +39,24 @@ public class Event_Boss_1 : global::UnityEngine.MonoBehaviour
 				GM.onEvent = true;
 				if (Boss_Num == 1)
 				{
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(base.transform.position, 1.5f);
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(base.transform.position, 1.5f);
 				}
 				else if (Boss_Num == 2)
 				{
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(base.transform.position, 1.5f);
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(base.transform.position, 1.5f);
 				}
 				else if (Boss_Num == 3)
 				{
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(base.transform.position, 1f);
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(base.transform.position, 1f);
 				}
 				else if (Boss_Num == 4)
 				{
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 11.2f;
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(base.transform.position, 2f);
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 11.2f;
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(base.transform.position, 2f);
 				}
 				else
 				{
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(base.transform.position, 1.5f);
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(base.transform.position, 1.5f);
 				}
 			}
 		}
@@ -67,7 +67,7 @@ public class Event_Boss_1 : global::UnityEngine.MonoBehaviour
 			{
 				state = 2;
 				GM.onEvent = false;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().MaxSize;
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = UnityEngine.Camera.main.GetComponent<Camera_Control>().MaxSize;
 			}
 		}
 	}

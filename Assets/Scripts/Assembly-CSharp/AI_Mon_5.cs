@@ -63,8 +63,8 @@ public class AI_Mon_5 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.GameObject H_Single;
 
 	public global::UnityEngine.GameObject H_Dual;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -387,7 +387,7 @@ public class AI_Mon_5 : global::UnityEngine.MonoBehaviour
 		GetComponent<Monster>().isInvincible = true;
 		if (GM.Hscene_Num != 2)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+			UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		}
 		if (!GM.GameOver)
 		{

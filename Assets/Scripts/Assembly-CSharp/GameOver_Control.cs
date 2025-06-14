@@ -83,7 +83,7 @@ public class GameOver_Control : global::UnityEngine.MonoBehaviour
 			if (onMouseDrag)
 			{
 				onMouseDrag = false;
-				global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Release_TargetPos");
+				UnityEngine.Camera.main.SendMessage("Release_TargetPos");
 			}
 		}
 		else

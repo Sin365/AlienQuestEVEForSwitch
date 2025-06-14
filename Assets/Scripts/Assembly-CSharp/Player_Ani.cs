@@ -177,8 +177,8 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.SkinnedMeshRenderer Down_FaceHugger_R;
 
 	GameManager GM => GameManager.instance;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private void Start()
 	{

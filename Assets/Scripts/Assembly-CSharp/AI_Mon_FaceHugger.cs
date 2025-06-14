@@ -148,8 +148,8 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Color color_Slow = new global::UnityEngine.Color(0f, 0.92f, 1f);
 
 	private Sound_Control SC;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -625,7 +625,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 			global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = global::UnityEngine.GameObject.Find("Player_Grab");
 			global::UnityEngine.GameObject.Find("Player_Grab").SendMessage("H_Play");
 		}
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 	}
 
 	private void End_H_Grab()
@@ -645,7 +645,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 			Set_JumpBack();
 			GM.Damage_Timer = 2f;
 			PC.Down(-8 * PC.facingRight);
-			global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Reset_Zoom");
+			UnityEngine.Camera.main.SendMessage("Reset_Zoom");
 			global::UnityEngine.GameObject.Find("Ani").SendMessage("OFF_H_Down");
 		}
 		on_Grab_Down = false;

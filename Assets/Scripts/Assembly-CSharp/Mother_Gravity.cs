@@ -38,8 +38,8 @@ public class Mother_Gravity : global::UnityEngine.MonoBehaviour
 
 	public global::UnityEngine.Transform Player_Target;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private global::UnityEngine.BoxCollider2D PlayerColBox;
 
@@ -53,7 +53,7 @@ public class Mother_Gravity : global::UnityEngine.MonoBehaviour
 		Size = base.transform.localScale.y;
 		pos_Target = new global::UnityEngine.Vector3(PlayerColBox.transform.position.x, PlayerColBox.transform.position.y + ((!(PlayerColBox.size.y > 3f)) ? 1.8f : 3f), PlayerColBox.transform.position.z);
 		Make_Black();
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Shake_Mother();
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Shake_Mother();
 	}
 
 	private void Make_Black()

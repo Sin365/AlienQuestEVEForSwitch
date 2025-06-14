@@ -17,8 +17,8 @@ public class Effect_BackDash : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.SpriteRenderer SR;
 
     GameManager GM => GameManager.instance;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
     private void Start()
 	{
 		Set_Start();

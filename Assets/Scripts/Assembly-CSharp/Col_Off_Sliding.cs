@@ -11,8 +11,8 @@ public class Col_Off_Sliding : global::UnityEngine.MonoBehaviour
 	private bool onSlide;
 
 	private float Col_Timer;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

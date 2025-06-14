@@ -48,7 +48,7 @@ public class Sound_Gravity : global::UnityEngine.MonoBehaviour
 
 	private void Check_Distance()
 	{
-		Distance = global::UnityEngine.Vector3.Distance(base.transform.position, global::UnityEngine.GameObject.Find("Main Camera").transform.position);
+		Distance = global::UnityEngine.Vector3.Distance(base.transform.position, UnityEngine.Camera.main.transform.position);
 		if (Distance < 20f)
 		{
 			Dist_Var = 1f;

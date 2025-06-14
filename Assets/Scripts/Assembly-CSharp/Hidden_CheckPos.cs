@@ -5,8 +5,8 @@ public class Hidden_CheckPos : global::UnityEngine.MonoBehaviour
 	private bool onEnabled;
 
 	public Hidden_Passage_2 hidden_passage;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

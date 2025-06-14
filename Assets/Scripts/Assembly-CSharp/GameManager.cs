@@ -320,7 +320,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     private UI_Control UC;
     private Camera_Control cc_Main_Camera;
     private GameObject gobj_EscapeTimer;
-    private GameObject gobj_Main_Camera;
+    private GameObject gobj_Main_Camera => UnityEngine.Camera.main.gameObject;
     private GameObject gobj_Player_DownGrab;
     private GameObject gobj_Player_Grab;
     private GameObject gobj_Ani;
@@ -455,10 +455,10 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     {
         UC = global::UnityEngine.GameObject.Find("Status").GetComponent<UI_Control>();
         #region 改为单次Find
-        cc_Main_Camera = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>();
+        cc_Main_Camera = UnityEngine.Camera.main.GetComponent<Camera_Control>();
 
         gobj_EscapeTimer = global::UnityEngine.GameObject.Find("EscapeTimer");
-        gobj_Main_Camera = global::UnityEngine.GameObject.Find("Main Camera");
+        //gobj_Main_Camera = UnityEngine.Camera.main;
         gobj_Player_DownGrab = global::UnityEngine.GameObject.Find("Player_DownGrab");
         gobj_Player_Grab = global::UnityEngine.GameObject.Find("Player_Grab");
         gobj_Ani = global::UnityEngine.GameObject.Find("Ani");

@@ -130,8 +130,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
     GameManager GM => GameManager.instance;
 
 	private Custom_Key CK => GameManager.instance.CK;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
     private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -230,15 +230,15 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 					FadeOpacity = 1f;
 					if (Index < 14)
 					{
-						global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(CamPos_Target, 0.1f);
+						UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(CamPos_Target, 0.1f);
 					}
 					else
 					{
-						global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(CamPos_Target, 0.4f);
+						UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(CamPos_Target, 0.4f);
 					}
-					global::UnityEngine.GameObject.Find("Main Camera").transform.position = CamPos;
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = CamSize_Target;
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = CamSize;
+					UnityEngine.Camera.main.transform.position = CamPos;
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = CamSize_Target;
+					UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = CamSize;
 					if (FadeInfo_Num > 0)
 					{
 						Make_Info(FadeInfo_Num);
@@ -351,8 +351,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 	{
 		Event_Timer = 0f;
 		Index = 3;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-121f, -101f, -10f), 0.35f);
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 8f;
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-121f, -101f, -10f), 0.35f);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 8f;
 	}
 
 	private void Event_1_Index()
@@ -417,8 +417,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 					MotherBrain.GetComponent<AI_MotherBrain>().Event_Num = 2;
 					Index++;
 					Event_Timer = 9f;
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-107.5f, -102f, -10f), 1f);
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 10f;
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-107.5f, -102f, -10f), 1f);
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 10f;
 				}
 			}
 		}
@@ -492,7 +492,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 			Room_Eve.GetComponent<global::UnityEngine.AudioSource>().volume = global::UnityEngine.Mathf.Lerp(Room_Eve.GetComponent<global::UnityEngine.AudioSource>().volume, 0f, global::UnityEngine.Time.deltaTime * 3f);
 			if (Event_Timer <= 0f)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-121f, -102f, -10f), 0.5f);
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-121f, -102f, -10f), 0.5f);
 				if (!Text_Dlg_On && text_Num == 7)
 				{
 					Index++;
@@ -572,8 +572,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 					}
 				}
 			}
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-114.5f, -102f, -10f), 2f);
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 11f;
+			UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-114.5f, -102f, -10f), 2f);
+			UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 11f;
 		}
 		else if (Index == 10)
 		{
@@ -585,8 +585,8 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				{
 					MotherBrain.GetComponent<AI_MotherBrain>().Event_Num = 6;
 				}
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-106f, -100f, -10f), 0.2f);
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 8f;
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-106f, -100f, -10f), 0.2f);
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 8f;
 			}
 		}
 		else if (Index == 11)
@@ -642,20 +642,20 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 
 	private void Cam_Focus_1()
 	{
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-121f, -101f, -10f), 0.5f);
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 8f;
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-121f, -101f, -10f), 0.5f);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 8f;
 	}
 
 	private void Cam_Focus_2()
 	{
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-118f, -106f, -10f), 0.5f);
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 8f;
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-118f, -106f, -10f), 0.5f);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 8f;
 	}
 
 	private void Cam_Focus_All()
 	{
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-113.5f, -101f, -10f), 0.5f);
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 12f;
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-113.5f, -101f, -10f), 0.5f);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 12f;
 	}
 
 	private void Make_Info(int num)
@@ -704,10 +704,10 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 		GM.EventState = 101;
 		Event_Num = 1;
 		Event_Timer = 0f;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-200f, -98f, -10f), 0.1f);
-		global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(-200f, -101f, -10f);
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = CamSize_Target;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = CamSize;
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(-200f, -98f, -10f), 0.1f);
+		UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(-200f, -101f, -10f);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = CamSize_Target;
+		UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = CamSize;
 		Opening_Ship = global::UnityEngine.Object.Instantiate(_openingShip, new global::UnityEngine.Vector3(-200f, -100f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		Opening_Ship.transform.localScale = new global::UnityEngine.Vector3(1.2f, 1.2f, 1f);
 		Room_MotherBrain = global::UnityEngine.Object.Instantiate(_room_MotherBrain, new global::UnityEngine.Vector3(-100f, -100f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
@@ -763,10 +763,10 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 			GateFade.enabled = false;
 			isFadeOut = false;
 		}
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(Room_0_Pos_X, 0.36f, -10f), 0.1f);
-		global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(Room_0_Pos_X, 3f, -10f);
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 8f;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 9f;
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(Room_0_Pos_X, 0.36f, -10f), 0.1f);
+		UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(Room_0_Pos_X, 3f, -10f);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 8f;
+		UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = 9f;
 		if (AxiPlayerPrefs.GetInt("onClockFps") == 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_TimePlay").GetComponent<global::UnityEngine.UI.Text>().enabled = true;
@@ -819,7 +819,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 			GateFade.enabled = false;
 			isFadeOut = false;
 		}
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 8f;
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 8f;
 		if (AxiPlayerPrefs.GetInt("onClockFps") == 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_TimePlay").GetComponent<global::UnityEngine.UI.Text>().enabled = true;

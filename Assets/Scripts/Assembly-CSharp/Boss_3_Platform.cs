@@ -47,8 +47,8 @@ public class Boss_3_Platform : global::UnityEngine.MonoBehaviour
 	private bool onPause;
 
 	private global::UnityEngine.Animator animator;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -237,7 +237,7 @@ public class Boss_3_Platform : global::UnityEngine.MonoBehaviour
 		gameObject.GetComponent<H_Ani>().Mon_Object = base.gameObject;
 		OnOff_Object(false);
 		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{
 			Player.SendMessage("H_Down");

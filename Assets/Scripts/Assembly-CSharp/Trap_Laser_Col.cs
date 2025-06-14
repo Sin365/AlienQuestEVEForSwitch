@@ -5,8 +5,8 @@ public class Trap_Laser_Col : global::UnityEngine.MonoBehaviour
 	public Trap_Laser TrapBody;
 
 	private float Damage_Delay;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

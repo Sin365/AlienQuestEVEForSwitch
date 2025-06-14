@@ -124,12 +124,12 @@ public class AI_Mon_42 : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Animator animator;
 
-	private global::UnityEngine.GameObject Main_Camera;
+	private global::UnityEngine.GameObject Main_Camera => UnityEngine.Camera.main.gameObject;
 
 	private Monster Mon;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -139,7 +139,6 @@ public class AI_Mon_42 : global::UnityEngine.MonoBehaviour
 		//Player = global::UnityEngine.GameObject.Find("Player");
 		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
-		Main_Camera = global::UnityEngine.GameObject.Find("Main Camera");
 		animator = GetComponent<global::UnityEngine.Animator>();
 		rnd_X = (float)global::UnityEngine.Random.Range(0, 50) * 0.01f;
 		Orig_Speed = (Move_Speed = 18f + rnd_X);

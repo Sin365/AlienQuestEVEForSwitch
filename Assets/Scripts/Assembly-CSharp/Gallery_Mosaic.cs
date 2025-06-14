@@ -22,7 +22,7 @@ public class Gallery_Mosaic : global::UnityEngine.MonoBehaviour
 
 	private void Start()
 	{
-		mainCamera = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<global::UnityEngine.Camera>();
+		mainCamera = UnityEngine.Camera.main.GetComponent<global::UnityEngine.Camera>();
 		camera = GetComponent<global::UnityEngine.Camera>();
 		camera.rect = new global::UnityEngine.Rect(0.5f, 1.5f, 0.1f, 0.3f);
 		if (AxiPlayerPrefs.GetInt("UncensoredPatch") == 1)

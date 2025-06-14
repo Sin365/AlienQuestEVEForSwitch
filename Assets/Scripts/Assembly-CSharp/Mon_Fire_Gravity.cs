@@ -35,8 +35,8 @@ public class Mon_Fire_Gravity : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector3 posOrig;
 
 	private global::UnityEngine.Vector2 Velocity;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

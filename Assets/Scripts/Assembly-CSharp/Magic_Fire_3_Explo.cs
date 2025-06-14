@@ -53,7 +53,7 @@ public class Magic_Fire_3_Explo : global::UnityEngine.MonoBehaviour
 		Glow[2].transform.localScale = new global::UnityEngine.Vector3(0.6f, -1f, 1f);
 		Glow[3].transform.localScale = new global::UnityEngine.Vector3(-0.6f, -1f, 1f);
 		color_Glow = Glow[0].GetComponent<global::UnityEngine.SpriteRenderer>().color;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Shake_Timer(0.1f, base.transform.position);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Shake_Timer(0.1f, base.transform.position);
 	}
 
 	private void Update()

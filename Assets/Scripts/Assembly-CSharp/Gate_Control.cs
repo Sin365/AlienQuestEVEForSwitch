@@ -83,8 +83,8 @@ public class Gate_Control : global::UnityEngine.MonoBehaviour
 	GameManager GM => GameManager.instance;
 
 	private StageManager SM => GameManager.instance.sm_StageManager;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private void Start()
 	{

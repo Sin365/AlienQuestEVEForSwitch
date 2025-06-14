@@ -91,8 +91,8 @@ public class AI_Mon_8 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.SkinnedMeshRenderer Penis_Wet_1;
 
 	public global::UnityEngine.SkinnedMeshRenderer Penis_Wet_2;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -509,7 +509,7 @@ public class AI_Mon_8 : global::UnityEngine.MonoBehaviour
 		GetComponent<Monster>().isInvincible = true;
 		if (GM.Hscene_Num != 7)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+			UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		}
 		if (!GM.GameOver)
 		{

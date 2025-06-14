@@ -51,8 +51,8 @@ public class LV_5_XenoRush : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector3 Target_R;
 
 	private global::UnityEngine.Camera Main_Cam;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -60,7 +60,7 @@ public class LV_5_XenoRush : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//Player = global::UnityEngine.GameObject.Find("Player");
-		Main_Cam = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<global::UnityEngine.Camera>();
+		Main_Cam = UnityEngine.Camera.main.GetComponent<global::UnityEngine.Camera>();
 		Room_Num = GM.Room_Num;
 		if (Gen_Count_Max != Mon_Order.Length)
 		{

@@ -11,8 +11,8 @@ public class LV_4_Cam_102 : global::UnityEngine.MonoBehaviour
 	private float Speed = 5f;
 
 	private Camera_Control CamCon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -20,7 +20,7 @@ public class LV_4_Cam_102 : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//Player = global::UnityEngine.GameObject.Find("Player");
-		CamCon = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>();
+		CamCon = UnityEngine.Camera.main.GetComponent<Camera_Control>();
 		if (Player.transform.position.x < 1077f)
 		{
 			CamCon.Cam_Bot = Bottom_Left.position.y;

@@ -124,8 +124,8 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Animator animator;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -492,7 +492,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 	private void Random_Position()
 	{
 		Check_Flip();
-		Pos_Target = global::UnityEngine.GameObject.Find("Main Camera").transform.position;
+		Pos_Target = UnityEngine.Camera.main.transform.position;
 		Pos_Target = new global::UnityEngine.Vector3(Pos_Target.x + (float)(14 * -facingRight) + Rnd_XY.x * 2f, Pos_Target.y + (float)global::UnityEngine.Random.Range(-3, 3) + Rnd_XY.y * 2f, 0f);
 	}
 
@@ -788,7 +788,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 		base.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x + 3f * (float)(-facingRight), Player.transform.position.y + 6.4f, 0f);
 		Mon.isInvincible = true;
 		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{
 			Player.SendMessage("H_Down");

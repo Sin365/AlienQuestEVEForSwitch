@@ -47,8 +47,8 @@ public class AI_Mon_17 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.GameObject Sound_Explo;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

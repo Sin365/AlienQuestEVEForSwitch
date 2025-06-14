@@ -45,8 +45,8 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Vector2 player_Velocity;
 
     GameManager GM => GameManager.instance;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private Map_Control MC;
 
@@ -1773,7 +1773,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 			Target_Pos = gameObject.GetComponent<Room_Control>().targetPos[0].position;
 		}
 		Player.transform.position = Target_Pos;
-		global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10f);
+		UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10f);
 		StartCoroutine("Start_Map_Pos");
 		if (GM.Room_Num == 145 || GM.Room_Num == 149)
 		{
@@ -1784,19 +1784,19 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 			}
 			if (GM.Room_Num == 149)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(gameObject.transform.position.x, -228.1147f, -10f);
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 8f;
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Start_Cam_Size(8f);
+				UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(gameObject.transform.position.x, -228.1147f, -10f);
+				UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = 8f;
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Start_Cam_Size(8f);
 			}
 		}
 		else if (GM.Room_Num == 10 || GM.Room_Num == 16 || GM.Room_Num == 35 || GM.Room_Num == 46 || GM.Room_Num == 75 || GM.Room_Num == 86 || GM.Room_Num == 95 || GM.Room_Num == 110 || GM.Room_Num == 119 || GM.Room_Num == 140)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 8f;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Start_Cam_Size(8f);
+			UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = 8f;
+			UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Start_Cam_Size(8f);
 		}
 		else if (GM.Room_Num == 60)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").transform.position = new global::UnityEngine.Vector3(732.317f, 3.2f, -10f);
+			UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(732.317f, 3.2f, -10f);
 		}
 	}
 
@@ -1885,11 +1885,11 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 				}
 				else
 				{
-					global::UnityEngine.GameObject.Find("Main Camera").transform.position = gameObject.transform.position;
+					UnityEngine.Camera.main.transform.position = gameObject.transform.position;
 					if (GM.Room_Num == 60)
 					{
 						Player.transform.position = (Target_Pos = gameObject.GetComponent<Room_Control>().targetPos[5].position);
-						global::UnityEngine.GameObject.Find("Main Camera").transform.position = Target_Pos;
+						UnityEngine.Camera.main.transform.position = Target_Pos;
 					}
 					else
 					{

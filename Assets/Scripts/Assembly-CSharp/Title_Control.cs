@@ -973,7 +973,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 					}
 				}
 			}
-			global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray2 = UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection2 = global::UnityEngine.Physics2D.GetRayIntersection(ray2, float.PositiveInfinity);
 			if (rayIntersection2.collider != null && rayIntersection2.collider.name == "Col_ClothOnOff")
 			{
@@ -1252,7 +1252,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 
 	private void New_Game()
 	{
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<TitleCam_Control>().Save_Avg_Fps();
+		UnityEngine.Camera.main.GetComponent<TitleCam_Control>().Save_Avg_Fps();
 		AxiPlayerPrefs.SetInt("SelBGM", 0);
 		AxiPlayerPrefs.SetInt("Slot_Num", Sel_Index - 1);
 		StartCoroutine("Load_Main");
@@ -1260,7 +1260,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 
 	private void Continue()
 	{
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<TitleCam_Control>().Save_Avg_Fps();
+		UnityEngine.Camera.main.GetComponent<TitleCam_Control>().Save_Avg_Fps();
 		AxiPlayerPrefs.SetInt("Slot_Num", Sel_Index - 1);
 		StartCoroutine("Load_Main");
 	}

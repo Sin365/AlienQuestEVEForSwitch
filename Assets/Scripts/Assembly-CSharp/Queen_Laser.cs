@@ -51,7 +51,7 @@ public class Queen_Laser : global::UnityEngine.MonoBehaviour
 		{
 			glow_color = new global::UnityEngine.Color(1f, 0.1f, 0f, 1f);
 			Glow_Bar.color = new global::UnityEngine.Color(1f, 0.3f, 0f, 1f);
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Shake_Timer(4.1f, global::UnityEngine.GameObject.Find("Main Camera").transform.position);
+			UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Shake_Timer(4.1f, UnityEngine.Camera.main.transform.position);
 		}
 		Glow_Bar.transform.localScale = new global::UnityEngine.Vector3(9.5f, 0f, 1f);
 		Glow_1.color = new global::UnityEngine.Color(glow_color.r, glow_color.g, glow_color.b, 0f);

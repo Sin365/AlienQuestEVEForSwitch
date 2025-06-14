@@ -31,8 +31,8 @@ public class AI_Mob_1 : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.Transform Tr_FrontPos;
 
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     //private GameManager GM;
     private GameManager GM => GameManager.instance;

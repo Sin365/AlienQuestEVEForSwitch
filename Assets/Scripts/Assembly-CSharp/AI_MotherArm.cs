@@ -91,8 +91,8 @@ public class AI_MotherArm : global::UnityEngine.MonoBehaviour
 	public global::UnityEngine.GameObject sound_Start;
 
 	public global::UnityEngine.SpriteRenderer[] SR_Event;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

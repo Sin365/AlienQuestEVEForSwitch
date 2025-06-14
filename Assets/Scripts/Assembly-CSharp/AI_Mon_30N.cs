@@ -91,8 +91,8 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 	private UI_Control UC;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -418,7 +418,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		UC.Set_Boss_Death();
 		Mon_7_Death();
 		DeathExplo();
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Shake_Timer(2.5f, global::UnityEngine.GameObject.Find("Main Camera").transform.position);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Shake_Timer(2.5f, UnityEngine.Camera.main.transform.position);
 	}
 
 	private void DeathExplo()
@@ -477,7 +477,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		gameObject.GetComponent<H_Ani>().Mon_Object = base.gameObject;
 		GetComponent<Monster>().isInvincible = true;
 		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{
 			Player.SendMessage("H_Down");
@@ -502,7 +502,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		gameObject.GetComponent<H_Ani>().Mon_Object = base.gameObject;
 		GetComponent<Monster>().isInvincible = true;
 		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
-		global::UnityEngine.GameObject.Find("Main Camera").SendMessage("Hscene_Zoom");
+		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{
 			Player.SendMessage("H_Down");

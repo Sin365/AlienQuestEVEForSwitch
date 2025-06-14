@@ -85,8 +85,8 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.Color color_Orig = new global::UnityEngine.Color(1f, 1f, 1f);
 
 	private Sound_Control SC;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 

@@ -39,7 +39,7 @@ public class Magic_Fire_2_Explo : global::UnityEngine.MonoBehaviour
 		color_Brd_OFF = new global::UnityEngine.Color(Border_Q[0].color.r, Border_Q[0].color.g, Border_Q[0].color.b, 0f);
 		global::UnityEngine.Color color = Circle.GetComponent<global::UnityEngine.SpriteRenderer>().color;
 		color_Circle_OFF = new global::UnityEngine.Color(color.r, color.g, color.b, 0f);
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Shake_Timer(0.8f, base.transform.position);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Shake_Timer(0.8f, base.transform.position);
 	}
 
 	private void Update()

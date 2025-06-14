@@ -28,17 +28,17 @@ public class Room_Control : global::UnityEngine.MonoBehaviour
 		//SM = global::UnityEngine.GameObject.Find("StageManager").GetComponent<StageManager>();
 		if (Room_Num == 0 || !GM.onEvent)
 		{
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Cam_Top = cam_Top.position.y;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Cam_Bot = cam_Bot.position.y;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Cam_Left = cam_Left.position.x;
-			global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Cam_Right = cam_Right.position.x;
+			UnityEngine.Camera.main.GetComponent<Camera_Control>().Cam_Top = cam_Top.position.y;
+			UnityEngine.Camera.main.GetComponent<Camera_Control>().Cam_Bot = cam_Bot.position.y;
+			UnityEngine.Camera.main.GetComponent<Camera_Control>().Cam_Left = cam_Left.position.x;
+			UnityEngine.Camera.main.GetComponent<Camera_Control>().Cam_Right = cam_Right.position.x;
 			if (Room_Num < 150)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().MaxSize = MaxCam_Size;
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().MaxSize = MaxCam_Size;
 			}
-			if (global::UnityEngine.GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize > MaxCam_Size || Start_MaxCam)
+			if (UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize > MaxCam_Size || Start_MaxCam)
 			{
-				global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = MaxCam_Size;
+				UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = MaxCam_Size;
 			}
 			GM.Room_Num = Room_Num;
 			SM.Current_Room = base.gameObject;

@@ -248,13 +248,13 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Animator animator;
 
-	private global::UnityEngine.GameObject Main_Camera;
+	private global::UnityEngine.GameObject Main_Camera => UnityEngine.Camera.main.gameObject;
 
 	private UI_Control UC;
 
 	private Monster Mon;
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     GameManager GM => GameManager.instance;
 
@@ -265,7 +265,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		//PC = Player.GetComponent<Player_Control>();
 		Mon = GetComponent<Monster>();
 		UC = global::UnityEngine.GameObject.Find("Status").GetComponent<UI_Control>();
-		Main_Camera = global::UnityEngine.GameObject.Find("Main Camera");
+		//Main_Camera = UnityEngine.Camera.main;
 		animator = GetComponent<global::UnityEngine.Animator>();
 		rnd_X = (float)global::UnityEngine.Random.Range(0, 50) * 0.01f;
 		Target_Dash = (Target_Death = new global::UnityEngine.Vector3(base.transform.position.x + (float)(40 * facingRight), base.transform.position.y + 12f, 0f));
@@ -419,7 +419,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 				if (State_Timer > 1.5f)
 				{
 					Queen_State = 3;
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(949f, -288f, -10f), 0.4f);
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(949f, -288f, -10f), 0.4f);
 					base.transform.position = new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + 75f, 0f);
 					global::UnityEngine.GameObject.Find("BGM_List").GetComponent<BGM_Control>().Play_Boss(5);
 				}
@@ -432,15 +432,15 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 				}
 				if (State_Timer > 5f && Fire_Num < 2)
 				{
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(949f, -280.5f, -10f), 0.2f);
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().Event_Cam_Pos(new global::UnityEngine.Vector3(949f, -280.5f, -10f), 0.2f);
 					Fire_Num = 2;
 				}
 				if (State_Timer > 8f && !Growl_Sound_2_Started)
 				{
 					Growl_Sound_2_Started = true;
 					Sound_Q_1();
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().MaxSize = 13f;
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 13f;
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().MaxSize = 13f;
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 13f;
 				}
 				if (State_Timer > 15f)
 				{
@@ -452,8 +452,8 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 					animator.speed = 1f;
 					UC.Boss_Mon = GetComponent<Monster>();
 					Fire_Num = 2;
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().MaxSize = 11.2f;
-					global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 11.2f;
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().MaxSize = 11.2f;
+					UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 11.2f;
 				}
 			}
 		}
@@ -1802,8 +1802,8 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale = 0f;
 		Shield_Opcity = 0.4f;
 		Shield_Opcity_Timer = 0f;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().MaxSize = 11.2f;
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().targetSize = 11.2f;
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().MaxSize = 11.2f;
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 11.2f;
 	}
 
 	private void DeathExplo()

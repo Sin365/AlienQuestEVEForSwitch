@@ -68,8 +68,8 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 
 	private Monster Mon;
 
-    Player_Control PC => GameManager.instance.PC;
-    GameObject Player => GameManager.instance.gobj_Player;
+    Player_Control PC => GameManager.instance?.PC;
+    GameObject Player => GameManager.instance?.gobj_Player;
 
     private GameManager GM => GameManager.instance;
 
@@ -359,7 +359,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 		UC.Set_Boss_Death();
 		Mon_7_Death();
 		DeathExplo();
-		global::UnityEngine.GameObject.Find("Main Camera").GetComponent<Camera_Control>().Set_Shake_Timer(2.5f, global::UnityEngine.GameObject.Find("Main Camera").transform.position);
+		UnityEngine.Camera.main.GetComponent<Camera_Control>().Set_Shake_Timer(2.5f, UnityEngine.Camera.main.transform.position);
 	}
 
 	private void DeathExplo()
