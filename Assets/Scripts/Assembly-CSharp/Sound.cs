@@ -21,14 +21,14 @@ public class Sound : AxiSoundBase
 
 	public override void Init()
 	{
-		life_Timer = default;
-		isPaused = default;
-		isPlayStarted = default;
+		life_Timer = 0;
+		isPaused = false;
+		isPlayStarted = false;
 		Volume_Orig = 1f;
 		Dist_Orig = 1f;
 		Dist_Var = 1f;
-		distance = default;
-		OnEvent = default;
+		distance = 0;
+		OnEvent = false;
 		Start();
     }
 	

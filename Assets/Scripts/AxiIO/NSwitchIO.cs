@@ -52,7 +52,8 @@ namespace AxiIO
 		{
 			//Debug.Log($"dir_GetDirectories path=>{path}");
 			//return default;
-			if (!AxiNS.instance.io.GetDirectoryDirs(path, out string[] result))
+			string[] result;
+			if (!AxiNS.instance.io.GetDirectoryDirs(path, out result))
 			{
 				return new string[0];
 			}
@@ -63,7 +64,8 @@ namespace AxiIO
 		{
 			//Debug.Log($"dir_GetFiles path=>{path}");
 			//return default;
-			if (!AxiNS.instance.io.GetDirectoryFiles(path, out string[] result))
+			string[] result;
+			if (!AxiNS.instance.io.GetDirectoryFiles(path, out result))
 			{
 				return new string[0];
 			}

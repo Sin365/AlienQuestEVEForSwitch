@@ -41,7 +41,8 @@ public static class AxiSortingOrder
 	/// </summary>
 	public static string GetNameByUserID(int userID)
 	{
-		if (_userIDToNameMap.TryGetValue(userID, out string name))
+		string name;
+		if (_userIDToNameMap.TryGetValue(userID, out name))
 		{
 			return name;
 		}

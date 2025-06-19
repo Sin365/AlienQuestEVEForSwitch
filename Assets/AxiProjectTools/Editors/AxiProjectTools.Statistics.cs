@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+﻿#if UNITY_EDITOR  && UNITY_2020_1_OR_NEWER
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -377,8 +377,8 @@ public class AxiProjectToolsStatistics : EditorWindow
     {
         List<string> errLog = new List<string>();
         List<string> doneLog = new List<string>();
-        List<ValueTuple<string, string>> NeedRepair = new List<(string, string)>();
-        List<ValueTuple<string, string>> FinishRepair = new List<(string, string)>();
+        List<ValueTuple<string, string>> NeedRepair = new List<ValueTuple<string, string>>();
+        List<ValueTuple<string, string>> FinishRepair = new List<ValueTuple<string, string>>();
         string CurrScenePath = string.Empty;
         AxiProjectTools.GoTAxiProjectToolsSence();
 #if UNITY_4_6

@@ -309,13 +309,15 @@ public class AxiNSIO
 	}
 	public byte[] LoadSwitchDataFile(string filename)
 	{
-		LoadSwitchDataFile(filename, out byte[] outputData);
+		byte[] outputData;
+		LoadSwitchDataFile(filename, out outputData);
 		return outputData;
 	}
 
 	public bool LoadSwitchDataFile(string filename, ref System.IO.MemoryStream ms)
 	{
-		if (LoadSwitchDataFile(filename, out byte[] outputData))
+		byte[] outputData;
+		if (LoadSwitchDataFile(filename, out outputData))
 		{
 			using (System.IO.BinaryWriter writer = new System.IO.BinaryWriter(ms))
 			{
@@ -466,7 +468,7 @@ public class AxiNSIO
 		entrys = temp.ToArray();
 		return true;
 #else
-		entrys = default;
+		entrys = null;
         return false;
 #endif
 	}

@@ -257,7 +257,11 @@ public class DepthOfFieldScatter : PostEffectsBase
 				dx11bokehMaterial.SetTexture("_MainTex", dx11BokehTexture);
 				dx11bokehMaterial.SetVector("_Screen", new global::UnityEngine.Vector3(1f / (1f * (float)source.width), 1f / (1f * (float)source.height), internalBlurWidth));
 				dx11bokehMaterial.SetPass(2);
+#if UNITY_2020_1_OR_NEWER
 				global::UnityEngine.Graphics.DrawProceduralIndirectNow(global::UnityEngine.MeshTopology.Points, cbDrawArgs, 0);
+#else
+				global::UnityEngine.Graphics.DrawProceduralIndirect(global::UnityEngine.MeshTopology.Points, cbDrawArgs, 0);
+#endif
 				global::UnityEngine.Graphics.Blit(temporary, destination);
 				global::UnityEngine.RenderTexture.ReleaseTemporary(temporary);
 				global::UnityEngine.RenderTexture.ReleaseTemporary(renderTexture3);
@@ -311,7 +315,11 @@ public class DepthOfFieldScatter : PostEffectsBase
 				dx11bokehMaterial.SetTexture("_MainTex", dx11BokehTexture);
 				dx11bokehMaterial.SetVector("_Screen", new global::UnityEngine.Vector3(1f / (1f * (float)renderTexture2.width), 1f / (1f * (float)renderTexture2.height), internalBlurWidth));
 				dx11bokehMaterial.SetPass(1);
+#if UNITY_2020_1_OR_NEWER
 				global::UnityEngine.Graphics.DrawProceduralIndirectNow(global::UnityEngine.MeshTopology.Points, cbDrawArgs, 0);
+#else
+				global::UnityEngine.Graphics.DrawProceduralIndirect(global::UnityEngine.MeshTopology.Points, cbDrawArgs, 0);
+#endif
 				dofHdrMaterial.SetTexture("_LowRez", renderTexture2);
 				dofHdrMaterial.SetTexture("_FgOverlap", renderTexture5);
 				dofHdrMaterial.SetVector("_Offsets", 1f * (float)source.width / (1f * (float)renderTexture2.width) * internalBlurWidth * global::UnityEngine.Vector4.one);

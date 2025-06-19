@@ -223,6 +223,10 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 		AxiPlayerPrefs.SetInt("Escaped", 0);
 		if (Window_Size != global::UnityEngine.Screen.width)
 		{
+
+#if UNITY_PSP2
+			global::UnityEngine.Screen.SetResolution(960, 544, false);
+#else
 			if (Window_Size == 1280)
 			{
 				global::UnityEngine.Screen.SetResolution(1280, 720, false);
@@ -231,6 +235,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 			{
 				global::UnityEngine.Screen.SetResolution(1920, 1080, true);
 			}
+#endif
 		}
 		if (Window_Size != 1920)
 		{
@@ -1282,6 +1287,12 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 
 	private void Set_WindowMode()
 	{
+#if UNITY_PSP2
+		global::UnityEngine.Screen.SetResolution(960, 544, false);
+		AxiPlayerPrefs.SetInt("WindowSize", Window_Size);
+		Text_WindowMode();
+		return;
+#endif
 		if (Window_Size == 1920)
 		{
 			Window_Size = 1280;
