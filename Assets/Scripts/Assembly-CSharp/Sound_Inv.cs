@@ -11,8 +11,8 @@ public class Sound_Inv : AxiSoundBase
 
     public override void Init()
     {
-        life_Timer = default;
-        isPlayStarted = default;
+        life_Timer = 0;
+        isPlayStarted = false;
         Start();
     }
 

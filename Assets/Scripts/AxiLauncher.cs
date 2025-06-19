@@ -73,7 +73,8 @@ public class AxiLauncher : MonoBehaviour
 	private void Test4()
 	{
 		Debug.Log("T4"); 
-		bool result = AxiNS.instance.io.GetDirectoryEntrysFullRecursion("save:/", out var elist);
+		string[] elist;
+		bool result = AxiNS.instance.io.GetDirectoryEntrysFullRecursion("save:/", out elist);
 		if (!result)
 			UnityEngine.Debug.Log($"result =>{result}");
 		else

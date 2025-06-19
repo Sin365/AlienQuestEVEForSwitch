@@ -10,7 +10,7 @@ public class Sound_Shield : AxiSoundBase
 
     public override void Init()
     {
-        Life_Timer = default;
+        Life_Timer = 0;
         onActive = true;
         Volume_Orig = 1f;
         Vol_Target = 1f;

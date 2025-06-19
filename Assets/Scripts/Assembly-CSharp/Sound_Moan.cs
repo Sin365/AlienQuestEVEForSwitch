@@ -15,10 +15,10 @@ public class Sound_Moan : AxiSoundBase
 
 	public override void Init()
 	{
-		life_Timer = default;
-		isPlayStarted = default;
-		onEnd = default;
-		mSrc_volume = default;
+		life_Timer = 0;
+		isPlayStarted = false;
+		onEnd = false;
+		mSrc_volume = 0;
 		Start();
 	}
 
