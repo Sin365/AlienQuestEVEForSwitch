@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
@@ -393,9 +394,107 @@ public class AxiProjectTools : EditorWindow
 		Debug.Log("低版本不要执行本函数");
 		#endif
 	}
-	
-	
-	
-	
+
+
+    [MenuItem("Axibug移植工具/ToLowVersionUnity/[6]修复Sprite")]
+    public static void FixMultipleMaterialSprites()
+    {
+        string[] guids = AssetDatabase.FindAssets("t:sprite");
+        List<Sprite> spritesToFix = new List<Sprite>();
+
+        foreach (string guid in guids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+
+            // 检查是否有多个材质
+            if (IsUsingMultipleMaterials(sprite))
+            {
+                spritesToFix.Add(sprite);
+                Debug.Log("Found sprite with multiple materials: " + path);
+            }
+        }
+
+        // 修复每个找到的Sprite
+        foreach (var sprite in spritesToFix)
+        {
+            FixSprite(sprite);
+        }
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+        Debug.Log("<Color=#FFF333>处理完毕  [6]修复Sprite</color>");
+    }
+
+    private static bool IsUsingMultipleMaterials(Sprite sprite)
+    {
+        if (sprite == null) return false;
+
+        // 获取精灵的材质
+        var textureImporter = AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(sprite)) as TextureImporter;
+
+        return textureImporter != null && textureImporter.spriteImportMode == SpriteImportMode.Multiple;
+    }
+
+    private static void FixSprite(Sprite sprite)
+    {
+        // 获取Sprite的路径
+        string path = AssetDatabase.GetAssetPath(sprite);
+        var textureImporter = AssetImporter.GetAtPath(path) as TextureImporter;
+
+        if (textureImporter != null)
+        {
+            // 保存当前切割信息
+            SpriteMetaData[] originalMetaData = textureImporter.spritesheet;
+
+            // 临时禁用Sprite导入
+            textureImporter.spriteImportMode = SpriteImportMode.None;
+            textureImporter.SaveAndReimport();
+
+            // 重新启用Sprite导入并保持原样切割参数
+            textureImporter.spriteImportMode = SpriteImportMode.Multiple;
+            textureImporter.spritesheet = originalMetaData; // 恢复原来的切割信息
+
+            // 重新导入以应用更改
+            textureImporter.SaveAndReimport();
+        }
+    }
+
+
+    [MenuItem("Axibug移植工具/ToLowVersionUnity/[7]导入后低版本执行：修复组件挂载预制体依赖丢失")]
+    static void FixPrefabRefs()
+    {
+        // 1. 扫描所有预制体
+        string[] prefabPaths = Directory.GetFiles("Assets", "*.prefab", SearchOption.AllDirectories);
+        foreach (var path in prefabPaths) FixRefTypeInFile(path);
+
+        // 2. 处理场景文件
+        string[] scenePaths = Directory.GetFiles("Assets", "*.unity", SearchOption.AllDirectories);
+        foreach (var path in scenePaths) FixRefTypeInFile(path);
+
+        AssetDatabase.Refresh();
+        Debug.Log("<Color=#FFF333>处理完毕  [5]导入低版本后：修复预制体依赖丢失</color>");
+        Debug.Log("修复完成！已处理" + prefabPaths.Length + "个预制体");
+    }
+
+    public static void FixRefTypeInFile(string filePath)
+    {
+        string content = File.ReadAllText(filePath);
+        // 匹配所有 {fileID: X, guid: Y, type: Z} 结构
+        string pattern = @"(\{[^}]*guid:\s*(\w+)[^}]*type:\s*)3(\s*[^}]*\})";
+        string newContent = Regex.Replace(content, pattern, match => {
+            string guid = match.Groups[2].Value;
+            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
+            // 仅当资源类型为 GameObject 时修改 type
+            //if (AssetDatabase.GetMainAssetTypeAtPath(assetPath) == typeof(GameObject))
+            if (assetPath.ToLower().EndsWith(".prefab"))
+            {
+                return match.Groups[1].Value + "2" + match.Groups[3].Value; // type:3→2
+            }
+            return match.Value;
+        });
+        File.WriteAllText(filePath, newContent);
+    }
+
 }
 #endif
