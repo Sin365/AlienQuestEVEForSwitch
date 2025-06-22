@@ -1,124 +1,186 @@
 public class Sound_Control : global::UnityEngine.MonoBehaviour
 {
-	public global::UnityEngine.GameObject Sound_Magic_1;
+	//public global::UnityEngine.GameObject Sound_Magic_1;
 
-	public global::UnityEngine.GameObject Sound_Magic_2;
+	//public global::UnityEngine.GameObject Sound_Magic_2;
 
-	public global::UnityEngine.GameObject Sound_Magic_3_Explo_1;
+	//public global::UnityEngine.GameObject Sound_Magic_3_Explo_1;
 
-	public global::UnityEngine.GameObject Sound_Magic_3_Explo_2;
+	//public global::UnityEngine.GameObject Sound_Magic_3_Explo_2;
 
-	public global::UnityEngine.GameObject Sound_Magic_3_Explo_3;
+	//public global::UnityEngine.GameObject Sound_Magic_3_Explo_3;
 
-	public global::UnityEngine.GameObject Sound_Hit_1;
+	//public global::UnityEngine.GameObject Sound_Hit_1;
 
-	public global::UnityEngine.GameObject Sound_Hit_2;
+	//public global::UnityEngine.GameObject Sound_Hit_2;
 
-	public global::UnityEngine.GameObject Sound_Hit_3;
+	//public global::UnityEngine.GameObject Sound_Hit_3;
 
-	public global::UnityEngine.GameObject Sound_Hit_4;
+	//public global::UnityEngine.GameObject Sound_Hit_4;
 
-	public global::UnityEngine.GameObject Sound_Hit_5;
+	//public global::UnityEngine.GameObject Sound_Hit_5;
 
-	public global::UnityEngine.GameObject Sound_Hit_6;
+	//public global::UnityEngine.GameObject Sound_Hit_6;
 
-	public global::UnityEngine.GameObject Sound_Hit_11;
+	//public global::UnityEngine.GameObject Sound_Hit_11;
 
-	public global::UnityEngine.GameObject Sound_Hit_12;
+	//public global::UnityEngine.GameObject Sound_Hit_12;
 
-	public global::UnityEngine.GameObject Sound_Hit_Explo;
+	//public global::UnityEngine.GameObject Sound_Hit_Explo;
 
-	public global::UnityEngine.GameObject Sound_Footstep_Mon_1;
+	//public global::UnityEngine.GameObject Sound_Footstep_Mon_1;
 
-	public global::UnityEngine.GameObject Sound_Footstep_Mon_2;
+	//public global::UnityEngine.GameObject Sound_Footstep_Mon_2;
 
-	public global::UnityEngine.GameObject Sound_MonAtk_1;
+	//public global::UnityEngine.GameObject Sound_MonAtk_1;
 
-	public global::UnityEngine.GameObject Sound_MonAtk_2;
+	//public global::UnityEngine.GameObject Sound_MonAtk_2;
 
-	public global::UnityEngine.GameObject Sound_MonAtk_3;
+	//public global::UnityEngine.GameObject Sound_MonAtk_3;
 
-	public global::UnityEngine.GameObject Sound_MonAtk_4;
+	//public global::UnityEngine.GameObject Sound_MonAtk_4;
 
-	public global::UnityEngine.GameObject Sound_MonAtk_5;
+	//public global::UnityEngine.GameObject Sound_MonAtk_5;
 
-	public global::UnityEngine.GameObject Sound_MonAtk_6;
+	//public global::UnityEngine.GameObject Sound_MonAtk_6;
 
-	public global::UnityEngine.GameObject Sound_MonAtk_7;
+	//public global::UnityEngine.GameObject Sound_MonAtk_7;
 
-	public global::UnityEngine.GameObject Sound_Elec;
+	//public global::UnityEngine.GameObject Sound_Elec;
 
-	public global::UnityEngine.GameObject Sound_Plasma;
+	//public global::UnityEngine.GameObject Sound_Plasma;
 
-	public global::UnityEngine.GameObject Mon_10_Growling_1;
+	//public global::UnityEngine.GameObject Mon_10_Growling_1;
 
-	public global::UnityEngine.GameObject Mon_10_Growling_2;
+	//public global::UnityEngine.GameObject Mon_10_Growling_2;
 
-	public global::UnityEngine.GameObject Mon_10_Growling_3;
+	//public global::UnityEngine.GameObject Mon_10_Growling_3;
 
-	public global::UnityEngine.GameObject Mon_10_Growling_4;
+	//public global::UnityEngine.GameObject Mon_10_Growling_4;
 
-	public global::UnityEngine.GameObject Alien_Growling_1;
+	//public global::UnityEngine.GameObject Alien_Growling_1;
 
-	public global::UnityEngine.GameObject Alien_Growling_2;
+	//public global::UnityEngine.GameObject Alien_Growling_2;
 
-	public global::UnityEngine.GameObject Alien_Growling_3;
+	//public global::UnityEngine.GameObject Alien_Growling_3;
 
-	public global::UnityEngine.GameObject Alien_Growling_4;
+	//public global::UnityEngine.GameObject Alien_Growling_4;
 
-	public global::UnityEngine.GameObject Alien_Growling_5;
+	//public global::UnityEngine.GameObject Alien_Growling_5;
 
-	public global::UnityEngine.GameObject Alien_Dash_1;
+	//public global::UnityEngine.GameObject Alien_Dash_1;
 
-	public global::UnityEngine.GameObject Alien_Dash_2;
+	//public global::UnityEngine.GameObject Alien_Dash_2;
 
-	public global::UnityEngine.GameObject Alien_Dash_3;
+	//public global::UnityEngine.GameObject Alien_Dash_3;
 
-	public global::UnityEngine.GameObject Alien_Dash_4;
+	//public global::UnityEngine.GameObject Alien_Dash_4;
 
-	public global::UnityEngine.GameObject Alien_Dmg_1;
+	//public global::UnityEngine.GameObject Alien_Dmg_1;
 
-	public global::UnityEngine.GameObject Alien_Dmg_2;
+	//public global::UnityEngine.GameObject Alien_Dmg_2;
 
-	public global::UnityEngine.GameObject Alien_Death_1;
+	//public global::UnityEngine.GameObject Alien_Death_1;
 
-	public global::UnityEngine.GameObject Alien_Death_2;
+	//public global::UnityEngine.GameObject Alien_Death_2;
 
-	public global::UnityEngine.GameObject Alien_Death_3;
+	//public global::UnityEngine.GameObject Alien_Death_3;
 
-	public global::UnityEngine.GameObject Alien_Death_4;
+	//public global::UnityEngine.GameObject Alien_Death_4;
 
-	public global::UnityEngine.GameObject Alien_Death_5;
+	//public global::UnityEngine.GameObject Alien_Death_5;
 
-	public global::UnityEngine.GameObject Mon_8_Dmg;
+	//public global::UnityEngine.GameObject Mon_8_Dmg;
 
-	public global::UnityEngine.GameObject Mon_7_Atk;
+	//public global::UnityEngine.GameObject Mon_7_Atk;
 
-	public global::UnityEngine.GameObject Mon_7_Dmg;
+	//public global::UnityEngine.GameObject Mon_7_Dmg;
 
-	public global::UnityEngine.GameObject Mon_6_Dmg;
+	//public global::UnityEngine.GameObject Mon_6_Dmg;
 
-	public global::UnityEngine.GameObject Mon_5_Dmg;
+	//public global::UnityEngine.GameObject Mon_5_Dmg;
 
-	public global::UnityEngine.GameObject Mon_4_Dmg;
+	//public global::UnityEngine.GameObject Mon_4_Dmg;
 
-	public global::UnityEngine.GameObject Mon_3_Dmg;
+	//public global::UnityEngine.GameObject Mon_3_Dmg;
 
-	public global::UnityEngine.GameObject Mon_2_Dmg;
+	//public global::UnityEngine.GameObject Mon_2_Dmg;
 
-	public global::UnityEngine.GameObject Mon_1_Dmg;
+	//public global::UnityEngine.GameObject Mon_1_Dmg;
 
-	public global::UnityEngine.GameObject Mob_Dmg;
+	//public global::UnityEngine.GameObject Mob_Dmg;
 
-	public global::UnityEngine.GameObject Mon_10_Atk;
+	//public global::UnityEngine.GameObject Mon_10_Atk;
 
-	public global::UnityEngine.GameObject Mon_10_Dmg1;
+	//public global::UnityEngine.GameObject Mon_10_Dmg1;
 
-	public global::UnityEngine.GameObject Mon_10_Dmg2;
+	//public global::UnityEngine.GameObject Mon_10_Dmg2;
 
-	public global::UnityEngine.GameObject Mon_10_Dmg3;
+	//public global::UnityEngine.GameObject Mon_10_Dmg3;
 
-	public global::UnityEngine.GameObject[] s_List;
+	//public global::UnityEngine.GameObject[] s_List;
+
+	string Sound_Magic_1 = "prefabs/sound/Sound_Magic1";
+	string Sound_Magic_2 = "prefabs/sound/Sound_Magic2";
+	string Sound_Magic_3_Explo_1 = "prefabs/sound/Sound_Magic3_Explo_1";
+	string Sound_Magic_3_Explo_2 = "prefabs/sound/Sound_Magic3_Explo_2";
+	string Sound_Magic_3_Explo_3 = "prefabs/sound/Sound_Magic3_Explo_3";
+	string Sound_Hit_1 = "prefabs/sound/Sound_Hit_1";
+	string Sound_Hit_2 = "prefabs/sound/Sound_Hit_2";
+	string Sound_Hit_3 = "prefabs/sound/Sound_Hit_3";
+	string Sound_Hit_4 = "prefabs/sound/Sound_Hit_4";
+	string Sound_Hit_5 = "prefabs/sound/Sound_Hit_5_Punch 02";
+	string Sound_Hit_6 = "prefabs/sound/Sound_Hit_6_Punch 02";
+	string Sound_Hit_11 = "prefabs/sound/Sound_Hit_11_Sword";
+	string Sound_Hit_12 = "prefabs/sound/Sound_Hit_12_Drum";
+	string Sound_Hit_Explo = "prefabs/sound/Sound_MonExplo";
+	string Sound_Footstep_Mon_1 = "prefabs/sound/Footstep_Mon_1";
+	string Sound_Footstep_Mon_2 = "prefabs/sound/Footstep_Mon_2";
+	string Sound_MonAtk_1 = "prefabs/sound/Sound_MonWhoosh_1";
+	string Sound_MonAtk_2 = "prefabs/sound/Sound_MonWhoosh_2";
+	string Sound_MonAtk_3 = "prefabs/sound/Sound_MonWhoosh_3";
+	string Sound_MonAtk_4 = "prefabs/sound/Sound_MonWhoosh_4";
+	string Sound_MonAtk_5 = "prefabs/sound/Sound_MonWhoosh_5";
+	string Sound_MonAtk_6 = "prefabs/sound/Sound_MonWhoosh_6";
+	string Sound_MonAtk_7 = "prefabs/sound/Sound_MonWhoosh_7";
+	string Sound_Elec = "prefabs/sound/Sound_Elec";
+	string Sound_Plasma = "prefabs/sound/Sound_Plasma";
+	string Mon_10_Growling_1 = "prefabs/sound/mon/Sound_M10_1";
+	string Mon_10_Growling_2 = "prefabs/sound/mon/Sound_M10_2";
+	string Mon_10_Growling_3 = "prefabs/sound/mon/Sound_M10_3";
+	string Mon_10_Growling_4 = "prefabs/sound/mon/Sound_M10_4";
+	string Alien_Growling_1 = "prefabs/sound/mon/Sound_Alien_Growl_1";
+	string Alien_Growling_2 = "prefabs/sound/mon/Sound_Alien_Growl_2";
+	string Alien_Growling_3 = "prefabs/sound/mon/Sound_Alien_Growl_3";
+	string Alien_Growling_4 = "prefabs/sound/mon/Sound_Alien_Growl_4";
+	string Alien_Growling_5 = "prefabs/sound/mon/Sound_Alien_Growl_5";
+	string Alien_Dash_1 = "prefabs/sound/mon/Sound_Alien_Dash_1";
+	string Alien_Dash_2 = "prefabs/sound/mon/Sound_Alien_Dash_2";
+	string Alien_Dash_3 = "prefabs/sound/mon/Sound_Alien_Dash_3";
+	string Alien_Dash_4 = "prefabs/sound/mon/Sound_Alien_Dash_4";
+	string Alien_Dmg_1 = "prefabs/sound/mon/Sound_Alien_Dmg_1";
+	string Alien_Dmg_2 = "prefabs/sound/mon/Sound_Alien_Dmg_2";
+	string Alien_Death_1 = "prefabs/sound/mon/Sound_Alien_Scream_1";
+	string Alien_Death_2 = "prefabs/sound/mon/Sound_Alien_Scream_2";
+	string Alien_Death_3 = "prefabs/sound/mon/Sound_Alien_Scream_3";
+	string Alien_Death_4 = "prefabs/sound/mon/Sound_Alien_Scream_4";
+	string Alien_Death_5 = "prefabs/sound/mon/Sound_Alien_Scream_5";
+	string Mon_8_Dmg = "prefabs/sound/mon/Sound_M8_D";
+	string Mon_7_Atk = "prefabs/sound/mon/Sound_M7_Atk";
+	string Mon_7_Dmg = "prefabs/sound/mon/Sound_M7_D";
+	string Mon_6_Dmg = "prefabs/sound/mon/Sound_M5_D";
+	string Mon_5_Dmg = "prefabs/sound/mon/Sound_M5_D";
+	string Mon_4_Dmg = "prefabs/sound/mon/Sound_M4_D";
+	string Mon_3_Dmg = "prefabs/sound/mon/Sound_M3_D";
+	string Mon_2_Dmg = "prefabs/sound/mon/Sound_M2_D";
+	string Mon_1_Dmg = "prefabs/sound/mon/Sound_M1_D";
+	string Mob_Dmg = "prefabs/sound/mon/Sound_Mob_D";
+	string Mon_10_Atk = "prefabs/sound/mon/Sound_M10_Atk1";
+	string Mon_10_Dmg1 = "prefabs/sound/mon/Sound_M10_D1";
+	string Mon_10_Dmg2 = "prefabs/sound/mon/Sound_M10_D2";
+	string Mon_10_Dmg3 = "prefabs/sound/mon/Sound_M10_Death";
+	string[] s_List = new string[2] { "prefabs/sound/Sound_MotherFire", "prefabs/sound/bg/Sound_HiddenPassage" };
+
 
 	private float hit_Timer;
 
@@ -202,6 +264,76 @@ public class Sound_Control : global::UnityEngine.MonoBehaviour
 
 	private float Test_Timer;
 
+	//string GetPrefabPath(GameObject obj)
+	//{
+	//	return AssetDatabase.GetAssetPath(obj);
+	//}
+
+	//private void Awake()
+	//{
+	//	string str = string.Empty;
+	//	str += $"string Sound_Magic_1 = \"{GetPrefabPath(Sound_Magic_1)}\";\r\n";
+	//	str += $"string Sound_Magic_2 = \"{GetPrefabPath(Sound_Magic_2)}\";\r\n";
+	//	str += $"string Sound_Magic_3_Explo_1 = \"{GetPrefabPath(Sound_Magic_3_Explo_1)}\";\r\n";
+	//	str += $"string Sound_Magic_3_Explo_2 = \"{GetPrefabPath(Sound_Magic_3_Explo_2)}\";\r\n";
+	//	str += $"string Sound_Magic_3_Explo_3 = \"{GetPrefabPath(Sound_Magic_3_Explo_3)}\";\r\n";
+	//	str += $"string Sound_Hit_1 = \"{GetPrefabPath(Sound_Hit_1)}\";\r\n";
+	//	str += $"string Sound_Hit_2 = \"{GetPrefabPath(Sound_Hit_2)}\";\r\n";
+	//	str += $"string Sound_Hit_3 = \"{GetPrefabPath(Sound_Hit_3)}\";\r\n";
+	//	str += $"string Sound_Hit_4 = \"{GetPrefabPath(Sound_Hit_4)}\";\r\n";
+	//	str += $"string Sound_Hit_5 = \"{GetPrefabPath(Sound_Hit_5)}\";\r\n";
+	//	str += $"string Sound_Hit_6 = \"{GetPrefabPath(Sound_Hit_6)}\";\r\n";
+	//	str += $"string Sound_Hit_11 = \"{GetPrefabPath(Sound_Hit_11)}\";\r\n";
+	//	str += $"string Sound_Hit_12 = \"{GetPrefabPath(Sound_Hit_12)}\";\r\n";
+	//	str += $"string Sound_Hit_Explo = \"{GetPrefabPath(Sound_Hit_Explo)}\";\r\n";
+	//	str += $"string Sound_Footstep_Mon_1 = \"{GetPrefabPath(Sound_Footstep_Mon_1)}\";\r\n";
+	//	str += $"string Sound_Footstep_Mon_2 = \"{GetPrefabPath(Sound_Footstep_Mon_2)}\";\r\n";
+	//	str += $"string Sound_MonAtk_1 = \"{GetPrefabPath(Sound_MonAtk_1)}\";\r\n";
+	//	str += $"string Sound_MonAtk_2 = \"{GetPrefabPath(Sound_MonAtk_2)}\";\r\n";
+	//	str += $"string Sound_MonAtk_3 = \"{GetPrefabPath(Sound_MonAtk_3)}\";\r\n";
+	//	str += $"string Sound_MonAtk_4 = \"{GetPrefabPath(Sound_MonAtk_4)}\";\r\n";
+	//	str += $"string Sound_MonAtk_5 = \"{GetPrefabPath(Sound_MonAtk_5)}\";\r\n";
+	//	str += $"string Sound_MonAtk_6 = \"{GetPrefabPath(Sound_MonAtk_6)}\";\r\n";
+	//	str += $"string Sound_MonAtk_7 = \"{GetPrefabPath(Sound_MonAtk_7)}\";\r\n";
+	//	str += $"string Sound_Elec = \"{GetPrefabPath(Sound_Elec)}\";\r\n";
+	//	str += $"string Sound_Plasma = \"{GetPrefabPath(Sound_Plasma)}\";\r\n";
+	//	str += $"string Mon_10_Growling_1 = \"{GetPrefabPath(Mon_10_Growling_1)}\";\r\n";
+	//	str += $"string Mon_10_Growling_2 = \"{GetPrefabPath(Mon_10_Growling_2)}\";\r\n";
+	//	str += $"string Mon_10_Growling_3 = \"{GetPrefabPath(Mon_10_Growling_3)}\";\r\n";
+	//	str += $"string Mon_10_Growling_4 = \"{GetPrefabPath(Mon_10_Growling_4)}\";\r\n";
+	//	str += $"string Alien_Growling_1 = \"{GetPrefabPath(Alien_Growling_1)}\";\r\n";
+	//	str += $"string Alien_Growling_2 = \"{GetPrefabPath(Alien_Growling_2)}\";\r\n";
+	//	str += $"string Alien_Growling_3 = \"{GetPrefabPath(Alien_Growling_3)}\";\r\n";
+	//	str += $"string Alien_Growling_4 = \"{GetPrefabPath(Alien_Growling_4)}\";\r\n";
+	//	str += $"string Alien_Growling_5 = \"{GetPrefabPath(Alien_Growling_5)}\";\r\n";
+	//	str += $"string Alien_Dash_1 = \"{GetPrefabPath(Alien_Dash_1)}\";\r\n";
+	//	str += $"string Alien_Dash_2 = \"{GetPrefabPath(Alien_Dash_2)}\";\r\n";
+	//	str += $"string Alien_Dash_3 = \"{GetPrefabPath(Alien_Dash_3)}\";\r\n";
+	//	str += $"string Alien_Dash_4 = \"{GetPrefabPath(Alien_Dash_4)}\";\r\n";
+	//	str += $"string Alien_Dmg_1 = \"{GetPrefabPath(Alien_Dmg_1)}\";\r\n";
+	//	str += $"string Alien_Dmg_2 = \"{GetPrefabPath(Alien_Dmg_2)}\";\r\n";
+	//	str += $"string Alien_Death_1 = \"{GetPrefabPath(Alien_Death_1)}\";\r\n";
+	//	str += $"string Alien_Death_2 = \"{GetPrefabPath(Alien_Death_2)}\";\r\n";
+	//	str += $"string Alien_Death_3 = \"{GetPrefabPath(Alien_Death_3)}\";\r\n";
+	//	str += $"string Alien_Death_4 = \"{GetPrefabPath(Alien_Death_4)}\";\r\n";
+	//	str += $"string Alien_Death_5 = \"{GetPrefabPath(Alien_Death_5)}\";\r\n";
+	//	str += $"string Mon_8_Dmg = \"{GetPrefabPath(Mon_8_Dmg)}\";\r\n";
+	//	str += $"string Mon_7_Atk = \"{GetPrefabPath(Mon_7_Atk)}\";\r\n";
+	//	str += $"string Mon_7_Dmg = \"{GetPrefabPath(Mon_7_Dmg)}\";\r\n";
+	//	str += $"string Mon_6_Dmg = \"{GetPrefabPath(Mon_6_Dmg)}\";\r\n";
+	//	str += $"string Mon_5_Dmg = \"{GetPrefabPath(Mon_5_Dmg)}\";\r\n";
+	//	str += $"string Mon_4_Dmg = \"{GetPrefabPath(Mon_4_Dmg)}\";\r\n";
+	//	str += $"string Mon_3_Dmg = \"{GetPrefabPath(Mon_3_Dmg)}\";\r\n";
+	//	str += $"string Mon_2_Dmg = \"{GetPrefabPath(Mon_2_Dmg)}\";\r\n";
+	//	str += $"string Mon_1_Dmg = \"{GetPrefabPath(Mon_1_Dmg)}\";\r\n";
+	//	str += $"string Mob_Dmg = \"{GetPrefabPath(Mob_Dmg)}\";\r\n";
+	//	str += $"string Mon_10_Atk = \"{GetPrefabPath(Mon_10_Atk)}\";\r\n";
+	//	str += $"string Mon_10_Dmg1 = \"{GetPrefabPath(Mon_10_Dmg1)}\";\r\n";
+	//	str += $"string Mon_10_Dmg2 = \"{GetPrefabPath(Mon_10_Dmg2)}\";\r\n";
+	//	str += $"string Mon_10_Dmg3 = \"{GetPrefabPath(Mon_10_Dmg3)}\";\r\n";
+	//	str += "string[] s_List = new string[2] { \""+ GetPrefabPath(s_List[0]) + "\", \""+ GetPrefabPath(s_List[1]) + "\" };\r\n";
+	//	Debug.Log("Sound_Control=>\r\n" + str);
+	//}
 	private void Update()
 	{
 		if (hit_Timer > 0f)
