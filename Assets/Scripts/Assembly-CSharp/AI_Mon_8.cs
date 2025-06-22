@@ -453,7 +453,7 @@ public class AI_Mon_8 : global::UnityEngine.MonoBehaviour
 		GM.onHscene = true;
 		GM.Hscene_Timer = 1f;
 		GM.Hscene_Num = ((global::UnityEngine.Random.Range(0, 10) <= 5) ? 5 : 6);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[-5 + GM.Hscene_Num], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[-5 + GM.Hscene_Num], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		base.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x + ((float)GM.Hscene_Num - 4.8f) * 0.3f * (float)(-facingRight), Player.transform.position.y + 2.82f, 0f);
 		if (facingRight > 0)
@@ -478,7 +478,7 @@ public class AI_Mon_8 : global::UnityEngine.MonoBehaviour
 		{
 			GM.GetComponent<H_Control>().H_Object.SendMessage("Delete_ToDual");
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[2], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[2], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (GM.GetComponent<H_Control>().facingRight > 0)
 		{

@@ -109,7 +109,7 @@ public class Boss_5_Platform : global::UnityEngine.MonoBehaviour
 		num = ((global::UnityEngine.Random.Range(0, 10) > 5) ? 1 : 0);
 		GM.Hscene_Num = 42 + num;
 		bool flag = ((Player.transform.position.x > base.transform.position.x) ? true : false);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[num], (!flag) ? Pos_H[num].position : Pos_H_Flip[num].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[num], (!flag) ? Pos_H[num].position : Pos_H_Flip[num].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (flag)
 		{

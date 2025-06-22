@@ -680,11 +680,11 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 		float angle = Get_Angle();
 		Fire_Timer = 0f;
 		angle = Check_Fire_Angle(angle);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 20f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 20f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 40f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 40f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 20f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 20f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 40f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 40f)) as global::UnityEngine.GameObject;
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
 	}
 
@@ -775,7 +775,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 		{
 			Player.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x - 1.5f * (float)facingRight, Player.transform.position.y, 0f);
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (facingRight > 0)
 		{

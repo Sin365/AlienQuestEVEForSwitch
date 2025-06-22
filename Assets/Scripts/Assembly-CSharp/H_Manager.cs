@@ -79,7 +79,7 @@ public class H_Manager : global::UnityEngine.MonoBehaviour
 				break;
 			}
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Play[H_num], position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Play[H_num], position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		if (H_num == 1)
 		{
 			gameObject.SendMessage("Start_H8_Dummy");
@@ -94,7 +94,7 @@ public class H_Manager : global::UnityEngine.MonoBehaviour
 			global::UnityEngine.Object.Destroy(GameOver_Now.gameObject);
 		}
 		GameOver_Num = num;
-		GameOver_Now = global::UnityEngine.Object.Instantiate(H_GameOver[num - 1], base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		GameOver_Now = AxiObject.Instantiate(H_GameOver[num - 1], base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 	}
 
 	public void Delete_GameOver()

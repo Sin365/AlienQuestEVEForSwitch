@@ -59,7 +59,7 @@ public class Dust_Control : global::UnityEngine.MonoBehaviour
 			{
 				Dust_Timer = 0f;
 				Dust_Num++;
-				Dust_List[i] = global::UnityEngine.Object.Instantiate(_dust) as global::UnityEngine.GameObject;
+				Dust_List[i] = AxiObject.Instantiate(_dust) as global::UnityEngine.GameObject;
 				Dust_List[i].transform.parent = base.transform;
 				Make_Dust(i);
 			}

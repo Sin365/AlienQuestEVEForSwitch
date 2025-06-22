@@ -33,7 +33,7 @@ public class LV_0_InfoDoor : global::UnityEngine.MonoBehaviour
 		{
 			Stay_Timer = 0f;
 			Info_Timer = 6f;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(info_Dialog) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(info_Dialog) as global::UnityEngine.GameObject;
 			if (GM.Language_Num == 1)
 			{
 				gameObject.GetComponent<Info_Dialog>().Set_Size(300f);

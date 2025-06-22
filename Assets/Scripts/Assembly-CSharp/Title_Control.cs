@@ -1176,7 +1176,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 	{
 		if (Save_Slot_1 == null && GetComponent<Save_Control>().SaveData.isSaved[0])
 		{
-			Save_Slot_1 = global::UnityEngine.Object.Instantiate(Slot_Obj) as global::UnityEngine.GameObject;
+			Save_Slot_1 = AxiObject.Instantiate(Slot_Obj) as global::UnityEngine.GameObject;
             //Save_Slot_1.GetComponent<global::UnityEngine.RectTransform>().parent = GetComponent<global::UnityEngine.RectTransform>();
             Save_Slot_1.GetComponent<global::UnityEngine.RectTransform>().SetParent(GetComponent<global::UnityEngine.RectTransform>(),false);
             Save_Slot_1.GetComponent<global::UnityEngine.RectTransform>().position = global::UnityEngine.GameObject.Find("Pos_Slot_1").GetComponent<global::UnityEngine.RectTransform>().position;
@@ -1186,7 +1186,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 		}
 		if (Save_Slot_2 == null && GetComponent<Save_Control>().SaveData.isSaved[1])
 		{
-			Save_Slot_2 = global::UnityEngine.Object.Instantiate(Slot_Obj) as global::UnityEngine.GameObject;
+			Save_Slot_2 = AxiObject.Instantiate(Slot_Obj) as global::UnityEngine.GameObject;
             //Save_Slot_2.GetComponent<global::UnityEngine.RectTransform>().parent = GetComponent<global::UnityEngine.RectTransform>();
             Save_Slot_2.GetComponent<global::UnityEngine.RectTransform>().SetParent(GetComponent<global::UnityEngine.RectTransform>(),false);
             Save_Slot_2.GetComponent<global::UnityEngine.RectTransform>().position = global::UnityEngine.GameObject.Find("Pos_Slot_2").GetComponent<global::UnityEngine.RectTransform>().position;
@@ -1196,7 +1196,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 		}
 		if (Save_Slot_3 == null && GetComponent<Save_Control>().SaveData.isSaved[2])
 		{
-			Save_Slot_3 = global::UnityEngine.Object.Instantiate(Slot_Obj) as global::UnityEngine.GameObject;
+			Save_Slot_3 = AxiObject.Instantiate(Slot_Obj) as global::UnityEngine.GameObject;
             //Save_Slot_3.GetComponent<global::UnityEngine.RectTransform>().parent = GetComponent<global::UnityEngine.RectTransform>();
             Save_Slot_3.GetComponent<global::UnityEngine.RectTransform>().SetParent(GetComponent<global::UnityEngine.RectTransform>(),false);
             Save_Slot_3.GetComponent<global::UnityEngine.RectTransform>().position = global::UnityEngine.GameObject.Find("Pos_Slot_3").GetComponent<global::UnityEngine.RectTransform>().position;
@@ -1246,7 +1246,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 			{
 				isSaved = false;
 			}
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(InfoDel_Obj) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(InfoDel_Obj) as global::UnityEngine.GameObject;
             //gameObject.GetComponent<global::UnityEngine.RectTransform>().parent = GetComponent<global::UnityEngine.RectTransform>();
             gameObject.GetComponent<global::UnityEngine.RectTransform>().SetParent(GetComponent<global::UnityEngine.RectTransform>(),false);
             gameObject.GetComponent<global::UnityEngine.RectTransform>().position = global::UnityEngine.GameObject.Find("Pos_InfoSlot" + num).GetComponent<global::UnityEngine.RectTransform>().position;

@@ -35,7 +35,7 @@ public class Stage_Control_5 : global::UnityEngine.MonoBehaviour
 					global::UnityEngine.GameObject.Find("Queen").SendMessage("WakeUp");
 					return;
 				}
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Queen, new global::UnityEngine.Vector3(224f, 14f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Queen, new global::UnityEngine.Vector3(224f, 14f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.name = "Queen";
 				gameObject.SendMessage("WakeUp");
 			}

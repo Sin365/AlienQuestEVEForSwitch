@@ -90,12 +90,12 @@ public class Trap_Laser_Group : global::UnityEngine.MonoBehaviour
 	{
 		if (facingRight < 0)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Laser_Beam, new global::UnityEngine.Vector3(base.transform.position.x - 9.5f + (float)num, base.transform.position.y + 0.58f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Laser_Beam, new global::UnityEngine.Vector3(base.transform.position.x - 9.5f + (float)num, base.transform.position.y + 0.58f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 			gameObject.transform.localScale = new global::UnityEngine.Vector3(2f, LengthSize, 1f);
 		}
 		else
 		{
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Laser_Beam, new global::UnityEngine.Vector3(base.transform.position.x + 9.5f - (float)num, base.transform.position.y + 0.58f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Laser_Beam, new global::UnityEngine.Vector3(base.transform.position.x + 9.5f - (float)num, base.transform.position.y + 0.58f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 			gameObject2.transform.localScale = new global::UnityEngine.Vector3(2f, LengthSize, 1f);
 		}
 		if (num == 0 || num == 10 || num == 19)

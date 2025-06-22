@@ -59,7 +59,7 @@ public class Hidden_Passage_2 : global::UnityEngine.MonoBehaviour
 			global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(pos_dust.position.x, pos_dust.position.y + 3.2f, 0f);
 			for (int j = 0; j < dust_Max; j++)
 			{
-				Dust_List[j] = global::UnityEngine.Object.Instantiate(_dust, position, base.transform.rotation) as global::UnityEngine.GameObject;
+				Dust_List[j] = AxiObject.Instantiate(_dust, position, base.transform.rotation) as global::UnityEngine.GameObject;
 				Dust_List[j].transform.parent = base.transform;
 				Dust_List[j].GetComponent<global::UnityEngine.SpriteRenderer>().color = color_OFF;
 				Dust_Speed[j] = global::UnityEngine.Random.Range(1f, 6f);
@@ -94,7 +94,7 @@ public class Hidden_Passage_2 : global::UnityEngine.MonoBehaviour
 		{
 			onEnabled = true;
 			Col_Block.enabled = false;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_Force, PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_sound_Force, PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		}
 	}
 

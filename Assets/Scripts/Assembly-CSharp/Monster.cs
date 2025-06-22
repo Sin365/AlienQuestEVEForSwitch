@@ -897,7 +897,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo(global::UnityEngine.GameObject posObj, bool isFlip)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, posObj.transform.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, posObj.transform.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
 		if (isFlip)
 		{
 			gameObject.transform.localScale = new global::UnityEngine.Vector3(posObj.transform.localScale.x * -1f, posObj.transform.localScale.y, 1f);
@@ -914,29 +914,29 @@ public class Monster : global::UnityEngine.MonoBehaviour
 		bool flag = false;
 		if (_Item_Potion_HP != null && global::UnityEngine.Random.Range(0, 10) > 7)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Item_Potion_HP, new global::UnityEngine.Vector3(base.transform.position.x + global::UnityEngine.Random.Range(-1f, 1f), base.transform.position.y + global::UnityEngine.Random.Range(-1f, 1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Item_Potion_HP, new global::UnityEngine.Vector3(base.transform.position.x + global::UnityEngine.Random.Range(-1f, 1f), base.transform.position.y + global::UnityEngine.Random.Range(-1f, 1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 			flag = true;
 		}
 		if (!flag && _Item_Potion_MP != null && global::UnityEngine.Random.Range(0, 10) > 7)
 		{
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Item_Potion_MP, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Item_Potion_MP, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		}
 	}
 
 	private void Make_BloodSkull()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Item_Potion_HP, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + 2f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Item_Potion_HP, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + 2f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.GetComponent<Item>().Bonus_Index = Event_Num;
 	}
 
 	private void Make_HP_Potion()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Item_Potion_HP, new global::UnityEngine.Vector3(base.transform.position.x + global::UnityEngine.Random.Range(-1.5f, 1.5f), base.transform.position.y + global::UnityEngine.Random.Range(-1.5f, 1.5f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Item_Potion_HP, new global::UnityEngine.Vector3(base.transform.position.x + global::UnityEngine.Random.Range(-1.5f, 1.5f), base.transform.position.y + global::UnityEngine.Random.Range(-1.5f, 1.5f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 	}
 
 	private void Make_MP_Potion()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Item_Potion_MP, new global::UnityEngine.Vector3(base.transform.position.x + global::UnityEngine.Random.Range(-1.5f, 1.5f), base.transform.position.y + global::UnityEngine.Random.Range(-1.5f, 1.5f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Item_Potion_MP, new global::UnityEngine.Vector3(base.transform.position.x + global::UnityEngine.Random.Range(-1.5f, 1.5f), base.transform.position.y + global::UnityEngine.Random.Range(-1.5f, 1.5f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 	}
 
 	public void Make_Potion(int HP_min, int HP_max, int MP_min, int MP_max)
@@ -965,7 +965,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 		for (int i = 0; i < num; i++)
 		{
 			global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(base.transform.position.x + (float)global::UnityEngine.Random.Range(-200, 200) * 0.01f, base.transform.position.y + (float)global::UnityEngine.Random.Range(-200, 200) * 0.01f, 0f);
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Blood_Obj, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Blood_Obj, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		}
 	}
 
@@ -1584,7 +1584,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 	{
 		if (_Icon != null)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Icon, new global::UnityEngine.Vector3(0f, 0f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Icon, new global::UnityEngine.Vector3(0f, 0f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 			gameObject.GetComponent<Info_MonIcon>().Mon_Num = Mon_Num;
 			gameObject.GetComponent<Info_MonIcon>().MonCenter = base.transform;
 			gameObject.GetComponent<Info_MonIcon>().Set_MonIcon(Icon_Spr);

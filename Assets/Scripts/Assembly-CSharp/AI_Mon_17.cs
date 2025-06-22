@@ -92,7 +92,7 @@ public class AI_Mon_17 : global::UnityEngine.MonoBehaviour
 			if (Explo_Timer > 1.25f)
 			{
 				global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y, 0f);
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Explo, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Explo, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 				AxiSoundPool.AddSoundForPosRot(Sound_Explo, base.transform.position, base.transform.rotation);
 				global::UnityEngine.Object.Destroy(base.gameObject);
 			}

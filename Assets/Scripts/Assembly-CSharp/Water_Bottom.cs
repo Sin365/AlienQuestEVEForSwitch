@@ -104,13 +104,13 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			{
 				sound_walk_index = 0;
 			}
-			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_WaterWalk[sound_walk_index], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			//global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_sound_WaterWalk[sound_walk_index], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			AxiSoundPool.AddSoundForPosRot(_sound_WaterWalk[sound_walk_index], PC.transform.position, base.transform.rotation);
 		}
 		if (Player_Walk_Timer_2 <= 0f)
 		{
 			Player_Walk_Timer_2 = 1.2f;
-			//global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_sound_WaterWalk[3], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			//global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_sound_WaterWalk[3], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			AxiSoundPool.AddSoundForPosRot(_sound_WaterWalk[3], PC.transform.position, base.transform.rotation);
 		}
 	}
@@ -120,7 +120,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 		Hightlight_Timer = global::UnityEngine.Random.Range(0.025f, 0.1f);
 		for (int i = 0; i < 2; i++)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Highlight, new global::UnityEngine.Vector3(pos_Center[num].position.x + global::UnityEngine.Random.Range(-8f, 8f), base.transform.position.y - 0.08f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_water_Highlight, new global::UnityEngine.Vector3(pos_Center[num].position.x + global::UnityEngine.Random.Range(-8f, 8f), base.transform.position.y - 0.08f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		}
 	}
 
@@ -132,7 +132,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			pos_Dust = new global::UnityEngine.Vector3(PC.transform.position.x, base.transform.position.y, 0f);
 			for (int i = 0; i < 5; i++)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1f, 1f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1f, 1f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-70, 70) * PC.facingRight, global::UnityEngine.Random.Range(150, 220)));
 			}
 		}
@@ -146,7 +146,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			pos_Dust = new global::UnityEngine.Vector3(PC.transform.position.x, base.transform.position.y, 0f);
 			for (int i = 0; i < 10; i++)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1f, 1f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1f, 1f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-50, 200) * PC.facingRight, global::UnityEngine.Random.Range(150, 300)));
 			}
 		}
@@ -160,7 +160,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			pos_Dust = new global::UnityEngine.Vector3(PC.transform.position.x, base.transform.position.y, 0f);
 			for (int i = 0; i < 50; i++)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-0.5f, 0.5f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.8f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-0.5f, 0.5f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.8f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-80, 80), global::UnityEngine.Random.Range(150, 500)));
 			}
 		}
@@ -174,7 +174,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			pos_Dust = new global::UnityEngine.Vector3(PC.transform.position.x, base.transform.position.y, 0f);
 			for (int i = 0; i < 80; i++)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1f, 1f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_water_Dust, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1f, 1f), pos_Dust.y + global::UnityEngine.Random.Range(0f, 0.1f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-200, 200), global::UnityEngine.Random.Range(150, 500)));
 			}
 		}
@@ -187,7 +187,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			Dust_2_Timer = 0.2f;
 			for (int i = 0; i < 4; i++)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust_2, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1.5f, 1.5f), base.transform.position.y - global::UnityEngine.Random.Range(0.5f, 0.6f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_water_Dust_2, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1.5f, 1.5f), base.transform.position.y - global::UnityEngine.Random.Range(0.5f, 0.6f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-20, 20) * PC.facingRight, global::UnityEngine.Random.Range(0, 50)));
 			}
 		}
@@ -200,7 +200,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			Dust_2_Timer = 0.1f;
 			for (int i = 0; i < 7; i++)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_water_Dust_2, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1.5f, 1.5f), base.transform.position.y - global::UnityEngine.Random.Range(0.5f, 0.6f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_water_Dust_2, new global::UnityEngine.Vector3(pos_Dust.x + global::UnityEngine.Random.Range(-1.5f, 1.5f), base.transform.position.y - global::UnityEngine.Random.Range(0.5f, 0.6f), 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(global::UnityEngine.Random.Range(-20, 20) * PC.facingRight, global::UnityEngine.Random.Range(0, 50)));
 			}
 		}
@@ -210,7 +210,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 	{
 		if (!GM.Paused && col.name == "Ani" && (PC.State.ToString() == "Jump" || PC.State.ToString() == "Down"))
 		{
-			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_WaterImpact[0], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			//global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_sound_WaterImpact[0], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			AxiSoundPool.AddSoundForPosRot(_sound_WaterImpact[0], PC.transform.position, base.transform.rotation);
 			Make_Dust_1_Jump_Begin();
 			Make_Dust_2_Jump();
@@ -221,7 +221,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 	{
 		if (!GM.Paused && col.name == "Ani" && (PC.State.ToString() == "Jump" || PC.State.ToString() == "Down"))
 		{
-			//global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_sound_WaterImpact[1], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			//global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_sound_WaterImpact[1], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			AxiSoundPool.AddSoundForPosRot(_sound_WaterImpact[1], PC.transform.position, base.transform.rotation);
 			Make_Dust_1_Jump_End();
 			Make_Dust_2_Jump();

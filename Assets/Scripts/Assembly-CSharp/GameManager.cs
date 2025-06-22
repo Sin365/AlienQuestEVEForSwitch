@@ -895,7 +895,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
                             gobj_Ani.SendMessage("Set_FaceHugger");
                         }
                         global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(PC.transform.position.x, PC.transform.position.y + 5.5f, 0f);
-                        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Damage_Font, position, base.transform.rotation) as global::UnityEngine.GameObject;
+                        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Damage_Font, position, base.transform.rotation) as global::UnityEngine.GameObject;
                         gameObject.GetComponent<Dmg_Font>().Set_Number(10, 4);
                         UC.Set_Damage();
                     }
@@ -932,7 +932,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
                         if (HP < Poison_DMG + 1)
                         {
                             global::UnityEngine.Vector3 position2 = gobj_Pos_PlayerPoisonDmg.transform.position;
-                            global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(position: new global::UnityEngine.Vector3(position2.x + (float)global::UnityEngine.Random.Range(-40, 40) * 0.01f, position2.y + (float)global::UnityEngine.Random.Range(0, 100) * 0.01f, 0f), original: Damage_Font, rotation: base.transform.rotation) as global::UnityEngine.GameObject;
+                            global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(position: new global::UnityEngine.Vector3(position2.x + (float)global::UnityEngine.Random.Range(-40, 40) * 0.01f, position2.y + (float)global::UnityEngine.Random.Range(0, 100) * 0.01f, 0f), original: Damage_Font, rotation: base.transform.rotation) as global::UnityEngine.GameObject;
                             gameObject2.GetComponent<Dmg_Font>().Set_Number(HP - 1, 8);
                             HP = 1;
                             UC.Set_Damage();
@@ -940,7 +940,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
                         else
                         {
                             global::UnityEngine.Vector3 position3 = gobj_Pos_PlayerPoisonDmg.transform.position;
-                            global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(position: new global::UnityEngine.Vector3(position3.x + (float)global::UnityEngine.Random.Range(-40, 40) * 0.01f, position3.y + (float)global::UnityEngine.Random.Range(0, 100) * 0.01f, 0f), original: Damage_Font, rotation: base.transform.rotation) as global::UnityEngine.GameObject;
+                            global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(position: new global::UnityEngine.Vector3(position3.x + (float)global::UnityEngine.Random.Range(-40, 40) * 0.01f, position3.y + (float)global::UnityEngine.Random.Range(0, 100) * 0.01f, 0f), original: Damage_Font, rotation: base.transform.rotation) as global::UnityEngine.GameObject;
                             gameObject3.GetComponent<Dmg_Font>().Set_Number(Poison_DMG, 8);
                             HP -= Poison_DMG;
                             UC.Set_Damage();
@@ -1165,7 +1165,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
             HP -= dmg;
         }
         UC.Set_Damage();
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Damage_Font, gobj_Pos_SitLock_1_C.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Damage_Font, gobj_Pos_SitLock_1_C.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
         gameObject.GetComponent<Dmg_Font>().Set_Number(dmg, 4);
         gameObject.transform.localScale = new global::UnityEngine.Vector3(1.2f, 1.2f, 1f);
         if (HP > 0)
@@ -1355,7 +1355,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     public void Info_Dialog(string text)
     {
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(info_Dialog) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(info_Dialog) as global::UnityEngine.GameObject;
         gameObject.GetComponent<Info_Dialog>().Set_Timer(3f);
         gameObject.GetComponent<Info_Dialog>().Set_Text(text);
     }
@@ -1378,15 +1378,15 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         }
         UC.Set_LevelUP();
         gobj_Menu.SendMessage("Sound_LevelUp");
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(info_LevelUp) as global::UnityEngine.GameObject;
-        global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(effect_LevelUp) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(info_LevelUp) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(effect_LevelUp) as global::UnityEngine.GameObject;
         gameObject2.transform.position = new global::UnityEngine.Vector3(PC.transform.position.x, PC.transform.position.y + 3f, 0f);
         gameObject2.transform.parent = PC.transform;
     }
 
     public void Level_Up_Effect(global::UnityEngine.Vector3 pos, float delay)
     {
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(effect_LevelUp) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(effect_LevelUp) as global::UnityEngine.GameObject;
         gameObject.transform.position = pos;
         gameObject.GetComponent<LevelUp>().Life_Timer = 0f - delay;
     }
@@ -1438,8 +1438,8 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         gobj_Main_Camera.SendMessage("Reset_Zoom");
         gobj_Main_Camera.SendMessage("Set_Vignetting_Main");
         gobj_Menu.SendMessage("Sound_LevelUp");
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(info_LevelUp) as global::UnityEngine.GameObject;
-        global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(effect_LevelUp) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(info_LevelUp) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(effect_LevelUp) as global::UnityEngine.GameObject;
         gameObject2.transform.position = new global::UnityEngine.Vector3(PC.transform.position.x, PC.transform.position.y + 3f, 0f);
         gameObject2.transform.parent = PC.transform;
     }
@@ -1659,7 +1659,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     public int Get_PoisonDamage(global::UnityEngine.Vector3 pos_Font, int type)
     {
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Damage_Font, pos_Font, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Damage_Font, pos_Font, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
         int num = 0;
         switch (type)
         {
@@ -1680,7 +1680,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     public int Get_MagicDamage(global::UnityEngine.Vector3 pos_Font, int num)
     {
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Damage_Font, pos_Font, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Damage_Font, pos_Font, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
         int num2 = Skill_DMG[num] + global::UnityEngine.Random.Range(0, 10);
         switch (num)
         {
@@ -1710,7 +1710,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         int num2 = 0;
         num2 = ((Weapon_Num == 0) ? ((ATK + Weapon_DMG[Weapon_Num] + global::UnityEngine.Random.Range(-1, 2)) * num) : ((Weapon_Num != 1) ? ((ATK + Weapon_DMG[Weapon_Num] + global::UnityEngine.Random.Range(-12, 23)) * num) : ((ATK + Weapon_DMG[Weapon_Num] + global::UnityEngine.Random.Range(-3, 6)) * num)));
         num2 = (int)((float)num2 * ratio);
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Damage_Font, pos_Font, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Damage_Font, pos_Font, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
         gameObject.GetComponent<Dmg_Font>().Set_Number(num2, num);
         if (num > 1)
         {
@@ -1721,7 +1721,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     public void Get_MonTrapDmg(int dmg, global::UnityEngine.Vector3 pos_Font)
     {
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Damage_Font, pos_Font, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Damage_Font, pos_Font, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
         gameObject.GetComponent<Dmg_Font>().Set_Number(dmg, 1);
     }
 
@@ -1953,7 +1953,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         {
             Cross_Timer = 0.1f;
             global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(PC.transform.position.x + (float)global::UnityEngine.Random.Range(-80, 80) * 0.01f, PC.transform.position.y + 2.4f + (float)global::UnityEngine.Random.Range(0, 20) * 0.1f, 0f);
-            global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Heal_Cross, position, base.transform.rotation) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Heal_Cross, position, base.transform.rotation) as global::UnityEngine.GameObject;
         }
         else
         {
@@ -1968,7 +1968,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         {
             CrossRed_Timer = 0.1f;
             global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(PC.transform.position.x + (float)global::UnityEngine.Random.Range(-80, 80) * 0.01f, PC.transform.position.y + 2.4f + (float)global::UnityEngine.Random.Range(0, 20) * 0.1f, 0f);
-            global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Heal_Cross_Red, position, base.transform.rotation) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Heal_Cross_Red, position, base.transform.rotation) as global::UnityEngine.GameObject;
         }
         else
         {
@@ -1983,7 +1983,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         {
             CrossBlue_Timer = 0.1f;
             global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(PC.transform.position.x + (float)global::UnityEngine.Random.Range(-80, 80) * 0.01f, PC.transform.position.y + 2.4f + (float)global::UnityEngine.Random.Range(0, 20) * 0.1f, 0f);
-            global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Heal_Cross_Blue, position, base.transform.rotation) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Heal_Cross_Blue, position, base.transform.rotation) as global::UnityEngine.GameObject;
         }
         else
         {
@@ -2033,7 +2033,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         UC.Set_Damage();
         PotionRed_Timer = 1.5f;
         CrossRed_Timer = 0f;
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(effect_UsePotionHP) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(effect_UsePotionHP) as global::UnityEngine.GameObject;
         gameObject.transform.position = new global::UnityEngine.Vector3(PC.transform.position.x, PC.transform.position.y + 3f, 0f);
         gameObject.transform.parent = PC.transform;
         gobj_Potion_Inventory.SendMessage("Use_Potion_HP");
@@ -2048,7 +2048,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         UC.Set_Mana();
         PotionBlue_Timer = 1.5f;
         CrossBlue_Timer = 0f;
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(effect_UsePotionMP) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(effect_UsePotionMP) as global::UnityEngine.GameObject;
         gameObject.transform.position = new global::UnityEngine.Vector3(PC.transform.position.x, PC.transform.position.y + 3f, 0f);
         gameObject.transform.parent = PC.transform;
         gobj_Potion_Inventory.SendMessage("Use_Potion_MP");
@@ -2320,7 +2320,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     private void Info_Mission_Complete(int num)
     {
-        global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(info_Mission) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(info_Mission) as global::UnityEngine.GameObject;
         int lang_num = AxiPlayerPrefs.GetInt("Language_Num");
         Language_MenuItem component = gobj_Menu.GetComponent<Language_MenuItem>();
         if (num < 3)

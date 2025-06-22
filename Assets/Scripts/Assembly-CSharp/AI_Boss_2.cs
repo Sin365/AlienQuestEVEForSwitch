@@ -860,18 +860,18 @@ public class AI_Boss_2 : global::UnityEngine.MonoBehaviour
 			vector.y -= position.y;
 			num = global::UnityEngine.Mathf.Atan2(vector.y, vector.x) * 57.29578f + 180f;
 			num = Check_Fire_Angle(num);
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + 25f)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num - 25f)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + 40f)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num - 40f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + 25f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num - 25f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + 40f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num - 40f)) as global::UnityEngine.GameObject;
 			gameObject.transform.Translate(global::UnityEngine.Vector3.right * -1.5f);
 			gameObject2.transform.Translate(global::UnityEngine.Vector3.right * -1f);
 			gameObject3.transform.Translate(global::UnityEngine.Vector3.right * -1f);
 		}
 		else
 		{
-			global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(_Fire_G, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject6 = AxiObject.Instantiate(_Fire_G, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 			gameObject6.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * -10f, global::UnityEngine.ForceMode2D.Impulse);
 			gameObject6.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * 30f * facingRight, global::UnityEngine.ForceMode2D.Impulse);
 		}
@@ -971,7 +971,7 @@ public class AI_Boss_2 : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo(global::UnityEngine.Transform posObj)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.localScale = posObj.transform.localScale;
 	}
 
@@ -986,7 +986,7 @@ public class AI_Boss_2 : global::UnityEngine.MonoBehaviour
 		{
 			Player.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x - 1f * (float)facingRight, Player.transform.position.y, 0f);
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[GM.Hscene_Num - 39], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[GM.Hscene_Num - 39], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (facingRight > 0)
 		{

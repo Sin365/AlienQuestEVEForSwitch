@@ -1748,7 +1748,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 
 	public void First_Game()
 	{
-		global::UnityEngine.GameObject gameObject = LoadRoomById(0);// global::UnityEngine.Object.Instantiate(Room[0]) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = LoadRoomById(0);// AxiObject.Instantiate(Room[0]) as global::UnityEngine.GameObject;
 		StartCoroutine("Start_Map_Pos");
 	}
 
@@ -1762,7 +1762,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.Object.Destroy(Current_Room.gameObject);
 		}
-		global::UnityEngine.GameObject gameObject = LoadRoomById(GM.Room_Num);//global::UnityEngine.Object.Instantiate(Room[GM.Room_Num]) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = LoadRoomById(GM.Room_Num);//AxiObject.Instantiate(Room[GM.Room_Num]) as global::UnityEngine.GameObject;
 //追加一句，释放掉已经没有依赖的资源
 		Resources.UnloadUnusedAssets();
 
@@ -1781,7 +1781,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 		{
 			if (Current_Lift == null)
 			{
-				global::UnityEngine.GameObject current_Lift = global::UnityEngine.Object.Instantiate(_Lift_Reactor) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject current_Lift = AxiObject.Instantiate(_Lift_Reactor) as global::UnityEngine.GameObject;
 				Current_Lift = current_Lift;
 			}
 			if (GM.Room_Num == 149)
@@ -1879,7 +1879,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 				{
 					global::UnityEngine.Object.Destroy(Current_Room.gameObject);
 				}
-				global::UnityEngine.GameObject gameObject = LoadRoomById(GM.Room_Num);// global::UnityEngine.Object.Instantiate(Room[GM.Room_Num]) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = LoadRoomById(GM.Room_Num);// AxiObject.Instantiate(Room[GM.Room_Num]) as global::UnityEngine.GameObject;
 				if (!isCheatRoom)
 				{
 					Target_Pos = gameObject.GetComponent<Room_Control>().targetPos[pos_Num].position;
@@ -1900,7 +1900,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 				}
 				if ((GM.Room_Num == 145 || GM.Room_Num == 149) && Current_Lift == null)
 				{
-					global::UnityEngine.GameObject current_Lift = global::UnityEngine.Object.Instantiate(_Lift_Reactor) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject current_Lift = AxiObject.Instantiate(_Lift_Reactor) as global::UnityEngine.GameObject;
 					Current_Lift = current_Lift;
 				}
 				isMapChanged = false;
@@ -7125,7 +7125,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 	public GameObject LoadRoomById(int id)
 	{
 		GameObject room_src = Resources.Load<GameObject>(mRoomPathList[id]);
-		GameObject gameObject = global::UnityEngine.Object.Instantiate(room_src);
+		GameObject gameObject = AxiObject.Instantiate(room_src);
 		return gameObject;
 	}
 }

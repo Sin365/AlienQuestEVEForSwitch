@@ -53,19 +53,19 @@ public class Player_SoundList : global::UnityEngine.MonoBehaviour
             {
                 case 1:
                     {
-                        //global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(Attack_1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+                        //global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(Attack_1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
                         AxiSoundPool.AddSoundForPosRot(Attack_1, base.transform.position, base.transform.rotation);
                         break;
                     }
                 case 2:
                     {
-                        //global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Attack_2, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+                        //global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Attack_2, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
                         AxiSoundPool.AddSoundForPosRot(Attack_2, base.transform.position, base.transform.rotation);
                         break;
                     }
                 default:
                     {
-                        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Attack_3, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+                        //global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Attack_3, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
                         AxiSoundPool.AddSoundForPosRot(Attack_3, base.transform.position, base.transform.rotation);
 
                         break;
@@ -76,13 +76,13 @@ public class Player_SoundList : global::UnityEngine.MonoBehaviour
 
     private void Sound_Jump()
     {
-        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Jump, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+        //global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Jump, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
         AxiSoundPool.AddSoundForPosRot(Jump, base.transform.position, base.transform.rotation);
     }
 
     private void Sound_Slide()
     {
-        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Slide, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+        //global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Slide, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
         AxiSoundPool.AddSoundForPosRot(Slide, base.transform.position, base.transform.rotation);
 
     }
@@ -92,7 +92,7 @@ public class Player_SoundList : global::UnityEngine.MonoBehaviour
         if (Spin_Timer <= 0f)
         {
             Spin_Timer = 0.05f;
-            //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Attack_3, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+            //global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Attack_3, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
             AxiSoundPool.AddSoundForPosRot(Attack_3, base.transform.position, base.transform.rotation);
 
         }
@@ -100,14 +100,14 @@ public class Player_SoundList : global::UnityEngine.MonoBehaviour
 
     private void Sound_Down()
     {
-        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Down, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+        //global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Down, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
         AxiSoundPool.AddSoundForPosRot(Down, base.transform.position, base.transform.rotation);
 
     }
 
     private void Sound_FootStep()
     {
-        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(FootStep, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+        //global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(FootStep, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
         AxiSoundPool.AddSoundForPosRot(FootStep, base.transform.position, base.transform.rotation);
     }
 
@@ -117,19 +117,19 @@ public class Player_SoundList : global::UnityEngine.MonoBehaviour
         {
             case 1:
                 {
-                    //global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(voiceDamage_1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+                    //global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(voiceDamage_1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
                     AxiSoundPool.AddSoundForPosRot(voiceDamage_1, base.transform.position, base.transform.rotation);
                     break;
                 }
             case 2:
                 {
-                    //global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(voiceDamage_2, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+                    //global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(voiceDamage_2, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
                     AxiSoundPool.AddSoundForPosRot(voiceDamage_2, base.transform.position, base.transform.rotation);
                     break;
                 }
             default:
                 {
-                    //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(voiceDamage_4, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+                    //global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(voiceDamage_4, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
                     AxiSoundPool.AddSoundForPosRot(voiceDamage_4, base.transform.position, base.transform.rotation);
                     break;
                 }
@@ -138,7 +138,7 @@ public class Player_SoundList : global::UnityEngine.MonoBehaviour
 
     private void Voice_Death()
     {
-        //global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(voiceDeath_1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+        //global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(voiceDeath_1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
         AxiSoundPool.AddSoundForPosRot(voiceDeath_1, base.transform.position, base.transform.rotation);
     }
 }

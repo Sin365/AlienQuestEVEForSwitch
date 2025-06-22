@@ -77,7 +77,7 @@ public class AI_Mon_12 : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//Player = global::UnityEngine.GameObject.Find("Player");
-		Shield = global::UnityEngine.Object.Instantiate(MonGate_Shield, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		Shield = AxiObject.Instantiate(MonGate_Shield, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		Shield.GetComponent<Mon_Shield>().MonObject = base.gameObject;
 		if (Tr_Pos.localScale.x < 0f)
 		{
@@ -263,7 +263,7 @@ public class AI_Mon_12 : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Animator>().SetBool("onMove", false);
 		GetComponent<global::UnityEngine.Animator>().SetBool("onHit", false);
 		GetComponent<Monster>().isLockHit = true;
-		Laser = global::UnityEngine.Object.Instantiate(MonGate_Laser, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		Laser = AxiObject.Instantiate(MonGate_Laser, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		if (GetComponent<Monster>().Mon_Num == 12)
 		{
 			Laser.GetComponent<Mon_GateLaser>().MonObject = base.gameObject;

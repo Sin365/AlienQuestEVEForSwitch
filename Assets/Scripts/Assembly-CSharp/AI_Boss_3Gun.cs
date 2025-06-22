@@ -152,7 +152,7 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 			GetComponent<global::UnityEngine.CircleCollider2D>().enabled = false;
 			if (!GM.onSkill_4)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Clear_Item, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Clear_Item, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform.parent;
 				gameObject.GetComponent<Item>().Set_Target(pos_Orig);
 			}
@@ -221,7 +221,7 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 				Make_Explo(pos_Explo);
 				if (!GM.onSkill_4)
 				{
-					global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Clear_Item, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Clear_Item, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					gameObject2.transform.parent = base.transform.parent;
 					gameObject2.GetComponent<Item>().Set_Target(pos_Orig);
 				}
@@ -380,8 +380,8 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 	private void Set_Fire()
 	{
 		Slow_Timer = 0.5f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_FireTop.position, pos_FireTop.rotation) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_FireBot.position, pos_FireBot.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_FireTop.position, pos_FireTop.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire, pos_FireBot.position, pos_FireBot.rotation) as global::UnityEngine.GameObject;
 		if (Mon.HP_Ratio <= 0.5f)
 		{
 			float num = 0f;
@@ -390,11 +390,11 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 			vector.x -= position.x;
 			vector.y -= position.y;
 			num = global::UnityEngine.Mathf.Atan2(vector.y, vector.x) * 57.29578f + 180f;
-			global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Fire, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Fire, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(_Fire, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject7 = global::UnityEngine.Object.Instantiate(_Fire, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Fire, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Fire, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(_Fire, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject6 = AxiObject.Instantiate(_Fire, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject7 = AxiObject.Instantiate(_Fire, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
 			gameObject4.transform.Rotate(0f, 0f, 20f);
 			gameObject5.transform.Rotate(0f, 0f, -20f);
 			gameObject6.transform.Rotate(0f, 0f, 40f);
@@ -408,7 +408,7 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 		on_Laser = true;
 		Slow_Timer = 6f;
 		LaserOFF_Timer = 0f;
-		Laser = global::UnityEngine.Object.Instantiate(_Laser, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
+		Laser = AxiObject.Instantiate(_Laser, pos_FireCenter.position, pos_FireCenter.rotation) as global::UnityEngine.GameObject;
 		Laser.transform.parent = Body.transform;
 		Laser.GetComponent<Mon_GateLaser>().MonObject = base.gameObject;
 	}
@@ -417,7 +417,7 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 	{
 		on_Shield = true;
 		Shield_Timer = 0f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Shield, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Shield, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform;
 		gameObject.transform.localScale = new global::UnityEngine.Vector3(1.1f, 1.1f, 1f);
 		Mon.isPass = true;
@@ -543,6 +543,6 @@ public class AI_Boss_3Gun : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo(global::UnityEngine.Vector3 pos)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, pos, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, pos, base.transform.rotation) as global::UnityEngine.GameObject;
 	}
 }

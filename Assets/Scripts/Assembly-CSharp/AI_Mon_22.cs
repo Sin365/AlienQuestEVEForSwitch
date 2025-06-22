@@ -300,7 +300,7 @@ public class AI_Mon_22 : global::UnityEngine.MonoBehaviour
 		GM.Hscene_Num = 25;
 		GM.Hscene_Timer = 1f;
 		H_Timer = 4f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (facingRight > 0)
 		{

@@ -75,9 +75,9 @@ public class player_ChestBurster : global::UnityEngine.MonoBehaviour
 	{
 		GameManager.instance.sc_Sound_List.Mon_Explo(base.transform.position);
 		GameManager.instance.sc_Sound_List.Mon_1_Death(base.transform.position);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Blood_Explo, pos_1.position, pos_1.rotation) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Blood_Explo, pos_2.position, pos_2.rotation) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(Blood_Explo, pos_3.position, pos_3.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Blood_Explo, pos_1.position, pos_1.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Blood_Explo, pos_2.position, pos_2.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(Blood_Explo, pos_3.position, pos_3.rotation) as global::UnityEngine.GameObject;
 		gameObject3.transform.localScale = pos_3.localScale;
 	}
 

@@ -60,7 +60,7 @@ public class Item : global::UnityEngine.MonoBehaviour
 		}
 		if (_glowEffect != null)
 		{
-			GlowEffect = global::UnityEngine.Object.Instantiate(_glowEffect, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			GlowEffect = AxiObject.Instantiate(_glowEffect, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			GlowEffect.GetComponent<Item_Glow>().ItemObject = base.gameObject;
 			GlowEffect.transform.parent = base.transform;
 		}
@@ -425,7 +425,7 @@ public class Item : global::UnityEngine.MonoBehaviour
 		}
 		if (Info != null)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Info) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Info) as global::UnityEngine.GameObject;
 		}
 		if (Item_Num == 3 || Item_Num == 4 || Item_Num == 10 || Item_Num == 24 || Item_Num == 25)
 		{

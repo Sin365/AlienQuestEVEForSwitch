@@ -443,7 +443,7 @@ public class AI_Mon_18K : global::UnityEngine.MonoBehaviour
 			float num = ((facingRight >= 0) ? 180 : 0);
 			int num2 = global::UnityEngine.Random.Range(-10, 10);
 			global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(pos_Fire.position.x + global::UnityEngine.Random.Range(-0.2f, 0.2f), pos_Fire.position.y + global::UnityEngine.Random.Range(-0.5f, 0.8f), 0f);
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + (float)(num2 * 5))) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + (float)(num2 * 5))) as global::UnityEngine.GameObject;
 			GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 		}
 	}
@@ -476,7 +476,7 @@ public class AI_Mon_18K : global::UnityEngine.MonoBehaviour
 		H_Pursue_Timer = 0f;
 		int num = ((global::UnityEngine.Random.Range(0, 10) <= 5) ? 21 : 22);
 		GM.Hscene_Num = num;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[num - 21], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[num - 21], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (facingRight > 0)
 		{

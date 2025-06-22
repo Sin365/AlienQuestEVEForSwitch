@@ -178,14 +178,14 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 		if (onEvent)
 		{
 			base.transform.position = new global::UnityEngine.Vector3(pos_Orig.x, pos_Orig.y - 20f, 0f);
-			Mother_Arm = global::UnityEngine.Object.Instantiate(Arm_Obj, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			Mother_Arm = AxiObject.Instantiate(Arm_Obj, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			Mother_Arm.GetComponent<AI_MotherArm>().MotherBrain = GetComponent<AI_MotherBrain>();
 			Mother_Arm.GetComponent<AI_MotherArm>().onEvent = true;
 			animator.SetTrigger("onDisable");
 		}
 		else
 		{
-			Mother_Arm = global::UnityEngine.Object.Instantiate(Arm_Obj, new global::UnityEngine.Vector3(pos_Orig.x, pos_Orig.y - 20f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+			Mother_Arm = AxiObject.Instantiate(Arm_Obj, new global::UnityEngine.Vector3(pos_Orig.x, pos_Orig.y - 20f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 			Mother_Arm.GetComponent<AI_MotherArm>().MotherBrain = GetComponent<AI_MotherBrain>();
 			Mother_Arm.GetComponent<AI_MotherArm>().onEvent = false;
 			Mother_Arm.transform.parent = base.transform.parent;
@@ -257,7 +257,7 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 					{
 						base.GetComponent<UnityEngine.AudioSource>().volume = 0f;
 						base.GetComponent<UnityEngine.AudioSource>().Stop();
-						global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_SoundElvStop, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+						global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_SoundElvStop, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					}
 					if (Life_Timer > 1f && Ani_Num != 1)
 					{
@@ -343,7 +343,7 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 				if (SoundBeat_Timer > SoundBeat_Point)
 				{
 					SoundBeat_Timer = 0f;
-					global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_SoundBeat, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_SoundBeat, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				}
 			}
 			if (Event_Num > 2)
@@ -598,13 +598,13 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 				if (SoundBeat_Timer > 1.5f)
 				{
 					SoundBeat_Timer = 0f;
-					global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_SoundBeat, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_SoundBeat, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				}
 			}
 			else if (SoundBeat_Timer > 0.7f)
 			{
 				SoundBeat_Timer = 0f;
-				global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_SoundBeat, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_SoundBeat, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			}
 		}
 	}
@@ -716,8 +716,8 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.Object.Destroy(Sound_Laser_2.gameObject);
 		}
-		Sound_Laser_1 = global::UnityEngine.Object.Instantiate(_SoundLaser1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
-		Sound_Laser_2 = global::UnityEngine.Object.Instantiate(_SoundLaser2, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		Sound_Laser_1 = AxiObject.Instantiate(_SoundLaser1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		Sound_Laser_2 = AxiObject.Instantiate(_SoundLaser2, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 	}
 
 	private void Set_Attack_Gravity()
@@ -752,8 +752,8 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.Object.Destroy(Sound_Laser_2.gameObject);
 		}
-		Sound_Laser_1 = global::UnityEngine.Object.Instantiate(_SoundLaser1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
-		Sound_Laser_2 = global::UnityEngine.Object.Instantiate(_SoundLaser2, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		Sound_Laser_1 = AxiObject.Instantiate(_SoundLaser1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		Sound_Laser_2 = AxiObject.Instantiate(_SoundLaser2, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 	}
 
 	private void Ani_Fire()
@@ -765,7 +765,7 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 			{
 				Fire_Num++;
 				FireNum_Timer = 0f;
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90 + 15 * Fire_Num * facingRight)) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90 + 15 * Fire_Num * facingRight)) as global::UnityEngine.GameObject;
 				SC.Boss_4_Fire(pos_Fire.position);
 			}
 		}
@@ -780,7 +780,7 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 		if (!isLaunched && Attack_Timer < 2.9f)
 		{
 			isLaunched = true;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Laser, pos_Laser[0].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 80 * -facingRight)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Laser, pos_Laser[0].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 80 * -facingRight)) as global::UnityEngine.GameObject;
 			gameObject.GetComponent<Mother_Laser>().MotherBrain = GetComponent<AI_MotherBrain>();
 			gameObject.transform.localScale = new global::UnityEngine.Vector3(-facingRight, 1f, 1f);
 			gameObject.transform.parent = base.transform;
@@ -796,7 +796,7 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 		if (!isLaunched && Attack_Timer < 0.25f)
 		{
 			isLaunched = true;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Gravity, pos_Gravity.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Gravity, pos_Gravity.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		}
 		if (Attack_Timer <= 0f)
 		{
@@ -809,11 +809,11 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 		if (!isLaunched && Attack_Timer < 2.9f)
 		{
 			isLaunched = true;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Laser, pos_Laser[0].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 80 * -facingRight)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Laser, pos_Laser[1].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Laser, pos_Laser[2].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 300 * -facingRight)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Laser, pos_Laser[3].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 240 * -facingRight)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Laser, pos_Laser[4].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 180 * -facingRight)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Laser, pos_Laser[0].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 80 * -facingRight)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Laser, pos_Laser[1].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Laser, pos_Laser[2].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 300 * -facingRight)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Laser, pos_Laser[3].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 240 * -facingRight)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(_Laser, pos_Laser[4].position, global::UnityEngine.Quaternion.Euler(0f, 0f, 180 * -facingRight)) as global::UnityEngine.GameObject;
 			gameObject.GetComponent<Mother_Laser>().MotherBrain = GetComponent<AI_MotherBrain>();
 			gameObject2.GetComponent<Mother_Laser>().MotherBrain = GetComponent<AI_MotherBrain>();
 			gameObject3.GetComponent<Mother_Laser>().MotherBrain = GetComponent<AI_MotherBrain>();
@@ -888,7 +888,7 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 	private void Make_BrainGirl()
 	{
 		global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(pos_BrainGirl.position.x, pos_BrainGirl.position.y, 0f);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Mon_30, position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Mon_30, position, base.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.GetComponent<AI_Mon_BrainGirl>().event_Type = AI_Mon_BrainGirl.Event_Type.MotherBrain;
 		gameObject.transform.parent = base.transform.parent;
 		int index = 0;
@@ -964,7 +964,7 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo(global::UnityEngine.Transform posObj)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.localScale = posObj.transform.localScale;
 	}
 
@@ -990,19 +990,19 @@ public class AI_MotherBrain : global::UnityEngine.MonoBehaviour
 		onClearItem = true;
 		if (!GM.onWeapon_5)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Clear_Weapon, pos_Weapon.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Clear_Weapon, pos_Weapon.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			gameObject.transform.parent = base.transform.parent;
 			gameObject.GetComponent<Item>().Set_Target(new global::UnityEngine.Vector3(pos_Weapon.position.x, pos_Weapon.position.y + 11f, 0f));
 		}
 		if (!GM.onSkill_5)
 		{
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Clear_Skill, pos_Skill.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Clear_Skill, pos_Skill.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			gameObject2.transform.parent = base.transform.parent;
 			gameObject2.GetComponent<Item>().Set_Target(new global::UnityEngine.Vector3(pos_Skill.position.x, pos_Skill.position.y + 10f, 0f));
 		}
 		if (!GM.Get_Event(2))
 		{
-			global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(Clear_Sample, pos_Sample.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(Clear_Sample, pos_Sample.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			gameObject3.transform.parent = base.transform.parent;
 			gameObject3.GetComponent<Item>().Set_Target(new global::UnityEngine.Vector3(pos_Sample.position.x, pos_Sample.position.y + 13f, 0f));
 		}

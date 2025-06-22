@@ -453,7 +453,7 @@ public class H_Ani : global::UnityEngine.MonoBehaviour
 	{
 		if (H_Num == 2 && H_Dummy != null)
 		{
-			H_Dummy_Object = global::UnityEngine.Object.Instantiate(H_Dummy, new global::UnityEngine.Vector3(base.transform.position.x + 2.95f * (float)facingRight, base.transform.position.y + 2.23f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			H_Dummy_Object = AxiObject.Instantiate(H_Dummy, new global::UnityEngine.Vector3(base.transform.position.x + 2.95f * (float)facingRight, base.transform.position.y + 2.23f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 			H_Dummy_Object.transform.parent = base.transform.parent;
 		}
 	}

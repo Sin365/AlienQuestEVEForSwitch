@@ -43,7 +43,7 @@ public class LV_3_XenoAmbush : global::UnityEngine.MonoBehaviour
 			{
 				rnd = global::UnityEngine.Random.Range(0, 2);
 			}
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_XenoList[rnd], pos, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_XenoList[rnd], pos, base.transform.rotation) as global::UnityEngine.GameObject;
 			gameObject.transform.parent = base.transform;
 			gameObject.GetComponent<Mon_Index>().Index = Index + Mon_Count;
 			gameObject.GetComponent<Monster>().onEvent = true;

@@ -60,7 +60,7 @@ public class GameOver_Control : global::UnityEngine.MonoBehaviour
 
 	private void Load_GameOver()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_GameOver[H_GameOver_Num - 1], base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_GameOver[H_GameOver_Num - 1], base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 	}
 
 	private void Update()

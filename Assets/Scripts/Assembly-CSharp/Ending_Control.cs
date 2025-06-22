@@ -464,7 +464,7 @@ public class Ending_Control : global::UnityEngine.MonoBehaviour
 		Dot_List = new global::UnityEngine.GameObject[90];
 		for (int i = 0; i < Dot_List.Length; i++)
 		{
-			Dot_List[i] = global::UnityEngine.Object.Instantiate(_Dot_Speed, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, (float)i * global::UnityEngine.Random.Range(3.5f, 4.5f))) as global::UnityEngine.GameObject;
+			Dot_List[i] = AxiObject.Instantiate(_Dot_Speed, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, (float)i * global::UnityEngine.Random.Range(3.5f, 4.5f))) as global::UnityEngine.GameObject;
 			Dot_List[i].transform.parent = base.transform;
 			Dot_List[i].transform.localScale = new global::UnityEngine.Vector3(-0.1f, 0.1f, 1f);
 			Dot_List[i].transform.Translate(global::UnityEngine.Vector3.right * global::UnityEngine.Random.Range(7f, 12f));

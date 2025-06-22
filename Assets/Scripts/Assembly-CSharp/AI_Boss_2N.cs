@@ -96,7 +96,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 			GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;
 			if (!GM.onSkill_3)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Clear_Item, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Clear_Item, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform.parent;
 				gameObject.GetComponent<Item>().Set_Target(new global::UnityEngine.Vector3(pos_Fire.position.x, pos_Fire.position.y - 4f, 0f));
 			}
@@ -149,7 +149,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 			}
 			if (!GM.onSkill_3)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Clear_Item, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Clear_Item, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform.parent;
 				gameObject.GetComponent<Item>().Set_Target(new global::UnityEngine.Vector3(pos_Fire.position.x, pos_Fire.position.y - 4f, 0f));
 			}
@@ -389,7 +389,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo(global::UnityEngine.Transform posObj)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.localScale = posObj.transform.localScale;
 	}
 
@@ -397,15 +397,15 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 	{
 		float num = 0f;
 		Attack_Delay = 2f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		global::UnityEngine.Vector3 vector = new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y + 2.4f);
 		global::UnityEngine.Vector3 position = gameObject.transform.position;
 		vector.x -= position.x;
 		vector.y -= position.y;
 		num = global::UnityEngine.Mathf.Atan2(vector.y, vector.x) * 57.29578f;
 		gameObject.transform.rotation = global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f));
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 200f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 160f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 200f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 160f))) as global::UnityEngine.GameObject;
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 		SR_Ball_Yeollow.color = color_OFF;
 		SR_Ball_Purple.color = color_OFF;
@@ -420,19 +420,19 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 		float num = 0f;
 		Attack_Delay = 1.5f;
 		Attack_Num++;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		global::UnityEngine.Vector3 vector = new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y + 2.4f);
 		global::UnityEngine.Vector3 position = gameObject.transform.position;
 		vector.x -= position.x;
 		vector.y -= position.y;
 		num = global::UnityEngine.Mathf.Atan2(vector.y, vector.x) * 57.29578f;
 		gameObject.transform.rotation = global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f));
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f + 30f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f - 30f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f + 60f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f - 60f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f + 90f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject7 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f - 90f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f + 30f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f - 30f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f + 60f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f - 60f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject6 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f + 90f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject7 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, num + 180f - 90f))) as global::UnityEngine.GameObject;
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 		SR_Ball_Yeollow.color = color_OFF;
 		SR_Ball_Purple.color = color_OFF;
@@ -445,7 +445,7 @@ public class AI_Boss_2N : global::UnityEngine.MonoBehaviour
 	private void Set_Fire_Poison()
 	{
 		float num = base.transform.position.x - Player.transform.position.x;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire_Poison, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire_Poison, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 		gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * (0f - num), global::UnityEngine.ForceMode2D.Impulse);
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);

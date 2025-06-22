@@ -409,11 +409,11 @@ public class AI_Mon_38 : global::UnityEngine.MonoBehaviour
 		Fire_Timer = 0f;
 		Fire_Num++;
 		Move_Delay = 0f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 22f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 22f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 45f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 45f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 22f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 22f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 45f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 45f)) as global::UnityEngine.GameObject;
 		gameObject.transform.Translate(global::UnityEngine.Vector3.left * 1f);
 		gameObject2.transform.Translate(global::UnityEngine.Vector3.left * 1f);
 		gameObject3.transform.Translate(global::UnityEngine.Vector3.left * 1f);
@@ -440,7 +440,7 @@ public class AI_Mon_38 : global::UnityEngine.MonoBehaviour
 			Laser_Timer = 0f;
 			Move_Delay = 1f;
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Laser, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, laser_Angle)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Laser, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, laser_Angle)) as global::UnityEngine.GameObject;
 		SR_Glow_Laser.color = new global::UnityEngine.Color(color_Laser.r, color_Laser.g, color_Laser.b, 0f);
 		SR_Glow_LVertical.color = new global::UnityEngine.Color(color_LVertical.r, color_LVertical.g, color_LVertical.b, 0f);
 	}
@@ -486,7 +486,7 @@ public class AI_Mon_38 : global::UnityEngine.MonoBehaviour
 		{
 			Player.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x - 2f * (float)facingRight, Player.transform.position.y, 0f);
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single, new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y - 2.5f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single, new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y - 2.5f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (facingRight > 0)
 		{

@@ -66,7 +66,7 @@ public class Magic_Fire_3 : global::UnityEngine.MonoBehaviour
 		if (!OnExplo)
 		{
 			OnExplo = true;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Obj_Explo, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + 0.8f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Obj_Explo, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + 0.8f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 			GameManager.instance.sc_Sound_List.Magic_3_Explo(base.transform.position);
 			global::UnityEngine.Object.Destroy(base.gameObject);
 		}

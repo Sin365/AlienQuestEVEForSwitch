@@ -291,7 +291,7 @@ public class Menu_ItemEffect : global::UnityEngine.MonoBehaviour
 	{
 		for (int i = 0; i < DustNum; i++)
 		{
-			D3_List[i] = (global::UnityEngine.GameObject)global::UnityEngine.Object.Instantiate(DustObject, base.transform.position, base.transform.rotation);
+			D3_List[i] = (global::UnityEngine.GameObject)AxiObject.Instantiate(DustObject, base.transform.position, base.transform.rotation);
 			D3_List[i].GetComponent<global::UnityEngine.SpriteRenderer>().sprite = spr_Dust_3;
 			float num = 0.8f + (float)global::UnityEngine.Random.Range(0, 100) * 0.005f;
 			D3_List[i].transform.localScale = new global::UnityEngine.Vector3(num, num, 1f);
@@ -306,7 +306,7 @@ public class Menu_ItemEffect : global::UnityEngine.MonoBehaviour
 	{
 		for (int i = 0; i < DustNum; i++)
 		{
-			D4_List[i] = (global::UnityEngine.GameObject)global::UnityEngine.Object.Instantiate(DustObject, base.transform.position, base.transform.rotation);
+			D4_List[i] = (global::UnityEngine.GameObject)AxiObject.Instantiate(DustObject, base.transform.position, base.transform.rotation);
 			D4_List[i].GetComponent<global::UnityEngine.SpriteRenderer>().sprite = spr_Dust_4;
 			float num = 0.8f + (float)global::UnityEngine.Random.Range(0, 100) * 0.005f;
 			D4_List[i].transform.localScale = new global::UnityEngine.Vector3(num, num, 1f);
@@ -321,7 +321,7 @@ public class Menu_ItemEffect : global::UnityEngine.MonoBehaviour
 	{
 		for (int i = 0; i < DustNum; i++)
 		{
-			D10_List[i] = (global::UnityEngine.GameObject)global::UnityEngine.Object.Instantiate(DustObject, base.transform.position, base.transform.rotation);
+			D10_List[i] = (global::UnityEngine.GameObject)AxiObject.Instantiate(DustObject, base.transform.position, base.transform.rotation);
 			D10_List[i].GetComponent<global::UnityEngine.SpriteRenderer>().sprite = spr_Dust_10;
 			float num = 0.8f + (float)global::UnityEngine.Random.Range(0, 100) * 0.005f;
 			D10_List[i].transform.localScale = new global::UnityEngine.Vector3(num, num, 1f);

@@ -136,7 +136,7 @@ public class Save_Block : global::UnityEngine.MonoBehaviour
 				if (ActiveGlow_Timer > 0.04f)
 				{
 					ActiveGlow_Timer = 0f;
-					global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(activeGlow, pos_Inner_Open.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(activeGlow, pos_Inner_Open.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (Heal_Timer > 1f)
 					{
 						gameObject.GetComponent<global::UnityEngine.SpriteRenderer>().color = new global::UnityEngine.Color(1f, 1f, 1f, 2f - Heal_Timer);

@@ -146,7 +146,7 @@ public class LV_3_XenoRush : global::UnityEngine.MonoBehaviour
 	private void Make_Monster_L()
 	{
 		global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(Head_L.position.x + 0.5f, base.transform.position.y - 5.2f, 0f);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_MonObject, position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_MonObject, position, base.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		gameObject.transform.localScale = new global::UnityEngine.Vector3(3f, 3f, 1f);
 		gameObject.GetComponent<Mon_Index>().Index = Index + Gen_Count;
@@ -171,7 +171,7 @@ public class LV_3_XenoRush : global::UnityEngine.MonoBehaviour
 	private void Make_Monster_R()
 	{
 		global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(Head_R.position.x - 0.5f, base.transform.position.y - 5.2f, 0f);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_MonObject, position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_MonObject, position, base.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		gameObject.transform.localScale = new global::UnityEngine.Vector3(3f, 3f, 1f);
 		gameObject.GetComponent<Mon_Index>().Index = Index + Gen_Count;

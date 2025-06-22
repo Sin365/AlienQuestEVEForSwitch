@@ -329,12 +329,12 @@ public class H_GameOver_3 : global::UnityEngine.MonoBehaviour
 		{
 			if (global::UnityEngine.Random.Range(0, 10) > 5)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(1, 6)], pos_Vagina.position, pos_Vagina.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(1, 6)], pos_Vagina.position, pos_Vagina.rotation) as global::UnityEngine.GameObject;
 				gameObject.GetComponent<CumShot_1>().Set_SortingOrder(99, pos_Vagina, 0.5f);
 			}
 			if (Cum_1_Timer > 0f && global::UnityEngine.Random.Range(0, 10) > 5)
 			{
-				global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(2, 6)], pos_Mouth.position, pos_Mouth.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(2, 6)], pos_Mouth.position, pos_Mouth.rotation) as global::UnityEngine.GameObject;
 				gameObject2.GetComponent<CumShot_1>().Set_SortingOrder(69, pos_Mouth, 0.5f);
 			}
 			Cum_Rnd_Timer = 0.2f;
@@ -343,9 +343,9 @@ public class H_GameOver_3 : global::UnityEngine.MonoBehaviour
 
 	private void Cum_Fixed()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(1, 6)], pos_Fixed_Vagina.position, pos_Fixed_Vagina.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(1, 6)], pos_Fixed_Vagina.position, pos_Fixed_Vagina.rotation) as global::UnityEngine.GameObject;
 		gameObject.GetComponent<CumShot_1>().Set_SortingOrder(99, pos_Fixed_Vagina, 0.5f);
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(2, 6)], pos_Fixed_Mouth.position, pos_Fixed_Mouth.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(2, 6)], pos_Fixed_Mouth.position, pos_Fixed_Mouth.rotation) as global::UnityEngine.GameObject;
 		gameObject2.GetComponent<CumShot_1>().Set_SortingOrder(69, pos_Fixed_Mouth, 0.5f);
 	}
 
@@ -371,15 +371,15 @@ public class H_GameOver_3 : global::UnityEngine.MonoBehaviour
 		}
 		if (Cum_Penis_Timer <= 0f)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(1, 6)], pos_Penis_1.position, pos_Penis_1.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(1, 6)], pos_Penis_1.position, pos_Penis_1.rotation) as global::UnityEngine.GameObject;
 			gameObject.SendMessage("Start_Long");
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(1, 6)], pos_Penis_2.position, pos_Penis_2.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(1, 6)], pos_Penis_2.position, pos_Penis_2.rotation) as global::UnityEngine.GameObject;
 			gameObject2.SendMessage("Start_Long");
-			global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(CumDot[0], pos_Penis_1.position, pos_Penis_1.rotation) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(CumDot[1], pos_Penis_1.position, pos_Penis_1.rotation) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(CumDot[2], pos_Penis_1.position, pos_Penis_1.rotation) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(CumDot[1], pos_Penis_2.position, pos_Penis_2.rotation) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject7 = global::UnityEngine.Object.Instantiate(CumDot[2], pos_Penis_2.position, pos_Penis_2.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(CumDot[0], pos_Penis_1.position, pos_Penis_1.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(CumDot[1], pos_Penis_1.position, pos_Penis_1.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(CumDot[2], pos_Penis_1.position, pos_Penis_1.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject6 = AxiObject.Instantiate(CumDot[1], pos_Penis_2.position, pos_Penis_2.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject7 = AxiObject.Instantiate(CumDot[2], pos_Penis_2.position, pos_Penis_2.rotation) as global::UnityEngine.GameObject;
 			Cum_Penis_Timer = 0.3f;
 		}
 	}

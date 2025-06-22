@@ -189,7 +189,7 @@ public class AI_Mon_28 : global::UnityEngine.MonoBehaviour
 	private void Attack_Force()
 	{
 		Attack_Delay = 1f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Fire_4, new global::UnityEngine.Vector3(base.transform.position.x + 1.36f * (float)facingRight, base.transform.position.y + 2.96f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Fire_4, new global::UnityEngine.Vector3(base.transform.position.x + 1.36f * (float)facingRight, base.transform.position.y + 2.96f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		if (facingRight > 0)
 		{
 			gameObject.transform.localScale = new global::UnityEngine.Vector3(0f - gameObject.transform.localScale.x, gameObject.transform.localScale.y, 1f);

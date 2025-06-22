@@ -520,7 +520,7 @@ public class AI_Mon_32 : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo(global::UnityEngine.Transform posObj)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.localScale = posObj.transform.localScale;
 	}
 

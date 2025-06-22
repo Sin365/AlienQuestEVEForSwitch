@@ -98,7 +98,7 @@ public static class AxiSoundPool
         }
         else
         {
-            go = global::UnityEngine.Object.Instantiate(src).GetComponent<AxiSoundBase>();
+            go = AxiObject.Instantiate(src).GetComponent<AxiSoundBase>();
 #if UNITY_EDITOR
 			Debug.Log($"[AxiSoundPool]实例化新的[{src.name}]");
 #endif

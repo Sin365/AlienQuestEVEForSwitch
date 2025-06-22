@@ -80,7 +80,7 @@ public class Magic_Fire_4 : global::UnityEngine.MonoBehaviour
 		}
 		for (int j = 0; j < 36; j++)
 		{
-			Heads[j] = global::UnityEngine.Object.Instantiate(Head, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 10 * j)) as global::UnityEngine.GameObject;
+			Heads[j] = AxiObject.Instantiate(Head, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 10 * j)) as global::UnityEngine.GameObject;
 			Heads[j].transform.parent = base.transform;
 			Heads[j].transform.localScale = new global::UnityEngine.Vector3(0.12f, 0.12f, 0.12f);
 			onShock[j] = false;

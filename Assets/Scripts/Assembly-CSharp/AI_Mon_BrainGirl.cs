@@ -309,9 +309,9 @@ public class AI_Mon_BrainGirl : global::UnityEngine.MonoBehaviour
 		vector.x -= position.x;
 		vector.y -= position.y;
 		num = global::UnityEngine.Mathf.Atan2(vector.y, vector.x) * 57.29578f + 180f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + (float)global::UnityEngine.Random.Range(75, 85))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num - (float)global::UnityEngine.Random.Range(75, 85))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + (float)global::UnityEngine.Random.Range(75, 85))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Fire, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num - (float)global::UnityEngine.Random.Range(75, 85))) as global::UnityEngine.GameObject;
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
 	}
 
@@ -327,7 +327,7 @@ public class AI_Mon_BrainGirl : global::UnityEngine.MonoBehaviour
 		GM.onHscene = true;
 		GM.Hscene_Num = 34;
 		GM.Hscene_Timer = 1f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		base.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x + 2f * (float)(-facingRight), Player.transform.position.y + 5.2f, 0f);
 		if (facingRight > 0)
 		{
@@ -360,7 +360,7 @@ public class AI_Mon_BrainGirl : global::UnityEngine.MonoBehaviour
 		{
 			GM.GetComponent<H_Control>().H_Object.SendMessage("Delete_ToDual");
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Dual, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Dual, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		if (GM.GetComponent<H_Control>().facingRight > 0)
 		{
 			gameObject.SendMessage("Flip");

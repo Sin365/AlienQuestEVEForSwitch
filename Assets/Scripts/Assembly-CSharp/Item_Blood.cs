@@ -103,7 +103,7 @@ public class Item_Blood : global::UnityEngine.MonoBehaviour
 			else if (distance > 0.1f && Circle_Timer > 0.01f)
 			{
 				Circle_Timer = 0f;
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Circle, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Circle, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 			}
 		}
 		else if (onChase)

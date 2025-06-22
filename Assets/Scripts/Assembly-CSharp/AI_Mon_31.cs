@@ -1023,7 +1023,7 @@ public class AI_Mon_31 : global::UnityEngine.MonoBehaviour
 		{
 			Player.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x - 2.5f * (float)facingRight, Player.transform.position.y, 0f);
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[0], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[0], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (facingRight > 0)
 		{

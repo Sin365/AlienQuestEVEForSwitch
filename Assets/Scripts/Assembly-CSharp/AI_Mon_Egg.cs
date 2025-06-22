@@ -228,7 +228,7 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 		if (!isDeath)
 		{
 			isDeath = true;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(FaceHugger, pos_FaceHugger.position, pos_FaceHugger.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(FaceHugger, pos_FaceHugger.position, pos_FaceHugger.rotation) as global::UnityEngine.GameObject;
 			gameObject.GetComponent<AI_Mon_FaceHugger>().State = AI_Mon_FaceHugger.AniState.Attack;
 			gameObject.GetComponent<AI_Mon_FaceHugger>().Index = Index;
 			gameObject.transform.parent = base.transform.parent;
@@ -282,7 +282,7 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo(global::UnityEngine.Transform posObj, bool isFlip)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, posObj.position, posObj.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, posObj.position, posObj.rotation) as global::UnityEngine.GameObject;
 		if (isFlip)
 		{
 			gameObject.transform.localScale = new global::UnityEngine.Vector3(posObj.localScale.x * -1f, posObj.localScale.y, 1f);
@@ -299,7 +299,7 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 		for (int i = 0; i < GM.Bonus_Blood * 3; i++)
 		{
 			global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(base.transform.position.x + (float)global::UnityEngine.Random.Range(-200, 200) * 0.01f, base.transform.position.y + (float)global::UnityEngine.Random.Range(-200, 200) * 0.01f, 0f);
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Blood_Obj, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Blood_Obj, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		}
 	}
 

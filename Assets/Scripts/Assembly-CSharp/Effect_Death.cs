@@ -31,14 +31,14 @@ public class Effect_Death : global::UnityEngine.MonoBehaviour
 		SR_Border = Border.GetComponent<global::UnityEngine.SpriteRenderer>();
 		SR_Glow = Glow.GetComponent<global::UnityEngine.SpriteRenderer>();
 		global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y, 0f);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 180f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 270f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 45f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 135f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject7 = global::UnityEngine.Object.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 225f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject8 = global::UnityEngine.Object.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 315f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 180f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 270f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 45f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject6 = AxiObject.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 135f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject7 = AxiObject.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 225f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject8 = AxiObject.Instantiate(Ring, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 315f)) as global::UnityEngine.GameObject;
 		for (int i = 0; i < 20; i++)
 		{
 			Create_Dust(new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y, 0f), 0.5f, 18 * i);
@@ -48,7 +48,7 @@ public class Effect_Death : global::UnityEngine.MonoBehaviour
 
 	private void Create_Dust(global::UnityEngine.Vector3 pos, float size, float rot)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Dust, pos, global::UnityEngine.Quaternion.Euler(0f, 0f, rot)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Dust, pos, global::UnityEngine.Quaternion.Euler(0f, 0f, rot)) as global::UnityEngine.GameObject;
 		gameObject.transform.localScale = new global::UnityEngine.Vector3(4f, 4f, 1f);
 	}
 

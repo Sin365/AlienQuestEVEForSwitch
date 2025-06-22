@@ -618,7 +618,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				}
 				FadeInfo_Num = 3;
 				Opening_Ship.SendMessage("Ship_Off");
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_gunshipBack, Opening_Ship.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_gunshipBack, Opening_Ship.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			}
 		}
 		else if (Index == 13)
@@ -664,7 +664,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 		{
 			case 1:
 				{
-					global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_info_Eve, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_info_Eve, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					gameObject4.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
 					gameObject4.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(626f, -105f, 0f);
 					gameObject4.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
@@ -672,7 +672,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				}
 			case 2:
 				{
-					global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_info_EveCore, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_info_EveCore, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					gameObject3.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
 					gameObject3.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(626f, -105f, 0f);
 					gameObject3.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
@@ -680,7 +680,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				}
 			case 3:
 				{
-					global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_info_6months, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_info_6months, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					gameObject2.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
 					gameObject2.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(626f, -200f, 0f);
 					gameObject2.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
@@ -688,7 +688,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 				}
 			case 4:
 				{
-					global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_info_Mission, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_info_Mission, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					gameObject.GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
 					gameObject.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(1500f, -360f, 0f);
 					gameObject.GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
@@ -708,11 +708,11 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
 		UnityEngine.Camera.main.transform.position = new global::UnityEngine.Vector3(-200f, -101f, -10f);
 		UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = CamSize_Target;
 		UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().orthographicSize = CamSize;
-		Opening_Ship = global::UnityEngine.Object.Instantiate(_openingShip, new global::UnityEngine.Vector3(-200f, -100f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		Opening_Ship = AxiObject.Instantiate(_openingShip, new global::UnityEngine.Vector3(-200f, -100f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		Opening_Ship.transform.localScale = new global::UnityEngine.Vector3(1.2f, 1.2f, 1f);
-		Room_MotherBrain = global::UnityEngine.Object.Instantiate(_room_MotherBrain, new global::UnityEngine.Vector3(-100f, -100f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
-		Room_Eve = global::UnityEngine.Object.Instantiate(_room_Eve, new global::UnityEngine.Vector3(-100f, -200f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
-		MotherBrain = global::UnityEngine.Object.Instantiate(_motherBrain, new global::UnityEngine.Vector3(-100f, -106.63f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		Room_MotherBrain = AxiObject.Instantiate(_room_MotherBrain, new global::UnityEngine.Vector3(-100f, -100f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		Room_Eve = AxiObject.Instantiate(_room_Eve, new global::UnityEngine.Vector3(-100f, -200f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		MotherBrain = AxiObject.Instantiate(_motherBrain, new global::UnityEngine.Vector3(-100f, -106.63f, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		MotherBrain.GetComponent<AI_MotherBrain>().onEvent = true;
 		MotherBrain.GetComponent<Monster>().onEvent = true;
 		global::UnityEngine.GameObject.Find("Text_TimePlay").GetComponent<global::UnityEngine.UI.Text>().enabled = false;

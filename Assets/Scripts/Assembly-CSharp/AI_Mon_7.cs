@@ -414,7 +414,7 @@ public class AI_Mon_7 : global::UnityEngine.MonoBehaviour
 		H_Pursue_Timer = 0f;
 		int num = ((global::UnityEngine.Random.Range(0, 10) >= 5) ? 3 : 4);
 		GM.Hscene_Num = num;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[num - 3], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[num - 3], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (facingRight > 0)
 		{

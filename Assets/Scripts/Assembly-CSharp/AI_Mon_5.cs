@@ -332,7 +332,7 @@ public class AI_Mon_5 : global::UnityEngine.MonoBehaviour
 		GM.onHscene = true;
 		GM.Hscene_Num = 1;
 		GM.Hscene_Timer = 1f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (facingRight > 0)
 		{
@@ -355,7 +355,7 @@ public class AI_Mon_5 : global::UnityEngine.MonoBehaviour
 		{
 			GM.GetComponent<H_Control>().H_Object.SendMessage("Delete_ToDual");
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Dual, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Dual, Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		gameObject.SendMessage("Start_H8_Dummy");
 		if (GM.GetComponent<H_Control>().facingRight > 0)

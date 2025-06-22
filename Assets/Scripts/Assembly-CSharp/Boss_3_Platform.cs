@@ -232,7 +232,7 @@ public class Boss_3_Platform : global::UnityEngine.MonoBehaviour
 		H_Timer = 0.1f;
 		int num = ((global::UnityEngine.Random.Range(0, 10) <= 5) ? 28 : 27);
 		GM.Hscene_Num = num;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[num - 27], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[num - 27], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		gameObject.GetComponent<H_Ani>().Mon_Object = base.gameObject;
 		OnOff_Object(false);

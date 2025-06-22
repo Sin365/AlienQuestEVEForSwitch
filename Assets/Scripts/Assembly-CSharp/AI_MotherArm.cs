@@ -363,7 +363,7 @@ public class AI_MotherArm : global::UnityEngine.MonoBehaviour
 		for (int i = 0; i < GM.Bonus_Blood * 3; i++)
 		{
 			global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(base.transform.position.x + (float)(10 * facingRight) + (float)global::UnityEngine.Random.Range(-200, 200) * 0.01f, base.transform.position.y + (float)global::UnityEngine.Random.Range(-200, 200) * 0.01f, 0f);
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Blood_Obj, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Blood_Obj, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		}
 	}
 

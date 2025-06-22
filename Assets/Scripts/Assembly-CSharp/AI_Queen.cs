@@ -294,7 +294,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		{
 			num2 = (float)(Dot_List.Length - 1 - i) * (360f / (float)num);
 			pos_Orbit.rotation = global::UnityEngine.Quaternion.Euler(0f, 0f, num2);
-			Dot_List[i] = global::UnityEngine.Object.Instantiate(_Dot, pos_Dot.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			Dot_List[i] = AxiObject.Instantiate(_Dot, pos_Dot.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			Dot_List[i].transform.parent = pos_Center;
 			Dot_List[i].transform.localRotation = global::UnityEngine.Quaternion.Euler(0f, 0f, num2);
 			num3 = global::UnityEngine.Random.Range(1f, 1.6f);
@@ -1419,17 +1419,17 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		angle = Check_Fire_Angle(angle);
 		if (on_Flying)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 25f)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 25f)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 50f)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 50f)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 75f)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 75f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 25f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 25f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 50f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 50f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 75f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject6 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 75f)) as global::UnityEngine.GameObject;
 		}
 		else
 		{
-			global::UnityEngine.GameObject gameObject7 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 30f + (float)(Fire_Num * 10))) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject8 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 30f - (float)(Fire_Num * 10))) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject7 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 30f + (float)(Fire_Num * 10))) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject8 = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle - 30f - (float)(Fire_Num * 10))) as global::UnityEngine.GameObject;
 		}
 		Fire_Num++;
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
@@ -1474,7 +1474,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 	{
 		float angle = Get_Angle();
 		angle = Check_Shock_Angle(angle);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Shock, pos_Glow.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Shock, pos_Glow.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle)) as global::UnityEngine.GameObject;
 	}
 
 	private float Check_Shock_Angle(float angle)
@@ -1507,9 +1507,9 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		float angle = Get_Angle();
 		Snd_Laser_Timer = 0f;
 		Laser_Num++;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Laser, pos_Laser.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 9.5f * (float)(-facingRight))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Laser, pos_Laser.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + (float)(10 * -facingRight))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Laser, pos_Laser.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 10.5f * (float)(-facingRight))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Laser, pos_Laser.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 9.5f * (float)(-facingRight))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Laser, pos_Laser.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + (float)(10 * -facingRight))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Laser, pos_Laser.position, global::UnityEngine.Quaternion.Euler(0f, 0f, angle + 10.5f * (float)(-facingRight))) as global::UnityEngine.GameObject;
 		if (facingRight > 0)
 		{
 			gameObject.GetComponent<Queen_Laser>().facingRight = facingRight;
@@ -1532,15 +1532,15 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.Object.Destroy(SndObj_Laser_2.gameObject);
 		}
-		SndObj_Laser_1 = global::UnityEngine.Object.Instantiate(sound_Laser_1, pos_Sound.position, base.transform.rotation) as global::UnityEngine.GameObject;
-		SndObj_Laser_2 = global::UnityEngine.Object.Instantiate(sound_Laser_2, pos_Sound.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		SndObj_Laser_1 = AxiObject.Instantiate(sound_Laser_1, pos_Sound.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		SndObj_Laser_2 = AxiObject.Instantiate(sound_Laser_2, pos_Sound.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		SndObj_Laser_1.transform.parent = pos_Sound;
 		SndObj_Laser_2.transform.parent = pos_Sound;
 	}
 
 	private void Wave()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Wave, pos_Wave.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Wave, pos_Wave.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.localScale = new global::UnityEngine.Vector3(-facingRight, 1f, 1f);
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Sound.position);
 	}
@@ -1549,12 +1549,12 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 	{
 		Laser_Timer = 0f;
 		Snd_Laser_Timer = 0f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Laser, pos_Pelvis.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f + global::UnityEngine.Random.Range(0f, 80f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Laser, pos_Pelvis.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f + global::UnityEngine.Random.Range(0f, 80f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Laser, pos_Pelvis.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 180f + global::UnityEngine.Random.Range(0f, 80f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Laser, pos_Pelvis.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 270f + global::UnityEngine.Random.Range(0f, 80f))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Laser, pos_Tit_L.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f + global::UnityEngine.Random.Range(230f - (float)(facingRight * 50), 310f - (float)(facingRight * 50)))) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(_Laser, pos_Tit_R.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f + global::UnityEngine.Random.Range(50f + (float)(facingRight * 50), 130f + (float)(facingRight * 50)))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Laser, pos_Pelvis.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f + global::UnityEngine.Random.Range(0f, 80f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Laser, pos_Pelvis.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f + global::UnityEngine.Random.Range(0f, 80f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Laser, pos_Pelvis.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 180f + global::UnityEngine.Random.Range(0f, 80f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Laser, pos_Pelvis.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 270f + global::UnityEngine.Random.Range(0f, 80f))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(_Laser, pos_Tit_L.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f + global::UnityEngine.Random.Range(230f - (float)(facingRight * 50), 310f - (float)(facingRight * 50)))) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject6 = AxiObject.Instantiate(_Laser, pos_Tit_R.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f + global::UnityEngine.Random.Range(50f + (float)(facingRight * 50), 130f + (float)(facingRight * 50)))) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = pos_Center;
 		gameObject2.transform.parent = pos_Center;
 		gameObject3.transform.parent = pos_Center;
@@ -1585,8 +1585,8 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.Object.Destroy(SndObj_Laser_2.gameObject);
 		}
-		SndObj_Laser_1 = global::UnityEngine.Object.Instantiate(sound_Laser_1, pos_Sound.position, base.transform.rotation) as global::UnityEngine.GameObject;
-		SndObj_Laser_2 = global::UnityEngine.Object.Instantiate(sound_Laser_2, pos_Sound.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		SndObj_Laser_1 = AxiObject.Instantiate(sound_Laser_1, pos_Sound.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		SndObj_Laser_2 = AxiObject.Instantiate(sound_Laser_2, pos_Sound.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		SndObj_Laser_1.transform.parent = pos_Sound;
 		SndObj_Laser_2.transform.parent = pos_Sound;
 	}
@@ -1749,7 +1749,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 			{
 				global::UnityEngine.Object.Destroy(SndObj_Shield.gameObject);
 			}
-			SndObj_Shield = global::UnityEngine.Object.Instantiate(sound_Shield, pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
+			SndObj_Shield = AxiObject.Instantiate(sound_Shield, pos_Sound.position, pos_Sound.rotation) as global::UnityEngine.GameObject;
 			SndObj_Shield.transform.parent = pos_Sound;
 			Snd_Shield_Timer = 0f;
 		}
@@ -1833,7 +1833,7 @@ public class AI_Queen : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo(global::UnityEngine.Transform posObj)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.localScale = posObj.transform.localScale;
 	}
 

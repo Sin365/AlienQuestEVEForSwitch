@@ -37,16 +37,16 @@ public class Magic_Fire_3_Explo : global::UnityEngine.MonoBehaviour
 	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
-		Bar_C = global::UnityEngine.Object.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		Bar_C = AxiObject.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		Bar_C.transform.localScale = new global::UnityEngine.Vector3(1f, 0.3f, 1f);
 		Bar_C.transform.parent = base.transform;
-		Bar_CL = global::UnityEngine.Object.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x - 0.25f, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		Bar_CL = AxiObject.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x - 0.25f, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		Bar_CL.transform.localScale = new global::UnityEngine.Vector3(1f, 0.06f, 1f);
 		Bar_CL.transform.parent = base.transform;
-		Bar_CR = global::UnityEngine.Object.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x + 0.25f, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		Bar_CR = AxiObject.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x + 0.25f, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		Bar_CR.transform.localScale = new global::UnityEngine.Vector3(1f, 0.06f, 1f);
 		Bar_CR.transform.parent = base.transform;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Smog, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Smog, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		Smog_Num++;
 		Glow[0].transform.localScale = new global::UnityEngine.Vector3(0.6f, 1f, 1f);
 		Glow[1].transform.localScale = new global::UnityEngine.Vector3(-0.6f, 1f, 1f);
@@ -65,7 +65,7 @@ public class Magic_Fire_3_Explo : global::UnityEngine.MonoBehaviour
 		Life_Timer += global::UnityEngine.Time.deltaTime;
 		if (Smog_Num == 1 && Life_Timer > 1.3f)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Smog, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Smog, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			Smog_Num++;
 		}
 		Bar_CL.transform.position = global::UnityEngine.Vector3.Lerp(Bar_CL.transform.position, Bar_C.transform.position, global::UnityEngine.Time.deltaTime * 1.5f);

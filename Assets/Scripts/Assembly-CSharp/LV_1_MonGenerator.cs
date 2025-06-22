@@ -43,7 +43,7 @@ public class LV_1_MonGenerator : global::UnityEngine.MonoBehaviour
 		{
 			pos = new global::UnityEngine.Vector3(base.transform.position.x + global::UnityEngine.Random.Range(0f - Distance_Bar.localScale.x, Distance_Bar.localScale.x), base.transform.position.y, 0f);
 			rnd = global::UnityEngine.Random.Range(0, _Mon_List.Length);
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Mon_List[rnd], pos, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Mon_List[rnd], pos, base.transform.rotation) as global::UnityEngine.GameObject;
 			gameObject.transform.parent = base.transform;
 			gameObject.GetComponent<Mon_Index>().Index = Index + mon_Count;
 			mon_Count++;

@@ -215,7 +215,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		}
 		if (_Icon != null)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Icon, new global::UnityEngine.Vector3(0f, 0f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Icon, new global::UnityEngine.Vector3(0f, 0f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 			gameObject.GetComponent<Info_MonIcon>().Mon_Num = 21;
 			gameObject.GetComponent<Info_MonIcon>().MonCenter = base.transform;
 			gameObject.GetComponent<Info_MonIcon>().Set_MonIcon(Icon_Spr);
@@ -694,7 +694,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo(global::UnityEngine.GameObject posObj, bool isFlip)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, posObj.transform.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, posObj.transform.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
 		if (isFlip)
 		{
 			gameObject.transform.localScale = new global::UnityEngine.Vector3(posObj.transform.localScale.x * -1f, posObj.transform.localScale.y, 1f);
@@ -711,7 +711,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		for (int i = 0; i < GM.Bonus_Blood * 3; i++)
 		{
 			global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(base.transform.position.x + (float)global::UnityEngine.Random.Range(-200, 200) * 0.01f, base.transform.position.y + (float)global::UnityEngine.Random.Range(-200, 200) * 0.01f, 0f);
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Blood_Obj, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Blood_Obj, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		}
 	}
 

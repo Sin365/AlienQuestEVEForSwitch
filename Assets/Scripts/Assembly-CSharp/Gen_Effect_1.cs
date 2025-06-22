@@ -64,7 +64,7 @@ public class Gen_Effect_1 : global::UnityEngine.MonoBehaviour
 
 	private void Make_Dust(int num)
 	{
-		Dust_List[num] = (global::UnityEngine.GameObject)global::UnityEngine.Object.Instantiate(DustObject, base.transform.position, base.transform.rotation);
+		Dust_List[num] = (global::UnityEngine.GameObject)AxiObject.Instantiate(DustObject, base.transform.position, base.transform.rotation);
 		Dust_List[num].GetComponent<global::UnityEngine.SpriteRenderer>().sprite = spr_Dust;
 		Dust_List[num].transform.parent = base.transform;
 		float num2 = 0.8f + (float)global::UnityEngine.Random.Range(0, 100) * 0.005f;

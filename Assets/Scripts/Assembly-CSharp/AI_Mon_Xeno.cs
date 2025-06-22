@@ -1132,14 +1132,14 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 		if (Mon.Mon_Num == 34)
 		{
 			num = Check_Fire_Angle_34(num);
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + 20f)) as global::UnityEngine.GameObject;
-			global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num - 20f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + 20f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num - 20f)) as global::UnityEngine.GameObject;
 		}
 		else
 		{
 			num = Check_Fire_Angle(num);
-			global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
 		}
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
 	}
@@ -1392,7 +1392,7 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 		{
 			Player.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x - 1.5f * (float)facingRight, Player.transform.position.y, 0f);
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[-30 + GM.Hscene_Num], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[-30 + GM.Hscene_Num], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		base.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x - 1.5f * (float)facingRight, Player.transform.position.y + 4.53f, 0f);
 		if (facingRight > 0)
 		{
@@ -1429,7 +1429,7 @@ public class AI_Mon_Xeno : global::UnityEngine.MonoBehaviour
 			Player.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x - 3.5f * (float)facingRight, Player.transform.position.y, 0f);
 			GM.GetComponent<H_Control>().Mon_1.transform.position = new global::UnityEngine.Vector3(GM.GetComponent<H_Control>().Mon_1.transform.position.x - 3.5f * (float)facingRight, GM.GetComponent<H_Control>().Mon_1.transform.position.y, 0f);
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[2], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[2], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		if (GM.GetComponent<H_Control>().facingRight > 0)
 		{
 			gameObject.SendMessage("Flip");

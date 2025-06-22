@@ -112,7 +112,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		{
 			if (!GM.onSkill_2)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Clear_Item, pos_Item.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Clear_Item, pos_Item.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform.parent;
 				gameObject.GetComponent<Item>().Set_Target(new global::UnityEngine.Vector3(pos_Item.position.x, pos_Item.position.y + 2f, 0f));
 			}
@@ -183,7 +183,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 			}
 			if (!GM.onSkill_2)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Clear_Item, pos_Item.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Clear_Item, pos_Item.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform.parent;
 				gameObject.GetComponent<Item>().Set_Target(new global::UnityEngine.Vector3(pos_Item.position.x, pos_Item.position.y + 2f, 0f));
 			}
@@ -343,7 +343,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 	private void Set_Fire()
 	{
 		float num = ((facingRight >= 0) ? 180 : 0);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + 15f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num + 15f)) as global::UnityEngine.GameObject;
 		gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(new global::UnityEngine.Vector2(dist_X * 40f * (float)facingRight, dist_X * 10f));
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 		Fire_Num--;
@@ -351,7 +351,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 
 	private void Set_Tentacle()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Tentacle, new global::UnityEngine.Vector3(pos_Tentacle.position.x + 3f * (float)Tentacle_Num * (float)facingRight, pos_Tentacle.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Tentacle, new global::UnityEngine.Vector3(pos_Tentacle.position.x + 3f * (float)Tentacle_Num * (float)facingRight, pos_Tentacle.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		gameObject.GetComponent<Boss_Tentacle>().Boss = GetComponent<AI_Mon_30N>();
 		Tentacle_Timer = 0.1f;
@@ -448,7 +448,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo(global::UnityEngine.Transform posObj)
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, posObj.position, posObj.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.transform.localScale = posObj.transform.localScale;
 	}
 
@@ -467,7 +467,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		GM.Hscene_Timer = 1f;
 		int num = ((global::UnityEngine.Random.Range(0, 10) >= 5) ? 8 : 9);
 		GM.Hscene_Num = num;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[num - 8], new global::UnityEngine.Vector3(Pos_T.x, Pos_T.y + 0.34f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[num - 8], new global::UnityEngine.Vector3(Pos_T.x, Pos_T.y + 0.34f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		Player.transform.position = new global::UnityEngine.Vector3(Pos_T.x, Pos_T.y + 0.34f, 0f);
 		gameObject.transform.parent = base.transform.parent;
 		if (PC.facingRight > 0)
@@ -493,7 +493,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		GM.Hscene_Timer = 1f;
 		int num = ((global::UnityEngine.Random.Range(0, 10) >= 5) ? 8 : 9);
 		GM.Hscene_Num = num;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[num - 8], new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[num - 8], new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (PC.facingRight > 0)
 		{

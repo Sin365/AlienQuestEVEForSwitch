@@ -97,7 +97,7 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 				if (onCam_Timer > 0f && Dust_Timer > 0.01f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (base.transform.localScale.y < 1f)
 					{
 						gameObject.transform.localScale = new global::UnityEngine.Vector3(gameObject.transform.localScale.x * base.transform.localScale.x, gameObject.transform.localScale.y * base.transform.localScale.y, 1f);
@@ -112,7 +112,7 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 				if (onCam_Timer > 0f && Dust_Timer > 0.01f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (base.transform.localScale.y < 1f)
 					{
 						gameObject2.transform.localScale = new global::UnityEngine.Vector3(gameObject2.transform.localScale.x * base.transform.localScale.x, gameObject2.transform.localScale.y * base.transform.localScale.y, 1f);
@@ -133,12 +133,12 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 				if (onCam_Timer > 0f && Dust_Timer > 0.01f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (base.transform.localScale.y < 1f)
 					{
 						gameObject3.transform.localScale = new global::UnityEngine.Vector3(gameObject3.transform.localScale.x * base.transform.localScale.x, gameObject3.transform.localScale.y * base.transform.localScale.y, 1f);
 					}
-					global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					gameObject4.transform.localScale = gameObject3.transform.localScale;
 				}
 			}
@@ -149,7 +149,7 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 				if (onCam_Timer > 0f && Dust_Timer > 0.01f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (base.transform.localScale.y < 1f)
 					{
 						gameObject5.transform.localScale = new global::UnityEngine.Vector3(gameObject5.transform.localScale.x * base.transform.localScale.x, gameObject5.transform.localScale.y * base.transform.localScale.y, 1f);
@@ -170,7 +170,7 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 				if (onCam_Timer > 0f && Dust_Timer > 0.01f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject6 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (base.transform.localScale.y < 1f)
 					{
 						gameObject6.transform.localScale = new global::UnityEngine.Vector3(gameObject6.transform.localScale.x * base.transform.localScale.x, gameObject6.transform.localScale.y * base.transform.localScale.y, 1f);
@@ -192,13 +192,13 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 				if (onCam_Timer > 0f && Dust_Timer > 0.01f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject7 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject7 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (base.transform.localScale.y < 1f)
 					{
 						gameObject7.transform.localScale = new global::UnityEngine.Vector3(gameObject7.transform.localScale.x * base.transform.localScale.x, gameObject7.transform.localScale.y * base.transform.localScale.y, 1f);
 					}
 					gameObject7.transform.Translate(global::UnityEngine.Vector3.up * global::UnityEngine.Random.Range(-0.1f, 0.1f));
-					global::UnityEngine.GameObject gameObject8 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject8 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					gameObject8.transform.localScale = gameObject7.transform.localScale;
 					gameObject8.transform.Translate(global::UnityEngine.Vector3.up * global::UnityEngine.Random.Range(-0.16f, 0.16f));
 				}
@@ -215,13 +215,13 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 				if (onCam_Timer > 0f && Dust_Timer > 0.01f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject9 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject9 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (base.transform.localScale.y < 1f)
 					{
 						gameObject9.transform.localScale = new global::UnityEngine.Vector3(gameObject9.transform.localScale.x * base.transform.localScale.x, gameObject9.transform.localScale.y * base.transform.localScale.y, 1f);
 					}
 					gameObject9.transform.Translate(global::UnityEngine.Vector3.up * global::UnityEngine.Random.Range(-0.1f, 0.1f));
-					global::UnityEngine.GameObject gameObject10 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject10 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					gameObject10.transform.localScale = gameObject9.transform.localScale;
 					gameObject10.transform.Translate(global::UnityEngine.Vector3.up * global::UnityEngine.Random.Range(-0.3f, 0.3f));
 				}
@@ -246,7 +246,7 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 				if (onCam_Timer > 0f && Dust_Timer > 0.01f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject11 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject11 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (base.transform.localScale.y < 1f)
 					{
 						gameObject11.transform.localScale = new global::UnityEngine.Vector3(gameObject11.transform.localScale.x * base.transform.localScale.x, gameObject11.transform.localScale.y * base.transform.localScale.y, 1f);
@@ -262,7 +262,7 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 				if (onCam_Timer > 0f && Dust_Timer > 0.02f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject12 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject12 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (base.transform.localScale.y < 1f)
 					{
 						gameObject12.transform.localScale = new global::UnityEngine.Vector3(gameObject12.transform.localScale.x * base.transform.localScale.x, gameObject12.transform.localScale.y * base.transform.localScale.y, 1f);
@@ -277,7 +277,7 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 				if (onCam_Timer > 0f && Dust_Timer > 0.02f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject13 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject13 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					if (base.transform.localScale.y < 1f)
 					{
 						gameObject13.transform.localScale = new global::UnityEngine.Vector3(gameObject13.transform.localScale.x * base.transform.localScale.x, gameObject13.transform.localScale.y * base.transform.localScale.y, 1f);
@@ -358,19 +358,19 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 			}
 			if (onGround)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Explo, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Explo, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.localScale = new global::UnityEngine.Vector3(-2.2f, 2.2f, 1f);
 				gameObject.GetComponent<global::UnityEngine.SpriteRenderer>().color = color_Explo;
 				return;
 			}
 			float num = global::UnityEngine.Random.Range(-0.2f, 0.2f);
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Explo, new global::UnityEngine.Vector3(base.transform.position.x + num, base.transform.position.y + num, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, global::UnityEngine.Random.Range(0f, 60f))) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Explo, new global::UnityEngine.Vector3(base.transform.position.x + num, base.transform.position.y + num, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, global::UnityEngine.Random.Range(0f, 60f))) as global::UnityEngine.GameObject;
 			num = global::UnityEngine.Random.Range(-0.2f, 0.2f);
-			global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Explo, new global::UnityEngine.Vector3(base.transform.position.x + num, base.transform.position.y + num, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, global::UnityEngine.Random.Range(90f, 150f))) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Explo, new global::UnityEngine.Vector3(base.transform.position.x + num, base.transform.position.y + num, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, global::UnityEngine.Random.Range(90f, 150f))) as global::UnityEngine.GameObject;
 			num = global::UnityEngine.Random.Range(-0.2f, 0.2f);
-			global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(_Explo, new global::UnityEngine.Vector3(base.transform.position.x + num, base.transform.position.y + num, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, global::UnityEngine.Random.Range(180f, 240f))) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(_Explo, new global::UnityEngine.Vector3(base.transform.position.x + num, base.transform.position.y + num, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, global::UnityEngine.Random.Range(180f, 240f))) as global::UnityEngine.GameObject;
 			num = global::UnityEngine.Random.Range(-0.2f, 0.2f);
-			global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(_Explo, new global::UnityEngine.Vector3(base.transform.position.x + num, base.transform.position.y + num, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, global::UnityEngine.Random.Range(240f, 330f))) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(_Explo, new global::UnityEngine.Vector3(base.transform.position.x + num, base.transform.position.y + num, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, global::UnityEngine.Random.Range(240f, 330f))) as global::UnityEngine.GameObject;
 			gameObject2.GetComponent<global::UnityEngine.SpriteRenderer>().color = color_Explo;
 			gameObject3.GetComponent<global::UnityEngine.SpriteRenderer>().color = color_Explo;
 			gameObject4.GetComponent<global::UnityEngine.SpriteRenderer>().color = color_Explo;

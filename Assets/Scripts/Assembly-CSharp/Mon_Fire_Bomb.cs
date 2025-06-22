@@ -63,8 +63,8 @@ public class Mon_Fire_Bomb : global::UnityEngine.MonoBehaviour
 	private void Explo()
 	{
 		onExplo = true;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Explo, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Sound_Explo, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Explo, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Sound_Explo, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 }

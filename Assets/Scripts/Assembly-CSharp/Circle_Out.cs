@@ -24,7 +24,7 @@ public class Circle_Out : global::UnityEngine.MonoBehaviour
 			num += 10f;
 			for (int i = 1; i < 40; i++)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Dust, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num * (float)i)) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Dust, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num * (float)i)) as global::UnityEngine.GameObject;
 				gameObject.transform.Translate(global::UnityEngine.Vector3.right * 1f);
 				gameObject.transform.Translate(global::UnityEngine.Vector3.down * 1f);
 			}

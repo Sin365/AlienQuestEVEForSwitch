@@ -628,14 +628,14 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
                         if (inputX == 0f)
                         {
                             Ani.Set_Attack_Down2();
-                            global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Effect_Attack[GM.Weapon_Num], new global::UnityEngine.Vector3(base.transform.position.x - 4f * (float)facingRight, base.transform.position.y + 2.8f, base.transform.position.z), global::UnityEngine.Quaternion.Euler(0f, 0f, -90f)) as global::UnityEngine.GameObject;
+                            global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Effect_Attack[GM.Weapon_Num], new global::UnityEngine.Vector3(base.transform.position.x - 4f * (float)facingRight, base.transform.position.y + 2.8f, base.transform.position.z), global::UnityEngine.Quaternion.Euler(0f, 0f, -90f)) as global::UnityEngine.GameObject;
                             gameObject.transform.parent = base.transform;
                             gameObject.transform.localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
                         }
                         else
                         {
                             Ani.Set_Attack_Down();
-                            global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Effect_Attack[GM.Weapon_Num], new global::UnityEngine.Vector3(base.transform.position.x - 1f * (float)facingRight, base.transform.position.y, base.transform.position.z), global::UnityEngine.Quaternion.Euler(0f, 0f, -32f)) as global::UnityEngine.GameObject;
+                            global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Effect_Attack[GM.Weapon_Num], new global::UnityEngine.Vector3(base.transform.position.x - 1f * (float)facingRight, base.transform.position.y, base.transform.position.z), global::UnityEngine.Quaternion.Euler(0f, 0f, -32f)) as global::UnityEngine.GameObject;
                             gameObject2.transform.parent = base.transform;
                             gameObject2.transform.localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
                         }
@@ -1149,7 +1149,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         }
         if (Jump_Num < 2 || player_ani.GetComponent<global::UnityEngine.SpriteRenderer>().enabled)
         {
-            global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Effect_Lag, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Effect_Lag, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
             if (GM.Weapon_Num == 5)
             {
                 gameObject.SendMessage("Set_Color_5");
@@ -1164,14 +1164,14 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             return;
         }
         global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(base.transform.position.x - 0.19f * (float)facingRight, base.transform.position.y + 2.7f, 0f);
-        global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Effect_Lag, position, Ani_rolling.transform.localRotation) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Effect_Lag, position, Ani_rolling.transform.localRotation) as global::UnityEngine.GameObject;
         if (GM.Weapon_Num == 5)
         {
             gameObject2.SendMessage("Set_Color_5");
         }
         gameObject2.transform.localScale = new global::UnityEngine.Vector3(base.transform.localScale.x, 1f, 1f);
         gameObject2.GetComponent<global::UnityEngine.SpriteRenderer>().sprite = Ani_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sprite;
-        global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(Effect_Lag, position, Effect_rolling.transform.localRotation) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(Effect_Lag, position, Effect_rolling.transform.localRotation) as global::UnityEngine.GameObject;
         if (GM.Weapon_Num == 5)
         {
             gameObject3.SendMessage("Set_Color_5");
@@ -1191,7 +1191,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         Lag_Timer += global::UnityEngine.Time.deltaTime;
         if (Lag_Timer > 0.03f)
         {
-            global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Effect_BackDash, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Effect_BackDash, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
             if (GM.Weapon_Num == 5)
             {
                 gameObject.SendMessage("Set_Color_5");
@@ -1212,7 +1212,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         float opacity = ((!(HighJump_Timer > 1f)) ? HighJump_Timer : 1f);
         if (player_ani.GetComponent<global::UnityEngine.SpriteRenderer>().enabled)
         {
-            global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Effect_BackDash, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Effect_BackDash, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
             if (GM.Weapon_Num == 5)
             {
                 gameObject.SendMessage("Set_Color_5");
@@ -1224,7 +1224,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         else
         {
             global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(base.transform.position.x - 0.19f * (float)facingRight, base.transform.position.y + 2.7f, 0f);
-            global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Effect_BackDash, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Effect_BackDash, position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
             if (GM.Weapon_Num == 5)
             {
                 gameObject2.SendMessage("Set_Color_5");
@@ -1232,7 +1232,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             gameObject2.transform.localScale = new global::UnityEngine.Vector3(base.transform.localScale.x, 1f, 1f);
             gameObject2.GetComponent<global::UnityEngine.SpriteRenderer>().sprite = Ani_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sprite;
             gameObject2.GetComponent<Effect_BackDash>().Set_Opacity(opacity);
-            global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(Effect_Lag, position, Effect_rolling.transform.localRotation) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(Effect_Lag, position, Effect_rolling.transform.localRotation) as global::UnityEngine.GameObject;
             if (GM.Weapon_Num == 5)
             {
                 gameObject3.SendMessage("Set_Color_5");
@@ -1430,7 +1430,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             {
                 num -= 2.52f;
             }
-            global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Magic_5, new global::UnityEngine.Vector3(x, num, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Magic_5, new global::UnityEngine.Vector3(x, num, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
             gameObject.transform.localScale = new global::UnityEngine.Vector3((float)facingRight * 1f, 1f, 1f);
             return;
         }
@@ -1440,7 +1440,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             {
                 GM.Shield_Object.SendMessage("Set_Broken");
             }
-            GM.Shield_Object = global::UnityEngine.Object.Instantiate(Magic_4, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + 2.7f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+            GM.Shield_Object = AxiObject.Instantiate(Magic_4, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + 2.7f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
             GM.Shield_Object.transform.localScale = new global::UnityEngine.Vector3((float)facingRight * 0.85f, 0.85f, 1f);
             return;
         }
@@ -1453,7 +1453,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             {
                 num2 -= 2.2f;
             }
-            global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Magic_2, new global::UnityEngine.Vector3(x2, num2, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Magic_2, new global::UnityEngine.Vector3(x2, num2, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
             gameObject2.transform.localScale = new global::UnityEngine.Vector3(facingRight, 1f, 1f);
             return;
         }
@@ -1465,7 +1465,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             {
                 num3 -= 2.52f;
             }
-            global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(Magic_3, new global::UnityEngine.Vector3(x3, num3, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 160f)) as global::UnityEngine.GameObject;
+            global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(Magic_3, new global::UnityEngine.Vector3(x3, num3, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 160f)) as global::UnityEngine.GameObject;
             gameObject3.transform.localScale = new global::UnityEngine.Vector3(facingRight, 1f, 1f);
             if (Jump_Num > 0)
             {
@@ -1489,7 +1489,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         {
             for (int i = 0; i < 12; i++)
             {
-                global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(Magic_1, Ani_rolling.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, (float)i * 30f + global::UnityEngine.Random.Range(-5f, 5f))) as global::UnityEngine.GameObject;
+                global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(Magic_1, Ani_rolling.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, (float)i * 30f + global::UnityEngine.Random.Range(-5f, 5f))) as global::UnityEngine.GameObject;
                 gameObject4.transform.Translate(global::UnityEngine.Vector3.right * 3f);
             }
             GameManager.instance.sc_Sound_List.Boss_4_Fire(base.transform.position);
@@ -1506,11 +1506,11 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         {
             num4 += base.GetComponent<UnityEngine.Rigidbody2D>().velocity.y * 0.02f;
         }
-        global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4 + 0.2f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 7 * facingRight)) as global::UnityEngine.GameObject;
-        global::UnityEngine.GameObject gameObject6 = global::UnityEngine.Object.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4 + 0.1f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 3 * facingRight)) as global::UnityEngine.GameObject;
-        global::UnityEngine.GameObject gameObject7 = global::UnityEngine.Object.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
-        global::UnityEngine.GameObject gameObject8 = global::UnityEngine.Object.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4 - 0.1f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, -3 * facingRight)) as global::UnityEngine.GameObject;
-        global::UnityEngine.GameObject gameObject9 = global::UnityEngine.Object.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4 - 0.2f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, -7 * facingRight)) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4 + 0.2f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 7 * facingRight)) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject6 = AxiObject.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4 + 0.1f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 3 * facingRight)) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject7 = AxiObject.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject8 = AxiObject.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4 - 0.1f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, -3 * facingRight)) as global::UnityEngine.GameObject;
+        global::UnityEngine.GameObject gameObject9 = AxiObject.Instantiate(Magic_1, new global::UnityEngine.Vector3(x4, num4 - 0.2f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, -7 * facingRight)) as global::UnityEngine.GameObject;
         gameObject7.transform.localScale = new global::UnityEngine.Vector3((float)facingRight * 1f, 1f, 1f);
         global::UnityEngine.Transform obj = gameObject5.transform;
         global::UnityEngine.Vector3 localScale = gameObject7.transform.localScale;

@@ -63,13 +63,13 @@ public class Test_Angle : global::UnityEngine.MonoBehaviour
 		if (on_Gravity)
 		{
 			float num = base.transform.position.x - Player.transform.position.x;
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire_1, thisPos, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire_1, thisPos, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 			gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.right * (0f - num), global::UnityEngine.ForceMode2D.Impulse);
 			gameObject.GetComponent<UnityEngine.Rigidbody2D>().AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 		}
 		else if (on_Laser)
 		{
-			Laser = global::UnityEngine.Object.Instantiate(_Fire_1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			Laser = AxiObject.Instantiate(_Fire_1, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			if (Laser.GetComponent<Mon_GateLaser>() != null)
 			{
 				Laser.GetComponent<Mon_GateLaser>().MonObject = base.gameObject;
@@ -81,7 +81,7 @@ public class Test_Angle : global::UnityEngine.MonoBehaviour
 		}
 		else
 		{
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire_1, thisPos, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, angle + 180f))) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire_1, thisPos, global::UnityEngine.Quaternion.Euler(new global::UnityEngine.Vector3(0f, 0f, angle + 180f))) as global::UnityEngine.GameObject;
 		}
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(thisPos);
 	}

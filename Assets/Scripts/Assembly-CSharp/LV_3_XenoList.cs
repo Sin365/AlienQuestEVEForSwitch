@@ -105,7 +105,7 @@ public class LV_3_XenoList : global::UnityEngine.MonoBehaviour
 			global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(Head_List[num].position.x + num3, base.transform.position.y + num4, 0f);
 			if (_MonObject[num2] != null)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_MonObject[num2], position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_MonObject[num2], position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform.parent;
 				gameObject.transform.localScale = new global::UnityEngine.Vector3(3f, 3f, 1f);
 				gameObject.GetComponent<Mon_Index>().Index = Index + Mon_Count;

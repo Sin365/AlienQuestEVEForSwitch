@@ -99,7 +99,7 @@ public class Teleport : global::UnityEngine.MonoBehaviour
 		}
 		for (int i = 0; i < DustNum; i++)
 		{
-			Dust_List[i] = (global::UnityEngine.GameObject)global::UnityEngine.Object.Instantiate(DustObject, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + global::UnityEngine.Random.Range(-1.6f, 2.2f), 0f), base.transform.rotation);
+			Dust_List[i] = (global::UnityEngine.GameObject)AxiObject.Instantiate(DustObject, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + global::UnityEngine.Random.Range(-1.6f, 2.2f), 0f), base.transform.rotation);
 			Dust_List[i].transform.parent = base.transform;
 			Reset_Dust(i);
 			Dust_List[i].GetComponent<global::UnityEngine.SpriteRenderer>().color = color_Dot_OFF;

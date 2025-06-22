@@ -34,7 +34,7 @@ public class Magic_Fire_2_Explo : global::UnityEngine.MonoBehaviour
 		float num = 10f + (float)global::UnityEngine.Random.Range(-20, 20) * 0.03f;
 		for (int i = 1; i < 72; i++)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Dust, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num * (float)i)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Dust, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num * (float)i)) as global::UnityEngine.GameObject;
 		}
 		color_Brd_OFF = new global::UnityEngine.Color(Border_Q[0].color.r, Border_Q[0].color.g, Border_Q[0].color.b, 0f);
 		global::UnityEngine.Color color = Circle.GetComponent<global::UnityEngine.SpriteRenderer>().color;

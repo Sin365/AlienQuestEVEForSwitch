@@ -30,14 +30,14 @@ public class H_Test_Ani : global::UnityEngine.MonoBehaviour
 		Life_Timer += global::UnityEngine.Time.deltaTime;
 		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.J))
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
 			gameObject.GetComponent<H_CumDown>().pos_Target = base.transform;
 			gameObject.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 			gameObject.GetComponent<H_CumDown>().Set_DownDirect(Cum_Size);
 		}
 		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.K))
 		{
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
 			gameObject2.GetComponent<H_CumDown>().pos_Target = base.transform;
 			gameObject2.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 			gameObject2.GetComponent<H_CumDown>().Set_DownDrool(Cum_Size);
@@ -46,14 +46,14 @@ public class H_Test_Ani : global::UnityEngine.MonoBehaviour
 		{
 			for (int i = 0; i < 1; i++)
 			{
-				global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
 				gameObject3.GetComponent<H_CumDown>().pos_Target = base.transform;
 				gameObject3.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 				gameObject3.GetComponent<H_CumDown>().Set_Pee();
 			}
 			for (int j = 0; j < 8; j++)
 			{
-				global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(CumDot[global::UnityEngine.Random.Range(1, 3)], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(CumDot[global::UnityEngine.Random.Range(1, 3)], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 			}
 		}
 		if (pos_Penis == null)

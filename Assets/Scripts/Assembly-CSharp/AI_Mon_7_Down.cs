@@ -25,7 +25,7 @@ public class AI_Mon_7_Down : global::UnityEngine.MonoBehaviour
 			Life_Timer += global::UnityEngine.Time.deltaTime;
 			if (Life_Timer > 5f)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Mon_7_Obejct, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Mon_7_Obejct, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.GetComponent<Mon_Index>().Index = mon_Index;
 				gameObject.SendMessage("Set_DownDelay");
 				gameObject.transform.parent = base.transform.parent;

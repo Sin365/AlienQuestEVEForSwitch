@@ -56,7 +56,7 @@ public class Mother_Fire : global::UnityEngine.MonoBehaviour
 			if (onCam_Timer > 0f && Dust_Timer > 0.01f)
 			{
 				Dust_Timer = 0f;
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			}
 			diatance = global::UnityEngine.Vector3.Distance(base.transform.position, posOrig);
 			if (diatance > 30f || Life_Timer > 10f)

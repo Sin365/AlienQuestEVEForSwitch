@@ -40,7 +40,7 @@ public class Magic_Fire_1 : global::UnityEngine.MonoBehaviour
 
 	private void Make_Explo()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, Pos_Explo.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, Pos_Explo.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 

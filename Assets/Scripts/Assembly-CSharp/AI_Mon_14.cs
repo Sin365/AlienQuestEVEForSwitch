@@ -464,7 +464,7 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 		if (Lag_Timer > 0.01f)
 		{
 			global::UnityEngine.Vector3 vector = new global::UnityEngine.Vector3(pos_Blade.position.x, pos_Blade.position.y + 3f, 0f);
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Lag, pos_Blade.position, pos_Blade.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Lag, pos_Blade.position, pos_Blade.rotation) as global::UnityEngine.GameObject;
 			gameObject.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 16 + mon_Index * 20;
 			Lag_Timer = 0f;
 		}
@@ -481,7 +481,7 @@ public class AI_Mon_14 : global::UnityEngine.MonoBehaviour
 		int num = ((global::UnityEngine.Random.Range(0, 10) <= 5) ? 19 : 20);
 		GM.Hscene_Num = num;
 		global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(Player.transform.position.x + 1f * (float)(-facingRight), Player.transform.position.y, 0f);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[num - 19], position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[num - 19], position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (facingRight > 0)
 		{

@@ -147,7 +147,7 @@ public class AI_Mon_15 : global::UnityEngine.MonoBehaviour
 		float num = 0f;
 		if (Fire_Num == 0)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			global::UnityEngine.Vector3 vector = new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y + 2.8f);
 			global::UnityEngine.Vector3 position = gameObject.transform.position;
 			vector.x -= position.x;
@@ -158,7 +158,7 @@ public class AI_Mon_15 : global::UnityEngine.MonoBehaviour
 		}
 		else
 		{
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Fire, pos_Fire.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			global::UnityEngine.Vector3 vector2 = new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y + 2.8f);
 			global::UnityEngine.Vector3 position2 = gameObject2.transform.position;
 			vector2.x -= position2.x;

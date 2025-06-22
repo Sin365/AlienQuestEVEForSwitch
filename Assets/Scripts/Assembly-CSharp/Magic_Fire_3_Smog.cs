@@ -31,7 +31,7 @@ public class Magic_Fire_3_Smog : global::UnityEngine.MonoBehaviour
 		{
 			color_Target[i] = new global::UnityEngine.Color(1f, 1f, 1f, 2f);
 		}
-		Bar_C = global::UnityEngine.Object.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		Bar_C = AxiObject.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		Bar_C.transform.localScale = new global::UnityEngine.Vector3(1f, 0.07f, 1f);
 		Bar_C.transform.parent = base.transform;
 		if (bar_Obj != null)
@@ -42,8 +42,8 @@ public class Magic_Fire_3_Smog : global::UnityEngine.MonoBehaviour
 
 	private void Make_Bar()
 	{
-		Bar_L[Bar_Num] = global::UnityEngine.Object.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x - 0.3f - 0.3f * (float)Bar_Num, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
-		Bar_R[Bar_Num] = global::UnityEngine.Object.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x + 0.3f + 0.3f * (float)Bar_Num, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		Bar_L[Bar_Num] = AxiObject.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x - 0.3f - 0.3f * (float)Bar_Num, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
+		Bar_R[Bar_Num] = AxiObject.Instantiate(bar_Obj, new global::UnityEngine.Vector3(base.transform.position.x + 0.3f + 0.3f * (float)Bar_Num, base.transform.position.y, 0f), base.transform.rotation) as global::UnityEngine.GameObject;
 		global::UnityEngine.Transform obj = Bar_L[Bar_Num].transform;
 		global::UnityEngine.Vector3 localScale = new global::UnityEngine.Vector3(1f, 0.07f, 1f);
 		Bar_R[Bar_Num].transform.localScale = localScale;

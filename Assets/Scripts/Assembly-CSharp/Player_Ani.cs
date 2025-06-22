@@ -2431,7 +2431,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			Ani_Timer = 0f;
 			if (GM.Weapon_Num == 5)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform;
 				gameObject.transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
 				gameObject.GetComponent<global::UnityEngine.SpriteRenderer>().sprite = SR_Effect.sprite;
@@ -2634,7 +2634,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			Ani_Timer = 0f;
 			if (GM.Weapon_Num == 5)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform;
 				gameObject.transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
 				gameObject.GetComponent<global::UnityEngine.SpriteRenderer>().sprite = SR_Effect.sprite;
@@ -2989,7 +2989,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			}
 			if (GM.Weapon_Num == 5)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform;
 				gameObject.transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
 				gameObject.GetComponent<global::UnityEngine.SpriteRenderer>().sprite = SR_Effect.sprite;
@@ -3191,7 +3191,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			}
 			if (GM.Weapon_Num == 5)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform;
 				gameObject.transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
 				gameObject.GetComponent<global::UnityEngine.SpriteRenderer>().sprite = SR_Effect.sprite;
@@ -3210,7 +3210,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			Ani_Timer = 0f;
 			if (GM.Weapon_Num == 5)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform;
 				gameObject.transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
 				gameObject.GetComponent<global::UnityEngine.SpriteRenderer>().sprite = SR_Effect.sprite;
@@ -3371,7 +3371,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			Ani_Timer = 0f;
 			if (GM.Weapon_Num == 5)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Atk_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform;
 				gameObject.transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
 				gameObject.GetComponent<global::UnityEngine.SpriteRenderer>().sprite = SR_Effect.sprite;
@@ -3837,7 +3837,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 				global::UnityEngine.GameObject.Find("Effect_SpinGlow").transform.rotation = global::UnityEngine.Quaternion.Euler(0f, 0f, (float)global::UnityEngine.Random.Range(0, 8) * 0.1f);
 				if (GM.Weapon_Num == 5)
 				{
-					global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Spin_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Spin_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				}
 				break;
 			case 2:
@@ -3905,7 +3905,7 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 			}
 			if (GM.Weapon_Num == 5 && Num_SpinEnd > 0)
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Spin_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Spin_Lag, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.GetComponent<global::UnityEngine.SpriteRenderer>().sprite = SR_Effect_SpinGlow.sprite;
 			}
 		}

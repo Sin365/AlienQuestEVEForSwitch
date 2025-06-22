@@ -28,26 +28,26 @@ public class Mother_Gravity_WU : global::UnityEngine.MonoBehaviour
 	private void Make_Black()
 	{
 		int num = global::UnityEngine.Random.Range(0, 24);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(BlackBar, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 15f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(BlackBar, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 15f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform;
 		num = ((num == global::UnityEngine.Random.Range(0, 24)) ? num++ : num);
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(BlackBar, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 15f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(BlackBar, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 15f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
 		gameObject2.transform.parent = base.transform;
 		num = ((num == global::UnityEngine.Random.Range(0, 24)) ? num++ : num);
-		global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(BlackBar, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 15f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(BlackBar, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 15f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
 		gameObject3.transform.parent = base.transform;
 		num = ((num == global::UnityEngine.Random.Range(0, 24)) ? num++ : num);
-		global::UnityEngine.GameObject gameObject4 = global::UnityEngine.Object.Instantiate(BlackBar, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 15f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject4 = AxiObject.Instantiate(BlackBar, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 15f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
 		gameObject4.transform.parent = base.transform;
 		num = ((num == global::UnityEngine.Random.Range(0, 24)) ? num++ : num);
-		global::UnityEngine.GameObject gameObject5 = global::UnityEngine.Object.Instantiate(BlackBar, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 15f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject5 = AxiObject.Instantiate(BlackBar, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 15f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
 		gameObject5.transform.parent = base.transform;
 	}
 
 	private void Make_Blue()
 	{
 		int num = global::UnityEngine.Random.Range(0, 36);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(InnerBlue, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 10f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(InnerBlue, base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 10f * (float)num + (float)global::UnityEngine.Random.Range(-50, 50) * 0.1f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform;
 	}
 

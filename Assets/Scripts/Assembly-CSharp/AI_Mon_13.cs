@@ -426,7 +426,7 @@ public class AI_Mon_13 : global::UnityEngine.MonoBehaviour
 		vector.y -= position.y;
 		num = global::UnityEngine.Mathf.Atan2(vector.y, vector.x) * 57.29578f + 180f;
 		num = Check_Fire_Angle(num);
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Fire, pos_Fire.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, num)) as global::UnityEngine.GameObject;
 		GameManager.instance.sc_Sound_List.Boss_4_Fire(pos_Fire.position);
 	}
 
@@ -464,7 +464,7 @@ public class AI_Mon_13 : global::UnityEngine.MonoBehaviour
 		GM.Hscene_Timer = 1f;
 		H_Timer = 4f;
 		H_Pursue_Timer = 0f;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(H_Single[0], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(H_Single[0], Player.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		gameObject.transform.parent = base.transform.parent;
 		if (facingRight > 0)
 		{

@@ -44,7 +44,7 @@ public class LV_5_MonGen : global::UnityEngine.MonoBehaviour
 		{
 			if (!GM.Check_EventMonster(Event_Map_Num))
 			{
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Mon_Objcet, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Mon_Objcet, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.parent = base.transform;
 				gameObject.GetComponent<Mon_Index>().Index = Index;
 				gameObject.GetComponent<Monster>().Event_Num = Event_Map_Num;
@@ -52,7 +52,7 @@ public class LV_5_MonGen : global::UnityEngine.MonoBehaviour
 		}
 		else if (Num == 1 && Extra_Num == 0)
 		{
-			global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Mon_Objcet, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Mon_Objcet, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			gameObject2.transform.parent = base.transform;
 			gameObject2.GetComponent<Mon_Index>().Index = Index;
 			if (Event_Bonus_Num > 0)
@@ -82,7 +82,7 @@ public class LV_5_MonGen : global::UnityEngine.MonoBehaviour
 			for (int i = 0; i < Num; i++)
 			{
 				pos = new global::UnityEngine.Vector3(base.transform.position.x - Distance_Bar.localScale.x + distNum * (float)i + global::UnityEngine.Random.Range(0f - distRnd, distRnd), base.transform.position.y, 0f);
-				global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(Mon_Objcet, pos, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(Mon_Objcet, pos, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject3.transform.parent = base.transform;
 				gameObject3.GetComponent<Mon_Index>().Index = Index + mon_Count;
 				mon_Count++;

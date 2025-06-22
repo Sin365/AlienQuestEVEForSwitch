@@ -81,7 +81,7 @@ public class Magic_Fire_1B : global::UnityEngine.MonoBehaviour
 			if (Dust_Timer > 0.02f)
 			{
 				Dust_Timer = 0f;
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 				gameObject.transform.localScale = new global::UnityEngine.Vector3(gameObject.transform.localScale.x * (float)facingRight, gameObject.transform.localScale.y, 1f);
 				gameObject.transform.Translate(global::UnityEngine.Vector3.up * global::UnityEngine.Random.Range(-0.1f, 0.1f));
 			}

@@ -90,9 +90,9 @@ public class Mon_Fire_Gravity : global::UnityEngine.MonoBehaviour
 				if (Dust_Timer > 0.01f)
 				{
 					Dust_Timer = 0f;
-					global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
-					global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
-					global::UnityEngine.GameObject gameObject3 = global::UnityEngine.Object.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject3 = AxiObject.Instantiate(_Dust, base.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 					gameObject2.transform.Translate(global::UnityEngine.Vector3.up * global::UnityEngine.Random.Range(-0.3f, 0.3f));
 					gameObject3.transform.Translate(global::UnityEngine.Vector3.up * global::UnityEngine.Random.Range(-0.3f, 0.3f));
 				}
@@ -108,7 +108,7 @@ public class Mon_Fire_Gravity : global::UnityEngine.MonoBehaviour
 	private void Explo()
 	{
 		onExplo = true;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Explo, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + 0.8f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Explo, new global::UnityEngine.Vector3(base.transform.position.x, base.transform.position.y + 0.8f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
 		GameManager.instance.sc_Sound_List.Magic_3_Explo(base.transform.position);
 		global::UnityEngine.Object.Destroy(base.gameObject);
 	}

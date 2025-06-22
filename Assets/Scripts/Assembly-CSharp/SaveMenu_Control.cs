@@ -276,7 +276,7 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 
 	private void SaveGame()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(info_SaveComplete) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(info_SaveComplete) as global::UnityEngine.GameObject;
 		//if (AxiPlayerPrefs.GetInt("Language_Num") == 1)
 		//{
 		//	string start = Lang_MI.TitleMenu(8, 1);

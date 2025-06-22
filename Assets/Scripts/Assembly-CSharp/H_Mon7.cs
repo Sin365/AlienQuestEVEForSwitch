@@ -50,10 +50,10 @@ public class H_Mon7 : global::UnityEngine.MonoBehaviour
 	{
 		for (int i = 0; i < explo_Pos.Length; i++)
 		{
-			global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Explo, explo_Pos[i].position, explo_Pos[i].transform.rotation) as global::UnityEngine.GameObject;
+			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Explo, explo_Pos[i].position, explo_Pos[i].transform.rotation) as global::UnityEngine.GameObject;
 			gameObject.transform.localScale = explo_Pos[i].transform.localScale;
 		}
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Mon_7_Down, pos_Mon.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Mon_7_Down, pos_Mon.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject2.GetComponent<AI_Mon_7_Down>().Set_Index(mon_Index);
 		if (onFlip)
 		{

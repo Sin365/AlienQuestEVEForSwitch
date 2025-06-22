@@ -37,7 +37,7 @@ public class LV_2_MonGenEgg : global::UnityEngine.MonoBehaviour
 				{
 					pos = new global::UnityEngine.Vector3(base.transform.position.x - Distance_Bar.localScale.x + distNum * (float)i + global::UnityEngine.Random.Range(0f - distRnd, distRnd), base.transform.position.y, 0f);
 					rnd = global::UnityEngine.Random.Range(0, _Mon_List.Length);
-					global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Mon_List[rnd], pos, base.transform.rotation) as global::UnityEngine.GameObject;
+					global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Mon_List[rnd], pos, base.transform.rotation) as global::UnityEngine.GameObject;
 					gameObject.transform.parent = base.transform;
 					gameObject.GetComponent<AI_Mon_Egg>().Index = Index + Egg_Count;
 					Egg_Count++;

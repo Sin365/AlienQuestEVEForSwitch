@@ -391,7 +391,7 @@ public class AI_Mon_27 : global::UnityEngine.MonoBehaviour
 		Laser_Timer = 0f;
 		Move_Delay = 0.8f;
 		on_LaserTarget = false;
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(_Laser, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, laser_Angle)) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Laser, pos_Fire.position, global::UnityEngine.Quaternion.Euler(0f, 0f, laser_Angle)) as global::UnityEngine.GameObject;
 		SR_Glow_Laser.color = new global::UnityEngine.Color(color_Laser.r, color_Laser.g, color_Laser.b, 0f);
 		SR_Glow_LVertical.color = new global::UnityEngine.Color(color_LVertical.r, color_LVertical.g, color_LVertical.b, 0f);
 	}

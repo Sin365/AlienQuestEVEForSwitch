@@ -104,11 +104,11 @@ public class H_Mon31 : global::UnityEngine.MonoBehaviour
 
 	private void Make_Monster()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Mon_18, pos_18.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(Mon_18, pos_18.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject.GetComponent<Mon_Index>().Index = Index;
 		gameObject.transform.parent = base.transform.parent;
 		gameObject.SendMessage("Set_Penis_Wet");
-		global::UnityEngine.GameObject gameObject2 = global::UnityEngine.Object.Instantiate(Mon_31, pos_31.position, base.transform.rotation) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(Mon_31, pos_31.position, base.transform.rotation) as global::UnityEngine.GameObject;
 		gameObject2.GetComponent<Mon_Index>().Index = Index;
 		gameObject2.transform.parent = base.transform.parent;
 		global::UnityEngine.Object.Destroy(base.gameObject);

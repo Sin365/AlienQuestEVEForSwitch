@@ -58,7 +58,7 @@ public class Event_Scientist : global::UnityEngine.MonoBehaviour
 			isDeath = true;
 			for (int i = 0; i < posExplo.Length; i++)
 			{
-				global::UnityEngine.GameObject gameObject = (global::UnityEngine.GameObject)global::UnityEngine.Object.Instantiate(Explo, posExplo[i].position, posExplo[i].rotation);
+				global::UnityEngine.GameObject gameObject = (global::UnityEngine.GameObject)AxiObject.Instantiate(Explo, posExplo[i].position, posExplo[i].rotation);
 				gameObject.transform.localScale = posExplo[i].transform.localScale;
 			}
 			GameManager.instance.sc_Sound_List.Mon_Explo(base.transform.position);
