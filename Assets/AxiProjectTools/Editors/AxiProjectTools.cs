@@ -486,9 +486,15 @@ public class AxiProjectTools : EditorWindow
             string guid = match.Groups[2].Value;
             string assetPath = AssetDatabase.GUIDToAssetPath(guid);
             // 仅当资源类型为 GameObject 时修改 type
-            //if (AssetDatabase.GetMainAssetTypeAtPath(assetPath) == typeof(GameObject))
-            if (assetPath.ToLower().EndsWith(".prefab"))
+            if (AssetDatabase.GetMainAssetTypeAtPath(assetPath) == typeof(GameObject))
+   //         if (assetPath.ToLower().EndsWith(".prefab")
+			////&& assetPath.Contains("/sound/")
+			//&& assetPath.Contains("/level")
+			//	)
             {
+				Debug.Log("已处理被引用项=>"+assetPath+"	,引用到=>"+ filePath);
+				Debug.Log("原值=>" + match.Value + "	,处理值=>"+ match.Groups[1].Value + "2" + match.Groups[3].Value);
+				//return match.Value;
                 return match.Groups[1].Value + "2" + match.Groups[3].Value; // type:3→2
             }
             return match.Value;
