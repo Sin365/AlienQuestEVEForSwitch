@@ -1,9 +1,8 @@
+using System.Linq;
 using UnityEngine;
 
 public class StageManager : global::UnityEngine.MonoBehaviour
 {
-	public global::UnityEngine.GameObject[] Room;
-
 	private global::UnityEngine.Vector3 Target_Pos;
 
 	public global::UnityEngine.GameObject Current_Room;
@@ -44,11 +43,11 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.Vector2 player_Velocity;
 
-    GameManager GM => GameManager.instance;
-    Player_Control PC => GameManager.instance?.PC;
-    GameObject Player => GameManager.instance?.gobj_Player;
+	GameManager GM => GameManager.instance;
+	Player_Control PC => GameManager.instance?.PC;
+	GameObject Player => GameManager.instance?.gobj_Player;
 
-    private Map_Control MC;
+	private Map_Control MC;
 
 	private int[] MapArray_Num = new int[200]
 	{
@@ -1749,13 +1748,13 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 
 	public void First_Game()
 	{
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Room[0]) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = LoadRoomById(0);// global::UnityEngine.Object.Instantiate(Room[0]) as global::UnityEngine.GameObject;
 		StartCoroutine("Start_Map_Pos");
 	}
 
 	public void Load_Game()
 	{
-		if (GM.Room_Num > Room.Length)
+		if (GM.Room_Num > mRoomPathList.Length)
 		{
 			return;
 		}
@@ -1763,7 +1762,10 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.Object.Destroy(Current_Room.gameObject);
 		}
-		global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Room[GM.Room_Num]) as global::UnityEngine.GameObject;
+		global::UnityEngine.GameObject gameObject = LoadRoomById(GM.Room_Num);//global::UnityEngine.Object.Instantiate(Room[GM.Room_Num]) as global::UnityEngine.GameObject;
+//追加一句，释放掉已经没有依赖的资源
+		Resources.UnloadUnusedAssets();
+
 		if (gameObject.GetComponent<Room_Control>().Save_Pos != null)
 		{
 			Target_Pos = gameObject.GetComponent<Room_Control>().Save_Pos.position;
@@ -1809,7 +1811,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 
 	public void Go_Room(int roomNum, int posNum, float dist_x, float dist_y, bool cheatRoom)
 	{
-		if (roomNum <= Room.Length)
+		if (roomNum <= mRoomPathList.Length)
 		{
 			GM.onGatePass = true;
 			GM.Room_Num = roomNum;
@@ -1877,7 +1879,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 				{
 					global::UnityEngine.Object.Destroy(Current_Room.gameObject);
 				}
-				global::UnityEngine.GameObject gameObject = global::UnityEngine.Object.Instantiate(Room[GM.Room_Num]) as global::UnityEngine.GameObject;
+				global::UnityEngine.GameObject gameObject = LoadRoomById(GM.Room_Num);// global::UnityEngine.Object.Instantiate(Room[GM.Room_Num]) as global::UnityEngine.GameObject;
 				if (!isCheatRoom)
 				{
 					Target_Pos = gameObject.GetComponent<Room_Control>().targetPos[pos_Num].position;
@@ -1966,1778 +1968,1778 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 		}
 		switch (GM.Room_Num)
 		{
-		case 0:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 18f);
-			}
-			break;
-		case 1:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 18f);
-			}
-			break;
-		case 2:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 18f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 17f);
-			}
-			break;
-		case 3:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 17f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 17f);
-			}
-			break;
-		case 4:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 17f);
-			break;
-		case 5:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 16f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 16f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 17f);
-			}
-			else if (pos_Num == 3)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 18f);
-			}
-			break;
-		case 6:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 15f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 16f);
-			}
-			break;
-		case 7:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 18f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 18f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(16f, 19f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 19f);
-			}
-			break;
-		case 8:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 19f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 21f);
-			}
-			break;
-		case 9:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 19f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 20f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 20f);
-			}
-			break;
-		case 10:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 20f);
-			break;
-		case 11:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 20f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(22f, 20f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 22f);
-			}
-			else if (pos_Num == 3)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(22f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 21f);
-			}
-			break;
-		case 12:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 20f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 21f);
-			}
-			break;
-		case 13:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 22f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 22f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 22f);
-			}
-			else if (Player.transform.position.x > 502.6f)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 23f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 23f);
-			}
-			break;
-		case 14:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 22f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 23f);
-			}
-			break;
-		case 15:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 23f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 24f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 25f);
-			}
-			break;
-		case 16:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 24f);
-			break;
-		case 17:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 24f);
-			}
-			break;
-		case 18:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 24f);
-			}
-			break;
-		case 19:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 23f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 24f);
-			}
-			break;
-		case 20:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(1f, 22f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(1f, 23f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(1f, 26f);
-			}
-			break;
-		case 21:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 22f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 21f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 19f);
-			}
-			break;
-		case 22:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 21f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 22f);
-			}
-			break;
-		case 23:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 22f);
-			}
-			break;
-		case 24:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(0f, 26f);
-			break;
-		case 25:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(1f, 18f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 18f);
-			}
-			break;
-		case 26:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 18f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 18f);
-			}
-			else if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 17f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 17f);
-			}
-			break;
-		case 27:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 14f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 15f);
-			}
-			else if (Player.transform.position.x > Get_Room_AThird_X(1))
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 16f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 16f);
-			}
-			break;
-		case 28:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 15f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(9f, 14f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 13f);
-			}
-			break;
-		case 29:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 14f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 15f);
-			}
-			break;
-		case 30:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 15f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(16f, 15f);
-			}
-			break;
-		case 31:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 12f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 13f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 13f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 12f);
-			}
-			break;
-		case 32:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 13f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 13f);
-			}
-			else if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 12f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 12f);
-			}
-			break;
-		case 33:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 13f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(22f, 12f);
-			}
-			break;
-		case 34:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 12f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 13f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 16f);
-			}
-			break;
-		case 35:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 12f);
-			break;
-		case 36:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(16f, 10f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 10f);
-			}
-			else if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 10f);
-			}
-			break;
-		case 37:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 10f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 10f);
-			}
-			else if (pos_Num == 2 || pos_Num == 3)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 8f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 11f);
-			}
-			break;
-		case 38:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 10f);
-			}
-			break;
-		case 39:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 10f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 13f);
-			}
-			break;
-		case 40:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 8f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 8f);
-			}
-			break;
-		case 41:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 7f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 7f);
-			}
-			break;
-		case 42:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 8f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 8f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 7f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 7f);
-			}
-			break;
-		case 43:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 6f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(9f, 6f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 7f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 7f);
-			}
-			break;
-		case 44:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 6f);
-			break;
-		case 45:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 8f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 8f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 8f);
-			}
-			break;
-		case 46:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 6f);
-			break;
-		case 47:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 6f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 6f);
-			}
-			break;
-		case 48:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 6f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 6f);
-			}
-			break;
-		case 49:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 6f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 6f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 8f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 8f);
-			}
-			break;
-		case 50:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 8f);
-			break;
-		case 51:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 10f);
-			}
-			break;
-		case 61:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(32f, 10f);
-			}
-			break;
-		case 52:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 13f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 13f);
-			}
-			break;
-		case 62:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 13f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 13f);
-			}
-			break;
-		case 53:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 18f);
-			}
-			break;
-		case 63:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(31f, 18f);
-			}
-			break;
-		case 54:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 22f);
-			}
-			break;
-		case 64:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(29f, 22f);
-			}
-			break;
-		case 55:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 24f);
-			}
-			break;
-		case 65:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(31f, 24f);
-			}
-			break;
-		case 56:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 29f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 29f);
-			}
-			break;
-		case 66:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 29f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(31f, 29f);
-			}
-			break;
-		case 57:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 10f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 11f);
-			}
-			break;
-		case 58:
-			if (pos_Num == 0 || pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 13f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 12f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 14f);
-			}
-			break;
-		case 59:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 15f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 17f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 17f);
-			}
-			break;
-		case 60:
-			if (pos_Num == 0 || pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 18f);
-			}
-			else if (pos_Num == 1 || pos_Num == 3)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 18f);
-			}
-			else if (pos_Num == 4)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 20f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 18f);
-			}
-			break;
-		case 67:
-			if (pos_Num == 0 || pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 22f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 21f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 23f);
-			}
-			break;
-		case 68:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 24f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 24f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 25f);
-			}
-			break;
-		case 69:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 26f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 28f);
-			}
-			break;
-		case 70:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 29f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 29f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 29f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 31f);
-			}
-			break;
-		case 71:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 26f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 26f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 28f);
-			}
-			break;
-		case 72:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 26f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 26f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 26f);
-			}
-			break;
-		case 73:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 26f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 27f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 27f);
-			}
-			break;
-		case 74:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(16f, 27f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 27f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 26f);
-			}
-			break;
-		case 75:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 27f);
-			break;
-		case 76:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 24f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 24f);
-			}
-			else if (pos_Num == 2)
-			{
-				if (Player.transform.position.x > Get_Room_Half_X())
+			case 0:
+				if (pos_Num == 0)
 				{
-					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 24f);
+					MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 18f);
 				}
 				else
 				{
-					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 24f);
+					MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 18f);
 				}
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 25f);
-			}
-			break;
-		case 77:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 24f);
-			}
-			break;
-		case 78:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 29f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 29f);
-			}
-			else if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 30f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 30f);
-			}
-			break;
-		case 79:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 29f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 29f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 28f);
-			}
-			break;
-		case 80:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 29f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 29f);
-			}
-			break;
-		case 81:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 28f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 29f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 31f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 31f);
-			}
-			break;
-		case 82:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 31f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 31f);
-			}
-			break;
-		case 83:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 31f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 31f);
-			}
-			break;
-		case 84:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 31f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 31f);
-			}
-			else if (Player.transform.position.x > 497.84f)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 31f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 31f);
-			}
-			break;
-		case 85:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 31f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 32f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 32f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 31f);
-			}
-			break;
-		case 86:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 32f);
-			break;
-		case 87:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 32f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 32f);
-			}
-			break;
-		case 88:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 32f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(29f, 32f);
-			}
-			break;
-		case 89:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(30f, 32f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 32f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(31f, 33f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(30f, 34f);
-			}
-			break;
-		case 90:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(30f, 33f);
-			break;
-		case 91:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 34f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(29f, 34f);
-			}
-			break;
-		case 92:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 34f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 34f);
-			}
-			break;
-		case 93:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 34f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 34f);
-			}
-			break;
-		case 94:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 33f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(22f, 34f);
-			}
-			break;
-		case 95:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 31f);
-			break;
-		case 96:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 32f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 31f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 31f);
-			}
-			break;
-		case 97:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 31f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(40f, 31f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 31f);
-			}
-			break;
-		case 98:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 31f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 31f);
-			}
-			break;
-		case 99:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 29f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 29f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 30f);
-			}
-			break;
-		case 100:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 29f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 29f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 30f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 28f);
-			}
-			break;
-		case 101:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(32f, 29f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(36f, 29f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 30f);
-			}
-			break;
-		case 102:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(36f, 27f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 27f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 27f);
-			}
-			break;
-		case 103:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 24f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(36f, 26f);
-			}
-			break;
-		case 104:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(32f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 24f);
-			}
-			break;
-		case 105:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 22f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(40f, 22f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 24f);
-			}
-			else if (pos_Num == 3)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 24f);
-			}
-			else if (Player.transform.position.x < 1123.71f)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(40f, 22f);
-			}
-			break;
-		case 106:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 24f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 24f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 26f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 24f);
-			}
-			break;
-		case 107:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 24f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(47f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(47f, 26f);
-			}
-			break;
-		case 108:
-			if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(50f, 24f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 24f);
-			}
-			break;
-		case 109:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 26f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(46f, 29f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 28f);
-			}
-			break;
-		case 110:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(49f, 28f);
-			break;
-		case 111:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 22f);
-			}
-			break;
-		case 112:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(30f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 22f);
-			}
-			break;
-		case 113:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 22f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 23f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 23f);
-			}
-			break;
-		case 114:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 23f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 23f);
-			}
-			break;
-		case 115:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 20f);
-			}
-			else if (Player.transform.position.x < 1123.71f)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 21f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(40f, 21f);
-			}
-			break;
-		case 116:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 18f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 20f);
-			}
-			break;
-		case 117:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(32f, 18f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 17f);
-			}
-			break;
-		case 118:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 18f);
-			}
-			break;
-		case 119:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 18f);
-			break;
-		case 120:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 18f);
-			}
-			break;
-		case 121:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(47f, 18f);
-			}
-			break;
-		case 122:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(0f, 18f);
-			break;
-		case 123:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 18f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(52f, 19f);
-			}
-			else if (Player.transform.position.x < 1408.193f)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(49f, 18f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(50f, 18f);
-			}
-			break;
-		case 124:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(52f, 20f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(52f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(52f, 24f);
-			}
-			break;
-		case 125:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(51f, 24f);
-			break;
-		case 126:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(49f, 22f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(51f, 22f);
-			}
-			break;
-		case 127:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 17f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 15f);
-			}
-			break;
-		case 128:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(49f, 14f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(50f, 14f);
-			}
-			else if (Player.transform.position.x < 1408.193f)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(49f, 17f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(50f, 17f);
-			}
-			break;
-		case 129:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 13f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 14f);
-			}
-			break;
-		case 130:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 13f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 13f);
-			}
-			break;
-		case 131:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 12f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 13f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(40f, 13f);
-			}
-			break;
-		case 132:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 13f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 13f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 14f);
-			}
-			break;
-		case 133:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(29f, 13f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 13f);
-			}
-			break;
-		case 134:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 9f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 10f);
-			}
-			else if (pos_Num == 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 11f);
-			}
-			break;
-		case 135:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(36f, 10f);
-			}
-			break;
-		case 136:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 10f);
-			}
-			break;
-		case 137:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(46f, 10f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(51f, 11f);
-			}
-			break;
-		case 138:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(51f, 12f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(51f, 14f);
-			}
-			break;
-		case 139:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 8f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 8f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 8f);
-			}
-			break;
-		case 140:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 8f);
-			break;
-		case 141:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 6f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 7f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 8f);
-			}
-			break;
-		case 142:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(46f, 7f);
-			break;
-		case 143:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(36f, 6f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 6f);
-			}
-			break;
-		case 145:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(31f, 6f);
-			}
-			else if (pos_Num == 1)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 6f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 6f);
-			}
-			break;
-		case 146:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 6f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(30f, 6f);
-			}
-			break;
-		case 148:
-			if (pos_Num == 0)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 6f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(22f, 6f);
-			}
-			break;
-		case 149:
-			if (pos_Num < 2)
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 3f);
-			}
-			else
-			{
-				MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 5f);
-			}
-			break;
-		case 150:
-			MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 2f);
-			break;
+				break;
+			case 1:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 18f);
+				}
+				break;
+			case 2:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 18f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 17f);
+				}
+				break;
+			case 3:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 17f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 17f);
+				}
+				break;
+			case 4:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 17f);
+				break;
+			case 5:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 16f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 16f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 17f);
+				}
+				else if (pos_Num == 3)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 18f);
+				}
+				break;
+			case 6:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 15f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 16f);
+				}
+				break;
+			case 7:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 18f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 18f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(16f, 19f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 19f);
+				}
+				break;
+			case 8:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 19f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 21f);
+				}
+				break;
+			case 9:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 19f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 20f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 20f);
+				}
+				break;
+			case 10:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 20f);
+				break;
+			case 11:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 20f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(22f, 20f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 22f);
+				}
+				else if (pos_Num == 3)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(22f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 21f);
+				}
+				break;
+			case 12:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 20f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 21f);
+				}
+				break;
+			case 13:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 22f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 22f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 22f);
+				}
+				else if (Player.transform.position.x > 502.6f)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 23f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 23f);
+				}
+				break;
+			case 14:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 22f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 23f);
+				}
+				break;
+			case 15:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 23f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 24f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 25f);
+				}
+				break;
+			case 16:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 24f);
+				break;
+			case 17:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 24f);
+				}
+				break;
+			case 18:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 24f);
+				}
+				break;
+			case 19:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 23f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 24f);
+				}
+				break;
+			case 20:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(1f, 22f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(1f, 23f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(1f, 26f);
+				}
+				break;
+			case 21:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 22f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 21f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 19f);
+				}
+				break;
+			case 22:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 21f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 22f);
+				}
+				break;
+			case 23:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 22f);
+				}
+				break;
+			case 24:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(0f, 26f);
+				break;
+			case 25:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(1f, 18f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 18f);
+				}
+				break;
+			case 26:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 18f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 18f);
+				}
+				else if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 17f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 17f);
+				}
+				break;
+			case 27:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 14f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 15f);
+				}
+				else if (Player.transform.position.x > Get_Room_AThird_X(1))
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 16f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 16f);
+				}
+				break;
+			case 28:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 15f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(9f, 14f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 13f);
+				}
+				break;
+			case 29:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 14f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 15f);
+				}
+				break;
+			case 30:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 15f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(16f, 15f);
+				}
+				break;
+			case 31:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 12f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 13f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 13f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 12f);
+				}
+				break;
+			case 32:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 13f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 13f);
+				}
+				else if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 12f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 12f);
+				}
+				break;
+			case 33:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 13f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(22f, 12f);
+				}
+				break;
+			case 34:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 12f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 13f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 16f);
+				}
+				break;
+			case 35:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 12f);
+				break;
+			case 36:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(16f, 10f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 10f);
+				}
+				else if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 10f);
+				}
+				break;
+			case 37:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 10f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 10f);
+				}
+				else if (pos_Num == 2 || pos_Num == 3)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 8f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 11f);
+				}
+				break;
+			case 38:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 10f);
+				}
+				break;
+			case 39:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 10f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 13f);
+				}
+				break;
+			case 40:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 8f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 8f);
+				}
+				break;
+			case 41:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 7f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 7f);
+				}
+				break;
+			case 42:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 8f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 8f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 7f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 7f);
+				}
+				break;
+			case 43:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 6f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(9f, 6f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 7f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 7f);
+				}
+				break;
+			case 44:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 6f);
+				break;
+			case 45:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 8f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 8f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(8f, 8f);
+				}
+				break;
+			case 46:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 6f);
+				break;
+			case 47:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 6f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 6f);
+				}
+				break;
+			case 48:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 6f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 6f);
+				}
+				break;
+			case 49:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 6f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 6f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 8f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 8f);
+				}
+				break;
+			case 50:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 8f);
+				break;
+			case 51:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 10f);
+				}
+				break;
+			case 61:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(32f, 10f);
+				}
+				break;
+			case 52:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 13f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 13f);
+				}
+				break;
+			case 62:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 13f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 13f);
+				}
+				break;
+			case 53:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 18f);
+				}
+				break;
+			case 63:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(31f, 18f);
+				}
+				break;
+			case 54:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 22f);
+				}
+				break;
+			case 64:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(29f, 22f);
+				}
+				break;
+			case 55:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 24f);
+				}
+				break;
+			case 65:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(31f, 24f);
+				}
+				break;
+			case 56:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 29f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 29f);
+				}
+				break;
+			case 66:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 29f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(31f, 29f);
+				}
+				break;
+			case 57:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 10f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 11f);
+				}
+				break;
+			case 58:
+				if (pos_Num == 0 || pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 13f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 12f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 14f);
+				}
+				break;
+			case 59:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 15f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 17f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 17f);
+				}
+				break;
+			case 60:
+				if (pos_Num == 0 || pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 18f);
+				}
+				else if (pos_Num == 1 || pos_Num == 3)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 18f);
+				}
+				else if (pos_Num == 4)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 20f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 18f);
+				}
+				break;
+			case 67:
+				if (pos_Num == 0 || pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 22f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 21f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 23f);
+				}
+				break;
+			case 68:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 24f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 24f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 25f);
+				}
+				break;
+			case 69:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 26f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 28f);
+				}
+				break;
+			case 70:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 29f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 29f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 29f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 31f);
+				}
+				break;
+			case 71:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(2f, 26f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 26f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 28f);
+				}
+				break;
+			case 72:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 26f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 26f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 26f);
+				}
+				break;
+			case 73:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 26f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 27f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 27f);
+				}
+				break;
+			case 74:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(16f, 27f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 27f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 26f);
+				}
+				break;
+			case 75:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 27f);
+				break;
+			case 76:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 24f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 24f);
+				}
+				else if (pos_Num == 2)
+				{
+					if (Player.transform.position.x > Get_Room_Half_X())
+					{
+						MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 24f);
+					}
+					else
+					{
+						MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 24f);
+					}
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 25f);
+				}
+				break;
+			case 77:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 24f);
+				}
+				break;
+			case 78:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 29f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 29f);
+				}
+				else if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 30f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 30f);
+				}
+				break;
+			case 79:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 29f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 29f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(13f, 28f);
+				}
+				break;
+			case 80:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 29f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(10f, 29f);
+				}
+				break;
+			case 81:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 28f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(5f, 29f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(4f, 31f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(6f, 31f);
+				}
+				break;
+			case 82:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(7f, 31f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(11f, 31f);
+				}
+				break;
+			case 83:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(12f, 31f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(14f, 31f);
+				}
+				break;
+			case 84:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(15f, 31f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(19f, 31f);
+				}
+				else if (Player.transform.position.x > 497.84f)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 31f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(17f, 31f);
+				}
+				break;
+			case 85:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(20f, 31f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 32f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 32f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 31f);
+				}
+				break;
+			case 86:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 32f);
+				break;
+			case 87:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(26f, 32f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 32f);
+				}
+				break;
+			case 88:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 32f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(29f, 32f);
+				}
+				break;
+			case 89:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(30f, 32f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 32f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(31f, 33f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(30f, 34f);
+				}
+				break;
+			case 90:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(30f, 33f);
+				break;
+			case 91:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(28f, 34f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(29f, 34f);
+				}
+				break;
+			case 92:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(25f, 34f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(27f, 34f);
+				}
+				break;
+			case 93:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 34f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(24f, 34f);
+				}
+				break;
+			case 94:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(21f, 33f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(22f, 34f);
+				}
+				break;
+			case 95:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(3f, 31f);
+				break;
+			case 96:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 32f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 31f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 31f);
+				}
+				break;
+			case 97:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 31f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(40f, 31f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 31f);
+				}
+				break;
+			case 98:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 31f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 31f);
+				}
+				break;
+			case 99:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 29f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 29f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 30f);
+				}
+				break;
+			case 100:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 29f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 29f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 30f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 28f);
+				}
+				break;
+			case 101:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(32f, 29f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(36f, 29f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 30f);
+				}
+				break;
+			case 102:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(36f, 27f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 27f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 27f);
+				}
+				break;
+			case 103:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 24f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(36f, 26f);
+				}
+				break;
+			case 104:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(32f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 24f);
+				}
+				break;
+			case 105:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 22f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(40f, 22f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 24f);
+				}
+				else if (pos_Num == 3)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 24f);
+				}
+				else if (Player.transform.position.x < 1123.71f)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(40f, 22f);
+				}
+				break;
+			case 106:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 24f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 24f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 26f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 24f);
+				}
+				break;
+			case 107:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 24f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(47f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(47f, 26f);
+				}
+				break;
+			case 108:
+				if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(50f, 24f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 24f);
+				}
+				break;
+			case 109:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 26f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(46f, 29f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 28f);
+				}
+				break;
+			case 110:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(49f, 28f);
+				break;
+			case 111:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 22f);
+				}
+				break;
+			case 112:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(30f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 22f);
+				}
+				break;
+			case 113:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 22f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 23f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 23f);
+				}
+				break;
+			case 114:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 23f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 23f);
+				}
+				break;
+			case 115:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 20f);
+				}
+				else if (Player.transform.position.x < 1123.71f)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 21f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(40f, 21f);
+				}
+				break;
+			case 116:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 18f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 20f);
+				}
+				break;
+			case 117:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(32f, 18f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 17f);
+				}
+				break;
+			case 118:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 18f);
+				}
+				break;
+			case 119:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 18f);
+				break;
+			case 120:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 18f);
+				}
+				break;
+			case 121:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(47f, 18f);
+				}
+				break;
+			case 122:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(0f, 18f);
+				break;
+			case 123:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 18f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(52f, 19f);
+				}
+				else if (Player.transform.position.x < 1408.193f)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(49f, 18f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(50f, 18f);
+				}
+				break;
+			case 124:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(52f, 20f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(52f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(52f, 24f);
+				}
+				break;
+			case 125:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(51f, 24f);
+				break;
+			case 126:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(49f, 22f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(51f, 22f);
+				}
+				break;
+			case 127:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 17f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 15f);
+				}
+				break;
+			case 128:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(49f, 14f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(50f, 14f);
+				}
+				else if (Player.transform.position.x < 1408.193f)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(49f, 17f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(50f, 17f);
+				}
+				break;
+			case 129:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 13f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(48f, 14f);
+				}
+				break;
+			case 130:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 13f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 13f);
+				}
+				break;
+			case 131:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 12f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 13f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(40f, 13f);
+				}
+				break;
+			case 132:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(34f, 13f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 13f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 14f);
+				}
+				break;
+			case 133:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(29f, 13f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 13f);
+				}
+				break;
+			case 134:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 9f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 10f);
+				}
+				else if (pos_Num == 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(41f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 11f);
+				}
+				break;
+			case 135:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(36f, 10f);
+				}
+				break;
+			case 136:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(42f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 10f);
+				}
+				break;
+			case 137:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(46f, 10f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(51f, 11f);
+				}
+				break;
+			case 138:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(51f, 12f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(51f, 14f);
+				}
+				break;
+			case 139:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(38f, 8f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 8f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(39f, 8f);
+				}
+				break;
+			case 140:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(37f, 8f);
+				break;
+			case 141:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 6f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(45f, 7f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(44f, 8f);
+				}
+				break;
+			case 142:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(46f, 7f);
+				break;
+			case 143:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(36f, 6f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(43f, 6f);
+				}
+				break;
+			case 145:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(31f, 6f);
+				}
+				else if (pos_Num == 1)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(35f, 6f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 6f);
+				}
+				break;
+			case 146:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(23f, 6f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(30f, 6f);
+				}
+				break;
+			case 148:
+				if (pos_Num == 0)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(18f, 6f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(22f, 6f);
+				}
+				break;
+			case 149:
+				if (pos_Num < 2)
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 3f);
+				}
+				else
+				{
+					MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 5f);
+				}
+				break;
+			case 150:
+				MC.pos_Cursor = new global::UnityEngine.Vector2(33f, 2f);
+				break;
 		}
 		MC.Change_MiniMap();
 	}
@@ -3747,282 +3749,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 		PrevCursor = MC.pos_Cursor;
 		switch (GM.Room_Num)
 		{
-		case 0:
-			if (Player.transform.position.x > Get_Room_AThird_X(2))
-			{
-				MC.pos_Cursor.x = 10f;
-			}
-			else if (Player.transform.position.x > Get_Room_AThird_X(1))
-			{
-				MC.pos_Cursor.x = 9f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 8f;
-			}
-			if (Player.transform.position.y > 4f)
-			{
-				MC.pos_Cursor.y = 19f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 18f;
-			}
-			break;
-		case 1:
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 12f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 11f;
-			}
-			MC.pos_Cursor.y = 18f;
-			break;
-		case 2:
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 14f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 13f;
-			}
-			if (Player.transform.position.y > -11f)
-			{
-				MC.pos_Cursor.y = 18f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 17f;
-			}
-			break;
-		case 3:
-			if (Player.transform.position.x > Get_Room_AThird_X(2))
-			{
-				MC.pos_Cursor.x = 17f;
-			}
-			else if (Player.transform.position.x > Get_Room_AThird_X(1))
-			{
-				MC.pos_Cursor.x = 16f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 15f;
-			}
-			MC.pos_Cursor.y = 17f;
-			break;
-		case 5:
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 20f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 19f;
-			}
-			if (Player.transform.position.y > -8.4f)
-			{
-				MC.pos_Cursor.y = 18f;
-			}
-			else if (Player.transform.position.y > -23f)
-			{
-				MC.pos_Cursor.y = 17f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 16f;
-			}
-			break;
-		case 6:
-			if (Player.transform.position.x > 496f)
-			{
-				MC.pos_Cursor.x = 18f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 17f;
-			}
-			if (Player.transform.position.y > -45f)
-			{
-				MC.pos_Cursor.y = 16f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 15f;
-			}
-			break;
-		case 7:
-			if (Player.transform.position.y > 7.4f)
-			{
-				if (Player.transform.position.x > Get_Room_Half_X())
-				{
-					MC.pos_Cursor.x = 17f;
-				}
-				else
-				{
-					MC.pos_Cursor.x = 16f;
-				}
-				MC.pos_Cursor.y = 19f;
-				break;
-			}
-			if (Player.transform.position.x > Get_Room_AQuarter_X(3))
-			{
-				MC.pos_Cursor.x = 18f;
-			}
-			else if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 17f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
-			{
-				MC.pos_Cursor.x = 16f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 15f;
-			}
-			MC.pos_Cursor.y = 18f;
-			break;
-		case 8:
-			if (Player.transform.position.y > 42.5f)
-			{
-				MC.pos_Cursor.y = 21f;
-			}
-			else if (Player.transform.position.y > 21.5f)
-			{
-				MC.pos_Cursor.y = 20f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 19f;
-			}
-			MC.pos_Cursor.x = 15f;
-			break;
-		case 9:
-			if (Player.transform.position.y > 24.4f)
-			{
-				if (Player.transform.position.x > 526.5f)
-				{
-					MC.pos_Cursor.x = 19f;
-				}
-				else
-				{
-					MC.pos_Cursor.x = 18f;
-				}
-				MC.pos_Cursor.y = 20f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 18f;
-				MC.pos_Cursor.y = 19f;
-			}
-			break;
-		case 11:
-			if (Player.transform.position.y > 57f)
-			{
-				if (Player.transform.position.x > Get_Room_AThird_X(2))
-				{
-					MC.pos_Cursor.x = 22f;
-				}
-				else if (Player.transform.position.x > Get_Room_AThird_X(1))
-				{
-					MC.pos_Cursor.x = 21f;
-				}
-				else
-				{
-					MC.pos_Cursor.x = 20f;
-				}
-				MC.pos_Cursor.y = 22f;
-			}
-			else if (Player.transform.position.y > 36.5f)
-			{
-				MC.pos_Cursor.x = 21f;
-				MC.pos_Cursor.y = 21f;
-			}
-			else
-			{
-				if (Player.transform.position.x > Get_Room_AThird_X(2))
-				{
-					MC.pos_Cursor.x = 22f;
-				}
-				else if (Player.transform.position.x > Get_Room_AThird_X(1))
-				{
-					MC.pos_Cursor.x = 21f;
-				}
-				else
-				{
-					MC.pos_Cursor.x = 20f;
-				}
-				MC.pos_Cursor.y = 20f;
-			}
-			break;
-		case 13:
-			if (Player.transform.position.y > 75.5f)
-			{
-				if (Player.transform.position.x > 502.6f)
-				{
-					MC.pos_Cursor.x = 18f;
-				}
-				else
-				{
-					MC.pos_Cursor.x = 17f;
-				}
-				MC.pos_Cursor.y = 23f;
-				break;
-			}
-			if (Player.transform.position.x > 528f)
-			{
-				MC.pos_Cursor.x = 19f;
-			}
-			else if (Player.transform.position.x > 502.6f)
-			{
-				MC.pos_Cursor.x = 18f;
-			}
-			else if (Player.transform.position.x > 476f)
-			{
-				MC.pos_Cursor.x = 17f;
-			}
-			else if (Player.transform.position.x > 445f)
-			{
-				MC.pos_Cursor.x = 16f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 15f;
-			}
-			MC.pos_Cursor.y = 22f;
-			break;
-		case 14:
-			if (Player.transform.position.x > 384f)
-			{
-				MC.pos_Cursor.x = 14f;
-			}
-			else if (Player.transform.position.x > 355.6f)
-			{
-				MC.pos_Cursor.x = 13f;
-			}
-			else if (Player.transform.position.x > 327.15f)
-			{
-				MC.pos_Cursor.x = 12f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 11f;
-			}
-			if (Player.transform.position.y > 71f)
-			{
-				MC.pos_Cursor.y = 23f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 22f;
-			}
-			break;
-		case 15:
-			if (Player.transform.position.y > 86.5f)
-			{
+			case 0:
 				if (Player.transform.position.x > Get_Room_AThird_X(2))
 				{
 					MC.pos_Cursor.x = 10f;
@@ -4035,448 +3762,17 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 				{
 					MC.pos_Cursor.x = 8f;
 				}
-				if (Player.transform.position.y > 106f)
+				if (Player.transform.position.y > 4f)
 				{
-					MC.pos_Cursor.y = 25f;
+					MC.pos_Cursor.y = 19f;
 				}
 				else
 				{
-					MC.pos_Cursor.y = 24f;
+					MC.pos_Cursor.y = 18f;
 				}
-			}
-			else
-			{
-				MC.pos_Cursor.x = 10f;
-				MC.pos_Cursor.y = 23f;
-			}
-			break;
-		case 17:
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 6f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 5f;
-			}
-			MC.pos_Cursor.y = 24f;
-			break;
-		case 18:
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 4f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 3f;
-			}
-			MC.pos_Cursor.y = 24f;
-			break;
-		case 19:
-			MC.pos_Cursor.x = 2f;
-			if (Player.transform.position.y > 91f)
-			{
-				MC.pos_Cursor.y = 24f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 23f;
-			}
-			break;
-		case 20:
-			MC.pos_Cursor.x = 1f;
-			if (Player.transform.position.y > Get_Room_AFifth_Y(4))
-			{
-				MC.pos_Cursor.y = 26f;
-			}
-			else if (Player.transform.position.y > Get_Room_AFifth_Y(3))
-			{
-				MC.pos_Cursor.y = 25f;
-			}
-			else if (Player.transform.position.y > Get_Room_AFifth_Y(2))
-			{
-				MC.pos_Cursor.y = 24f;
-			}
-			else if (Player.transform.position.y > Get_Room_AFifth_Y(1))
-			{
-				MC.pos_Cursor.y = 23f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 22f;
-			}
-			break;
-		case 21:
-			if (Player.transform.position.x > 73f)
-			{
-				MC.pos_Cursor.x = 3f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 2f;
-			}
-			if (Player.transform.position.y > Get_Room_AQuarter_Y(3) && MC.pos_Cursor.x == 2f)
-			{
-				MC.pos_Cursor.y = 22f;
-			}
-			else if (Player.transform.position.y > Get_Room_AQuarter_Y(2))
-			{
-				MC.pos_Cursor.y = 21f;
-			}
-			else if (Player.transform.position.y > Get_Room_AQuarter_Y(1))
-			{
-				MC.pos_Cursor.y = 20f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 19f;
-			}
-			break;
-		case 22:
-			if (Player.transform.position.y > Get_Room_Half_Y())
-			{
-				MC.pos_Cursor.y = 22f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 21f;
-			}
-			if (Player.transform.position.x > Get_Room_AQuarter_X(3))
-			{
-				MC.pos_Cursor.x = 7f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(2))
-			{
-				MC.pos_Cursor.x = 6f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
-			{
-				MC.pos_Cursor.x = 5f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 4f;
-			}
-			break;
-		case 23:
-			if (Player.transform.position.x > 270.4f)
-			{
-				MC.pos_Cursor.x = 10f;
-			}
-			else if (Player.transform.position.x > 241.7f)
-			{
-				MC.pos_Cursor.x = 9f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 8f;
-			}
-			MC.pos_Cursor.y = 22f;
-			break;
-		case 25:
-			if (Player.transform.position.x > Get_Room_AThird_X(2))
-			{
-				MC.pos_Cursor.x = 3f;
-			}
-			else if (Player.transform.position.x > Get_Room_AThird_X(1))
-			{
-				MC.pos_Cursor.x = 2f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 1f;
-			}
-			MC.pos_Cursor.y = 18f;
-			break;
-		case 26:
-			if (Player.transform.position.y > Get_Room_AThird_Y(2))
-			{
-				MC.pos_Cursor.y = 19f;
-			}
-			else if (Player.transform.position.y > Get_Room_AThird_Y(1))
-			{
-				MC.pos_Cursor.y = 18f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 17f;
-			}
-			if (Player.transform.position.x > Get_Room_AQuarter_X(3))
-			{
-				MC.pos_Cursor.x = 7f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(2))
-			{
-				MC.pos_Cursor.x = 6f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
-			{
-				MC.pos_Cursor.x = 5f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 4f;
-			}
-			break;
-		case 27:
-			if (Player.transform.position.y > -44.8f)
-			{
-				MC.pos_Cursor.y = 16f;
-			}
-			else if (Player.transform.position.y > -60f)
-			{
-				MC.pos_Cursor.y = 15f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 14f;
-			}
-			if (MC.pos_Cursor.y == 15f && Player.transform.position.x > Get_Room_AThird_X(2))
-			{
-				MC.pos_Cursor.x = 7f;
-			}
-			else if (MC.pos_Cursor.y > 14f && Player.transform.position.x > Get_Room_AThird_X(1))
-			{
-				MC.pos_Cursor.x = 6f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 5f;
-			}
-			break;
-		case 28:
-			if (Player.transform.position.y > -57.5f)
-			{
-				MC.pos_Cursor.y = 15f;
-			}
-			else if (Player.transform.position.y > -73.3f)
-			{
-				MC.pos_Cursor.y = 14f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 13f;
-			}
-			if (Player.transform.position.x > Get_Room_AQuarter_X(3))
-			{
-				MC.pos_Cursor.x = 11f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(2))
-			{
-				MC.pos_Cursor.x = 10f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
-			{
-				MC.pos_Cursor.x = 9f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 8f;
-			}
-			break;
-		case 29:
-			if (Player.transform.position.y > -57.5f)
-			{
-				MC.pos_Cursor.y = 15f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 14f;
-			}
-			if (Player.transform.position.x > 327.5f)
-			{
-				MC.pos_Cursor.x = 12f;
-			}
-			else if (Player.transform.position.x > 295.7f)
-			{
-				MC.pos_Cursor.x = 11f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 10f;
-			}
-			break;
-		case 30:
-			if (Player.transform.position.x > Get_Room_AQuarter_X(3))
-			{
-				MC.pos_Cursor.x = 16f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(2))
-			{
-				MC.pos_Cursor.x = 15f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
-			{
-				MC.pos_Cursor.x = 14f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 13f;
-			}
-			break;
-		case 31:
-			if (Player.transform.position.y > -88.7f)
-			{
-				MC.pos_Cursor.y = 13f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 12f;
-			}
-			if (Player.transform.position.x > Get_Room_AThird_X(2))
-			{
-				MC.pos_Cursor.x = 14f;
-			}
-			else if (Player.transform.position.x > Get_Room_AThird_X(1))
-			{
-				MC.pos_Cursor.x = 13f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 12f;
-			}
-			break;
-		case 32:
-			if (Player.transform.position.y > -89.5f)
-			{
-				if (Player.transform.position.x > Get_Room_ASixth_X(5))
-				{
-					MC.pos_Cursor.x = 20f;
-				}
-				else if (Player.transform.position.x > Get_Room_ASixth_X(4))
-				{
-					MC.pos_Cursor.x = 19f;
-				}
-				else if (Player.transform.position.x > Get_Room_ASixth_X(3))
-				{
-					MC.pos_Cursor.x = 18f;
-				}
-				else if (Player.transform.position.x > Get_Room_ASixth_X(2))
-				{
-					MC.pos_Cursor.x = 17f;
-				}
-				else if (Player.transform.position.x > Get_Room_ASixth_X(1))
-				{
-					MC.pos_Cursor.x = 16f;
-				}
-				else
-				{
-					MC.pos_Cursor.x = 15f;
-				}
-				MC.pos_Cursor.y = 13f;
-			}
-			else
-			{
+				break;
+			case 1:
 				if (Player.transform.position.x > Get_Room_Half_X())
-				{
-					MC.pos_Cursor.x = 18f;
-				}
-				else
-				{
-					MC.pos_Cursor.x = 17f;
-				}
-				MC.pos_Cursor.y = 12f;
-			}
-			break;
-		case 33:
-			if (Player.transform.position.y > -90.5f)
-			{
-				MC.pos_Cursor.y = 13f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 12f;
-			}
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 22f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 21f;
-			}
-			break;
-		case 34:
-			if (Player.transform.position.y > Get_Room_AFifth_Y(4))
-			{
-				if (Player.transform.position.x > Get_Room_AThird_X(2))
-				{
-					MC.pos_Cursor.x = 23f;
-				}
-				else if (Player.transform.position.x > Get_Room_AThird_X(1))
-				{
-					MC.pos_Cursor.x = 22f;
-				}
-				else
-				{
-					MC.pos_Cursor.x = 21f;
-				}
-				MC.pos_Cursor.y = 16f;
-			}
-			else if (Player.transform.position.y > Get_Room_AFifth_Y(3))
-			{
-				MC.pos_Cursor.y = 15f;
-			}
-			else if (Player.transform.position.y > Get_Room_AFifth_Y(2))
-			{
-				MC.pos_Cursor.y = 14f;
-			}
-			else if (Player.transform.position.y > Get_Room_AFifth_Y(1))
-			{
-				MC.pos_Cursor.y = 13f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 12f;
-			}
-			break;
-		case 36:
-			if (Player.transform.position.y > -122.5f)
-			{
-				MC.pos_Cursor.y = 11f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 10f;
-			}
-			if (Player.transform.position.x > Get_Room_AQuarter_X(3))
-			{
-				MC.pos_Cursor.x = 19f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(2))
-			{
-				MC.pos_Cursor.x = 18f;
-			}
-			else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
-			{
-				MC.pos_Cursor.x = 17f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 16f;
-			}
-			break;
-		case 37:
-			MC.pos_Cursor.x = 13f;
-			if (Player.transform.position.y > -120f)
-			{
-				MC.pos_Cursor.y = 11f;
-			}
-			else if (Player.transform.position.y > -138f)
-			{
-				if (Player.transform.position.x > Get_Room_AFifth_X(4))
-				{
-					MC.pos_Cursor.x = 15f;
-				}
-				else if (Player.transform.position.x > Get_Room_AFifth_X(3))
-				{
-					MC.pos_Cursor.x = 14f;
-				}
-				else if (Player.transform.position.x > Get_Room_AFifth_X(2))
-				{
-					MC.pos_Cursor.x = 13f;
-				}
-				else if (Player.transform.position.x > Get_Room_AFifth_X(1))
 				{
 					MC.pos_Cursor.x = 12f;
 				}
@@ -4484,872 +3780,814 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 				{
 					MC.pos_Cursor.x = 11f;
 				}
-				MC.pos_Cursor.y = 10f;
-			}
-			else if (Player.transform.position.y > -152.5f)
-			{
-				MC.pos_Cursor.y = 9f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 8f;
-			}
-			break;
-		case 38:
-			if (Player.transform.position.y > -121.5f)
-			{
-				MC.pos_Cursor.y = 11f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 10f;
-			}
-			if (Player.transform.position.x > 271f)
-			{
-				MC.pos_Cursor.x = 10f;
-			}
-			else if (Player.transform.position.x > 241.81f)
-			{
-				MC.pos_Cursor.x = 9f;
-			}
-			else if (Player.transform.position.x > 213.36f)
-			{
-				MC.pos_Cursor.x = 8f;
-			}
-			else if (Player.transform.position.x > 184.2f)
-			{
-				MC.pos_Cursor.x = 7f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 6f;
-			}
-			break;
-		case 39:
-			if (Player.transform.position.x > 128f)
-			{
-				MC.pos_Cursor.x = 5f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 4f;
-			}
-			if (Player.transform.position.y > -85.4f)
-			{
-				MC.pos_Cursor.y = 13f;
-			}
-			else if (Player.transform.position.y > -96f)
-			{
-				MC.pos_Cursor.y = 12f;
-			}
-			else if (Player.transform.position.y > -116f)
-			{
-				MC.pos_Cursor.y = 11f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 10f;
-			}
-			break;
-		case 40:
-			if (Player.transform.position.x > 71.12f)
-			{
-				MC.pos_Cursor.x = 3f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 2f;
-			}
-			if (Player.transform.position.y > -136.4f)
-			{
-				MC.pos_Cursor.y = 10f;
-			}
-			else if (Player.transform.position.y > -152f)
-			{
-				MC.pos_Cursor.y = 9f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 8f;
-			}
-			break;
-		case 41:
-			if (Player.transform.position.x > 71.12f)
-			{
-				MC.pos_Cursor.x = 3f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 2f;
-			}
-			MC.pos_Cursor.y = 7f;
-			break;
-		case 42:
-			if (Player.transform.position.x > 156.46f)
-			{
-				MC.pos_Cursor.x = 6f;
-			}
-			else if (Player.transform.position.x > 128f)
-			{
-				MC.pos_Cursor.x = 5f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 4f;
-			}
-			if (Player.transform.position.y > -168f)
-			{
-				MC.pos_Cursor.y = 8f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 7f;
-			}
-			break;
-		case 43:
-			if (Player.transform.position.x > 241.81f)
-			{
-				MC.pos_Cursor.x = 9f;
-			}
-			else if (Player.transform.position.x > 213.36f)
-			{
-				MC.pos_Cursor.x = 8f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 7f;
-			}
-			if (Player.transform.position.y > -185.8f)
-			{
-				MC.pos_Cursor.y = 7f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 6f;
-			}
-			break;
-		case 45:
-			if (Player.transform.position.x > 327.15f)
-			{
-				MC.pos_Cursor.x = 12f;
-			}
-			else if (Player.transform.position.x > 298.7f)
-			{
-				MC.pos_Cursor.x = 11f;
-			}
-			else if (Player.transform.position.x > 270.26f)
-			{
-				MC.pos_Cursor.x = 10f;
-			}
-			else if (Player.transform.position.x > 241.81f)
-			{
-				MC.pos_Cursor.x = 9f;
-			}
-			else if (Player.transform.position.x > 213.36f)
-			{
-				MC.pos_Cursor.x = 8f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 7f;
-			}
-			MC.pos_Cursor.y = 8f;
-			break;
-		case 47:
-			if (Player.transform.position.x > 327.26f)
-			{
-				MC.pos_Cursor.x = 12f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 11f;
-			}
-			MC.pos_Cursor.y = 6f;
-			break;
-		case 48:
-			if (Player.transform.position.x > 384.05f)
-			{
-				MC.pos_Cursor.x = 14f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 13f;
-			}
-			MC.pos_Cursor.y = 6f;
-			break;
-		case 49:
-			if (Player.transform.position.x > 464f)
-			{
-				MC.pos_Cursor.x = 17f;
-			}
-			else if (Player.transform.position.x > 439f)
-			{
-				MC.pos_Cursor.x = 16f;
-			}
-			else if (Player.transform.position.x > 412f)
-			{
-				MC.pos_Cursor.x = 15f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 14f;
-			}
-			if (Player.transform.position.y > -169f)
-			{
-				MC.pos_Cursor.y = 8f;
-			}
-			else if (Player.transform.position.y > -184.9f)
-			{
-				MC.pos_Cursor.y = 7f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 6f;
-			}
-			break;
-		case 51:
-			if (Player.transform.position.x > 668.53f)
-			{
-				MC.pos_Cursor.x = 24f;
-			}
-			else if (Player.transform.position.x > 640.08f)
-			{
-				MC.pos_Cursor.x = 23f;
-			}
-			else if (Player.transform.position.x > 611.64f)
-			{
-				MC.pos_Cursor.x = 22f;
-			}
-			else if (Player.transform.position.x > 583.19f)
-			{
-				MC.pos_Cursor.x = 21f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 20f;
-			}
-			MC.pos_Cursor.y = 10f;
-			break;
-		case 61:
-			if (Player.transform.position.x > 896.12f)
-			{
-				MC.pos_Cursor.x = 32f;
-			}
-			else if (Player.transform.position.x > 867.67f)
-			{
-				MC.pos_Cursor.x = 31f;
-			}
-			else if (Player.transform.position.x > 839.22f)
-			{
-				MC.pos_Cursor.x = 30f;
-			}
-			else if (Player.transform.position.x > 810.78f)
-			{
-				MC.pos_Cursor.x = 29f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 28f;
-			}
-			MC.pos_Cursor.y = 10f;
-			break;
-		case 52:
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 25f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 24f;
-			}
-			MC.pos_Cursor.y = 13f;
-			break;
-		case 62:
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 28f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 27f;
-			}
-			MC.pos_Cursor.y = 13f;
-			break;
-		case 53:
-			if (Player.transform.position.x > 668.6f)
-			{
-				MC.pos_Cursor.x = 24f;
-			}
-			else if (Player.transform.position.x > 640.09f)
-			{
-				MC.pos_Cursor.x = 23f;
-			}
-			else if (Player.transform.position.x > 611.57f)
-			{
-				MC.pos_Cursor.x = 22f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 21f;
-			}
-			MC.pos_Cursor.y = 18f;
-			break;
-		case 63:
-			if (Player.transform.position.x > 867.67f)
-			{
-				MC.pos_Cursor.x = 31f;
-			}
-			else if (Player.transform.position.x > 839.22f)
-			{
-				MC.pos_Cursor.x = 30f;
-			}
-			else if (Player.transform.position.x > 810.78f)
-			{
-				MC.pos_Cursor.x = 29f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 28f;
-			}
-			MC.pos_Cursor.y = 18f;
-			break;
-		case 54:
-			if (Player.transform.position.x > 696.98f)
-			{
-				MC.pos_Cursor.x = 25f;
-			}
-			else if (Player.transform.position.x > 668.53f)
-			{
-				MC.pos_Cursor.x = 24f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 23f;
-			}
-			MC.pos_Cursor.y = 22f;
-			break;
-		case 64:
-			if (Player.transform.position.x > 810.77f)
-			{
-				MC.pos_Cursor.x = 29f;
-			}
-			else if (Player.transform.position.x > 782.32f)
-			{
-				MC.pos_Cursor.x = 28f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 27f;
-			}
-			MC.pos_Cursor.y = 22f;
-			break;
-		case 55:
-			if (Player.transform.position.x > 668.53f)
-			{
-				MC.pos_Cursor.x = 24f;
-			}
-			else if (Player.transform.position.x > 640.08f)
-			{
-				MC.pos_Cursor.x = 23f;
-			}
-			else if (Player.transform.position.x > 611.64f)
-			{
-				MC.pos_Cursor.x = 22f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 21f;
-			}
-			MC.pos_Cursor.y = 24f;
-			break;
-		case 65:
-			if (Player.transform.position.x > 867.67f)
-			{
-				MC.pos_Cursor.x = 31f;
-			}
-			else if (Player.transform.position.x > 839.22f)
-			{
-				MC.pos_Cursor.x = 30f;
-			}
-			else if (Player.transform.position.x > 810.78f)
-			{
-				MC.pos_Cursor.x = 29f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 28f;
-			}
-			MC.pos_Cursor.y = 24f;
-			break;
-		case 56:
-			if (Player.transform.position.x > 668.53f)
-			{
-				MC.pos_Cursor.x = 24f;
-			}
-			else if (Player.transform.position.x > 640.08f)
-			{
-				MC.pos_Cursor.x = 23f;
-			}
-			else if (Player.transform.position.x > 611.64f)
-			{
-				MC.pos_Cursor.x = 22f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 21f;
-			}
-			MC.pos_Cursor.y = 29f;
-			break;
-		case 66:
-			if (Player.transform.position.x > 867.67f)
-			{
-				MC.pos_Cursor.x = 31f;
-			}
-			else if (Player.transform.position.x > 839.22f)
-			{
-				MC.pos_Cursor.x = 30f;
-			}
-			else if (Player.transform.position.x > 810.78f)
-			{
-				MC.pos_Cursor.x = 29f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 28f;
-			}
-			MC.pos_Cursor.y = 29f;
-			break;
-		case 57:
-			if (Player.transform.position.x > 753.88f)
-			{
-				MC.pos_Cursor.x = 27f;
-			}
-			else if (Player.transform.position.x > 725.43f)
-			{
-				MC.pos_Cursor.x = 26f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 25f;
-			}
-			if (Player.transform.position.y > -121.7f)
-			{
-				MC.pos_Cursor.y = 11f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 10f;
-			}
-			break;
-		case 58:
-			if (Player.transform.position.y > -72f)
-			{
-				MC.pos_Cursor.y = 14f;
-			}
-			else if (Player.transform.position.y > -88f)
-			{
-				MC.pos_Cursor.y = 13f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 12f;
-			}
-			MC.pos_Cursor.x = 26f;
-			break;
-		case 59:
-			if (Player.transform.position.x > 753.88f)
-			{
-				MC.pos_Cursor.x = 27f;
-			}
-			else if (Player.transform.position.x > 725.43f)
-			{
-				MC.pos_Cursor.x = 26f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 25f;
-			}
-			if (Player.transform.position.y > -21f)
-			{
-				MC.pos_Cursor.y = 17f;
-			}
-			else if (Player.transform.position.y > -40.5f)
-			{
-				MC.pos_Cursor.y = 16f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 15f;
-			}
-			break;
-		case 60:
-			if (Player.transform.position.x > 753.88f)
-			{
-				MC.pos_Cursor.x = 27f;
-			}
-			else if (Player.transform.position.x > 725.43f)
-			{
-				MC.pos_Cursor.x = 26f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 25f;
-			}
-			if (Player.transform.position.y > 23.2f)
-			{
-				MC.pos_Cursor.y = 20f;
-			}
-			else if (Player.transform.position.y > 8f)
-			{
-				MC.pos_Cursor.y = 19f;
-			}
-			else
-			{
 				MC.pos_Cursor.y = 18f;
-			}
-			break;
-		case 67:
-			if (Player.transform.position.y > 72f)
-			{
-				MC.pos_Cursor.y = 23f;
-			}
-			else if (Player.transform.position.y > 56f)
-			{
+				break;
+			case 2:
+				if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 14f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 13f;
+				}
+				if (Player.transform.position.y > -11f)
+				{
+					MC.pos_Cursor.y = 18f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 17f;
+				}
+				break;
+			case 3:
+				if (Player.transform.position.x > Get_Room_AThird_X(2))
+				{
+					MC.pos_Cursor.x = 17f;
+				}
+				else if (Player.transform.position.x > Get_Room_AThird_X(1))
+				{
+					MC.pos_Cursor.x = 16f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 15f;
+				}
+				MC.pos_Cursor.y = 17f;
+				break;
+			case 5:
+				if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 20f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 19f;
+				}
+				if (Player.transform.position.y > -8.4f)
+				{
+					MC.pos_Cursor.y = 18f;
+				}
+				else if (Player.transform.position.y > -23f)
+				{
+					MC.pos_Cursor.y = 17f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 16f;
+				}
+				break;
+			case 6:
+				if (Player.transform.position.x > 496f)
+				{
+					MC.pos_Cursor.x = 18f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 17f;
+				}
+				if (Player.transform.position.y > -45f)
+				{
+					MC.pos_Cursor.y = 16f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 15f;
+				}
+				break;
+			case 7:
+				if (Player.transform.position.y > 7.4f)
+				{
+					if (Player.transform.position.x > Get_Room_Half_X())
+					{
+						MC.pos_Cursor.x = 17f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 16f;
+					}
+					MC.pos_Cursor.y = 19f;
+					break;
+				}
+				if (Player.transform.position.x > Get_Room_AQuarter_X(3))
+				{
+					MC.pos_Cursor.x = 18f;
+				}
+				else if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 17f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
+				{
+					MC.pos_Cursor.x = 16f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 15f;
+				}
+				MC.pos_Cursor.y = 18f;
+				break;
+			case 8:
+				if (Player.transform.position.y > 42.5f)
+				{
+					MC.pos_Cursor.y = 21f;
+				}
+				else if (Player.transform.position.y > 21.5f)
+				{
+					MC.pos_Cursor.y = 20f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 19f;
+				}
+				MC.pos_Cursor.x = 15f;
+				break;
+			case 9:
+				if (Player.transform.position.y > 24.4f)
+				{
+					if (Player.transform.position.x > 526.5f)
+					{
+						MC.pos_Cursor.x = 19f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 18f;
+					}
+					MC.pos_Cursor.y = 20f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 18f;
+					MC.pos_Cursor.y = 19f;
+				}
+				break;
+			case 11:
+				if (Player.transform.position.y > 57f)
+				{
+					if (Player.transform.position.x > Get_Room_AThird_X(2))
+					{
+						MC.pos_Cursor.x = 22f;
+					}
+					else if (Player.transform.position.x > Get_Room_AThird_X(1))
+					{
+						MC.pos_Cursor.x = 21f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 20f;
+					}
+					MC.pos_Cursor.y = 22f;
+				}
+				else if (Player.transform.position.y > 36.5f)
+				{
+					MC.pos_Cursor.x = 21f;
+					MC.pos_Cursor.y = 21f;
+				}
+				else
+				{
+					if (Player.transform.position.x > Get_Room_AThird_X(2))
+					{
+						MC.pos_Cursor.x = 22f;
+					}
+					else if (Player.transform.position.x > Get_Room_AThird_X(1))
+					{
+						MC.pos_Cursor.x = 21f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 20f;
+					}
+					MC.pos_Cursor.y = 20f;
+				}
+				break;
+			case 13:
+				if (Player.transform.position.y > 75.5f)
+				{
+					if (Player.transform.position.x > 502.6f)
+					{
+						MC.pos_Cursor.x = 18f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 17f;
+					}
+					MC.pos_Cursor.y = 23f;
+					break;
+				}
+				if (Player.transform.position.x > 528f)
+				{
+					MC.pos_Cursor.x = 19f;
+				}
+				else if (Player.transform.position.x > 502.6f)
+				{
+					MC.pos_Cursor.x = 18f;
+				}
+				else if (Player.transform.position.x > 476f)
+				{
+					MC.pos_Cursor.x = 17f;
+				}
+				else if (Player.transform.position.x > 445f)
+				{
+					MC.pos_Cursor.x = 16f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 15f;
+				}
 				MC.pos_Cursor.y = 22f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 21f;
-			}
-			MC.pos_Cursor.x = 26f;
-			break;
-		case 68:
-			if (Player.transform.position.x > 753.88f)
-			{
-				MC.pos_Cursor.x = 27f;
-			}
-			else if (Player.transform.position.x > 725.43f)
-			{
-				MC.pos_Cursor.x = 26f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 25f;
-			}
-			if (Player.transform.position.y > 103f)
-			{
-				MC.pos_Cursor.y = 25f;
-			}
-			else
-			{
+				break;
+			case 14:
+				if (Player.transform.position.x > 384f)
+				{
+					MC.pos_Cursor.x = 14f;
+				}
+				else if (Player.transform.position.x > 355.6f)
+				{
+					MC.pos_Cursor.x = 13f;
+				}
+				else if (Player.transform.position.x > 327.15f)
+				{
+					MC.pos_Cursor.x = 12f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 11f;
+				}
+				if (Player.transform.position.y > 71f)
+				{
+					MC.pos_Cursor.y = 23f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				break;
+			case 15:
+				if (Player.transform.position.y > 86.5f)
+				{
+					if (Player.transform.position.x > Get_Room_AThird_X(2))
+					{
+						MC.pos_Cursor.x = 10f;
+					}
+					else if (Player.transform.position.x > Get_Room_AThird_X(1))
+					{
+						MC.pos_Cursor.x = 9f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 8f;
+					}
+					if (Player.transform.position.y > 106f)
+					{
+						MC.pos_Cursor.y = 25f;
+					}
+					else
+					{
+						MC.pos_Cursor.y = 24f;
+					}
+				}
+				else
+				{
+					MC.pos_Cursor.x = 10f;
+					MC.pos_Cursor.y = 23f;
+				}
+				break;
+			case 17:
+				if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 6f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 5f;
+				}
 				MC.pos_Cursor.y = 24f;
-			}
-			break;
-		case 69:
-			if (Player.transform.position.y > 152f)
-			{
-				MC.pos_Cursor.y = 28f;
-			}
-			else if (Player.transform.position.y > 136f)
-			{
-				MC.pos_Cursor.y = 27f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 26f;
-			}
-			MC.pos_Cursor.x = 26f;
-			break;
-		case 70:
-			if (Player.transform.position.x > 753.88f)
-			{
-				MC.pos_Cursor.x = 27f;
-			}
-			else if (Player.transform.position.x > 725.43f)
-			{
-				MC.pos_Cursor.x = 26f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 25f;
-			}
-			if (Player.transform.position.y > 198f)
-			{
-				MC.pos_Cursor.y = 31f;
-			}
-			else if (Player.transform.position.y > 182.2f)
-			{
-				MC.pos_Cursor.y = 30f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 29f;
-			}
-			break;
-		case 71:
-			if (Player.transform.position.x > 128.01f)
-			{
-				MC.pos_Cursor.x = 5f;
-			}
-			else if (Player.transform.position.x > 99.57f)
-			{
-				MC.pos_Cursor.x = 4f;
-			}
-			else if (Player.transform.position.x > 71.12f)
-			{
-				MC.pos_Cursor.x = 3f;
-			}
-			else
-			{
+				break;
+			case 18:
+				if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 4f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 3f;
+				}
+				MC.pos_Cursor.y = 24f;
+				break;
+			case 19:
 				MC.pos_Cursor.x = 2f;
-			}
-			if (Player.transform.position.y > 150.3f)
-			{
-				MC.pos_Cursor.y = 28f;
-			}
-			else if (Player.transform.position.y > 135.5f)
-			{
-				MC.pos_Cursor.y = 27f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 26f;
-			}
-			break;
-		case 72:
-			if (Player.transform.position.x > 298.7f)
-			{
-				MC.pos_Cursor.x = 11f;
-			}
-			else if (Player.transform.position.x > 270.26f)
-			{
-				MC.pos_Cursor.x = 10f;
-			}
-			else if (Player.transform.position.x > 241.81f)
-			{
-				MC.pos_Cursor.x = 9f;
-			}
-			else if (Player.transform.position.x > 213.36f)
-			{
-				MC.pos_Cursor.x = 8f;
-			}
-			else if (Player.transform.position.x > 184.91f)
-			{
-				MC.pos_Cursor.x = 7f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 6f;
-			}
-			if (Player.transform.position.y > 133.5f)
-			{
-				MC.pos_Cursor.y = 27f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 26f;
-			}
-			break;
-		case 73:
-			if (Player.transform.position.x > 412.5f)
-			{
-				MC.pos_Cursor.x = 15f;
-			}
-			else if (Player.transform.position.x > 384.05f)
-			{
-				MC.pos_Cursor.x = 14f;
-			}
-			else if (Player.transform.position.x > 355.6f)
-			{
+				if (Player.transform.position.y > 91f)
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 23f;
+				}
+				break;
+			case 20:
+				MC.pos_Cursor.x = 1f;
+				if (Player.transform.position.y > Get_Room_AFifth_Y(4))
+				{
+					MC.pos_Cursor.y = 26f;
+				}
+				else if (Player.transform.position.y > Get_Room_AFifth_Y(3))
+				{
+					MC.pos_Cursor.y = 25f;
+				}
+				else if (Player.transform.position.y > Get_Room_AFifth_Y(2))
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				else if (Player.transform.position.y > Get_Room_AFifth_Y(1))
+				{
+					MC.pos_Cursor.y = 23f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				break;
+			case 21:
+				if (Player.transform.position.x > 73f)
+				{
+					MC.pos_Cursor.x = 3f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 2f;
+				}
+				if (Player.transform.position.y > Get_Room_AQuarter_Y(3) && MC.pos_Cursor.x == 2f)
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				else if (Player.transform.position.y > Get_Room_AQuarter_Y(2))
+				{
+					MC.pos_Cursor.y = 21f;
+				}
+				else if (Player.transform.position.y > Get_Room_AQuarter_Y(1))
+				{
+					MC.pos_Cursor.y = 20f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 19f;
+				}
+				break;
+			case 22:
+				if (Player.transform.position.y > Get_Room_Half_Y())
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 21f;
+				}
+				if (Player.transform.position.x > Get_Room_AQuarter_X(3))
+				{
+					MC.pos_Cursor.x = 7f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(2))
+				{
+					MC.pos_Cursor.x = 6f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
+				{
+					MC.pos_Cursor.x = 5f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 4f;
+				}
+				break;
+			case 23:
+				if (Player.transform.position.x > 270.4f)
+				{
+					MC.pos_Cursor.x = 10f;
+				}
+				else if (Player.transform.position.x > 241.7f)
+				{
+					MC.pos_Cursor.x = 9f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 8f;
+				}
+				MC.pos_Cursor.y = 22f;
+				break;
+			case 25:
+				if (Player.transform.position.x > Get_Room_AThird_X(2))
+				{
+					MC.pos_Cursor.x = 3f;
+				}
+				else if (Player.transform.position.x > Get_Room_AThird_X(1))
+				{
+					MC.pos_Cursor.x = 2f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 1f;
+				}
+				MC.pos_Cursor.y = 18f;
+				break;
+			case 26:
+				if (Player.transform.position.y > Get_Room_AThird_Y(2))
+				{
+					MC.pos_Cursor.y = 19f;
+				}
+				else if (Player.transform.position.y > Get_Room_AThird_Y(1))
+				{
+					MC.pos_Cursor.y = 18f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 17f;
+				}
+				if (Player.transform.position.x > Get_Room_AQuarter_X(3))
+				{
+					MC.pos_Cursor.x = 7f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(2))
+				{
+					MC.pos_Cursor.x = 6f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
+				{
+					MC.pos_Cursor.x = 5f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 4f;
+				}
+				break;
+			case 27:
+				if (Player.transform.position.y > -44.8f)
+				{
+					MC.pos_Cursor.y = 16f;
+				}
+				else if (Player.transform.position.y > -60f)
+				{
+					MC.pos_Cursor.y = 15f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 14f;
+				}
+				if (MC.pos_Cursor.y == 15f && Player.transform.position.x > Get_Room_AThird_X(2))
+				{
+					MC.pos_Cursor.x = 7f;
+				}
+				else if (MC.pos_Cursor.y > 14f && Player.transform.position.x > Get_Room_AThird_X(1))
+				{
+					MC.pos_Cursor.x = 6f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 5f;
+				}
+				break;
+			case 28:
+				if (Player.transform.position.y > -57.5f)
+				{
+					MC.pos_Cursor.y = 15f;
+				}
+				else if (Player.transform.position.y > -73.3f)
+				{
+					MC.pos_Cursor.y = 14f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 13f;
+				}
+				if (Player.transform.position.x > Get_Room_AQuarter_X(3))
+				{
+					MC.pos_Cursor.x = 11f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(2))
+				{
+					MC.pos_Cursor.x = 10f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
+				{
+					MC.pos_Cursor.x = 9f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 8f;
+				}
+				break;
+			case 29:
+				if (Player.transform.position.y > -57.5f)
+				{
+					MC.pos_Cursor.y = 15f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 14f;
+				}
+				if (Player.transform.position.x > 327.5f)
+				{
+					MC.pos_Cursor.x = 12f;
+				}
+				else if (Player.transform.position.x > 295.7f)
+				{
+					MC.pos_Cursor.x = 11f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 10f;
+				}
+				break;
+			case 30:
+				if (Player.transform.position.x > Get_Room_AQuarter_X(3))
+				{
+					MC.pos_Cursor.x = 16f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(2))
+				{
+					MC.pos_Cursor.x = 15f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
+				{
+					MC.pos_Cursor.x = 14f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 13f;
+				}
+				break;
+			case 31:
+				if (Player.transform.position.y > -88.7f)
+				{
+					MC.pos_Cursor.y = 13f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 12f;
+				}
+				if (Player.transform.position.x > Get_Room_AThird_X(2))
+				{
+					MC.pos_Cursor.x = 14f;
+				}
+				else if (Player.transform.position.x > Get_Room_AThird_X(1))
+				{
+					MC.pos_Cursor.x = 13f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 12f;
+				}
+				break;
+			case 32:
+				if (Player.transform.position.y > -89.5f)
+				{
+					if (Player.transform.position.x > Get_Room_ASixth_X(5))
+					{
+						MC.pos_Cursor.x = 20f;
+					}
+					else if (Player.transform.position.x > Get_Room_ASixth_X(4))
+					{
+						MC.pos_Cursor.x = 19f;
+					}
+					else if (Player.transform.position.x > Get_Room_ASixth_X(3))
+					{
+						MC.pos_Cursor.x = 18f;
+					}
+					else if (Player.transform.position.x > Get_Room_ASixth_X(2))
+					{
+						MC.pos_Cursor.x = 17f;
+					}
+					else if (Player.transform.position.x > Get_Room_ASixth_X(1))
+					{
+						MC.pos_Cursor.x = 16f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 15f;
+					}
+					MC.pos_Cursor.y = 13f;
+				}
+				else
+				{
+					if (Player.transform.position.x > Get_Room_Half_X())
+					{
+						MC.pos_Cursor.x = 18f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 17f;
+					}
+					MC.pos_Cursor.y = 12f;
+				}
+				break;
+			case 33:
+				if (Player.transform.position.y > -90.5f)
+				{
+					MC.pos_Cursor.y = 13f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 12f;
+				}
+				if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 22f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 21f;
+				}
+				break;
+			case 34:
+				if (Player.transform.position.y > Get_Room_AFifth_Y(4))
+				{
+					if (Player.transform.position.x > Get_Room_AThird_X(2))
+					{
+						MC.pos_Cursor.x = 23f;
+					}
+					else if (Player.transform.position.x > Get_Room_AThird_X(1))
+					{
+						MC.pos_Cursor.x = 22f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 21f;
+					}
+					MC.pos_Cursor.y = 16f;
+				}
+				else if (Player.transform.position.y > Get_Room_AFifth_Y(3))
+				{
+					MC.pos_Cursor.y = 15f;
+				}
+				else if (Player.transform.position.y > Get_Room_AFifth_Y(2))
+				{
+					MC.pos_Cursor.y = 14f;
+				}
+				else if (Player.transform.position.y > Get_Room_AFifth_Y(1))
+				{
+					MC.pos_Cursor.y = 13f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 12f;
+				}
+				break;
+			case 36:
+				if (Player.transform.position.y > -122.5f)
+				{
+					MC.pos_Cursor.y = 11f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 10f;
+				}
+				if (Player.transform.position.x > Get_Room_AQuarter_X(3))
+				{
+					MC.pos_Cursor.x = 19f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(2))
+				{
+					MC.pos_Cursor.x = 18f;
+				}
+				else if (Player.transform.position.x > Get_Room_AQuarter_X(1))
+				{
+					MC.pos_Cursor.x = 17f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 16f;
+				}
+				break;
+			case 37:
 				MC.pos_Cursor.x = 13f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 12f;
-			}
-			if (Player.transform.position.y > 134f)
-			{
-				MC.pos_Cursor.y = 27f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 26f;
-			}
-			break;
-		case 74:
-			if (Player.transform.position.x > 536.29f)
-			{
-				MC.pos_Cursor.x = 19f;
-			}
-			else if (Player.transform.position.x > 504.84f)
-			{
-				MC.pos_Cursor.x = 18f;
-			}
-			else if (Player.transform.position.x > 469.39f)
-			{
-				MC.pos_Cursor.x = 17f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 16f;
-			}
-			if (Player.transform.position.y > 134.8f)
-			{
-				MC.pos_Cursor.y = 27f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 26f;
-			}
-			break;
-		case 76:
-			if (Player.transform.position.x > 554.74f)
-			{
-				MC.pos_Cursor.x = 20f;
-			}
-			else if (Player.transform.position.x > 531.5f)
-			{
-				MC.pos_Cursor.x = 19f;
-			}
-			else if (Player.transform.position.x > 497.84f)
-			{
-				MC.pos_Cursor.x = 18f;
-			}
-			else if (Player.transform.position.x > 469.39f)
-			{
-				MC.pos_Cursor.x = 17f;
-			}
-			else if (Player.transform.position.x > 440.95f)
-			{
-				MC.pos_Cursor.x = 16f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 15f;
-			}
-			if (Player.transform.position.y > 102f)
-			{
-				MC.pos_Cursor.y = 25f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 24f;
-			}
-			break;
-		case 77:
-			if (Player.transform.position.x > 384.05f)
-			{
-				MC.pos_Cursor.x = 14f;
-			}
-			else if (Player.transform.position.x > 355.6f)
-			{
-				MC.pos_Cursor.x = 13f;
-			}
-			else if (Player.transform.position.x > 327.15f)
-			{
-				MC.pos_Cursor.x = 12f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 11f;
-			}
-			MC.pos_Cursor.y = 24f;
-			break;
-		case 78:
-			if (Player.transform.position.x > 554.74f)
-			{
-				MC.pos_Cursor.x = 20f;
-			}
-			else if (Player.transform.position.x > 526.29f)
-			{
-				MC.pos_Cursor.x = 19f;
-			}
-			else if (Player.transform.position.x > 497.84f)
-			{
-				MC.pos_Cursor.x = 18f;
-			}
-			else if (Player.transform.position.x > 469.39f)
-			{
-				MC.pos_Cursor.x = 17f;
-			}
-			else if (Player.transform.position.x > 440.95f)
-			{
-				MC.pos_Cursor.x = 16f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 15f;
-			}
-			if (Player.transform.position.y > 183.5f)
-			{
-				MC.pos_Cursor.y = 30f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 29f;
-			}
-			break;
-		case 79:
-			if (Player.transform.position.x > 384.05f)
-			{
-				MC.pos_Cursor.x = 14f;
-			}
-			else if (Player.transform.position.x > 355.6f)
-			{
-				MC.pos_Cursor.x = 13f;
-			}
-			else if (Player.transform.position.x > 327.15f)
-			{
-				MC.pos_Cursor.x = 12f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 11f;
-			}
-			if (Player.transform.position.y > 165.5f)
-			{
-				MC.pos_Cursor.y = 29f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 28f;
-			}
-			break;
-		case 80:
-			if (Player.transform.position.x > 270.26f)
-			{
-				MC.pos_Cursor.x = 10f;
-			}
-			else if (Player.transform.position.x > 241.81f)
-			{
-				MC.pos_Cursor.x = 9f;
-			}
-			else if (Player.transform.position.x > 213.36f)
-			{
-				MC.pos_Cursor.x = 8f;
-			}
-			else if (Player.transform.position.x > 184.91f)
-			{
-				MC.pos_Cursor.x = 7f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 6f;
-			}
-			if (Player.transform.position.y > 181f)
-			{
-				MC.pos_Cursor.y = 30f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 29f;
-			}
-			break;
-		case 81:
-			MC.pos_Cursor.x = 5f;
-			if (Player.transform.position.y > 193f)
-			{
-				if (Player.transform.position.x > 156.4f)
+				if (Player.transform.position.y > -120f)
+				{
+					MC.pos_Cursor.y = 11f;
+				}
+				else if (Player.transform.position.y > -138f)
+				{
+					if (Player.transform.position.x > Get_Room_AFifth_X(4))
+					{
+						MC.pos_Cursor.x = 15f;
+					}
+					else if (Player.transform.position.x > Get_Room_AFifth_X(3))
+					{
+						MC.pos_Cursor.x = 14f;
+					}
+					else if (Player.transform.position.x > Get_Room_AFifth_X(2))
+					{
+						MC.pos_Cursor.x = 13f;
+					}
+					else if (Player.transform.position.x > Get_Room_AFifth_X(1))
+					{
+						MC.pos_Cursor.x = 12f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 11f;
+					}
+					MC.pos_Cursor.y = 10f;
+				}
+				else if (Player.transform.position.y > -152.5f)
+				{
+					MC.pos_Cursor.y = 9f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 8f;
+				}
+				break;
+			case 38:
+				if (Player.transform.position.y > -121.5f)
+				{
+					MC.pos_Cursor.y = 11f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 10f;
+				}
+				if (Player.transform.position.x > 271f)
+				{
+					MC.pos_Cursor.x = 10f;
+				}
+				else if (Player.transform.position.x > 241.81f)
+				{
+					MC.pos_Cursor.x = 9f;
+				}
+				else if (Player.transform.position.x > 213.36f)
+				{
+					MC.pos_Cursor.x = 8f;
+				}
+				else if (Player.transform.position.x > 184.2f)
+				{
+					MC.pos_Cursor.x = 7f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 6f;
+				}
+				break;
+			case 39:
+				if (Player.transform.position.x > 128f)
+				{
+					MC.pos_Cursor.x = 5f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 4f;
+				}
+				if (Player.transform.position.y > -85.4f)
+				{
+					MC.pos_Cursor.y = 13f;
+				}
+				else if (Player.transform.position.y > -96f)
+				{
+					MC.pos_Cursor.y = 12f;
+				}
+				else if (Player.transform.position.y > -116f)
+				{
+					MC.pos_Cursor.y = 11f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 10f;
+				}
+				break;
+			case 40:
+				if (Player.transform.position.x > 71.12f)
+				{
+					MC.pos_Cursor.x = 3f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 2f;
+				}
+				if (Player.transform.position.y > -136.4f)
+				{
+					MC.pos_Cursor.y = 10f;
+				}
+				else if (Player.transform.position.y > -152f)
+				{
+					MC.pos_Cursor.y = 9f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 8f;
+				}
+				break;
+			case 41:
+				if (Player.transform.position.x > 71.12f)
+				{
+					MC.pos_Cursor.x = 3f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 2f;
+				}
+				MC.pos_Cursor.y = 7f;
+				break;
+			case 42:
+				if (Player.transform.position.x > 156.46f)
 				{
 					MC.pos_Cursor.x = 6f;
 				}
@@ -5361,678 +4599,937 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 				{
 					MC.pos_Cursor.x = 4f;
 				}
-				MC.pos_Cursor.y = 31f;
-			}
-			else if (Player.transform.position.y > 182f)
-			{
-				MC.pos_Cursor.y = 30f;
-			}
-			else if (Player.transform.position.y > 166f)
-			{
-				MC.pos_Cursor.y = 29f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 28f;
-			}
-			break;
-		case 82:
-			if (Player.transform.position.x > 298.7f)
-			{
-				MC.pos_Cursor.x = 11f;
-			}
-			else if (Player.transform.position.x > 270.26f)
-			{
-				MC.pos_Cursor.x = 10f;
-			}
-			else if (Player.transform.position.x > 241.81f)
-			{
-				MC.pos_Cursor.x = 9f;
-			}
-			else if (Player.transform.position.x > 213.36f)
-			{
-				MC.pos_Cursor.x = 8f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 7f;
-			}
-			MC.pos_Cursor.y = 31f;
-			break;
-		case 83:
-			if (Player.transform.position.x > 384.05f)
-			{
-				MC.pos_Cursor.x = 14f;
-			}
-			else if (Player.transform.position.x > 355.6f)
-			{
-				MC.pos_Cursor.x = 13f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 12f;
-			}
-			if (Player.transform.position.y > 213.8f)
-			{
-				MC.pos_Cursor.y = 32f;
-			}
-			else if (Player.transform.position.y > 200.5f)
-			{
-				MC.pos_Cursor.y = 31f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 30f;
-			}
-			break;
-		case 84:
-			if (Player.transform.position.x > 526.29f)
-			{
-				MC.pos_Cursor.x = 19f;
-			}
-			else if (Player.transform.position.x > 497.84f)
-			{
-				MC.pos_Cursor.x = 18f;
-			}
-			else if (Player.transform.position.x > 469.39f)
-			{
-				MC.pos_Cursor.x = 17f;
-			}
-			else if (Player.transform.position.x > 440.95f)
-			{
-				MC.pos_Cursor.x = 16f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 15f;
-			}
-			if (Player.transform.position.y > 213.8f)
-			{
-				MC.pos_Cursor.y = 32f;
-			}
-			else if (Player.transform.position.y > 200.5f)
-			{
-				MC.pos_Cursor.y = 31f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 30f;
-			}
-			break;
-		case 85:
-			if (Player.transform.position.x > 668.53f)
-			{
-				MC.pos_Cursor.x = 24f;
-			}
-			else if (Player.transform.position.x > 640.08f)
-			{
-				MC.pos_Cursor.x = 23f;
-			}
-			else if (Player.transform.position.x > 611.64f)
-			{
-				MC.pos_Cursor.x = 22f;
-			}
-			else if (Player.transform.position.x > 583.19f)
-			{
-				MC.pos_Cursor.x = 21f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 20f;
-			}
-			if (Player.transform.position.y > 215.2f)
-			{
-				MC.pos_Cursor.y = 32f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 31f;
-			}
-			break;
-		case 87:
-			if (Player.transform.position.x > 753.88f)
-			{
-				MC.pos_Cursor.x = 27f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 26f;
-			}
-			MC.pos_Cursor.y = 32f;
-			break;
-		case 88:
-			if (Player.transform.position.x > 810.77f)
-			{
-				MC.pos_Cursor.x = 29f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 28f;
-			}
-			if (Player.transform.position.y > 228f)
-			{
-				MC.pos_Cursor.y = 33f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 32f;
-			}
-			break;
-		case 89:
-			if (Player.transform.position.x > 924.57f)
-			{
-				MC.pos_Cursor.x = 33f;
-			}
-			else if (Player.transform.position.x > 899.5f)
-			{
-				MC.pos_Cursor.x = 32f;
-			}
-			else if (Player.transform.position.x > 867.67f)
-			{
-				MC.pos_Cursor.x = 31f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 30f;
-			}
-			if (Player.transform.position.y > 244.8f)
-			{
-				MC.pos_Cursor.y = 34f;
-			}
-			else if (Player.transform.position.y > 229f)
-			{
-				MC.pos_Cursor.y = 33f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 32f;
-			}
-			break;
-		case 91:
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 29f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 28f;
-			}
-			MC.pos_Cursor.y = 34f;
-			break;
-		case 92:
-			if (Player.transform.position.x > Get_Room_AThird_X(2))
-			{
-				MC.pos_Cursor.x = 27f;
-			}
-			else if (Player.transform.position.x > Get_Room_AThird_X(1))
-			{
-				MC.pos_Cursor.x = 26f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 25f;
-			}
-			if (Player.transform.position.y > 261f)
-			{
-				MC.pos_Cursor.y = 35f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 34f;
-			}
-			break;
-		case 93:
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 24f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 23f;
-			}
-			MC.pos_Cursor.y = 34f;
-			break;
-		case 94:
-			if (Player.transform.position.x > Get_Room_Half_X())
-			{
-				MC.pos_Cursor.x = 22f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 21f;
-			}
-			if (Player.transform.position.y > 248.5f)
-			{
-				MC.pos_Cursor.y = 34f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 33f;
-			}
-			break;
-		case 96:
-			if (Player.transform.position.x > 1038.365f)
-			{
-				MC.pos_Cursor.x = 37f;
-			}
-			else if (Player.transform.position.x > 1009.916f)
-			{
-				MC.pos_Cursor.x = 36f;
-			}
-			else if (Player.transform.position.x < 981.468f && Player.transform.position.y > 212f)
-			{
-				MC.pos_Cursor.x = 34f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 35f;
-			}
-			if (Player.transform.position.y > 212f)
-			{
-				MC.pos_Cursor.y = 32f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 31f;
-			}
-			break;
-		case 97:
-			if (Player.transform.position.x > 1123.71f)
-			{
-				MC.pos_Cursor.x = 40f;
-			}
-			else if (Player.transform.position.x > 1095.26f)
-			{
-				MC.pos_Cursor.x = 39f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 38f;
-			}
-			if (Player.transform.position.y > 212.5f)
-			{
-				MC.pos_Cursor.y = 32f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 31f;
-			}
-			break;
-		case 98:
-			if (Player.transform.position.x > 1209.055f)
-			{
-				MC.pos_Cursor.x = 43f;
-			}
-			else if (Player.transform.position.x > 1180.607f)
-			{
-				MC.pos_Cursor.x = 42f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 41f;
-			}
-			break;
-		case 99:
-			if (Player.transform.position.x > 1265.95f)
-			{
-				MC.pos_Cursor.x = 45f;
-			}
-			else if (Player.transform.position.x > 1237.5f)
-			{
-				MC.pos_Cursor.x = 44f;
-			}
-			else if (Player.transform.position.x > 1209.055f)
-			{
-				MC.pos_Cursor.x = 43f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 42f;
-			}
-			if (Player.transform.position.y > 183f)
-			{
-				MC.pos_Cursor.y = 30f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 29f;
-			}
-			break;
-		case 100:
-			if (Player.transform.position.x > 1152.16f)
-			{
-				MC.pos_Cursor.x = 41f;
-			}
-			else if (Player.transform.position.x > 1130.3f)
-			{
-				MC.pos_Cursor.x = 40f;
-			}
-			else if (Player.transform.position.x > 1089f)
-			{
-				MC.pos_Cursor.x = 39f;
-			}
-			else if (Player.transform.position.x > 1066.81f)
-			{
-				MC.pos_Cursor.x = 38f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 37f;
-			}
-			if (Player.transform.position.y > 185f)
-			{
-				MC.pos_Cursor.y = 30f;
-			}
-			else if (Player.transform.position.y > 167.5f)
-			{
-				MC.pos_Cursor.y = 29f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 28f;
-			}
-			break;
-		case 101:
-			if (Player.transform.position.x > 1009.916f)
-			{
-				MC.pos_Cursor.x = 36f;
-			}
-			else if (Player.transform.position.x > 979.5f)
-			{
-				MC.pos_Cursor.x = 35f;
-			}
-			else if (Player.transform.position.x > 953.02f)
-			{
-				MC.pos_Cursor.x = 34f;
-			}
-			else if (Player.transform.position.x > 924.57f)
-			{
-				MC.pos_Cursor.x = 33f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 32f;
-			}
-			if (Player.transform.position.y > 184f)
-			{
-				MC.pos_Cursor.y = 30f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 29f;
-			}
-			break;
-		case 102:
-			if (Player.transform.position.x > 1180.607f)
-			{
-				MC.pos_Cursor.x = 42f;
-				MC.pos_Cursor.y = 27f;
+				if (Player.transform.position.y > -168f)
+				{
+					MC.pos_Cursor.y = 8f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 7f;
+				}
 				break;
-			}
-			if (Player.transform.position.x < 1038.365f)
-			{
-				MC.pos_Cursor.x = 36f;
-				MC.pos_Cursor.y = 27f;
+			case 43:
+				if (Player.transform.position.x > 241.81f)
+				{
+					MC.pos_Cursor.x = 9f;
+				}
+				else if (Player.transform.position.x > 213.36f)
+				{
+					MC.pos_Cursor.x = 8f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 7f;
+				}
+				if (Player.transform.position.y > -185.8f)
+				{
+					MC.pos_Cursor.y = 7f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 6f;
+				}
 				break;
-			}
-			if (Player.transform.position.x > 1152.16f)
-			{
-				MC.pos_Cursor.x = 41f;
-			}
-			else if (Player.transform.position.x > 1123.71f)
-			{
-				MC.pos_Cursor.x = 40f;
-			}
-			else if (Player.transform.position.x > 1090.6f)
-			{
-				MC.pos_Cursor.x = 39f;
-			}
-			else if (Player.transform.position.x > 1066.813f)
-			{
-				MC.pos_Cursor.x = 38f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 37f;
-			}
-			if (Player.transform.position.y > 135.5f)
-			{
-				MC.pos_Cursor.y = 27f;
+			case 45:
+				if (Player.transform.position.x > 327.15f)
+				{
+					MC.pos_Cursor.x = 12f;
+				}
+				else if (Player.transform.position.x > 298.7f)
+				{
+					MC.pos_Cursor.x = 11f;
+				}
+				else if (Player.transform.position.x > 270.26f)
+				{
+					MC.pos_Cursor.x = 10f;
+				}
+				else if (Player.transform.position.x > 241.81f)
+				{
+					MC.pos_Cursor.x = 9f;
+				}
+				else if (Player.transform.position.x > 213.36f)
+				{
+					MC.pos_Cursor.x = 8f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 7f;
+				}
+				MC.pos_Cursor.y = 8f;
 				break;
-			}
-			MC.pos_Cursor.x = 39f;
-			MC.pos_Cursor.y = 26f;
-			break;
-		case 103:
-			if (Player.transform.position.x > 1038.365f)
-			{
-				MC.pos_Cursor.x = 37f;
-			}
-			else if (Player.transform.position.x > 1009.916f)
-			{
-				MC.pos_Cursor.x = 36f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 35f;
-			}
-			if (Player.transform.position.y > 119.5f)
-			{
-				MC.pos_Cursor.y = 26f;
-			}
-			else if (Player.transform.position.y > 104f)
-			{
-				MC.pos_Cursor.y = 25f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 24f;
-			}
-			break;
-		case 104:
-			if (Player.transform.position.x > 953.02f)
-			{
-				MC.pos_Cursor.x = 34f;
-			}
-			else if (Player.transform.position.x > 924.57f)
-			{
-				MC.pos_Cursor.x = 33f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 32f;
-			}
-			if (Player.transform.position.y > 120f)
-			{
-				MC.pos_Cursor.y = 26f;
-			}
-			else if (Player.transform.position.y > 104f)
-			{
-				MC.pos_Cursor.y = 25f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 24f;
-			}
-			break;
-		case 105:
-			if (Player.transform.position.x > 1152.16f)
-			{
-				MC.pos_Cursor.x = 41f;
-			}
-			else if (Player.transform.position.x > 1123.71f)
-			{
-				MC.pos_Cursor.x = 40f;
-			}
-			else if (Player.transform.position.x > 1095.26f)
-			{
-				MC.pos_Cursor.x = 39f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 38f;
-			}
-			if (Player.transform.position.y > 88f)
-			{
-				MC.pos_Cursor.y = 24f;
-			}
-			else if (Player.transform.position.y > 72f)
-			{
-				MC.pos_Cursor.y = 23f;
-			}
-			else
-			{
+			case 47:
+				if (Player.transform.position.x > 327.26f)
+				{
+					MC.pos_Cursor.x = 12f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 11f;
+				}
+				MC.pos_Cursor.y = 6f;
+				break;
+			case 48:
+				if (Player.transform.position.x > 384.05f)
+				{
+					MC.pos_Cursor.x = 14f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 13f;
+				}
+				MC.pos_Cursor.y = 6f;
+				break;
+			case 49:
+				if (Player.transform.position.x > 464f)
+				{
+					MC.pos_Cursor.x = 17f;
+				}
+				else if (Player.transform.position.x > 439f)
+				{
+					MC.pos_Cursor.x = 16f;
+				}
+				else if (Player.transform.position.x > 412f)
+				{
+					MC.pos_Cursor.x = 15f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 14f;
+				}
+				if (Player.transform.position.y > -169f)
+				{
+					MC.pos_Cursor.y = 8f;
+				}
+				else if (Player.transform.position.y > -184.9f)
+				{
+					MC.pos_Cursor.y = 7f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 6f;
+				}
+				break;
+			case 51:
+				if (Player.transform.position.x > 668.53f)
+				{
+					MC.pos_Cursor.x = 24f;
+				}
+				else if (Player.transform.position.x > 640.08f)
+				{
+					MC.pos_Cursor.x = 23f;
+				}
+				else if (Player.transform.position.x > 611.64f)
+				{
+					MC.pos_Cursor.x = 22f;
+				}
+				else if (Player.transform.position.x > 583.19f)
+				{
+					MC.pos_Cursor.x = 21f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 20f;
+				}
+				MC.pos_Cursor.y = 10f;
+				break;
+			case 61:
+				if (Player.transform.position.x > 896.12f)
+				{
+					MC.pos_Cursor.x = 32f;
+				}
+				else if (Player.transform.position.x > 867.67f)
+				{
+					MC.pos_Cursor.x = 31f;
+				}
+				else if (Player.transform.position.x > 839.22f)
+				{
+					MC.pos_Cursor.x = 30f;
+				}
+				else if (Player.transform.position.x > 810.78f)
+				{
+					MC.pos_Cursor.x = 29f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 28f;
+				}
+				MC.pos_Cursor.y = 10f;
+				break;
+			case 52:
+				if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 25f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 24f;
+				}
+				MC.pos_Cursor.y = 13f;
+				break;
+			case 62:
+				if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 28f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 27f;
+				}
+				MC.pos_Cursor.y = 13f;
+				break;
+			case 53:
+				if (Player.transform.position.x > 668.6f)
+				{
+					MC.pos_Cursor.x = 24f;
+				}
+				else if (Player.transform.position.x > 640.09f)
+				{
+					MC.pos_Cursor.x = 23f;
+				}
+				else if (Player.transform.position.x > 611.57f)
+				{
+					MC.pos_Cursor.x = 22f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 21f;
+				}
+				MC.pos_Cursor.y = 18f;
+				break;
+			case 63:
+				if (Player.transform.position.x > 867.67f)
+				{
+					MC.pos_Cursor.x = 31f;
+				}
+				else if (Player.transform.position.x > 839.22f)
+				{
+					MC.pos_Cursor.x = 30f;
+				}
+				else if (Player.transform.position.x > 810.78f)
+				{
+					MC.pos_Cursor.x = 29f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 28f;
+				}
+				MC.pos_Cursor.y = 18f;
+				break;
+			case 54:
+				if (Player.transform.position.x > 696.98f)
+				{
+					MC.pos_Cursor.x = 25f;
+				}
+				else if (Player.transform.position.x > 668.53f)
+				{
+					MC.pos_Cursor.x = 24f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 23f;
+				}
 				MC.pos_Cursor.y = 22f;
-			}
-			break;
-		case 106:
-			if (Player.transform.position.y > 124f)
-			{
-				MC.pos_Cursor.x = 42f;
-				MC.pos_Cursor.y = 26f;
 				break;
-			}
-			if (Player.transform.position.x > 1237.5f)
-			{
-				MC.pos_Cursor.x = 44f;
-			}
-			else if (Player.transform.position.x > 1209.055f)
-			{
-				MC.pos_Cursor.x = 43f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 42f;
-			}
-			if (Player.transform.position.y > 105f)
-			{
-				MC.pos_Cursor.y = 25f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 24f;
-			}
-			break;
-		case 107:
-			if (Player.transform.position.x > 1322.85f)
-			{
-				MC.pos_Cursor.x = 47f;
-			}
-			else if (Player.transform.position.x > 1294.4f)
-			{
-				MC.pos_Cursor.x = 46f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 45f;
-			}
-			if (Player.transform.position.y > 119f)
-			{
-				MC.pos_Cursor.y = 26f;
-			}
-			else if (Player.transform.position.y > 103.5f)
-			{
-				MC.pos_Cursor.y = 25f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 24f;
-			}
-			break;
-		case 108:
-			if (Player.transform.position.x > 1408.19f)
-			{
-				MC.pos_Cursor.x = 50f;
-			}
-			else if (Player.transform.position.x > 1379.745f)
-			{
-				MC.pos_Cursor.x = 49f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 48f;
-			}
-			if (Player.transform.position.y > 104f)
-			{
-				MC.pos_Cursor.y = 25f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 24f;
-			}
-			break;
-		case 109:
-			if (Player.transform.position.x > 1351.3f)
-			{
-				MC.pos_Cursor.x = 48f;
-			}
-			else if (Player.transform.position.x > 1322.85f)
-			{
-				MC.pos_Cursor.x = 47f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 46f;
-			}
-			if (Player.transform.position.y > 167.5f)
-			{
-				MC.pos_Cursor.y = 29f;
-			}
-			else if (Player.transform.position.y > 152f)
-			{
-				MC.pos_Cursor.y = 28f;
-			}
-			else if (Player.transform.position.y > 136f)
-			{
-				MC.pos_Cursor.y = 27f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 26f;
-			}
-			break;
-		case 111:
-			if (Player.transform.position.x > 1066.81f)
-			{
-				MC.pos_Cursor.x = 38f;
-			}
-			else if (Player.transform.position.x > 1038.365f)
-			{
-				MC.pos_Cursor.x = 37f;
-			}
-			else if (Player.transform.position.x > 1009.916f)
-			{
-				MC.pos_Cursor.x = 36f;
-			}
-			else if (Player.transform.position.x > 981.47f)
-			{
-				MC.pos_Cursor.x = 35f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 34f;
-			}
-			if (Player.transform.position.y > 72f)
-			{
-				MC.pos_Cursor.y = 23f;
-			}
-			else
-			{
+			case 64:
+				if (Player.transform.position.x > 810.77f)
+				{
+					MC.pos_Cursor.x = 29f;
+				}
+				else if (Player.transform.position.x > 782.32f)
+				{
+					MC.pos_Cursor.x = 28f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 27f;
+				}
 				MC.pos_Cursor.y = 22f;
-			}
-			break;
-		case 112:
-			if (Player.transform.position.y > 54f)
-			{
+				break;
+			case 55:
+				if (Player.transform.position.x > 668.53f)
+				{
+					MC.pos_Cursor.x = 24f;
+				}
+				else if (Player.transform.position.x > 640.08f)
+				{
+					MC.pos_Cursor.x = 23f;
+				}
+				else if (Player.transform.position.x > 611.64f)
+				{
+					MC.pos_Cursor.x = 22f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 21f;
+				}
+				MC.pos_Cursor.y = 24f;
+				break;
+			case 65:
+				if (Player.transform.position.x > 867.67f)
+				{
+					MC.pos_Cursor.x = 31f;
+				}
+				else if (Player.transform.position.x > 839.22f)
+				{
+					MC.pos_Cursor.x = 30f;
+				}
+				else if (Player.transform.position.x > 810.78f)
+				{
+					MC.pos_Cursor.x = 29f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 28f;
+				}
+				MC.pos_Cursor.y = 24f;
+				break;
+			case 56:
+				if (Player.transform.position.x > 668.53f)
+				{
+					MC.pos_Cursor.x = 24f;
+				}
+				else if (Player.transform.position.x > 640.08f)
+				{
+					MC.pos_Cursor.x = 23f;
+				}
+				else if (Player.transform.position.x > 611.64f)
+				{
+					MC.pos_Cursor.x = 22f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 21f;
+				}
+				MC.pos_Cursor.y = 29f;
+				break;
+			case 66:
+				if (Player.transform.position.x > 867.67f)
+				{
+					MC.pos_Cursor.x = 31f;
+				}
+				else if (Player.transform.position.x > 839.22f)
+				{
+					MC.pos_Cursor.x = 30f;
+				}
+				else if (Player.transform.position.x > 810.78f)
+				{
+					MC.pos_Cursor.x = 29f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 28f;
+				}
+				MC.pos_Cursor.y = 29f;
+				break;
+			case 57:
+				if (Player.transform.position.x > 753.88f)
+				{
+					MC.pos_Cursor.x = 27f;
+				}
+				else if (Player.transform.position.x > 725.43f)
+				{
+					MC.pos_Cursor.x = 26f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 25f;
+				}
+				if (Player.transform.position.y > -121.7f)
+				{
+					MC.pos_Cursor.y = 11f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 10f;
+				}
+				break;
+			case 58:
+				if (Player.transform.position.y > -72f)
+				{
+					MC.pos_Cursor.y = 14f;
+				}
+				else if (Player.transform.position.y > -88f)
+				{
+					MC.pos_Cursor.y = 13f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 12f;
+				}
+				MC.pos_Cursor.x = 26f;
+				break;
+			case 59:
+				if (Player.transform.position.x > 753.88f)
+				{
+					MC.pos_Cursor.x = 27f;
+				}
+				else if (Player.transform.position.x > 725.43f)
+				{
+					MC.pos_Cursor.x = 26f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 25f;
+				}
+				if (Player.transform.position.y > -21f)
+				{
+					MC.pos_Cursor.y = 17f;
+				}
+				else if (Player.transform.position.y > -40.5f)
+				{
+					MC.pos_Cursor.y = 16f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 15f;
+				}
+				break;
+			case 60:
+				if (Player.transform.position.x > 753.88f)
+				{
+					MC.pos_Cursor.x = 27f;
+				}
+				else if (Player.transform.position.x > 725.43f)
+				{
+					MC.pos_Cursor.x = 26f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 25f;
+				}
+				if (Player.transform.position.y > 23.2f)
+				{
+					MC.pos_Cursor.y = 20f;
+				}
+				else if (Player.transform.position.y > 8f)
+				{
+					MC.pos_Cursor.y = 19f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 18f;
+				}
+				break;
+			case 67:
+				if (Player.transform.position.y > 72f)
+				{
+					MC.pos_Cursor.y = 23f;
+				}
+				else if (Player.transform.position.y > 56f)
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 21f;
+				}
+				MC.pos_Cursor.x = 26f;
+				break;
+			case 68:
+				if (Player.transform.position.x > 753.88f)
+				{
+					MC.pos_Cursor.x = 27f;
+				}
+				else if (Player.transform.position.x > 725.43f)
+				{
+					MC.pos_Cursor.x = 26f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 25f;
+				}
+				if (Player.transform.position.y > 103f)
+				{
+					MC.pos_Cursor.y = 25f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				break;
+			case 69:
+				if (Player.transform.position.y > 152f)
+				{
+					MC.pos_Cursor.y = 28f;
+				}
+				else if (Player.transform.position.y > 136f)
+				{
+					MC.pos_Cursor.y = 27f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 26f;
+				}
+				MC.pos_Cursor.x = 26f;
+				break;
+			case 70:
+				if (Player.transform.position.x > 753.88f)
+				{
+					MC.pos_Cursor.x = 27f;
+				}
+				else if (Player.transform.position.x > 725.43f)
+				{
+					MC.pos_Cursor.x = 26f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 25f;
+				}
+				if (Player.transform.position.y > 198f)
+				{
+					MC.pos_Cursor.y = 31f;
+				}
+				else if (Player.transform.position.y > 182.2f)
+				{
+					MC.pos_Cursor.y = 30f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 29f;
+				}
+				break;
+			case 71:
+				if (Player.transform.position.x > 128.01f)
+				{
+					MC.pos_Cursor.x = 5f;
+				}
+				else if (Player.transform.position.x > 99.57f)
+				{
+					MC.pos_Cursor.x = 4f;
+				}
+				else if (Player.transform.position.x > 71.12f)
+				{
+					MC.pos_Cursor.x = 3f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 2f;
+				}
+				if (Player.transform.position.y > 150.3f)
+				{
+					MC.pos_Cursor.y = 28f;
+				}
+				else if (Player.transform.position.y > 135.5f)
+				{
+					MC.pos_Cursor.y = 27f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 26f;
+				}
+				break;
+			case 72:
+				if (Player.transform.position.x > 298.7f)
+				{
+					MC.pos_Cursor.x = 11f;
+				}
+				else if (Player.transform.position.x > 270.26f)
+				{
+					MC.pos_Cursor.x = 10f;
+				}
+				else if (Player.transform.position.x > 241.81f)
+				{
+					MC.pos_Cursor.x = 9f;
+				}
+				else if (Player.transform.position.x > 213.36f)
+				{
+					MC.pos_Cursor.x = 8f;
+				}
+				else if (Player.transform.position.x > 184.91f)
+				{
+					MC.pos_Cursor.x = 7f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 6f;
+				}
+				if (Player.transform.position.y > 133.5f)
+				{
+					MC.pos_Cursor.y = 27f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 26f;
+				}
+				break;
+			case 73:
+				if (Player.transform.position.x > 412.5f)
+				{
+					MC.pos_Cursor.x = 15f;
+				}
+				else if (Player.transform.position.x > 384.05f)
+				{
+					MC.pos_Cursor.x = 14f;
+				}
+				else if (Player.transform.position.x > 355.6f)
+				{
+					MC.pos_Cursor.x = 13f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 12f;
+				}
+				if (Player.transform.position.y > 134f)
+				{
+					MC.pos_Cursor.y = 27f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 26f;
+				}
+				break;
+			case 74:
+				if (Player.transform.position.x > 536.29f)
+				{
+					MC.pos_Cursor.x = 19f;
+				}
+				else if (Player.transform.position.x > 504.84f)
+				{
+					MC.pos_Cursor.x = 18f;
+				}
+				else if (Player.transform.position.x > 469.39f)
+				{
+					MC.pos_Cursor.x = 17f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 16f;
+				}
+				if (Player.transform.position.y > 134.8f)
+				{
+					MC.pos_Cursor.y = 27f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 26f;
+				}
+				break;
+			case 76:
+				if (Player.transform.position.x > 554.74f)
+				{
+					MC.pos_Cursor.x = 20f;
+				}
+				else if (Player.transform.position.x > 531.5f)
+				{
+					MC.pos_Cursor.x = 19f;
+				}
+				else if (Player.transform.position.x > 497.84f)
+				{
+					MC.pos_Cursor.x = 18f;
+				}
+				else if (Player.transform.position.x > 469.39f)
+				{
+					MC.pos_Cursor.x = 17f;
+				}
+				else if (Player.transform.position.x > 440.95f)
+				{
+					MC.pos_Cursor.x = 16f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 15f;
+				}
+				if (Player.transform.position.y > 102f)
+				{
+					MC.pos_Cursor.y = 25f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				break;
+			case 77:
+				if (Player.transform.position.x > 384.05f)
+				{
+					MC.pos_Cursor.x = 14f;
+				}
+				else if (Player.transform.position.x > 355.6f)
+				{
+					MC.pos_Cursor.x = 13f;
+				}
+				else if (Player.transform.position.x > 327.15f)
+				{
+					MC.pos_Cursor.x = 12f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 11f;
+				}
+				MC.pos_Cursor.y = 24f;
+				break;
+			case 78:
+				if (Player.transform.position.x > 554.74f)
+				{
+					MC.pos_Cursor.x = 20f;
+				}
+				else if (Player.transform.position.x > 526.29f)
+				{
+					MC.pos_Cursor.x = 19f;
+				}
+				else if (Player.transform.position.x > 497.84f)
+				{
+					MC.pos_Cursor.x = 18f;
+				}
+				else if (Player.transform.position.x > 469.39f)
+				{
+					MC.pos_Cursor.x = 17f;
+				}
+				else if (Player.transform.position.x > 440.95f)
+				{
+					MC.pos_Cursor.x = 16f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 15f;
+				}
+				if (Player.transform.position.y > 183.5f)
+				{
+					MC.pos_Cursor.y = 30f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 29f;
+				}
+				break;
+			case 79:
+				if (Player.transform.position.x > 384.05f)
+				{
+					MC.pos_Cursor.x = 14f;
+				}
+				else if (Player.transform.position.x > 355.6f)
+				{
+					MC.pos_Cursor.x = 13f;
+				}
+				else if (Player.transform.position.x > 327.15f)
+				{
+					MC.pos_Cursor.x = 12f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 11f;
+				}
+				if (Player.transform.position.y > 165.5f)
+				{
+					MC.pos_Cursor.y = 29f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 28f;
+				}
+				break;
+			case 80:
+				if (Player.transform.position.x > 270.26f)
+				{
+					MC.pos_Cursor.x = 10f;
+				}
+				else if (Player.transform.position.x > 241.81f)
+				{
+					MC.pos_Cursor.x = 9f;
+				}
+				else if (Player.transform.position.x > 213.36f)
+				{
+					MC.pos_Cursor.x = 8f;
+				}
+				else if (Player.transform.position.x > 184.91f)
+				{
+					MC.pos_Cursor.x = 7f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 6f;
+				}
+				if (Player.transform.position.y > 181f)
+				{
+					MC.pos_Cursor.y = 30f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 29f;
+				}
+				break;
+			case 81:
+				MC.pos_Cursor.x = 5f;
+				if (Player.transform.position.y > 193f)
+				{
+					if (Player.transform.position.x > 156.4f)
+					{
+						MC.pos_Cursor.x = 6f;
+					}
+					else if (Player.transform.position.x > 128f)
+					{
+						MC.pos_Cursor.x = 5f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 4f;
+					}
+					MC.pos_Cursor.y = 31f;
+				}
+				else if (Player.transform.position.y > 182f)
+				{
+					MC.pos_Cursor.y = 30f;
+				}
+				else if (Player.transform.position.y > 166f)
+				{
+					MC.pos_Cursor.y = 29f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 28f;
+				}
+				break;
+			case 82:
+				if (Player.transform.position.x > 298.7f)
+				{
+					MC.pos_Cursor.x = 11f;
+				}
+				else if (Player.transform.position.x > 270.26f)
+				{
+					MC.pos_Cursor.x = 10f;
+				}
+				else if (Player.transform.position.x > 241.81f)
+				{
+					MC.pos_Cursor.x = 9f;
+				}
+				else if (Player.transform.position.x > 213.36f)
+				{
+					MC.pos_Cursor.x = 8f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 7f;
+				}
+				MC.pos_Cursor.y = 31f;
+				break;
+			case 83:
+				if (Player.transform.position.x > 384.05f)
+				{
+					MC.pos_Cursor.x = 14f;
+				}
+				else if (Player.transform.position.x > 355.6f)
+				{
+					MC.pos_Cursor.x = 13f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 12f;
+				}
+				if (Player.transform.position.y > 213.8f)
+				{
+					MC.pos_Cursor.y = 32f;
+				}
+				else if (Player.transform.position.y > 200.5f)
+				{
+					MC.pos_Cursor.y = 31f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 30f;
+				}
+				break;
+			case 84:
+				if (Player.transform.position.x > 526.29f)
+				{
+					MC.pos_Cursor.x = 19f;
+				}
+				else if (Player.transform.position.x > 497.84f)
+				{
+					MC.pos_Cursor.x = 18f;
+				}
+				else if (Player.transform.position.x > 469.39f)
+				{
+					MC.pos_Cursor.x = 17f;
+				}
+				else if (Player.transform.position.x > 440.95f)
+				{
+					MC.pos_Cursor.x = 16f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 15f;
+				}
+				if (Player.transform.position.y > 213.8f)
+				{
+					MC.pos_Cursor.y = 32f;
+				}
+				else if (Player.transform.position.y > 200.5f)
+				{
+					MC.pos_Cursor.y = 31f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 30f;
+				}
+				break;
+			case 85:
+				if (Player.transform.position.x > 668.53f)
+				{
+					MC.pos_Cursor.x = 24f;
+				}
+				else if (Player.transform.position.x > 640.08f)
+				{
+					MC.pos_Cursor.x = 23f;
+				}
+				else if (Player.transform.position.x > 611.64f)
+				{
+					MC.pos_Cursor.x = 22f;
+				}
+				else if (Player.transform.position.x > 583.19f)
+				{
+					MC.pos_Cursor.x = 21f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 20f;
+				}
+				if (Player.transform.position.y > 215.2f)
+				{
+					MC.pos_Cursor.y = 32f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 31f;
+				}
+				break;
+			case 87:
+				if (Player.transform.position.x > 753.88f)
+				{
+					MC.pos_Cursor.x = 27f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 26f;
+				}
+				MC.pos_Cursor.y = 32f;
+				break;
+			case 88:
+				if (Player.transform.position.x > 810.77f)
+				{
+					MC.pos_Cursor.x = 29f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 28f;
+				}
+				if (Player.transform.position.y > 228f)
+				{
+					MC.pos_Cursor.y = 33f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 32f;
+				}
+				break;
+			case 89:
 				if (Player.transform.position.x > 924.57f)
 				{
 					MC.pos_Cursor.x = 33f;
 				}
-				else if (Player.transform.position.x > 896.12f)
+				else if (Player.transform.position.x > 899.5f)
 				{
 					MC.pos_Cursor.x = 32f;
 				}
-				else if (Player.transform.position.x > 867.675f)
+				else if (Player.transform.position.x > 867.67f)
 				{
 					MC.pos_Cursor.x = 31f;
 				}
@@ -6040,369 +5537,135 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 				{
 					MC.pos_Cursor.x = 30f;
 				}
-				MC.pos_Cursor.y = 22f;
-			}
-			else
-			{
-				if (Player.transform.position.x > 896.12f)
+				if (Player.transform.position.y > 244.8f)
 				{
-					MC.pos_Cursor.x = 32f;
+					MC.pos_Cursor.y = 34f;
+				}
+				else if (Player.transform.position.y > 229f)
+				{
+					MC.pos_Cursor.y = 33f;
 				}
 				else
 				{
-					MC.pos_Cursor.x = 31f;
+					MC.pos_Cursor.y = 32f;
 				}
-				MC.pos_Cursor.y = 21f;
-			}
-			break;
-		case 113:
-			if (Player.transform.position.x > 1237.5f)
-			{
-				MC.pos_Cursor.x = 44f;
-			}
-			else if (Player.transform.position.x > 1209.055f)
-			{
-				MC.pos_Cursor.x = 43f;
-			}
-			else if (Player.transform.position.x > 1180.61f)
-			{
-				MC.pos_Cursor.x = 42f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 41f;
-			}
-			if (Player.transform.position.y > 72f)
-			{
-				MC.pos_Cursor.y = 23f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 22f;
-			}
-			break;
-		case 114:
-			if (Player.transform.position.x > 1351.3f)
-			{
-				MC.pos_Cursor.x = 48f;
-			}
-			else if (Player.transform.position.x > 1322.85f)
-			{
-				MC.pos_Cursor.x = 47f;
-			}
-			else if (Player.transform.position.x > 1294.4f)
-			{
-				MC.pos_Cursor.x = 46f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 45f;
-			}
-			if (Player.transform.position.y > 68.9f)
-			{
-				MC.pos_Cursor.y = 23f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 22f;
-			}
-			break;
-		case 115:
-			if (Player.transform.position.x < 1095.26f)
-			{
-				MC.pos_Cursor.x = 38f;
-				MC.pos_Cursor.y = 20f;
 				break;
-			}
-			if (Player.transform.position.x > 1123.71f)
-			{
-				MC.pos_Cursor.x = 40f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 39f;
-			}
-			if (Player.transform.position.y > 40f)
-			{
-				MC.pos_Cursor.y = 21f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 20f;
-			}
-			break;
-		case 116:
-			if (Player.transform.position.x > 1038.365f)
-			{
-				MC.pos_Cursor.x = 37f;
-			}
-			else if (Player.transform.position.x > 1009.916f)
-			{
-				MC.pos_Cursor.x = 36f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 35f;
-			}
-			if (Player.transform.position.y > 24f)
-			{
-				MC.pos_Cursor.y = 20f;
-			}
-			else if (Player.transform.position.y > 8f)
-			{
-				MC.pos_Cursor.y = 19f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 18f;
-			}
-			break;
-		case 117:
-			if (Player.transform.position.x > 953.02f)
-			{
-				MC.pos_Cursor.x = 34f;
-			}
-			else if (Player.transform.position.x > 924.57f)
-			{
-				MC.pos_Cursor.x = 33f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 32f;
-			}
-			if (Player.transform.position.y > 8f)
-			{
-				MC.pos_Cursor.y = 19f;
-			}
-			else if (Player.transform.position.y > -8.5f)
-			{
-				MC.pos_Cursor.y = 18f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 17f;
-			}
-			break;
-		case 118:
-			if (Player.transform.position.x > 1152.16f)
-			{
-				MC.pos_Cursor.x = 41f;
-			}
-			else if (Player.transform.position.x > 1123.71f)
-			{
-				MC.pos_Cursor.x = 40f;
-			}
-			else if (Player.transform.position.x > 1095.26f)
-			{
-				MC.pos_Cursor.x = 39f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 38f;
-			}
-			if (Player.transform.position.y > 6f)
-			{
-				MC.pos_Cursor.y = 19f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 18f;
-			}
-			break;
-		case 120:
-			if (Player.transform.position.x > 1237.5f)
-			{
-				MC.pos_Cursor.x = 44f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 43f;
-			}
-			break;
-		case 121:
-			if (Player.transform.position.x > 1322.85f)
-			{
-				MC.pos_Cursor.x = 47f;
-			}
-			else if (Player.transform.position.x > 1294.4f)
-			{
-				MC.pos_Cursor.x = 46f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 45f;
-			}
-			if (Player.transform.position.y > 7.5f)
-			{
-				MC.pos_Cursor.y = 19f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 18f;
-			}
-			break;
-		case 122:
-			if (Player.transform.position.x > 14.5f)
-			{
-				MC.pos_Cursor.x = 1f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 0f;
-			}
-			if (Player.transform.position.y > -12f)
-			{
-				MC.pos_Cursor.y = 18f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 17f;
-			}
-			break;
-		case 123:
-			if (Player.transform.position.x > 1465.09f)
-			{
-				MC.pos_Cursor.x = 52f;
-			}
-			else if (Player.transform.position.x > 1436.64f)
-			{
-				MC.pos_Cursor.x = 51f;
-			}
-			else if (Player.transform.position.x > 1408.19f)
-			{
-				MC.pos_Cursor.x = 50f;
-			}
-			else if (Player.transform.position.x > 1379.745f)
-			{
-				MC.pos_Cursor.x = 49f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 48f;
-			}
-			if (Player.transform.position.y > 8.5f)
-			{
-				MC.pos_Cursor.y = 19f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 18f;
-			}
-			break;
-		case 124:
-			if (Player.transform.position.y > 88f)
-			{
-				MC.pos_Cursor.y = 24f;
-			}
-			else if (Player.transform.position.y > 72f)
-			{
-				MC.pos_Cursor.y = 23f;
-			}
-			else if (Player.transform.position.y > 56f)
-			{
-				MC.pos_Cursor.y = 22f;
-			}
-			else if (Player.transform.position.y > 40f)
-			{
-				MC.pos_Cursor.y = 21f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 20f;
-			}
-			break;
-		case 126:
-			if (Player.transform.position.x > 1436.64f)
-			{
-				MC.pos_Cursor.x = 51f;
-			}
-			else if (Player.transform.position.x > 1408.19f)
-			{
-				MC.pos_Cursor.x = 50f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 49f;
-			}
-			if (Player.transform.position.y > 71.5f)
-			{
-				MC.pos_Cursor.y = 23f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 22f;
-			}
-			break;
-		case 127:
-			if (Player.transform.position.y > -24f)
-			{
-				MC.pos_Cursor.y = 17f;
-			}
-			else if (Player.transform.position.y > -40f)
-			{
-				MC.pos_Cursor.y = 16f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 15f;
-			}
-			break;
-		case 128:
-			if (Player.transform.position.x > 1408.19f)
-			{
-				MC.pos_Cursor.x = 50f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 49f;
-			}
-			if (Player.transform.position.y > -23f)
-			{
-				MC.pos_Cursor.y = 17f;
-			}
-			else if (Player.transform.position.y > -38f)
-			{
-				MC.pos_Cursor.y = 16f;
-			}
-			else if (Player.transform.position.y > -53f)
-			{
-				MC.pos_Cursor.y = 15f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 14f;
-			}
-			break;
-		case 129:
-			if (Player.transform.position.x > 1351.3f)
-			{
-				MC.pos_Cursor.x = 48f;
-			}
-			else if (Player.transform.position.x > 1322.85f)
-			{
-				MC.pos_Cursor.x = 47f;
-			}
-			else if (Player.transform.position.x > 1294.4f)
-			{
-				MC.pos_Cursor.x = 46f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 45f;
-			}
-			if (Player.transform.position.y > -71.5f)
-			{
-				MC.pos_Cursor.y = 14f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 13f;
-			}
-			break;
-		case 130:
-			if (Player.transform.position.y > -72f)
-			{
-				if (Player.transform.position.x > 1180.61f)
+			case 91:
+				if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 29f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 28f;
+				}
+				MC.pos_Cursor.y = 34f;
+				break;
+			case 92:
+				if (Player.transform.position.x > Get_Room_AThird_X(2))
+				{
+					MC.pos_Cursor.x = 27f;
+				}
+				else if (Player.transform.position.x > Get_Room_AThird_X(1))
+				{
+					MC.pos_Cursor.x = 26f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 25f;
+				}
+				if (Player.transform.position.y > 261f)
+				{
+					MC.pos_Cursor.y = 35f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 34f;
+				}
+				break;
+			case 93:
+				if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 24f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 23f;
+				}
+				MC.pos_Cursor.y = 34f;
+				break;
+			case 94:
+				if (Player.transform.position.x > Get_Room_Half_X())
+				{
+					MC.pos_Cursor.x = 22f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 21f;
+				}
+				if (Player.transform.position.y > 248.5f)
+				{
+					MC.pos_Cursor.y = 34f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 33f;
+				}
+				break;
+			case 96:
+				if (Player.transform.position.x > 1038.365f)
+				{
+					MC.pos_Cursor.x = 37f;
+				}
+				else if (Player.transform.position.x > 1009.916f)
+				{
+					MC.pos_Cursor.x = 36f;
+				}
+				else if (Player.transform.position.x < 981.468f && Player.transform.position.y > 212f)
+				{
+					MC.pos_Cursor.x = 34f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 35f;
+				}
+				if (Player.transform.position.y > 212f)
+				{
+					MC.pos_Cursor.y = 32f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 31f;
+				}
+				break;
+			case 97:
+				if (Player.transform.position.x > 1123.71f)
+				{
+					MC.pos_Cursor.x = 40f;
+				}
+				else if (Player.transform.position.x > 1095.26f)
+				{
+					MC.pos_Cursor.x = 39f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 38f;
+				}
+				if (Player.transform.position.y > 212.5f)
+				{
+					MC.pos_Cursor.y = 32f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 31f;
+				}
+				break;
+			case 98:
+				if (Player.transform.position.x > 1209.055f)
+				{
+					MC.pos_Cursor.x = 43f;
+				}
+				else if (Player.transform.position.x > 1180.607f)
 				{
 					MC.pos_Cursor.x = 42f;
 				}
@@ -6410,83 +5673,1093 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 				{
 					MC.pos_Cursor.x = 41f;
 				}
-				MC.pos_Cursor.y = 14f;
 				break;
-			}
-			if (Player.transform.position.x > 1237.5f)
-			{
-				MC.pos_Cursor.x = 44f;
-			}
-			else if (Player.transform.position.x > 1209.05f)
-			{
-				MC.pos_Cursor.x = 43f;
-			}
-			else if (Player.transform.position.x > 1180.61f)
-			{
-				MC.pos_Cursor.x = 42f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 41f;
-			}
-			MC.pos_Cursor.y = 13f;
-			break;
-		case 131:
-			if (Player.transform.position.x > 1123.71f)
-			{
-				MC.pos_Cursor.x = 40f;
-			}
-			else if (Player.transform.position.x > 1094.5f)
-			{
+			case 99:
+				if (Player.transform.position.x > 1265.95f)
+				{
+					MC.pos_Cursor.x = 45f;
+				}
+				else if (Player.transform.position.x > 1237.5f)
+				{
+					MC.pos_Cursor.x = 44f;
+				}
+				else if (Player.transform.position.x > 1209.055f)
+				{
+					MC.pos_Cursor.x = 43f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 42f;
+				}
+				if (Player.transform.position.y > 183f)
+				{
+					MC.pos_Cursor.y = 30f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 29f;
+				}
+				break;
+			case 100:
+				if (Player.transform.position.x > 1152.16f)
+				{
+					MC.pos_Cursor.x = 41f;
+				}
+				else if (Player.transform.position.x > 1130.3f)
+				{
+					MC.pos_Cursor.x = 40f;
+				}
+				else if (Player.transform.position.x > 1089f)
+				{
+					MC.pos_Cursor.x = 39f;
+				}
+				else if (Player.transform.position.x > 1066.81f)
+				{
+					MC.pos_Cursor.x = 38f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 37f;
+				}
+				if (Player.transform.position.y > 185f)
+				{
+					MC.pos_Cursor.y = 30f;
+				}
+				else if (Player.transform.position.y > 167.5f)
+				{
+					MC.pos_Cursor.y = 29f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 28f;
+				}
+				break;
+			case 101:
+				if (Player.transform.position.x > 1009.916f)
+				{
+					MC.pos_Cursor.x = 36f;
+				}
+				else if (Player.transform.position.x > 979.5f)
+				{
+					MC.pos_Cursor.x = 35f;
+				}
+				else if (Player.transform.position.x > 953.02f)
+				{
+					MC.pos_Cursor.x = 34f;
+				}
+				else if (Player.transform.position.x > 924.57f)
+				{
+					MC.pos_Cursor.x = 33f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 32f;
+				}
+				if (Player.transform.position.y > 184f)
+				{
+					MC.pos_Cursor.y = 30f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 29f;
+				}
+				break;
+			case 102:
+				if (Player.transform.position.x > 1180.607f)
+				{
+					MC.pos_Cursor.x = 42f;
+					MC.pos_Cursor.y = 27f;
+					break;
+				}
+				if (Player.transform.position.x < 1038.365f)
+				{
+					MC.pos_Cursor.x = 36f;
+					MC.pos_Cursor.y = 27f;
+					break;
+				}
+				if (Player.transform.position.x > 1152.16f)
+				{
+					MC.pos_Cursor.x = 41f;
+				}
+				else if (Player.transform.position.x > 1123.71f)
+				{
+					MC.pos_Cursor.x = 40f;
+				}
+				else if (Player.transform.position.x > 1090.6f)
+				{
+					MC.pos_Cursor.x = 39f;
+				}
+				else if (Player.transform.position.x > 1066.813f)
+				{
+					MC.pos_Cursor.x = 38f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 37f;
+				}
+				if (Player.transform.position.y > 135.5f)
+				{
+					MC.pos_Cursor.y = 27f;
+					break;
+				}
 				MC.pos_Cursor.x = 39f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 38f;
-			}
-			if (Player.transform.position.y > -72f)
-			{
-				MC.pos_Cursor.y = 14f;
-			}
-			else if (Player.transform.position.y > -88f)
-			{
+				MC.pos_Cursor.y = 26f;
+				break;
+			case 103:
+				if (Player.transform.position.x > 1038.365f)
+				{
+					MC.pos_Cursor.x = 37f;
+				}
+				else if (Player.transform.position.x > 1009.916f)
+				{
+					MC.pos_Cursor.x = 36f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 35f;
+				}
+				if (Player.transform.position.y > 119.5f)
+				{
+					MC.pos_Cursor.y = 26f;
+				}
+				else if (Player.transform.position.y > 104f)
+				{
+					MC.pos_Cursor.y = 25f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				break;
+			case 104:
+				if (Player.transform.position.x > 953.02f)
+				{
+					MC.pos_Cursor.x = 34f;
+				}
+				else if (Player.transform.position.x > 924.57f)
+				{
+					MC.pos_Cursor.x = 33f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 32f;
+				}
+				if (Player.transform.position.y > 120f)
+				{
+					MC.pos_Cursor.y = 26f;
+				}
+				else if (Player.transform.position.y > 104f)
+				{
+					MC.pos_Cursor.y = 25f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				break;
+			case 105:
+				if (Player.transform.position.x > 1152.16f)
+				{
+					MC.pos_Cursor.x = 41f;
+				}
+				else if (Player.transform.position.x > 1123.71f)
+				{
+					MC.pos_Cursor.x = 40f;
+				}
+				else if (Player.transform.position.x > 1095.26f)
+				{
+					MC.pos_Cursor.x = 39f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 38f;
+				}
+				if (Player.transform.position.y > 88f)
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				else if (Player.transform.position.y > 72f)
+				{
+					MC.pos_Cursor.y = 23f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				break;
+			case 106:
+				if (Player.transform.position.y > 124f)
+				{
+					MC.pos_Cursor.x = 42f;
+					MC.pos_Cursor.y = 26f;
+					break;
+				}
+				if (Player.transform.position.x > 1237.5f)
+				{
+					MC.pos_Cursor.x = 44f;
+				}
+				else if (Player.transform.position.x > 1209.055f)
+				{
+					MC.pos_Cursor.x = 43f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 42f;
+				}
+				if (Player.transform.position.y > 105f)
+				{
+					MC.pos_Cursor.y = 25f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				break;
+			case 107:
+				if (Player.transform.position.x > 1322.85f)
+				{
+					MC.pos_Cursor.x = 47f;
+				}
+				else if (Player.transform.position.x > 1294.4f)
+				{
+					MC.pos_Cursor.x = 46f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 45f;
+				}
+				if (Player.transform.position.y > 119f)
+				{
+					MC.pos_Cursor.y = 26f;
+				}
+				else if (Player.transform.position.y > 103.5f)
+				{
+					MC.pos_Cursor.y = 25f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				break;
+			case 108:
+				if (Player.transform.position.x > 1408.19f)
+				{
+					MC.pos_Cursor.x = 50f;
+				}
+				else if (Player.transform.position.x > 1379.745f)
+				{
+					MC.pos_Cursor.x = 49f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 48f;
+				}
+				if (Player.transform.position.y > 104f)
+				{
+					MC.pos_Cursor.y = 25f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				break;
+			case 109:
+				if (Player.transform.position.x > 1351.3f)
+				{
+					MC.pos_Cursor.x = 48f;
+				}
+				else if (Player.transform.position.x > 1322.85f)
+				{
+					MC.pos_Cursor.x = 47f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 46f;
+				}
+				if (Player.transform.position.y > 167.5f)
+				{
+					MC.pos_Cursor.y = 29f;
+				}
+				else if (Player.transform.position.y > 152f)
+				{
+					MC.pos_Cursor.y = 28f;
+				}
+				else if (Player.transform.position.y > 136f)
+				{
+					MC.pos_Cursor.y = 27f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 26f;
+				}
+				break;
+			case 111:
+				if (Player.transform.position.x > 1066.81f)
+				{
+					MC.pos_Cursor.x = 38f;
+				}
+				else if (Player.transform.position.x > 1038.365f)
+				{
+					MC.pos_Cursor.x = 37f;
+				}
+				else if (Player.transform.position.x > 1009.916f)
+				{
+					MC.pos_Cursor.x = 36f;
+				}
+				else if (Player.transform.position.x > 981.47f)
+				{
+					MC.pos_Cursor.x = 35f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 34f;
+				}
+				if (Player.transform.position.y > 72f)
+				{
+					MC.pos_Cursor.y = 23f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				break;
+			case 112:
+				if (Player.transform.position.y > 54f)
+				{
+					if (Player.transform.position.x > 924.57f)
+					{
+						MC.pos_Cursor.x = 33f;
+					}
+					else if (Player.transform.position.x > 896.12f)
+					{
+						MC.pos_Cursor.x = 32f;
+					}
+					else if (Player.transform.position.x > 867.675f)
+					{
+						MC.pos_Cursor.x = 31f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 30f;
+					}
+					MC.pos_Cursor.y = 22f;
+				}
+				else
+				{
+					if (Player.transform.position.x > 896.12f)
+					{
+						MC.pos_Cursor.x = 32f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 31f;
+					}
+					MC.pos_Cursor.y = 21f;
+				}
+				break;
+			case 113:
+				if (Player.transform.position.x > 1237.5f)
+				{
+					MC.pos_Cursor.x = 44f;
+				}
+				else if (Player.transform.position.x > 1209.055f)
+				{
+					MC.pos_Cursor.x = 43f;
+				}
+				else if (Player.transform.position.x > 1180.61f)
+				{
+					MC.pos_Cursor.x = 42f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 41f;
+				}
+				if (Player.transform.position.y > 72f)
+				{
+					MC.pos_Cursor.y = 23f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				break;
+			case 114:
+				if (Player.transform.position.x > 1351.3f)
+				{
+					MC.pos_Cursor.x = 48f;
+				}
+				else if (Player.transform.position.x > 1322.85f)
+				{
+					MC.pos_Cursor.x = 47f;
+				}
+				else if (Player.transform.position.x > 1294.4f)
+				{
+					MC.pos_Cursor.x = 46f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 45f;
+				}
+				if (Player.transform.position.y > 68.9f)
+				{
+					MC.pos_Cursor.y = 23f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				break;
+			case 115:
+				if (Player.transform.position.x < 1095.26f)
+				{
+					MC.pos_Cursor.x = 38f;
+					MC.pos_Cursor.y = 20f;
+					break;
+				}
+				if (Player.transform.position.x > 1123.71f)
+				{
+					MC.pos_Cursor.x = 40f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 39f;
+				}
+				if (Player.transform.position.y > 40f)
+				{
+					MC.pos_Cursor.y = 21f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 20f;
+				}
+				break;
+			case 116:
+				if (Player.transform.position.x > 1038.365f)
+				{
+					MC.pos_Cursor.x = 37f;
+				}
+				else if (Player.transform.position.x > 1009.916f)
+				{
+					MC.pos_Cursor.x = 36f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 35f;
+				}
+				if (Player.transform.position.y > 24f)
+				{
+					MC.pos_Cursor.y = 20f;
+				}
+				else if (Player.transform.position.y > 8f)
+				{
+					MC.pos_Cursor.y = 19f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 18f;
+				}
+				break;
+			case 117:
+				if (Player.transform.position.x > 953.02f)
+				{
+					MC.pos_Cursor.x = 34f;
+				}
+				else if (Player.transform.position.x > 924.57f)
+				{
+					MC.pos_Cursor.x = 33f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 32f;
+				}
+				if (Player.transform.position.y > 8f)
+				{
+					MC.pos_Cursor.y = 19f;
+				}
+				else if (Player.transform.position.y > -8.5f)
+				{
+					MC.pos_Cursor.y = 18f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 17f;
+				}
+				break;
+			case 118:
+				if (Player.transform.position.x > 1152.16f)
+				{
+					MC.pos_Cursor.x = 41f;
+				}
+				else if (Player.transform.position.x > 1123.71f)
+				{
+					MC.pos_Cursor.x = 40f;
+				}
+				else if (Player.transform.position.x > 1095.26f)
+				{
+					MC.pos_Cursor.x = 39f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 38f;
+				}
+				if (Player.transform.position.y > 6f)
+				{
+					MC.pos_Cursor.y = 19f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 18f;
+				}
+				break;
+			case 120:
+				if (Player.transform.position.x > 1237.5f)
+				{
+					MC.pos_Cursor.x = 44f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 43f;
+				}
+				break;
+			case 121:
+				if (Player.transform.position.x > 1322.85f)
+				{
+					MC.pos_Cursor.x = 47f;
+				}
+				else if (Player.transform.position.x > 1294.4f)
+				{
+					MC.pos_Cursor.x = 46f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 45f;
+				}
+				if (Player.transform.position.y > 7.5f)
+				{
+					MC.pos_Cursor.y = 19f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 18f;
+				}
+				break;
+			case 122:
+				if (Player.transform.position.x > 14.5f)
+				{
+					MC.pos_Cursor.x = 1f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 0f;
+				}
+				if (Player.transform.position.y > -12f)
+				{
+					MC.pos_Cursor.y = 18f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 17f;
+				}
+				break;
+			case 123:
+				if (Player.transform.position.x > 1465.09f)
+				{
+					MC.pos_Cursor.x = 52f;
+				}
+				else if (Player.transform.position.x > 1436.64f)
+				{
+					MC.pos_Cursor.x = 51f;
+				}
+				else if (Player.transform.position.x > 1408.19f)
+				{
+					MC.pos_Cursor.x = 50f;
+				}
+				else if (Player.transform.position.x > 1379.745f)
+				{
+					MC.pos_Cursor.x = 49f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 48f;
+				}
+				if (Player.transform.position.y > 8.5f)
+				{
+					MC.pos_Cursor.y = 19f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 18f;
+				}
+				break;
+			case 124:
+				if (Player.transform.position.y > 88f)
+				{
+					MC.pos_Cursor.y = 24f;
+				}
+				else if (Player.transform.position.y > 72f)
+				{
+					MC.pos_Cursor.y = 23f;
+				}
+				else if (Player.transform.position.y > 56f)
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				else if (Player.transform.position.y > 40f)
+				{
+					MC.pos_Cursor.y = 21f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 20f;
+				}
+				break;
+			case 126:
+				if (Player.transform.position.x > 1436.64f)
+				{
+					MC.pos_Cursor.x = 51f;
+				}
+				else if (Player.transform.position.x > 1408.19f)
+				{
+					MC.pos_Cursor.x = 50f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 49f;
+				}
+				if (Player.transform.position.y > 71.5f)
+				{
+					MC.pos_Cursor.y = 23f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 22f;
+				}
+				break;
+			case 127:
+				if (Player.transform.position.y > -24f)
+				{
+					MC.pos_Cursor.y = 17f;
+				}
+				else if (Player.transform.position.y > -40f)
+				{
+					MC.pos_Cursor.y = 16f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 15f;
+				}
+				break;
+			case 128:
+				if (Player.transform.position.x > 1408.19f)
+				{
+					MC.pos_Cursor.x = 50f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 49f;
+				}
+				if (Player.transform.position.y > -23f)
+				{
+					MC.pos_Cursor.y = 17f;
+				}
+				else if (Player.transform.position.y > -38f)
+				{
+					MC.pos_Cursor.y = 16f;
+				}
+				else if (Player.transform.position.y > -53f)
+				{
+					MC.pos_Cursor.y = 15f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 14f;
+				}
+				break;
+			case 129:
+				if (Player.transform.position.x > 1351.3f)
+				{
+					MC.pos_Cursor.x = 48f;
+				}
+				else if (Player.transform.position.x > 1322.85f)
+				{
+					MC.pos_Cursor.x = 47f;
+				}
+				else if (Player.transform.position.x > 1294.4f)
+				{
+					MC.pos_Cursor.x = 46f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 45f;
+				}
+				if (Player.transform.position.y > -71.5f)
+				{
+					MC.pos_Cursor.y = 14f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 13f;
+				}
+				break;
+			case 130:
+				if (Player.transform.position.y > -72f)
+				{
+					if (Player.transform.position.x > 1180.61f)
+					{
+						MC.pos_Cursor.x = 42f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 41f;
+					}
+					MC.pos_Cursor.y = 14f;
+					break;
+				}
+				if (Player.transform.position.x > 1237.5f)
+				{
+					MC.pos_Cursor.x = 44f;
+				}
+				else if (Player.transform.position.x > 1209.05f)
+				{
+					MC.pos_Cursor.x = 43f;
+				}
+				else if (Player.transform.position.x > 1180.61f)
+				{
+					MC.pos_Cursor.x = 42f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 41f;
+				}
 				MC.pos_Cursor.y = 13f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 12f;
-			}
-			break;
-		case 132:
-			if (Player.transform.position.x > 1038.36f)
-			{
-				MC.pos_Cursor.x = 37f;
-			}
-			else if (Player.transform.position.x > 1009.91f)
-			{
-				MC.pos_Cursor.x = 36f;
-			}
-			else if (Player.transform.position.x > 981.47f)
-			{
-				MC.pos_Cursor.x = 35f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 34f;
-			}
-			if (Player.transform.position.y > -72f)
-			{
-				MC.pos_Cursor.y = 14f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 13f;
-			}
-			break;
-		case 133:
-			if (Player.transform.position.y > -72f)
-			{
+				break;
+			case 131:
+				if (Player.transform.position.x > 1123.71f)
+				{
+					MC.pos_Cursor.x = 40f;
+				}
+				else if (Player.transform.position.x > 1094.5f)
+				{
+					MC.pos_Cursor.x = 39f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 38f;
+				}
+				if (Player.transform.position.y > -72f)
+				{
+					MC.pos_Cursor.y = 14f;
+				}
+				else if (Player.transform.position.y > -88f)
+				{
+					MC.pos_Cursor.y = 13f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 12f;
+				}
+				break;
+			case 132:
+				if (Player.transform.position.x > 1038.36f)
+				{
+					MC.pos_Cursor.x = 37f;
+				}
+				else if (Player.transform.position.x > 1009.91f)
+				{
+					MC.pos_Cursor.x = 36f;
+				}
+				else if (Player.transform.position.x > 981.47f)
+				{
+					MC.pos_Cursor.x = 35f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 34f;
+				}
+				if (Player.transform.position.y > -72f)
+				{
+					MC.pos_Cursor.y = 14f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 13f;
+				}
+				break;
+			case 133:
+				if (Player.transform.position.y > -72f)
+				{
+					if (Player.transform.position.x > 924.57f)
+					{
+						MC.pos_Cursor.x = 33f;
+					}
+					else if (Player.transform.position.x > 896.12f)
+					{
+						MC.pos_Cursor.x = 32f;
+					}
+					else
+					{
+						MC.pos_Cursor.x = 31f;
+					}
+					MC.pos_Cursor.y = 14f;
+					break;
+				}
 				if (Player.transform.position.x > 924.57f)
+				{
+					MC.pos_Cursor.x = 33f;
+				}
+				else if (Player.transform.position.x > 896.12f)
+				{
+					MC.pos_Cursor.x = 32f;
+				}
+				else if (Player.transform.position.x > 867.67f)
+				{
+					MC.pos_Cursor.x = 31f;
+				}
+				else if (Player.transform.position.x > 839.22f)
+				{
+					MC.pos_Cursor.x = 30f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 29f;
+				}
+				MC.pos_Cursor.y = 13f;
+				break;
+			case 134:
+				if (Player.transform.position.x > 1152.16f)
+				{
+					MC.pos_Cursor.x = 41f;
+				}
+				else if (Player.transform.position.x > 1123.71f)
+				{
+					MC.pos_Cursor.x = 40f;
+				}
+				else if (Player.transform.position.x > 1095.26f)
+				{
+					MC.pos_Cursor.x = 39f;
+				}
+				else if (Player.transform.position.x > 1066.81f)
+				{
+					MC.pos_Cursor.x = 38f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 37f;
+				}
+				if (Player.transform.position.y > -120f)
+				{
+					MC.pos_Cursor.y = 11f;
+				}
+				else if (Player.transform.position.y > -139f)
+				{
+					MC.pos_Cursor.y = 10f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 9f;
+				}
+				break;
+			case 135:
+				if (Player.transform.position.x > 1009.92f)
+				{
+					MC.pos_Cursor.x = 36f;
+				}
+				else if (Player.transform.position.x > 981.47f)
+				{
+					MC.pos_Cursor.x = 35f;
+				}
+				else if (Player.transform.position.x > 953.02f)
+				{
+					MC.pos_Cursor.x = 34f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 33f;
+				}
+				if (Player.transform.position.y > -120f)
+				{
+					MC.pos_Cursor.y = 11f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 10f;
+				}
+				break;
+			case 136:
+				if (Player.transform.position.x > 1265.95f)
+				{
+					MC.pos_Cursor.x = 45f;
+				}
+				else if (Player.transform.position.x > 1237.5f)
+				{
+					MC.pos_Cursor.x = 44f;
+				}
+				else if (Player.transform.position.x > 1209.05f)
+				{
+					MC.pos_Cursor.x = 43f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 42f;
+				}
+				if (Player.transform.position.y > -120f)
+				{
+					MC.pos_Cursor.y = 11f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 10f;
+				}
+				break;
+			case 137:
+				if (Player.transform.position.x > 1436.64f)
+				{
+					MC.pos_Cursor.x = 51f;
+					MC.pos_Cursor.y = 11f;
+					break;
+				}
+				if (Player.transform.position.x > 1408.19f)
+				{
+					MC.pos_Cursor.x = 50f;
+					MC.pos_Cursor.y = 11f;
+					break;
+				}
+				if (Player.transform.position.x > 1380f)
+				{
+					MC.pos_Cursor.x = 49f;
+					MC.pos_Cursor.y = 11f;
+					break;
+				}
+				if (Player.transform.position.x > 1351.3f)
+				{
+					MC.pos_Cursor.x = 48f;
+				}
+				else if (Player.transform.position.x > 1322.85f)
+				{
+					MC.pos_Cursor.x = 47f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 46f;
+				}
+				if (Player.transform.position.y > -120.5f)
+				{
+					MC.pos_Cursor.y = 11f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 10f;
+				}
+				break;
+			case 138:
+				MC.pos_Cursor.x = 51f;
+				if (Player.transform.position.y > -72f)
+				{
+					MC.pos_Cursor.y = 14f;
+				}
+				else if (Player.transform.position.y > -95f)
+				{
+					MC.pos_Cursor.y = 13f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 12f;
+				}
+				break;
+			case 139:
+				if (Player.transform.position.x > 1209.05f)
+				{
+					MC.pos_Cursor.x = 43f;
+				}
+				else if (Player.transform.position.x > 1180.61f)
+				{
+					MC.pos_Cursor.x = 42f;
+				}
+				else if (Player.transform.position.x > 1152.16f)
+				{
+					MC.pos_Cursor.x = 41f;
+				}
+				else if (Player.transform.position.x > 1123.71f)
+				{
+					MC.pos_Cursor.x = 40f;
+				}
+				else if (Player.transform.position.x > 1095.26f)
+				{
+					MC.pos_Cursor.x = 39f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 38f;
+				}
+				MC.pos_Cursor.y = 8f;
+				break;
+			case 141:
+				if (Player.transform.position.x > 1265.95f && Player.transform.position.y > -185.2f)
+				{
+					MC.pos_Cursor.x = 45f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 44f;
+				}
+				if (Player.transform.position.y > -167.5f)
+				{
+					MC.pos_Cursor.y = 8f;
+				}
+				else if (Player.transform.position.y > -185.2f)
+				{
+					MC.pos_Cursor.y = 7f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 6f;
+				}
+				break;
+			case 143:
+				if (Player.transform.position.x > 1209.05f)
+				{
+					MC.pos_Cursor.x = 43f;
+				}
+				else if (Player.transform.position.x > 1180.61f)
+				{
+					MC.pos_Cursor.x = 42f;
+				}
+				else if (Player.transform.position.x > 1152.16f)
+				{
+					MC.pos_Cursor.x = 41f;
+				}
+				else if (Player.transform.position.x > 1123.71f)
+				{
+					MC.pos_Cursor.x = 40f;
+				}
+				else if (Player.transform.position.x > 1095.26f)
+				{
+					MC.pos_Cursor.x = 39f;
+				}
+				else if (Player.transform.position.x > 1066.81f)
+				{
+					MC.pos_Cursor.x = 38f;
+				}
+				else if (Player.transform.position.x > 1038.36f)
+				{
+					MC.pos_Cursor.x = 37f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 36f;
+				}
+				MC.pos_Cursor.y = 6f;
+				break;
+			case 145:
+				if (Player.transform.position.x > 981.47f)
+				{
+					MC.pos_Cursor.x = 35f;
+				}
+				else if (Player.transform.position.x > 953.02f)
+				{
+					MC.pos_Cursor.x = 34f;
+				}
+				else if (Player.transform.position.x > 924.57f)
 				{
 					MC.pos_Cursor.x = 33f;
 				}
@@ -6498,381 +6771,110 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 				{
 					MC.pos_Cursor.x = 31f;
 				}
-				MC.pos_Cursor.y = 14f;
-				break;
-			}
-			if (Player.transform.position.x > 924.57f)
-			{
-				MC.pos_Cursor.x = 33f;
-			}
-			else if (Player.transform.position.x > 896.12f)
-			{
-				MC.pos_Cursor.x = 32f;
-			}
-			else if (Player.transform.position.x > 867.67f)
-			{
-				MC.pos_Cursor.x = 31f;
-			}
-			else if (Player.transform.position.x > 839.22f)
-			{
-				MC.pos_Cursor.x = 30f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 29f;
-			}
-			MC.pos_Cursor.y = 13f;
-			break;
-		case 134:
-			if (Player.transform.position.x > 1152.16f)
-			{
-				MC.pos_Cursor.x = 41f;
-			}
-			else if (Player.transform.position.x > 1123.71f)
-			{
-				MC.pos_Cursor.x = 40f;
-			}
-			else if (Player.transform.position.x > 1095.26f)
-			{
-				MC.pos_Cursor.x = 39f;
-			}
-			else if (Player.transform.position.x > 1066.81f)
-			{
-				MC.pos_Cursor.x = 38f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 37f;
-			}
-			if (Player.transform.position.y > -120f)
-			{
-				MC.pos_Cursor.y = 11f;
-			}
-			else if (Player.transform.position.y > -139f)
-			{
-				MC.pos_Cursor.y = 10f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 9f;
-			}
-			break;
-		case 135:
-			if (Player.transform.position.x > 1009.92f)
-			{
-				MC.pos_Cursor.x = 36f;
-			}
-			else if (Player.transform.position.x > 981.47f)
-			{
-				MC.pos_Cursor.x = 35f;
-			}
-			else if (Player.transform.position.x > 953.02f)
-			{
-				MC.pos_Cursor.x = 34f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 33f;
-			}
-			if (Player.transform.position.y > -120f)
-			{
-				MC.pos_Cursor.y = 11f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 10f;
-			}
-			break;
-		case 136:
-			if (Player.transform.position.x > 1265.95f)
-			{
-				MC.pos_Cursor.x = 45f;
-			}
-			else if (Player.transform.position.x > 1237.5f)
-			{
-				MC.pos_Cursor.x = 44f;
-			}
-			else if (Player.transform.position.x > 1209.05f)
-			{
-				MC.pos_Cursor.x = 43f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 42f;
-			}
-			if (Player.transform.position.y > -120f)
-			{
-				MC.pos_Cursor.y = 11f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 10f;
-			}
-			break;
-		case 137:
-			if (Player.transform.position.x > 1436.64f)
-			{
-				MC.pos_Cursor.x = 51f;
-				MC.pos_Cursor.y = 11f;
-				break;
-			}
-			if (Player.transform.position.x > 1408.19f)
-			{
-				MC.pos_Cursor.x = 50f;
-				MC.pos_Cursor.y = 11f;
-				break;
-			}
-			if (Player.transform.position.x > 1380f)
-			{
-				MC.pos_Cursor.x = 49f;
-				MC.pos_Cursor.y = 11f;
-				break;
-			}
-			if (Player.transform.position.x > 1351.3f)
-			{
-				MC.pos_Cursor.x = 48f;
-			}
-			else if (Player.transform.position.x > 1322.85f)
-			{
-				MC.pos_Cursor.x = 47f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 46f;
-			}
-			if (Player.transform.position.y > -120.5f)
-			{
-				MC.pos_Cursor.y = 11f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 10f;
-			}
-			break;
-		case 138:
-			MC.pos_Cursor.x = 51f;
-			if (Player.transform.position.y > -72f)
-			{
-				MC.pos_Cursor.y = 14f;
-			}
-			else if (Player.transform.position.y > -95f)
-			{
-				MC.pos_Cursor.y = 13f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 12f;
-			}
-			break;
-		case 139:
-			if (Player.transform.position.x > 1209.05f)
-			{
-				MC.pos_Cursor.x = 43f;
-			}
-			else if (Player.transform.position.x > 1180.61f)
-			{
-				MC.pos_Cursor.x = 42f;
-			}
-			else if (Player.transform.position.x > 1152.16f)
-			{
-				MC.pos_Cursor.x = 41f;
-			}
-			else if (Player.transform.position.x > 1123.71f)
-			{
-				MC.pos_Cursor.x = 40f;
-			}
-			else if (Player.transform.position.x > 1095.26f)
-			{
-				MC.pos_Cursor.x = 39f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 38f;
-			}
-			MC.pos_Cursor.y = 8f;
-			break;
-		case 141:
-			if (Player.transform.position.x > 1265.95f && Player.transform.position.y > -185.2f)
-			{
-				MC.pos_Cursor.x = 45f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 44f;
-			}
-			if (Player.transform.position.y > -167.5f)
-			{
-				MC.pos_Cursor.y = 8f;
-			}
-			else if (Player.transform.position.y > -185.2f)
-			{
-				MC.pos_Cursor.y = 7f;
-			}
-			else
-			{
 				MC.pos_Cursor.y = 6f;
-			}
-			break;
-		case 143:
-			if (Player.transform.position.x > 1209.05f)
-			{
-				MC.pos_Cursor.x = 43f;
-			}
-			else if (Player.transform.position.x > 1180.61f)
-			{
-				MC.pos_Cursor.x = 42f;
-			}
-			else if (Player.transform.position.x > 1152.16f)
-			{
-				MC.pos_Cursor.x = 41f;
-			}
-			else if (Player.transform.position.x > 1123.71f)
-			{
-				MC.pos_Cursor.x = 40f;
-			}
-			else if (Player.transform.position.x > 1095.26f)
-			{
-				MC.pos_Cursor.x = 39f;
-			}
-			else if (Player.transform.position.x > 1066.81f)
-			{
-				MC.pos_Cursor.x = 38f;
-			}
-			else if (Player.transform.position.x > 1038.36f)
-			{
-				MC.pos_Cursor.x = 37f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 36f;
-			}
-			MC.pos_Cursor.y = 6f;
-			break;
-		case 145:
-			if (Player.transform.position.x > 981.47f)
-			{
-				MC.pos_Cursor.x = 35f;
-			}
-			else if (Player.transform.position.x > 953.02f)
-			{
-				MC.pos_Cursor.x = 34f;
-			}
-			else if (Player.transform.position.x > 924.57f)
-			{
-				MC.pos_Cursor.x = 33f;
-			}
-			else if (Player.transform.position.x > 896.12f)
-			{
-				MC.pos_Cursor.x = 32f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 31f;
-			}
-			MC.pos_Cursor.y = 6f;
-			break;
-		case 146:
-			if (Player.transform.position.x > 839.22f)
-			{
-				MC.pos_Cursor.x = 30f;
-			}
-			else if (Player.transform.position.x > 810.78f)
-			{
-				MC.pos_Cursor.x = 29f;
-			}
-			else if (Player.transform.position.x > 782.33f)
-			{
-				MC.pos_Cursor.x = 28f;
-			}
-			else if (Player.transform.position.x > 753.88f)
-			{
-				MC.pos_Cursor.x = 27f;
-			}
-			else if (Player.transform.position.x > 725.43f)
-			{
-				MC.pos_Cursor.x = 26f;
-			}
-			else if (Player.transform.position.x > 696.98f)
-			{
-				MC.pos_Cursor.x = 25f;
-			}
-			else if (Player.transform.position.x > 668.53f)
-			{
-				MC.pos_Cursor.x = 24f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 23f;
-			}
-			MC.pos_Cursor.y = 6f;
-			break;
-		case 148:
-			if (Player.transform.position.x > 611.64f && Player.transform.position.y > -199f)
-			{
-				MC.pos_Cursor.x = 22f;
-			}
-			else if (Player.transform.position.x > 583.19f)
-			{
-				MC.pos_Cursor.x = 21f;
-			}
-			else if (Player.transform.position.x > 554.74f)
-			{
-				MC.pos_Cursor.x = 20f;
-			}
-			else if (Player.transform.position.x > 526.29f)
-			{
-				MC.pos_Cursor.x = 19f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 18f;
-			}
-			if (Player.transform.position.y > -199f)
-			{
+				break;
+			case 146:
+				if (Player.transform.position.x > 839.22f)
+				{
+					MC.pos_Cursor.x = 30f;
+				}
+				else if (Player.transform.position.x > 810.78f)
+				{
+					MC.pos_Cursor.x = 29f;
+				}
+				else if (Player.transform.position.x > 782.33f)
+				{
+					MC.pos_Cursor.x = 28f;
+				}
+				else if (Player.transform.position.x > 753.88f)
+				{
+					MC.pos_Cursor.x = 27f;
+				}
+				else if (Player.transform.position.x > 725.43f)
+				{
+					MC.pos_Cursor.x = 26f;
+				}
+				else if (Player.transform.position.x > 696.98f)
+				{
+					MC.pos_Cursor.x = 25f;
+				}
+				else if (Player.transform.position.x > 668.53f)
+				{
+					MC.pos_Cursor.x = 24f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 23f;
+				}
 				MC.pos_Cursor.y = 6f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 5f;
-			}
-			break;
-		case 149:
-			MC.pos_Cursor.x = 33f;
-			if (Player.transform.position.y > -216f)
-			{
-				MC.pos_Cursor.y = 5f;
-			}
-			else if (Player.transform.position.y > -236.3f)
-			{
-				MC.pos_Cursor.y = 4f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 3f;
-			}
-			break;
-		case 150:
-			if (Player.transform.position.x > 960.12f)
-			{
-				MC.pos_Cursor.x = 34f;
-			}
-			else if (Player.transform.position.x > 917.46f)
-			{
+				break;
+			case 148:
+				if (Player.transform.position.x > 611.64f && Player.transform.position.y > -199f)
+				{
+					MC.pos_Cursor.x = 22f;
+				}
+				else if (Player.transform.position.x > 583.19f)
+				{
+					MC.pos_Cursor.x = 21f;
+				}
+				else if (Player.transform.position.x > 554.74f)
+				{
+					MC.pos_Cursor.x = 20f;
+				}
+				else if (Player.transform.position.x > 526.29f)
+				{
+					MC.pos_Cursor.x = 19f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 18f;
+				}
+				if (Player.transform.position.y > -199f)
+				{
+					MC.pos_Cursor.y = 6f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 5f;
+				}
+				break;
+			case 149:
 				MC.pos_Cursor.x = 33f;
-			}
-			else
-			{
-				MC.pos_Cursor.x = 32f;
-			}
-			if (Player.transform.position.y > -273f)
-			{
-				MC.pos_Cursor.y = 2f;
-			}
-			else
-			{
-				MC.pos_Cursor.y = 1f;
-			}
-			break;
+				if (Player.transform.position.y > -216f)
+				{
+					MC.pos_Cursor.y = 5f;
+				}
+				else if (Player.transform.position.y > -236.3f)
+				{
+					MC.pos_Cursor.y = 4f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 3f;
+				}
+				break;
+			case 150:
+				if (Player.transform.position.x > 960.12f)
+				{
+					MC.pos_Cursor.x = 34f;
+				}
+				else if (Player.transform.position.x > 917.46f)
+				{
+					MC.pos_Cursor.x = 33f;
+				}
+				else
+				{
+					MC.pos_Cursor.x = 32f;
+				}
+				if (Player.transform.position.y > -273f)
+				{
+					MC.pos_Cursor.y = 2f;
+				}
+				else
+				{
+					MC.pos_Cursor.y = 1f;
+				}
+				break;
 		}
 		if (MC.pos_Cursor != PrevCursor)
 		{
@@ -6961,5 +6963,169 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 	private float Get_Room_ASixth_Y(int num)
 	{
 		return (RoomCam_Top - RoomCam_Bot) / 6f * (float)num + RoomCam_Bot;
+	}
+
+	
+	private string[] mRoomPathList { get; set; } = new string[151]
+		{
+"prefabs/level_1_2/Room_0",
+"prefabs/level_1_2/Room_1",
+"prefabs/level_1_2/Room_2",
+"prefabs/level_1_2/Room_3_N",
+"prefabs/level_1_2/Room_4",
+"prefabs/level_1_2/Room_5",
+"prefabs/level_1_2/Room_6",
+"prefabs/level_1_2/Room_7",
+"prefabs/level_1_2/Room_8",
+"prefabs/level_1_2/Room_9",
+"prefabs/level_1_2/Room_10 Save",
+"prefabs/level_1_2/Room_11",
+"prefabs/level_1_2/Room_12",
+"prefabs/level_1_2/Room_13",
+"prefabs/level_1_2/Room_14",
+"prefabs/level_1_2/Room_15",
+"prefabs/level_1_2/Room_16 Save",
+"prefabs/level_1_2/Room_17",
+"prefabs/level_1_2/Room_18 Boss_1",
+"prefabs/level_1_2/Room_19",
+"prefabs/level_1_2/Room_20",
+"prefabs/level_1_2/Room_21",
+"prefabs/level_1_2/Room_22",
+"prefabs/level_1_2/Room_23",
+"prefabs/level_1_2/Room_24 T",
+"prefabs/level_1_2/Room_25",
+"prefabs/level_1_2/Room_26",
+"prefabs/level_1_2/Room_27",
+"prefabs/level_1_2/Room_28",
+"prefabs/level_1_2/Room_29",
+"prefabs/level_1_2/Room_30",
+"prefabs/level_1_2/Room_31",
+"prefabs/level_1_2/Room_32",
+"prefabs/level_1_2/Room_33",
+"prefabs/level_1_2/Room_34",
+"prefabs/level_1_2/Room_35 Save",
+"prefabs/level_1_2/Room_36",
+"prefabs/level_1_2/Room_37",
+"prefabs/level_1_2/Room_38",
+"prefabs/level_1_2/Room_39",
+"prefabs/level_1_2/Room_40",
+"prefabs/level_1_2/Room_41",
+"prefabs/level_1_2/Room_42",
+"prefabs/level_1_2/Room_43",
+"prefabs/level_1_2/Room_44 T",
+"prefabs/level_1_2/Room_45",
+"prefabs/level_1_2/Room_46 Save",
+"prefabs/level_1_2/Room_47",
+"prefabs/level_1_2/Room_48 Boss_2",
+"prefabs/level_1_2/Room_49",
+"prefabs/level_1_2/Room_50",
+"prefabs/level_3_c/Room_51",
+"prefabs/level_3_c/Room_52",
+"prefabs/level_3_c/Room_53",
+"prefabs/level_3_c/Room_54",
+"prefabs/level_3_c/Room_55",
+"prefabs/level_3_c/Room_56",
+"prefabs/level_3_c/Room_57",
+"prefabs/level_3_c/Room_58",
+"prefabs/level_3_c/Room_59",
+"prefabs/level_3_c/Room_60 ST",
+"prefabs/level_3_c/Room_61",
+"prefabs/level_3_c/Room_62",
+"prefabs/level_3_c/Room_63",
+"prefabs/level_3_c/Room_64",
+"prefabs/level_3_c/Room_65",
+"prefabs/level_3_c/Room_66",
+"prefabs/level_3_c/Room_67",
+"prefabs/level_3_c/Room_68",
+"prefabs/level_3_c/Room_69",
+"prefabs/level_3_c/Room_70",
+"prefabs/level_3_c/Room_71",
+"prefabs/level_3_c/Room_72",
+"prefabs/level_3_c/Room_73",
+"prefabs/level_3_c/Room_74",
+"prefabs/level_3_c/Room_75 Save",
+"prefabs/level_3_c/Room_76",
+"prefabs/level_3_c/Room_77",
+"prefabs/level_3_c/Room_78",
+"prefabs/level_3_c/Room_79",
+"prefabs/level_3_c/Room_80",
+"prefabs/level_3_c/Room_81",
+"prefabs/level_3_c/Room_82",
+"prefabs/level_3_c/Room_83",
+"prefabs/level_3_c/Room_84",
+"prefabs/level_3_c/Room_85",
+"prefabs/level_3_c/Room_86 Save",
+"prefabs/level_3_c/Room_87",
+"prefabs/level_3_c/Room_88 Boss_3",
+"prefabs/level_3_c/Room_89",
+"prefabs/level_3_c/Room_90 T",
+"prefabs/level_3_c/Room_91",
+"prefabs/level_3_c/Room_92 EVE",
+"prefabs/level_3_c/Room_93",
+"prefabs/level_3_c/Room_94",
+"prefabs/level_3_c/Room_95 Save",
+"prefabs/level_4_5/Room_96",
+"prefabs/level_4_5/Room_97",
+"prefabs/level_4_5/Room_98",
+"prefabs/level_4_5/Room_99",
+"prefabs/level_4_5/Room_100",
+"prefabs/level_4_5/Room_101",
+"prefabs/level_4_5/Room_102",
+"prefabs/level_4_5/Room_103",
+"prefabs/level_4_5/Room_104",
+"prefabs/level_4_5/Room_105",
+"prefabs/level_4_5/Room_106",
+"prefabs/level_4_5/Room_107",
+"prefabs/level_4_5/Room_108",
+"prefabs/level_4_5/Room_109",
+"prefabs/level_4_5/Room_110 Save",
+"prefabs/level_4_5/Room_111",
+"prefabs/level_4_5/Room_112",
+"prefabs/level_4_5/Room_113",
+"prefabs/level_4_5/Room_114",
+"prefabs/level_4_5/Room_115",
+"prefabs/level_4_5/Room_116",
+"prefabs/level_4_5/Room_117",
+"prefabs/level_4_5/Room_118",
+"prefabs/level_4_5/Room_119 Save",
+"prefabs/level_4_5/Room_120",
+"prefabs/level_4_5/Room_121 Boss_4",
+"prefabs/level_4_5/Room_122",
+"prefabs/level_4_5/Room_123",
+"prefabs/level_4_5/Room_124",
+"prefabs/level_4_5/Room_125 T",
+"prefabs/level_4_5/Room_126",
+"prefabs/level_4_5/Room_127",
+"prefabs/level_4_5/Room_128",
+"prefabs/level_4_5/Room_129",
+"prefabs/level_4_5/Room_130",
+"prefabs/level_4_5/Room_131",
+"prefabs/level_4_5/Room_132",
+"prefabs/level_4_5/Room_133",
+"prefabs/level_4_5/Room_134",
+"prefabs/level_4_5/Room_135",
+"prefabs/level_4_5/Room_136",
+"prefabs/level_4_5/Room_137",
+"prefabs/level_4_5/Room_138",
+"prefabs/level_4_5/Room_139",
+"prefabs/level_4_5/Room_140 Save",
+"prefabs/level_4_5/Room_141",
+"prefabs/level_4_5/Room_142 T",
+"prefabs/level_4_5/Room_143_N",
+"prefabs/level_4_5/Room_143_N",
+"prefabs/level_4_5/Room_145",
+"prefabs/level_4_5/Room_146",
+"prefabs/level_4_5/Room_146",
+"prefabs/level_4_5/Room_148",
+"prefabs/level_4_5/Room_149",
+"prefabs/level_4_5/Room_150 Queen",
+		};
+
+	public int RoomPathListCount => mRoomPathList.Length;
+	public GameObject LoadRoomById(int id)
+	{
+		GameObject room_src = Resources.Load<GameObject>(mRoomPathList[id]);
+		GameObject gameObject = global::UnityEngine.Object.Instantiate(room_src);
+		return gameObject;
 	}
 }
