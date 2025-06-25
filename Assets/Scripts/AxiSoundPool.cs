@@ -124,7 +124,7 @@ public static class AxiSoundPool
         if (go == null)
             return;
         //主动释放，不再回收
-        if (go.InRelease)
+        if (go.AutoReleaseForTimeOut)
             return;
         if (go.Seed == 0)
             return;
@@ -148,6 +148,8 @@ public static class AxiSoundPool
 
     public static void ReleaseSound(AxiSoundBase go)
     {
+        if (go.AutoReleaseForTimeOut)
+            return;
         if (go.Seed == 0)
         {
 #if UNITY_EDITOR
@@ -209,7 +211,7 @@ public static class AxiSoundPool
             return;
         foreach (var item in pool[key])
         {
-            item.InRelease = true;
+            item.AutoReleaseForTimeOut = true;
             GameObject.Destroy(item.gameObject);
         }
         pool[key].Clear();
