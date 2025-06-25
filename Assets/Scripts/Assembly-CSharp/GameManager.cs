@@ -1,3 +1,4 @@
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     public Rigidbody2D eg2d_Player { get; private set; }
     public GameObject gobj_Player { get; private set; }
     public Sound_Control sc_Sound_List { get; private set; }
-    
+
     private int Slot_Num;
 
     public int EventState;
@@ -750,7 +751,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
             {
                 Make_BlueHeal();
             }
-            if (PC.State!= Player_Control.AniState.Spin && spin_Timer > 0f)
+            if (PC.State != Player_Control.AniState.Spin && spin_Timer > 0f)
             {
                 spin_Timer = 1f;
             }
@@ -1228,9 +1229,9 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     private void Mana_Regen()
     {
-		//if (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Run || PC.State == Player_Control.AniState.Jump)
-		if (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Run|| PC.State == Player_Control.AniState.Jump)
-		{
+        //if (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Run || PC.State == Player_Control.AniState.Jump)
+        if (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Run || PC.State == Player_Control.AniState.Jump)
+        {
             MPRegen_Timer += Time.deltaTime * 4.5f * (float)(1 + 2 * Bonus_Regen);
             while (MPRegen_Timer > 1f)
             {
@@ -1297,23 +1298,25 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         spin_Timer = 0f;
         screw_Timer = 0f;
     }
-
+    static StringBuilder _sb = new StringBuilder(256); // Ô¤·ÖÅäÈÝÁ¿
     private void Check_Time()
     {
         PlayTime += global::UnityEngine.Time.deltaTime;
         if (gobj_Text_TimePlay != null)
         {
-            string text = string.Empty;
-            int num = (int)(PlayTime / 3600f);
-            int num2 = (int)((PlayTime - (float)(3600 * num)) / 60f);
-            int num3 = (int)(PlayTime % 60f);
-            if (num > 0)
-            {
-                text = num + ":";
-            }
-            text = ((num2 <= 9) ? (text + "0" + num2 + ":") : (text + num2 + ":"));
-            text = ((num3 <= 9) ? (text + "0" + num3) : (text + num3));
-            txt_Text_TimePlay.text = text;
+            //string text = string.Empty;
+            //int num = (int)(PlayTime / 3600f);
+            //int num2 = (int)((PlayTime - (float)(3600 * num)) / 60f);
+            //int num3 = (int)(PlayTime % 60f);
+            //if (num > 0)
+            //{
+            //    text = num + ":";
+            //}
+            //text = ((num2 <= 9) ? (text + "0" + num2 + ":") : (text + num2 + ":"));
+            //text = ((num3 <= 9) ? (text + "0" + num3) : (text + num3));
+            //txt_Text_TimePlay.text = text;
+            string timeText = TimeFormatter.Format(PlayTime);
+            txt_Text_TimePlay.text = timeText;
         }
     }
 
