@@ -42,7 +42,7 @@ public class Col_Off_Sliding : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (!GM.Paused && !GM.GameOver && (PC.State.ToString() == "Jump" || PC.State.ToString() == "Slide") && (col.name == "Col_Box_Top" || col.name == "Col_Box_Bot"))
+		if (!GM.Paused && !GM.GameOver && (PC.State == Player_Control.AniState.Jump || PC.State == Player_Control.AniState.Slide) && (col.name == "Col_Box_Top" || col.name == "Col_Box_Bot"))
 		{
 			Col_Timer = 0.5f;
 			onSlide = true;

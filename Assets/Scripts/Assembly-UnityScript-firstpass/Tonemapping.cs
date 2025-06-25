@@ -135,7 +135,7 @@ public class Tonemapping : PostEffectsBase
 		}
 		else
 		{
-			rtFormat = ((!global::UnityEngine.SystemInfo.SupportsRenderTextureFormat(global::UnityEngine.RenderTextureFormat.RGHalf)) ? global::UnityEngine.RenderTextureFormat.ARGBHalf : global::UnityEngine.RenderTextureFormat.RGHalf);
+			rtFormat = ((!AxiSystemInfo.SupportsRenderTextureFormat(global::UnityEngine.RenderTextureFormat.RGHalf)) ? global::UnityEngine.RenderTextureFormat.ARGBHalf : global::UnityEngine.RenderTextureFormat.RGHalf);
 			rt = new global::UnityEngine.RenderTexture(1, 1, 0, rtFormat);
 			rt.hideFlags = global::UnityEngine.HideFlags.DontSave;
 			result = 1;

@@ -232,7 +232,10 @@ public class UI_Control : global::UnityEngine.MonoBehaviour
 		rect_Bar_Top.localPosition = pos_BarTop_On;
 	}
 
-	private void Update()
+    float txt_Level_Text_NumCache = -1;
+    float txt_HP_Text_NumCache = -1;
+	float txt_MP_Text_NumCache = -1;
+    private void Update()
 	{
 		if (GM.GameOver || (GM.onEvent && GM.Hscene_Num != 96))
 		{
@@ -303,9 +306,12 @@ public class UI_Control : global::UnityEngine.MonoBehaviour
 					gobj_UI_Circle_2.transform.localScale = new global::UnityEngine.Vector3(RotSize, RotSize, 1f);
 				}
 			}
-			txt_Level_Text.text = GM.Level.ToString();
-			txt_HP_Text.text = GM.HP.ToString();
-			txt_MP_Text.text = GM.MP.ToString();
+			if(txt_Level_Text_NumCache != GM.Level)
+				txt_Level_Text.text = GM.Level.ToString();
+            if (txt_HP_Text_NumCache != GM.HP)
+                txt_HP_Text.text = GM.HP.ToString();
+            if (txt_MP_Text_NumCache != GM.MP)
+                txt_MP_Text.text = GM.MP.ToString();
 			sp_UI_HP_Bar_R.color = new global::UnityEngine.Color(1f, 1f, 1f, Size_HP);
 			sp_UI_MP_Bar_R.color = new global::UnityEngine.Color(1f, 1f, 1f, Size_MP);
 			rect_UI_HP_Edge.localPosition = new global::UnityEngine.Vector3(390f * Size_HP - 195f - 3f, 0f, 0f);

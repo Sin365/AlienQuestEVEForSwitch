@@ -62,8 +62,9 @@ public class Boss_Tentacle : global::UnityEngine.MonoBehaviour
 		if (Boss != null && GM.Option_Int[3] == 1 && !GM.onCloth && GM.Hscene_Timer <= 0f)
 		{
 			Player_Control component = Player.GetComponent<Player_Control>();
-			if (component.grounded_Now && (component.State.ToString() == "Idle" || component.State.ToString() == "Run" || component.State.ToString() == "Sit" || component.State.ToString() == "Down"))
-			{
+			if (component.grounded_Now && (component.State == Player_Control.AniState.Idle || component.State == Player_Control.AniState.Run || component.State == Player_Control.AniState.Sit || component.State == Player_Control.AniState.Down))
+
+            {
 				GM.onHscene = true;
 				Boss.Start_Hscene_Tentacle(base.transform.position);
 			}

@@ -295,7 +295,7 @@ public class AI_Mon_7 : global::UnityEngine.MonoBehaviour
 						else
 						{
 							Attack_Delay = 0.2f;
-							if (dist_Y < 1f && PC.grounded_Now && (PC.State.ToString() == "Idle" || PC.State.ToString() == "Run" || PC.State.ToString() == "Sit" || PC.State.ToString() == "Down"))
+							if (dist_Y < 1f && PC.grounded_Now && (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Run || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Down))
 							{
 								Start_Hscene();
 							}
@@ -364,7 +364,7 @@ public class AI_Mon_7 : global::UnityEngine.MonoBehaviour
 	{
 		Attack_Delay = 1f;
 		int num = global::UnityEngine.Random.Range(0, 10);
-		if (num > 5 || PC.State.ToString() == "Sit" || PC.State.ToString() == "Slide")
+		if (num > 5 || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Slide)
 		{
 			GetComponent<global::UnityEngine.Animator>().SetBool("onAttackDown", true);
 			GetComponent<global::UnityEngine.Animator>().SetBool("onAttack", false);

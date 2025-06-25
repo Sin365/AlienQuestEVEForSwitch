@@ -87,7 +87,7 @@ public class Trap_Laser_Beam : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (PC.State.ToString() != "Down" && !GM.Paused && !GM.onGameClear && !GM.GameOver && col.name == "Ani" && !GM.onShield && Damage_Delay <= 0f)
+		if (PC.State == Player_Control.AniState.Down && !GM.Paused && !GM.onGameClear && !GM.GameOver && col.name == "Ani" && !GM.onShield && Damage_Delay <= 0f)
 		{
 			if (base.transform.position.x > col.transform.parent.position.x)
 			{
