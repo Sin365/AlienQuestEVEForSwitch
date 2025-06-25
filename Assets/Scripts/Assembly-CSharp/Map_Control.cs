@@ -1,3 +1,5 @@
+using System.Data.SqlTypes;
+
 public class Map_Control : global::UnityEngine.MonoBehaviour
 {
 	private global::UnityEngine.Vector3 pos_Center;
@@ -70,7 +72,8 @@ public class Map_Control : global::UnityEngine.MonoBehaviour
 		}
 	}
 
-	private void Update()
+	//private void Update()
+	private void Update_Logic()
 	{
 		if (GM.onEvent || GM.GameOver)
 		{
@@ -113,7 +116,7 @@ public class Map_Control : global::UnityEngine.MonoBehaviour
 				}
 				if ((inputY > 0f && pos_Center.y > -630f) || (inputY < 0f && pos_Center.y < 630f))
 				{
-					pos_Center.y += 800f * (0f - inputY) * global::UnityEngine.Time.deltaTime;
+					pos_Center.y += 800f * (0f - inputY) * global::UnityEngine.Time.deltaTime;	
 				}
 				GetComponent<global::UnityEngine.RectTransform>().localPosition = global::UnityEngine.Vector3.Lerp(GetComponent<global::UnityEngine.RectTransform>().localPosition, pos_Center, global::UnityEngine.Time.deltaTime * 3f);
 				map_CursorBox.GetComponent<global::UnityEngine.SpriteRenderer>().color = new global::UnityEngine.Color(1f, 1f, 1f, 0.6f + global::UnityEngine.Mathf.Sin(Life_Timer * 5f) * 0.4f);
@@ -152,6 +155,38 @@ public class Map_Control : global::UnityEngine.MonoBehaviour
 				global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_MapOn");
 			}
 		}
+	}
+
+	/// <summary>
+	/// Òþ²ØµØÍ¼
+	/// </summary>
+	public void Axi_HideMap()
+	{
+		GM.onMap = false;
+		this.gameObject.SetActive(false);
+	}
+
+	public void Update_GameManager()
+	{
+		if (GM.onEvent || GM.GameOver)
+			return;
+
+		if (GM.Paused)
+		{
+			if (GM.onMap)
+			{
+			}
+		}
+		else if (!GM.onMenu && !GM.onGatePass && !GM.onSave)
+		{
+			if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Tab) || global::UnityEngine.Input.GetButtonDown("Back"))
+			{
+				this.gameObject.SetActive(true);
+			}
+		}
+		
+		if(this.gameObject.activeSelf == true)
+			Update_Logic();
 	}
 
 	private void Reset_MiniMap()
