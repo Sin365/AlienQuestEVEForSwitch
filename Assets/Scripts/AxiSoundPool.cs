@@ -7,6 +7,7 @@ public static class AxiSoundPool
     static Dictionary<string, List<AxiSoundBase>> mPool_Sound_Inv = new Dictionary<string, List<AxiSoundBase>>();
     static Dictionary<string, List<AxiSoundBase>> mPool_Sound_Moan = new Dictionary<string, List<AxiSoundBase>>();
     static Dictionary<string, List<AxiSoundBase>> mPool_Sound_Shield = new Dictionary<string, List<AxiSoundBase>>();
+	static Dictionary<string, float> mDictLastLoadTime = new Dictionary<string, float>();
     static HashSet<long> hashsetInPool = new HashSet<long>();
 
 	static long mSeed = 1;
@@ -59,8 +60,8 @@ public static class AxiSoundPool
 			go.resourceName = src.name;
 			go.Seed = GetNextSeed();
 		}
-
-		return go;
+		mDictLastLoadTime[src.name] = Time.time;
+        return go;
 	}
 	static AxiSoundBase AddSoundForTrans(GameObject src, Transform trans = null)
 	{

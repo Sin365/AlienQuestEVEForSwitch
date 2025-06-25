@@ -6965,7 +6965,6 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 		return (RoomCam_Top - RoomCam_Bot) / 6f * (float)num + RoomCam_Bot;
 	}
 
-	
 	private string[] mRoomPathList { get; set; } = new string[151]
 		{
 "prefabs/level_1_2/Room_0",
@@ -7121,10 +7120,16 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 "prefabs/level_4_5/Room_150 Queen",
 		};
 
+	public string GetRoomResourceID(int Roomid)
+	{
+		return mRoomPathList[Roomid];
+	}
+
 	public int RoomPathListCount => mRoomPathList.Length;
 	public GameObject LoadRoomById(int id)
 	{
-		GameObject room_src = Resources.Load<GameObject>(mRoomPathList[id]);
+		return AxiRoomManager.CloneRoom(id);
+        GameObject room_src = Resources.Load<GameObject>(mRoomPathList[id]);
 		GameObject gameObject = AxiObject.Instantiate(room_src);
 		return gameObject;
 	}

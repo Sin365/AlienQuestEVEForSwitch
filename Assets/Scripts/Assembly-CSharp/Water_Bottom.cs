@@ -208,7 +208,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerExit2D(global::UnityEngine.Collider2D col)
 	{
-		if (!GM.Paused && col.name == "Ani" && (PC.State.ToString() == "Jump" || PC.State.ToString() == "Down"))
+		if (!GM.Paused && col.name == "Ani" && (PC.State == Player_Control.AniState.Jump || PC.State == Player_Control.AniState.Down))
 		{
 			//global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_sound_WaterImpact[0], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			AxiSoundPool.AddSoundForPosRot(_sound_WaterImpact[0], PC.transform.position, base.transform.rotation);
@@ -219,7 +219,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerEnter2D(global::UnityEngine.Collider2D col)
 	{
-		if (!GM.Paused && col.name == "Ani" && (PC.State.ToString() == "Jump" || PC.State.ToString() == "Down"))
+		if (!GM.Paused && col.name == "Ani" && (PC.State == Player_Control.AniState.Jump || PC.State == Player_Control.AniState.Down))
 		{
 			//global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_sound_WaterImpact[1], PC.transform.position, base.transform.rotation) as global::UnityEngine.GameObject;
 			AxiSoundPool.AddSoundForPosRot(_sound_WaterImpact[1], PC.transform.position, base.transform.rotation);
@@ -234,11 +234,11 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 		{
 			return;
 		}
-		if (PC.State.ToString() == "Run" || PC.State.ToString() == "Spin" || PC.State.ToString() == "Slide" || PC.State.ToString() == "BackDash" || PC.State.ToString() == "Damage")
+		if (PC.State == Player_Control.AniState.Run || PC.State == Player_Control.AniState.Spin || PC.State == Player_Control.AniState.Slide || PC.State == Player_Control.AniState.BackDash || PC.State == Player_Control.AniState.Damage)
 		{
 			Sound_Player_Walk();
 			Make_Dust_1_Move();
-			if (PC.State.ToString() == "Slide")
+			if (PC.State == Player_Control.AniState.Slide)
 			{
 				Make_Dust_2_Move();
 			}
@@ -249,7 +249,7 @@ public class Water_Bottom : global::UnityEngine.MonoBehaviour
 			Make_Dust_1_Move();
 			Make_Dust_2_Move();
 		}
-		else if (PC.onAttack && PC.State.ToString() == "Sit")
+		else if (PC.onAttack && PC.State == Player_Control.AniState.Sit)
 		{
 			Sound_Player_Walk();
 			Make_Dust_1_Small();

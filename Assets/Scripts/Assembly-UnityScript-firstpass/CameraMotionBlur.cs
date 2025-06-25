@@ -159,7 +159,7 @@ public class CameraMotionBlur : PostEffectsBase
 		{
 			StartFrame();
 		}
-		global::UnityEngine.RenderTextureFormat format = ((!global::UnityEngine.SystemInfo.SupportsRenderTextureFormat(global::UnityEngine.RenderTextureFormat.RGHalf)) ? global::UnityEngine.RenderTextureFormat.ARGBHalf : global::UnityEngine.RenderTextureFormat.RGHalf);
+		global::UnityEngine.RenderTextureFormat format = ((!AxiSystemInfo.SupportsRenderTextureFormat(global::UnityEngine.RenderTextureFormat.RGHalf)) ? global::UnityEngine.RenderTextureFormat.ARGBHalf : global::UnityEngine.RenderTextureFormat.RGHalf);
 		global::UnityEngine.RenderTexture temporary = global::UnityEngine.RenderTexture.GetTemporary(divRoundUp(source.width, velocityDownsample), divRoundUp(source.height, velocityDownsample), 0, format);
 		int num = 1;
 		int num2 = 1;

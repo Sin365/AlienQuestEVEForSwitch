@@ -245,7 +245,7 @@ public class AI_Mon_5 : global::UnityEngine.MonoBehaviour
 					if (PC_Atk_Timer <= 0f && !GM.onCloth && GM.Hscene_Num == 0 && GM.Hscene_Timer <= 0f && GM.Option_Int[3] == 1)
 					{
 						Attack_Delay = 0.2f;
-						if (PC.grounded_Now && (PC.State.ToString() == "Idle" || PC.State.ToString() == "Run" || PC.State.ToString() == "Sit" || PC.State.ToString() == "Down"))
+						if (PC.grounded_Now && (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Run || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Down))
 						{
 							Start_H_Single();
 						}

@@ -92,7 +92,7 @@ public class PostEffectsBase : global::UnityEngine.MonoBehaviour
 	public virtual bool CheckSupport(bool needDepth)
 	{
 		isSupported = true;
-		supportHDRTextures = global::UnityEngine.SystemInfo.SupportsRenderTextureFormat(global::UnityEngine.RenderTextureFormat.ARGBHalf);
+		supportHDRTextures = AxiSystemInfo.SupportsRenderTextureFormat(global::UnityEngine.RenderTextureFormat.ARGBHalf);
 		bool num = global::UnityEngine.SystemInfo.graphicsShaderLevel >= 50;
 		if (num)
 		{
@@ -105,7 +105,7 @@ public class PostEffectsBase : global::UnityEngine.MonoBehaviour
 			NotSupported();
 			result = 0;
 		}
-		else if (needDepth && !global::UnityEngine.SystemInfo.SupportsRenderTextureFormat(global::UnityEngine.RenderTextureFormat.Depth))
+		else if (needDepth && !AxiSystemInfo.SupportsRenderTextureFormat(global::UnityEngine.RenderTextureFormat.Depth))
 		{
 			NotSupported();
 			result = 0;

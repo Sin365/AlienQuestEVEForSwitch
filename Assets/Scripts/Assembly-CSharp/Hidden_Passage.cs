@@ -140,7 +140,7 @@ public class Hidden_Passage : global::UnityEngine.MonoBehaviour
 	{
 		if (!GM.Paused && col.name == "Ani")
 		{
-			if (PC.State.ToString() == "Sit" || PC.State.ToString() == "Slide")
+			if (PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Slide)
 			{
 				Sit_Timer += global::UnityEngine.Time.deltaTime;
 			}

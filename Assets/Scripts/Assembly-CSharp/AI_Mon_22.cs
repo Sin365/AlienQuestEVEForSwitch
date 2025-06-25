@@ -255,7 +255,7 @@ public class AI_Mon_22 : global::UnityEngine.MonoBehaviour
 
 	private bool Check_H_Position()
 	{
-		if (dist_X < 2.3f && base.transform.position.y < Player.transform.position.y + 6.8f && base.transform.position.y > Player.transform.position.y && !GM.onCloth && GM.Hscene_Num == 0 && GM.Hscene_Timer <= 0f && GM.Option_Int[3] == 1 && PC.grounded_Now && (PC.State.ToString() == "Idle" || PC.State.ToString() == "Run" || PC.State.ToString() == "Sit" || PC.State.ToString() == "Down"))
+		if (dist_X < 2.3f && base.transform.position.y < Player.transform.position.y + 6.8f && base.transform.position.y > Player.transform.position.y && !GM.onCloth && GM.Hscene_Num == 0 && GM.Hscene_Timer <= 0f && GM.Option_Int[3] == 1 && PC.grounded_Now && (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Run || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Down))
 		{
 			return true;
 		}

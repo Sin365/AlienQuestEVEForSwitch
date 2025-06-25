@@ -112,7 +112,7 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 		{
 			Egg_Cover.sortingOrder += 20 * Index;
 		}
-		if (State.ToString() == "Open")
+		if (State == AniState.Open)
 		{
 			isDeath = true;
 			GetComponent<global::UnityEngine.Animator>().SetTrigger("onDeath");

@@ -337,7 +337,7 @@ public class AI_Mon_10 : global::UnityEngine.MonoBehaviour
 							}
 							base.transform.Translate(global::UnityEngine.Vector3.right * global::UnityEngine.Time.deltaTime * Move_Speed * facingRight * Mon.Move_Speed);
 						}
-						else if (dist_Y < 1f && PC.grounded_Now && (PC.State.ToString() == "Idle" || PC.State.ToString() == "Run" || PC.State.ToString() == "Sit" || PC.State.ToString() == "Down"))
+						else if (dist_Y < 1f && PC.grounded_Now && (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Run || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Down))
 						{
 							Start_H_Single();
 						}
@@ -406,7 +406,7 @@ public class AI_Mon_10 : global::UnityEngine.MonoBehaviour
 	{
 		Attack_Delay = 0.6f;
 		int num = global::UnityEngine.Random.Range(0, 10);
-		if (num > 5 || Player.GetComponent<Player_Control>().State.ToString() == "Sit" || Player.GetComponent<Player_Control>().State.ToString() == "Slide")
+		if (num > 5 || Player.GetComponent<Player_Control>().State == Player_Control.AniState.Sit || Player.GetComponent<Player_Control>().State == Player_Control.AniState.Slide)
 		{
 			GetComponent<global::UnityEngine.Animator>().SetBool("onAttack", true);
 			GetComponent<global::UnityEngine.Animator>().SetBool("onAttackDown", false);

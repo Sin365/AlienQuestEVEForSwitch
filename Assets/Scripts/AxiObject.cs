@@ -4,10 +4,7 @@ public static class AxiObject
 {
 	public static GameObject Instantiate(GameObject src)
 	{
-
-#if UNITY_EDITOR
-		Debug.Log($"AxiObject=>{src.name}");
-#endif
+		//Debug.Log($"AxiObject=>{src.name}");
 		return Object.Instantiate(src);
 	}
 
