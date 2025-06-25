@@ -7128,7 +7128,8 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 	public int RoomPathListCount => mRoomPathList.Length;
 	public GameObject LoadRoomById(int id)
 	{
-		GameObject room_src = Resources.Load<GameObject>(mRoomPathList[id]);
+		return AxiRoomManager.CloneRoom(id);
+        GameObject room_src = Resources.Load<GameObject>(mRoomPathList[id]);
 		GameObject gameObject = AxiObject.Instantiate(room_src);
 		return gameObject;
 	}

@@ -4,7 +4,7 @@ public static class AxiObject
 {
 	public static GameObject Instantiate(GameObject src)
 	{
-		Debug.Log($"AxiObject=>{src.name}");
+		//Debug.Log($"AxiObject=>{src.name}");
 		return Object.Instantiate(src);
 	}
 

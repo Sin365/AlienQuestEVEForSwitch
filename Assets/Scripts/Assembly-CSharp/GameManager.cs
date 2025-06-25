@@ -670,6 +670,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     private void Update()
     {
+        AxiRoomManager.Update_Logic();
         if (!DataLoaded)
         {
             Load_Timer += global::UnityEngine.Time.deltaTime;
@@ -749,7 +750,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
             {
                 Make_BlueHeal();
             }
-            if (PC.State.ToString() != "Spin" && spin_Timer > 0f)
+            if (PC.State!= Player_Control.AniState.Spin && spin_Timer > 0f)
             {
                 spin_Timer = 1f;
             }
@@ -1227,7 +1228,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     private void Mana_Regen()
     {
-		//if (PC.State.ToString() == "Idle" || PC.State.ToString() == "Sit" || PC.State.ToString() == "Run" || PC.State.ToString() == "Jump")
+		//if (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Run || PC.State == Player_Control.AniState.Jump)
 		if (PC.State == Player_Control.AniState.Idle || PC.State == Player_Control.AniState.Sit || PC.State == Player_Control.AniState.Run|| PC.State == Player_Control.AniState.Jump)
 		{
             MPRegen_Timer += Time.deltaTime * 4.5f * (float)(1 + 2 * Bonus_Regen);
