@@ -677,15 +677,11 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     private void Update()
     {
-<<<<<<< HEAD
         //驱动地图
         MC.Update_GameManager();
-
-		if (!DataLoaded)
-=======
+        //驱动Room管理
         AxiRoomManager.Update_Logic();
         if (!DataLoaded)
->>>>>>> 0cb81770d5ee72b55d666cb9671ea93ce4f0978b
         {
             Load_Timer += global::UnityEngine.Time.deltaTime;
             if (Load_Timer > 0.2f)
