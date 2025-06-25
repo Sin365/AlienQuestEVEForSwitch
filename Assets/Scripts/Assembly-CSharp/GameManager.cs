@@ -677,6 +677,8 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     private void Update()
     {
+        //驱动音频管理
+        AxiSoundPool.UpdateLogic();
         //驱动地图
         MC.Update_GameManager();
         //驱动Room管理
