@@ -6,7 +6,11 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 {
     public static GameManager instance { get; private set; }
     public StageManager sm_StageManager { get; private set; }
-    public Player_Control PC { get; private set; }
+	public Map_Control MC { get; private set; }
+
+	public RectTransform rect_MC { get; private set; }
+
+	public Player_Control PC { get; private set; }
     public Rigidbody2D eg2d_Player { get; private set; }
     public GameObject gobj_Player { get; private set; }
     public Sound_Control sc_Sound_List { get; private set; }
@@ -441,7 +445,9 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     {
         instance = this;
         sm_StageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
-        PC = GameObject.Find("Player").GetComponent<Player_Control>();
+		MC = global::UnityEngine.GameObject.Find("Menu_Map").GetComponent<Map_Control>();
+		rect_MC = MC.GetComponent<global::UnityEngine.RectTransform>();
+		PC = GameObject.Find("Player").GetComponent<Player_Control>();
         eg2d_Player = GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>();
         gobj_Player = GameObject.Find("Player");
         sc_Sound_List = GameObject.Find("Sound_List").GetComponent<Sound_Control>();
@@ -671,8 +677,15 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     private void Update()
     {
+<<<<<<< HEAD
+        //Çý¶¯µØÍ¼
+        MC.Update_GameManager();
+
+		if (!DataLoaded)
+=======
         AxiRoomManager.Update_Logic();
         if (!DataLoaded)
+>>>>>>> 0cb81770d5ee72b55d666cb9671ea93ce4f0978b
         {
             Load_Timer += global::UnityEngine.Time.deltaTime;
             if (Load_Timer > 0.2f)
@@ -1086,8 +1099,9 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         PC.Lock_Timer = 0.1f;
         resumeTimer = 0.1f;
         onMenu = false;
-        onMap = false;
-        onConsole = false;
+        //onMap = false;
+        MC.Axi_HideMap();
+		onConsole = false;
         cc_Main_Camera.Set_Blur(10);
         sr_BlackPause.enabled = false;
         sr_BlackPause.color = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
@@ -1102,7 +1116,8 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     {
         onEvent = false;
         onMenu = false;
-        onMap = false;
+        //onMap = false;
+        MC.Axi_HideMap();
         onConsole = false;
         PC.Lock_Timer = 0.1f;
         resumeTimer = 0.1f;

@@ -42,7 +42,7 @@ public class AxiLauncher : MonoBehaviour
 	byte[] GetTestBytes(int count, byte val)
 	{
 		byte[] bytes = new byte[count];
-		for(int i = 0; i < count; i++)
+		for (int i = 0; i < count; i++)
 		{
 			bytes[i] = val;
 		}
@@ -72,7 +72,7 @@ public class AxiLauncher : MonoBehaviour
 
 	private void Test4()
 	{
-		Debug.Log("T4"); 
+		Debug.Log("T4");
 		string[] elist;
 		bool result = AxiNS.instance.io.GetDirectoryEntrysFullRecursion("save:/", out elist);
 		if (!result)
@@ -106,7 +106,7 @@ public class AxiLauncher : MonoBehaviour
 	private void Test8()
 	{
 		Debug.Log("T8");
-		AxiIO.AxiIO.io.dir_Delete("save:/test",true);
+		AxiIO.AxiIO.io.dir_Delete("save:/test", true);
 	}
 
 	private void Test9()
@@ -116,6 +116,9 @@ public class AxiLauncher : MonoBehaviour
 	}
 	void InitGame()
 	{
+#if UNITY_PSP2 && !UNITY_EDITOR
+		UnityEngine.PSVita.PSVitaVideoPlayer.TransferMemToMonoHeap();
+#endif
 		GameObject.DontDestroyOnLoad(gameObject);
 		SceneManager.LoadScene("Title");
 		//global::UnityEngine.Application.LoadLevel("Title");

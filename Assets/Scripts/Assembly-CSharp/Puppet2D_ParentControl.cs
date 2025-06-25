@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Puppet2D_ParentControl : global::UnityEngine.MonoBehaviour
 {
 	public global::UnityEngine.GameObject bone;
@@ -24,35 +26,67 @@ public class Puppet2D_ParentControl : global::UnityEngine.MonoBehaviour
 
 	public void ParentControlRun()
 	{
+		Transform trans = base.transform;
+		Transform bonetrans = base.transform;
 		if (Orient)
 		{
 			if (MaintainOffset)
 			{
-				bone.transform.rotation = base.transform.rotation * OffsetOrient;
+				bonetrans.rotation = trans.rotation * OffsetOrient;
 			}
 			else
 			{
-				bone.transform.rotation = base.transform.rotation;
+				bonetrans.rotation = trans.rotation;
 			}
 		}
 		if (Point)
 		{
 			if (MaintainOffset)
 			{
-				bone.transform.position = base.transform.TransformPoint(OffsetPos);
+				bonetrans.position = trans.TransformPoint(OffsetPos);
 			}
 			else
 			{
-				bone.transform.position = base.transform.position;
+				bonetrans.position = trans.position;
 			}
 		}
 		if (Scale)
 		{
-			bone.transform.localScale = new global::UnityEngine.Vector3(base.transform.localScale.x * OffsetScale.x, base.transform.localScale.y * OffsetScale.y, base.transform.localScale.z * OffsetScale.z);
+			bonetrans.localScale = new global::UnityEngine.Vector3(trans.localScale.x * OffsetScale.x, trans.localScale.y * OffsetScale.y, trans.localScale.z * OffsetScale.z);
 		}
 		if (ConstrianedPosition && !Point)
 		{
-			base.transform.position = bone.transform.position;
+			trans.position = bonetrans.position;
 		}
+		//if (Orient)
+		//{
+		//	if (MaintainOffset)
+		//	{
+		//		bone.transform.rotation = base.transform.rotation * OffsetOrient;
+		//	}
+		//	else
+		//	{
+		//		bone.transform.rotation = base.transform.rotation;
+		//	}
+		//}
+		//if (Point)
+		//{
+		//	if (MaintainOffset)
+		//	{
+		//		bone.transform.position = base.transform.TransformPoint(OffsetPos);
+		//	}
+		//	else
+		//	{
+		//		bone.transform.position = base.transform.position;
+		//	}
+		//}
+		//if (Scale)
+		//{
+		//	bone.transform.localScale = new global::UnityEngine.Vector3(base.transform.localScale.x * OffsetScale.x, base.transform.localScale.y * OffsetScale.y, base.transform.localScale.z * OffsetScale.z);
+		//}
+		//if (ConstrianedPosition && !Point)
+		//{
+		//	base.transform.position = bone.transform.position;
+		//}
 	}
 }

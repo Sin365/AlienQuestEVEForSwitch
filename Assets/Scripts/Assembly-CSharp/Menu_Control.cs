@@ -1120,8 +1120,8 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 			global::UnityEngine.GameObject.Find("Select_Cursor").GetComponent<global::UnityEngine.UI.Image>().color = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 			global::UnityEngine.GameObject.Find("Select_BG").GetComponent<global::UnityEngine.UI.Image>().color = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 			global::UnityEngine.Debug.Log("Menu-----Map");
-			global::UnityEngine.GameObject.Find("Menu_Map").GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(global::UnityEngine.GameObject.Find("Pos_Menu_0").GetComponent<global::UnityEngine.RectTransform>().localPosition.x + 325f, global::UnityEngine.GameObject.Find("Pos_Menu_0").GetComponent<global::UnityEngine.RectTransform>().localPosition.y, 0f);
-			global::UnityEngine.GameObject.Find("Menu_Map").GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(0.22f, 0.22f, 1f);
+			GM.rect_MC.localPosition = new global::UnityEngine.Vector3(global::UnityEngine.GameObject.Find("Pos_Menu_0").GetComponent<global::UnityEngine.RectTransform>().localPosition.x + 325f, global::UnityEngine.GameObject.Find("Pos_Menu_0").GetComponent<global::UnityEngine.RectTransform>().localPosition.y, 0f);
+			GM.rect_MC.localScale = new global::UnityEngine.Vector3(0.22f, 0.22f, 1f);
 			global::UnityEngine.GameObject.Find("Map_Grid").GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(8000f, 0f, 0f);
 			global::UnityEngine.GameObject.Find("MapPos_Cursor").GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(3f, 3f, 1f);
 			global::UnityEngine.GameObject.Find("Mission_1").GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(2.5f, 2.5f, 1f);
@@ -1150,8 +1150,8 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
 		{
 			global::UnityEngine.GameObject.Find("Select_Cursor").GetComponent<global::UnityEngine.UI.Image>().color = new global::UnityEngine.Color(1f, 1f, 1f, 1f);
 			global::UnityEngine.GameObject.Find("Select_BG").GetComponent<global::UnityEngine.UI.Image>().color = new global::UnityEngine.Color(1f, 1f, 1f, 1f);
-			global::UnityEngine.GameObject.Find("Menu_Map").GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(-2500f, 2500f, 0f);
-			global::UnityEngine.GameObject.Find("Menu_Map").GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
+			GM.rect_MC.localPosition = new global::UnityEngine.Vector3(-2500f, 2500f, 0f);
+			GM.rect_MC.localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
 			global::UnityEngine.GameObject.Find("Map_Grid").GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
 			global::UnityEngine.GameObject.Find("MapPos_Cursor").GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
 			global::UnityEngine.GameObject.Find("Mission_1").GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);

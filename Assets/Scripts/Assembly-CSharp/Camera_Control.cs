@@ -108,6 +108,12 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 
 	private void Awake()
 	{
+
+		//皓月测试，不限制帧数
+		global::UnityEngine.QualitySettings.vSyncCount = 0;
+		global::UnityEngine.Application.targetFrameRate = 1000;
+		return;
+
 		if (AxiPlayerPrefs.GetFloat("Avg_Fps") > 65f)
 		{
 			global::UnityEngine.QualitySettings.vSyncCount = 0;

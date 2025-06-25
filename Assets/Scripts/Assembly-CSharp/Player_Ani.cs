@@ -147,7 +147,12 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 	private global::UnityEngine.SpriteRenderer SR_Effect_SpinGlow;
 
 	private global::UnityEngine.SpriteRenderer SR_Effect_SpinAfter;
-
+	private GameObject gobj_Effect_Attack;
+	private GameObject gobj_Col_Attack_0_1;
+	private GameObject gobj_Col_Attack_1_1;
+	private GameObject gobj_Col_Attack_2_1;
+	private GameObject gobj_Col_Attack_4_1;
+	private GameObject gobj_Col_Attack_5_1;
 	public global::UnityEngine.GameObject Atk_Lag;
 
 	public global::UnityEngine.GameObject Spin_Lag;
@@ -210,6 +215,14 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 		SR_Effect_Spin = global::UnityEngine.GameObject.Find("Effect_Spin").GetComponent<global::UnityEngine.SpriteRenderer>();
 		SR_Effect_SpinGlow = global::UnityEngine.GameObject.Find("Effect_SpinGlow").GetComponent<global::UnityEngine.SpriteRenderer>();
 		SR_Effect_SpinAfter = global::UnityEngine.GameObject.Find("Effect_SpinAfter").GetComponent<global::UnityEngine.SpriteRenderer>();
+
+		gobj_Effect_Attack = global::UnityEngine.GameObject.Find("Effect_Attack");
+		gobj_Col_Attack_0_1 = global::UnityEngine.GameObject.Find("Col_Attack_0_1");
+		gobj_Col_Attack_1_1 = global::UnityEngine.GameObject.Find("Col_Attack_1_1");
+		gobj_Col_Attack_2_1 = global::UnityEngine.GameObject.Find("Col_Attack_2_1");
+		gobj_Col_Attack_4_1 = global::UnityEngine.GameObject.Find("Col_Attack_4_1");
+		gobj_Col_Attack_5_1 = global::UnityEngine.GameObject.Find("Col_Attack_5_1");
+
 		CensoredBreast.enabled = false;
 		CensoredBreast.color = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 		H_Down.speed = 0f;
@@ -770,14 +783,14 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 	{
 		if (GM.Weapon_Num == 0)
 		{
-			global::UnityEngine.GameObject.Find("Effect_Spin").transform.localScale = new global::UnityEngine.Vector3(1.3f, 2f, 1f);
+			PC.gobj_Effect_Spin.transform.localScale = new global::UnityEngine.Vector3(1.3f, 2f, 1f);
 			global::UnityEngine.GameObject.Find("Effect_SpinGlow").transform.localScale = new global::UnityEngine.Vector3(1.3f, 2f, 1f);
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(9.56f, 0.66f);
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4.2f);
 		}
 		else
 		{
-			global::UnityEngine.GameObject.Find("Effect_Spin").transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
+			PC.gobj_Effect_Spin.transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
 			global::UnityEngine.GameObject.Find("Effect_SpinGlow").transform.localScale = new global::UnityEngine.Vector3(2f, 2f, 1f);
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(14.8f, 0.66f);
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4.2f);
@@ -891,21 +904,34 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 		}
 		if (State == Player_Ani.AniState.Sit || State == Player_Ani.AniState.Slide)
 		{
-			global::UnityEngine.GameObject.Find("Effect_Attack").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
-			global::UnityEngine.GameObject.Find("Col_Attack_0_1").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
-			global::UnityEngine.GameObject.Find("Col_Attack_1_1").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
-			global::UnityEngine.GameObject.Find("Col_Attack_2_1").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
-			global::UnityEngine.GameObject.Find("Col_Attack_4_1").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
-			global::UnityEngine.GameObject.Find("Col_Attack_5_1").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			//global::UnityEngine.GameObject.Find("Effect_Attack").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			//global::UnityEngine.GameObject.Find("Col_Attack_0_1").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			//global::UnityEngine.GameObject.Find("Col_Attack_1_1").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			//global::UnityEngine.GameObject.Find("Col_Attack_2_1").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			//global::UnityEngine.GameObject.Find("Col_Attack_4_1").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			//global::UnityEngine.GameObject.Find("Col_Attack_5_1").transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			gobj_Effect_Attack.transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			gobj_Col_Attack_0_1.transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			gobj_Col_Attack_1_1.transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			gobj_Col_Attack_2_1.transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			gobj_Col_Attack_4_1.transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
+			gobj_Col_Attack_5_1.transform.localPosition = new global::UnityEngine.Vector3(0f, -2.53f, 0f);
 		}
 		else
 		{
-			global::UnityEngine.GameObject.Find("Effect_Attack").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
-			global::UnityEngine.GameObject.Find("Col_Attack_0_1").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
-			global::UnityEngine.GameObject.Find("Col_Attack_1_1").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
-			global::UnityEngine.GameObject.Find("Col_Attack_2_1").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
-			global::UnityEngine.GameObject.Find("Col_Attack_4_1").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
-			global::UnityEngine.GameObject.Find("Col_Attack_5_1").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			//global::UnityEngine.GameObject.Find("Effect_Attack").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			//global::UnityEngine.GameObject.Find("Col_Attack_0_1").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			//global::UnityEngine.GameObject.Find("Col_Attack_1_1").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			//global::UnityEngine.GameObject.Find("Col_Attack_2_1").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			//global::UnityEngine.GameObject.Find("Col_Attack_4_1").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			//global::UnityEngine.GameObject.Find("Col_Attack_5_1").transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+
+			gobj_Effect_Attack.transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			gobj_Col_Attack_0_1.transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			gobj_Col_Attack_1_1.transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			gobj_Col_Attack_2_1.transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			gobj_Col_Attack_4_1.transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
+			gobj_Col_Attack_5_1.transform.localPosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
 		}
 		if (ClothOpacity > 0f)
 		{
