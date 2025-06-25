@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -1915,22 +1916,28 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 
 	private void See_Map(int num)
 	{
-		string empty = string.Empty;
+		//string empty = string.Empty;
 		for (int i = 0; i < MapArray_Num[num]; i++)
 		{
-			empty = MapArray_Pos[num, i, 0] + "_" + MapArray_Pos[num, i, 1];
-			global::UnityEngine.GameObject.Find("MapPos_" + empty).GetComponent<global::UnityEngine.SpriteRenderer>().enabled = true;
-			global::UnityEngine.GameObject.Find("MapBorder_" + empty).GetComponent<global::UnityEngine.SpriteRenderer>().enabled = true;
-			if (global::UnityEngine.GameObject.Find("MapSaveFont_" + empty) != null)
+			//empty = MapArray_Pos[num, i, 0] + "_" + MapArray_Pos[num, i, 1];
+			int mapPosKey = Map_Control.GetPosKey(MapArray_Pos[num, i, 0], MapArray_Pos[num, i, 1]);
+			//global::UnityEngine.GameObject.Find("MapPos_" + empty).GetComponent<global::UnityEngine.SpriteRenderer>().enabled = true;
+			MC.dictMapPosSp[mapPosKey].enabled = true;
+            //global::UnityEngine.GameObject.Find("MapBorder_" + empty).GetComponent<global::UnityEngine.SpriteRenderer>().enabled = true;
+            MC.dictMapPosMap_BorderSP[mapPosKey].enabled = true;
+			//if (global::UnityEngine.GameObject.Find("MapSaveFont_" + empty) != null)
+			if (MC.dictMapSaveFont_Text.ContainsKey(mapPosKey) && MC.dictMapSaveFont_Text[mapPosKey] != null)
 			{
-				global::UnityEngine.GameObject.Find("MapSaveFont_" + empty).GetComponent<global::UnityEngine.UI.Text>().enabled = true;
-			}
+                //global::UnityEngine.GameObject.Find("MapSaveFont_" + empty).GetComponent<global::UnityEngine.UI.Text>().enabled = true;
+                MC.dictMapSaveFont_Text[mapPosKey].enabled = true;
+
+            }
 		}
 	}
 
 	public void Hide_UnsightMap(int[] map)
 	{
-		string empty = string.Empty;
+		//string empty = string.Empty;
 		for (int i = 1; i < MapArray_Num.Length; i++)
 		{
 			if (map[i] != 0)
@@ -1939,13 +1946,18 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 			}
 			for (int j = 0; j < MapArray_Num[i]; j++)
 			{
-				empty = MapArray_Pos[i, j, 0] + "_" + MapArray_Pos[i, j, 1];
-				global::UnityEngine.GameObject.Find("MapPos_" + empty).GetComponent<global::UnityEngine.SpriteRenderer>().enabled = false;
-				global::UnityEngine.GameObject.Find("MapBorder_" + empty).GetComponent<global::UnityEngine.SpriteRenderer>().enabled = false;
-				if (global::UnityEngine.GameObject.Find("MapSaveFont_" + empty) != null)
-				{
-					global::UnityEngine.GameObject.Find("MapSaveFont_" + empty).GetComponent<global::UnityEngine.UI.Text>().enabled = false;
-				}
+                //empty = MapArray_Pos[i, j, 0] + "_" + MapArray_Pos[i, j, 1];
+                int mapPosKey = Map_Control.GetPosKey(MapArray_Pos[i, j, 0], MapArray_Pos[i, j, 1]);
+				//global::UnityEngine.GameObject.Find("MapPos_" + empty).GetComponent<global::UnityEngine.SpriteRenderer>().enabled = false;
+				MC.dictMapPosSp[mapPosKey].enabled = false;
+				//global::UnityEngine.GameObject.Find("MapBorder_" + empty).GetComponent<global::UnityEngine.SpriteRenderer>().enabled = false;
+				MC.dictMapPosMap_BorderSP[mapPosKey].enabled = false;
+                //if (global::UnityEngine.GameObject.Find("MapSaveFont_" + empty) != null)
+                if (MC.dictMapSaveFont_Text.ContainsKey(mapPosKey) && MC.dictMapSaveFont_Text[mapPosKey] != null)
+                {
+                    //global::UnityEngine.GameObject.Find("MapSaveFont_" + empty).GetComponent<global::UnityEngine.UI.Text>().enabled = false;
+                    MC.dictMapSaveFont_Text[mapPosKey].enabled = true;
+                }
 			}
 		}
 	}
