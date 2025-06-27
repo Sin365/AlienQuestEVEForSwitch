@@ -1,5 +1,6 @@
 ﻿#if UNITY_EDITOR
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -17,7 +18,7 @@ public class AxiAQETools : EditorWindow
             string path = AssetDatabase.GUIDToAssetPath(guid);
             if (!path.Contains("/level"))
                 continue;
-            GetPrefab(path);
+            GetPrefabRoom(path);
         }
         string str = string.Empty;
         foreach (var roomid in temp.Keys.ToList().OrderBy(w=>w))
@@ -32,8 +33,7 @@ public class AxiAQETools : EditorWindow
         }
         Debug.Log(str);
     }
-
-    static void GetPrefab(string path)
+    static void GetPrefabRoom(string path)
     {
 #if UNITY_4_6
 		GameObject prefab = AssetDatabase.LoadAssetAtPath(path,typeof(GameObject)) as GameObject;
@@ -43,9 +43,9 @@ public class AxiAQETools : EditorWindow
         Room_Control room = prefab.GetComponent<Room_Control>();
         if (room == null)
             return;
-        LoopPrefabNode(room.Room_Num, path, prefab.gameObject, 0);
+        LoopPrefabNodeRoom(room.Room_Num, path, prefab.gameObject, 0);
     }
-    static void LoopPrefabNode(int RoomID, string rootPath, GameObject trans, int depth)
+    static void LoopPrefabNodeRoom(int RoomID, string rootPath, GameObject trans, int depth)
     {
         //		#if UNITY_2018_4_OR_NEWER
         string nodename = rootPath + trans.name;
@@ -79,7 +79,64 @@ public class AxiAQETools : EditorWindow
 
         //遍历
         foreach (Transform child in trans.transform)
-            LoopPrefabNode(RoomID, nodename, child.gameObject, depth + 1);
+            LoopPrefabNodeRoom(RoomID, nodename, child.gameObject, depth + 1);
+    }
+
+
+    [MenuItem("AxiAQETools/批量修改音频信息")]
+    public static void SetAudioPrefab()
+    {
+        temp.Clear();
+        string[] prefabGuids = AssetDatabase.FindAssets("t:Prefab");
+        foreach (string guid in prefabGuids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            Debug.Log("SetAudioPrefab=>" + path);
+            GetAudioPrefab(path);
+        }
+    }
+    static void GetAudioPrefab(string path)
+    {
+#if UNITY_4_6
+		GameObject prefab = AssetDatabase.LoadAssetAtPath(path,typeof(GameObject)) as GameObject;
+#else
+        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+#endif
+        LoopPrefabNodeAudio(path, prefab.gameObject, 0);
+        UnityEditor.EditorUtility.SetDirty(prefab);
+        UnityEditor.AssetDatabase.SaveAssetIfDirty(prefab);
+    }
+    static void LoopPrefabNodeAudio(string rootPath, GameObject trans, int depth)
+    {
+        //		#if UNITY_2018_4_OR_NEWER
+        string nodename = rootPath + trans.name;
+        GameObject prefabRoot = trans.gameObject;
+        Component[] components = prefabRoot.GetComponents<Component>();
+        for (int i = 0; i < components.Length; i++)
+        {
+            var com = components[i];
+
+            if (com == null)
+                continue;
+
+            AxiSoundBase sound = com as AxiSoundBase;
+            if (sound != null)
+            {
+                var audio = sound.GetComponent<AudioSource>();
+                if (audio != null)
+                {
+                    if (audio.rolloffMode == AudioRolloffMode.Custom)
+                    { 
+                        Debug.Log("SetAudioPrefab=> SetLinear =>" + rootPath);
+                        audio.rolloffMode = AudioRolloffMode.Linear;
+                    }
+                }
+            }
+        }
+
+        //遍历
+        foreach (Transform child in trans.transform)
+            LoopPrefabNodeAudio(nodename, child.gameObject, depth + 1);
     }
 
 }
