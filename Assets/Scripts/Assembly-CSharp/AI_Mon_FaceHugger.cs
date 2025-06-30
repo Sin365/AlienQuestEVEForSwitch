@@ -604,9 +604,12 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		if (on_Grab_Down)
 		{
 			GM.Hscene_Num = 97;
-			global::UnityEngine.GameObject.Find("Player_DownGrab").GetComponent<Player_Grab>().Mon_Object = base.gameObject;
-			global::UnityEngine.GameObject.Find("Player_DownGrab").SendMessage("H_Play");
-			global::UnityEngine.Object.Destroy(base.gameObject);
+            Player_Grab pg = GameManager.instance.pg_Player_DownGrab;
+            pg.Mon_Object = base.gameObject;
+			pg.H_Play();
+            //global::UnityEngine.GameObject.Find("Player_DownGrab").GetComponent<Player_Grab>().Mon_Object = base.gameObject;
+            //global::UnityEngine.GameObject.Find("Player_DownGrab").SendMessage("H_Play");
+            global::UnityEngine.Object.Destroy(base.gameObject);
 		}
 		else
 		{
@@ -621,10 +624,16 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 				Player.SendMessage("Flip");
 			}
 			base.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x + 0.8f * (float)(-facingRight), Player.transform.position.y + 4f, 0f);
-			global::UnityEngine.GameObject.Find("Player_Grab").GetComponent<Player_Grab>().Mon_Object = base.gameObject;
-			global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = global::UnityEngine.GameObject.Find("Player_Grab");
-			global::UnityEngine.GameObject.Find("Player_Grab").SendMessage("H_Play");
-		}
+
+            //Player_Grab pg = global::UnityEngine.GameObject.Find("Player_Grab").GetComponent<Player_Grab>();
+            Player_Grab pg = GameManager.instance.pg_Player_Grab;
+            pg.Mon_Object = base.gameObject;
+            global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = pg.gameObject;
+            pg.H_Play();
+            //global::UnityEngine.GameObject.Find("Player_Grab").GetComponent<Player_Grab>().Mon_Object = base.gameObject;
+            //global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = global::UnityEngine.GameObject.Find("Player_Grab");
+            //global::UnityEngine.GameObject.Find("Player_Grab").SendMessage("H_Play");
+        }
 		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 	}
 

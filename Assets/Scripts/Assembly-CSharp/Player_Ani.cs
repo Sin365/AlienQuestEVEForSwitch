@@ -4291,8 +4291,11 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 	}
 
 	private void ON_H_Down()
-	{
-		on_H_Down = true;
+    {
+        //´ò¿ªPlayer_Down
+        H_Down.gameObject.SetActive(true);
+
+        on_H_Down = true;
 		bool flip = ((PC.facingRight <= 0) ? true : false);
 		Ctrl_Down.GetComponent<Puppet2D_GlobalControl>().flip = flip;
 		H_Down.speed = 1f;
@@ -4321,7 +4324,10 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 		SR.enabled = true;
 		SR_Eye.enabled = true;
 		H_Down.transform.position = new global::UnityEngine.Vector3(-30f, 8f, 0f);
-	}
+
+        //¹Ø±ÕPlayer_Down
+        H_Down.gameObject.SetActive(false);
+    }
 
 	private void Start_H_Scene()
 	{

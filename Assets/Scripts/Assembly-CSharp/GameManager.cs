@@ -14,8 +14,10 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     public Rigidbody2D eg2d_Player { get; private set; }
     public GameObject gobj_Player { get; private set; }
     public Sound_Control sc_Sound_List { get; private set; }
-
     private UI_Girl_Front ui_Girl_Front;
+    public Player_Grab pg_Player_DownGrab { get; private set; }
+    public Player_Grab pg_Player_Grab { get; private set; }
+    public GameObject gobj_Player_Down { get; private set; }
     private int Slot_Num;
 
     public int EventState;
@@ -327,8 +329,6 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     private Camera_Control cc_Main_Camera;
     private GameObject gobj_EscapeTimer;
     private GameObject gobj_Main_Camera => UnityEngine.Camera.main.gameObject;
-    private GameObject gobj_Player_DownGrab;
-    private GameObject gobj_Player_Grab;
     private GameObject gobj_Ani;
     private Text txt_Text_TimePlay;
     private GameObject gobj_Text_TimePlay;
@@ -342,7 +342,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     private Menu_Control mc_Menu;
     private GameObject gobj_Menu;
     private GameObject gobj_Pos_SitLock_1_C;
-    private GameObject gobj_Player_ChestBurster;
+    private player_ChestBurster pbc_Player_ChestBurster;
     private SpriteRenderer sr_Ani_FaceHugger;
     private RectTransform sr_SelBorder_Skill;
     private Image img_SelBorder_Aug;
@@ -453,6 +453,19 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         gobj_Player = GameObject.Find("Player");
         sc_Sound_List = GameObject.Find("Sound_List").GetComponent<Sound_Control>();
         ui_Girl_Front = GameObject.Find("UI Girl_Front").GetComponent<UI_Girl_Front>();
+
+        pg_Player_DownGrab = global::UnityEngine.GameObject.Find("Player_DownGrab").GetComponent<Player_Grab>();
+        pg_Player_Grab = global::UnityEngine.GameObject.Find("Player_Grab").GetComponent<Player_Grab>();
+        gobj_Player_Down = global::UnityEngine.GameObject.Find("Player_Down");
+        //隐藏自己
+        StartCoroutine(AutoHideSomeThing());
+    }
+
+    private System.Collections.IEnumerator AutoHideSomeThing()
+    {
+        yield return null;
+        yield return null;
+        gobj_Player_Down.SetActive(false);
     }
 
     private void OnDestroy()
@@ -468,8 +481,6 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
         gobj_EscapeTimer = global::UnityEngine.GameObject.Find("EscapeTimer");
         //gobj_Main_Camera = UnityEngine.Camera.main;
-        gobj_Player_DownGrab = global::UnityEngine.GameObject.Find("Player_DownGrab");
-        gobj_Player_Grab = global::UnityEngine.GameObject.Find("Player_Grab");
         gobj_Ani = global::UnityEngine.GameObject.Find("Ani");
 
         txt_Text_TimePlay = global::UnityEngine.GameObject.Find("Text_TimePlay").GetComponent<global::UnityEngine.UI.Text>();
@@ -491,7 +502,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
         gobj_Pos_SitLock_1_C = global::UnityEngine.GameObject.Find("Pos_SitLock_1_C");
 
-        gobj_Player_ChestBurster = global::UnityEngine.GameObject.Find("Player_ChestBurster");
+        pbc_Player_ChestBurster = global::UnityEngine.GameObject.Find("Player_ChestBurster").GetComponent<player_ChestBurster>();
 
         sr_Ani_FaceHugger = global::UnityEngine.GameObject.Find("Ani_FaceHugger").GetComponent<global::UnityEngine.SpriteRenderer>();
 
@@ -687,6 +698,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         AxiRoomManager.Update_Logic();
         //立绘驱动
         ui_Girl_Front.Update_Logic();
+
         if (!DataLoaded)
         {
             Load_Timer += global::UnityEngine.Time.deltaTime;
@@ -864,7 +876,8 @@ public class GameManager : global::UnityEngine.MonoBehaviour
                     onHscene = true;
                     Hscene_Num = 98;
                     onChestBurster_Over = true;
-                    gobj_Player_ChestBurster.SendMessage("Play");
+                    //pbc_Player_ChestBurster.SendMessage("Play");
+                    pbc_Player_ChestBurster.Play();
                 }
             }
             if (onHscene)
@@ -908,7 +921,8 @@ public class GameManager : global::UnityEngine.MonoBehaviour
                             onChestBurster = true;
                             cc_Main_Camera.targetSize = 5f;
                             gobj_Main_Camera.SendMessage("Set_Vignetting_13");
-                            gobj_Player_Grab.SendMessage("H_Exit_GameOver");
+                            //pg_Player_Grab.SendMessage("H_Exit_GameOver");
+                            pg_Player_Grab.H_Exit_GameOver();
                             gobj_Ani.SendMessage("Set_FaceHugger");
                         }
                         global::UnityEngine.Vector3 position = new global::UnityEngine.Vector3(PC.transform.position.x, PC.transform.position.y + 5.5f, 0f);
@@ -1426,15 +1440,18 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         {
             if (Hscene_Num == 96)
             {
-                gobj_Player_Grab.SendMessage("H_Exit");
+                //pg_Player_Grab.SendMessage("H_Exit");
+                pg_Player_Grab.H_Exit();
             }
             else if (Hscene_Num == 97)
             {
-                gobj_Player_DownGrab.SendMessage("H_Exit");
+                //pg_Player_DownGrab.SendMessage("H_Exit");
+                pg_Player_DownGrab.H_Exit();
             }
             else if (Hscene_Num == 98)
             {
-                gobj_Player_ChestBurster.SendMessage("Stop");
+                //pbc_Player_ChestBurster.SendMessage("Stop");
+                pbc_Player_ChestBurster.Stop();
             }
         }
         GameOver = false;

@@ -37,9 +37,18 @@ public class player_ChestBurster : global::UnityEngine.MonoBehaviour
 			H_Sound = global::UnityEngine.GameObject.Find("Sound_List_H").GetComponent<H_SoundControl>();
 		}
 		GetComponent<global::UnityEngine.Animator>().speed = 0f;
-	}
+        //隐藏自己
+        StartCoroutine(AutoHide());
+    }
 
-	private void Update()
+    private System.Collections.IEnumerator AutoHide()
+    {
+        yield return null;
+        yield return null;
+        this.gameObject.SetActive(false);
+    }
+
+    private void Update()
 	{
 		if (onBurst && Moan_Timer > 0f)
 		{
@@ -47,14 +56,17 @@ public class player_ChestBurster : global::UnityEngine.MonoBehaviour
 		}
 	}
 
-	private void Play()
-	{
-		onBurst = true;
+	public void Play()
+    {
+        onBurst = true;
 		GetComponent<global::UnityEngine.Animator>().speed = 1f;
 		GetComponent<global::UnityEngine.Animator>().SetTrigger("onPlay");
 		base.transform.position = Player.transform.position;
-		global::UnityEngine.GameObject.Find("Player_Down").transform.position = new global::UnityEngine.Vector3(-30f, 8f, 0f);
-		if (facingRight != PC.facingRight)
+        //global::UnityEngine.GameObject.Find("Player_Down").transform.position = new global::UnityEngine.Vector3(-30f, 8f, 0f);
+		//打开玩家倒下
+        GameManager.instance.gobj_Player_Down.SetActive(true);
+        GameManager.instance.gobj_Player_Down.transform.position = new global::UnityEngine.Vector3(-30f, 8f, 0f);
+        if (facingRight != PC.facingRight)
 		{
 			facingRight = -facingRight;
 			bool flip = ((facingRight < 0) ? true : false);
@@ -63,13 +75,13 @@ public class player_ChestBurster : global::UnityEngine.MonoBehaviour
 		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 	}
 
-	private void Stop()
+	public void Stop()
 	{
 		onBurst = false;
 		GetComponent<global::UnityEngine.Animator>().speed = 0f;
 		GetComponent<global::UnityEngine.Animator>().SetTrigger("onStop");
 		base.transform.position = new global::UnityEngine.Vector3(-30f, 8f, 0f);
-	}
+    }
 
 	private void Burst()
 	{

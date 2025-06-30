@@ -283,8 +283,9 @@ public class H_SoundControl : global::UnityEngine.MonoBehaviour
 		if (Moan_Timer[num] <= 0f)
 		{
 			Moan_Timer[num] = 0.1f;
-			AxiSoundBase gameObject = AxiSoundPool.AddSoundForPosRot(Moan[num], base.transform.position, base.transform.rotation);
-			if (Sound_Moan_InGame[slot_num] != null)
+            //AxiSoundBase gameObject = AxiSoundPool.AddSoundForPosRot(Moan[num], base.transform.position, base.transform.rotation);
+            AxiSoundBase gameObject = AxiSoundPool.AddSoundForPosRot(Moan[num], Camera.main.transform.position, Camera.main.transform.rotation);
+            if (Sound_Moan_InGame[slot_num] != null)
 			{
 				AxiSoundPool.CheckNeedRemoveFormPool(Sound_Moan_InGame[slot_num]);
 				//global::UnityEngine.Object.Destroy(Sound_Moan_InGame[slot_num].gameObject);

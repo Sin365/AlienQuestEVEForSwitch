@@ -46,9 +46,18 @@ public class Player_Grab : global::UnityEngine.MonoBehaviour
 			H_Sound = global::UnityEngine.GameObject.Find("Sound_List_H").GetComponent<H_SoundControl>();
 		}
 		GetComponent<global::UnityEngine.Animator>().speed = 0f;
-	}
+		//隐藏自己
+        StartCoroutine(AutoHide());
+    }
 
-	private void Update()
+    private System.Collections.IEnumerator AutoHide()
+    {
+        yield return null;
+        yield return null;
+        this.gameObject.SetActive(false);
+    }
+
+    private void Update()
 	{
 		if (!onGrab)
 		{
@@ -74,8 +83,11 @@ public class Player_Grab : global::UnityEngine.MonoBehaviour
 		}
 	}
 
-	private void H_Play()
+	public void H_Play()
 	{
+		//打开对象
+		this.gameObject.SetActive(true);
+
 		onGrab = true;
 		Grab_Timer = 0f;
 		End_Count = 0;
@@ -90,9 +102,10 @@ public class Player_Grab : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Animator>().SetTrigger("onPlay");
 	}
 
-	private void H_Exit()
+	public void H_Exit()
 	{
-		onGrab = false;
+
+        onGrab = false;
 		State = 0;
 		GetComponent<global::UnityEngine.Animator>().SetInteger("State", State);
 		GetComponent<global::UnityEngine.Animator>().speed = 0f;
@@ -102,9 +115,12 @@ public class Player_Grab : global::UnityEngine.MonoBehaviour
 			Mon_Object.SendMessage("End_H_Grab");
 			Mon_Object = null;
 		}
-	}
 
-	private void H_Exit_GameOver()
+        //关闭对象
+        this.gameObject.SetActive(false);
+    }
+
+	public void H_Exit_GameOver()
 	{
 		onGrab = false;
 		State = 0;
@@ -115,8 +131,11 @@ public class Player_Grab : global::UnityEngine.MonoBehaviour
 		{
 			Mon_Object.SendMessage("End_H_Grab_GameOver");
 			Mon_Object = null;
-		}
-	}
+        }
+
+        //关闭对象
+        this.gameObject.SetActive(false);
+    }
 
 	private void Cum_Count()
 	{

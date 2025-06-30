@@ -226,12 +226,14 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
             BotMosaic_1.enabled = false;
             BotMosaic_2.enabled = false;
         }
-
+        //隐藏自己
         StartCoroutine(AutoHide());
     }
 
     private System.Collections.IEnumerator AutoHide()
     {
+        //气泡指针，放到外面先
+        SR_Cursor.GetComponent<global::UnityEngine.RectTransform>().localPosition = UnityEngine.Vector2.zero;
         yield return null;
         yield return null;
         this.gameObject.SetActive(false);
