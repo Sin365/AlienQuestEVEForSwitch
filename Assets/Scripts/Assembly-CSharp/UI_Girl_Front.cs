@@ -390,6 +390,8 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
                     onPause = false;
                     Pause_Timer = 0f;
                     GetComponent<global::UnityEngine.Animator>().speed = 0f;
+                    //气泡指针
+                    SR_Cursor.GetComponent<global::UnityEngine.RectTransform>().localPosition = UnityEngine.Vector2.zero;
                     //关闭立绘
                     this.gameObject.SetActive(false);
                 }
