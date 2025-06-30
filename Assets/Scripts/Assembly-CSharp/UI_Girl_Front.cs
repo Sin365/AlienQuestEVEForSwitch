@@ -226,6 +226,15 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
             BotMosaic_1.enabled = false;
             BotMosaic_2.enabled = false;
         }
+
+        StartCoroutine(AutoHide());
+    }
+
+    private System.Collections.IEnumerator AutoHide()
+    {
+        yield return null;
+        yield return null;
+        this.gameObject.SetActive(false);
     }
 
     private void Set_Color(global::UnityEngine.Color color)
