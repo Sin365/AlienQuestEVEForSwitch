@@ -614,6 +614,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 							else
 							{
 								Copy_Slot_Open(Sel_Index);
+
 							}
 						}
 						else if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.V) || global::UnityEngine.Input.GetButtonDown("_Y"))

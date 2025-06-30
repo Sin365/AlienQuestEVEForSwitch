@@ -1,16 +1,16 @@
-using UnityEngine;
-using System.Linq;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using System.Linq;
+using UnityEngine;
 
 public static class AxiRoomManager
 {
     enum E_RoomLoadingDataState
     {
         None = 0,
-        Loading = 1,
-        Faild = 2,
-        Success = 3,
+        Ready = 1,
+        Loading = 2,
+        Faild = 3,
+        Success = 4,
     }
     static int CurrRoomID = -1;
     static Dictionary<int, List<int>> mDicRoomId2RoomIds = new Dictionary<int, List<int>>()
@@ -169,6 +169,11 @@ public static class AxiRoomManager
     static Dictionary<int, GameObject> mDicLoadedRoomRes = new Dictionary<int, GameObject>();
     static Dictionary<int, RoomLoadingData> mDictLoadingRoomRes = new Dictionary<int, RoomLoadingData>();
 
+    /// <summary>
+    /// 角色切换房间时调用
+    /// </summary>
+    /// <param name="RoomID"></param>
+    /// <returns></returns>
     public static GameObject CloneRoom(int RoomID)
     {
         GameObject src;
@@ -179,7 +184,7 @@ public static class AxiRoomManager
         }
         else
         {
-            src = Resources.Load<GameObject>(GameManager.instance.sm_StageManager.GetRoomResourceID(RoomID));
+            src = Resources.Load<GameObject>(GetRoomResourceID(RoomID));
             //现同步加载的资源，加入已加载
             mDicLoadedRoomRes[RoomID] = src;
             Debug.Log("[AxiRoomManager]直接加载RoomID=>" + RoomID);
@@ -189,14 +194,58 @@ public static class AxiRoomManager
         if (CurrRoomID != RoomID)
         {
             CurrRoomID = RoomID;
-            //释放掉已经没有依赖的资源
-            Resources.UnloadUnusedAssets();
-            System.GC.Collect();
+            SetClearDirty();
         }
         return gameObject;
     }
+
+    static bool bNeedClearDirty = false;
+    static float mLastSetClearTime = 0;
+    public static void SetClearDirty()
+    {
+        if (bNeedClearDirty)
+            return;
+        mLastSetClearTime = Time.time;
+        bNeedClearDirty = true;
+    }
+    static bool CheckClearDirty()
+    {
+        if (!bNeedClearDirty)
+            return false;
+
+        if (mDictLoadingRoomRes.Count > 0)
+            return false;
+
+        if (bNeedClearDirty && Time.time - mLastSetClearTime < 3)
+            return false;
+
+        //释放掉已经没有依赖的资源
+        Resources.UnloadUnusedAssets();
+        Debug.Log("[AxiRoomManager] UnloadUnusedAssets!");
+#if UNITY_2019_1_OR_NEWER
+        System.GC.Collect();
+        Debug.Log("[AxiRoomManager] System.GC.Collect()!");
+#endif
+        bNeedClearDirty = false;
+
+        return true;
+    }
+
+    static long lastUpdateCheck = 0;
+
+    /// <summary>
+    /// 外部MonoBehavior 调用
+    /// </summary>
     public static void Update_Logic()
     {
+        lastUpdateCheck++;
+        if (lastUpdateCheck < 3)
+            return;
+        lastUpdateCheck = 0;
+
+        if (CheckClearDirty())
+            return;
+
         var keys = mDictLoadingRoomRes.Keys.ToArray();
         for (int i = 0; i < keys.Length; i++)
         {
@@ -204,35 +253,53 @@ public static class AxiRoomManager
             loading.Update_logic();
             switch (loading.state)
             {
+                case E_RoomLoadingDataState.Ready:
+                    loading.StartLoad();
+                    break;
                 case E_RoomLoadingDataState.Loading:
                     break;
+                case E_RoomLoadingDataState.Faild:
+                    {
+                        //先移除队列
+                        mDictLoadingRoomRes.Remove(keys[i]);
+                        Debug.Log("[AxiRoomManager]Faild RoomID=>" + loading.RoomID);
+                        loading.Release();
+                    }
+                    break;
                 case E_RoomLoadingDataState.Success:
-                    //先移除队列
-                    mDictLoadingRoomRes.Remove(keys[i]);
-
-                    //如果不需要
-                    if (!NeedLoadRooms.Contains(loading.RoomID))
                     {
-                        Debug.Log("[AxiRoomManager]预加载抛弃RoomID=>" + loading.RoomID);
+                        //先移除队列
+                        mDictLoadingRoomRes.Remove(keys[i]);
+                        //如果不需要
+                        if (!NeedLoadRooms.Contains(loading.RoomID))
+                        {
+                            Debug.Log("[AxiRoomManager]预加载抛弃RoomID=>" + loading.RoomID);
+                        }
+                        //如果已经加载，则不要了
+                        else if (mDicLoadedRoomRes.ContainsKey(loading.RoomID))
+                        {
+                            Debug.Log("[AxiRoomManager]预加载重复RoomID=>" + loading.RoomID);
+                        }
+                        else//保留加载的结果
+                        {
+                            mDicLoadedRoomRes[loading.RoomID] = (GameObject)loading.GetLoaded();
+                            Debug.Log("[AxiRoomManager]预加载完毕RoomID=>" + loading.RoomID);
+                        }
+                        loading.Release();
                     }
-                    //如果已经加载，则不要了
-                    else if (mDicLoadedRoomRes.ContainsKey(loading.RoomID))
-                    {
-                        Debug.Log("[AxiRoomManager]预加载重复RoomID=>" + loading.RoomID);
-                    }
-                    else//保留加载的结果
-                    { 
-                        mDicLoadedRoomRes[loading.RoomID] = (GameObject)loading.GetLoaded();
-                        Debug.Log("[AxiRoomManager]预加载完毕RoomID=>" + loading.RoomID);
-                    }
-                    loading.Release();
                     break;
             }
         }
     }
 
+    static List<int> temp = new List<int>();
+    /// <summary>
+    /// 预加载临近房间资源
+    /// </summary>
+    /// <param name="CenterRoomID"></param>
     static void PreLoadNearRoom(int CenterRoomID)
     {
+        temp.Clear();
         NeedLoadRooms.Clear();
         NeedLoadRooms.Add(CenterRoomID);
         for (int i = 0; i < mDicRoomId2RoomIds[CenterRoomID].Count; i++)
@@ -240,7 +307,16 @@ public static class AxiRoomManager
             int roomid = mDicRoomId2RoomIds[CenterRoomID][i];
             if (!NeedLoadRooms.Contains(roomid))
                 NeedLoadRooms.Add(roomid);
+
+            //第二层预加载
+            for (int j = 0; j < mDicRoomId2RoomIds[roomid].Count; j++)
+            {
+                int subRoomid = mDicRoomId2RoomIds[roomid][j];
+                if (!NeedLoadRooms.Contains(subRoomid))
+                    NeedLoadRooms.Add(subRoomid);
+            }
         }
+
         //检查新增的需要加载的Room
         foreach (var needloadroomid in NeedLoadRooms)
         {
@@ -265,6 +341,167 @@ public static class AxiRoomManager
         }
     }
 
+    static string[] mRoomPathList { get; set; } = new string[151]
+        {
+"prefabs/level_1_2/Room_0",
+"prefabs/level_1_2/Room_1",
+"prefabs/level_1_2/Room_2",
+"prefabs/level_1_2/Room_3_N",
+"prefabs/level_1_2/Room_4",
+"prefabs/level_1_2/Room_5",
+"prefabs/level_1_2/Room_6",
+"prefabs/level_1_2/Room_7",
+"prefabs/level_1_2/Room_8",
+"prefabs/level_1_2/Room_9",
+"prefabs/level_1_2/Room_10 Save",
+"prefabs/level_1_2/Room_11",
+"prefabs/level_1_2/Room_12",
+"prefabs/level_1_2/Room_13",
+"prefabs/level_1_2/Room_14",
+"prefabs/level_1_2/Room_15",
+"prefabs/level_1_2/Room_16 Save",
+"prefabs/level_1_2/Room_17",
+"prefabs/level_1_2/Room_18 Boss_1",
+"prefabs/level_1_2/Room_19",
+"prefabs/level_1_2/Room_20",
+"prefabs/level_1_2/Room_21",
+"prefabs/level_1_2/Room_22",
+"prefabs/level_1_2/Room_23",
+"prefabs/level_1_2/Room_24 T",
+"prefabs/level_1_2/Room_25",
+"prefabs/level_1_2/Room_26",
+"prefabs/level_1_2/Room_27",
+"prefabs/level_1_2/Room_28",
+"prefabs/level_1_2/Room_29",
+"prefabs/level_1_2/Room_30",
+"prefabs/level_1_2/Room_31",
+"prefabs/level_1_2/Room_32",
+"prefabs/level_1_2/Room_33",
+"prefabs/level_1_2/Room_34",
+"prefabs/level_1_2/Room_35 Save",
+"prefabs/level_1_2/Room_36",
+"prefabs/level_1_2/Room_37",
+"prefabs/level_1_2/Room_38",
+"prefabs/level_1_2/Room_39",
+"prefabs/level_1_2/Room_40",
+"prefabs/level_1_2/Room_41",
+"prefabs/level_1_2/Room_42",
+"prefabs/level_1_2/Room_43",
+"prefabs/level_1_2/Room_44 T",
+"prefabs/level_1_2/Room_45",
+"prefabs/level_1_2/Room_46 Save",
+"prefabs/level_1_2/Room_47",
+"prefabs/level_1_2/Room_48 Boss_2",
+"prefabs/level_1_2/Room_49",
+"prefabs/level_1_2/Room_50",
+"prefabs/level_3_c/Room_51",
+"prefabs/level_3_c/Room_52",
+"prefabs/level_3_c/Room_53",
+"prefabs/level_3_c/Room_54",
+"prefabs/level_3_c/Room_55",
+"prefabs/level_3_c/Room_56",
+"prefabs/level_3_c/Room_57",
+"prefabs/level_3_c/Room_58",
+"prefabs/level_3_c/Room_59",
+"prefabs/level_3_c/Room_60 ST",
+"prefabs/level_3_c/Room_61",
+"prefabs/level_3_c/Room_62",
+"prefabs/level_3_c/Room_63",
+"prefabs/level_3_c/Room_64",
+"prefabs/level_3_c/Room_65",
+"prefabs/level_3_c/Room_66",
+"prefabs/level_3_c/Room_67",
+"prefabs/level_3_c/Room_68",
+"prefabs/level_3_c/Room_69",
+"prefabs/level_3_c/Room_70",
+"prefabs/level_3_c/Room_71",
+"prefabs/level_3_c/Room_72",
+"prefabs/level_3_c/Room_73",
+"prefabs/level_3_c/Room_74",
+"prefabs/level_3_c/Room_75 Save",
+"prefabs/level_3_c/Room_76",
+"prefabs/level_3_c/Room_77",
+"prefabs/level_3_c/Room_78",
+"prefabs/level_3_c/Room_79",
+"prefabs/level_3_c/Room_80",
+"prefabs/level_3_c/Room_81",
+"prefabs/level_3_c/Room_82",
+"prefabs/level_3_c/Room_83",
+"prefabs/level_3_c/Room_84",
+"prefabs/level_3_c/Room_85",
+"prefabs/level_3_c/Room_86 Save",
+"prefabs/level_3_c/Room_87",
+"prefabs/level_3_c/Room_88 Boss_3",
+"prefabs/level_3_c/Room_89",
+"prefabs/level_3_c/Room_90 T",
+"prefabs/level_3_c/Room_91",
+"prefabs/level_3_c/Room_92 EVE",
+"prefabs/level_3_c/Room_93",
+"prefabs/level_3_c/Room_94",
+"prefabs/level_3_c/Room_95 Save",
+"prefabs/level_4_5/Room_96",
+"prefabs/level_4_5/Room_97",
+"prefabs/level_4_5/Room_98",
+"prefabs/level_4_5/Room_99",
+"prefabs/level_4_5/Room_100",
+"prefabs/level_4_5/Room_101",
+"prefabs/level_4_5/Room_102",
+"prefabs/level_4_5/Room_103",
+"prefabs/level_4_5/Room_104",
+"prefabs/level_4_5/Room_105",
+"prefabs/level_4_5/Room_106",
+"prefabs/level_4_5/Room_107",
+"prefabs/level_4_5/Room_108",
+"prefabs/level_4_5/Room_109",
+"prefabs/level_4_5/Room_110 Save",
+"prefabs/level_4_5/Room_111",
+"prefabs/level_4_5/Room_112",
+"prefabs/level_4_5/Room_113",
+"prefabs/level_4_5/Room_114",
+"prefabs/level_4_5/Room_115",
+"prefabs/level_4_5/Room_116",
+"prefabs/level_4_5/Room_117",
+"prefabs/level_4_5/Room_118",
+"prefabs/level_4_5/Room_119 Save",
+"prefabs/level_4_5/Room_120",
+"prefabs/level_4_5/Room_121 Boss_4",
+"prefabs/level_4_5/Room_122",
+"prefabs/level_4_5/Room_123",
+"prefabs/level_4_5/Room_124",
+"prefabs/level_4_5/Room_125 T",
+"prefabs/level_4_5/Room_126",
+"prefabs/level_4_5/Room_127",
+"prefabs/level_4_5/Room_128",
+"prefabs/level_4_5/Room_129",
+"prefabs/level_4_5/Room_130",
+"prefabs/level_4_5/Room_131",
+"prefabs/level_4_5/Room_132",
+"prefabs/level_4_5/Room_133",
+"prefabs/level_4_5/Room_134",
+"prefabs/level_4_5/Room_135",
+"prefabs/level_4_5/Room_136",
+"prefabs/level_4_5/Room_137",
+"prefabs/level_4_5/Room_138",
+"prefabs/level_4_5/Room_139",
+"prefabs/level_4_5/Room_140 Save",
+"prefabs/level_4_5/Room_141",
+"prefabs/level_4_5/Room_142 T",
+"prefabs/level_4_5/Room_143_N",
+"prefabs/level_4_5/Room_143_N",
+"prefabs/level_4_5/Room_145",
+"prefabs/level_4_5/Room_146",
+"prefabs/level_4_5/Room_146",
+"prefabs/level_4_5/Room_148",
+"prefabs/level_4_5/Room_149",
+"prefabs/level_4_5/Room_150 Queen",
+        };
+
+    static string GetRoomResourceID(int Roomid)
+    {
+        return mRoomPathList[Roomid];
+    }
+
+    public static int RoomPathListCount => mRoomPathList.Length;
     class RoomLoadingData
     {
         public int RoomID;
@@ -273,14 +510,20 @@ public static class AxiRoomManager
         public RoomLoadingData(int RoomID)
         {
             this.RoomID = RoomID;
-            resourceRequest = Resources.LoadAsync<GameObject>(GameManager.instance.sm_StageManager.GetRoomResourceID(RoomID));
-            state = E_RoomLoadingDataState.None;
+            state = E_RoomLoadingDataState.Ready;
+            resourceRequest = Resources.LoadAsync<GameObject>(GetRoomResourceID(RoomID));
+            Debug.Log("[AxiRoomManager]Ready load Data RoomID=>" + RoomID);
+        }
+        public void StartLoad()
+        {
+            resourceRequest = Resources.LoadAsync<GameObject>(GetRoomResourceID(RoomID));
             Debug.Log("[AxiRoomManager]预加载开始RoomID=>" + RoomID);
+            state = E_RoomLoadingDataState.Loading;
         }
 
         public void Update_logic()
         {
-            if (state > E_RoomLoadingDataState.Loading)
+            if (state < E_RoomLoadingDataState.Loading)
                 return;
 
             if (!resourceRequest.isDone)
@@ -288,7 +531,10 @@ public static class AxiRoomManager
 
             if (resourceRequest.isDone)
             {
-                state = E_RoomLoadingDataState.Success;
+                if (resourceRequest.asset == null)
+                    state = E_RoomLoadingDataState.Faild;
+                else
+                    state = E_RoomLoadingDataState.Success;
             }
         }
 

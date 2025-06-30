@@ -201,7 +201,8 @@ public static class AxiSoundPool
 
         if (bHad)
         {
-            System.GC.Collect();
+            //这里不用清理，算了，靠切换房间
+            //AxiRoomManager.SetClearDirty();
         }
     }
 

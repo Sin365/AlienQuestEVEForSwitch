@@ -1755,7 +1755,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 
 	public void Load_Game()
 	{
-		if (GM.Room_Num > mRoomPathList.Length)
+		if (GM.Room_Num > AxiRoomManager.RoomPathListCount)
 		{
 			return;
 		}
@@ -1812,7 +1812,7 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 
 	public void Go_Room(int roomNum, int posNum, float dist_x, float dist_y, bool cheatRoom)
 	{
-		if (roomNum <= mRoomPathList.Length)
+		if (roomNum <= AxiRoomManager.RoomPathListCount)
 		{
 			GM.onGatePass = true;
 			GM.Room_Num = roomNum;
@@ -6977,172 +6977,11 @@ public class StageManager : global::UnityEngine.MonoBehaviour
 		return (RoomCam_Top - RoomCam_Bot) / 6f * (float)num + RoomCam_Bot;
 	}
 
-	private string[] mRoomPathList { get; set; } = new string[151]
-		{
-"prefabs/level_1_2/Room_0",
-"prefabs/level_1_2/Room_1",
-"prefabs/level_1_2/Room_2",
-"prefabs/level_1_2/Room_3_N",
-"prefabs/level_1_2/Room_4",
-"prefabs/level_1_2/Room_5",
-"prefabs/level_1_2/Room_6",
-"prefabs/level_1_2/Room_7",
-"prefabs/level_1_2/Room_8",
-"prefabs/level_1_2/Room_9",
-"prefabs/level_1_2/Room_10 Save",
-"prefabs/level_1_2/Room_11",
-"prefabs/level_1_2/Room_12",
-"prefabs/level_1_2/Room_13",
-"prefabs/level_1_2/Room_14",
-"prefabs/level_1_2/Room_15",
-"prefabs/level_1_2/Room_16 Save",
-"prefabs/level_1_2/Room_17",
-"prefabs/level_1_2/Room_18 Boss_1",
-"prefabs/level_1_2/Room_19",
-"prefabs/level_1_2/Room_20",
-"prefabs/level_1_2/Room_21",
-"prefabs/level_1_2/Room_22",
-"prefabs/level_1_2/Room_23",
-"prefabs/level_1_2/Room_24 T",
-"prefabs/level_1_2/Room_25",
-"prefabs/level_1_2/Room_26",
-"prefabs/level_1_2/Room_27",
-"prefabs/level_1_2/Room_28",
-"prefabs/level_1_2/Room_29",
-"prefabs/level_1_2/Room_30",
-"prefabs/level_1_2/Room_31",
-"prefabs/level_1_2/Room_32",
-"prefabs/level_1_2/Room_33",
-"prefabs/level_1_2/Room_34",
-"prefabs/level_1_2/Room_35 Save",
-"prefabs/level_1_2/Room_36",
-"prefabs/level_1_2/Room_37",
-"prefabs/level_1_2/Room_38",
-"prefabs/level_1_2/Room_39",
-"prefabs/level_1_2/Room_40",
-"prefabs/level_1_2/Room_41",
-"prefabs/level_1_2/Room_42",
-"prefabs/level_1_2/Room_43",
-"prefabs/level_1_2/Room_44 T",
-"prefabs/level_1_2/Room_45",
-"prefabs/level_1_2/Room_46 Save",
-"prefabs/level_1_2/Room_47",
-"prefabs/level_1_2/Room_48 Boss_2",
-"prefabs/level_1_2/Room_49",
-"prefabs/level_1_2/Room_50",
-"prefabs/level_3_c/Room_51",
-"prefabs/level_3_c/Room_52",
-"prefabs/level_3_c/Room_53",
-"prefabs/level_3_c/Room_54",
-"prefabs/level_3_c/Room_55",
-"prefabs/level_3_c/Room_56",
-"prefabs/level_3_c/Room_57",
-"prefabs/level_3_c/Room_58",
-"prefabs/level_3_c/Room_59",
-"prefabs/level_3_c/Room_60 ST",
-"prefabs/level_3_c/Room_61",
-"prefabs/level_3_c/Room_62",
-"prefabs/level_3_c/Room_63",
-"prefabs/level_3_c/Room_64",
-"prefabs/level_3_c/Room_65",
-"prefabs/level_3_c/Room_66",
-"prefabs/level_3_c/Room_67",
-"prefabs/level_3_c/Room_68",
-"prefabs/level_3_c/Room_69",
-"prefabs/level_3_c/Room_70",
-"prefabs/level_3_c/Room_71",
-"prefabs/level_3_c/Room_72",
-"prefabs/level_3_c/Room_73",
-"prefabs/level_3_c/Room_74",
-"prefabs/level_3_c/Room_75 Save",
-"prefabs/level_3_c/Room_76",
-"prefabs/level_3_c/Room_77",
-"prefabs/level_3_c/Room_78",
-"prefabs/level_3_c/Room_79",
-"prefabs/level_3_c/Room_80",
-"prefabs/level_3_c/Room_81",
-"prefabs/level_3_c/Room_82",
-"prefabs/level_3_c/Room_83",
-"prefabs/level_3_c/Room_84",
-"prefabs/level_3_c/Room_85",
-"prefabs/level_3_c/Room_86 Save",
-"prefabs/level_3_c/Room_87",
-"prefabs/level_3_c/Room_88 Boss_3",
-"prefabs/level_3_c/Room_89",
-"prefabs/level_3_c/Room_90 T",
-"prefabs/level_3_c/Room_91",
-"prefabs/level_3_c/Room_92 EVE",
-"prefabs/level_3_c/Room_93",
-"prefabs/level_3_c/Room_94",
-"prefabs/level_3_c/Room_95 Save",
-"prefabs/level_4_5/Room_96",
-"prefabs/level_4_5/Room_97",
-"prefabs/level_4_5/Room_98",
-"prefabs/level_4_5/Room_99",
-"prefabs/level_4_5/Room_100",
-"prefabs/level_4_5/Room_101",
-"prefabs/level_4_5/Room_102",
-"prefabs/level_4_5/Room_103",
-"prefabs/level_4_5/Room_104",
-"prefabs/level_4_5/Room_105",
-"prefabs/level_4_5/Room_106",
-"prefabs/level_4_5/Room_107",
-"prefabs/level_4_5/Room_108",
-"prefabs/level_4_5/Room_109",
-"prefabs/level_4_5/Room_110 Save",
-"prefabs/level_4_5/Room_111",
-"prefabs/level_4_5/Room_112",
-"prefabs/level_4_5/Room_113",
-"prefabs/level_4_5/Room_114",
-"prefabs/level_4_5/Room_115",
-"prefabs/level_4_5/Room_116",
-"prefabs/level_4_5/Room_117",
-"prefabs/level_4_5/Room_118",
-"prefabs/level_4_5/Room_119 Save",
-"prefabs/level_4_5/Room_120",
-"prefabs/level_4_5/Room_121 Boss_4",
-"prefabs/level_4_5/Room_122",
-"prefabs/level_4_5/Room_123",
-"prefabs/level_4_5/Room_124",
-"prefabs/level_4_5/Room_125 T",
-"prefabs/level_4_5/Room_126",
-"prefabs/level_4_5/Room_127",
-"prefabs/level_4_5/Room_128",
-"prefabs/level_4_5/Room_129",
-"prefabs/level_4_5/Room_130",
-"prefabs/level_4_5/Room_131",
-"prefabs/level_4_5/Room_132",
-"prefabs/level_4_5/Room_133",
-"prefabs/level_4_5/Room_134",
-"prefabs/level_4_5/Room_135",
-"prefabs/level_4_5/Room_136",
-"prefabs/level_4_5/Room_137",
-"prefabs/level_4_5/Room_138",
-"prefabs/level_4_5/Room_139",
-"prefabs/level_4_5/Room_140 Save",
-"prefabs/level_4_5/Room_141",
-"prefabs/level_4_5/Room_142 T",
-"prefabs/level_4_5/Room_143_N",
-"prefabs/level_4_5/Room_143_N",
-"prefabs/level_4_5/Room_145",
-"prefabs/level_4_5/Room_146",
-"prefabs/level_4_5/Room_146",
-"prefabs/level_4_5/Room_148",
-"prefabs/level_4_5/Room_149",
-"prefabs/level_4_5/Room_150 Queen",
-		};
-
-	public string GetRoomResourceID(int Roomid)
-	{
-		return mRoomPathList[Roomid];
-	}
-
-	public int RoomPathListCount => mRoomPathList.Length;
 	public GameObject LoadRoomById(int id)
 	{
 		return AxiRoomManager.CloneRoom(id);
-        GameObject room_src = Resources.Load<GameObject>(mRoomPathList[id]);
-		GameObject gameObject = AxiObject.Instantiate(room_src);
-		return gameObject;
+  //      GameObject room_src = Resources.Load<GameObject>(mRoomPathList[id]);
+		//GameObject gameObject = AxiObject.Instantiate(room_src);
+		//return gameObject;
 	}
 }

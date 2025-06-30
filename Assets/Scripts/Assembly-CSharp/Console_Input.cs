@@ -144,8 +144,9 @@ public class Console_Input : global::UnityEngine.MonoBehaviour
 		if (int.TryParse(inputFieldString, out result))
 		{
 			global::UnityEngine.Debug.Log(result);
-			if (result < component.RoomPathListCount)
-			{
+            //if (result < component.RoomPathListCount)
+            if (result < AxiRoomManager.RoomPathListCount)
+            {
 				Player.GetComponent<Player_Control>().Lock_GameLoad();
 				component.Go_Room(result, 0, 0f, 0f, true);
 			}
