@@ -27,7 +27,7 @@ public class Puppet2D_ParentControl : global::UnityEngine.MonoBehaviour
 	public void ParentControlRun()
 	{
 		Transform trans = base.transform;
-		Transform bonetrans = base.transform;
+		Transform bonetrans = bone.transform;
 		if (Orient)
 		{
 			if (MaintainOffset)
