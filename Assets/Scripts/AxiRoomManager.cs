@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public static class AxiRoomManager
@@ -166,7 +167,7 @@ public static class AxiRoomManager
     {150,new List<int>(){149,149           }}, };
     static HashSet<int> NeedLoadRooms = new HashSet<int>();
 
-    static Dictionary<int, GameObject> mDicLoadedRoomRes = new Dictionary<int, GameObject>();
+    static Dictionary<int, RoomLoadedData> mDicLoadedRoomRes = new Dictionary<int, RoomLoadedData>();
     static Dictionary<int, RoomLoadingData> mDictLoadingRoomRes = new Dictionary<int, RoomLoadingData>();
 
     /// <summary>
@@ -176,25 +177,26 @@ public static class AxiRoomManager
     /// <returns></returns>
     public static GameObject CloneRoom(int RoomID)
     {
-        GameObject src;
+        RoomLoadedData loadedsrc;
         if (mDicLoadedRoomRes.ContainsKey(RoomID))
         {
-            src = mDicLoadedRoomRes[RoomID];
+            loadedsrc = mDicLoadedRoomRes[RoomID];
             Debug.Log("[AxiRoomManager]使用已加载的RoomID=>" + RoomID);
         }
         else
         {
-            src = Resources.Load<GameObject>(GetRoomResourceID(RoomID));
+            GameObject gobj = Resources.Load<GameObject>(GetRoomResourceID(RoomID));
             //现同步加载的资源，加入已加载
-            mDicLoadedRoomRes[RoomID] = src;
+            loadedsrc = new RoomLoadedData(RoomID, gobj);
             Debug.Log("[AxiRoomManager]直接加载RoomID=>" + RoomID);
+            mDicLoadedRoomRes[RoomID] = loadedsrc;
+            loadedsrc.SetNeed();
         }
-        GameObject gameObject = AxiObject.Instantiate(src);
+        GameObject gameObject = AxiObject.Instantiate(loadedsrc.gobj);
         PreLoadNearRoom(RoomID);
         if (CurrRoomID != RoomID)
         {
             CurrRoomID = RoomID;
-            SetClearDirty();
         }
         return gameObject;
     }
@@ -213,10 +215,11 @@ public static class AxiRoomManager
         if (!bNeedClearDirty)
             return false;
 
+        //有正在加载的资源时不处理
         if (mDictLoadingRoomRes.Count > 0)
             return false;
 
-        if (bNeedClearDirty && Time.time - mLastSetClearTime < 3)
+        if (bNeedClearDirty && Time.time - mLastSetClearTime < 10)
             return false;
 
         //释放掉已经没有依赖的资源
@@ -227,41 +230,45 @@ public static class AxiRoomManager
         Debug.Log("[AxiRoomManager] System.GC.Collect()!");
 #endif
         bNeedClearDirty = false;
-
         return true;
     }
 
     static long lastUpdateCheck = 0;
 
+    static List<int> tempRemoveLoading = new List<int>();
+    static List<int> tempRemoveLoaded = new List<int>();
     /// <summary>
     /// 外部MonoBehavior 调用
     /// </summary>
     public static void Update_Logic()
     {
         lastUpdateCheck++;
-        if (lastUpdateCheck < 3)
+        if (lastUpdateCheck < 10)
             return;
         lastUpdateCheck = 0;
 
         if (CheckClearDirty())
             return;
 
-        var keys = mDictLoadingRoomRes.Keys.ToArray();
-        for (int i = 0; i < keys.Length; i++)
+        tempRemoveLoading.Clear();
+        var iterator = mDictLoadingRoomRes.GetEnumerator();
+        while (iterator.MoveNext())
         {
-            RoomLoadingData loading = mDictLoadingRoomRes[keys[i]];
+            RoomLoadingData loading = iterator.Current.Value;
             loading.Update_logic();
+            bool bflag_HadStart = false;
             switch (loading.state)
             {
                 case E_RoomLoadingDataState.Ready:
                     loading.StartLoad();
+                    bflag_HadStart = true;
                     break;
                 case E_RoomLoadingDataState.Loading:
                     break;
                 case E_RoomLoadingDataState.Faild:
                     {
                         //先移除队列
-                        mDictLoadingRoomRes.Remove(keys[i]);
+                        tempRemoveLoading.Add(iterator.Current.Key);
                         Debug.Log("[AxiRoomManager]Faild RoomID=>" + loading.RoomID);
                         loading.Release();
                     }
@@ -269,7 +276,7 @@ public static class AxiRoomManager
                 case E_RoomLoadingDataState.Success:
                     {
                         //先移除队列
-                        mDictLoadingRoomRes.Remove(keys[i]);
+                        tempRemoveLoading.Add(iterator.Current.Key);
                         //如果不需要
                         if (!NeedLoadRooms.Contains(loading.RoomID))
                         {
@@ -282,13 +289,43 @@ public static class AxiRoomManager
                         }
                         else//保留加载的结果
                         {
-                            mDicLoadedRoomRes[loading.RoomID] = (GameObject)loading.GetLoaded();
+                            mDicLoadedRoomRes[loading.RoomID] = new RoomLoadedData(loading.RoomID, (GameObject)loading.GetLoaded());
                             Debug.Log("[AxiRoomManager]预加载完毕RoomID=>" + loading.RoomID);
                         }
                         loading.Release();
                     }
                     break;
             }
+            if (bflag_HadStart)
+                break;
+        }
+        iterator.Dispose();
+        for (int i = 0; i < tempRemoveLoading.Count; i++)
+        {
+            mDictLoadingRoomRes.Remove(tempRemoveLoading[i]);
+        }
+
+        //释放已经加载的，不再需要的Room
+        tempRemoveLoaded.Clear();
+        var loadediterator = mDicLoadedRoomRes.GetEnumerator();
+        while (loadediterator.MoveNext())
+        {
+            RoomLoadedData loaded = loadediterator.Current.Value;
+            if (loaded.CheckCanRelease())
+                tempRemoveLoaded.Add(loaded.RoomId);
+        }
+        loadediterator.Dispose();
+
+        for (int i = 0; i < tempRemoveLoaded.Count; i++)
+        {
+            Debug.Log("[AxiRoomManager]释放RoomID=>" + tempRemoveLoaded[i]);
+            mDicLoadedRoomRes.Remove(tempRemoveLoaded[i]);
+        }
+
+        if (tempRemoveLoaded.Count > 0)
+        {
+            Debug.Log("[AxiRoomManager]SetClearDirty");
+            SetClearDirty();
         }
     }
 
@@ -307,36 +344,42 @@ public static class AxiRoomManager
             int roomid = mDicRoomId2RoomIds[CenterRoomID][i];
             if (!NeedLoadRooms.Contains(roomid))
                 NeedLoadRooms.Add(roomid);
-
+            /*
             //第二层预加载
             for (int j = 0; j < mDicRoomId2RoomIds[roomid].Count; j++)
             {
                 int subRoomid = mDicRoomId2RoomIds[roomid][j];
                 if (!NeedLoadRooms.Contains(subRoomid))
                     NeedLoadRooms.Add(subRoomid);
-            }
+            }*/
         }
 
         //检查新增的需要加载的Room
         foreach (var needloadroomid in NeedLoadRooms)
         {
             if (mDicLoadedRoomRes.ContainsKey(needloadroomid))
+            {
+                //标记为需要
+                mDicLoadedRoomRes[needloadroomid].SetNeed();
                 continue;
+            }
             if (mDictLoadingRoomRes.ContainsKey(needloadroomid))
                 continue;
             mDictLoadingRoomRes[needloadroomid] = new RoomLoadingData(needloadroomid);
         }
 
         //释放已经加载的，不再需要的Room
-        var keys = mDicLoadedRoomRes.Keys.ToArray();
-        for (int i = 0; i < keys.Length; i++)
+        //var keys = mDicLoadedRoomRes.Keys.ToArray();
+        //for (int i = 0; i < keys.Length; i++)
+        foreach (var loadedroom in mDicLoadedRoomRes)
         {
-            int roomid = keys[i];
+            int roomid = loadedroom.Key;
             if (!NeedLoadRooms.Contains(roomid))
             {
-                Debug.Log("[AxiRoomManager]释放RoomID=>" + roomid);
+                Debug.Log("[AxiRoomManager]标记未使用RoomID=>" + roomid);
                 //释放
-                mDicLoadedRoomRes.Remove(roomid);
+                //mDicLoadedRoomRes.Remove(roomid);
+                loadedroom.Value.SetUnneed();
             }
         }
     }
@@ -550,6 +593,48 @@ public static class AxiRoomManager
             RoomID = -1;
             state = E_RoomLoadingDataState.None;
             resourceRequest = null;
+        }
+    }
+
+    class RoomLoadedData
+    {
+        public bool Unneed { get; private set; }
+        public float UnneedTime { get; private set; }
+        public int RoomId { get; private set; }
+        public GameObject gobj { get; private set; }
+        public RoomLoadedData(int roomid, GameObject go)
+        {
+            RoomId = roomid;
+            gobj = go;
+            SetNeed();
+        }
+
+        public void SetUnneed()
+        {
+            Unneed = true;
+            UnneedTime = Time.time;
+        }
+
+        public void SetNeed()
+        {
+            if (Unneed == true)
+            {
+                Debug.Log("[AxiRoomManager]标记重新使用RoomID=>" + RoomId);
+            }
+            Unneed = false;
+            UnneedTime = 0f;
+        }
+
+        public bool CheckCanRelease()
+        {
+            if (Unneed && Time.time - UnneedTime > 10f)
+            {
+                gobj = null;
+                Unneed = false;
+                UnneedTime = -1;
+                return true;
+            }
+            return false;
         }
     }
 }
