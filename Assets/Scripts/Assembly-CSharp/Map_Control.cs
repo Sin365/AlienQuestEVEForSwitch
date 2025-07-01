@@ -78,7 +78,7 @@ public class Map_Control : MonoBehaviour
             Transform gobj = trans.GetChild(i);
             if (!gobj.name.Contains("MapPos_"))
                 continue;
-            string[] temp = gobj.name.Split("_");
+            string[] temp = gobj.name.Split('_');
             if (temp.Length != 3)
                 continue;
             int key = GetPosKey(Convert.ToInt32(temp[1]), Convert.ToInt32(temp[2]));
@@ -91,7 +91,7 @@ public class Map_Control : MonoBehaviour
                 Transform sub_gobj = gobj.transform.GetChild(j);
                 if (sub_gobj.name.Contains("MapBorder_"))
                 {
-                    string[] tempborder = sub_gobj.name.Split("_");
+                    string[] tempborder = sub_gobj.name.Split('_');
                     if (tempborder.Length != 3)
                         continue;
                     int keysub = GetPosKey(Convert.ToInt32(tempborder[1]), Convert.ToInt32(tempborder[2]));
@@ -100,7 +100,7 @@ public class Map_Control : MonoBehaviour
                 }
                 else if (sub_gobj.name.Contains("MapSaveFont_"))
                 {
-                    string[] tempborder = sub_gobj.name.Split("_");
+                    string[] tempborder = sub_gobj.name.Split('_');
                     if (tempborder.Length != 3)
                         continue;
                     int keysub = GetPosKey(Convert.ToInt32(tempborder[1]), Convert.ToInt32(tempborder[2]));
@@ -121,7 +121,7 @@ public class Map_Control : MonoBehaviour
             Transform gobj = trans.GetChild(i);
             if (!gobj.name.Contains("MiniMap_"))
                 continue;
-            string[] temp = gobj.name.Split("_");
+            string[] temp = gobj.name.Split('_');
             if (temp.Length != 3)
                 continue;
             int key = GetPosKey(Convert.ToInt32(temp[1]), Convert.ToInt32(temp[2]));
@@ -134,7 +134,7 @@ public class Map_Control : MonoBehaviour
                 Transform sub_gobj = gobj.transform.GetChild(j);
                 if (!sub_gobj.name.Contains("MiniMapBorder_"))
                     continue;
-                string[] tempborder = sub_gobj.name.Split("_");
+                string[] tempborder = sub_gobj.name.Split('_');
                 if (tempborder.Length != 3)
                     continue;
                 int keysub = GetPosKey(Convert.ToInt32(tempborder[1]), Convert.ToInt32(tempborder[2]));

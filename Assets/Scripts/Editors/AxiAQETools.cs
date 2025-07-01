@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class AxiAQETools : EditorWindow
 {
-    static Dictionary<int,List<int>> temp = new Dictionary<int,List<int>>();
+    static Dictionary<int, List<int>> temp = new Dictionary<int, List<int>>();
     [MenuItem("AxiAQETools/收集房间关联")]
     public static void GetAllRoomTarget()
     {
@@ -21,12 +21,12 @@ public class AxiAQETools : EditorWindow
             GetPrefabRoom(path);
         }
         string str = string.Empty;
-        foreach (var roomid in temp.Keys.ToList().OrderBy(w=>w))
+        foreach (var roomid in temp.Keys.ToList().OrderBy(w => w))
         {
             str += "\r\nRoomID:" + roomid + "=>";
             for (int i = 0; i < temp[roomid].Count; i++)
             {
-                if(i > 0)
+                if (i > 0)
                     str += ",";
                 str += temp[roomid][i];
             }
@@ -94,6 +94,10 @@ public class AxiAQETools : EditorWindow
             Debug.Log("SetAudioPrefab=>" + path);
             GetAudioPrefab(path);
         }
+#if UNITY_2019_1_OR_NEWER
+#else
+        UnityEditor.AssetDatabase.SaveAssets();
+#endif
     }
     static void GetAudioPrefab(string path)
     {
@@ -104,7 +108,10 @@ public class AxiAQETools : EditorWindow
 #endif
         LoopPrefabNodeAudio(path, prefab.gameObject, 0);
         UnityEditor.EditorUtility.SetDirty(prefab);
+#if UNITY_2019_1_OR_NEWER
         UnityEditor.AssetDatabase.SaveAssetIfDirty(prefab);
+#else
+#endif
     }
     static void LoopPrefabNodeAudio(string rootPath, GameObject trans, int depth)
     {
@@ -126,7 +133,7 @@ public class AxiAQETools : EditorWindow
                 if (audio != null)
                 {
                     if (audio.rolloffMode == AudioRolloffMode.Custom)
-                    { 
+                    {
                         Debug.Log("SetAudioPrefab=> SetLinear =>" + rootPath);
                         audio.rolloffMode = AudioRolloffMode.Linear;
                     }
