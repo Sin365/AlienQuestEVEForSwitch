@@ -170,7 +170,11 @@ public class Credits_Control : global::UnityEngine.MonoBehaviour
 				}
 			}
 		}
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Escape))
+		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Escape)
+			||
+			//Start键退出制作人员表，不然非PC都无法退出
+            global::UnityEngine.Input.GetButtonDown("Start")
+			)
 		{
 			global::UnityEngine.GameObject.Find("UI_SoundList").SendMessage("Sound_DeviceOn");
 			Set_FadeOut("Title");
