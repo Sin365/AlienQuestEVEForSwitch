@@ -445,6 +445,8 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     private void Awake()
     {
         instance = this;
+        //‘§º”‘ÿ“Ù∆µ
+        AxiSoundPool.PreLoadAudio();
         sm_StageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
         MC = global::UnityEngine.GameObject.Find("Menu_Map").GetComponent<Map_Control>();
         rect_MC = MC.GetComponent<global::UnityEngine.RectTransform>();

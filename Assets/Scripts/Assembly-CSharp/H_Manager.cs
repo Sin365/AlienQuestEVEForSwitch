@@ -8,7 +8,7 @@ public class H_Manager : global::UnityEngine.MonoBehaviour
 
 	private global::UnityEngine.GameObject GameOver_Now;
 
-	public global::UnityEngine.GameObject Make_H(int Slot_num, int H_num, int isFlip)
+    public global::UnityEngine.GameObject Make_H(int Slot_num, int H_num, int isFlip)
 	{
 		if (H_num < 0 || H_num >= H_Play.Length)
 		{

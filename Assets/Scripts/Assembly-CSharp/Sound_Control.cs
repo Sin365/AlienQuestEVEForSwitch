@@ -1,3 +1,5 @@
+using UnityEditor;
+
 public class Sound_Control : global::UnityEngine.MonoBehaviour
 {
 	//public global::UnityEngine.GameObject Sound_Magic_1;
@@ -120,67 +122,66 @@ public class Sound_Control : global::UnityEngine.MonoBehaviour
 
 	//public global::UnityEngine.GameObject[] s_List;
 
-	string Sound_Magic_1 = "prefabs/sound/Sound_Magic1";
-	string Sound_Magic_2 = "prefabs/sound/Sound_Magic2";
-	string Sound_Magic_3_Explo_1 = "prefabs/sound/Sound_Magic3_Explo_1";
-	string Sound_Magic_3_Explo_2 = "prefabs/sound/Sound_Magic3_Explo_2";
-	string Sound_Magic_3_Explo_3 = "prefabs/sound/Sound_Magic3_Explo_3";
-	string Sound_Hit_1 = "prefabs/sound/Sound_Hit_1";
-	string Sound_Hit_2 = "prefabs/sound/Sound_Hit_2";
-	string Sound_Hit_3 = "prefabs/sound/Sound_Hit_3";
-	string Sound_Hit_4 = "prefabs/sound/Sound_Hit_4";
-	string Sound_Hit_5 = "prefabs/sound/Sound_Hit_5_Punch 02";
-	string Sound_Hit_6 = "prefabs/sound/Sound_Hit_6_Punch 02";
-	string Sound_Hit_11 = "prefabs/sound/Sound_Hit_11_Sword";
-	string Sound_Hit_12 = "prefabs/sound/Sound_Hit_12_Drum";
-	string Sound_Hit_Explo = "prefabs/sound/Sound_MonExplo";
-	string Sound_Footstep_Mon_1 = "prefabs/sound/Footstep_Mon_1";
-	string Sound_Footstep_Mon_2 = "prefabs/sound/Footstep_Mon_2";
-	string Sound_MonAtk_1 = "prefabs/sound/Sound_MonWhoosh_1";
-	string Sound_MonAtk_2 = "prefabs/sound/Sound_MonWhoosh_2";
-	string Sound_MonAtk_3 = "prefabs/sound/Sound_MonWhoosh_3";
-	string Sound_MonAtk_4 = "prefabs/sound/Sound_MonWhoosh_4";
-	string Sound_MonAtk_5 = "prefabs/sound/Sound_MonWhoosh_5";
-	string Sound_MonAtk_6 = "prefabs/sound/Sound_MonWhoosh_6";
-	string Sound_MonAtk_7 = "prefabs/sound/Sound_MonWhoosh_7";
-	string Sound_Elec = "prefabs/sound/Sound_Elec";
-	string Sound_Plasma = "prefabs/sound/Sound_Plasma";
-	string Mon_10_Growling_1 = "prefabs/sound/mon/Sound_M10_1";
-	string Mon_10_Growling_2 = "prefabs/sound/mon/Sound_M10_2";
-	string Mon_10_Growling_3 = "prefabs/sound/mon/Sound_M10_3";
-	string Mon_10_Growling_4 = "prefabs/sound/mon/Sound_M10_4";
-	string Alien_Growling_1 = "prefabs/sound/mon/Sound_Alien_Growl_1";
-	string Alien_Growling_2 = "prefabs/sound/mon/Sound_Alien_Growl_2";
-	string Alien_Growling_3 = "prefabs/sound/mon/Sound_Alien_Growl_3";
-	string Alien_Growling_4 = "prefabs/sound/mon/Sound_Alien_Growl_4";
-	string Alien_Growling_5 = "prefabs/sound/mon/Sound_Alien_Growl_5";
-	string Alien_Dash_1 = "prefabs/sound/mon/Sound_Alien_Dash_1";
-	string Alien_Dash_2 = "prefabs/sound/mon/Sound_Alien_Dash_2";
-	string Alien_Dash_3 = "prefabs/sound/mon/Sound_Alien_Dash_3";
-	string Alien_Dash_4 = "prefabs/sound/mon/Sound_Alien_Dash_4";
-	string Alien_Dmg_1 = "prefabs/sound/mon/Sound_Alien_Dmg_1";
-	string Alien_Dmg_2 = "prefabs/sound/mon/Sound_Alien_Dmg_2";
-	string Alien_Death_1 = "prefabs/sound/mon/Sound_Alien_Scream_1";
-	string Alien_Death_2 = "prefabs/sound/mon/Sound_Alien_Scream_2";
-	string Alien_Death_3 = "prefabs/sound/mon/Sound_Alien_Scream_3";
-	string Alien_Death_4 = "prefabs/sound/mon/Sound_Alien_Scream_4";
-	string Alien_Death_5 = "prefabs/sound/mon/Sound_Alien_Scream_5";
-	string Mon_8_Dmg = "prefabs/sound/mon/Sound_M8_D";
-	string Mon_7_Atk = "prefabs/sound/mon/Sound_M7_Atk";
-	string Mon_7_Dmg = "prefabs/sound/mon/Sound_M7_D";
-	string Mon_6_Dmg = "prefabs/sound/mon/Sound_M5_D";
-	string Mon_5_Dmg = "prefabs/sound/mon/Sound_M5_D";
-	string Mon_4_Dmg = "prefabs/sound/mon/Sound_M4_D";
-	string Mon_3_Dmg = "prefabs/sound/mon/Sound_M3_D";
-	string Mon_2_Dmg = "prefabs/sound/mon/Sound_M2_D";
-	string Mon_1_Dmg = "prefabs/sound/mon/Sound_M1_D";
-	string Mob_Dmg = "prefabs/sound/mon/Sound_Mob_D";
-	string Mon_10_Atk = "prefabs/sound/mon/Sound_M10_Atk1";
-	string Mon_10_Dmg1 = "prefabs/sound/mon/Sound_M10_D1";
-	string Mon_10_Dmg2 = "prefabs/sound/mon/Sound_M10_D2";
-	string Mon_10_Dmg3 = "prefabs/sound/mon/Sound_M10_Death";
-	string[] s_List = new string[2] { "prefabs/sound/Sound_MotherFire", "prefabs/sound/bg/Sound_HiddenPassage" };
-
+	public static string Sound_Magic_1 = "prefabs/sound/Sound_Magic1";
+	public static string Sound_Magic_2 = "prefabs/sound/Sound_Magic2";
+	public static string Sound_Magic_3_Explo_1 = "prefabs/sound/Sound_Magic3_Explo_1";
+	public static string Sound_Magic_3_Explo_2 = "prefabs/sound/Sound_Magic3_Explo_2";
+	public static string Sound_Magic_3_Explo_3 = "prefabs/sound/Sound_Magic3_Explo_3";
+	public static string Sound_Hit_1 = "prefabs/sound/Sound_Hit_1";
+	public static string Sound_Hit_2 = "prefabs/sound/Sound_Hit_2";
+	public static string Sound_Hit_3 = "prefabs/sound/Sound_Hit_3";
+	public static string Sound_Hit_4 = "prefabs/sound/Sound_Hit_4";
+	public static string Sound_Hit_5 = "prefabs/sound/Sound_Hit_5_Punch 02";
+	public static string Sound_Hit_6 = "prefabs/sound/Sound_Hit_6_Punch 02";
+	public static string Sound_Hit_11 = "prefabs/sound/Sound_Hit_11_Sword";
+	public static string Sound_Hit_12 = "prefabs/sound/Sound_Hit_12_Drum";
+	public static string Sound_Hit_Explo = "prefabs/sound/Sound_MonExplo";
+	public static string Sound_Footstep_Mon_1 = "prefabs/sound/Footstep_Mon_1";
+	public static string Sound_Footstep_Mon_2 = "prefabs/sound/Footstep_Mon_2";
+	public static string Sound_MonAtk_1 = "prefabs/sound/Sound_MonWhoosh_1";
+	public static string Sound_MonAtk_2 = "prefabs/sound/Sound_MonWhoosh_2";
+	public static string Sound_MonAtk_3 = "prefabs/sound/Sound_MonWhoosh_3";
+	public static string Sound_MonAtk_4 = "prefabs/sound/Sound_MonWhoosh_4";
+	public static string Sound_MonAtk_5 = "prefabs/sound/Sound_MonWhoosh_5";
+	public static string Sound_MonAtk_6 = "prefabs/sound/Sound_MonWhoosh_6";
+	public static string Sound_MonAtk_7 = "prefabs/sound/Sound_MonWhoosh_7";
+	public static string Sound_Elec = "prefabs/sound/Sound_Elec";
+	public static string Sound_Plasma = "prefabs/sound/Sound_Plasma";
+	public static string Mon_10_Growling_1 = "prefabs/sound/mon/Sound_M10_1";
+	public static string Mon_10_Growling_2 = "prefabs/sound/mon/Sound_M10_2";
+	public static string Mon_10_Growling_3 = "prefabs/sound/mon/Sound_M10_3";
+	public static string Mon_10_Growling_4 = "prefabs/sound/mon/Sound_M10_4";
+	public static string Alien_Growling_1 = "prefabs/sound/mon/Sound_Alien_Growl_1";
+	public static string Alien_Growling_2 = "prefabs/sound/mon/Sound_Alien_Growl_2";
+	public static string Alien_Growling_3 = "prefabs/sound/mon/Sound_Alien_Growl_3";
+	public static string Alien_Growling_4 = "prefabs/sound/mon/Sound_Alien_Growl_4";
+	public static string Alien_Growling_5 = "prefabs/sound/mon/Sound_Alien_Growl_5";
+	public static string Alien_Dash_1 = "prefabs/sound/mon/Sound_Alien_Dash_1";
+	public static string Alien_Dash_2 = "prefabs/sound/mon/Sound_Alien_Dash_2";
+	public static string Alien_Dash_3 = "prefabs/sound/mon/Sound_Alien_Dash_3";
+	public static string Alien_Dash_4 = "prefabs/sound/mon/Sound_Alien_Dash_4";
+	public static string Alien_Dmg_1 = "prefabs/sound/mon/Sound_Alien_Dmg_1";
+	public static string Alien_Dmg_2 = "prefabs/sound/mon/Sound_Alien_Dmg_2";
+	public static string Alien_Death_1 = "prefabs/sound/mon/Sound_Alien_Scream_1";
+	public static string Alien_Death_2 = "prefabs/sound/mon/Sound_Alien_Scream_2";
+	public static string Alien_Death_3 = "prefabs/sound/mon/Sound_Alien_Scream_3";
+	public static string Alien_Death_4 = "prefabs/sound/mon/Sound_Alien_Scream_4";
+	public static string Alien_Death_5 = "prefabs/sound/mon/Sound_Alien_Scream_5";
+	public static string Mon_8_Dmg = "prefabs/sound/mon/Sound_M8_D";
+	public static string Mon_7_Atk = "prefabs/sound/mon/Sound_M7_Atk";
+	public static string Mon_7_Dmg = "prefabs/sound/mon/Sound_M7_D";
+	public static string Mon_6_Dmg = "prefabs/sound/mon/Sound_M5_D";
+	public static string Mon_5_Dmg = "prefabs/sound/mon/Sound_M5_D";
+	public static string Mon_4_Dmg = "prefabs/sound/mon/Sound_M4_D";
+	public static string Mon_3_Dmg = "prefabs/sound/mon/Sound_M3_D";
+	public static string Mon_2_Dmg = "prefabs/sound/mon/Sound_M2_D";
+	public static string Mon_1_Dmg = "prefabs/sound/mon/Sound_M1_D";
+	public static string Mob_Dmg = "prefabs/sound/mon/Sound_Mob_D";
+	public static string Mon_10_Atk = "prefabs/sound/mon/Sound_M10_Atk1";
+	public static string Mon_10_Dmg1 = "prefabs/sound/mon/Sound_M10_D1";
+	public static string Mon_10_Dmg2 = "prefabs/sound/mon/Sound_M10_D2";
+	public static string Mon_10_Dmg3 = "prefabs/sound/mon/Sound_M10_Death";
+    public static string[] s_List = new string[2] { "prefabs/sound/Sound_MotherFire", "prefabs/sound/bg/Sound_HiddenPassage" };
 
 	private float hit_Timer;
 
@@ -569,7 +570,7 @@ public class Sound_Control : global::UnityEngine.MonoBehaviour
 		{
 			hit_Timer = 0.1f;
 			AxiSoundPool.AddSoundForPosRot(Sound_Hit_1, pos, base.transform.rotation);
-		}
+        }
 	}
 
 	public void Mon_Hit_2(global::UnityEngine.Vector3 pos)
