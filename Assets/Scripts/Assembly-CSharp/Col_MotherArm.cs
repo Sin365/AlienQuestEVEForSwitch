@@ -1,3 +1,5 @@
+using System.Xml.Linq;
+
 public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 {
 	public AI_MotherArm MotherArm;
@@ -20,12 +22,14 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 	}
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
-	{
-		if (!(MotherArm != null) || GM.Paused || GM.onGatePass || GM.onGameClear || MotherArm.isDeath)
+    {
+		string col_name = col.name;
+
+        if (!(MotherArm != null) || GM.Paused || GM.onGatePass || GM.onGameClear || MotherArm.isDeath)
 		{
 			return;
 		}
-		if (!GM.onShield && col.name == "Ani" && !(global::UnityEngine.GameObject.Find("Border_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0.05f) && !GM.GameOver && MotherArm.PC_Col_Delay <= 0f && MotherArm.PC_Body_Delay <= 0f)
+		if (!GM.onShield && con_name == "Ani" && !(global::UnityEngine.GameObject.Find("Border_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0.05f) && !GM.GameOver && MotherArm.PC_Col_Delay <= 0f && MotherArm.PC_Body_Delay <= 0f)
 		{
 			MotherArm.PC_Col_Delay = 1f;
 			MotherArm.PC_Body_Delay = 1f;
@@ -84,7 +88,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 		}
 		else if (col.CompareTag("Magic_Fire"))
 		{
-			switch (col.name.Substring(0, 11))
+			switch (con_name.Substring(0, 11))
 			{
 			case "MagicFire_5":
 				if (MotherArm.Gravity_Delay <= 0f)
@@ -143,7 +147,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 				MotherArm.onSlow = true;
 				MotherArm.Slow_Timer = 3f;
 			}
-			if (col.name == "Col_Attack_0_1" || col.name == "Col_Attack_1_1" || col.name == "Col_Attack_2_1" || col.name == "Col_Attack_4_1" || col.name == "Col_Attack_5_1")
+			if (con_name == "Col_Attack_0_1" || con_name == "Col_Attack_1_1" || con_name == "Col_Attack_2_1" || con_name == "Col_Attack_4_1" || con_name == "Col_Attack_5_1")
 			{
 				if (!MotherArm.Hit_Atk_1)
 				{
@@ -154,7 +158,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 					MotherArm.Damage_Hit(false, 0, 1f);
 				}
 			}
-			else if (col.name == "Col_Attack_0_2" || col.name == "Col_Attack_1_2" || col.name == "Col_Attack_2_2" || col.name == "Col_Attack_4_2" || col.name == "Col_Attack_5_2")
+			else if (con_name == "Col_Attack_0_2" || con_name == "Col_Attack_1_2" || con_name == "Col_Attack_2_2" || con_name == "Col_Attack_4_2" || con_name == "Col_Attack_5_2")
 			{
 				if (!MotherArm.Hit_Atk_2)
 				{
@@ -165,7 +169,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 					MotherArm.Damage_Hit(false, 0, 1f);
 				}
 			}
-			else if (col.name == "Col_Attack_3" || col.name == "Col_Attack_5_3")
+			else if (con_name == "Col_Attack_3" || con_name == "Col_Attack_5_3")
 			{
 				if (!MotherArm.Hit_Atk_3)
 				{
@@ -178,7 +182,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 					MotherArm.Damage_Hit(false, 0, 1.2f);
 				}
 			}
-			else if (col.name == "Col_Attack_4" || col.name == "Col_Attack_5_4")
+			else if (con_name == "Col_Attack_4" || con_name == "Col_Attack_5_4")
 			{
 				if (!MotherArm.Hit_Atk_4)
 				{
@@ -191,7 +195,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 					MotherArm.Damage_Hit(false, 0, 1.5f);
 				}
 			}
-			else if (col.name == "Col_Spin")
+			else if (con_name == "Col_Spin")
 			{
 				if (MotherArm.Hit_Delay <= 0f)
 				{
@@ -201,7 +205,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 					MotherArm.Damage_Hit(false, 0, 1.2f);
 				}
 			}
-			else if (col.name == "Col_Rolling")
+			else if (con_name == "Col_Rolling")
 			{
 				if (MotherArm.Hit_Delay <= 0f)
 				{

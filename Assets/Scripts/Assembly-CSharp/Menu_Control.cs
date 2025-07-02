@@ -1352,91 +1352,92 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
         {
             global::UnityEngine.Ray ray = camera_UI_Camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
             global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
+            string rayIntersection_collider = rayIntersection.collider.name;
             if (rayIntersection.collider != null)
             {
-                if (rayIntersection.collider.name == "Btn_Menu_0" && Menu_State != 0)
+                if (rayIntersection_collider == "Btn_Menu_0" && Menu_State != 0)
                 {
                     Menu_State = 0;
                     Change_Menu();
                 }
-                else if (rayIntersection.collider.name == "Btn_Menu_1" && Menu_State != 1)
+                else if (rayIntersection_collider == "Btn_Menu_1" && Menu_State != 1)
                 {
                     Menu_State = 1;
                     Change_Menu();
                 }
-                else if (rayIntersection.collider.name == "Btn_Menu_2" && Menu_State != 2)
+                else if (rayIntersection_collider == "Btn_Menu_2" && Menu_State != 2)
                 {
                     Menu_State = 2;
                     Change_Menu();
                 }
-                else if (rayIntersection.collider.name == "Btn_Menu_3" && Menu_State != 3)
+                else if (rayIntersection_collider == "Btn_Menu_3" && Menu_State != 3)
                 {
                     Menu_State = 3;
                     Change_Menu();
                 }
-                else if (rayIntersection.collider.name == "Btn_Menu_4" && Menu_State != 4)
+                else if (rayIntersection_collider == "Btn_Menu_4" && Menu_State != 4)
                 {
                     Menu_State = 4;
                     Change_Menu();
                 }
                 else if (Menu_State == 1)
                 {
-                    if (rayIntersection.collider.name == "pos_B1" && GM.onWeapon_1 && GM.Weapon_Num != 1)
+                    if (rayIntersection_collider == "pos_B1" && GM.onWeapon_1 && GM.Weapon_Num != 1)
                     {
                         Select_Weapon(1);
                     }
-                    else if (rayIntersection.collider.name == "pos_B2" && GM.onWeapon_2 && GM.Weapon_Num != 2)
+                    else if (rayIntersection_collider == "pos_B2" && GM.onWeapon_2 && GM.Weapon_Num != 2)
                     {
                         Select_Weapon(2);
                     }
-                    else if (rayIntersection.collider.name == "pos_B3" && GM.onWeapon_3 && GM.Weapon_Num != 3)
+                    else if (rayIntersection_collider == "pos_B3" && GM.onWeapon_3 && GM.Weapon_Num != 3)
                     {
                         Select_Weapon(3);
                     }
-                    else if (rayIntersection.collider.name == "pos_B4" && GM.onWeapon_4 && GM.Weapon_Num != 4)
+                    else if (rayIntersection_collider == "pos_B4" && GM.onWeapon_4 && GM.Weapon_Num != 4)
                     {
                         Select_Weapon(4);
                     }
-                    else if (rayIntersection.collider.name == "pos_B5" && GM.onWeapon_5 && GM.Weapon_Num != 5)
+                    else if (rayIntersection_collider == "pos_B5" && GM.onWeapon_5 && GM.Weapon_Num != 5)
                     {
                         Select_Weapon(5);
                     }
-                    else if (rayIntersection.collider.name == "pos_B6" && GM.Skill_Num != 1)
+                    else if (rayIntersection_collider == "pos_B6" && GM.Skill_Num != 1)
                     {
                         Select_Skill(1);
                     }
-                    else if (rayIntersection.collider.name == "pos_B7" && GM.onSkill_2 && GM.Skill_Num != 2)
+                    else if (rayIntersection_collider == "pos_B7" && GM.onSkill_2 && GM.Skill_Num != 2)
                     {
                         Select_Skill(2);
                     }
-                    else if (rayIntersection.collider.name == "pos_B8" && GM.onSkill_3 && GM.Skill_Num != 3)
+                    else if (rayIntersection_collider == "pos_B8" && GM.onSkill_3 && GM.Skill_Num != 3)
                     {
                         Select_Skill(3);
                     }
-                    else if (rayIntersection.collider.name == "pos_B9" && GM.onSkill_4 && GM.Skill_Num != 4)
+                    else if (rayIntersection_collider == "pos_B9" && GM.onSkill_4 && GM.Skill_Num != 4)
                     {
                         Select_Skill(4);
                     }
-                    else if (rayIntersection.collider.name == "pos_B10" && GM.onSkill_5 && GM.Skill_Num != 5)
+                    else if (rayIntersection_collider == "pos_B10" && GM.onSkill_5 && GM.Skill_Num != 5)
                     {
                         Select_Skill(5);
                     }
-                    else if (rayIntersection.collider.name == "Stat_Add1" && GM.StatPoints > 0)
+                    else if (rayIntersection_collider == "Stat_Add1" && GM.StatPoints > 0)
                     {
                         flag = true;
                         Add_Stat_1();
                     }
-                    else if (rayIntersection.collider.name == "Stat_Add2" && GM.StatPoints > 0)
+                    else if (rayIntersection_collider == "Stat_Add2" && GM.StatPoints > 0)
                     {
                         flag = true;
                         Add_Stat_2();
                     }
-                    else if (rayIntersection.collider.name == "Stat_Add3" && GM.StatPoints > 0)
+                    else if (rayIntersection_collider == "Stat_Add3" && GM.StatPoints > 0)
                     {
                         flag = true;
                         Add_Stat_3();
                     }
-                    else if (rayIntersection.collider.name == "Stat_Add4" && GM.StatPoints > 0)
+                    else if (rayIntersection_collider == "Stat_Add4" && GM.StatPoints > 0)
                     {
                         flag = true;
                         Add_Stat_4();
@@ -1444,141 +1445,141 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
                 }
                 else if (Menu_State == 2)
                 {
-                    if (rayIntersection.collider.name == "pos_Opt1")
+                    if (rayIntersection_collider == "pos_Opt1")
                     {
                         float posMouse = (camera_UI_Camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_SoundBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
                         Set_Sound(0, posMouse);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt2")
+                    else if (rayIntersection_collider == "pos_Opt2")
                     {
                         float posMouse2 = (camera_UI_Camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_MusicBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
                         Set_Music(0, posMouse2);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt3")
+                    else if (rayIntersection_collider == "pos_Opt3")
                     {
                         Select_BGM(0);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt4")
+                    else if (rayIntersection_collider == "pos_Opt4")
                     {
                         Select_BGM(1);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt5")
+                    else if (rayIntersection_collider == "pos_Opt5")
                     {
                         Select_BGM(2);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt6")
+                    else if (rayIntersection_collider == "pos_Opt6")
                     {
                         Select_BGM(3);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt7")
+                    else if (rayIntersection_collider == "pos_Opt7")
                     {
                         Select_BGM(4);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt8")
+                    else if (rayIntersection_collider == "pos_Opt8")
                     {
                         Select_BGM(5);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt9")
+                    else if (rayIntersection_collider == "pos_Opt9")
                     {
                         Select_BGM(6);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt10")
+                    else if (rayIntersection_collider == "pos_Opt10")
                     {
                         Select_WindowMode(1);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt11")
+                    else if (rayIntersection_collider == "pos_Opt11")
                     {
                         Select_WindowMode(2);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt12")
+                    else if (rayIntersection_collider == "pos_Opt12")
                     {
                         Select_Censorship(1);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt13")
+                    else if (rayIntersection_collider == "pos_Opt13")
                     {
                         Select_Censorship(2);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt14")
+                    else if (rayIntersection_collider == "pos_Opt14")
                     {
                         Select_Hscene(1);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt15")
+                    else if (rayIntersection_collider == "pos_Opt15")
                     {
                         Select_Hscene(2);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt16")
+                    else if (rayIntersection_collider == "pos_Opt16")
                     {
                         Select_HealthBar(1);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt17")
+                    else if (rayIntersection_collider == "pos_Opt17")
                     {
                         Select_HealthBar(2);
                     }
-                    else if (rayIntersection.collider.name == "pos_Opt18")
+                    else if (rayIntersection_collider == "pos_Opt18")
                     {
                         Default_Option();
                     }
                 }
                 else if (Menu_State == 3)
                 {
-                    if (rayIntersection.collider.name == "pos_Kcfg1")
+                    if (rayIntersection_collider == "pos_Kcfg1")
                     {
                         On_KeyBox(1);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg2")
+                    else if (rayIntersection_collider == "pos_Kcfg2")
                     {
                         On_KeyBox(2);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg3")
+                    else if (rayIntersection_collider == "pos_Kcfg3")
                     {
                         On_KeyBox(3);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg4")
+                    else if (rayIntersection_collider == "pos_Kcfg4")
                     {
                         On_KeyBox(4);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg5")
+                    else if (rayIntersection_collider == "pos_Kcfg5")
                     {
                         On_KeyBox(5);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg6")
+                    else if (rayIntersection_collider == "pos_Kcfg6")
                     {
                         On_KeyBox(6);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg7")
+                    else if (rayIntersection_collider == "pos_Kcfg7")
                     {
                         On_KeyBox(7);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg8")
+                    else if (rayIntersection_collider == "pos_Kcfg8")
                     {
                         On_KeyBox(8);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg9")
+                    else if (rayIntersection_collider == "pos_Kcfg9")
                     {
                         On_KeyBox(9);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg10")
+                    else if (rayIntersection_collider == "pos_Kcfg10")
                     {
                         On_KeyBox(10);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg11")
+                    else if (rayIntersection_collider == "pos_Kcfg11")
                     {
                         On_KeyBox(11);
                     }
-                    else if (rayIntersection.collider.name == "pos_Kcfg12")
+                    else if (rayIntersection_collider == "pos_Kcfg12")
                     {
                         Default_KeyConfig();
                     }
                 }
                 else if (Menu_State == 4)
                 {
-                    if (rayIntersection.collider.name == "pos_Quit1")
+                    if (rayIntersection_collider == "pos_Quit1")
                     {
                         Sound_List.SendMessage("Sound_DeviceOn");
                         Sound_List.SendMessage("Sound_Btn");
                         GM.Set_FadeOut("Title");
                     }
-                    else if (rayIntersection.collider.name == "pos_Quit2")
+                    else if (rayIntersection_collider == "pos_Quit2")
                     {
                         Sound_MoveFalse = 1;
                         Off_Menu();
@@ -1590,19 +1591,20 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
         {
             global::UnityEngine.Ray ray2 = camera_UI_Camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
             global::UnityEngine.RaycastHit2D rayIntersection2 = global::UnityEngine.Physics2D.GetRayIntersection(ray2, float.PositiveInfinity);
+            string rayIntersection2_collider = rayIntersection2.collider.name;
             if (rayIntersection2.collider != null)
             {
                 if (Menu_State == 1)
                 {
-                    if (rayIntersection2.collider.name.Substring(0, 5) == "pos_B")
+                    if (rayIntersection2_collider.Substring(0, 5) == "pos_B")
                     {
-                        int num = int.Parse(rayIntersection2.collider.name.Substring(5, rayIntersection2.collider.name.Length - 5));
+                        int num = int.Parse(rayIntersection2_collider.Substring(5, rayIntersection2_collider.Length - 5));
                         if (num != Prev_Index && Check_Inven(num))
                         {
                             Sel_Index = num;
                         }
                     }
-                    else if (rayIntersection2.collider.name.Substring(0, 8) == "Stat_Add" && GM.StatPoints > 0)
+                    else if (rayIntersection2_collider.Substring(0, 8) == "Stat_Add" && GM.StatPoints > 0)
                     {
                         if (global::UnityEngine.Input.GetMouseButton(0))
                         {
@@ -1611,19 +1613,19 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
                             if (StatPush_Timer > 0.6f)
                             {
                                 StatPush_Timer = 0.5f;
-                                if (rayIntersection2.collider.name == "Stat_Add1" && GM.StatPoints > 0)
+                                if (rayIntersection2_collider == "Stat_Add1" && GM.StatPoints > 0)
                                 {
                                     Add_Stat_1();
                                 }
-                                else if (rayIntersection2.collider.name == "Stat_Add2" && GM.StatPoints > 0)
+                                else if (rayIntersection2_collider == "Stat_Add2" && GM.StatPoints > 0)
                                 {
                                     Add_Stat_2();
                                 }
-                                else if (rayIntersection2.collider.name == "Stat_Add3" && GM.StatPoints > 0)
+                                else if (rayIntersection2_collider == "Stat_Add3" && GM.StatPoints > 0)
                                 {
                                     Add_Stat_3();
                                 }
-                                else if (rayIntersection2.collider.name == "Stat_Add4" && GM.StatPoints > 0)
+                                else if (rayIntersection2_collider == "Stat_Add4" && GM.StatPoints > 0)
                                 {
                                     Add_Stat_4();
                                 }
@@ -1633,12 +1635,12 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
                         {
                             StatPush_Timer = 0f;
                         }
-                        Sel_Index = int.Parse(rayIntersection2.collider.name.Substring(8, 1)) * -1;
+                        Sel_Index = int.Parse(rayIntersection2_collider.Substring(8, 1)) * -1;
                     }
                 }
                 else if (Menu_State == 2)
                 {
-                    if (global::UnityEngine.Input.GetMouseButton(0) && rayIntersection2.collider.name == "pos_Opt1")
+                    if (global::UnityEngine.Input.GetMouseButton(0) && rayIntersection2_collider == "pos_Opt1")
                     {
                         if (Sel_Index == 1)
                         {
@@ -1647,7 +1649,7 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
                         float posMouse3 = (camera_UI_Camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_SoundBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_SoundBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
                         Set_Sound(0, posMouse3);
                     }
-                    else if (global::UnityEngine.Input.GetMouseButton(0) && rayIntersection2.collider.name == "pos_Opt2")
+                    else if (global::UnityEngine.Input.GetMouseButton(0) && rayIntersection2_collider == "pos_Opt2")
                     {
                         if (Sel_Index == 1)
                         {
@@ -1656,9 +1658,9 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
                         float posMouse4 = (camera_UI_Camera.ScreenToWorldPoint(global::UnityEngine.Input.mousePosition).x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x) / (global::UnityEngine.GameObject.Find("pos_MusicBarMax").GetComponent<global::UnityEngine.RectTransform>().position.x - global::UnityEngine.GameObject.Find("pos_MusicBarMin").GetComponent<global::UnityEngine.RectTransform>().position.x);
                         Set_Music(0, posMouse4);
                     }
-                    else if (rayIntersection2.collider.name.Substring(0, 7) == "pos_Opt")
+                    else if (rayIntersection2_collider.Substring(0, 7) == "pos_Opt")
                     {
-                        int num2 = int.Parse(rayIntersection2.collider.name.Substring(7, rayIntersection2.collider.name.Length - 7));
+                        int num2 = int.Parse(rayIntersection2_collider.Substring(7, rayIntersection2_collider.Length - 7));
                         if (num2 != Sel_Index)
                         {
                             Sel_Index = num2;
@@ -1667,18 +1669,18 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
                 }
                 else if (Menu_State == 3)
                 {
-                    if (rayIntersection2.collider.name.Substring(0, 8) == "pos_Kcfg")
+                    if (rayIntersection2_collider.Substring(0, 8) == "pos_Kcfg")
                     {
-                        int num3 = int.Parse(rayIntersection2.collider.name.Substring(8, rayIntersection2.collider.name.Length - 8));
+                        int num3 = int.Parse(rayIntersection2_collider.Substring(8, rayIntersection2_collider.Length - 8));
                         if (num3 != Sel_Index)
                         {
                             Sel_Index = num3;
                         }
                     }
                 }
-                else if (Menu_State == 4 && rayIntersection2.collider.name.Substring(0, 8) == "pos_Quit")
+                else if (Menu_State == 4 && rayIntersection2_collider.Substring(0, 8) == "pos_Quit")
                 {
-                    int num4 = int.Parse(rayIntersection2.collider.name.Substring(8, 1));
+                    int num4 = int.Parse(rayIntersection2_collider.Substring(8, 1));
                     if (num4 != Sel_Index)
                     {
                         Sel_Index = num4;
