@@ -123,7 +123,7 @@ public class Mon_Index : global::UnityEngine.MonoBehaviour
 		{
 			if (Object_List[i].GetComponent<global::UnityEngine.SpriteRenderer>() != null)
 			{
-				if (Object_List[i].tag == "CensoredTag")
+				if (Object_List[i].CompareTag("CensoredTag"))
 				{
 					if (AxiPlayerPrefs.GetInt("Censorship") == 1 && isOnOff)
 					{

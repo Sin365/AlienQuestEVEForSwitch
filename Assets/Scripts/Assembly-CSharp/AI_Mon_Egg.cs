@@ -309,7 +309,7 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 		{
 			return;
 		}
-		if (col.tag == "Magic_Explo")
+		if (col.CompareTag("Magic_Explo"))
 		{
 			if (HP > 0 && col.gameObject != Bomb_Object[0] && col.gameObject != Bomb_Object[1])
 			{
@@ -329,7 +329,7 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 				SC.Mon_Hit_2(base.transform.position);
 			}
 		}
-		else if (col.tag == "Magic_Fire")
+		else if (col.CompareTag("Magic_Fire"))
 		{
 			switch (col.name.Substring(0, 11))
 			{
@@ -362,7 +362,7 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 		}
 		else
 		{
-			if (!(col.tag == "Col_PC_Atk"))
+			if (!(col.CompareTag("Col_PC_Atk")))
 			{
 				return;
 			}

@@ -30,7 +30,7 @@ public class Item_Blood_Absorb : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (!(Mon != null) || GM.Paused || GM.GameOver || !(col.tag == "Blood"))
+		if (!(Mon != null) || GM.Paused || GM.GameOver || !(col.CompareTag("Blood")))
 		{
 			return;
 		}

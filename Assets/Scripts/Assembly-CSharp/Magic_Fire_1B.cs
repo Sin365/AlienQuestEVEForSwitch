@@ -148,7 +148,7 @@ public class Magic_Fire_1B : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerExit2D(global::UnityEngine.Collider2D col)
 	{
-		if (!GM.Paused && col.tag == "Col_Camera")
+		if (!GM.Paused && col.CompareTag("Col_Camera"))
 		{
 			global::UnityEngine.Object.Destroy(base.gameObject);
 		}
@@ -156,11 +156,11 @@ public class Magic_Fire_1B : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (col.tag == "Col_Camera")
+		if (col.CompareTag("Col_Camera"))
 		{
 			onCam_Timer = 0.5f;
 		}
-		if (!GM.Paused && !onGround && (col.tag == "Ground" || col.tag == "Gate" || col.tag == "Breakable" || col.tag == "Mon_Shield"))
+		if (!GM.Paused && !onGround && (col.CompareTag("Ground") || col.CompareTag("Gate") || col.CompareTag("Breakable") || col.CompareTag("Mon_Shield")))
 		{
 			if (!onExplo)
 			{

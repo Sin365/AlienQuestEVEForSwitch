@@ -436,7 +436,7 @@ public class Item : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerEnter2D(global::UnityEngine.Collider2D col)
 	{
-		if (Item_Num > 0 && !GM.onGatePass && !GM.Paused && !GM.GameOver && !Impact && col.tag == "Player_Col")
+		if (Item_Num > 0 && !GM.onGatePass && !GM.Paused && !GM.GameOver && !Impact && col.CompareTag("Player_Col"))
 		{
 			Check_Col();
 		}
@@ -444,7 +444,7 @@ public class Item : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (Item_Num > 0 && !GM.onGatePass && !GM.Paused && !GM.GameOver && !Impact && col.tag == "Player_Col")
+		if (Item_Num > 0 && !GM.onGatePass && !GM.Paused && !GM.GameOver && !Impact && col.CompareTag("Player_Col"))
 		{
 			Stay_Timer += global::UnityEngine.Time.deltaTime;
 			if (Stay_Timer > 0.3f)

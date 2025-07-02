@@ -1119,7 +1119,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				GameManager.instance.sc_Sound_List.Player_Damage(42, false, Player.transform.position);
 			}
 		}
-		if (col.tag == "Magic_Explo" && !isInvincible)
+		if (col.CompareTag("Magic_Explo") && !isInvincible)
 		{
 			if (Mon_Num != 51 && HP > 0 && col.gameObject != Bomb_Object[0] && col.gameObject != Bomb_Object[1])
 			{
@@ -1140,7 +1140,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				PC_Col_Delay = 0.5f;
 			}
 		}
-		else if (col.tag == "Magic_Smog" && !isInvincible)
+		else if (col.CompareTag("Magic_Smog") && !isInvincible)
 		{
 			Poison_Smog_Timer = 0.1f;
 			Poison_Skill_Timer = 0.2f;
@@ -1153,7 +1153,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				}
 			}
 		}
-		else if (col.tag == "Magic_Shield")
+		else if (col.CompareTag("Magic_Shield"))
 		{
 			if (Mon_Num == 12 || Mon_Num == 19)
 			{
@@ -1182,7 +1182,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				}
 			}
 		}
-		else if (col.tag == "Magic_Fire")
+		else if (col.CompareTag("Magic_Fire"))
 		{
 			string text = col.name.Substring(0, 11);
 			if (text == "MagicFire_5")
@@ -1255,7 +1255,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				}
 			}
 		}
-		else if (col.tag == "Col_PC_Atk" && !isInvincible)
+		else if (col.CompareTag("Col_PC_Atk") && !isInvincible)
 		{
 			if (Mon_Num != 53)
 			{
@@ -1394,7 +1394,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				PC_Body_Delay = 0f;
 			}
 		}
-		else if (col.tag == "Col_PC_Atk" && isInvincible && Mon_Num == 55 && base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale == 0f)
+		else if (col.CompareTag("Col_PC_Atk") && isInvincible && Mon_Num == 55 && base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale == 0f)
 		{
 			if (PC_Col_Delay <= 0f)
 			{
@@ -1410,7 +1410,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				GameManager.instance.sc_Sound_List.Electric_Dmg(Player.transform.position);
 			}
 		}
-		else if (col.tag == "Trap_Fang" && !isInvincible && Trap_Fang_Timer <= 0f)
+		else if (col.CompareTag("Trap_Fang") && !isInvincible && Trap_Fang_Timer <= 0f)
 		{
 			int dmg = (int)((float)GM.HP_Max * 0.1f);
 			float num3 = 15f;
@@ -1427,7 +1427,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 			Trap_Fang_Timer = 1f;
 			SC.Mon_Hit_1(base.transform.position);
 		}
-		else if (col.tag == "Trap_Laser" && !isInvincible && Trap_Laser_Timer <= 0f)
+		else if (col.CompareTag("Trap_Laser") && !isInvincible && Trap_Laser_Timer <= 0f)
 		{
 			int dmg2 = (int)((float)HP_Max * 0.25f);
 			float num4 = 20f;

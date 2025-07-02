@@ -42,7 +42,7 @@ public class Event_General : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (!isDeath && col.tag == "Mon_Fire")
+		if (!isDeath && col.CompareTag("Mon_Fire"))
 		{
 			isDeath = true;
 			for (int i = 0; i < posExplo.Length; i++)

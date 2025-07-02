@@ -31,7 +31,7 @@ public class Trap_Fang_Col : global::UnityEngine.MonoBehaviour
 		{
 			return;
 		}
-		if (col.tag == "Magic_Shield")
+		if (col.CompareTag("Magic_Shield"))
 		{
 			GM.Break_Shield();
 		}

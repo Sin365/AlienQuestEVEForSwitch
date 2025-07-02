@@ -380,7 +380,7 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (col.tag == "Col_Camera")
+		if (col.CompareTag("Col_Camera"))
 		{
 			onCam_Timer = 0.5f;
 		}
@@ -411,12 +411,12 @@ public class Mon_Fire : global::UnityEngine.MonoBehaviour
 			}
 			Explo(false);
 		}
-		else if (col.tag == "Magic_Shield" || col.tag == "Ground" || col.tag == "Gate" || col.tag == "Breakable")
+		else if (col.CompareTag("Magic_Shield") || col.CompareTag("Ground") || col.CompareTag("Gate") || col.CompareTag("Breakable"))
 		{
 			onExplo = true;
 			Explo(true);
 		}
-		else if (col.tag == "Magic_Fire")
+		else if (col.CompareTag("Magic_Fire"))
 		{
 			string text = col.name.Substring(0, 11);
 			if (text == "MagicFire_5")

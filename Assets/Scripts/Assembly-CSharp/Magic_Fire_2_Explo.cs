@@ -111,7 +111,7 @@ public class Magic_Fire_2_Explo : global::UnityEngine.MonoBehaviour
 				GM.eg2d_Player.AddForce(global::UnityEngine.Vector3.up * 20f, global::UnityEngine.ForceMode2D.Impulse);
 			}
 		}
-		else if (col.tag == "Breakable")
+		else if (col.CompareTag("Breakable"))
 		{
 			col.gameObject.SendMessage("Break");
 		}

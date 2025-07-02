@@ -58,7 +58,7 @@ public class Tile_Lift_Bottom : global::UnityEngine.MonoBehaviour
 				}
 			}
 		}
-		else if (col.tag == "Mon" && col.GetComponent<global::UnityEngine.Rigidbody2D>() != null && col.transform.position.y < base.transform.position.y)
+		else if (col.CompareTag("Mon") && col.GetComponent<global::UnityEngine.Rigidbody2D>() != null && col.transform.position.y < base.transform.position.y)
 		{
 			if (col.transform.position.x > base.transform.position.x)
 			{

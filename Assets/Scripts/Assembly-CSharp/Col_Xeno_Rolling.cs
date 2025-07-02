@@ -74,7 +74,7 @@ public class Col_Xeno_Rolling : global::UnityEngine.MonoBehaviour
 			Dmg_Delay = 0.6f;
 			GM.Damage(Damage, DmgForce * (float)num, false, Mon_Num);
 		}
-		if (col.tag == "Col_PC_Atk" && col.name == "Col_Rolling" && global::UnityEngine.GameObject.Find("Border_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0.05f && Player_Rolling_Delay <= 0f)
+		if (col.CompareTag("Col_PC_Atk") && col.name == "Col_Rolling" && global::UnityEngine.GameObject.Find("Border_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0.05f && Player_Rolling_Delay <= 0f)
 		{
 			if (global::UnityEngine.GameObject.Find("Border_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0.05f)
 			{

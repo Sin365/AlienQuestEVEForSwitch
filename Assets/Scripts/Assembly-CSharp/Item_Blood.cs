@@ -120,7 +120,7 @@ public class Item_Blood : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (!Impact && !GM.Paused && !GM.GameOver && col.tag == "Player_Col")
+		if (!Impact && !GM.Paused && !GM.GameOver && col.CompareTag("Player_Col"))
 		{
 			Stay_Timer += global::UnityEngine.Time.deltaTime;
 			if (Stay_Timer > 0.01f)

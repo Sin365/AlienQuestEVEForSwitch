@@ -420,7 +420,7 @@ public class AI_Mon_27 : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (col.tag == "Col_Camera")
+		if (col.CompareTag("Col_Camera"))
 		{
 			onCam_Timer = 0.5f;
 		}

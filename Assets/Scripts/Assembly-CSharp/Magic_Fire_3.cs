@@ -74,7 +74,7 @@ public class Magic_Fire_3 : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerEnter2D(global::UnityEngine.Collider2D col)
 	{
-		if (!GM.Paused && (col.tag == "Ground" || col.tag == "Gate" || col.tag == "Breakable" || col.tag == "Mon_Shield"))
+		if (!GM.Paused && (col.CompareTag("Ground") || col.CompareTag("Gate") || col.CompareTag("Breakable") || col.CompareTag("Mon_Shield")))
 		{
 			Explo();
 		}

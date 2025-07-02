@@ -115,7 +115,7 @@ public class Mon_Fire_Gravity : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerEnter2D(global::UnityEngine.Collider2D col)
 	{
-		if (col.tag == "Col_Camera")
+		if (col.CompareTag("Col_Camera"))
 		{
 			onCam_Timer = 0.5f;
 		}
@@ -136,7 +136,7 @@ public class Mon_Fire_Gravity : global::UnityEngine.MonoBehaviour
 			GM.Damage(Damage, DmgForce * (float)num, false, 0);
 			Explo();
 		}
-		else if (col.tag == "Magic_Shield" || col.tag == "Ground" || col.tag == "Gate" || col.tag == "Breakable")
+		else if (col.CompareTag("Magic_Shield") || col.CompareTag("Ground") || col.CompareTag("Gate") || col.CompareTag("Breakable"))
 		{
 			onExplo = true;
 			Explo();

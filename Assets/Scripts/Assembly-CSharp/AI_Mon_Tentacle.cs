@@ -134,21 +134,21 @@ public class AI_Mon_Tentacle : global::UnityEngine.MonoBehaviour
 	{
 		if (!GM.Paused && !GM.onEvent && !GM.onHscene && !GM.onDown && !GM.onGatePass && !GM.onGameClear && !isHide)
 		{
-			if (col.tag == "Magic_Explo")
+			if (col.CompareTag("Magic_Explo"))
 			{
 				SC.Mon_Hit_2(base.transform.position);
 				Hide(5f);
 			}
-			else if (col.tag == "Magic_Smog")
+			else if (col.CompareTag("Magic_Smog"))
 			{
 				Hide(5f);
 			}
-			else if (col.tag == "Magic_Fire")
+			else if (col.CompareTag("Magic_Fire"))
 			{
 				SC.Mon_Hit_1(base.transform.position);
 				Hide(5f);
 			}
-			if (col.tag == "Col_PC_Atk" && col.name != "Col_Rolling")
+			if (col.CompareTag("Col_PC_Atk") && col.name != "Col_Rolling")
 			{
 				SC.Mon_Hit_1(base.transform.position);
 				Hide(5f);

@@ -87,7 +87,7 @@ public class Mon_Shield : global::UnityEngine.MonoBehaviour
 		{
 			return;
 		}
-		if (!(global::UnityEngine.GameObject.Find("Border_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0.05f) && !(col.tag == "Magic_Shield") && !GM.onShield && col.name == "Ani" && GM.Damage_Timer <= 0f && Damage_Delay <= 0f)
+		if (!(global::UnityEngine.GameObject.Find("Border_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0.05f) && !(col.CompareTag("Magic_Shield")) && !GM.onShield && col.name == "Ani" && GM.Damage_Timer <= 0f && Damage_Delay <= 0f)
 		{
 			if (base.transform.position.x > col.transform.parent.position.x)
 			{
@@ -100,7 +100,7 @@ public class Mon_Shield : global::UnityEngine.MonoBehaviour
 			Damage_Delay = 0.5f;
 			GameManager.instance.sc_Sound_List.Player_Damage(6, false, base.transform.position);
 		}
-		if (col.tag == "Col_PC_Atk")
+		if (col.CompareTag("Col_PC_Atk"))
 		{
 			if (col.name == "Col_Attack_0_1" || col.name == "Col_Attack_1_1" || col.name == "Col_Attack_2_1" || col.name == "Col_Attack_4_1" || col.name == "Col_Attack_5_1")
 			{
@@ -176,7 +176,7 @@ public class Mon_Shield : global::UnityEngine.MonoBehaviour
 				Block();
 			}
 		}
-		else if (col.tag == "Magic_Fire" && Sound_Timer <= 0f)
+		else if (col.CompareTag("Magic_Fire") && Sound_Timer <= 0f)
 		{
 			Sound_Timer = 0.1f;
 			Block();

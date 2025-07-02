@@ -121,7 +121,7 @@ public class Mon_Lightning : global::UnityEngine.MonoBehaviour
 	{
 		if (!GM.Paused && !GM.GameOver)
 		{
-			if (col.tag == "Magic_Shield")
+			if (col.CompareTag("Magic_Shield"))
 			{
 				Attack_Delay = 0.5f;
 				GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;

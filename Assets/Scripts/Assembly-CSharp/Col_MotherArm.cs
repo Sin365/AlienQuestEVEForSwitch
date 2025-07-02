@@ -38,7 +38,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 				GM.Damage(MotherArm.Damage, MotherArm.DmgForce, false, 14);
 			}
 		}
-		if (col.tag == "Magic_Explo")
+		if (col.CompareTag("Magic_Explo"))
 		{
 			if (MotherArm.HP > 0 && col.gameObject != MotherArm.Bomb_Object[0] && col.gameObject != MotherArm.Bomb_Object[1])
 			{
@@ -59,7 +59,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 				MotherArm.PC_Col_Delay = 0.5f;
 			}
 		}
-		else if (col.tag == "Magic_Smog")
+		else if (col.CompareTag("Magic_Smog"))
 		{
 			if (!MotherArm.onPoisonSkill)
 			{
@@ -75,14 +75,14 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 				MotherArm.Poison_Skill_Timer = 1.25f;
 			}
 		}
-		else if (col.tag == "Magic_Shield")
+		else if (col.CompareTag("Magic_Shield"))
 		{
 			if (GM.onShield)
 			{
 				GM.Break_Shield();
 			}
 		}
-		else if (col.tag == "Magic_Fire")
+		else if (col.CompareTag("Magic_Fire"))
 		{
 			switch (col.name.Substring(0, 11))
 			{
@@ -121,7 +121,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 		}
 		else
 		{
-			if (!(col.tag == "Col_PC_Atk"))
+			if (!(col.CompareTag("Col_PC_Atk")))
 			{
 				return;
 			}

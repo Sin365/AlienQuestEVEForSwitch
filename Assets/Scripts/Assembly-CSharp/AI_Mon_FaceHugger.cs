@@ -760,11 +760,11 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 				Set_AttackDelay();
 			}
 		}
-		if (col.tag == "Magic_Explo")
+		if (col.CompareTag("Magic_Explo"))
 		{
 			Death();
 		}
-		else if (col.tag == "Magic_Smog")
+		else if (col.CompareTag("Magic_Smog"))
 		{
 			Poison_Smog_Timer = 0.1f;
 			Poison_Skill_Timer = 0.2f;
@@ -774,11 +774,11 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 				On_MagicPoison();
 			}
 		}
-		else if (col.tag == "Magic_Shield")
+		else if (col.CompareTag("Magic_Shield"))
 		{
 			Death();
 		}
-		else if (col.tag == "Magic_Fire")
+		else if (col.CompareTag("Magic_Fire"))
 		{
 			switch (col.name.Substring(0, 11))
 			{
@@ -792,7 +792,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 				break;
 			}
 		}
-		else if (col.tag == "Col_PC_Atk" || col.tag == "Trap_Laser")
+		else if (col.CompareTag("Col_PC_Atk") || col.CompareTag("Trap_Laser"))
 		{
 			Death();
 		}

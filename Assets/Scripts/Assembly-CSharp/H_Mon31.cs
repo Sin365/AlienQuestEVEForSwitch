@@ -133,7 +133,7 @@ public class H_Mon31 : global::UnityEngine.MonoBehaviour
 				Enabled_Timer = 1f;
 				GetComponent<global::UnityEngine.Animator>().speed = Speed;
 			}
-			if (!onEnd && (col.tag == "Col_PC_Atk" || col.tag == "Magic_Fire" || col.tag == "Magic_Explo" || col.tag == "Magic_Smog"))
+			if (!onEnd && (col.CompareTag("Col_PC_Atk") || col.CompareTag("Magic_Fire") || col.CompareTag("Magic_Explo") || col.CompareTag("Magic_Smog")))
 			{
 				onEnd = true;
 				Make_Monster();

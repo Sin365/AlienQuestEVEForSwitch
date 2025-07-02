@@ -97,7 +97,7 @@ public class Mon_GateLaser : global::UnityEngine.MonoBehaviour
 	{
 		if (!GM.Paused && !GM.GameOver)
 		{
-			if (col.tag == "Magic_Shield")
+			if (col.CompareTag("Magic_Shield"))
 			{
 				Damage_Delay = 0.25f;
 				GM.Break_Shield();
