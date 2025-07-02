@@ -29,7 +29,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 		{
 			return;
 		}
-		if (!GM.onShield && con_name == "Ani" && !(global::UnityEngine.GameObject.Find("Border_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0.05f) && !GM.GameOver && MotherArm.PC_Col_Delay <= 0f && MotherArm.PC_Body_Delay <= 0f)
+		if (!GM.onShield && col_name == "Ani" && !(global::UnityEngine.GameObject.Find("Border_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0.05f) && !GM.GameOver && MotherArm.PC_Col_Delay <= 0f && MotherArm.PC_Body_Delay <= 0f)
 		{
 			MotherArm.PC_Col_Delay = 1f;
 			MotherArm.PC_Body_Delay = 1f;
@@ -88,7 +88,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 		}
 		else if (col.CompareTag("Magic_Fire"))
 		{
-			switch (con_name.Substring(0, 11))
+			switch (col_name.Substring(0, 11))
 			{
 			case "MagicFire_5":
 				if (MotherArm.Gravity_Delay <= 0f)
@@ -147,7 +147,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 				MotherArm.onSlow = true;
 				MotherArm.Slow_Timer = 3f;
 			}
-			if (con_name == "Col_Attack_0_1" || con_name == "Col_Attack_1_1" || con_name == "Col_Attack_2_1" || con_name == "Col_Attack_4_1" || con_name == "Col_Attack_5_1")
+			if (col_name == "Col_Attack_0_1" || col_name == "Col_Attack_1_1" || col_name == "Col_Attack_2_1" || col_name == "Col_Attack_4_1" || col_name == "Col_Attack_5_1")
 			{
 				if (!MotherArm.Hit_Atk_1)
 				{
@@ -158,7 +158,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 					MotherArm.Damage_Hit(false, 0, 1f);
 				}
 			}
-			else if (con_name == "Col_Attack_0_2" || con_name == "Col_Attack_1_2" || con_name == "Col_Attack_2_2" || con_name == "Col_Attack_4_2" || con_name == "Col_Attack_5_2")
+			else if (col_name == "Col_Attack_0_2" || col_name == "Col_Attack_1_2" || col_name == "Col_Attack_2_2" || col_name == "Col_Attack_4_2" || col_name == "Col_Attack_5_2")
 			{
 				if (!MotherArm.Hit_Atk_2)
 				{
@@ -169,7 +169,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 					MotherArm.Damage_Hit(false, 0, 1f);
 				}
 			}
-			else if (con_name == "Col_Attack_3" || con_name == "Col_Attack_5_3")
+			else if (col_name == "Col_Attack_3" || col_name == "Col_Attack_5_3")
 			{
 				if (!MotherArm.Hit_Atk_3)
 				{
@@ -182,7 +182,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 					MotherArm.Damage_Hit(false, 0, 1.2f);
 				}
 			}
-			else if (con_name == "Col_Attack_4" || con_name == "Col_Attack_5_4")
+			else if (col_name == "Col_Attack_4" || col_name == "Col_Attack_5_4")
 			{
 				if (!MotherArm.Hit_Atk_4)
 				{
@@ -195,7 +195,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 					MotherArm.Damage_Hit(false, 0, 1.5f);
 				}
 			}
-			else if (con_name == "Col_Spin")
+			else if (col_name == "Col_Spin")
 			{
 				if (MotherArm.Hit_Delay <= 0f)
 				{
@@ -205,7 +205,7 @@ public class Col_MotherArm : global::UnityEngine.MonoBehaviour
 					MotherArm.Damage_Hit(false, 0, 1.2f);
 				}
 			}
-			else if (con_name == "Col_Rolling")
+			else if (col_name == "Col_Rolling")
 			{
 				if (MotherArm.Hit_Delay <= 0f)
 				{

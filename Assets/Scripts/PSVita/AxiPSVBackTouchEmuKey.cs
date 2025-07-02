@@ -22,7 +22,7 @@ namespace AxiInputSP
         public static bool GetKeyDown(AxiPSVBackTouchType btnType) { return _instance.m_TouckState[btnType].GetKeyDown(); }
 
         #region 静态管理
-        static AxiPSVBackTouchEmuKey instance
+        public static AxiPSVBackTouchEmuKey instance
         {
             get
             {
