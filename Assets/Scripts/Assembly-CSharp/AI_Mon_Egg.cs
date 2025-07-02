@@ -305,7 +305,7 @@ public class AI_Mon_Egg : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		string con_name = con.name;
+		string con_name = col.name;
         if (GM.Paused || GM.onEvent || GM.onHscene || GM.onDown || GM.onGatePass || GM.onGameClear || isDeath)
 		{
 			return;
