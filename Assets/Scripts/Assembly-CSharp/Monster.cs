@@ -1000,11 +1000,12 @@ public class Monster : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (onEvent || !(Event_Timer <= 0f) || GM.Paused || GM.onEvent || GM.onHscene || GM.onDown || GM.onGatePass || GM.onGameClear || isDeath)
+		string col_name = col.name;
+        if (onEvent || !(Event_Timer <= 0f) || GM.Paused || GM.onEvent || GM.onHscene || GM.onDown || GM.onGatePass || GM.onGameClear || isDeath)
 		{
 			return;
 		}
-		if (Mon_Num == 55 && base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale == 0f && col.name == "Ani" && QueenShield_Delay <= 0f)
+		if (Mon_Num == 55 && base.GetComponent<UnityEngine.Rigidbody2D>().gravityScale == 0f && col_name == "Ani" && QueenShield_Delay <= 0f)
 		{
 			QueenShield_Delay = 0.5f;
 			PC_Col_Delay = 0.2f;
@@ -1058,7 +1059,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				}
 			}
 		}
-		else if (!GM.onShield && col.name == "Ani")
+		else if (!GM.onShield && col_name == "Ani")
 		{
 			if ((isInvincible || (!(global::UnityEngine.GameObject.Find("Border_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().color.a > 0.05f) && !global::UnityEngine.GameObject.Find("Ani_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().enabled)) && !isPass)
 			{
@@ -1103,7 +1104,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 				}
 			}
 		}
-		else if (Mon_Num == 41 && GM.onShield && col.name == "Ani" && !GM.GameOver && Invincible_Delay <= 0f)
+		else if (Mon_Num == 41 && GM.onShield && col_name == "Ani" && !GM.GameOver && Invincible_Delay <= 0f)
 		{
 			PC_Col_Delay = 0.3f;
 			PC_Body_Delay = 0.3f;
@@ -1184,7 +1185,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 		}
 		else if (col.CompareTag("Magic_Fire"))
 		{
-			string text = col.name.Substring(0, 11);
+			string text = col_name.Substring(0, 11);
 			if (text == "MagicFire_5")
 			{
 				if (Mon_Num != 12 && Mon_Num != 15 && Mon_Num != 19 && Mon_Num != 20 && Mon_Num != 24 && Mon_Num < 50)
@@ -1290,7 +1291,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 					}
 				}
 			}
-			if (col.name == "Col_Attack_0_1" || col.name == "Col_Attack_1_1" || col.name == "Col_Attack_2_1" || col.name == "Col_Attack_4_1" || col.name == "Col_Attack_5_1")
+			if (col_name == "Col_Attack_0_1" || col_name == "Col_Attack_1_1" || col_name == "Col_Attack_2_1" || col_name == "Col_Attack_4_1" || col_name == "Col_Attack_5_1")
 			{
 				if (!Hit_Atk_1)
 				{
@@ -1301,7 +1302,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 					Damage_Hit(false, 0, 1f);
 				}
 			}
-			else if (col.name == "Col_Attack_0_2" || col.name == "Col_Attack_1_2" || col.name == "Col_Attack_2_2" || col.name == "Col_Attack_4_2" || col.name == "Col_Attack_5_2")
+			else if (col_name == "Col_Attack_0_2" || col_name == "Col_Attack_1_2" || col_name == "Col_Attack_2_2" || col_name == "Col_Attack_4_2" || col_name == "Col_Attack_5_2")
 			{
 				if (!Hit_Atk_2)
 				{
@@ -1312,7 +1313,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 					Damage_Hit(false, 0, 1f);
 				}
 			}
-			else if (col.name == "Col_Attack_3" || col.name == "Col_Attack_5_3")
+			else if (col_name == "Col_Attack_3" || col_name == "Col_Attack_5_3")
 			{
 				if (!Hit_Atk_3)
 				{
@@ -1326,7 +1327,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 					KnockBack_Atk34(1f);
 				}
 			}
-			else if (col.name == "Col_Attack_4" || col.name == "Col_Attack_5_4")
+			else if (col_name == "Col_Attack_4" || col_name == "Col_Attack_5_4")
 			{
 				if (!Hit_Atk_4)
 				{
@@ -1340,7 +1341,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 					KnockBack_Atk34(2f);
 				}
 			}
-			else if (col.name == "Col_Spin")
+			else if (col_name == "Col_Spin")
 			{
 				if (Hit_Delay <= 0f)
 				{
@@ -1350,7 +1351,7 @@ public class Monster : global::UnityEngine.MonoBehaviour
 					Damage_Hit(false, 0, 1.2f);
 				}
 			}
-			else if (col.name == "Col_Rolling")
+			else if (col_name == "Col_Rolling")
 			{
 				if (Hit_Delay <= 0f)
 				{
