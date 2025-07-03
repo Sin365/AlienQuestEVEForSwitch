@@ -2,10 +2,11 @@
 {
 #if UNITY_SWITCH && !UNITY_EDITOR
 	public static string SaveDataRootDirPath = "save:/axibug";
-#else
-	public static string SaveDataRootDirPath = UnityEngine.Application.persistentDataPath;
+#elif UNITY_PSP2 && !UNITY_EDITOR
+    public static string SaveDataRootDirPath = "ux0:data/axibug_AQE";
+#else 
+    public static string SaveDataRootDirPath = UnityEngine.Application.persistentDataPath;
 #endif
-
 	static IAxiPlayerPrefs m_axiPlayerPrefs;
     static IAxiPlayerPrefs axiPlayerPrefs
     {
@@ -22,7 +23,6 @@
             return m_axiPlayerPrefs;
         }
     }
-
     public static float GetFloat(string key) { return axiPlayerPrefs.GetFloat(key); }
     public static void SetFloat(string key, float value) { axiPlayerPrefs.SetFloat(key, value); }
     public static float GetFloat(string key, float defaultValue) { return axiPlayerPrefs.GetFloat(key, defaultValue); }
@@ -32,6 +32,5 @@
     public static string GetString(string key) { return axiPlayerPrefs.GetString(key); }
     public static void SetString(string key, string value) { axiPlayerPrefs.SetString(key, value); }
     public static string GetString(string key, string defaultValue) { return axiPlayerPrefs.GetString(key, defaultValue); }
-
     internal static void DeleteAll() { axiPlayerPrefs.DeleteAll(); }
 }

@@ -115,11 +115,14 @@ public class AxiLauncher : MonoBehaviour
 		AxiIO.AxiIO.io.file_Delete("save:/test/1.txt");
 	}
 	void InitGame()
-	{
+    {
 #if UNITY_PSP2 && !UNITY_EDITOR
+        //PSVita最好手动创建目录
+        if (!AxiIO.Directory.Exists(AxiPlayerPrefs.SaveDataRootDirPath))
+            AxiIO.Directory.CreateDirectory(AxiPlayerPrefs.SaveDataRootDirPath);
 		UnityEngine.PSVita.PSVitaVideoPlayer.TransferMemToMonoHeap();
 #endif
-		GameObject.DontDestroyOnLoad(gameObject);
+        GameObject.DontDestroyOnLoad(gameObject);
 		SceneManager.LoadScene("Title");
 		//global::UnityEngine.Application.LoadLevel("Title");
 	}
