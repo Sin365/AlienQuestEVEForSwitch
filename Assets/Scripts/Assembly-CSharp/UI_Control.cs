@@ -142,7 +142,7 @@ public class UI_Control : global::UnityEngine.MonoBehaviour
         img_UI_HP_Edge = global::UnityEngine.GameObject.Find("UI_HP_Edge").GetComponent<global::UnityEngine.UI.Image>();
         img_UI_MP_Edge = global::UnityEngine.GameObject.Find("UI_MP_Edge").GetComponent<global::UnityEngine.UI.Image>();
 
-        gobj_Menu = global::UnityEngine.GameObject.Find("Menu");
+        gobj_Menu = GM.gobj_Menu;
         #endregion
 
         skill_scale[0] = new global::UnityEngine.Vector3(100f, 100f, 1f);
@@ -515,7 +515,7 @@ public class UI_Control : global::UnityEngine.MonoBehaviour
 	{
 		if (global::UnityEngine.Time.timeSinceLevelLoad > 1f)
 		{
-			global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Move_2");
+			GM.gobj_Menu.SendMessage("Sound_Move_2");
 		}
 		Skill_Border.GetComponent<global::UnityEngine.SpriteRenderer>().color = new global::UnityEngine.Color(1f, 1f, 1f, 0f);
 		for (int i = 0; i < 5; i++)

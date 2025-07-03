@@ -62,8 +62,8 @@ public class UI_SoundList : global::UnityEngine.MonoBehaviour
 	string Full_HP = "prefabs/sound/ui/Sound_UI_FullHP";
 	string MissionBriefing = "prefabs/sound/ui/Sound_UI_Mission_confirmation";
 	string MapOn = "prefabs/sound/ui/Sound_UI_MapOn";
-	string Gate_Open = "prefabs/sound/ui/Sound_UI_Gate_Open";
-	string Gate_Close = "prefabs/sound/ui/Sound_UI_Gate_Close";
+	public static string Gate_Open = "prefabs/sound/ui/Sound_UI_Gate_Open";
+	public static string Gate_Close = "prefabs/sound/ui/Sound_UI_Gate_Close";
 	string Save_On = "prefabs/sound/ui/Sound_UI_Save_On";
 	string Save_Off = "prefabs/sound/ui/Sound_UI_Save_Off";
 	string Trap_Laser = "prefabs/sound/ui/Sound_UI_Laser";

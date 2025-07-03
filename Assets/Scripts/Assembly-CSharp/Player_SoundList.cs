@@ -28,19 +28,19 @@ public class Player_SoundList : global::UnityEngine.MonoBehaviour
 
 	//public global::UnityEngine.GameObject voiceDeath_1;
 
-	string Attack_1 = "prefabs/sound/Sound_Arm Whoosh 01";
-	string Attack_2 = "prefabs/sound/Sound_Arm Whoosh 06";
-	string Attack_3 = "prefabs/sound/Sound_Arm Whoosh 07";
-	string Jump = "prefabs/sound/Sound_Jump_1";
-	string Slide = "prefabs/sound/Sound_Slide";
-	string Spin = "prefabs/sound/Sound_Hit_6_Punch 02";
-	string Down = "prefabs/sound/Player_Down";
-	string FootStep = "prefabs/sound/Footstep_1";
-	string voiceDamage_1 = "prefabs/sound/voice/voice_Dmg_1";
-	string voiceDamage_2 = "prefabs/sound/voice/voice_Dmg_2";
-	string voiceDamage_3 = "prefabs/sound/voice/voice_Dmg_3";
-	string voiceDamage_4 = "prefabs/sound/voice/voice_Dmg_4_Long";
-	string voiceDeath_1 = "prefabs/sound/voice/voice_Death";
+	public static string Attack_1 = "prefabs/sound/Sound_Arm Whoosh 01";
+	public static string Attack_2 = "prefabs/sound/Sound_Arm Whoosh 06";
+	public static string Attack_3 = "prefabs/sound/Sound_Arm Whoosh 07";
+	public static string Jump = "prefabs/sound/Sound_Jump_1";
+	public static string Slide = "prefabs/sound/Sound_Slide";
+	public static string Spin = "prefabs/sound/Sound_Hit_6_Punch 02";
+	public static string Down = "prefabs/sound/Player_Down";
+	public static string FootStep = "prefabs/sound/Footstep_1";
+	public static string voiceDamage_1 = "prefabs/sound/voice/voice_Dmg_1";
+	public static string voiceDamage_2 = "prefabs/sound/voice/voice_Dmg_2";
+	public static string voiceDamage_3 = "prefabs/sound/voice/voice_Dmg_3";
+	public static string voiceDamage_4 = "prefabs/sound/voice/voice_Dmg_4_Long";
+	public static string voiceDeath_1 = "prefabs/sound/voice/voice_Death";
 
 
 

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -9,32 +10,38 @@ public static class AxiSoundPool
     static HashSet<string> mHashSetKeepIn_Name = new HashSet<string>();
     static HashSet<long> mHashSetInPool_Seed = new HashSet<long>();
     static Dictionary<string, float> mDictName2LastLoadTime = new Dictionary<string, float>();
-    static Dictionary<string, List<AxiSoundBase>> mPool_Name2Sound = new Dictionary<string, List<AxiSoundBase>>();
-    static Dictionary<string, List<AxiSoundBase>> mPool_Name2Sound_Inv = new Dictionary<string, List<AxiSoundBase>>();
-    static Dictionary<string, List<AxiSoundBase>> mPool_Name2Sound_Moan = new Dictionary<string, List<AxiSoundBase>>();
-    static Dictionary<string, List<AxiSoundBase>> mPool_Name2Sound_Shield = new Dictionary<string, List<AxiSoundBase>>();
+    static Dictionary<string, List<AxiSoundBase>> mPool_Name2SoundClone = new Dictionary<string, List<AxiSoundBase>>();
+    //static Dictionary<string, List<AxiSoundBase>> mPool_Name2Sound = new Dictionary<string, List<AxiSoundBase>>();
+    //static Dictionary<string, List<AxiSoundBase>> mPool_Name2Sound_Inv = new Dictionary<string, List<AxiSoundBase>>();
+    //static Dictionary<string, List<AxiSoundBase>> mPool_Name2Sound_Moan = new Dictionary<string, List<AxiSoundBase>>();
+    //static Dictionary<string, List<AxiSoundBase>> mPool_Name2Sound_Shield = new Dictionary<string, List<AxiSoundBase>>();
     static Dictionary<string, LoadedAudioSrc> mDictPath2Resource = new Dictionary<string, LoadedAudioSrc>();
 
     static long GetNextSeed()
     {
         return mSeed++;
     }
-    static Dictionary<string, List<AxiSoundBase>> GetPoolByType(AxiSoundBase src_axi)
-    {
-        Dictionary<string, List<AxiSoundBase>> dictPool = null;
-        if (src_axi is Sound)
-            dictPool = mPool_Name2Sound;
-        else if (src_axi is Sound_Inv)
-            dictPool = mPool_Name2Sound_Inv;
-        else if (src_axi is Sound_Moan)
-            dictPool = mPool_Name2Sound_Moan;
-        else if (src_axi is Sound_Shield)
-            dictPool = mPool_Name2Sound_Shield;
-        return dictPool;
-    }
     public static void PreLoadAudio()
     {
         List<string> temp = new List<string>();
+        //玩家
+        temp.Add(Player_SoundList.Attack_1);
+        temp.Add(Player_SoundList.Attack_2);
+        temp.Add(Player_SoundList.Attack_3);
+        temp.Add(Player_SoundList.Jump);
+        temp.Add(Player_SoundList.Slide);
+        temp.Add(Player_SoundList.Spin);
+        temp.Add(Player_SoundList.Down);
+        temp.Add(Player_SoundList.FootStep);
+        temp.Add(Player_SoundList.voiceDamage_1);
+        temp.Add(Player_SoundList.voiceDamage_2);
+        temp.Add(Player_SoundList.voiceDamage_3);
+        temp.Add(Player_SoundList.voiceDamage_4);
+        temp.Add(Player_SoundList.voiceDeath_1);
+        //开关门
+        temp.Add(UI_SoundList.Gate_Open);
+        temp.Add(UI_SoundList.Gate_Close);
+        //战斗
         temp.Add(Sound_Control.Sound_Magic_1);
         temp.Add(Sound_Control.Sound_Magic_2);
         temp.Add(Sound_Control.Sound_Magic_3_Explo_1);
@@ -102,6 +109,11 @@ public static class AxiSoundPool
             {
                 LoadedAudioSrc src = new LoadedAudioSrc(path, true);
                 mDictPath2Resource[path] = src;
+                //加载之后隐藏回池
+                //PS:原则上进出池 应该重置播放进度，但这里是初始化之后，直接回收了
+                AxiSoundBase clone = AddSound(path);
+                ReleaseSound(clone);
+
                 if (!mHashSetKeepIn_Name.Contains(src.gobj.name))
                     mHashSetKeepIn_Name.Add(src.gobj.name);
             }
@@ -110,23 +122,91 @@ public static class AxiSoundPool
         }
         Debug.Log($"[AxiSoundPool]音频预加载完毕{mDictPath2Resource.Count}个");
     }
+    static AxiSoundBase AddSound(string path)
+    {
+        AxiSoundBase clonego;
+        string srcname = Path.GetFileNameWithoutExtension(path);
+
+        if (!mPool_Name2SoundClone.ContainsKey(srcname))
+            mPool_Name2SoundClone[srcname] = new List<AxiSoundBase>();
+
+        if (mPool_Name2SoundClone.ContainsKey(srcname) && mPool_Name2SoundClone[srcname].Count > 0)
+        {
+            AxiSoundBase sound = mPool_Name2SoundClone[srcname][mPool_Name2SoundClone[srcname].Count - 1];
+            mPool_Name2SoundClone[srcname].RemoveAt(mPool_Name2SoundClone[srcname].Count - 1);
+            sound.Init();
+            clonego = sound;
+            clonego.gameObject.SetActive(true);
+#if UNITY_EDITOR
+            Debug.Log($"[AxiSoundPool]出{srcname}池，当前{srcname}池{mPool_Name2SoundClone[srcname].Count}个");
+#endif
+            mHashSetInPool_Seed.Remove(sound.Seed);
+        }
+        else
+        {
+            GameObject src = GetAxiSoundSrcByPath(path);
+            clonego = AxiObject.Instantiate(src).GetComponent<AxiSoundBase>();
+#if UNITY_EDITOR
+            Debug.Log($"[AxiSoundPool]实例化新的[{srcname}]");
+#endif
+            clonego.resourceName = srcname;
+            clonego.Seed = GetNextSeed();
+        }
+        mDictName2LastLoadTime[srcname] = Time.time;
+        return clonego;
+    }
+    static GameObject GetAxiSoundSrcByPath(string path)
+    {
+        if (!mDictPath2Resource.ContainsKey(path))
+            mDictPath2Resource.Add(path, new LoadedAudioSrc(path, false));
+        mDictPath2Resource[path].ResetTime();
+        return mDictPath2Resource[path].gobj.gameObject;
+    }
+    public static AxiSoundBase AddSoundForTrans(string path, Transform trans = null)
+    {
+        AxiSoundBase clonego = AddSound(path);
+        Transform target = null;
+        if (trans != null)
+            target = trans;
+        else if (GameManager.instance != null)
+        {
+            target = Camera.main.transform;// GameObject.Find("Main Camera").transform;
+        }
+
+        if (target != null)
+        {
+            clonego.transform.parent = target;
+            clonego.transform.localPosition = Vector3.zero;
+            clonego.transform.localEulerAngles = Vector3.zero;
+        }
+        //go.transform.parent = null;
+        return clonego;
+    }
+    public static AxiSoundBase AddSoundForPosRot(string path, Vector3 targetPos, Quaternion targetRotation)
+    {
+        AxiSoundBase go = AddSound(path);
+        go.transform.position = targetPos;
+        go.transform.rotation = targetRotation;
+        return go;
+    }
+
+    #region 计划废弃
     static AxiSoundBase AddSound(GameObject src)
     {
         AxiSoundBase src_axi = src.GetComponent<AxiSoundBase>();
-        Dictionary<string, List<AxiSoundBase>> dictPool = GetPoolByType(src_axi);
         AxiSoundBase go;
-        if (!dictPool.ContainsKey(src.name))
-            dictPool[src.name] = new List<AxiSoundBase>();
+        if (!mPool_Name2SoundClone.ContainsKey(src.name))
+            mPool_Name2SoundClone[src.name] = new List<AxiSoundBase>();
 
-        if (dictPool.ContainsKey(src.name) && dictPool[src.name].Count > 0)
+        if (mPool_Name2SoundClone.ContainsKey(src.name) && mPool_Name2SoundClone[src.name].Count > 0)
         {
-            AxiSoundBase sound = dictPool[src.name][dictPool[src.name].Count - 1];
-            dictPool[src.name].RemoveAt(dictPool[src.name].Count - 1);
+            AxiSoundBase sound = mPool_Name2SoundClone[src.name][mPool_Name2SoundClone[src.name].Count - 1];
+            mPool_Name2SoundClone[src.name].RemoveAt(mPool_Name2SoundClone[src.name].Count - 1);
             sound.Init();
             go = sound;
             go.gameObject.SetActive(true);
 #if UNITY_EDITOR
-            Debug.Log($"[AxiSoundPool]出{src.name}池，当前{src.name}池{dictPool[src.name].Count}个");
+            Debug.Log($"[AxiSoundPool]出{src.name}池，当前{src.name}池{mPool_Name2SoundClone[src.name].Count}个");
 #endif
             mHashSetInPool_Seed.Remove(sound.Seed);
         }
@@ -142,45 +222,6 @@ public static class AxiSoundPool
         mDictName2LastLoadTime[src.name] = Time.time;
         return go;
     }
-    static AxiSoundBase AddSoundForTrans(GameObject src, Transform trans = null)
-    {
-        AxiSoundBase go = AddSound(src);
-
-        Transform target = null;
-        if (trans != null)
-            target = trans;
-        else if (GameManager.instance != null)
-        {
-            target = GameObject.Find("Main Camera").transform;
-        }
-
-        if (target != null)
-        {
-            go.transform.parent = target;
-            go.transform.localPosition = Vector3.zero;
-            go.transform.localEulerAngles = Vector3.zero;
-        }
-        //go.transform.parent = null;
-        return go;
-
-    }
-    static AxiSoundBase GetAxiSoundByPath(string path)
-    {
-        if (!mDictPath2Resource.ContainsKey(path))
-            mDictPath2Resource.Add(path, new LoadedAudioSrc(path, false));
-        mDictPath2Resource[path].ResetTime();
-        return mDictPath2Resource[path].gobj;
-    }
-    public static AxiSoundBase AddSoundForTrans(string path, Transform trans = null)
-    {
-        GameObject src = GetAxiSoundByPath(path).gameObject;
-        return AddSoundForTrans(src, trans);
-    }
-    public static AxiSoundBase AddSoundForPosRot(string path, Vector3 targetPos, Quaternion targetRotation)
-    {
-        GameObject src = GetAxiSoundByPath(path).gameObject;
-        return AddSoundForPosRot(src, targetPos, targetRotation);
-    }
     public static AxiSoundBase AddSoundForPosRot(GameObject src, Vector3 targetPos, Quaternion targetRotation)
     {
         AxiSoundBase go = AddSound(src);
@@ -188,19 +229,19 @@ public static class AxiSoundPool
         go.transform.rotation = targetRotation;
         return go;
     }
+    #endregion
 
     public static void ReleaseBySeed(GameObject src, int Seed)
     {
         if (!mHashSetInPool_Seed.Contains(Seed))
             return;
         AxiSoundBase src_axi = src.GetComponent<AxiSoundBase>();
-        Dictionary<string, List<AxiSoundBase>> dictPool = GetPoolByType(src_axi);
-        if (!dictPool.ContainsKey(src.name))
+        if (!mPool_Name2SoundClone.ContainsKey(src.name))
             return;
-        for (int i = dictPool[src.name].Count - 1; i >= 0; i++)
+        for (int i = mPool_Name2SoundClone[src.name].Count - 1; i >= 0; i++)
         {
-            if (dictPool[src.name][i].Seed == Seed)
-                CheckNeedRemoveFormPool(dictPool[src.name][i]);
+            if (mPool_Name2SoundClone[src.name][i].Seed == Seed)
+                CheckNeedRemoveFormPool(mPool_Name2SoundClone[src.name][i]);
         }
     }
 
@@ -218,14 +259,13 @@ public static class AxiSoundPool
         if (!mHashSetInPool_Seed.Contains(go.Seed))
             return;
         mHashSetInPool_Seed.Remove(go.Seed);
-        Dictionary<string, List<AxiSoundBase>> dictPool = GetPoolByType(go);
-        if (!dictPool.ContainsKey(go.resourceName))
+        if (!mPool_Name2SoundClone.ContainsKey(go.resourceName))
             return;
-        for (int i = dictPool[go.resourceName].Count - 1; i >= 0; i--)
+        for (int i = mPool_Name2SoundClone[go.resourceName].Count - 1; i >= 0; i--)
         {
-            if (dictPool[go.resourceName][i].Seed == go.Seed)
+            if (mPool_Name2SoundClone[go.resourceName][i].Seed == go.Seed)
             {
-                dictPool[go.resourceName].RemoveAt(i);
+                mPool_Name2SoundClone[go.resourceName].RemoveAt(i);
                 return;
             }
         }
@@ -261,10 +301,9 @@ public static class AxiSoundPool
             return;
         }
         mHashSetInPool_Seed.Add(go.Seed);
-        Dictionary<string, List<AxiSoundBase>> dictPool = GetPoolByType(go);
-        dictPool[go.resourceName].Add(go);
+        mPool_Name2SoundClone[go.resourceName].Add(go);
 #if UNITY_EDITOR
-        Debug.Log($"[AxiSoundPool]入{go.resourceName}池，当前{go.resourceName}池{dictPool[go.resourceName].Count}个");
+        Debug.Log($"[AxiSoundPool]入{go.resourceName}池，当前{go.resourceName}池{mPool_Name2SoundClone[go.resourceName].Count}个");
 #endif
     }
 
@@ -277,7 +316,7 @@ public static class AxiSoundPool
         var sourceiterator = mDictPath2Resource.GetEnumerator();
         while (sourceiterator.MoveNext())
         {
-            if(sourceiterator.Current.Value.CheckNeedRemove())
+            if (sourceiterator.Current.Value.CheckNeedRemove())
                 tempRemoveLoadedSrc.Add(sourceiterator.Current.Key);
         }
         sourceiterator.Dispose();
@@ -292,14 +331,15 @@ public static class AxiSoundPool
         {
             //常驻音频不清理
             if (mHashSetKeepIn_Name.Contains(key))
-                return;
+                continue;
 
             if (mDictName2LastLoadTime[key] != -1 && Time.time - mDictName2LastLoadTime[key] > soundkeep_time)
             {
-                ReleaseToPool(mPool_Name2Sound, key);
-                ReleaseToPool(mPool_Name2Sound_Inv, key);
-                ReleaseToPool(mPool_Name2Sound_Moan, key);
-                ReleaseToPool(mPool_Name2Sound_Shield, key);
+                //ReleaseToPool(mPool_Name2Sound, key);
+                //ReleaseToPool(mPool_Name2Sound_Inv, key);
+                //ReleaseToPool(mPool_Name2Sound_Moan, key);
+                //ReleaseToPool(mPool_Name2Sound_Shield, key);  
+                ReleaseToPool(mPool_Name2SoundClone, key);
                 mDictName2LastLoadTime[key] = -1;
                 bHad = true;
             }
