@@ -488,7 +488,7 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
         }
         else if (global::UnityEngine.Input.GetMouseButtonDown(0))
         {
-            global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+            global::UnityEngine.Ray ray = GM.UI_Camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
             global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
             if (rayIntersection.collider != null)
             {
@@ -541,7 +541,7 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
         }
         else if (global::UnityEngine.Input.GetMouseButton(0))
         {
-            global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+            global::UnityEngine.Ray ray2 = GM.UI_Camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
             global::UnityEngine.RaycastHit2D rayIntersection2 = global::UnityEngine.Physics2D.GetRayIntersection(ray2, float.PositiveInfinity);
             if (rayIntersection2.collider != null)
             {
@@ -810,7 +810,7 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
 
     private void Check_Mouse()
     {
-        global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+        global::UnityEngine.Ray ray = GM.UI_Camera.GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
         global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
         if (rayIntersection.collider != null)
         {

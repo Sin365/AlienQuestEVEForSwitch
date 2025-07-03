@@ -236,7 +236,7 @@ public class Boss_3_Platform : global::UnityEngine.MonoBehaviour
 		gameObject.transform.parent = base.transform.parent;
 		gameObject.GetComponent<H_Ani>().Mon_Object = base.gameObject;
 		OnOff_Object(false);
-		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
+		GM.mc_Menu.H_Object = gameObject;
 		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{

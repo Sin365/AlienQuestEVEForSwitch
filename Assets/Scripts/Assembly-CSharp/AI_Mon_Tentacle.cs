@@ -63,7 +63,7 @@ public class AI_Mon_Tentacle : global::UnityEngine.MonoBehaviour
 		}
 		else
 		{
-			distance = global::UnityEngine.Vector3.Distance(base.transform.position, global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position);
+			distance = global::UnityEngine.Vector3.Distance(base.transform.position, GM.gobj_Pos_Down_Center.transform.position);
 		}
 		on_Dist = global::UnityEngine.Physics2D.Linecast(pos_L.position, pos_R.position, 1 << global::UnityEngine.LayerMask.NameToLayer("Player"));
 		if (on_Dist)

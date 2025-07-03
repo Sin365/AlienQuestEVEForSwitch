@@ -264,7 +264,7 @@ public class Gate_Control : global::UnityEngine.MonoBehaviour
 			{
 				onBossGateSound = true;
 				BossGateSound_Timer = 0f;
-				global::UnityEngine.GameObject.Find("Menu").GetComponent<UI_SoundList>().SendMessage("Sound_Gate_Close");
+				GM.gobj_Menu.GetComponent<UI_SoundList>().SendMessage("Sound_Gate_Close");
 			}
 		}
 		if (Sound_Timer > 0f)
@@ -372,7 +372,7 @@ public class Gate_Control : global::UnityEngine.MonoBehaviour
 				ColBox.enabled = true;
 				if (Sound_Timer <= 0f)
 				{
-					global::UnityEngine.GameObject.Find("Menu").GetComponent<UI_SoundList>().SendMessage("Sound_Gate_Close");
+					GM.gobj_Menu.GetComponent<UI_SoundList>().SendMessage("Sound_Gate_Close");
 				}
 			}
 			else if (!GM.GameOver && !GM.onEvent && !GM.onHscene && !onPass && Pass_Timer > 0.02f)
@@ -399,7 +399,7 @@ public class Gate_Control : global::UnityEngine.MonoBehaviour
 				if (Life_Timer > 0.5f && Sound_Timer <= 0f)
 				{
 					Sound_Timer = 0.5f;
-					global::UnityEngine.GameObject.Find("Menu").GetComponent<UI_SoundList>().SendMessage("Sound_Gate_Open");
+					GM.gobj_Menu.GetComponent<UI_SoundList>().SendMessage("Sound_Gate_Open");
                 }
 			}
 			Gate_Up.transform.localPosition = global::UnityEngine.Vector3.Lerp(Gate_Up.transform.localPosition, pos_Up_Close, global::UnityEngine.Time.deltaTime * 3f);

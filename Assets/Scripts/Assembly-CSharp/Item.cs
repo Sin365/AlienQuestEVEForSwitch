@@ -268,9 +268,9 @@ public class Item : global::UnityEngine.MonoBehaviour
 			if (Item_Num == 103 && GM.HP < GM.HP_Max)
 			{
 				Impact = true;
-				global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_Item");
-				global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_Potion");
-				global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_FullHP");
+				GM.gobj_Menu.SendMessage("Sound_Get_Item");
+				GM.gobj_Menu.SendMessage("Sound_Get_Potion");
+				GM.gobj_Menu.SendMessage("Sound_Get_FullHP");
 				GM.Get_HP(500);
 				if (GM.onPoison)
 				{
@@ -283,7 +283,7 @@ public class Item : global::UnityEngine.MonoBehaviour
 				Impact = true;
 				GM.Get_Potion_MP(Bonus_Index);
 				global::UnityEngine.GameObject.Find("Potion_Inventory").SendMessage("Get_Potion_MP");
-				global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_Item");
+				GM.gobj_Menu.SendMessage("Sound_Get_Item");
 				global::UnityEngine.Object.Destroy(base.gameObject);
 			}
 			else if (Item_Num == 101 && GM.Potion_HP < 100)
@@ -291,7 +291,7 @@ public class Item : global::UnityEngine.MonoBehaviour
 				Impact = true;
 				GM.Get_Potion_HP(Bonus_Index);
 				global::UnityEngine.GameObject.Find("Potion_Inventory").SendMessage("Get_Potion_HP");
-				global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_Item");
+				GM.gobj_Menu.SendMessage("Sound_Get_Item");
 				global::UnityEngine.Object.Destroy(base.gameObject);
 			}
 			else if (Item_Num == 202)
@@ -314,18 +314,18 @@ public class Item : global::UnityEngine.MonoBehaviour
 			return;
 		}
 		Impact = true;
-		global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_Item");
+		GM.gobj_Menu.SendMessage("Sound_Get_Item");
 		if (Item_Num > 0 && Item_Num < 11)
 		{
-			global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_Weapon");
+			GM.gobj_Menu.SendMessage("Sound_Get_Weapon");
 		}
 		else if (Item_Num > 10 && Item_Num < 16)
 		{
-			global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_Ability");
+			GM.gobj_Menu.SendMessage("Sound_Get_Ability");
 		}
 		else if (Item_Num > 20 && Item_Num < 26)
 		{
-			global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_Bonus");
+			GM.gobj_Menu.SendMessage("Sound_Get_Bonus");
 		}
 		if (Item_Num == 1)
 		{

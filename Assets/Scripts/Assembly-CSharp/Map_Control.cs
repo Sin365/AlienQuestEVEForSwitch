@@ -260,7 +260,7 @@ public class Map_Control : MonoBehaviour
                 GetComponent<RectTransform>().localPosition = pos_Center;
                 Reset_PosToCursor();
                 GameObject.Find("MissionBriefing").SendMessage("Set_BriefingPos_Map");
-                GameObject.Find("Menu").SendMessage("Sound_MapOn");
+                GM.gobj_Menu.SendMessage("Sound_MapOn");
             }
         }
     }

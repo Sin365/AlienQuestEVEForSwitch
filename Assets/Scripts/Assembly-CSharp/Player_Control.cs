@@ -1464,7 +1464,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         }
         if (GM.Skill_Num == 2)
         {
-            global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Select");
+            GM.gobj_Menu.SendMessage("Sound_Select");
             float x2 = base.transform.position.x + (float)global::UnityEngine.Random.Range(-5, 5) * 0.01f;
             float num2 = base.transform.position.y + 3.2f + (float)global::UnityEngine.Random.Range(-5, 5) * 0.01f;
             if (State == Player_Control.AniState.Sit)

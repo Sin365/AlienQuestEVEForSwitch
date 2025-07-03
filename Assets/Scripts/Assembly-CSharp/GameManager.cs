@@ -5,9 +5,14 @@ using UnityEngine.UI;
 public class GameManager : global::UnityEngine.MonoBehaviour
 {
     public static GameManager instance { get; private set; }
+    public Camera UI_Camera { get; private set; }
     public StageManager sm_StageManager { get; private set; }
     public Map_Control MC { get; private set; }
+    public GameObject gobj_Menu { get; private set; }
 
+    public GameObject gobj_Pos_Down_Center { get; private set; }
+
+    public Menu_Control mc_Menu { get; private set; }
     public RectTransform rect_MC { get; private set; }
 
     public Player_Control PC { get; private set; }
@@ -339,8 +344,6 @@ public class GameManager : global::UnityEngine.MonoBehaviour
     private SpriteRenderer sr_Clock_TimePlay;
     private GameObject gobj_BGM_List;
     private SpriteRenderer sr_BlackPause;
-    private Menu_Control mc_Menu;
-    private GameObject gobj_Menu;
     private GameObject gobj_Pos_SitLock_1_C;
     private player_ChestBurster pbc_Player_ChestBurster;
     private SpriteRenderer sr_Ani_FaceHugger;
@@ -447,12 +450,18 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         instance = this;
         //‘§º”‘ÿ“Ù∆µ
         AxiSoundPool.PreLoadAudio();
+
+        gobj_Menu = GameObject.Find("Menu");
+        gobj_Pos_Down_Center = GameObject.Find("Pos_Down_Center");
+
+        mc_Menu = gobj_Menu.GetComponent<Menu_Control>();
+        UI_Camera = UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>();
         sm_StageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
         MC = global::UnityEngine.GameObject.Find("Menu_Map").GetComponent<Map_Control>();
         rect_MC = MC.GetComponent<global::UnityEngine.RectTransform>();
-        PC = GameObject.Find("Player").GetComponent<Player_Control>();
-        eg2d_Player = GameObject.Find("Player").GetComponent<UnityEngine.Rigidbody2D>();
         gobj_Player = GameObject.Find("Player");
+        PC = gobj_Player.GetComponent<Player_Control>();
+        eg2d_Player = gobj_Player.GetComponent<UnityEngine.Rigidbody2D>();
         sc_Sound_List = GameObject.Find("Sound_List").GetComponent<Sound_Control>();
         ui_Girl_Front = GameObject.Find("UI Girl_Front").GetComponent<UI_Girl_Front>();
 
@@ -498,9 +507,6 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         gobj_BGM_List = global::UnityEngine.GameObject.Find("BGM_List");
         sr_BlackPause = global::UnityEngine.GameObject.Find("BlackPause").GetComponent<global::UnityEngine.SpriteRenderer>();
 
-
-        mc_Menu = global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>();
-        gobj_Menu = global::UnityEngine.GameObject.Find("Menu");
 
         gobj_Pos_SitLock_1_C = global::UnityEngine.GameObject.Find("Pos_SitLock_1_C");
 

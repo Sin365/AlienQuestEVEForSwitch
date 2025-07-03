@@ -118,14 +118,14 @@ public class Save_Block : global::UnityEngine.MonoBehaviour
 				{
 					Active_Heal = true;
 					GM.Get_HP(1000);
-					global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_FullHP");
+					GM.gobj_Menu.SendMessage("Sound_Get_FullHP");
 					Glow_2.color = color_On;
 				}
 				else if (!Change_Cloth && !GM.onCloth)
 				{
 					Active_Heal = true;
 					GM.Get_HP(1000);
-					global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_FullHP");
+					GM.gobj_Menu.SendMessage("Sound_Get_FullHP");
 					Glow_2.color = color_On;
 					Change_Cloth = true;
 				}

@@ -17,7 +17,7 @@ public class Info_GetItem : global::UnityEngine.MonoBehaviour
 		if (Item_Num > 0 && Fonts.Length > 0)
 		{
 			int language_Num = GM.Language_Num;
-			Fonts[0].GetComponent<global::UnityEngine.UI.Text>().text = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>().ItemName(Item_Num, language_Num);
+			Fonts[0].GetComponent<global::UnityEngine.UI.Text>().text = GM.gobj_Menu.GetComponent<Language_MenuItem>().ItemName(Item_Num, language_Num);
 			if (Fonts.Length > 1)
 			{
 				if (Item_Num <= 5)
@@ -34,7 +34,7 @@ public class Info_GetItem : global::UnityEngine.MonoBehaviour
 				}
 				else
 				{
-					Fonts[1].GetComponent<global::UnityEngine.UI.Text>().text = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>().ItemDesc(Item_Num, language_Num);
+					Fonts[1].GetComponent<global::UnityEngine.UI.Text>().text = GM.gobj_Menu.GetComponent<Language_MenuItem>().ItemDesc(Item_Num, language_Num);
 				}
 			}
 		}

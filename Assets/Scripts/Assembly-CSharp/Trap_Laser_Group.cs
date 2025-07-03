@@ -100,7 +100,7 @@ public class Trap_Laser_Group : global::UnityEngine.MonoBehaviour
 		}
 		if (num == 0 || num == 10 || num == 19)
 		{
-			global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Laser");
+			GM.gobj_Menu.SendMessage("Sound_Laser");
 		}
 		if (num == 19)
 		{

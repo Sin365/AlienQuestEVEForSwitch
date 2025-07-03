@@ -116,7 +116,7 @@ public class Boss_5_Platform : global::UnityEngine.MonoBehaviour
 			gameObject.SendMessage("Flip");
 		}
 		gameObject.GetComponent<H_Ani>().Mon_Object = base.gameObject;
-		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
+		GM.mc_Menu.H_Object = gameObject;
 		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (flag)
 		{

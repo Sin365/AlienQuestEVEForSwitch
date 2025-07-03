@@ -305,7 +305,7 @@ public class Camera_Control : global::UnityEngine.MonoBehaviour
 			}
 			currentSize = global::UnityEngine.Mathf.Lerp(currentSize, targetSize, global::UnityEngine.Time.deltaTime * 1f);
 			base.GetComponent<UnityEngine.Camera>().orthographicSize = currentSize;
-			global::UnityEngine.Vector3 position = global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position;
+			global::UnityEngine.Vector3 position = GM.gobj_Pos_Down_Center.transform.position;
 			if (position.x - base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect <= Cam_Left)
 			{
 				position.x = Cam_Left + base.GetComponent<UnityEngine.Camera>().orthographicSize * base.GetComponent<UnityEngine.Camera>().aspect;

@@ -82,14 +82,14 @@ public class Lv_0_ShipBoard : global::UnityEngine.MonoBehaviour
 					{
 						Active_Heal = true;
 						GM.Get_HP(1001);
-						global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_FullHP");
+						GM.gobj_Menu.SendMessage("Sound_Get_FullHP");
 						Glow_top.color = color_On;
 					}
 					else if (!Change_Cloth && !GM.onCloth)
 					{
 						Active_Heal = true;
 						GM.Get_HP(1001);
-						global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_FullHP");
+						GM.gobj_Menu.SendMessage("Sound_Get_FullHP");
 						Glow_top.color = color_On;
 						Change_Cloth = true;
 					}

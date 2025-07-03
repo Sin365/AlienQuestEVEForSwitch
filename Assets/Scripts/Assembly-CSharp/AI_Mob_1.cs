@@ -65,7 +65,7 @@ public class AI_Mob_1 : global::UnityEngine.MonoBehaviour
 			if (Patrol_State > 0)
 			{
 				Patrol_Move_Timer += global::UnityEngine.Time.deltaTime;
-				if (Patrol_Move_Timer > 1f && (isStuck_Front || global::UnityEngine.Mathf.Abs(global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x - base.transform.position.x) > Patrol_Range))
+				if (Patrol_Move_Timer > 1f && (isStuck_Front || global::UnityEngine.Mathf.Abs(GM.gobj_Pos_Down_Center.transform.position.x - base.transform.position.x) > Patrol_Range))
 				{
 					Check_Idle();
 					Patrol_State = 0;

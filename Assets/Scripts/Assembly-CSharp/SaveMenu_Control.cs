@@ -63,7 +63,7 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
-		Lang_MI = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>();
+		Lang_MI = GM.gobj_Menu.GetComponent<Language_MenuItem>();
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(0f, 2000f, 0f);
 		color_BG = save_BG_1.color;
 		save_BG_1.color = new global::UnityEngine.Color(color_BG.r, color_BG.g, color_BG.b, 0f);
@@ -185,13 +185,13 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 				{
 					Sel_Index = 1;
 					pos_Target = pos_No.position;
-					global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Move_1");
+					GM.gobj_Menu.SendMessage("Sound_Move_1");
 				}
 				else if (inputX < 0f && Sel_Index == 1)
 				{
 					Sel_Index = 0;
 					pos_Target = pos_Yes.position;
-					global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Move_1");
+					GM.gobj_Menu.SendMessage("Sound_Move_1");
 				}
 				Sel_Cursor.transform.position = global::UnityEngine.Vector3.Lerp(Sel_Cursor.transform.position, pos_Target, global::UnityEngine.Time.deltaTime * 12f);
 				if (Sel_Index == 0)
@@ -248,8 +248,8 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 					{
 						GM.onEvent = true;
 						GM.onGameClear = true;
-						global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_DeviceOn");
-						global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_FullHP");
+						GM.gobj_Menu.SendMessage("Sound_DeviceOn");
+						GM.gobj_Menu.SendMessage("Sound_Get_FullHP");
 						UnityEngine.Camera.main.GetComponent<Camera_Control>().targetSize = 11.2f;
 						global::UnityEngine.Debug.Log("Game Ending Start!!!!!!!!!!!!!!!!!");
 					}
@@ -292,8 +292,8 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 		{
 			save_Block.SendMessage("Save");
 		}
-		global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_DeviceOn");
-		global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Get_FullHP");
+		GM.gobj_Menu.SendMessage("Sound_DeviceOn");
+		GM.gobj_Menu.SendMessage("Sound_Get_FullHP");
 	}
 
 	private void Change_Color()
@@ -327,7 +327,7 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(0f, 138f, 0f);
 		pos_Target = pos_Yes.position;
 		Sel_Cursor.transform.position = pos_Yes.position;
-		global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_MenuOn");
+		GM.gobj_Menu.SendMessage("Sound_MenuOn");
 		global::UnityEngine.GameObject.Find("EscapeTimer").SendMessage("Pause_Timer");
 	}
 
@@ -336,7 +336,7 @@ public class SaveMenu_Control : global::UnityEngine.MonoBehaviour
 		GM.onSave = false;
 		GM.resumeTimer = 0.5f;
 		Sel_Index = 0;
-		global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_MenuOff");
+		GM.gobj_Menu.SendMessage("Sound_MenuOff");
 		global::UnityEngine.GameObject.Find("EscapeTimer").SendMessage("Set_Timer");
 	}
 }

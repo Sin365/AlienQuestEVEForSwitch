@@ -269,7 +269,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 			{
 				H_Timer = 0f;
 			}
-			if ((facingRight > 0 && base.transform.position.x > global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x) || (facingRight < 0 && base.transform.position.x < global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x))
+			if ((facingRight > 0 && base.transform.position.x > GM.gobj_Pos_Down_Center.transform.position.x) || (facingRight < 0 && base.transform.position.x < GM.gobj_Pos_Down_Center.transform.position.x))
 			{
 				Just_Flip();
 			}
@@ -280,15 +280,15 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 		{
 			if (GM.Hscene_Num == 0 && GM.Hscene_Timer <= 0f)
 			{
-				if (facingRight > 0 && base.transform.position.x > global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x)
+				if (facingRight > 0 && base.transform.position.x > GM.gobj_Pos_Down_Center.transform.position.x)
 				{
 					Just_Flip();
 				}
-				else if (facingRight < 0 && base.transform.position.x < global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x)
+				else if (facingRight < 0 && base.transform.position.x < GM.gobj_Pos_Down_Center.transform.position.x)
 				{
 					Just_Flip();
 				}
-				dist_X = global::UnityEngine.Mathf.Abs(global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x - base.transform.position.x);
+				dist_X = global::UnityEngine.Mathf.Abs(GM.gobj_Pos_Down_Center.transform.position.x - base.transform.position.x);
 				if (dist_Y < 0.5f && dist_X < 4f)
 				{
 					if ((facingRight > 0 && Player.transform.localScale.x > 0f) || (facingRight < 0 && Player.transform.localScale.x < 0f))
@@ -300,7 +300,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 				}
 				else
 				{
-					Pos_Target = new global::UnityEngine.Vector3(global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x, Player.transform.position.y + 6.4f, 0f);
+					Pos_Target = new global::UnityEngine.Vector3(GM.gobj_Pos_Down_Center.transform.position.x, Player.transform.position.y + 6.4f, 0f);
 					base.transform.position = global::UnityEngine.Vector3.Lerp(base.transform.position, Pos_Target, global::UnityEngine.Time.deltaTime * 3f);
 				}
 			}
@@ -313,7 +313,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 					Patrol_Idle_Timer = 0f;
 					global::UnityEngine.Debug.Log("Set to Idle");
 				}
-				Pos_Target = new global::UnityEngine.Vector3(global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x + (Patrol_Range + 10f) * (float)facingRight, Player.transform.position.y + 7.5f - Rnd_XY.y * 3f, 0f);
+				Pos_Target = new global::UnityEngine.Vector3(GM.gobj_Pos_Down_Center.transform.position.x + (Patrol_Range + 10f) * (float)facingRight, Player.transform.position.y + 7.5f - Rnd_XY.y * 3f, 0f);
 				Move_Speed = global::UnityEngine.Mathf.Lerp(Move_Speed, Speed_Orig, global::UnityEngine.Time.deltaTime * 5f);
 				base.transform.position = global::UnityEngine.Vector3.MoveTowards(base.transform.position, Pos_Target, global::UnityEngine.Time.deltaTime * Move_Speed * 0.4f * GetComponent<Monster>().Move_Speed);
 			}
@@ -326,7 +326,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 					Patrol_State = 1;
 					Patrol_Move_Timer = 0f;
 				}
-				else if (Patrol_Idle_Timer > 1.5f && ((facingRight > 0 && base.transform.position.x > global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x) || (facingRight < 0 && base.transform.position.x < global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x)))
+				else if (Patrol_Idle_Timer > 1.5f && ((facingRight > 0 && base.transform.position.x > GM.gobj_Pos_Down_Center.transform.position.x) || (facingRight < 0 && base.transform.position.x < GM.gobj_Pos_Down_Center.transform.position.x)))
 				{
 					Just_Flip();
 				}
@@ -787,7 +787,7 @@ public class AI_Mon_40 : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Rigidbody2D>().Sleep();
 		base.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x + 3f * (float)(-facingRight), Player.transform.position.y + 6.4f, 0f);
 		Mon.isInvincible = true;
-		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
+		GM.mc_Menu.H_Object = gameObject;
 		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{

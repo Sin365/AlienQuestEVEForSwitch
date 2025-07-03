@@ -92,7 +92,7 @@ public class Trap_Laser : global::UnityEngine.MonoBehaviour
 				color = color;
 				Glow_2.color = color;
 				glow_.color = color;
-				global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Laser");
+				GM.gobj_Menu.SendMessage("Sound_Laser");
 				Col_Laser.enabled = true;
 			}
 			else if (State_Timer > 1f)

@@ -80,7 +80,7 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		//CK = global::UnityEngine.GameObject.Find("GameManager").GetComponent<Custom_Key>();
-		Sound_List = global::UnityEngine.GameObject.Find("Menu").GetComponent<UI_SoundList>();
+		Sound_List = GM.gobj_Menu.GetComponent<UI_SoundList>();
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(0f, -1000f, 0f);
 	}
 

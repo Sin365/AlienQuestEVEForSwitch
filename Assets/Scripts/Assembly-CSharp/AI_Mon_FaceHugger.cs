@@ -278,11 +278,11 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 				{
 					if (!GM.onChestBurster && GM.Hscene_Num == 0 && GM.Hscene_Timer <= 0f)
 					{
-						if (facingRight > 0 && base.transform.position.x > global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x)
+						if (facingRight > 0 && base.transform.position.x > GM.gobj_Pos_Down_Center.transform.position.x)
 						{
 							Flip();
 						}
-						else if (facingRight < 0 && base.transform.position.x < global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x)
+						else if (facingRight < 0 && base.transform.position.x < GM.gobj_Pos_Down_Center.transform.position.x)
 						{
 							Flip();
 						}
@@ -335,7 +335,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 					{
 						if (Patrol_Pos_X == 0f)
 						{
-							Patrol_Pos_X = global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x;
+							Patrol_Pos_X = GM.gobj_Pos_Down_Center.transform.position.x;
 						}
 						if (H_Pursue_Timer > 0f)
 						{
@@ -349,7 +349,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 						else if (State == AI_Mon_FaceHugger.AniState.Move)
 						{
 							Patrol_Move_Timer += global::UnityEngine.Time.deltaTime;
-							if (Patrol_Move_Timer > 1f && (isStuck_Front || global::UnityEngine.Mathf.Abs(global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x - base.transform.position.x) > Patrol_Range))
+							if (Patrol_Move_Timer > 1f && (isStuck_Front || global::UnityEngine.Mathf.Abs(GM.gobj_Pos_Down_Center.transform.position.x - base.transform.position.x) > Patrol_Range))
 							{
 								if (State != AI_Mon_FaceHugger.AniState.Idle)
 								{
@@ -372,7 +372,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 							}
 							else if (Patrol_Idle_Timer > 1.5f)
 							{
-								if ((facingRight > 0 && base.transform.position.x > global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x) || (facingRight < 0 && base.transform.position.x < global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x))
+								if ((facingRight > 0 && base.transform.position.x > GM.gobj_Pos_Down_Center.transform.position.x) || (facingRight < 0 && base.transform.position.x < GM.gobj_Pos_Down_Center.transform.position.x))
 								{
 									Flip();
 								}
@@ -628,10 +628,10 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
             //Player_Grab pg = global::UnityEngine.GameObject.Find("Player_Grab").GetComponent<Player_Grab>();
             Player_Grab pg = GameManager.instance.pg_Player_Grab;
             pg.Mon_Object = base.gameObject;
-            global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = pg.gameObject;
+            GM.mc_Menu.H_Object = pg.gameObject;
             pg.H_Play();
             //global::UnityEngine.GameObject.Find("Player_Grab").GetComponent<Player_Grab>().Mon_Object = base.gameObject;
-            //global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = global::UnityEngine.GameObject.Find("Player_Grab");
+            //GM.mc_Menu.H_Object = global::UnityEngine.GameObject.Find("Player_Grab");
             //global::UnityEngine.GameObject.Find("Player_Grab").SendMessage("H_Play");
         }
 		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
@@ -925,7 +925,7 @@ public class AI_Mon_FaceHugger : global::UnityEngine.MonoBehaviour
 		isStuck_Front = global::UnityEngine.Physics2D.Linecast(pos_L.position, pos_Front.position, 1 << global::UnityEngine.LayerMask.NameToLayer("Ground"));
 		onGrounded = (((bool)global::UnityEngine.Physics2D.Linecast(pos_L.position, pos_Bottom_L.position, 1 << global::UnityEngine.LayerMask.NameToLayer("Ground")) || (bool)global::UnityEngine.Physics2D.Linecast(pos_R.position, pos_Bottom_R.position, 1 << global::UnityEngine.LayerMask.NameToLayer("Ground"))) ? true : false);
 		distance = global::UnityEngine.Vector3.Distance(new global::UnityEngine.Vector3(Player.transform.position.x, Player.transform.position.y + 2.8f, 0f), base.transform.position);
-		dist_DownCenter = global::UnityEngine.Vector3.Distance(global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position, base.transform.position);
+		dist_DownCenter = global::UnityEngine.Vector3.Distance(GM.gobj_Pos_Down_Center.transform.position, base.transform.position);
 		dist_X = global::UnityEngine.Mathf.Abs(Player.transform.position.x - base.transform.position.x);
 		dist_Y = global::UnityEngine.Mathf.Abs(Player.transform.position.y - (base.transform.position.y - 0.329f));
 	}

@@ -476,7 +476,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		}
 		gameObject.GetComponent<H_Ani>().Mon_Object = base.gameObject;
 		GetComponent<Monster>().isInvincible = true;
-		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
+		GM.mc_Menu.H_Object = gameObject;
 		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{
@@ -501,7 +501,7 @@ public class AI_Mon_30N : global::UnityEngine.MonoBehaviour
 		}
 		gameObject.GetComponent<H_Ani>().Mon_Object = base.gameObject;
 		GetComponent<Monster>().isInvincible = true;
-		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
+		GM.mc_Menu.H_Object = gameObject;
 		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{

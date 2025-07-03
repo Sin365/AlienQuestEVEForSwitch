@@ -104,7 +104,7 @@ public class AI_Mon_17 : global::UnityEngine.MonoBehaviour
 		}
 		if (GM.GameOver || GM.onHscene)
 		{
-			Patrol_Pos_X = global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x;
+			Patrol_Pos_X = GM.gobj_Pos_Down_Center.transform.position.x;
 			distance = global::UnityEngine.Vector3.Distance(base.transform.position, new global::UnityEngine.Vector3(Patrol_Pos_X, Player.transform.position.y + 7f - Rnd_XY.y * 3f, 0f));
 			if (Patrol_State == 1)
 			{
@@ -127,7 +127,7 @@ public class AI_Mon_17 : global::UnityEngine.MonoBehaviour
 					Patrol_State = 1;
 					Patrol_Move_Timer = 0f;
 				}
-				else if (Patrol_Idle_Timer > 1.5f && ((facingRight > 0 && base.transform.position.x > global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x) || (facingRight < 0 && base.transform.position.x < global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x)))
+				else if (Patrol_Idle_Timer > 1.5f && ((facingRight > 0 && base.transform.position.x > GM.gobj_Pos_Down_Center.transform.position.x) || (facingRight < 0 && base.transform.position.x < GM.gobj_Pos_Down_Center.transform.position.x)))
 				{
 					Flip();
 				}

@@ -43,7 +43,7 @@ public class AI_Mob_2 : global::UnityEngine.MonoBehaviour
 		if (GM.GameOver && distance < 45f)
 		{
 			Check_Idle();
-			if (global::UnityEngine.Mathf.Abs(global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x - base.transform.position.x) < 8f)
+			if (global::UnityEngine.Mathf.Abs(GM.gobj_Pos_Down_Center.transform.position.x - base.transform.position.x) < 8f)
 			{
 				base.transform.Translate(global::UnityEngine.Vector3.right * global::UnityEngine.Time.deltaTime * 1f * -facingRight * GetComponent<Monster>().Move_Speed);
 			}

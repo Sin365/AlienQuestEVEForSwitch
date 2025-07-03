@@ -376,7 +376,7 @@ public class AI_Mon_31 : global::UnityEngine.MonoBehaviour
 				H_Timer = 0f;
 				H_Walk_Timer = 0f;
 			}
-			if ((facingRight > 0 && base.transform.position.x > global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x) || (facingRight < 0 && base.transform.position.x < global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x))
+			if ((facingRight > 0 && base.transform.position.x > GM.gobj_Pos_Down_Center.transform.position.x) || (facingRight < 0 && base.transform.position.x < GM.gobj_Pos_Down_Center.transform.position.x))
 			{
 				Flip();
 			}
@@ -414,15 +414,15 @@ public class AI_Mon_31 : global::UnityEngine.MonoBehaviour
 		{
 			if (GM.Hscene_Num == 0 && GM.Hscene_Timer <= 0f)
 			{
-				if (facingRight > 0 && base.transform.position.x > global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x)
+				if (facingRight > 0 && base.transform.position.x > GM.gobj_Pos_Down_Center.transform.position.x)
 				{
 					Flip();
 				}
-				else if (facingRight < 0 && base.transform.position.x < global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x)
+				else if (facingRight < 0 && base.transform.position.x < GM.gobj_Pos_Down_Center.transform.position.x)
 				{
 					Flip();
 				}
-				else if (dist_Y < 1f && (global::UnityEngine.Mathf.Abs(base.transform.position.x - global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x) < 2f || (isStuck_Front && global::UnityEngine.Mathf.Abs(base.transform.position.x - global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x) < 3.2f)))
+				else if (dist_Y < 1f && (global::UnityEngine.Mathf.Abs(base.transform.position.x - GM.gobj_Pos_Down_Center.transform.position.x) < 2f || (isStuck_Front && global::UnityEngine.Mathf.Abs(base.transform.position.x - GM.gobj_Pos_Down_Center.transform.position.x) < 3.2f)))
 				{
 					if (facingRight > 0 && Player.transform.localScale.x > 0f)
 					{
@@ -478,7 +478,7 @@ public class AI_Mon_31 : global::UnityEngine.MonoBehaviour
 						Patrol_State = 1;
 						Patrol_Idle_Timer = 2f;
 					}
-					else if (Patrol_Move_Timer > 1f && global::UnityEngine.Mathf.Abs(global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x - base.transform.position.x) > Patrol_Range)
+					else if (Patrol_Move_Timer > 1f && global::UnityEngine.Mathf.Abs(GM.gobj_Pos_Down_Center.transform.position.x - base.transform.position.x) > Patrol_Range)
 					{
 						Check_Idle();
 						Patrol_State = 0;
@@ -520,7 +520,7 @@ public class AI_Mon_31 : global::UnityEngine.MonoBehaviour
 						}
 						else if (Patrol_Idle_Timer > 1.5f)
 						{
-							if ((facingRight > 0 && base.transform.position.x > global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x) || (facingRight < 0 && base.transform.position.x < global::UnityEngine.GameObject.Find("Pos_Down_Center").transform.position.x))
+							if ((facingRight > 0 && base.transform.position.x > GM.gobj_Pos_Down_Center.transform.position.x) || (facingRight < 0 && base.transform.position.x < GM.gobj_Pos_Down_Center.transform.position.x))
 							{
 								Flip();
 							}
@@ -1035,7 +1035,7 @@ public class AI_Mon_31 : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.Rigidbody2D>().Sleep();
 		base.transform.position = new global::UnityEngine.Vector3(Player.transform.position.x + 0.2f * (float)(-facingRight), Player.transform.position.y + 4.02f, 0f);
 		GetComponent<Monster>().isInvincible = true;
-		global::UnityEngine.GameObject.Find("Menu").GetComponent<Menu_Control>().H_Object = gameObject;
+		GM.mc_Menu.H_Object = gameObject;
 		UnityEngine.Camera.main.SendMessage("Hscene_Zoom");
 		if (!GM.GameOver)
 		{

@@ -180,12 +180,12 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 				if (inputX > 0f && Sel_Index < 5)
 				{
 					Sel_Index++;
-					global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Move_1");
+					GM.gobj_Menu.SendMessage("Sound_Move_1");
 				}
 				else if (inputX < 0f && Sel_Index > 0)
 				{
 					Sel_Index--;
-					global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_Move_1");
+					GM.gobj_Menu.SendMessage("Sound_Move_1");
 				}
 				pos_Target_Box = new global::UnityEngine.Vector3(-300 + Sel_Index * 120, -30f, 0f);
 				pos_Target_Cursor = new global::UnityEngine.Vector3(-300 + Sel_Index * 120, -112f, 0f);
@@ -315,7 +315,7 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 		{
 			SM.Go_Room(num, 0, 0f, 0f, true);
 		}
-		global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_DeviceOn");
+		GM.gobj_Menu.SendMessage("Sound_DeviceOn");
 	}
 
 	private void Change_Color()
@@ -372,7 +372,7 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 		Img_Box_Now.rectTransform.localPosition = new global::UnityEngine.Vector3(-300 + Teleport_Num * 120, -30f, 0f);
 		Img_Box_Target.rectTransform.localPosition = (pos_Target_Box = new global::UnityEngine.Vector3(-300f, -30f, 0f));
 		Sel_Cursor.transform.localPosition = (pos_Target_Cursor = new global::UnityEngine.Vector3(-300f, -112f, 0f));
-		global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_MenuOn");
+		GM.gobj_Menu.SendMessage("Sound_MenuOn");
 		global::UnityEngine.GameObject.Find("EscapeTimer").SendMessage("Pause_Timer");
 	}
 
@@ -381,7 +381,7 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 		GM.onTeleport = false;
 		GM.resumeTimer = 0.5f;
 		Sel_Index = 0;
-		global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_MenuOff");
+		GM.gobj_Menu.SendMessage("Sound_MenuOff");
 		global::UnityEngine.GameObject.Find("EscapeTimer").SendMessage("Set_Timer");
 	}
 }

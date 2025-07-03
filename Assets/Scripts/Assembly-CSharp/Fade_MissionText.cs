@@ -36,7 +36,7 @@ public class Fade_MissionText : global::UnityEngine.MonoBehaviour
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 		brown_On = txt_1.color;
-		Language_MenuItem component = global::UnityEngine.GameObject.Find("Menu").GetComponent<Language_MenuItem>();
+		Language_MenuItem component = GM.gobj_Menu.GetComponent<Language_MenuItem>();
 
 		//if (AxiPlayerPrefs.GetInt("Language_Num") > 0)
 		//{
@@ -54,7 +54,7 @@ public class Fade_MissionText : global::UnityEngine.MonoBehaviour
 		GetComponent<global::UnityEngine.RectTransform>().parent = global::UnityEngine.GameObject.Find("UI Canvas").GetComponent<global::UnityEngine.RectTransform>();
 		GetComponent<global::UnityEngine.RectTransform>().localPosition = PosOrig;
 		GetComponent<global::UnityEngine.RectTransform>().localScale = new global::UnityEngine.Vector3(1f, 1f, 1f);
-		global::UnityEngine.GameObject.Find("Menu").SendMessage("Sound_MissionBriefing");
+		GM.gobj_Menu.SendMessage("Sound_MissionBriefing");
 	}
 
 	private void Update()
