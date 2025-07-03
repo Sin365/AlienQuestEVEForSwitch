@@ -1352,10 +1352,10 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
         {
             global::UnityEngine.Ray ray = camera_UI_Camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
             global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
-            string rayIntersection_collider = rayIntersection.collider.name;
             if (rayIntersection.collider != null)
-            {
-                if (rayIntersection_collider == "Btn_Menu_0" && Menu_State != 0)
+			{
+				string rayIntersection_collider = rayIntersection.collider.name;
+				if (rayIntersection_collider == "Btn_Menu_0" && Menu_State != 0)
                 {
                     Menu_State = 0;
                     Change_Menu();
@@ -1591,10 +1591,10 @@ public class Menu_Control : global::UnityEngine.MonoBehaviour
         {
             global::UnityEngine.Ray ray2 = camera_UI_Camera.ScreenPointToRay(global::UnityEngine.Input.mousePosition);
             global::UnityEngine.RaycastHit2D rayIntersection2 = global::UnityEngine.Physics2D.GetRayIntersection(ray2, float.PositiveInfinity);
-            string rayIntersection2_collider = rayIntersection2.collider.name;
             if (rayIntersection2.collider != null)
-            {
-                if (Menu_State == 1)
+			{
+				string rayIntersection2_collider = rayIntersection2.collider.name;
+				if (Menu_State == 1)
                 {
                     if (rayIntersection2_collider.Substring(0, 5) == "pos_B")
                     {

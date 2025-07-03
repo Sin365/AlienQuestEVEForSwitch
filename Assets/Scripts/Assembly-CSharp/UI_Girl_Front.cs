@@ -490,9 +490,9 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
         {
             global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
             global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
-            string rayIntersection_collider = rayIntersection.collider.name;
             if (rayIntersection.collider != null)
             {
+                string rayIntersection_collider = rayIntersection.collider.name;
                 if (rayIntersection_collider == "COL_Girl_Top")
                 {
                     Hold_Timer += global::UnityEngine.Time.deltaTime;
@@ -543,9 +543,9 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
         {
             global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
             global::UnityEngine.RaycastHit2D rayIntersection2 = global::UnityEngine.Physics2D.GetRayIntersection(ray2, float.PositiveInfinity);
-            string rayIntersection2_collider = rayIntersection2.collider.name;
             if (rayIntersection2.collider != null)
             {
+                string rayIntersection2_collider = rayIntersection2.collider.name;
                 if (rayIntersection2_collider == "COL_Girl_Top")
                 {
                     Hold_Timer += global::UnityEngine.Time.deltaTime;

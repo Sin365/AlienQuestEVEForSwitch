@@ -3,6 +3,7 @@
 /// 
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace AxiInputSP
 {
@@ -37,7 +38,7 @@ namespace AxiInputSP
         static AxiPSVBackTouchEmuKey _instance;
         const int PSVScreenWidth = 960;
         const int PSVScreenHeight = 544;
-        static Dictionary<AxiPSVBackTouchType, System.ValueTuple<Vector2, Vector2>> dictType2Range = new Dictionary<AxiPSVBackTouchType, (Vector2, Vector2)>()
+        static Dictionary<AxiPSVBackTouchType, System.ValueTuple<Vector2, Vector2>> dictType2Range = new Dictionary<AxiPSVBackTouchType, System.ValueTuple<Vector2, Vector2>>()
         {
             { AxiPSVBackTouchType.LeftHalf,new System.ValueTuple<Vector2,Vector2>(Vector2.zero,new Vector2(PSVScreenWidth*0.5f,PSVScreenHeight* 1f))},
             { AxiPSVBackTouchType.RigthHalf,new System.ValueTuple<Vector2,Vector2>(new Vector2(PSVScreenWidth*0.5f,0),new Vector2(PSVScreenWidth*1f,PSVScreenHeight * 1f))},
