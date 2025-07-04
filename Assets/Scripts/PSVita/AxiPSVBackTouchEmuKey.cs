@@ -18,9 +18,9 @@ namespace AxiInputSP
     }
     public class AxiPSVBackTouchEmuKey : MonoBehaviour
     {
-        public static bool GetKey(AxiPSVBackTouchType btnType) { return _instance.m_TouckState[btnType].GetKey(); }
-        public static bool GetKeyUp(AxiPSVBackTouchType btnType) { return _instance.m_TouckState[btnType].GetKeyUp(); }
-        public static bool GetKeyDown(AxiPSVBackTouchType btnType) { return _instance.m_TouckState[btnType].GetKeyDown(); }
+        public static bool GetKey(AxiPSVBackTouchType btnType) { return instance.m_TouckState[btnType].GetKey(); }
+        public static bool GetKeyUp(AxiPSVBackTouchType btnType) { return instance.m_TouckState[btnType].GetKeyUp(); }
+        public static bool GetKeyDown(AxiPSVBackTouchType btnType) { return instance.m_TouckState[btnType].GetKeyDown(); }
 
         #region 静态管理
         public static AxiPSVBackTouchEmuKey instance
