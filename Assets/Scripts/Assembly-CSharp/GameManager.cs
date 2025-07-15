@@ -685,12 +685,12 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         User_Input_Timer += global::UnityEngine.Time.deltaTime;
         if (Input_Mode == 0)
         {
-            if (global::UnityEngine.Input.GetKeyDown(CK.Left) || global::UnityEngine.Input.GetKeyDown(CK.Right) || global::UnityEngine.Input.GetKeyDown(CK.Jump) || global::UnityEngine.Input.GetKeyDown(CK.Attack) || global::UnityEngine.Input.GetKeyDown(CK.Spin) || global::UnityEngine.Input.GetKeyDown(CK.Skill) || global::UnityEngine.Input.GetKeyDown(CK.LB) || global::UnityEngine.Input.GetKeyDown(CK.RB))
+            if (AxiInputBridge.GetKeyDown(CK.Left) || AxiInputBridge.GetKeyDown(CK.Right) || AxiInputBridge.GetKeyDown(CK.Jump) || AxiInputBridge.GetKeyDown(CK.Attack) || AxiInputBridge.GetKeyDown(CK.Spin) || AxiInputBridge.GetKeyDown(CK.Skill) || AxiInputBridge.GetKeyDown(CK.LB) || AxiInputBridge.GetKeyDown(CK.RB))
             {
                 User_Input_Timer = 0f;
             }
         }
-        else if (global::UnityEngine.Input.GetAxis("L_X") != 0f || global::UnityEngine.Input.GetAxis("L_Y") != 0f || global::UnityEngine.Input.GetButtonDown("Jump") || global::UnityEngine.Input.GetButtonDown("_B") || global::UnityEngine.Input.GetButtonDown("_X") || global::UnityEngine.Input.GetButtonDown("_Y") || global::UnityEngine.Input.GetButtonDown("L_B") || global::UnityEngine.Input.GetButtonDown("R_B") || global::UnityEngine.Input.GetAxis("L_Trigger") != 0f)
+        else if (AxiInputBridge.GetAxis("L_X") != 0f || AxiInputBridge.GetAxis("L_Y") != 0f || AxiInputBridge.GetButtonDown("Jump") || AxiInputBridge.GetButtonDown("_B") || AxiInputBridge.GetButtonDown("_X") || AxiInputBridge.GetButtonDown("_Y") || AxiInputBridge.GetButtonDown("L_B") || AxiInputBridge.GetButtonDown("R_B") || AxiInputBridge.GetAxis("L_Trigger") != 0f)
         {
             User_Input_Timer = 0f;
         }
@@ -722,13 +722,13 @@ public class GameManager : global::UnityEngine.MonoBehaviour
         }
         if (Input_Mode == 0)
         {
-            if (global::UnityEngine.Input.GetAxis("L_X") != 0f || global::UnityEngine.Input.GetAxis("L_Y") != 0f || global::UnityEngine.Input.GetAxis("R_X") != 0f || global::UnityEngine.Input.GetAxis("R_Y") != 0f || global::UnityEngine.Input.GetButtonDown("Jump") || global::UnityEngine.Input.GetButtonDown("_B") || global::UnityEngine.Input.GetButtonDown("_X") || global::UnityEngine.Input.GetButtonDown("_Y") || global::UnityEngine.Input.GetButtonDown("L_B") || global::UnityEngine.Input.GetButtonDown("R_B") || global::UnityEngine.Input.GetAxis("L_Trigger") != 0f || global::UnityEngine.Input.GetButtonDown("Start") || global::UnityEngine.Input.GetButtonDown("Back") || global::UnityEngine.Input.GetAxis("DPad_X") != 0f || global::UnityEngine.Input.GetAxis("DPad_Y") != 0f)
+            if (AxiInputBridge.GetAxis("L_X") != 0f || AxiInputBridge.GetAxis("L_Y") != 0f || AxiInputBridge.GetAxis("R_X") != 0f || AxiInputBridge.GetAxis("R_Y") != 0f || AxiInputBridge.GetButtonDown("Jump") || AxiInputBridge.GetButtonDown("_B") || AxiInputBridge.GetButtonDown("_X") || AxiInputBridge.GetButtonDown("_Y") || AxiInputBridge.GetButtonDown("L_B") || AxiInputBridge.GetButtonDown("R_B") || AxiInputBridge.GetAxis("L_Trigger") != 0f || AxiInputBridge.GetButtonDown("Start") || AxiInputBridge.GetButtonDown("Back") || AxiInputBridge.GetAxis("DPad_X") != 0f || AxiInputBridge.GetAxis("DPad_Y") != 0f)
             {
                 Input_Mode = 1;
                 gobj_Menu.SendMessage("Hscene_Bar_Pad");
             }
         }
-        else if (Input_Mode == 1 && global::UnityEngine.Input.anyKeyDown)
+        else if (Input_Mode == 1 && AxiInputBridge.anyKeyDown)
         {
             Input_Mode = 0;
             gobj_Menu.SendMessage("Hscene_Bar_KB");
@@ -796,62 +796,62 @@ public class GameManager : global::UnityEngine.MonoBehaviour
             }
             if (!onEvent || onHscene)
             {
-                if (global::UnityEngine.Input.GetAxis("R_Y") != 0f)
+                if (AxiInputBridge.GetAxis("R_Y") != 0f)
                 {
-                    cc_Main_Camera.targetSize += global::UnityEngine.Input.GetAxis("R_Y") * -5f * global::UnityEngine.Time.deltaTime;
+                    cc_Main_Camera.targetSize += AxiInputBridge.GetAxis("R_Y") * -5f * global::UnityEngine.Time.deltaTime;
                 }
-                else if (global::UnityEngine.Input.GetKey(CK.ZoomIn))
+                else if (AxiInputBridge.GetKey(CK.ZoomIn))
                 {
                     cc_Main_Camera.targetSize -= 5f * global::UnityEngine.Time.deltaTime;
                 }
-                else if (global::UnityEngine.Input.GetKey(CK.ZoomOut))
+                else if (AxiInputBridge.GetKey(CK.ZoomOut))
                 {
                     cc_Main_Camera.targetSize += 5f * global::UnityEngine.Time.deltaTime;
                 }
-                if (global::UnityEngine.Input.GetButtonDown("R_A"))
+                if (AxiInputBridge.GetButtonDown("R_A"))
                 {
                     gobj_Main_Camera.SendMessage("Reset_Zoom_Button");
                 }
-                else if (global::UnityEngine.Input.GetKeyDown(CK.ZoomReset))
+                else if (AxiInputBridge.GetKeyDown(CK.ZoomReset))
                 {
                     gobj_Main_Camera.SendMessage("Reset_Zoom_Button");
                 }
             }
             if (!onSave && !onEvent && !GameOver)
             {
-                if (global::UnityEngine.Input.GetKeyDown(CK.SkillSwap))
+                if (AxiInputBridge.GetKeyDown(CK.SkillSwap))
                 {
                     Change_Skill(1);
                 }
-                else if (!isPressedDpad_R && global::UnityEngine.Input.GetAxis("DPad_X") > 0f)
+                else if (!isPressedDpad_R && AxiInputBridge.GetAxis("DPad_X") > 0f)
                 {
                     isPressedDpad_R = true;
                     Change_Skill(1);
                 }
-                else if (!isPressedDpad_L && global::UnityEngine.Input.GetAxis("DPad_X") < 0f)
+                else if (!isPressedDpad_L && AxiInputBridge.GetAxis("DPad_X") < 0f)
                 {
                     isPressedDpad_L = true;
                     Change_Skill(-1);
                 }
-                else if (global::UnityEngine.Input.GetAxis("DPad_X") == 0f)
+                else if (AxiInputBridge.GetAxis("DPad_X") == 0f)
                 {
                     isPressedDpad_R = (isPressedDpad_L = false);
                 }
                 if (!onGatePass)
                 {
-                    if (Potion_HP > 0 && global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Alpha1))
+                    if (Potion_HP > 0 && AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Alpha1))
                     {
                         Use_Potion_HP();
                     }
-                    else if (Potion_MP > 0 && global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Alpha2))
+                    else if (Potion_MP > 0 && AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Alpha2))
                     {
                         Use_Potion_MP();
                     }
-                    if (Potion_HP > 0 && global::UnityEngine.Input.GetAxis("L_Trigger") >= 0f && global::UnityEngine.Input.GetButtonDown("_B"))
+                    if (Potion_HP > 0 && AxiInputBridge.GetAxis("L_Trigger") >= 0f && AxiInputBridge.GetButtonDown("_B"))
                     {
                         Use_Potion_HP();
                     }
-                    else if (Potion_MP > 0 && global::UnityEngine.Input.GetAxis("L_Trigger") < 0f && global::UnityEngine.Input.GetButtonDown("_B"))
+                    else if (Potion_MP > 0 && AxiInputBridge.GetAxis("L_Trigger") < 0f && AxiInputBridge.GetButtonDown("_B"))
                     {
                         Use_Potion_MP();
                     }
@@ -1010,7 +1010,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
             {
                 FaceHugger_DMG_Timer = 0f;
             }
-            if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.RightShift))
+            if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.RightShift))
             {
                 if (AxiPlayerPrefs.GetInt("onClockFps") == 1)
                 {
@@ -1029,7 +1029,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
                     AxiPlayerPrefs.SetInt("On_HealthBar", 1);
                 }
             }
-            else if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.F12))
+            else if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.F12))
             {
                 User_Death();
             }

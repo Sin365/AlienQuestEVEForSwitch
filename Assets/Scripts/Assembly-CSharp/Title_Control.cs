@@ -164,8 +164,8 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 		global::UnityEngine.GameObject.Find("Loading_Bar").GetComponent<global::UnityEngine.UI.Image>().fillAmount = 0f;
 		PosOrig = GetComponent<global::UnityEngine.RectTransform>().localPosition;
 		PosTarget = global::UnityEngine.GameObject.Find("Pos_CloseOrigin").GetComponent<global::UnityEngine.RectTransform>().position;
-		MousePos = global::UnityEngine.Input.mousePosition;
-		MousePosPrev = global::UnityEngine.Input.mousePosition;
+		MousePos = AxiInputBridge.mousePosition;
+		MousePosPrev = AxiInputBridge.mousePosition;
 		PosTarget = global::UnityEngine.GameObject.Find("Pos_Button_1").GetComponent<global::UnityEngine.RectTransform>().position;
 		Target_Select();
 		FontColor1 = global::UnityEngine.GameObject.Find("Name_NewGame").GetComponent<global::UnityEngine.UI.Text>().color;
@@ -376,7 +376,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 				Start_Timer += global::UnityEngine.Time.deltaTime;
 				SelGlow_Opacity = 0.3f + (1f + global::UnityEngine.Mathf.Sin(Start_Timer * 3f)) * 0.2f;
 				global::UnityEngine.GameObject.Find("Select_BG_Glow").GetComponent<global::UnityEngine.UI.Image>().color = new global::UnityEngine.Color(1f, 1f, 1f, SelGlow_Opacity);
-				if (!global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.LeftAlt) && !global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.RightAlt) && !global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Escape) && !global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Tab) && global::UnityEngine.Input.anyKeyDown)
+				if (!AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.LeftAlt) && !AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.RightAlt) && !AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Escape) && !AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Tab) && AxiInputBridge.anyKeyDown)
 				{
 					On_Menu();
 					global::UnityEngine.GameObject.Find("Title_Info_Pad_1").SendMessage("On");
@@ -397,69 +397,69 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 				{
 					inputX = 0f;
 					inputY = 0f;
-					if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.RightArrow))
+					if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.RightArrow))
 					{
 						inputX = 1f;
 					}
-					else if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.LeftArrow))
+					else if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.LeftArrow))
 					{
 						inputX = -1f;
 					}
-					if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.UpArrow))
+					if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.UpArrow))
 					{
 						inputY = 1f;
 					}
-					else if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.DownArrow))
+					else if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.DownArrow))
 					{
 						inputY = -1f;
 					}
-					if (inputX == 0f && global::UnityEngine.Input.GetAxis("L_X") != 0f)
+					if (inputX == 0f && AxiInputBridge.GetAxis("L_X") != 0f)
 					{
-						if (global::UnityEngine.Input.GetAxis("L_X") > 0f && global::UnityEngine.Input.GetAxis("L_X") < prevX)
+						if (AxiInputBridge.GetAxis("L_X") > 0f && AxiInputBridge.GetAxis("L_X") < prevX)
 						{
 							PushX = prevX;
 						}
-						else if (global::UnityEngine.Input.GetAxis("L_X") < 0f && global::UnityEngine.Input.GetAxis("L_X") > prevX)
+						else if (AxiInputBridge.GetAxis("L_X") < 0f && AxiInputBridge.GetAxis("L_X") > prevX)
 						{
 							PushX = prevX;
 						}
-						if (global::UnityEngine.Input.GetAxis("L_X") > 0f && global::UnityEngine.Input.GetAxis("L_X") - PushX > 0.3f)
+						if (AxiInputBridge.GetAxis("L_X") > 0f && AxiInputBridge.GetAxis("L_X") - PushX > 0.3f)
 						{
 							inputX = 1f;
 							PushX = 1f;
 						}
-						else if (global::UnityEngine.Input.GetAxis("L_X") < 0f && global::UnityEngine.Input.GetAxis("L_X") - PushX < -0.3f)
+						else if (AxiInputBridge.GetAxis("L_X") < 0f && AxiInputBridge.GetAxis("L_X") - PushX < -0.3f)
 						{
 							inputX = -1f;
 							PushX = -1f;
 						}
 					}
-					else if (inputX == 0f && global::UnityEngine.Input.GetAxis("L_X") == 0f)
+					else if (inputX == 0f && AxiInputBridge.GetAxis("L_X") == 0f)
 					{
 						PushX = 0f;
 					}
-					if (inputY == 0f && global::UnityEngine.Input.GetAxis("L_Y") != 0f)
+					if (inputY == 0f && AxiInputBridge.GetAxis("L_Y") != 0f)
 					{
-						if (global::UnityEngine.Input.GetAxis("L_Y") > 0f && global::UnityEngine.Input.GetAxis("L_Y") < prevY)
+						if (AxiInputBridge.GetAxis("L_Y") > 0f && AxiInputBridge.GetAxis("L_Y") < prevY)
 						{
 							PushY = prevY;
 						}
-						else if (global::UnityEngine.Input.GetAxis("L_Y") < 0f && global::UnityEngine.Input.GetAxis("L_Y") > prevY)
+						else if (AxiInputBridge.GetAxis("L_Y") < 0f && AxiInputBridge.GetAxis("L_Y") > prevY)
 						{
 							PushY = prevY;
 						}
-						if (global::UnityEngine.Input.GetAxis("L_Y") > 0f && global::UnityEngine.Input.GetAxis("L_Y") - PushY > 0.3f)
+						if (AxiInputBridge.GetAxis("L_Y") > 0f && AxiInputBridge.GetAxis("L_Y") - PushY > 0.3f)
 						{
 							inputY = 1f;
 							PushY = 1f;
 						}
-						else if (global::UnityEngine.Input.GetAxis("L_Y") < 0f && global::UnityEngine.Input.GetAxis("L_Y") - PushY < -0.3f)
+						else if (AxiInputBridge.GetAxis("L_Y") < 0f && AxiInputBridge.GetAxis("L_Y") - PushY < -0.3f)
 						{
 							inputY = -1f;
 							PushY = -1f;
 						}
 					}
-					else if (inputY == 0f && global::UnityEngine.Input.GetAxis("L_Y") == 0f)
+					else if (inputY == 0f && AxiInputBridge.GetAxis("L_Y") == 0f)
 					{
 						PushY = 0f;
 					}
@@ -498,9 +498,9 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 						global::UnityEngine.GameObject.Find("UI_SoundList").SendMessage("Sound_Btn");
 						Set_Language();
 					}
-					MousePos = global::UnityEngine.Input.mousePosition;
+					MousePos = AxiInputBridge.mousePosition;
 					MouseDist = global::UnityEngine.Vector3.Distance(MousePos, MousePosPrev);
-					if (Input_Delay <= 0f && (MouseDist > 0f || global::UnityEngine.Input.GetMouseButtonDown(0)))
+					if (Input_Delay <= 0f && (MouseDist > 0f || AxiInputBridge.GetMouseButtonDown(0)))
 					{
 						Check_Mouse();
 					}
@@ -559,11 +559,11 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 							global::UnityEngine.GameObject.Find("Arrow_R_5").GetComponent<global::UnityEngine.SpriteRenderer>().color = new global::UnityEngine.Color(1f, 1f, 1f, SelArrow_Opacity[1]);
 						}
 					}
-					if (global::UnityEngine.Input.GetAxis("L_X") != 0f || global::UnityEngine.Input.GetAxis("L_Y") != 0f || global::UnityEngine.Input.GetButtonDown("Jump") || global::UnityEngine.Input.GetButtonDown("_B") || global::UnityEngine.Input.GetButtonDown("_X") || global::UnityEngine.Input.GetButtonDown("_Y") || global::UnityEngine.Input.GetButtonDown("L_B") || global::UnityEngine.Input.GetButtonDown("R_B") || global::UnityEngine.Input.GetAxis("L_Trigger") != 0f || global::UnityEngine.Input.GetButtonDown("Start") || global::UnityEngine.Input.GetButtonDown("Back") || global::UnityEngine.Input.GetAxis("DPad_X") != 0f || global::UnityEngine.Input.GetAxis("DPad_Y") != 0f)
+					if (AxiInputBridge.GetAxis("L_X") != 0f || AxiInputBridge.GetAxis("L_Y") != 0f || AxiInputBridge.GetButtonDown("Jump") || AxiInputBridge.GetButtonDown("_B") || AxiInputBridge.GetButtonDown("_X") || AxiInputBridge.GetButtonDown("_Y") || AxiInputBridge.GetButtonDown("L_B") || AxiInputBridge.GetButtonDown("R_B") || AxiInputBridge.GetAxis("L_Trigger") != 0f || AxiInputBridge.GetButtonDown("Start") || AxiInputBridge.GetButtonDown("Back") || AxiInputBridge.GetAxis("DPad_X") != 0f || AxiInputBridge.GetAxis("DPad_Y") != 0f)
 					{
 						Info_Pad_On();
 					}
-					else if (global::UnityEngine.Input.anyKeyDown)
+					else if (AxiInputBridge.anyKeyDown)
 					{
 						Info_Key_On();
 					}
@@ -571,16 +571,16 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 					{
 						if (Menu_State == 1)
 						{
-							if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Z) || global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Return) || global::UnityEngine.Input.GetButtonDown("Jump"))
+							if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Z) || AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Return) || AxiInputBridge.GetButtonDown("Jump"))
 							{
 								Select_Button(Sel_Index);
 							}
 						}
-						else if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Z) || global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Return) || global::UnityEngine.Input.GetButtonDown("Jump"))
+						else if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Z) || AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Return) || AxiInputBridge.GetButtonDown("Jump"))
 						{
 							Select_Slot(Sel_Index);
 						}
-						else if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.X) || global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Escape) || global::UnityEngine.Input.GetButtonDown("_B") || global::UnityEngine.Input.GetMouseButtonDown(1))
+						else if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.X) || AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Escape) || AxiInputBridge.GetButtonDown("_B") || AxiInputBridge.GetMouseButtonDown(1))
 						{
 							if (CopySlot_Num == 0)
 							{
@@ -605,7 +605,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 								Copy_Slot_Close();
 							}
 						}
-						else if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.C) || global::UnityEngine.Input.GetButtonDown("_X"))
+						else if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.C) || AxiInputBridge.GetButtonDown("_X"))
 						{
 							if (CopySlot_Num == Sel_Index)
 							{
@@ -617,7 +617,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 
 							}
 						}
-						else if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.V) || global::UnityEngine.Input.GetButtonDown("_Y"))
+						else if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.V) || AxiInputBridge.GetButtonDown("_Y"))
 						{
 							if (CopySlot_Num > 0)
 							{
@@ -630,9 +630,9 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 						}
 					}
 					Prev_Index = Sel_Index;
-					prevX = global::UnityEngine.Input.GetAxis("L_X");
+					prevX = AxiInputBridge.GetAxis("L_X");
 					lock_Y = false;
-					prevY = global::UnityEngine.Input.GetAxis("L_Y");
+					prevY = AxiInputBridge.GetAxis("L_Y");
 					MousePosPrev = MousePos;
 				}
 			}
@@ -926,9 +926,9 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 
 	private void Check_Mouse()
 	{
-		if (global::UnityEngine.Input.GetMouseButtonDown(0))
+		if (AxiInputBridge.GetMouseButtonDown(0))
 		{
-			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(AxiInputBridge.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
 			if (rayIntersection.collider != null)
 			{
@@ -979,7 +979,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 					}
 				}
 			}
-			global::UnityEngine.Ray ray2 = UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray2 = UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().ScreenPointToRay(AxiInputBridge.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection2 = global::UnityEngine.Physics2D.GetRayIntersection(ray2, float.PositiveInfinity);
 			if (rayIntersection2.collider != null && rayIntersection2.collider.name == "Col_ClothOnOff")
 			{
@@ -987,7 +987,7 @@ public class Title_Control : global::UnityEngine.MonoBehaviour
 			}
 			return;
 		}
-		global::UnityEngine.Ray ray3 = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+		global::UnityEngine.Ray ray3 = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(AxiInputBridge.mousePosition);
 		global::UnityEngine.RaycastHit2D rayIntersection3 = global::UnityEngine.Physics2D.GetRayIntersection(ray3, float.PositiveInfinity);
 		if (!(rayIntersection3.collider != null))
 		{

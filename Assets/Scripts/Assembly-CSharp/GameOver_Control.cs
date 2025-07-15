@@ -65,7 +65,7 @@ public class GameOver_Control : global::UnityEngine.MonoBehaviour
 
 	private void Update()
 	{
-		if (global::UnityEngine.Input.GetAxis("L_X") != 0f || global::UnityEngine.Input.GetAxis("L_Y") != 0f || global::UnityEngine.Input.GetAxis("R_X") != 0f || global::UnityEngine.Input.GetAxis("R_Y") != 0f || global::UnityEngine.Input.GetButtonDown("Jump") || global::UnityEngine.Input.GetButtonDown("_B") || global::UnityEngine.Input.GetButtonDown("_X") || global::UnityEngine.Input.GetButtonDown("_Y") || global::UnityEngine.Input.GetButtonDown("L_B") || global::UnityEngine.Input.GetButtonDown("R_B") || global::UnityEngine.Input.GetAxis("L_Trigger") != 0f || global::UnityEngine.Input.GetButtonDown("Start") || global::UnityEngine.Input.GetButtonDown("Back") || global::UnityEngine.Input.GetAxis("DPad_X") != 0f || global::UnityEngine.Input.GetAxis("DPad_Y") != 0f)
+		if (AxiInputBridge.GetAxis("L_X") != 0f || AxiInputBridge.GetAxis("L_Y") != 0f || AxiInputBridge.GetAxis("R_X") != 0f || AxiInputBridge.GetAxis("R_Y") != 0f || AxiInputBridge.GetButtonDown("Jump") || AxiInputBridge.GetButtonDown("_B") || AxiInputBridge.GetButtonDown("_X") || AxiInputBridge.GetButtonDown("_Y") || AxiInputBridge.GetButtonDown("L_B") || AxiInputBridge.GetButtonDown("R_B") || AxiInputBridge.GetAxis("L_Trigger") != 0f || AxiInputBridge.GetButtonDown("Start") || AxiInputBridge.GetButtonDown("Back") || AxiInputBridge.GetAxis("DPad_X") != 0f || AxiInputBridge.GetAxis("DPad_Y") != 0f)
 		{
 			if (Input_Mode != 1)
 			{
@@ -73,12 +73,12 @@ public class GameOver_Control : global::UnityEngine.MonoBehaviour
 				global::UnityEngine.GameObject.Find("Exit_Text").GetComponent<global::UnityEngine.UI.Text>().text = "Press  START Button  to Exit";
 			}
 		}
-		else if (global::UnityEngine.Input.anyKeyDown && Input_Mode != 0)
+		else if (AxiInputBridge.anyKeyDown && Input_Mode != 0)
 		{
 			Input_Mode = 0;
 			global::UnityEngine.GameObject.Find("Exit_Text").GetComponent<global::UnityEngine.UI.Text>().text = "Press ESC key to Exit";
 		}
-		if (global::UnityEngine.Input.mousePosition.x > (float)global::UnityEngine.Screen.width || global::UnityEngine.Input.mousePosition.x < 0f || global::UnityEngine.Input.mousePosition.y > (float)global::UnityEngine.Screen.height || global::UnityEngine.Input.mousePosition.y < 0f)
+		if (AxiInputBridge.mousePosition.x > (float)global::UnityEngine.Screen.width || AxiInputBridge.mousePosition.x < 0f || AxiInputBridge.mousePosition.y > (float)global::UnityEngine.Screen.height || AxiInputBridge.mousePosition.y < 0f)
 		{
 			if (onMouseDrag)
 			{
@@ -104,7 +104,7 @@ public class GameOver_Control : global::UnityEngine.MonoBehaviour
 		}
 		pos_Text_Shadow_1.localPosition = global::UnityEngine.Vector3.Lerp(pos_Text_Shadow_1.localPosition, posTarget_1, global::UnityEngine.Time.deltaTime * 12f);
 		pos_Text_Shadow_2.localPosition = global::UnityEngine.Vector3.Lerp(pos_Text_Shadow_2.localPosition, posTarget_2, global::UnityEngine.Time.deltaTime * 12f);
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Escape) || global::UnityEngine.Input.GetButtonDown("Start"))
+		if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Escape) || AxiInputBridge.GetButtonDown("Start"))
 		{
 			Exit();
 		}
@@ -196,9 +196,9 @@ public class GameOver_Control : global::UnityEngine.MonoBehaviour
 	private void Check_Mouse()
 	{
 		bool flag = false;
-		if (global::UnityEngine.Input.GetMouseButtonDown(0))
+		if (AxiInputBridge.GetMouseButtonDown(0))
 		{
-			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(AxiInputBridge.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
 			if (rayIntersection.collider != null)
 			{
@@ -212,7 +212,7 @@ public class GameOver_Control : global::UnityEngine.MonoBehaviour
 				onMouseDrag = true;
 			}
 		}
-		else if (global::UnityEngine.Input.GetMouseButtonUp(0))
+		else if (AxiInputBridge.GetMouseButtonUp(0))
 		{
 			onMouseDrag = false;
 		}

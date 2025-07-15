@@ -64,7 +64,7 @@ public class Dust_Control : global::UnityEngine.MonoBehaviour
 				Make_Dust(i);
 			}
 		}
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Return))
+		if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Return))
 		{
 			if (onEnabled)
 			{

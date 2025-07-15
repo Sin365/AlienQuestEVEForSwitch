@@ -302,7 +302,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
                     base.transform.Translate(global::UnityEngine.Vector3.right * global::UnityEngine.Time.deltaTime * 13f * facingRight * Move_Speed);
                 }
             }
-            else if ((global::UnityEngine.Input.GetButton("Jump") || global::UnityEngine.Input.GetKey(CK.Jump)) && State == Player_Control.AniState.Jump && onRolling && onScrewAttack)
+            else if ((AxiInputBridge.GetButton("Jump") || AxiInputBridge.GetKey(CK.Jump)) && State == Player_Control.AniState.Jump && onRolling && onScrewAttack)
             {
                 if (inputX != 0f && !grounded_Slide)
                 {
@@ -335,7 +335,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             {
                 if (Accel < 0.1f)
                 {
-                    if ((global::UnityEngine.Input.GetAxis("L_Y") == 0f || !(global::UnityEngine.Input.GetAxis("L_Y") < -0.8f)) && !global::UnityEngine.Input.GetKey(CK.Down))
+                    if ((AxiInputBridge.GetAxis("L_Y") == 0f || !(AxiInputBridge.GetAxis("L_Y") < -0.8f)) && !AxiInputBridge.GetKey(CK.Down))
                     {
                         base.transform.Translate(global::UnityEngine.Vector3.right * global::UnityEngine.Time.deltaTime * 13f * facingRight * Move_Speed);
                     }
@@ -522,7 +522,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         {
             Check_SpeedUp_Pad();
         }
-        else if (GM.onSpeedUp && GM.MP > 5 && (global::UnityEngine.Input.GetButton("R_B") || global::UnityEngine.Input.GetKey(CK.RB)))
+        else if (GM.onSpeedUp && GM.MP > 5 && (AxiInputBridge.GetButton("R_B") || AxiInputBridge.GetKey(CK.RB)))
         {
             onDash_Pad = true;
             onDash_Keyboard = false;
@@ -548,29 +548,29 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         }
         inputX = 0f;
         inputY = 0f;
-        if (global::UnityEngine.Input.GetKey(CK.Right))
+        if (AxiInputBridge.GetKey(CK.Right))
         {
             inputX = 1f;
         }
-        else if (global::UnityEngine.Input.GetKey(CK.Left))
+        else if (AxiInputBridge.GetKey(CK.Left))
         {
             inputX = -1f;
         }
-        if (global::UnityEngine.Input.GetKey(CK.Up))
+        if (AxiInputBridge.GetKey(CK.Up))
         {
             inputY = 1f;
         }
-        else if (global::UnityEngine.Input.GetKey(CK.Down))
+        else if (AxiInputBridge.GetKey(CK.Down))
         {
             inputY = -1f;
         }
-        if (global::UnityEngine.Input.GetAxis("L_X") != 0f)
+        if (AxiInputBridge.GetAxis("L_X") != 0f)
         {
-            inputX = global::UnityEngine.Input.GetAxis("L_X");
+            inputX = AxiInputBridge.GetAxis("L_X");
         }
-        if (global::UnityEngine.Input.GetAxis("L_Y") != 0f)
+        if (AxiInputBridge.GetAxis("L_Y") != 0f)
         {
-            inputY = global::UnityEngine.Input.GetAxis("L_Y");
+            inputY = AxiInputBridge.GetAxis("L_Y");
         }
         if (!GM.onEvent && State != Player_Control.AniState.Scene && State != Player_Control.AniState.Damage && State != Player_Control.AniState.Slide && !Ani.Check_FlipLock())
         {
@@ -585,7 +585,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         }
         if (State != Player_Control.AniState.Scene && State != Player_Control.AniState.Damage && State != Player_Control.AniState.Slide && State != Player_Control.AniState.Spin && State != Player_Control.AniState.BackDash)
         {
-            if (!GM.onEvent && GM.MP >= 10 && State != Player_Control.AniState.Sit && State != Player_Control.AniState.Spin && (global::UnityEngine.Input.GetAxis("L_Trigger") > 0f || global::UnityEngine.Input.GetKey(CK.Spin)))
+            if (!GM.onEvent && GM.MP >= 10 && State != Player_Control.AniState.Sit && State != Player_Control.AniState.Spin && (AxiInputBridge.GetAxis("L_Trigger") > 0f || AxiInputBridge.GetKey(CK.Spin)))
             {
                 State = Player_Control.AniState.Spin;
                 Ani.Set_Spin();
@@ -599,11 +599,11 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             {
                 if (!GM.onEvent && (State == Player_Control.AniState.Idle || State == Player_Control.AniState.Run || State == Player_Control.AniState.Jump))
                 {
-                    if (!onHighJump && GM.onHighJump && inputY > 0f && (global::UnityEngine.Input.GetButtonDown("L_B") || global::UnityEngine.Input.GetKeyDown(CK.LB)))
+                    if (!onHighJump && GM.onHighJump && inputY > 0f && (AxiInputBridge.GetButtonDown("L_B") || AxiInputBridge.GetKeyDown(CK.LB)))
                     {
                         High_Jump();
                     }
-                    else if ((global::UnityEngine.Input.GetButtonDown("Jump") || global::UnityEngine.Input.GetKeyDown(CK.Jump)) && Lock_Timer <= 0f && Jump_Num < 2)
+                    else if ((AxiInputBridge.GetButtonDown("Jump") || AxiInputBridge.GetKeyDown(CK.Jump)) && Lock_Timer <= 0f && Jump_Num < 2)
                     {
                         if (Jump_Num < 1)
                         {
@@ -625,7 +625,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
                 {
                     Lock_Timer -= global::UnityEngine.Time.deltaTime;
                 }
-                if (!GM.onEvent && (global::UnityEngine.Input.GetButtonDown("_X") || global::UnityEngine.Input.GetKeyDown(CK.Attack)) && Attack_Delay <= 0f && Lock_Timer <= 0f)
+                if (!GM.onEvent && (AxiInputBridge.GetButtonDown("_X") || AxiInputBridge.GetKeyDown(CK.Attack)) && Attack_Delay <= 0f && Lock_Timer <= 0f)
                 {
                     if (Jump_Num == 2)
                     {
@@ -696,7 +696,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
                         onAttack = true;
                     }
                 }
-                if (!GM.onEvent && Attack_Delay <= 0f && (global::UnityEngine.Input.GetButtonDown("_Y") || global::UnityEngine.Input.GetKeyDown(CK.Skill)) && GM.Check_Skill())
+                if (!GM.onEvent && Attack_Delay <= 0f && (AxiInputBridge.GetButtonDown("_Y") || AxiInputBridge.GetKeyDown(CK.Skill)) && GM.Check_Skill())
                 {
                     GM.MP_Skill();
                     if (GM.Skill_Num != 2 && GM.Skill_Num != 4)
@@ -793,7 +793,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             case Player_Control.AniState.Spin:
                 Spin_Timer -= global::UnityEngine.Time.deltaTime;
                 GM.MP_Spin();
-                if (GM.MP < 3 || (Spin_Timer <= 0f && global::UnityEngine.Input.GetAxis("L_Trigger") <= 0f && !global::UnityEngine.Input.GetKey(CK.Spin)))
+                if (GM.MP < 3 || (Spin_Timer <= 0f && AxiInputBridge.GetAxis("L_Trigger") <= 0f && !AxiInputBridge.GetKey(CK.Spin)))
                 {
                     if (grounded_Now)
                     {
@@ -815,7 +815,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
                 Jump_Pos_Y = base.transform.position.y;
                 break;
             case Player_Control.AniState.Idle:
-                if (!GM.onEvent && GM.onBackDash && BackDashDelay <= 0f && (global::UnityEngine.Input.GetButtonDown("L_B") || global::UnityEngine.Input.GetKeyDown(CK.LB)))
+                if (!GM.onEvent && GM.onBackDash && BackDashDelay <= 0f && (AxiInputBridge.GetButtonDown("L_B") || AxiInputBridge.GetKeyDown(CK.LB)))
                 {
                     State = Player_Control.AniState.BackDash;
                     Ani.Set_BackDash();
@@ -861,7 +861,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             case Player_Control.AniState.Sit:
                 if (!GM.onEvent && inputY < 0f)
                 {
-                    if (global::UnityEngine.Input.GetButtonDown("Jump") || global::UnityEngine.Input.GetKeyDown(CK.Jump))
+                    if (AxiInputBridge.GetButtonDown("Jump") || AxiInputBridge.GetKeyDown(CK.Jump))
                     {
                         State = Player_Control.AniState.Slide;
                         Ani.Set_Slide();
@@ -929,7 +929,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
                 Jump_Pos_Y = base.transform.position.y;
                 break;
         }
-        if (GM.onScrew && GM.MP > 10 && !onAttack && State == Player_Control.AniState.Jump && onRolling && (global::UnityEngine.Input.GetButton("Jump") || global::UnityEngine.Input.GetKey(CK.Jump)))
+        if (GM.onScrew && GM.MP > 10 && !onAttack && State == Player_Control.AniState.Jump && onRolling && (AxiInputBridge.GetButton("Jump") || AxiInputBridge.GetKey(CK.Jump)))
         {
             On_ScrewAttack();
         }
@@ -960,7 +960,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         Speed_Y = inputY;
         if (inputX != 0f && (State == Player_Control.AniState.Run || State == Player_Control.AniState.Jump))
         {
-            if (global::UnityEngine.Input.GetAxis("L_Y") != 0f && global::UnityEngine.Input.GetAxis("L_Y") > -0.8f)
+            if (AxiInputBridge.GetAxis("L_Y") != 0f && AxiInputBridge.GetAxis("L_Y") > -0.8f)
             {
                 Accel += global::UnityEngine.Time.deltaTime;
             }
@@ -1666,7 +1666,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         {
             Make_Lag();
         }
-        if ((global::UnityEngine.Input.GetButton("R_B") || global::UnityEngine.Input.GetKey(CK.RB)) && GM.MP > 1)
+        if ((AxiInputBridge.GetButton("R_B") || AxiInputBridge.GetKey(CK.RB)) && GM.MP > 1)
         {
             GM.MP_SpeedUp();
             return;

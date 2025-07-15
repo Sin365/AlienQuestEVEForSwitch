@@ -221,7 +221,7 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 		{
 			Moan_End_Timer -= global::UnityEngine.Time.deltaTime;
 		}
-		if (global::UnityEngine.Input.GetAxis("L_Trigger") != 0f || global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.Space) || global::UnityEngine.Input.GetMouseButton(1))
+		if (AxiInputBridge.GetAxis("L_Trigger") != 0f || AxiInputBridge.GetKey(global::UnityEngine.KeyCode.Space) || AxiInputBridge.GetMouseButton(1))
 		{
 			Press_Timer += global::UnityEngine.Time.deltaTime;
 			if (State == 1)
@@ -315,7 +315,7 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 		}
 		if (global::UnityEngine.GameObject.Find("GameOver_Manager") != null)
 		{
-			if (global::UnityEngine.Input.GetButtonDown("L_B") || global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.A))
+			if (AxiInputBridge.GetButtonDown("L_B") || AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.A))
 			{
 				if (BG_Num > 1)
 				{
@@ -326,7 +326,7 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 					Set_Option(4);
 				}
 			}
-			else if (global::UnityEngine.Input.GetButtonDown("R_B") || global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.S))
+			else if (AxiInputBridge.GetButtonDown("R_B") || AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.S))
 			{
 				if (BG_Num < 4)
 				{
@@ -362,7 +362,7 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 			Pink_Glow.color = global::UnityEngine.Color.Lerp(Pink_Glow.color, color_ON, global::UnityEngine.Time.deltaTime * 1f);
 		}
 		Eye_Check();
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Backspace))
+		if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Backspace))
 		{
 			Delete_Cum();
 		}
@@ -540,7 +540,7 @@ public class H_GameOver_4 : global::UnityEngine.MonoBehaviour
 			Cum_Num++;
 			State = 0;
 			GetComponent<global::UnityEngine.Animator>().SetInteger("State", 0);
-			if (global::UnityEngine.Input.GetAxis("L_Trigger") != 0f || global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.Space) || global::UnityEngine.Input.GetMouseButton(1))
+			if (AxiInputBridge.GetAxis("L_Trigger") != 0f || AxiInputBridge.GetKey(global::UnityEngine.KeyCode.Space) || AxiInputBridge.GetMouseButton(1))
 			{
 				Press_Timer = 1f;
 			}

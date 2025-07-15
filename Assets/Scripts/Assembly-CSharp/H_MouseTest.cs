@@ -11,9 +11,9 @@ public class H_MouseTest : global::UnityEngine.MonoBehaviour
 
 	private void Update()
 	{
-		if (global::UnityEngine.Input.GetMouseButton(0))
+		if (AxiInputBridge.GetMouseButton(0))
 		{
-			pos_Target = UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
+			pos_Target = UnityEngine.Camera.main.GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(AxiInputBridge.mousePosition);
 		}
 		pos_Target.z = 0f;
 		base.transform.position = global::UnityEngine.Vector3.Lerp(base.transform.position, new global::UnityEngine.Vector3(pos_Target.x, pos_Target.y, 0f), global::UnityEngine.Time.deltaTime * 2f);

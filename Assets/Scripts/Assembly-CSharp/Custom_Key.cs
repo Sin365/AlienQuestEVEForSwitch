@@ -136,7 +136,7 @@ public class Custom_Key : global::UnityEngine.MonoBehaviour
 			{
 				break;
 			}
-			if (global::UnityEngine.Input.GetKeyDown(Key[i]))
+			if (AxiInputBridge.GetKeyDown(Key[i]))
 			{
 				flag = true;
 				Check_Overlap(Key[i]);

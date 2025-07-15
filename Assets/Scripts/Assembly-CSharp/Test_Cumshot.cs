@@ -22,7 +22,7 @@ public class Test_Cumshot : global::UnityEngine.MonoBehaviour
 	private void Update()
 	{
 		Life_Timer += global::UnityEngine.Time.deltaTime;
-		if (!isFired && global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Space))
+		if (!isFired && AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Space))
 		{
 			Shot();
 		}

@@ -101,69 +101,69 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 			dist_Timer -= global::UnityEngine.Time.deltaTime;
 			inputX = 0f;
 			inputY = 0f;
-			if (global::UnityEngine.Input.GetKeyDown(CK.Right))
+			if (AxiInputBridge.GetKeyDown(CK.Right))
 			{
 				inputX = 1f;
 			}
-			else if (global::UnityEngine.Input.GetKeyDown(CK.Left))
+			else if (AxiInputBridge.GetKeyDown(CK.Left))
 			{
 				inputX = -1f;
 			}
-			if (global::UnityEngine.Input.GetKeyDown(CK.Up))
+			if (AxiInputBridge.GetKeyDown(CK.Up))
 			{
 				inputY = 1f;
 			}
-			else if (global::UnityEngine.Input.GetKeyDown(CK.Down))
+			else if (AxiInputBridge.GetKeyDown(CK.Down))
 			{
 				inputY = -1f;
 			}
-			if (inputX == 0f && global::UnityEngine.Input.GetAxis("L_X") != 0f)
+			if (inputX == 0f && AxiInputBridge.GetAxis("L_X") != 0f)
 			{
-				if (global::UnityEngine.Input.GetAxis("L_X") > 0f && global::UnityEngine.Input.GetAxis("L_X") < prevX)
+				if (AxiInputBridge.GetAxis("L_X") > 0f && AxiInputBridge.GetAxis("L_X") < prevX)
 				{
 					PushX = prevX;
 				}
-				else if (global::UnityEngine.Input.GetAxis("L_X") < 0f && global::UnityEngine.Input.GetAxis("L_X") > prevX)
+				else if (AxiInputBridge.GetAxis("L_X") < 0f && AxiInputBridge.GetAxis("L_X") > prevX)
 				{
 					PushX = prevX;
 				}
-				if (global::UnityEngine.Input.GetAxis("L_X") > 0f && global::UnityEngine.Input.GetAxis("L_X") - PushX > 0.3f)
+				if (AxiInputBridge.GetAxis("L_X") > 0f && AxiInputBridge.GetAxis("L_X") - PushX > 0.3f)
 				{
 					inputX = 1f;
 					PushX = 1f;
 				}
-				else if (global::UnityEngine.Input.GetAxis("L_X") < 0f && global::UnityEngine.Input.GetAxis("L_X") - PushX < -0.3f)
+				else if (AxiInputBridge.GetAxis("L_X") < 0f && AxiInputBridge.GetAxis("L_X") - PushX < -0.3f)
 				{
 					inputX = -1f;
 					PushX = -1f;
 				}
 			}
-			else if (inputX == 0f && global::UnityEngine.Input.GetAxis("L_X") == 0f)
+			else if (inputX == 0f && AxiInputBridge.GetAxis("L_X") == 0f)
 			{
 				PushX = 0f;
 			}
-			if (inputY == 0f && global::UnityEngine.Input.GetAxis("L_Y") != 0f)
+			if (inputY == 0f && AxiInputBridge.GetAxis("L_Y") != 0f)
 			{
-				if (global::UnityEngine.Input.GetAxis("L_Y") > 0f && global::UnityEngine.Input.GetAxis("L_Y") < prevY)
+				if (AxiInputBridge.GetAxis("L_Y") > 0f && AxiInputBridge.GetAxis("L_Y") < prevY)
 				{
 					PushY = prevY;
 				}
-				else if (global::UnityEngine.Input.GetAxis("L_Y") < 0f && global::UnityEngine.Input.GetAxis("L_Y") > prevY)
+				else if (AxiInputBridge.GetAxis("L_Y") < 0f && AxiInputBridge.GetAxis("L_Y") > prevY)
 				{
 					PushY = prevY;
 				}
-				if (global::UnityEngine.Input.GetAxis("L_Y") > 0f && global::UnityEngine.Input.GetAxis("L_Y") - PushY > 0.3f)
+				if (AxiInputBridge.GetAxis("L_Y") > 0f && AxiInputBridge.GetAxis("L_Y") - PushY > 0.3f)
 				{
 					inputY = 1f;
 					PushY = 1f;
 				}
-				else if (global::UnityEngine.Input.GetAxis("L_Y") < 0f && global::UnityEngine.Input.GetAxis("L_Y") - PushY < -0.3f)
+				else if (AxiInputBridge.GetAxis("L_Y") < 0f && AxiInputBridge.GetAxis("L_Y") - PushY < -0.3f)
 				{
 					inputY = -1f;
 					PushY = -1f;
 				}
 			}
-			else if (inputY == 0f && global::UnityEngine.Input.GetAxis("L_Y") == 0f)
+			else if (inputY == 0f && AxiInputBridge.GetAxis("L_Y") == 0f)
 			{
 				PushY = 0f;
 			}
@@ -214,12 +214,12 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 					text_Center.GetComponent<global::UnityEngine.RectTransform>().localScale = global::UnityEngine.Vector3.Lerp(text_Center.GetComponent<global::UnityEngine.RectTransform>().localScale, new global::UnityEngine.Vector3(1f, 1f, 1f), global::UnityEngine.Time.deltaTime * 6f);
 				}
 				text_Center_Shadow.GetComponent<global::UnityEngine.RectTransform>().localScale = text_Center.GetComponent<global::UnityEngine.RectTransform>().localScale;
-				if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Escape) || global::UnityEngine.Input.GetButtonDown("Start") || global::UnityEngine.Input.GetButtonDown("_B"))
+				if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Escape) || AxiInputBridge.GetButtonDown("Start") || AxiInputBridge.GetButtonDown("_B"))
 				{
 					PC.Lock_Timer = 0.2f;
 					Off_Menu();
 				}
-				else if (global::UnityEngine.Input.GetButtonDown("Jump") || global::UnityEngine.Input.GetKeyDown(CK.Jump))
+				else if (AxiInputBridge.GetButtonDown("Jump") || AxiInputBridge.GetKeyDown(CK.Jump))
 				{
 					PC.Lock_Timer = 0.2f;
 					if (Sel_Index != Teleport_Num)
@@ -254,8 +254,8 @@ public class TeleMenu_Control : global::UnityEngine.MonoBehaviour
 				}
 			}
 			Prev_Index = Sel_Index;
-			prevX = global::UnityEngine.Input.GetAxis("L_X");
-			prevY = global::UnityEngine.Input.GetAxis("L_Y");
+			prevX = AxiInputBridge.GetAxis("L_X");
+			prevY = AxiInputBridge.GetAxis("L_Y");
 		}
 		else
 		{

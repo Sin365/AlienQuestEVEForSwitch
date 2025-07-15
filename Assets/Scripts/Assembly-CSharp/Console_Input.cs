@@ -57,7 +57,7 @@ public class Console_Input : global::UnityEngine.MonoBehaviour
 				global::UnityEngine.GameObject.Find("InputField").GetComponent<global::UnityEngine.UI.Image>().color = new global::UnityEngine.Color(1f, 1f, 1f, 0.25f);
 			}
 		}
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.F4))
+		if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.F4))
 		{
 			if (Enabled)
 			{

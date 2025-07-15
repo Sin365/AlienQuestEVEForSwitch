@@ -28,21 +28,21 @@ public class H_Test_Ani : global::UnityEngine.MonoBehaviour
 	private void Update()
 	{
 		Life_Timer += global::UnityEngine.Time.deltaTime;
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.J))
+		if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.J))
 		{
 			global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
 			gameObject.GetComponent<H_CumDown>().pos_Target = base.transform;
 			gameObject.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 			gameObject.GetComponent<H_CumDown>().Set_DownDirect(Cum_Size);
 		}
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.K))
+		if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.K))
 		{
 			global::UnityEngine.GameObject gameObject2 = AxiObject.Instantiate(CumShot[global::UnityEngine.Random.Range(0, 6)], base.transform.position, global::UnityEngine.Quaternion.Euler(0f, 0f, 90f)) as global::UnityEngine.GameObject;
 			gameObject2.GetComponent<H_CumDown>().pos_Target = base.transform;
 			gameObject2.GetComponent<H_CumDown>().Set_SortingOrder(Cum_Index);
 			gameObject2.GetComponent<H_CumDown>().Set_DownDrool(Cum_Size);
 		}
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.L))
+		if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.L))
 		{
 			for (int i = 0; i < 1; i++)
 			{

@@ -223,7 +223,7 @@ public class Capsule_Control : global::UnityEngine.MonoBehaviour
 		Glow_Head.transform.localScale = localScale;
 		Hair.transform.localScale = localScale;
 		Hair_L.transform.localScale = localScale;
-		if (!isChange && global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Space))
+		if (!isChange && AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Space))
 		{
 			isChange = true;
 		}

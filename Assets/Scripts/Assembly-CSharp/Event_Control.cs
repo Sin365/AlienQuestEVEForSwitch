@@ -228,7 +228,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
                 }
             }
         }
-        if (isSkipLock && (global::UnityEngine.Input.GetKeyUp(CK.Jump) || global::UnityEngine.Input.GetButtonUp("Jump")))
+        if (isSkipLock && (AxiInputBridge.GetKeyUp(CK.Jump) || AxiInputBridge.GetButtonUp("Jump")))
         {
             isSkipLock = false;
         }
@@ -292,7 +292,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
                     Text_Start_Timer += global::UnityEngine.Time.deltaTime;
                     if (Text_Start_Timer > 0.5f)
                     {
-                        if (!isSkipLock && (global::UnityEngine.Input.GetKey(CK.Jump) || global::UnityEngine.Input.GetButton("Jump")))
+                        if (!isSkipLock && (AxiInputBridge.GetKey(CK.Jump) || AxiInputBridge.GetButton("Jump")))
                         {
                             isSkip = true;
                         }
@@ -313,7 +313,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
                             Arrow.GetComponent<global::UnityEngine.RectTransform>().localPosition = new global::UnityEngine.Vector3(0f, y, 0f);
                         }
                     }
-                    if (isTextEnd && (global::UnityEngine.Input.GetKeyDown(CK.Jump) || global::UnityEngine.Input.GetButtonDown("Jump")))
+                    if (isTextEnd && (AxiInputBridge.GetKeyDown(CK.Jump) || AxiInputBridge.GetButtonDown("Jump")))
                     {
                         isSkipLock = true;
                         if (Event_Num == 1 && text_Num < 14)
@@ -353,7 +353,7 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
             {
                 GetComponent<global::UnityEngine.RectTransform>().localPosition = global::UnityEngine.Vector3.Lerp(GetComponent<global::UnityEngine.RectTransform>().localPosition, PosHide, global::UnityEngine.Time.deltaTime * 8f);
             }
-            if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Escape) || global::UnityEngine.Input.GetButtonDown("Start"))
+            if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Escape) || AxiInputBridge.GetButtonDown("Start"))
             {
                 //跳过剧情
                 End_Event();

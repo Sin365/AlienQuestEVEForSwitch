@@ -59,8 +59,8 @@ public class Gallery_Camera : global::UnityEngine.MonoBehaviour
 		frames = 0;
 		targetPos = base.transform.position;
 		MouseMove = new global::UnityEngine.Vector3(0f, 0f, 0f);
-		MousePos = global::UnityEngine.Input.mousePosition;
-		MouseDownPos = base.GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
+		MousePos = AxiInputBridge.mousePosition;
+		MouseDownPos = base.GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(AxiInputBridge.mousePosition);
 		if (AxiPlayerPrefs.GetInt("onClockFps") != 1)
 		{
 			global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = false;
@@ -109,43 +109,43 @@ public class Gallery_Camera : global::UnityEngine.MonoBehaviour
 		}
 		inputX = 0f;
 		inputY = 0f;
-		if (global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.RightArrow))
+		if (AxiInputBridge.GetKey(global::UnityEngine.KeyCode.RightArrow))
 		{
 			inputX = 1f;
 		}
-		else if (global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.LeftArrow))
+		else if (AxiInputBridge.GetKey(global::UnityEngine.KeyCode.LeftArrow))
 		{
 			inputX = -1f;
 		}
-		if (global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.UpArrow))
+		if (AxiInputBridge.GetKey(global::UnityEngine.KeyCode.UpArrow))
 		{
 			inputY = 1f;
 		}
-		else if (global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.DownArrow))
+		else if (AxiInputBridge.GetKey(global::UnityEngine.KeyCode.DownArrow))
 		{
 			inputY = -1f;
 		}
-		if (global::UnityEngine.Input.GetAxis("R_Y") != 0f)
+		if (AxiInputBridge.GetAxis("R_Y") != 0f)
 		{
-			targetSize += global::UnityEngine.Input.GetAxis("R_Y") * -5f * global::UnityEngine.Time.deltaTime;
+			targetSize += AxiInputBridge.GetAxis("R_Y") * -5f * global::UnityEngine.Time.deltaTime;
 		}
-		else if (global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.PageUp))
+		else if (AxiInputBridge.GetKey(global::UnityEngine.KeyCode.PageUp))
 		{
 			targetSize -= 5f * global::UnityEngine.Time.deltaTime;
 		}
-		else if (global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.PageDown))
+		else if (AxiInputBridge.GetKey(global::UnityEngine.KeyCode.PageDown))
 		{
 			targetSize += 5f * global::UnityEngine.Time.deltaTime;
 		}
-		if (global::UnityEngine.Input.GetButtonDown("R_A"))
+		if (AxiInputBridge.GetButtonDown("R_A"))
 		{
 			Reset_Zoom();
 		}
-		else if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Home))
+		else if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Home))
 		{
 			Reset_Zoom();
 		}
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.RightShift))
+		if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.RightShift))
 		{
 			if (AxiPlayerPrefs.GetInt("onClockFps") == 1)
 			{
@@ -158,7 +158,7 @@ public class Gallery_Camera : global::UnityEngine.MonoBehaviour
 				global::UnityEngine.GameObject.Find("Text_Fps").GetComponent<global::UnityEngine.UI.Text>().enabled = true;
 			}
 		}
-		if (global::UnityEngine.Input.mouseScrollDelta.y != 0f)
+		if (AxiInputBridge.mouseScrollDelta.y != 0f)
 		{
 			onMouseZoom = true;
 			MouseZoom_Timer = 0.5f;
@@ -166,12 +166,12 @@ public class Gallery_Camera : global::UnityEngine.MonoBehaviour
 		if (MouseZoom_Timer > 0f)
 		{
 			MouseZoom_Timer -= global::UnityEngine.Time.deltaTime;
-			targetSize += (0f - global::UnityEngine.Input.mouseScrollDelta.y) * global::UnityEngine.Time.deltaTime * 40f;
+			targetSize += (0f - AxiInputBridge.mouseScrollDelta.y) * global::UnityEngine.Time.deltaTime * 40f;
 		}
-		MousePos = base.GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(global::UnityEngine.Input.mousePosition);
+		MousePos = base.GetComponent<UnityEngine.Camera>().ScreenToWorldPoint(AxiInputBridge.mousePosition);
 		MouseMove = new global::UnityEngine.Vector3(MousePos.x - MousePos_Prev.x, MousePos.y - MousePos_Prev.y, 0f);
 		MousePos_Prev = MousePos;
-		if (GC.onMouseDrag && global::UnityEngine.Input.GetMouseButton(0))
+		if (GC.onMouseDrag && AxiInputBridge.GetMouseButton(0))
 		{
 			if (MouseMove.x != 0f)
 			{
@@ -187,10 +187,10 @@ public class Gallery_Camera : global::UnityEngine.MonoBehaviour
 			targetPos.x += inputX * global::UnityEngine.Time.deltaTime * 6f;
 			targetPos.y += inputY * global::UnityEngine.Time.deltaTime * 6f;
 		}
-		else if (global::UnityEngine.Input.GetAxis("L_X") != 0f || global::UnityEngine.Input.GetAxis("L_Y") != 0f)
+		else if (AxiInputBridge.GetAxis("L_X") != 0f || AxiInputBridge.GetAxis("L_Y") != 0f)
 		{
-			targetPos.x += global::UnityEngine.Input.GetAxis("L_X") * global::UnityEngine.Time.deltaTime * 8f;
-			targetPos.y += global::UnityEngine.Input.GetAxis("L_Y") * global::UnityEngine.Time.deltaTime * 8f;
+			targetPos.x += AxiInputBridge.GetAxis("L_X") * global::UnityEngine.Time.deltaTime * 8f;
+			targetPos.y += AxiInputBridge.GetAxis("L_Y") * global::UnityEngine.Time.deltaTime * 8f;
 		}
 	}
 

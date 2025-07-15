@@ -37,36 +37,36 @@ public class Event_CheckInput : global::UnityEngine.MonoBehaviour
 		if (!GM.Get_Event(Event_Num) && Dist < 1.2f)
 		{
 			inputY = 0f;
-			if (global::UnityEngine.Input.GetKeyDown(CK.Up))
+			if (AxiInputBridge.GetKeyDown(CK.Up))
 			{
 				inputY = 1f;
 			}
-			else if (global::UnityEngine.Input.GetKeyDown(CK.Down))
+			else if (AxiInputBridge.GetKeyDown(CK.Down))
 			{
 				inputY = -1f;
 			}
-			if (inputY == 0f && global::UnityEngine.Input.GetAxis("L_Y") != 0f)
+			if (inputY == 0f && AxiInputBridge.GetAxis("L_Y") != 0f)
 			{
-				if (global::UnityEngine.Input.GetAxis("L_Y") > 0f && global::UnityEngine.Input.GetAxis("L_Y") < prevY)
+				if (AxiInputBridge.GetAxis("L_Y") > 0f && AxiInputBridge.GetAxis("L_Y") < prevY)
 				{
 					PushY = prevY;
 				}
-				else if (global::UnityEngine.Input.GetAxis("L_Y") < 0f && global::UnityEngine.Input.GetAxis("L_Y") > prevY)
+				else if (AxiInputBridge.GetAxis("L_Y") < 0f && AxiInputBridge.GetAxis("L_Y") > prevY)
 				{
 					PushY = prevY;
 				}
-				if (global::UnityEngine.Input.GetAxis("L_Y") > 0f && global::UnityEngine.Input.GetAxis("L_Y") - PushY > 0.3f)
+				if (AxiInputBridge.GetAxis("L_Y") > 0f && AxiInputBridge.GetAxis("L_Y") - PushY > 0.3f)
 				{
 					inputY = 1f;
 					PushY = 1f;
 				}
-				else if (global::UnityEngine.Input.GetAxis("L_Y") < 0f && global::UnityEngine.Input.GetAxis("L_Y") - PushY < -0.3f)
+				else if (AxiInputBridge.GetAxis("L_Y") < 0f && AxiInputBridge.GetAxis("L_Y") - PushY < -0.3f)
 				{
 					inputY = -1f;
 					PushY = -1f;
 				}
 			}
-			else if (inputY == 0f && global::UnityEngine.Input.GetAxis("L_Y") == 0f)
+			else if (inputY == 0f && AxiInputBridge.GetAxis("L_Y") == 0f)
 			{
 				PushY = 0f;
 			}

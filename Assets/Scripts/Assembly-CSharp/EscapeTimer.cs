@@ -72,7 +72,7 @@ public class EscapeTimer : global::UnityEngine.MonoBehaviour
 			GM.Set_FadeOut("GameEnding");
 			AxiPlayerPrefs.SetInt("Escaped", 0);
 		}
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.KeypadPlus))
+		if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.KeypadPlus))
 		{
 			GM.escapeTimer = 5f;
 		}

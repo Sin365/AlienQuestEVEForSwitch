@@ -170,10 +170,10 @@ public class Credits_Control : global::UnityEngine.MonoBehaviour
 				}
 			}
 		}
-		if (global::UnityEngine.Input.GetKeyDown(global::UnityEngine.KeyCode.Escape)
+		if (AxiInputBridge.GetKeyDown(global::UnityEngine.KeyCode.Escape)
 			||
 			//Start键退出制作人员表，不然非PC都无法退出
-            global::UnityEngine.Input.GetButtonDown("Start")
+            AxiInputBridge.GetButtonDown("Start")
 			)
 		{
 			global::UnityEngine.GameObject.Find("UI_SoundList").SendMessage("Sound_DeviceOn");
@@ -181,12 +181,12 @@ public class Credits_Control : global::UnityEngine.MonoBehaviour
 		}
 		else if (State == 0)
 		{
-			if (global::UnityEngine.Input.GetMouseButtonDown(0) || global::UnityEngine.Input.anyKeyDown)
+			if (AxiInputBridge.GetMouseButtonDown(0) || AxiInputBridge.anyKeyDown)
 			{
 				State = 1;
 			}
 		}
-		else if (global::UnityEngine.Input.GetMouseButton(0) || global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.Space) || global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.Return) || global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.KeypadEnter) || global::UnityEngine.Input.GetKey(global::UnityEngine.KeyCode.Z))
+		else if (AxiInputBridge.GetMouseButton(0) || AxiInputBridge.GetKey(global::UnityEngine.KeyCode.Space) || AxiInputBridge.GetKey(global::UnityEngine.KeyCode.Return) || AxiInputBridge.GetKey(global::UnityEngine.KeyCode.KeypadEnter) || AxiInputBridge.GetKey(global::UnityEngine.KeyCode.Z))
 		{
 			Scroll_Speed = global::UnityEngine.Mathf.Lerp(Scroll_Speed, 5f, global::UnityEngine.Time.deltaTime * 3f);
 		}

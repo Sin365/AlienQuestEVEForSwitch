@@ -112,42 +112,42 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 			GetComponent<global::UnityEngine.RectTransform>().localPosition = global::UnityEngine.Vector3.Lerp(GetComponent<global::UnityEngine.RectTransform>().localPosition, new global::UnityEngine.Vector3(0f, -500f, 0f), global::UnityEngine.Time.deltaTime * 5f);
 			global::UnityEngine.GameObject.Find("GameOver_Select_BG").GetComponent<global::UnityEngine.UI.Image>().color = global::UnityEngine.Color.Lerp(global::UnityEngine.GameObject.Find("GameOver_Select_BG").GetComponent<global::UnityEngine.UI.Image>().color, color_ON, global::UnityEngine.Time.deltaTime * 3f);
 			inputX = 0f;
-			if (global::UnityEngine.Input.GetKeyDown(CK.Right))
+			if (AxiInputBridge.GetKeyDown(CK.Right))
 			{
 				inputX = 1f;
 			}
-			else if (global::UnityEngine.Input.GetKeyDown(CK.Left))
+			else if (AxiInputBridge.GetKeyDown(CK.Left))
 			{
 				inputX = -1f;
 			}
-			if (inputX == 0f && global::UnityEngine.Input.GetAxis("L_X") != 0f)
+			if (inputX == 0f && AxiInputBridge.GetAxis("L_X") != 0f)
 			{
-				if (global::UnityEngine.Input.GetAxis("L_X") > 0f && global::UnityEngine.Input.GetAxis("L_X") < prevX)
+				if (AxiInputBridge.GetAxis("L_X") > 0f && AxiInputBridge.GetAxis("L_X") < prevX)
 				{
 					PushX = prevX;
 				}
-				else if (global::UnityEngine.Input.GetAxis("L_X") < 0f && global::UnityEngine.Input.GetAxis("L_X") > prevX)
+				else if (AxiInputBridge.GetAxis("L_X") < 0f && AxiInputBridge.GetAxis("L_X") > prevX)
 				{
 					PushX = prevX;
 				}
-				if (global::UnityEngine.Input.GetAxis("L_X") > 0f && global::UnityEngine.Input.GetAxis("L_X") - PushX > 0.3f)
+				if (AxiInputBridge.GetAxis("L_X") > 0f && AxiInputBridge.GetAxis("L_X") - PushX > 0.3f)
 				{
 					inputX = 1f;
 					PushX = 1f;
 				}
-				else if (global::UnityEngine.Input.GetAxis("L_X") < 0f && global::UnityEngine.Input.GetAxis("L_X") - PushX < -0.3f)
+				else if (AxiInputBridge.GetAxis("L_X") < 0f && AxiInputBridge.GetAxis("L_X") - PushX < -0.3f)
 				{
 					inputX = -1f;
 					PushX = -1f;
 				}
 			}
-			else if (inputX == 0f && global::UnityEngine.Input.GetAxis("L_X") == 0f)
+			else if (inputX == 0f && AxiInputBridge.GetAxis("L_X") == 0f)
 			{
 				PushX = 0f;
 			}
-			MousePos = global::UnityEngine.Input.mousePosition;
+			MousePos = AxiInputBridge.mousePosition;
 			MouseDist = global::UnityEngine.Vector3.Distance(MousePos, MousePosPrev);
-			if (MouseDist > 0f || global::UnityEngine.Input.GetMouseButtonDown(0) || global::UnityEngine.Input.GetMouseButtonDown(1) || global::UnityEngine.Input.GetMouseButton(0))
+			if (MouseDist > 0f || AxiInputBridge.GetMouseButtonDown(0) || AxiInputBridge.GetMouseButtonDown(1) || AxiInputBridge.GetMouseButton(0))
 			{
 				Check_Mouse();
 			}
@@ -190,11 +190,11 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 					{
 						on_CumBox_Info = false;
 					}
-					if (global::UnityEngine.Input.GetKeyDown(CK.Spin) && Cum_Timer <= 0f)
+					if (AxiInputBridge.GetKeyDown(CK.Spin) && Cum_Timer <= 0f)
 					{
 						CumShot();
 					}
-					else if (global::UnityEngine.Input.GetAxis("L_Trigger") > 0.3f && Cum_Timer <= 0f)
+					else if (AxiInputBridge.GetAxis("L_Trigger") > 0.3f && Cum_Timer <= 0f)
 					{
 						CumShot();
 					}
@@ -223,7 +223,7 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 				global::UnityEngine.GameObject.Find("Info_Glow_Cum").GetComponent<global::UnityEngine.UI.Image>().color = global::UnityEngine.Color.Lerp(global::UnityEngine.GameObject.Find("Info_Glow_Cum").GetComponent<global::UnityEngine.UI.Image>().color, color_Glow_OFF, global::UnityEngine.Time.deltaTime * 5f);
 				global::UnityEngine.GameObject.Find("Info_Text_Cum").GetComponent<global::UnityEngine.UI.Text>().color = global::UnityEngine.Color.Lerp(global::UnityEngine.GameObject.Find("Info_Text_Cum").GetComponent<global::UnityEngine.UI.Text>().color, color_OFF, global::UnityEngine.Time.deltaTime * 5f);
 			}
-			if (global::UnityEngine.Input.GetKeyDown(CK.Jump))
+			if (AxiInputBridge.GetKeyDown(CK.Jump))
 			{
 				AxiPlayerPrefs.SetInt("Input_Mode", 0);
 				if (Sel_Index == 0)
@@ -239,7 +239,7 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 					Exit();
 				}
 			}
-			else if (global::UnityEngine.Input.GetButtonDown("Jump"))
+			else if (AxiInputBridge.GetButtonDown("Jump"))
 			{
 				AxiPlayerPrefs.SetInt("Input_Mode", 1);
 				if (Sel_Index == 0)
@@ -333,9 +333,9 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 
 	private void Check_Mouse()
 	{
-		if (global::UnityEngine.Input.GetMouseButtonDown(0))
+		if (AxiInputBridge.GetMouseButtonDown(0))
 		{
-			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+			global::UnityEngine.Ray ray = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(AxiInputBridge.mousePosition);
 			global::UnityEngine.RaycastHit2D rayIntersection = global::UnityEngine.Physics2D.GetRayIntersection(ray, float.PositiveInfinity);
 			if (rayIntersection.collider != null)
 			{
@@ -364,7 +364,7 @@ public class Menu_GameOver : global::UnityEngine.MonoBehaviour
 			}
 			return;
 		}
-		global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(global::UnityEngine.Input.mousePosition);
+		global::UnityEngine.Ray ray2 = global::UnityEngine.GameObject.Find("UI Camera").GetComponent<UnityEngine.Camera>().ScreenPointToRay(AxiInputBridge.mousePosition);
 		global::UnityEngine.RaycastHit2D rayIntersection2 = global::UnityEngine.Physics2D.GetRayIntersection(ray2, float.PositiveInfinity);
 		if (rayIntersection2.collider != null)
 		{

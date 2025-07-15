@@ -98,7 +98,7 @@ public class UI_Potion : global::UnityEngine.MonoBehaviour
 			Icon_MP.enabled = false;
 			Text_MP.enabled = false;
 		}
-		if (GM.Potion_MP > 0 && global::UnityEngine.Input.GetAxis("L_Trigger") < 0f)
+		if (GM.Potion_MP > 0 && AxiInputBridge.GetAxis("L_Trigger") < 0f)
 		{
 			Icon_Cursor.color = global::UnityEngine.Color.Lerp(Icon_Cursor.color, color_ON, global::UnityEngine.Time.deltaTime * 5f);
 			Icon_Cursor.rectTransform.localPosition = global::UnityEngine.Vector3.Lerp(Icon_Cursor.rectTransform.localPosition, new global::UnityEngine.Vector3(100f, 45f, 0f), global::UnityEngine.Time.deltaTime * 5f);
