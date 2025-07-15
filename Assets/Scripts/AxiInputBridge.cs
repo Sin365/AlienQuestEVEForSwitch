@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class AxiInputBridge
 {
-    public static Vector3 mousePosition;
+    public static Vector3 mousePosition => Input.mousePosition;
     public static Vector2 mouseScrollDelta => Input.mouseScrollDelta;
     public static bool anyKeyDown => Input.anyKeyDown;
 
