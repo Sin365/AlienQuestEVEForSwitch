@@ -1,3 +1,5 @@
+using AxiInputSP;
+
 public class UI_Potion : global::UnityEngine.MonoBehaviour
 {
 	private bool onPotion;
@@ -97,9 +99,14 @@ public class UI_Potion : global::UnityEngine.MonoBehaviour
 		{
 			Icon_MP.enabled = false;
 			Text_MP.enabled = false;
-		}
-		if (GM.Potion_MP > 0 && AxiInputBridge.GetAxis("L_Trigger") < 0f)
-		{
+        }
+        //TODO ÊÖ±úºÈÀ¶
+#if UNITY_PSP2
+        if (GM.Potion_MP > 0 && AxiPSVBackTouchEmuKey.GetKey(AxiPSVBackTouchType.LeftHalf))
+#else
+        if (GM.Potion_MP > 0 && AxiInputBridge.GetAxis("L_Trigger") < 0f)
+#endif
+        {
 			Icon_Cursor.color = global::UnityEngine.Color.Lerp(Icon_Cursor.color, color_ON, global::UnityEngine.Time.deltaTime * 5f);
 			Icon_Cursor.rectTransform.localPosition = global::UnityEngine.Vector3.Lerp(Icon_Cursor.rectTransform.localPosition, new global::UnityEngine.Vector3(100f, 45f, 0f), global::UnityEngine.Time.deltaTime * 5f);
 			Border_MP.color = global::UnityEngine.Color.Lerp(Border_MP.color, color_Half, global::UnityEngine.Time.deltaTime * 10f);

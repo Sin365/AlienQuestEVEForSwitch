@@ -1,3 +1,4 @@
+using AxiInputSP;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
@@ -682,6 +683,7 @@ public class GameManager : global::UnityEngine.MonoBehaviour
 
     private void Check_Input()
     {
+        //TODO 追加按键这里应该也要加
         User_Input_Timer += global::UnityEngine.Time.deltaTime;
         if (Input_Mode == 0)
         {
@@ -690,7 +692,12 @@ public class GameManager : global::UnityEngine.MonoBehaviour
                 User_Input_Timer = 0f;
             }
         }
-        else if (AxiInputBridge.GetAxis("L_X") != 0f || AxiInputBridge.GetAxis("L_Y") != 0f || AxiInputBridge.GetButtonDown("Jump") || AxiInputBridge.GetButtonDown("_B") || AxiInputBridge.GetButtonDown("_X") || AxiInputBridge.GetButtonDown("_Y") || AxiInputBridge.GetButtonDown("L_B") || AxiInputBridge.GetButtonDown("R_B") || AxiInputBridge.GetAxis("L_Trigger") != 0f)
+        else if (AxiInputBridge.GetAxis("L_X") != 0f || AxiInputBridge.GetAxis("L_Y") != 0f || AxiInputBridge.GetButtonDown("Jump") || AxiInputBridge.GetButtonDown("_B") || AxiInputBridge.GetButtonDown("_X") || AxiInputBridge.GetButtonDown("_Y") || AxiInputBridge.GetButtonDown("L_B") || AxiInputBridge.GetButtonDown("R_B") || AxiInputBridge.GetAxis("L_Trigger") != 0f
+#if UNITY_PSP2
+            || AxiPSVBackTouchEmuKey.GetKey(AxiPSVBackTouchType.LeftHalf)
+            || AxiPSVBackTouchEmuKey.GetKey(AxiPSVBackTouchType.RigthHalf)
+#endif
+            )
         {
             User_Input_Timer = 0f;
         }
@@ -851,7 +858,12 @@ public class GameManager : global::UnityEngine.MonoBehaviour
                     {
                         Use_Potion_HP();
                     }
+                    //TODO 手柄喝蓝
+#if UNITY_PSP2
+                    else if (Potion_MP > 0 && AxiPSVBackTouchEmuKey.GetKey(AxiPSVBackTouchType.LeftHalf) && AxiInputBridge.GetButtonDown("_B"))
+#else
                     else if (Potion_MP > 0 && AxiInputBridge.GetAxis("L_Trigger") < 0f && AxiInputBridge.GetButtonDown("_B"))
+#endif
                     {
                         Use_Potion_MP();
                     }

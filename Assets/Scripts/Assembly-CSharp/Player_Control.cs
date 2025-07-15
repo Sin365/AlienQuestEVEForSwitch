@@ -1,3 +1,4 @@
+using AxiInputSP;
 using UnityEngine;
 
 public class Player_Control : global::UnityEngine.MonoBehaviour
@@ -522,7 +523,13 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         {
             Check_SpeedUp_Pad();
         }
+
+        //TODO 加速
+#if UNITY_PSP2
+        else if (GM.onSpeedUp && GM.MP > 5 && (AxiInputBridge.GetButton("R_B") || AxiPSVBackTouchEmuKey.GetKey(AxiPSVBackTouchType.RigthHalf)))
+#else
         else if (GM.onSpeedUp && GM.MP > 5 && (AxiInputBridge.GetButton("R_B") || AxiInputBridge.GetKey(CK.RB)))
+#endif
         {
             onDash_Pad = true;
             onDash_Keyboard = false;
@@ -1666,7 +1673,13 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         {
             Make_Lag();
         }
+
+        //TODO 加速
+#if UNITY_PSP2
+        if (AxiPSVBackTouchEmuKey.GetKey(AxiPSVBackTouchType.RigthHalf) || AxiInputBridge.GetKey(CK.RB)) && GM.MP > 1)
+#else
         if ((AxiInputBridge.GetButton("R_B") || AxiInputBridge.GetKey(CK.RB)) && GM.MP > 1)
+#endif
         {
             GM.MP_SpeedUp();
             return;
