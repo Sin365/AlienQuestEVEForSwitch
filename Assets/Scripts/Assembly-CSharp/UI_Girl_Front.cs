@@ -233,7 +233,8 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
     private System.Collections.IEnumerator AutoHide()
     {
         //气泡指针，放到外面先
-        SR_Cursor.GetComponent<global::UnityEngine.RectTransform>().localPosition = UnityEngine.Vector2.zero;
+        //SR_Cursor.GetComponent<global::UnityEngine.RectTransform>().localPosition = UnityEngine.Vector2.zero;
+        SR_Cursor.gameObject.SetActive(false);
         yield return null;
         yield return null;
         this.gameObject.SetActive(false);
@@ -391,7 +392,8 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
                     Pause_Timer = 0f;
                     GetComponent<global::UnityEngine.Animator>().speed = 0f;
                     //气泡指针
-                    SR_Cursor.GetComponent<global::UnityEngine.RectTransform>().localPosition = UnityEngine.Vector2.zero;
+                    //SR_Cursor.GetComponent<global::UnityEngine.RectTransform>().localPosition = UnityEngine.Vector2.zero;
+                    SR_Cursor.gameObject.SetActive(false);
                     //关闭立绘
                     this.gameObject.SetActive(false);
                 }
@@ -407,6 +409,8 @@ public class UI_Girl_Front : global::UnityEngine.MonoBehaviour
             onPause = true;
             Pause_Timer = 0f;
             GetComponent<global::UnityEngine.Animator>().speed = 1f;
+            //气泡指针
+            SR_Cursor.gameObject.SetActive(true);
             //打开立绘
             this.gameObject.SetActive(true);
         }
