@@ -644,13 +644,23 @@ public class Event_Control : global::UnityEngine.MonoBehaviour
             if (Event_Timer <= 0f)
             {
                 Index++;
-                Event_Timer = 0f;
+                //Event_Timer = 0f;
+                Event_Timer = 12f;//给最后一个动画阶段预留时间
                 isFadeOut = true;
                 CamPos = new global::UnityEngine.Vector3(Room_0_Pos_X, 2f, -10f);
                 CamPos_Target = new global::UnityEngine.Vector3(Room_0_Pos_X, 2f, -10f);
                 CamSize = 4f;
                 CamSize_Target = 9f;
                 global::UnityEngine.GameObject.Find("Bay_Stand_Ship").SendMessage("ReadyTo_Landing");
+            }
+        }
+        else if (Index == 14)//着陆完毕
+        {
+            if (Event_Timer <= 0f)
+            {
+                Index++;
+                Event_Timer = 0f;
+                global::UnityEngine.GameObject.Find("Bay_Stand_Ship").SendMessage("Landing_Complete");
             }
         }
         else if (Index != 14)
