@@ -1612,10 +1612,11 @@ public class Monster : global::UnityEngine.MonoBehaviour
         if (_Icon != null)
         {
             global::UnityEngine.GameObject gameObject = AxiObject.Instantiate(_Icon, new global::UnityEngine.Vector3(0f, 0f, 0f), global::UnityEngine.Quaternion.Euler(0f, 0f, 0f)) as global::UnityEngine.GameObject;
-            gameObject.GetComponent<Info_MonIcon>().Mon_Num = Mon_Num;
-            gameObject.GetComponent<Info_MonIcon>().MonCenter = base.transform;
-            gameObject.GetComponent<Info_MonIcon>().Set_MonIcon(Icon_Spr);
-            gameObject.GetComponent<Info_MonIcon>().Set_Dist();
+            Info_MonIcon icon = gameObject.GetComponent<Info_MonIcon>();
+            icon.Mon_Num = Mon_Num;
+            icon.MonCenter = base.transform;
+            icon.Set_MonIcon(Icon_Spr);
+            icon.Set_Dist();
         }
     }
 
