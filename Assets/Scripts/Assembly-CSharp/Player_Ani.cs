@@ -718,12 +718,12 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 		}
 		if (GM.onCloth)
 		{
-			global::UnityEngine.GameObject.Find("Ani_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().sprite = Spr_Sit[27];
+            PC.sp_Ani_rolling.sprite = Spr_Sit[27];
 			onCloth = true;
 		}
 		else
 		{
-			global::UnityEngine.GameObject.Find("Ani_Rolling").GetComponent<global::UnityEngine.SpriteRenderer>().sprite = Spr_Naked_1[33];
+            PC.sp_Ani_rolling.sprite = Spr_Naked_1[33];
 			onCloth = false;
 		}
 	}

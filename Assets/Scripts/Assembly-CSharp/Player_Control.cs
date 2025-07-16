@@ -149,14 +149,14 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
     private float DownUp_Timer;
 
     private global::UnityEngine.Vector3 prePosition = new global::UnityEngine.Vector3(0f, 0f, 0f);
-	public SpriteRenderer sr_Effect_Attack { get; private set; }
-	public SpriteRenderer sr_Effect_Spin { get; private set; }
-	public GameObject gobj_Effect_Attack { get; private set; }
-	public GameObject gobj_Effect_Spin { get; private set; }
-	public GameObject gobj_Effect_SpinGlow { get; private set; }
+    public SpriteRenderer sr_Effect_Attack { get; private set; }
+    public SpriteRenderer sr_Effect_Spin { get; private set; }
+    public GameObject gobj_Effect_Attack { get; private set; }
+    public GameObject gobj_Effect_Spin { get; private set; }
+    public GameObject gobj_Effect_SpinGlow { get; private set; }
 
-	private GameObject gobj_Col_Spin;
-	private global::UnityEngine.Vector2 velocity = new global::UnityEngine.Vector2(0f, 0f);
+    private GameObject gobj_Col_Spin;
+    private global::UnityEngine.Vector2 velocity = new global::UnityEngine.Vector2(0f, 0f);
 
     public float Speed_X;
 
@@ -215,12 +215,14 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
     public global::UnityEngine.GameObject player_ani;
 
     public global::UnityEngine.GameObject Ani_rolling;
+    public SpriteRenderer sp_Ani_rolling;
 
     public global::UnityEngine.GameObject Effect_rolling;
 
     public global::UnityEngine.GameObject Glow_rolling;
 
     public global::UnityEngine.GameObject Border_rolling;
+    public SpriteRenderer sp_Border_rolling;
 
     public global::UnityEngine.Material Ani_Down_Mat;
 
@@ -248,9 +250,11 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
 
     private Player_Ani Ani;
 
-	private void Awake()
+    private void Awake()
     {
         instance = this;
+        sp_Border_rolling = Border_rolling.GetComponent<SpriteRenderer>();
+        sp_Ani_rolling = Ani_rolling.GetComponent<SpriteRenderer>();
     }
 
     private void OnDestroy()
@@ -268,14 +272,14 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         base.transform.position = global::UnityEngine.GameObject.Find("Player_Locker").transform.position;
         prePosition = base.transform.position;
 
-		gobj_Effect_Attack = global::UnityEngine.GameObject.Find("Effect_Attack");
-		gobj_Effect_Spin = global::UnityEngine.GameObject.Find("Effect_Spin");
-		sr_Effect_Attack = gobj_Effect_Attack.GetComponent<global::UnityEngine.SpriteRenderer>();
-		sr_Effect_Spin = gobj_Effect_Spin.GetComponent<global::UnityEngine.SpriteRenderer>();
-		gobj_Effect_SpinGlow = global::UnityEngine.GameObject.Find("Effect_SpinGlow");
-		gobj_Col_Spin = global::UnityEngine.GameObject.Find("Col_Spin");
+        gobj_Effect_Attack = global::UnityEngine.GameObject.Find("Effect_Attack");
+        gobj_Effect_Spin = global::UnityEngine.GameObject.Find("Effect_Spin");
+        sr_Effect_Attack = gobj_Effect_Attack.GetComponent<global::UnityEngine.SpriteRenderer>();
+        sr_Effect_Spin = gobj_Effect_Spin.GetComponent<global::UnityEngine.SpriteRenderer>();
+        gobj_Effect_SpinGlow = global::UnityEngine.GameObject.Find("Effect_SpinGlow");
+        gobj_Col_Spin = global::UnityEngine.GameObject.Find("Col_Spin");
 
-	}
+    }
 
     private void FixedUpdate()
     {
@@ -980,15 +984,15 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         {
             Accel = 0f;
         }
-		//if (State != Player_Control.AniState.Spin && global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().enabled)
-		//{
-		//    global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;
-		//}
-		if (State != Player_Control.AniState.Spin && gobj_Col_Spin.GetComponent<global::UnityEngine.BoxCollider2D>().enabled)
-		{
-			gobj_Col_Spin.GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;
-		}
-	}
+        //if (State != Player_Control.AniState.Spin && global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().enabled)
+        //{
+        //    global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;
+        //}
+        if (State != Player_Control.AniState.Spin && gobj_Col_Spin.GetComponent<global::UnityEngine.BoxCollider2D>().enabled)
+        {
+            gobj_Col_Spin.GetComponent<global::UnityEngine.BoxCollider2D>().enabled = false;
+        }
+    }
 
     private void Raycasting()
     {
@@ -1408,7 +1412,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             }
         }
         Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().color = new global::UnityEngine.Color(1f, 1f, 1f, Screw_Opacity);
-        Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().color = new global::UnityEngine.Color(1f, 1f, 1f, Screw_Opacity);
+        sp_Border_rolling.color = new global::UnityEngine.Color(1f, 1f, 1f, Screw_Opacity);
         if (Screw_Opacity > 0f)
         {
             GM.MP_Screw(Screw_Opacity);
@@ -1442,7 +1446,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             global::UnityEngine.GameObject.Find("Col_Rolling").GetComponent<global::UnityEngine.CircleCollider2D>().radius = 2.5f + 0.4f * Screw_Opacity;
         }
         Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().color = new global::UnityEngine.Color(1f, 1f, 1f, Screw_Opacity);
-        Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().color = new global::UnityEngine.Color(1f, 1f, 1f, Screw_Opacity);
+        sp_Border_rolling.color = new global::UnityEngine.Color(1f, 1f, 1f, Screw_Opacity);
     }
 
     private void Fire_Magic()
@@ -1674,7 +1678,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
             Make_Lag();
         }
 
-		//TODO 加速
+        //TODO 加速
 #if UNITY_PSP2
 		if ((AxiPSVBackTouchEmuKey.GetKey(AxiPSVBackTouchType.RigthHalf) || AxiInputBridge.GetKey(CK.RB)) && GM.MP > 1)
 #else
@@ -1775,12 +1779,12 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         Effect_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1510;
         Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
         Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1199;
-        Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
-        Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1540;
+        sp_Border_rolling.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
+        sp_Border_rolling.sortingOrder = 1540;
         sr_Effect_Attack.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
-		sr_Effect_Attack.sortingOrder = 1550;
+        sr_Effect_Attack.sortingOrder = 1550;
         sr_Effect_Spin.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(20);
-		sr_Effect_Spin.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1501;
+        sr_Effect_Spin.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 1501;
         BackDash_Timer = 2f;
     }
 
@@ -1810,12 +1814,12 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
         Effect_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 510;
         Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(10);
         Glow_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 199;
-        Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(17);
-        Border_rolling.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 540;
-		sr_Effect_Attack.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(17);
+        sp_Border_rolling.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(17);
+        sp_Border_rolling.sortingOrder = 540;
+        sr_Effect_Attack.sortingLayerID = AxiSortingOrder.GetHashIDByUserID(17);
         sr_Effect_Attack.sortingOrder = 550;
         sr_Effect_Spin.GetComponent<global::UnityEngine.SpriteRenderer>().sortingLayerID = AxiSortingOrder.GetHashIDByUserID(17);
-		sr_Effect_Spin.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 501;
+        sr_Effect_Spin.GetComponent<global::UnityEngine.SpriteRenderer>().sortingOrder = 501;
     }
 
     public void Sound_Attack()
