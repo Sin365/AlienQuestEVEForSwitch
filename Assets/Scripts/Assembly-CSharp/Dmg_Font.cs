@@ -1,6 +1,39 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 public class Dmg_Font : global::UnityEngine.MonoBehaviour
 {
+	#region
+	static Queue<Dmg_Font> mQueue_Obj = new Queue<Dmg_Font>();
+
+	public static Dmg_Font ShowDmg(Vector3 position, Quaternion rotation,int num, int type)
+	{
+		Dmg_Font dmg;
+		if (mQueue_Obj.Count > 0)
+		{ 
+			dmg = mQueue_Obj.Dequeue();
+			dmg.transform.position = position;
+			dmg.transform.rotation = rotation;
+		}
+		else
+			dmg = AxiObject.Instantiate(GameManager.instance.Damage_Font, position, rotation).GetComponent<Dmg_Font>();
+
+		dmg.transform.localScale = Vector3.one;
+		dmg.Set_Number(num, type);
+		dmg.Opacity = 1f;
+		dmg.gameObject.SetActive(true);
+		GameObject.DontDestroyOnLoad(dmg);
+		return dmg;
+	}
+	static void ReleaseDmg(Dmg_Font dmg)
+	{
+		dmg.gameObject.SetActive(false);
+		mQueue_Obj.Enqueue(dmg);
+	}
+	#endregion
+
 	public global::UnityEngine.GameObject[] font_Obj;
+	private SpriteRenderer[] sr_font_Obj;
 
 	private float Life_Timer;
 
@@ -14,14 +47,24 @@ public class Dmg_Font : global::UnityEngine.MonoBehaviour
 
     GameManager GM => GameManager.instance;
 
-    private void Start()
+	private void Awake()
+	{
+		sr_font_Obj = new SpriteRenderer[font_Obj.Length];
+		for (int i = 0; i < font_Obj.Length; i++)
+		{
+			sr_font_Obj[i] = font_Obj[i].GetComponent<SpriteRenderer>();
+		}
+	}
+
+	private void Start()
 	{
 		//GM = global::UnityEngine.GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
 	public void Set_Number(int Num, int type)
 	{
-		global::UnityEngine.Sprite[] array = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("UI/256_Font");
+		//global::UnityEngine.Sprite[] array = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("UI/256_Font");
+		global::UnityEngine.Sprite[] array = AxiResources.LoadAllSprite("UI/256_Font");
 		int num = Num;
 		if (Num > 9999)
 		{
@@ -29,28 +72,28 @@ public class Dmg_Font : global::UnityEngine.MonoBehaviour
 		}
 		if (Num >= 1000)
 		{
-			font_Obj[3].GetComponent<global::UnityEngine.SpriteRenderer>().sprite = array[Num / 1000];
+			sr_font_Obj[3].sprite = array[Num / 1000];
 			Num %= 1000;
 		}
 		if (Num >= 100)
 		{
-			font_Obj[2].GetComponent<global::UnityEngine.SpriteRenderer>().sprite = array[Num / 100];
+			sr_font_Obj[2].sprite = array[Num / 100];
 			Num %= 100;
 		}
 		else if (num >= 1000)
 		{
-			font_Obj[2].GetComponent<global::UnityEngine.SpriteRenderer>().sprite = array[0];
+			sr_font_Obj[2].sprite = array[0];
 		}
 		if (Num >= 10)
 		{
-			font_Obj[1].GetComponent<global::UnityEngine.SpriteRenderer>().sprite = array[Num / 10];
+			sr_font_Obj[1].sprite = array[Num / 10];
 			Num %= 10;
 		}
 		else if (num >= 100)
 		{
-			font_Obj[1].GetComponent<global::UnityEngine.SpriteRenderer>().sprite = array[0];
+			sr_font_Obj[1].sprite = array[0];
 		}
-		font_Obj[0].GetComponent<global::UnityEngine.SpriteRenderer>().sprite = array[Num];
+		sr_font_Obj[0].sprite = array[Num];
 		switch (type)
 		{
 		case 2:
@@ -70,10 +113,10 @@ public class Dmg_Font : global::UnityEngine.MonoBehaviour
 			ColorTarget = new global::UnityEngine.Color(0.7f, 1f, 0f, 1f);
 			break;
 		}
-		font_Obj[0].GetComponent<global::UnityEngine.SpriteRenderer>().color = ColorTarget;
-		font_Obj[1].GetComponent<global::UnityEngine.SpriteRenderer>().color = ColorTarget;
-		font_Obj[2].GetComponent<global::UnityEngine.SpriteRenderer>().color = ColorTarget;
-		font_Obj[3].GetComponent<global::UnityEngine.SpriteRenderer>().color = ColorTarget;
+		sr_font_Obj[0].color = ColorTarget;
+		sr_font_Obj[1].color = ColorTarget;
+		sr_font_Obj[2].color = ColorTarget;
+		sr_font_Obj[3].color = ColorTarget;
 	}
 
 	private void Update()
@@ -89,13 +132,14 @@ public class Dmg_Font : global::UnityEngine.MonoBehaviour
 			Opacity -= global::UnityEngine.Time.deltaTime * 3f;
 			if (Opacity < 0f)
 			{
-				global::UnityEngine.Object.Destroy(base.gameObject);
+				//global::UnityEngine.Object.Destroy(base.gameObject);
+				ReleaseDmg(this);
 			}
 			global::UnityEngine.Color color = new global::UnityEngine.Color(ColorTarget.r, ColorTarget.g, ColorTarget.b, Opacity);
-			font_Obj[0].GetComponent<global::UnityEngine.SpriteRenderer>().color = color;
-			font_Obj[1].GetComponent<global::UnityEngine.SpriteRenderer>().color = color;
-			font_Obj[2].GetComponent<global::UnityEngine.SpriteRenderer>().color = color;
-			font_Obj[3].GetComponent<global::UnityEngine.SpriteRenderer>().color = color;
+			sr_font_Obj[0].color = color;
+			sr_font_Obj[1].color = color;
+			sr_font_Obj[2].color = color;
+			sr_font_Obj[3].color = color;
 		}
 	}
 

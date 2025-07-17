@@ -797,8 +797,8 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 		}
 		if (GM.Weapon_Num == 0)
 		{
-			Spr_Effect_1 = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_0");
-			global::UnityEngine.Sprite[] array = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_1");
+			Spr_Effect_1 = AxiResources.LoadAllSprite("Effect/2048_Ef_Weapon_0");
+			global::UnityEngine.Sprite[] array = AxiResources.LoadAllSprite("Effect/2048_Ef_Weapon_1");
 			for (int i = 0; i < 10; i++)
 			{
 				Spr_Effect_1[25 + i] = array[25 + i];
@@ -806,29 +806,29 @@ public class Player_Ani : global::UnityEngine.MonoBehaviour
 		}
 		else if (GM.Weapon_Num == 1)
 		{
-			Spr_Effect_1 = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_1");
+			Spr_Effect_1 = AxiResources.LoadAllSprite("Effect/2048_Ef_Weapon_1");
 		}
 		else if (GM.Weapon_Num == 2)
 		{
-			Spr_Effect_1 = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_2");
+			Spr_Effect_1 = AxiResources.LoadAllSprite("Effect/2048_Ef_Weapon_2");
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(15.6f, 0.66f);
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4.2f);
 		}
 		else if (GM.Weapon_Num == 3)
 		{
-			Spr_Effect_1 = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_3");
+			Spr_Effect_1 = AxiResources.LoadAllSprite("Effect/2048_Ef_Weapon_3");
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(15.6f, 0.7f);
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4.15f);
 		}
 		else if (GM.Weapon_Num == 4)
 		{
-			Spr_Effect_1 = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_4");
+			Spr_Effect_1 = AxiResources.LoadAllSprite("Effect/2048_Ef_Weapon_4");
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(18.8f, 1f);
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4f);
 		}
 		else if (GM.Weapon_Num == 5)
 		{
-			Spr_Effect_1 = global::UnityEngine.Resources.LoadAll<global::UnityEngine.Sprite>("Effect/2048_Ef_Weapon_5");
+			Spr_Effect_1 = AxiResources.LoadAllSprite("Effect/2048_Ef_Weapon_5");
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().size = new global::UnityEngine.Vector2(18.8f, 1.2f);
 			global::UnityEngine.GameObject.Find("Col_Spin").GetComponent<global::UnityEngine.BoxCollider2D>().offset = new global::UnityEngine.Vector2(0f, 4f);
 		}

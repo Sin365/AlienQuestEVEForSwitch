@@ -124,7 +124,7 @@ public static class AxiSoundPool
     }
     static AxiSoundBase AddSound(string path)
     {
-        AxiSoundBase clonego;
+		AxiSoundBase clonego;
         string srcname = Path.GetFileNameWithoutExtension(path);
 
         if (!mPool_Name2SoundClone.ContainsKey(srcname))

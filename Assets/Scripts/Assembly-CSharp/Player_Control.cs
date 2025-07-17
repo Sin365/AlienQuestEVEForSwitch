@@ -392,7 +392,7 @@ public class Player_Control : global::UnityEngine.MonoBehaviour
                             Lock_Lift[0] = true;
                             Pos_Lift[0] = raycastHit2D.collider.transform.position.x;
                         }
-                        global::UnityEngine.Debug.Log("hit.collider.GetComponent<Tile_Lift>() != null");
+                        //global::UnityEngine.Debug.Log("hit.collider.GetComponent<Tile_Lift>() != null");
                     }
                     else
                     {
