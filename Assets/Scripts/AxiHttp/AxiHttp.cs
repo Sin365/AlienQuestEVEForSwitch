@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -11,8 +11,65 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 
+public static class PSVThread
+{
+	static AutoResetEvent autoEvent = new AutoResetEvent(false);
+	static Queue<Action> qActs = new Queue<Action>();
+	static Queue<Action> qWork = new Queue<Action>();
+
+	public static void DoTask(Action act)
+	{
+#if UNITY_PSP2
+		AddSingleTask(act);
+#else
+		ThreadPool.QueueUserWorkItem(new WaitCallback((state) => act.Invoke()));
+#endif
+	}
+
+#if UNITY_PSP2
+	static Thread psvThread = new Thread(Loop);
+	static bool bSingleInit = false;
+	static void SingleInit()
+	{
+		if (bSingleInit) return;
+		psvThread.Start();
+		bSingleInit = true;
+	}
+	static void AddSingleTask(Action act)
+	{
+		SingleInit();
+		lock (qActs)
+		{
+			qActs.Enqueue(act);
+		}
+		autoEvent.Set();
+	}
+
+	static void Loop()
+	{
+		while (autoEvent.WaitOne())
+		{
+			lock (qActs)
+			{
+				while (qActs.Count > 0) { qWork.Enqueue(qActs.Dequeue()); }
+			}
+			while (qWork.Count > 0)
+			{
+				Action act = qWork.Dequeue();
+				try
+				{
+					act.Invoke();
+				}
+				catch (Exception ex)
+				{
+					UnityEngine.Debug.Log(ex.ToString());
+				}
+			}
+		}
+	}
+#endif
+}
 
 public static class AxiHttp
 {
@@ -47,8 +104,8 @@ public static class AxiHttp
 
 	public static void Log(string log)
 	{
-		//UnityEngine.Debug.Log(log);
-		Console.WriteLine(log);
+		UnityEngine.Debug.Log(log);
+		//Console.WriteLine(log);
 	}
 
 	static Dictionary<string, IPAddress> dictIP2Address = new Dictionary<string, IPAddress>();
@@ -57,14 +114,14 @@ public static class AxiHttp
 	{
 		public bool isDone = false;
 		public AxiDownLoadMode downloadMode = AxiDownLoadMode.NotDownLoad;
-		public string Err;
-
+		public string Err = null;
 		public string host = "";//host主机头
 		public string url = "";//pathAndQuery
 		public int port = 80;
 		public string requestRaw = "";
 		public string encoding = "";
 		public string header = "";
+		public string text { get { return body; } }
 		public string body = "";
 		public string reuqestBody = "";
 		public string reuqestHeader = "";
@@ -82,6 +139,7 @@ public static class AxiHttp
 
 		public int NeedloadedLenght;
 		public int loadedLenght;
+		public byte[] data { get { return bodyRaw; } }
 		public byte[] bodyRaw;
 		public string fileName;
 		public float DownLoadPr =>
@@ -93,15 +151,9 @@ public static class AxiHttp
 	{
 		if (!dictIP2Address.ContainsKey(str))
 		{
-			try
-			{
-				IPAddress ip = Dns.GetHostEntry(str).AddressList[0];
-				dictIP2Address[str] = ip;
-			}
-			catch
-			{
-				return null;
-			}
+			IPHostEntry host = Dns.GetHostEntry(str);
+			IPAddress ip = host.AddressList[0];
+			dictIP2Address[str] = ip;
 		}
 		return dictIP2Address[str];
 	}
@@ -126,14 +178,15 @@ public static class AxiHttp
 		AxiRespInfo respInfo = new AxiRespInfo();
 		respInfo.downloadMode = AxiDownLoadMode.NotDownLoad;
 		WaitAxiRequest respAsync = new WaitAxiRequest(respInfo);
-		Task task = new Task(() => SendAxiRequest(url, ref respInfo));
-		task.Start();
+		//Task task = new Task(() => SendAxiRequest(url, ref respInfo));
+		//task.Start()
+		PSVThread.DoTask(() => SendAxiRequest(url, ref respInfo));
 		return respAsync;
 	}
 
 	public static AxiRespInfo AxiDownload(string url)
 	{
-		AxiRespInfo respInfo = new AxiRespInfo(); 
+		AxiRespInfo respInfo = new AxiRespInfo();
 		respInfo.downloadMode = AxiDownLoadMode.DownLoadBytes;
 		SendAxiRequest(url, ref respInfo);
 		return respInfo;
@@ -141,19 +194,20 @@ public static class AxiHttp
 
 	public static AxiRespInfo AxiDownloadAsync(string url)
 	{
-		AxiRespInfo respInfo = new AxiRespInfo(); 
+		AxiRespInfo respInfo = new AxiRespInfo();
 		respInfo.downloadMode = AxiDownLoadMode.DownLoadBytes;
-		Task task = new Task(() => SendAxiRequest(url, ref respInfo));
-		task.Start();
+		//Task task = new Task(() => SendAxiRequest(url, ref respInfo));
+		//task.Start();
+		PSVThread.DoTask(() => SendAxiRequest(url, ref respInfo));
 		return respInfo;
 	}
 
-	static void SendAxiRequest(string url, ref AxiRespInfo respinfo,int timeout = 1000 * 1000,	string encoding = "UTF-8")
+	static void SendAxiRequest(string url, ref AxiRespInfo respinfo, int timeout = 1000 * 1000, string encoding = "UTF-8")
 	{
 		if (url.ToLower().StartsWith("https://"))
-			SendAxiRequestHttps(url, ref respinfo,timeout, encoding);// SendAxiRequestHttps(url, ref respinfo, timeout, encoding);
+			SendAxiRequestHttps(url, ref respinfo, timeout, encoding);// SendAxiRequestHttps(url, ref respinfo, timeout, encoding);
 		else
-			SendAxiRequestHttp(url, ref respinfo,timeout, encoding);
+			SendAxiRequestHttp(url, ref respinfo, timeout, encoding);
 	}
 
 	static void SendAxiRequestHttp(string url, ref AxiRespInfo respinfo, int timeout, string encoding)
@@ -172,11 +226,12 @@ public static class AxiHttp
 			string strRelativePath = "";
 			bool bSSL = false;
 			bool foward_302 = true;
+			string ourErrMsg = "";
 
-			if (!ParseURI(strURI, ref bSSL, ref strHost, ref strIP, ref port, ref strRelativePath))
+			if (!ParseURI(strURI, ref bSSL, ref strHost, ref strIP, ref port, ref strRelativePath,ref ourErrMsg))
 			{
 				Log("ParseURI False");
-				respinfo.Err = "ParseURI False";
+				respinfo.Err = ourErrMsg;
 				respinfo.code = 0;
 				respinfo.isDone = true;
 				return;
@@ -253,13 +308,14 @@ public static class AxiHttp
 					int urlEnd = respinfo.requestRaw.IndexOf(" HTTP");
 					if (urlStart != -1 && urlEnd != -1)
 					{
-						url = respinfo.requestRaw.Substring(urlStart, urlEnd - urlStart);
+						//url = respinfo.requestRaw.Substring(urlStart, urlEnd - urlStart);
 						rsb.Remove(urlStart, url.Length);
 						String location = respinfo.headers["location"];
 						if (!respinfo.headers["location"].StartsWith("/") && !respinfo.headers["location"].StartsWith("http"))
 						{
 							location = Tools.getCurrentPath(url) + location;
 						}
+						url = location;
 						rsb.Insert(urlStart, location);
 						//return sendHTTPRequest(count, host, port, payload, rsb.ToString(), timeout, encoding, false);
 						client.Close();
@@ -471,11 +527,12 @@ public static class AxiHttp
 			string strRelativePath = "";
 			bool bSSL = false;
 			bool foward_302 = true;
+			string ourErrMsg = "";
 
-			if (!ParseURI(strURI, ref bSSL, ref strHost, ref strIP, ref port, ref strRelativePath))
+			if (!ParseURI(strURI, ref bSSL, ref strHost, ref strIP, ref port, ref strRelativePath, ref ourErrMsg))
 			{
 				Log("ParseURI False");
-				respinfo.Err = "ParseURI False";
+				respinfo.Err = ourErrMsg;
 				respinfo.code = 0;
 				respinfo.isDone = true;
 				return;
@@ -734,6 +791,9 @@ public static class AxiHttp
 			//}
 			respinfo.isDone = true;
 		}
+
+		if (client != null)
+			client.Dispose();
 	}
 
 
@@ -917,7 +977,13 @@ public static class AxiHttp
 	{
 		return true;
 	}
-	public static bool ParseURI(string strURI, ref bool bIsSSL, ref string strHost, ref string strIP, ref int Port, ref string strRelativePath)
+	public static bool ParseURI(string strURI, 
+		ref bool bIsSSL, 
+		ref string strHost, 
+		ref string strIP, 
+		ref int Port, 
+		ref string strRelativePath,
+		ref string errMsg)
 	{
 		string strAddressRet;
 		string strPortRet;
@@ -950,7 +1016,10 @@ public static class AxiHttp
 				strRelativePathRet = strLeft.Substring(nIndexRelative, strLeft.Length - nIndexRelative);
 			}
 			else
+			{
+				errMsg = "Err Url";
 				return false;
+			}
 		}
 		else
 		{
@@ -962,18 +1031,19 @@ public static class AxiHttp
 				strRelativePathRet = strLeft.Substring(nIndexRelative, strLeft.Length - nIndexRelative);
 			}
 			else
+			{
+				errMsg = "Err Url";
 				return false;
+			}
 		}
 		strHost = strAddressRet;
 		try
 		{
-			//IPHostEntry hostinfo = Dns.GetHostEntry(strAddressRet);
-			//IPAddress[] aryIP = hostinfo.AddressList;
-			//strIPRet = aryIP[0].ToString();
 			strIPRet = GetDnsIP(strAddressRet).ToString();
 		}
-		catch
+		catch(Exception ex)
 		{
+			errMsg = ex.ToString();
 			return false;
 		}
 
@@ -1022,7 +1092,7 @@ public static class AxiHttp
 		{
 			try
 			{
-				Log($"convertToIntBy16 str- {str} lenght->{str.Length}");
+				//Log($"convertToIntBy16 str- {str} lenght->{str.Length}");
 				if (str.Length == 0)
 					return 0;
 				return Convert.ToInt32(str, 16);
