@@ -5,6 +5,7 @@ using UnityEngine;
 
 public static class AxiSoundPool
 {
+    //“Ù∆µpool”≈ªØÕÍ±œ
     static long mSeed = 1;
     const float soundkeep_time = 20f;
     static HashSet<string> mHashSetKeepIn_Name = new HashSet<string>();

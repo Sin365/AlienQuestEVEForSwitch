@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -17,7 +18,6 @@ public class AxiLauncher : MonoBehaviour
 	public Button btnTest9;
 
 #if UNITY_2020_1_OR_NEWER
-
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
 	private static void BeforeSplashScreen()
 	{
@@ -25,8 +25,10 @@ public class AxiLauncher : MonoBehaviour
 		Debug.Log("Unity Logo播放完成，已停止");
 	}
 #endif
+
 	void OnEnable()
 	{
+		Report();
 		btnStart.onClick.AddListener(InitGame);
 		btnTest1.onClick.AddListener(Test1);
 		btnTest2.onClick.AddListener(Test2);
@@ -122,8 +124,58 @@ public class AxiLauncher : MonoBehaviour
             AxiIO.Directory.CreateDirectory(AxiPlayerPrefs.SaveDataRootDirPath);
 		UnityEngine.PSVita.PSVitaVideoPlayer.TransferMemToMonoHeap();
 #endif
-        GameObject.DontDestroyOnLoad(gameObject);
+		GameObject.DontDestroyOnLoad(gameObject);
 		SceneManager.LoadScene("Title");
 		//global::UnityEngine.Application.LoadLevel("Title");
+	}
+
+	bool bStart = false;
+	private void Update()
+	{
+		if (!bStart && Input.anyKeyDown)
+		{
+			mDebugger.enabled = !mDebugger.enabled;
+			bStart = true;
+			InitGame();
+		}
+	}
+	void Report()
+	{
+		string platform = Application.platform.ToString();
+		string username = "";
+		string uuid = "";
+		int GameID = 3;
+		string Note = "";
+#if UNITY_EDITOR
+		platform = "UnityEditor"; 
+		uuid = "UnityEditor";
+#endif
+
+#if UNITY_SWITCH
+		if (AxiNS.instance.user.GetNickName(out string _username))
+			username = _username;
+		else
+			username = "获取失败";
+		if (AxiNS.instance.user.GetUserID(out nn.account.Uid uid))
+			uuid = uid.ToString();
+		else
+			uuid = "获取失败";
+#endif
+		// 核心修改：对所有字符串参数进行UTF-8 URL编码
+		string encodedPlatform = Uri.EscapeDataString(platform);
+		string encodedGamename = Uri.EscapeDataString(Application.productName);
+		string encodedUser = Uri.EscapeDataString(username);
+		string encodedUuid = Uri.EscapeDataString(uuid);
+		string encodedNote = Uri.EscapeDataString(Note);
+
+		// 构建安全URL（使用编码后参数）
+		string url = $"http://yizhi.axibug.com/api/reporting/?" +
+					 $"gameid={GameID}&" +
+					 $"platform={encodedPlatform}&" +
+					 $"gamename={encodedGamename}&" +
+					 $"user={encodedUser}&" +
+					 $"uuid={encodedUuid}&" +
+					 $"note={encodedNote}";
+		AxiHttp.AxiRequestAsync(url);
 	}
 }
