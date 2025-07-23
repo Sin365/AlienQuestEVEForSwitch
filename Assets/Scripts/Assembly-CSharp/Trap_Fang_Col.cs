@@ -27,7 +27,7 @@ public class Trap_Fang_Col : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (!(PC.State == Player_Control.AniState.Down) || GM.Paused || GM.onGameClear || GM.GameOver)
+		if (!(PC.State != Player_Control.AniState.Down) || GM.Paused || GM.onGameClear || GM.GameOver)
 		{
 			return;
 		}

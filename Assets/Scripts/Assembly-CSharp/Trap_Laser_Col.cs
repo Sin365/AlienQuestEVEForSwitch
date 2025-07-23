@@ -26,7 +26,7 @@ public class Trap_Laser_Col : global::UnityEngine.MonoBehaviour
 
 	private void OnTriggerStay2D(global::UnityEngine.Collider2D col)
 	{
-		if (PC.State == Player_Control.AniState.Down && !GM.Paused && !GM.onGameClear && !GM.GameOver && col.name == "Ani" && !GM.onShield && Damage_Delay <= 0f)
+		if (PC.State != Player_Control.AniState.Down && !GM.Paused && !GM.onGameClear && !GM.GameOver && col.name == "Ani" && !GM.onShield && Damage_Delay <= 0f)
 		{
 			int dmg = (int)((float)GM.HP_Max * 0.25f);
 			if (base.transform.position.x > col.transform.parent.position.x)
