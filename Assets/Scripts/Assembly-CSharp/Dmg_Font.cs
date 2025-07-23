@@ -5,20 +5,35 @@ public class Dmg_Font : global::UnityEngine.MonoBehaviour
 {
 	#region
 	static Queue<Dmg_Font> mQueue_Obj = new Queue<Dmg_Font>();
+    private static Color srcColor1;
+    private static Color srcColor2;
+    private static Color srcColor3;
+    private static Color srcColor4;
 
-	public static Dmg_Font ShowDmg(Vector3 position, Quaternion rotation,int num, int type)
+    public static Dmg_Font ShowDmg(Vector3 position, Quaternion rotation,int num, int type)
 	{
 		Dmg_Font dmg;
 		if (mQueue_Obj.Count > 0)
-		{ 
+		{
 			dmg = mQueue_Obj.Dequeue();
 			dmg.transform.position = position;
 			dmg.transform.rotation = rotation;
 		}
 		else
+		{ 
 			dmg = AxiObject.Instantiate(GameManager.instance.Damage_Font, position, rotation).GetComponent<Dmg_Font>();
+			srcColor1 = dmg.sr_font_Obj[0].color;
+            srcColor2 = dmg.sr_font_Obj[1].color;
+            srcColor3 = dmg.sr_font_Obj[2].color;
+            srcColor4 = dmg.sr_font_Obj[3].color;
+        }
 
-		dmg.transform.localScale = Vector3.one;
+        dmg.sr_font_Obj[0].color = srcColor1;
+        dmg.sr_font_Obj[1].color = srcColor2;
+        dmg.sr_font_Obj[2].color = srcColor3;
+        dmg.sr_font_Obj[3].color = srcColor4;
+
+        dmg.transform.localScale = Vector3.one;
 		dmg.Set_Number(num, type);
 		dmg.Opacity = 1f;
 		dmg.gameObject.SetActive(true);
