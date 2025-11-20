@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-public class AxiProjectTools : EditorWindow
+public partial class AxiProjectTools : EditorWindow
 {
 	static string cachecfgPath = "Assets/AxiComToolCache.asset";
 	public static string toolSenceName = "AxiProjectTools";
